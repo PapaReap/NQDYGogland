@@ -477,3 +477,17 @@ $grp GenericEntity {
   }
  }
 }
+GenericEntity : "{1911B9B936E55635}Prefabs/Compositions/Locations/SupplyCache/v1/PR_SupplyCache_v1_120.et" {
+ coords 5775.228 46.113 7498.886
+ {
+  GenericEntity {
+   ID "60E6449033A5C26B"
+   {
+    GenericEntity {
+     ID "60E6449033A5C26F"
+     coords -2.643 1.026 0.519
+    }
+   }
+  }
+ }
+}
