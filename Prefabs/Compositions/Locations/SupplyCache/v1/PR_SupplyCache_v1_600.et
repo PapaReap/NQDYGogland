@@ -1,0 +1,26 @@
+GenericEntity {
+ ID "60E6448E3CBF3CEE"
+ components {
+  RplComponent "{60E6448E303DF375}" {
+  }
+  Hierarchy "{60E6448E35C76722}" {
+  }
+ }
+ {
+  GenericEntity Location_1 : "{0C97A65A7FC44EFC}Prefabs/Compositions/Misc/SubCompositions/Building/House_Town_E_2I01_FIA_01.et" {
+   ID "60E6448E3CBF3CE7"
+   coords 0 0 0
+   angleY 0
+   {
+    GenericEntity {
+     ID "5E6ACA2045301832"
+     coords -1.529 1.358 -1.342
+    }
+    GenericEntity StorageCache_1 {
+     ID "5EC6AD54D7748573"
+     coords 0 0 0
+    }
+   }
+  }
+ }
+}

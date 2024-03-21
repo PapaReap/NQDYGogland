@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{A53E70DA3157B8A3}Prefabs/MP/Campaign/Bases/Campaign_HQ_US.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

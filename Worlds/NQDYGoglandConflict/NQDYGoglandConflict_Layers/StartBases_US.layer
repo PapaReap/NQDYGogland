@@ -1,0 +1,203 @@
+$grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
+ SP01_Pohjoissivunkallio {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 5290.831 11.125 10064.896
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0.325 -3
+   }
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+  }
+ }
+ SP02_Korkiala_needRelay {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 220
+   }
+  }
+  coords 4179.347 37.729 9945.76
+  {
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+  }
+ }
+ SP03_Kappeliniemi {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 115
+   }
+  }
+  coords 5795.822 5.094 8239.819
+  angleY -36.656
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 5.593 0 29.498
+    angleY -20.719
+   }
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 16 0 36.515
+   }
+  }
+ }
+ SP05_Liivalahti {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 325
+   }
+  }
+  coords 6489.521 7.5 6861.593
+  angleY 36.072
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords -8.701 -0.306 53.041
+   }
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords -13.67 0 49.724
+   }
+  }
+ }
+ SP06_Maahelli {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 125
+   }
+  }
+  coords 5692.083 5.6 3732.212
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords -87.615 -1.145 34.559
+   }
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 16 0 49.724
+   }
+  }
+ }
+ SP04_Notkonhelli {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 100
+   }
+  }
+  coords 4698.448 12.862 7506.073
+  angleY -24.563
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 40.107 1.305 -9.645
+    angleY 2.643
+   }
+   GenericEntity {
+    ID "60E09759AD1F42E8"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "60E09759D06062F8"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 16 1.154 49.724
+   }
+  }
+ }
+}

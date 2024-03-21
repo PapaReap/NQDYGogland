@@ -1,0 +1,22 @@
+GameProject {
+ ID "NQDYGogland"
+ GUID "60E01D6A8FD03868"
+ TITLE "NQDYGogland"
+ Dependencies {
+  "5CD4956FB405C585" "58D0FB3206B6F859" "5D6EA74A94173EDF" "5D6EBC81EB1842EF" "5964E0B3BB7410CE"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

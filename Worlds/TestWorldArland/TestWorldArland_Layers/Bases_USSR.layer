@@ -1,0 +1,142 @@
+PR_SpawnPatrolTrigger {
+ coords 1048.225 39.002 2477.453
+ m_sOwnerFactionKey "US"
+ GroupSide US
+ waypointPosition {
+  ""
+ }
+}
+SCR_CharacterTriggerEntity : "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et" {
+ coords 1719.066 39.001 2842.563
+}
+$grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_USSR.et" {
+ Base01_Rivinkallio_ussr {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 400
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+   }
+   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+    m_iSupplies 175
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2584.815 12.351 3147.421
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords 21.381 0 10.112
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_iRespawnPeriod 30
+      m_fAILimitThreshold 0.66
+     }
+    }
+    coords -289.973 2.405 -83.616
+    Flags 3
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 263.493 -3.534 135.725
+      CompletionRadius 150
+     }
+    }
+   }
+   $grp GenericEntity : "{CE8211EE99C0EF28}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Reinforce_USSR.et" {
+    PR_AmbientPatrolSpawnpoint_Reinforce_USSR_testing {
+     components {
+      SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+       m_eGroupType SQUAD_RIFLE
+       m_iRespawnWaves 0
+       m_iGroupMultiplier 1
+       m_bBalanceOnPlayersCount 1
+       m_iDefaultPlayerCountForScaling 4
+      }
+     }
+     coords 102.126 -0.005 -221.078
+    }
+    PR_AmbientPatrolSpawnpoint_Reinforce_USSR_testing2 {
+     components {
+      SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+       m_eGroupType SQUAD_RIFLE
+       m_iRespawnWaves 0
+       m_iGroupMultiplier 1
+      }
+     }
+     coords 83.875 -0.001 -164.33
+    }
+   }
+  }
+ }
+ Base12_Reactor_ussr {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 400
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+   }
+   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+    m_iSupplies 25
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2753.019 88.871 2214.353
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords 0.046 -0.057 2.788
+   }
+   GenericEntity {
+    ID "60E0714912226671"
+    coords -4.746 0 -10.477
+   }
+   GenericEntity {
+    ID "60E0714938383856"
+    coords 0 0 43.987
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_iRespawnPeriod 30
+      m_fAILimitThreshold 0.66
+      m_iGroupMultiplier 1
+     }
+    }
+    coords -310.239 12.659 -431.291
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 294.393 -12.659 429.854
+      CompletionRadius 60
+     }
+    }
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E07149C1F0CAD3"
+    coords -6.677 0 -14.33
+   }
+  }
+ }
+}
+SCR_CharacterTriggerEntity : "{9DB5EBFFEC1A54B4}Prefabs/ScenarioFramework/Triggers/TriggerAnyPlayerSlow.et" {
+ coords 1658.184 39 2848.319
+}

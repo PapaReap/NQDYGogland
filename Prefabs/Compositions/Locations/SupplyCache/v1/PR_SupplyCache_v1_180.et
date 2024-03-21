@@ -1,0 +1,69 @@
+GenericEntity {
+ ID "60E6449300E1164B"
+ components {
+  RplComponent "{60E64491698AB2ED}" {
+  }
+  Hierarchy "{60E644916C6E045D}" {
+  }
+ }
+ {
+  GenericEntity StorageBase : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+   ID "60E6449300E11646"
+   components {
+    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+     m_bOrientChildrenToTerrain 0
+    }
+    Hierarchy "{5DD88AA44C03D98C}" {
+     Enabled 1
+    }
+   }
+   coords 0 0 0
+   {
+    GenericEntity SupplyCache_180 : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+     ID "60E6449300E116BB"
+     components {
+      SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+       m_aContainers {
+        SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+         m_vBoundingVolumeMins -1.987 0 -1.584
+         m_vBoundingVolumeMaxs 1.996 1.341 1.666
+        }
+       }
+      }
+      Hierarchy "{5DD88DAE2FE5459F}" {
+      }
+     }
+     coords 0 0 0
+     {
+      GenericEntity : "{B1017A36B1F2229E}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V6_storage.et" {
+       ID "60E6449300E116B2"
+       coords -0.896 0 -0.675
+       angleY 93.403
+      }
+      $grp GenericEntity : "{D07C2D4844753F76}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_storage.et" {
+       {
+        ID "60E6449300E116BF"
+        coords -1.661 0 0.658
+        angleY 90.403
+       }
+       {
+        ID "60E6449300E1EC6B"
+        coords 0.333 0 0.176
+        angleY -18.597
+       }
+      }
+     }
+    }
+    GenericEntity : "{D925ED033D4BB0DD}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_Wall_01_Supplies_FIA.et" {
+     ID "60E6449300E116B9"
+     components {
+      Hierarchy "{5E6AF6CE8E7BB992}" {
+      }
+     }
+     coords -1.529 1.358 -1.342
+     angleY -0.821
+    }
+   }
+  }
+ }
+}

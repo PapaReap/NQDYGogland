@@ -1,0 +1,21 @@
+SCR_FactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/FactionManager_Base.et" {
+ ID "56B2B4776E6E4499"
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" : "{5EB46557DF2AA24F}Configs/Factions/US.conf" {
+   "Identity of soldiers" FactionIdentity "{570D128F4022EF5A}" {
+    VisualIdentityArray {
+     VisualIdentity "{570CE64C790A3C7D}" {
+      Head "{EAF055495BA85CA1}Prefabs/Characters/Heads/Head_White_02.et"
+      Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
+     }
+    }
+   }
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" : "{09727032415AC39B}Configs/Factions/USSR.conf" {
+   m_bIsPlayable 0
+  }
+  SCR_Faction "{56DEAC40D132400B}" : "{8053DB656DD18B14}Configs/Factions/FIA.conf" {
+   m_bIsPlayable 0
+  }
+ }
+}

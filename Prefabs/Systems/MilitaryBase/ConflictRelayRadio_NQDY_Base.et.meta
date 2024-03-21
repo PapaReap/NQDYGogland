@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{DB04D6564D4AB421}Prefabs/Systems/MilitaryBase/ConflictRelayRadio_NQDY_Base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

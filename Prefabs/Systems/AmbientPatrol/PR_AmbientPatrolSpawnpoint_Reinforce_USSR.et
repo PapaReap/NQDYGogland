@@ -1,0 +1,26 @@
+GenericEntity : "{1E4C8AD00BBB16AA}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_Base.et" {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+   m_eGroupType FIRETEAM
+   m_iRespawnPeriod 300
+   m_iRespawnWaves 2
+   m_iGroupMultiplier 3
+  }
+  SCR_FactionAffiliationComponent "{5CCEC6039525B984}" {
+   "faction affiliation" "USSR"
+  }
+ }
+ {
+  SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+   ID "60E0714CB980C8E9"
+   components {
+    Hierarchy "{60E2393BAF587960}" {
+    }
+   }
+   coords 0 0 0.042
+   AIBehaviorTreeMoveTo "{A3755C1F88DED8D6}AI/BehaviorTrees/Waypoints/WP_Move.bt"
+   CompletionRadius 125
+  }
+ }
+}

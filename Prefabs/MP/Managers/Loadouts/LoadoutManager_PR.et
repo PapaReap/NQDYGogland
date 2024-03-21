@@ -1,0 +1,83 @@
+SCR_LoadoutManager {
+ ID "5DD02D5508BE953D"
+ components {
+  RplComponent "{5DD02D5508BE9537}" {
+   Streamable Disabled
+  }
+ }
+ Flags 0
+ m_aPlayerLoadouts {
+  SCR_PlayerArsenalLoadout "{5DD02D54EAF45228}" {
+   m_sLoadoutName "Saved Loadout"
+   m_sLoadoutResource "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et"
+   m_sLoadoutImage "{2B0877799B9B6C66}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Rifleman.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D548E4E3BEA}" {
+   m_sLoadoutName "US Squad Leader"
+   m_sLoadoutResource "{E45F1E163F5CA080}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_SL.et"
+   m_sLoadoutImage "{E66FEBD3F049BF7D}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_SL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D54AE238857}" {
+   m_sLoadoutName "US Machine Gunner"
+   m_sLoadoutResource "{1623EA3AEFACA0E4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_MG.et"
+   m_sLoadoutImage "{D68798DF09F5BE8E}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_MG.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D547DBF4BB0}" {
+   m_sLoadoutName "US Grenadier"
+   m_sLoadoutResource "{84029128FA6F6BB9}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_GL.et"
+   m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D547F3EDD7C}" {
+   m_sLoadoutName "US AT"
+   m_sLoadoutResource "{27BF1FF235DD6036}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_LAT.et"
+   m_sLoadoutImage "{278C426C1D3B4C27}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_LAT.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D547B81725A}" {
+   m_sLoadoutName "US Medic"
+   m_sLoadoutResource "{C9E4FEAF5AAC8D8C}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Medic.et"
+   m_sLoadoutImage "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D57C3F7453C}" {
+   m_sLoadoutName "US Team Leader"
+   m_sLoadoutResource "{E398E44759DA1A43}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TL.et"
+   m_sLoadoutImage "{34E9DBD5693E1B7F}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_TL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D57CDBD7036}" {
+   m_sLoadoutName "US Rifleman"
+   m_sLoadoutResource "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et"
+   m_sLoadoutImage "{2B0877799B9B6C66}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Rifleman.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D57ADE5BCFE}" {
+   m_sLoadoutName "US Auto Rifleman"
+   m_sLoadoutResource "{5B1996C05B1E51A4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AR.et"
+   m_sLoadoutImage "{43EA535E240F0B17}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_AR.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D57AF9C0969}" {
+   m_sLoadoutName "US RTO"
+   m_sLoadoutResource "{3726077BE60962FF}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_RTO.et"
+   m_sLoadoutImage "{099045EADC8BD971}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_RTO.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D57A9A20989}" {
+   m_sLoadoutName "US Sniper"
+   m_sLoadoutResource "{0F6689B491641155}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Sniper.et"
+   m_sLoadoutImage "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5DD02D573BE58A89}" {
+   m_sLoadoutName "US Spotter"
+   m_sLoadoutResource "{1CA3D30464EE4674}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Spotter.et"
+   m_sLoadoutImage "{0F7FF26A2EA503A0}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Spotter.edds"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}

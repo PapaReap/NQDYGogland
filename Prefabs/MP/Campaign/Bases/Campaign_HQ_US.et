@@ -1,0 +1,13 @@
+GenericEntity : "{BB6A8F2AACE9D7F0}Prefabs/MP/Campaign/Bases/Campaign_HQ_US.et" {
+ ID "558894DAB3D95544"
+ {
+  GenericEntity {
+   ID "566E9442C5E96BE7"
+   components {
+    ActionsManagerComponent "{5476B36C403D4CC0}" {
+     Enabled 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,39 @@
+$grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
+ SP01_Pohjoissivunkallio {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 208.446 1 52.549
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0.325 -3
+   }
+  }
+ }
+ SP02_Korkiala_needRelay {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 220
+   }
+  }
+  coords 230.653 1 230.28
+ }
+}

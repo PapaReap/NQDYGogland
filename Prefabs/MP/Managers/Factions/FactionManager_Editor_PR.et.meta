@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{1CF6B6B42C869F13}Prefabs/MP/Managers/Factions/FactionManager_Editor_PR.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

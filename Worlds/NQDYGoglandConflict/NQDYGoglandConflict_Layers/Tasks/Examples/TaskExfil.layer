@@ -1,0 +1,44 @@
+GenericEntity Area_A_TE : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ components {
+  SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+   m_sTriggerResource "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et"
+   m_iDynamicDespawnRange 300
+  }
+ }
+ coords 5080.336 12 10300.522
+ Flags 2097155
+ {
+  GenericEntity LayerTaskMove_1_TE : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+     m_sTaskTitle "Task Exfil"
+     m_sTaskDescription "Move to exfil area and wait"
+    }
+   }
+   coords -1.076 0.167 -4.739
+   Flags 2097155
+   {
+    GenericEntity SlotExtraction_1_TE : "{9C47DECB98FDA4DA}Prefabs/ScenarioFramework/Components/SlotExtraction.et" {
+     components {
+      SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+       m_aPlugins {
+        SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+         m_fAreaRadius 10
+         m_fMinimumPlayersNeededPercentage 1
+         m_fActivationCountdownTimer 15
+         m_bNotificationEnabled 1
+         m_sPlayerActivationNotificationTitle "%1 out of %2 players needed reached exfil point"
+         m_bEnableAudio 1
+         m_sCountdownAudio "SOUND_RESPAWNMENU"
+        }
+       }
+       m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et"
+      }
+     }
+     coords 0.139 0.014 -0.887
+     Flags 2097155
+    }
+   }
+  }
+ }
+}

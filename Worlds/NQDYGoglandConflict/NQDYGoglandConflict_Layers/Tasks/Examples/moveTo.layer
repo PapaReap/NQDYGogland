@@ -1,0 +1,42 @@
+GenericEntity Area2 : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ components {
+  SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+   m_fAreaRadius 63.452
+   m_iDynamicDespawnRange 300
+   m_bShowDebugShapesInWorkbench 1
+  }
+ }
+ coords 5087.349 12.781 10324.83
+ Flags 2097155
+ {
+  GenericEntity LayerTaskMove1 : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+     m_sTaskTitle "Task move 1"
+     m_sTaskDescription "Move here in order to spawn LayerTaskClearArea_1"
+    }
+   }
+   coords -1.076 0.027 -4.739
+   Flags 2097155
+   {
+    GenericEntity : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+     components {
+      SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+       m_aPlugins {
+        SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+         m_eActivationPresence PLAYER
+        }
+       }
+      }
+     }
+     coords 0.122 0.967 -0.784
+     Flags 2097155
+    }
+   }
+  }
+  SCR_ScenarioFrameworkLogicCounter LogicCounter1 : "{6C1792C71DCAFD55}Prefabs/ScenarioFramework/Components/LogicCounter.et" {
+   coords 0 0.001 0
+   Flags 2097155
+  }
+ }
+}

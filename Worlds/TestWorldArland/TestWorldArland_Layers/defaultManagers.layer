@@ -1,0 +1,566 @@
+SCR_AIWorld AIWorld_Gogland : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
+ components {
+  AIBirdManagerComponent "{5CC2D99CC5111D80}" {
+   CheckAnimalTime 10
+  }
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5AF8B9A1D80D8DFA}" : "{568C7122442FC9F2}Configs/Navmesh/Navmesh_CTI_Campaign_Eden_Soldier.conf" {
+     NavmeshFile "{E0E9D55644237D27}worlds/MP/Navmeshes/CTI_Campaign_Arland.nmn"
+     NavmeshFileOveride {
+      ""
+     }
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{598EDE772036D79B}" : "{A3D6AEFB172D819C}Configs/Navmesh/Navmesh_CTI_Campaign_Eden_Vehicle.conf" {
+     NavmeshFileOveride {
+      "{20E5B728C88940C2}Worlds/Gamemaster/Navmeshes/gogland_navmesh.nmn"
+     }
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{804386FFEB7B7EFD}worlds/MP/Navmeshes/LowResArland.nmn"
+    }
+   }
+  }
+ }
+ coords 761.565 40.453 2649.96
+ LimitOfSpawnedAIAgents 420
+}
+RadioManagerEntity {
+ coords 4820.854 27.47 11589.093
+ Flags 2097155
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 759.984 40.787 2652.042
+}
+SCR_GameModeCampaign GameMode_Campaign1 : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ components {
+  EPF_PersistenceManagerComponent "{60C364E02FB2B6D6}" {
+   components {
+    EPF_PersistentDoorStateManagerComponent "{60C37013DA0B3FDC}" {
+    }
+    SCR_RespawnSystemComponent "{60C578151B46EEB5}" {
+     components {
+      SCR_FreeSpawnHandlerComponent "{60C578157E6C917F}" {
+      }
+      SCR_PossessSpawnHandlerComponent "{60C578168CDEE0B9}" {
+      }
+      SCR_SpawnPointSpawnHandlerComponent "{60C57816951258DC}" {
+      }
+     }
+     m_SpawnLogic SCR_MenuSpawnLogic "{60C5781522A01F4B}" {
+     }
+     m_fDeployMenuOpenDelay 10
+    }
+   }
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60C364E04369EBF7}" {
+    m_sDatabaseName "NQDYCampaignEdenPersist"
+   }
+  }
+  SCR_CommandingManagerComponent "{5D16783AFAE684F8}" {
+   m_iMaxAIPerGroup 3
+  }
+  SCR_DataCollectorComponent "{5ADE83EE64329989}" {
+   m_bOptionalKicking 1
+  }
+  SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_fDOTScale 0.5
+   m_fRegenScale 1.25
+   m_fTourniquetStrengthMultiplier 0.4
+   m_fCompartmentRegenerationRateMultiplier 5
+   m_fRegenerationMaxLoadoutWeight 60
+  }
+  SCR_GameModeSFManager "{60D68E14F30FB0C5}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{60D68E14F74DF57F}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F723764F}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F70D6FB2}" {
+     m_eTypeOfTask DEFEND
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4E0735A}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4C722DA}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4A22890}" {
+     m_eTypeOfTask LAST
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F48DA0C9}" {
+     m_eTypeOfTask EXTRACTION
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F46A2BC0}" {
+     m_eTypeOfTask DEFAULT
+    }
+   }
+   m_iMaxNumberOfTasks 100
+   m_bDynamicDespawn 1
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+  }
+  SCR_RepairSupportStationComponent "{60B20C3951B5BBED}" {
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
+   m_fDeployMenuOpenDelay 10
+  }
+  SCR_RespawnTimerComponent "{5B2A94A0E605AAFF}" {
+   m_fRespawnTime 45
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5CC49B5A1313B84E}" {
+   m_iStartingHours 6
+   m_bRandomStartingDaytime 0
+   m_fDayTimeAcceleration 1
+  }
+  SCR_VotingManagerComponent "{5650BB6B6089393A}" {
+   m_aVotingTemplates {
+    SCR_VotingKick "{58EA836E8F9304A4}" {
+     m_fThreshold 0.667
+     m_iMinParticipation 0.667
+    }
+   }
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
+   m_sXPRewardsConfig "{8227B4636C73C5B5}Configs/Campaign/CampaignXPRewards.conf"
+  }
+ }
+ coords 759.771 40.913 2652.967
+ m_iControlPointsThreshold 14
+ m_iSuppliesReplenishThreshold 0
+ m_iQuickSuppliesReplenishThreshold 0
+ m_fQuickSuppliesReplenishMultiplier 2
+ m_iSuppliesArrivalInterval 10
+ m_iRegularSuppliesIncome 2
+ m_iRegularSuppliesIncomeExtra 0
+ m_iMinStartingSupplies 25
+ m_iMaxStartingSupplies 175
+ m_iSpawnCost 80
+ m_iSupplyDepotIconThreshold 600
+ m_iSuicideRespawnDelay 60
+}
+ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+ coords 753.324 40.63 2648.623
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 754.347 40.673 2649.265
+ Flags 3
+}
+SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 758.494 40.786 2651.66
+ Factions {
+  SCR_CampaignFaction "{50B30C3AF4BFD934}" {
+   m_bIsPlayable 0
+  }
+  SCR_CampaignFaction "{50B30C3ADB052C80}" {
+   m_aRanks {
+    SCR_CharacterRank "{60B02285BBAEAA50}" {
+     m_iRank COLONEL
+     m_sRankName "Colonel"
+     m_sRankNameUpper "COLONEL"
+     m_sRankNameShort "Col"
+     m_sInsignia "AR_Rank_OF-4"
+    }
+   }
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0EE815FA292}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{60E29557A990CF42}" {
+       m_sEntityPrefab "{602A3529BE7390D2}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap.et"
+       m_aEntityDataList {
+        SCR_EntityCatalogEditorData "{60E23922C34A856C}" {
+         m_eValidEditorModes 33
+        }
+        SCR_EntityCatalogSpawnerData "{60E23922E7BEAC48}" {
+         m_eSlotTypes GROUP_SMALL
+        }
+        SCR_EntityCatalogLoadoutData "{60E26DD2F93676ED}" {
+         m_fSpawnSupplyCost 197
+        }
+       }
+      }
+      SCR_EntityCatalogEntry "{60E29557AFEB00CD}" {
+       m_sEntityPrefab "{F77FCC8B17800579}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap_ext.et"
+       m_aEntityDataList {
+        SCR_EntityCatalogEditorData "{60E275A1D594D644}" {
+         m_eValidEditorModes 33
+        }
+        SCR_EntityCatalogSpawnerData "{60E275A1E1AE4DFE}" {
+         m_eSlotTypes GROUP_SMALL
+        }
+        SCR_EntityCatalogLoadoutData "{60E275A1F23F0E24}" {
+         m_fSpawnSupplyCost 294
+        }
+       }
+      }
+      SCR_EntityCatalogEntry "{60E29557ACD71821}" {
+       m_sEntityPrefab "{0ED18E1A4D3808C6}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX.et"
+       m_aEntityDataList {
+        SCR_EntityCatalogEditorData "{60E275A71F24F841}" {
+         m_eValidEditorModes 33
+        }
+        SCR_EntityCatalogSpawnerData "{60E275A72BDE7F03}" {
+         m_eSlotTypes GROUP_SMALL
+        }
+        SCR_EntityCatalogLoadoutData "{60E275A730097EA9}" {
+         m_fSpawnSupplyCost 200
+        }
+       }
+      }
+     }
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{6056BD5F6A436153}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{5DF69575F4160EE2}" {
+         m_aEntityDataList {
+          SCR_EntityCatalogLoadoutData "{608AAACB83789355}" {
+           m_fSpawnSupplyCost 48
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EEB3F124F9}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{5C68AD59AB9FBDDC}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7D8EA121E09}" {
+         m_sEntityPrefab "{3E413771E1834D2F}Prefabs/Weapons/Rifles/M16/Rifle_M16A2.et"
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7D8E95012DA}" {
+         m_sEntityPrefab "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et"
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7D8128DB218}" {
+         m_sEntityPrefab "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7D8E99F4654}" {
+         m_bEnabled 0
+        }
+       }
+      }
+     }
+    }
+   }
+   m_aBaseCallsigns {
+    SCR_MilitaryBaseCallsign "{60AC9235B3425E40}" {
+     m_sCallsign "Yellostone"
+     m_sCallsignShort "Yellostone"
+     m_sCallsignUpperCase "YELLOWSTONE"
+     m_iSignalIndex 40
+    }
+    SCR_MilitaryBaseCallsign "{60AC923455142AEB}" {
+     m_sCallsign "New Jersey"
+     m_sCallsignShort "New Jersey"
+     m_sCallsignUpperCase "NEW JERSEY"
+     m_iSignalIndex 41
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345A8AB232}" {
+     m_sCallsign "New Mexico"
+     m_sCallsignShort "New Mexico"
+     m_sCallsignUpperCase "NEW MEXICO"
+     m_iSignalIndex 42
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345A444F77}" {
+     m_sCallsign "North Carolina"
+     m_sCallsignShort "North Carolina"
+     m_sCallsignUpperCase "NORTH CAROLINA"
+     m_iSignalIndex 43
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345A1CD8F5}" {
+     m_sCallsign "North Dakota"
+     m_sCallsignShort "North Dakota"
+     m_sCallsignUpperCase "NORTH DAKOTA"
+     m_iSignalIndex 44
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345BDF8563}" {
+     m_sCallsign "Rhode Island"
+     m_sCallsignShort "Rhode Island"
+     m_sCallsignUpperCase "RHODE ISLAND"
+     m_iSignalIndex 45
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345B9EF935}" {
+     m_sCallsign "South Carolina"
+     m_sCallsignShort "South Carolina"
+     m_sCallsignUpperCase "SOUTH CAROLINA"
+     m_iSignalIndex 46
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345B57127C}" {
+     m_sCallsign "South Dakota"
+     m_sCallsignShort "South Dakota"
+     m_sCallsignUpperCase "SOUTH DAKOTA"
+     m_iSignalIndex 47
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345B13560B}" {
+     m_sCallsign "Tennessee"
+     m_sCallsignShort "Tennessee"
+     m_sCallsignUpperCase "TENNESSEE"
+     m_iSignalIndex 48
+    }
+    SCR_MilitaryBaseCallsign "{60AC923458DF5D22}" {
+     m_sCallsign "West Virginia"
+     m_sCallsignShort "West Virginia"
+     m_sCallsignUpperCase "WEST VIRGINIA"
+     m_iSignalIndex 49
+    }
+    SCR_MilitaryBaseCallsign "{60AC9234589A7D51}" {
+     m_sCallsign "Los Angeles"
+     m_sCallsignShort "Los Angeles"
+     m_sCallsignUpperCase "LOS ANGELES"
+     m_iSignalIndex 50
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345E8C329C}" {
+     m_sCallsign "Chicago"
+     m_sCallsignShort "Chicago"
+     m_sCallsignUpperCase "CHICAGO"
+     m_iSignalIndex 51
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345E714AF4}" {
+     m_sCallsign "Houston"
+     m_sCallsignShort "Houston"
+     m_sCallsignUpperCase "HOUSTON"
+     m_iSignalIndex 52
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345E232E4F}" {
+     m_sCallsign "Phoenix"
+     m_sCallsignShort "Phoenix"
+     m_sCallsignUpperCase "PHOENIX"
+     m_iSignalIndex 53
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345FE9E365}" {
+     m_sCallsign "Philadelphia"
+     m_sCallsignShort "Philadelphia"
+     m_sCallsignUpperCase "PHILADELPHIA"
+     m_iSignalIndex 54
+    }
+    SCR_MilitaryBaseCallsign "{60AC92345FDFA3BE}" {
+     m_sCallsign "San Antonio"
+     m_sCallsignShort "San Antonio"
+     m_sCallsignUpperCase "SAN ANTONIO"
+     m_iSignalIndex 55
+    }
+    SCR_MilitaryBaseCallsign "{60AC923334888B6D}" {
+     m_sCallsign "San Diego"
+     m_sCallsignShort "San Diego"
+     m_sCallsignUpperCase "SAN DIEGO"
+     m_iSignalIndex 56
+    }
+    SCR_MilitaryBaseCallsign "{60AC9233342F32EF}" {
+     m_sCallsign "Dallas"
+     m_sCallsignShort "Dallas"
+     m_sCallsignUpperCase "DALLAS"
+     m_iSignalIndex 57
+    }
+    SCR_MilitaryBaseCallsign "{60AC923335F53447}" {
+     m_sCallsign "San Jose"
+     m_sCallsignShort "San Jose"
+     m_sCallsignUpperCase "SAN JOSE"
+     m_iSignalIndex 58
+    }
+    SCR_MilitaryBaseCallsign "{60AC9233359F53B4}" {
+     m_sCallsign "Austin"
+     m_sCallsignShort "Austin"
+     m_sCallsignUpperCase "AUSTIN"
+     m_iSignalIndex 59
+    }
+    SCR_MilitaryBaseCallsign "{60AC9233352A2F3A}" {
+     m_sCallsign "Seattle"
+     m_sCallsignShort "Seattle"
+     m_sCallsignUpperCase "SEATTLE"
+     m_iSignalIndex 60
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333AE2CF58}" {
+     m_sCallsign "Denver"
+     m_sCallsignShort "Denver"
+     m_sCallsignUpperCase "DENVER"
+     m_iSignalIndex 61
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333ABFD7AF}" {
+     m_sCallsign "Las Vegas"
+     m_sCallsignShort "Las Vegas"
+     m_sCallsignUpperCase "LAS VEGAS"
+     m_iSignalIndex 62
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333A73859B}" {
+     m_sCallsign "Baltimore"
+     m_sCallsignShort "Baltimore"
+     m_sCallsignUpperCase "BALTIMORE"
+     m_iSignalIndex 63
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333A0DF56A}" {
+     m_sCallsign "New Orleans"
+     m_sCallsignShort "New Orleans"
+     m_sCallsignUpperCase "NEW ORLEANS"
+     m_iSignalIndex 64
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333BCC0ED6}" {
+     m_sCallsign "Yosemite"
+     m_sCallsignShort "Yosemite"
+     m_sCallsignUpperCase "YOSEMITE"
+     m_iSignalIndex 65
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333B82AD62}" {
+     m_sCallsign "Fresno"
+     m_sCallsignShort "Fresno"
+     m_sCallsignUpperCase "FRESNO"
+     m_iSignalIndex 66
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333B59770F}" {
+     m_sCallsign "Omaha"
+     m_sCallsignShort "Omaha"
+     m_sCallsignUpperCase "OMAHA"
+     m_iSignalIndex 67
+    }
+    SCR_MilitaryBaseCallsign "{60AC92333B1CCB60}" {
+     m_sCallsign "Tulsa"
+     m_sCallsignShort "Tulsa"
+     m_sCallsignUpperCase "TULSA"
+     m_iSignalIndex 3
+    }
+   }
+   m_aStartingVehicles {
+    "{3F2AA823B6C65E1E}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_MERDC.et" "{DD774A8FD0989A78}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MERDC.et" "{86D830868F026D54}Prefabs/Vehicles/Wheeled/M151A2/M151A2_MERDC.et"
+   }
+  }
+  SCR_CampaignFaction "{56F0C3A6336375DC}" {
+   UIInfo SCR_FactionUIInfo "{5570936866E0AD08}" {
+   }
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0EABE8B7B2A}" {
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EABB80080C}" {
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EAB887A0C4}" {
+    }
+   }
+  }
+ }
+ m_aRanks {
+  SCR_RankIDCampaign "{5CB0777E803B7EA2}" {
+   m_iRequiredXP 500
+  }
+  SCR_RankIDCampaign "{5CB0777E8F0E82AF}" {
+   m_iRequiredXP 1300
+  }
+  SCR_RankIDCampaign "{5CB0777E8BE66EC2}" {
+   m_iRequiredXP 2400
+  }
+  SCR_RankIDCampaign "{5CB0777E8AD658D6}" {
+   m_iRequiredXP 3800
+   m_iRequestCD 900
+  }
+  SCR_RankIDCampaign "{5CB0777E88380770}" {
+   m_iRequiredXP 5500
+   m_iRequestCD 900
+  }
+  SCR_RankIDCampaign "{60B0228606853055}" {
+   m_iRank COLONEL
+   m_iRequiredXP 11000
+   m_iRadioRespawnCooldown 27
+   m_iFastTravelCooldown 240
+  }
+ }
+}
+ItemPreviewManagerEntity ItemPreviewManagerEntity1 {
+ coords 762.47 40.749 2652.763
+ PreviewWorld "{4391FE7994EE6FE2}Prefabs/World/Game/InventoryPreviewWorld.et"
+ DefaultRenderAttributes PreviewRenderAttributes "{52EF3E2AF2E07544}" {
+ }
+}
+SCR_BaseTaskManager {
+ coords 757.507 40.609 2649.745
+}
+SCR_MapLocator {
+ coords 758.339 40.495 2649.046
+ m_WorldDirections SCR_MapLocationQuadHint "{5AAA8B37D1168EEB}" : "{ABA21F381437DFE8}Configs/Map/MapLocatorHints/LocationHintsEveron.conf" {
+ }
+}
+HitRegistrationManager HitRegManager1 : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
+ coords 761.075 41.024 2654.482
+}
+BasePreloadManager PreloadManager_Campaign1 : "{32BFDCDE99092FCE}Prefabs/World/Game/PreloadManager_Campaign.et" {
+ coords 759.211 40.879 2652.518
+}
+SCR_BaseTaskManager : "{576572CA95E0A7E8}Prefabs/MP/Campaign/PR_SFCampaignTaskManager.et" {
+ coords 756.674 40.631 2649.717
+}
+SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+ coords 757.871 40.472 2648.747
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5690D9DB9BA76597}" {
+  }
+  SCR_FactionPlayerLoadout "{5690D9DB9400735C}" {
+   m_sLoadoutResource "{305087F7627D5B0C}Prefabs/Characters/Campaign/Final/CPR_USSR_Player.et"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11BF78EF03}" {
+   m_sLoadoutName "Grenadier [PapaReap]"
+   m_sLoadoutResource "{602A3529BE7390D2}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A4547FC1}" {
+   m_sLoadoutName "Medic [DTRAX]"
+   m_sLoadoutResource "{0ED18E1A4D3808C6}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D65E117C52FB57}" {
+   m_sLoadoutName "AR (JohnnyReap)"
+   m_sLoadoutResource "{2F444C9C704A816A}Prefabs/Characters/Campaign/Final/US_MG_Johnny.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60B03789D012E242}" {
+   m_sLoadoutName "MG [Peace]"
+   m_sLoadoutResource "{9A268D4C24563145}Prefabs/Characters/Campaign/Final/CPR_US_Player_MGPeace.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D812B87350D820}" {
+   m_sLoadoutName "Grenadier (Sarge)"
+   m_sLoadoutResource "{9257B476F380E16E}Prefabs/Characters/Campaign/Final/US_Grenadier_Sarge.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A3BACB4C}" {
+   m_sLoadoutName "AT"
+   m_sLoadoutResource "{69024316ECB38006}Prefabs/Characters/Campaign/Final/CPR_US_Player_AT.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A6D00E35}" {
+   m_sLoadoutName "Sniper"
+   m_sLoadoutResource "{828B0DD9661E1457}Prefabs/Characters/Campaign/Final/CPR_US_Player_Sniper.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60E275A1059472F2}" {
+   m_sLoadoutName "Grenadier [PapaReap] ext"
+   m_sLoadoutResource "{F77FCC8B17800579}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap_ext.et"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}

@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{B66CF4758DB1FF76}Prefabs/Characters/Campaign/Final/Campaign_US_Player_Template.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

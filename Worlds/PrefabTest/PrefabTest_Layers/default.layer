@@ -1,0 +1,285 @@
+GenericWorldEntity world {
+ BSP 520 1 21 1 256 0 0 2 129 2 0 3 66 0 17000 4 35 2 17000 5 20 0 25500 6 13 2 25500 7 10 0 29750 8 9 2 29750 -1 -1 2 29750 -1 -1 0 29750 11 12 2 21250 -1 -1 2 21250 -1 -1 2 25500 14 17 0 21250 15 16 2 29750 -1 -1 2 29750 -1 -1 0 21250 18 19 2 21250 -1 -1 2 21250 -1 -1 0 25500 21 28 2 8500 22 25 0 29750 23 24 2 12750 -1 -1 2 12750 -1 -1 0 29750 26 27 2 4250 -1 -1 2 4250 -1 -1 2 8500 29 32 0 21250 30 31 2 12750 -1 -1 2 12750 -1 -1 0 21250 33 34 2 4250 -1 -1 2 4250 -1 -1 2 17000 36 51 0 8500 37 44 2 25500 38 41 0 12750 39 40 2 29750 -1 -1 2 29750 -1 -1 0 12750 42 43 2 21250 -1 -1 2 21250 -1 -1 2 25500 45 48 0 4250 46 47 2 29750 -1 -1 2 29750 -1 -1 0 4250 49 50 2 21250 -1 -1 2 21250 -1 -1 0 8500 52 59 2 8500 53 56 0 12750 54 55 2 12750 -1 -1 2 12750 -1 -1 0 12750 57 58 2 4250 -1 -1 2 4250 -1 -1 2 8500 60 63 0 4250 61 62 2 12750 -1 -1 2 12750 -1 -1 0 4250 64 65 2 4250 -1 -1 2 4250 -1 -1 0 17000 67 98 2 -17000 68 83 0 25500 69 76 2 -8500 70 73 0 29750 71 72 2 -4250 -1 -1 2 -4250 -1 -1 0 29750 74 75 2 -12750 -1 -1 2 -12750 -1 -1 2 -8500 77 80 0 21250 78 79 2 -4250 -1 -1 2 -4250 -1 -1 0 21250 81 82 2 -12750 -1 -1 2 -12750 -1 -1 0 25500 84 91 2 -25500 85 88 0 29750 86 87 2 -21250 -1 -1 2 -21250 -1 -1 0 29750 89 90 2 -29750 -1 -1 2 -29750 -1 -1 2 -25500 92 95 0 21250 93 94 2 -21250 -1 -1 2 -21250 -1 -1 0 21250 96 97 2 -29750 -1 -1 2 -29750 -1 -1 2 -17000 99 114 0 8500 100 107 2 -8500 101 104 0 12750 102 103 2 -4250 -1 -1 2 -4250 -1 -1 0 12750 105 106 2 -12750 -1 -1 2 -12750 -1 -1 2 -8500 108 111 0 4250 109 110 2 -4250 -1 -1 2 -4250 -1 -1 0 4250 112 113 2 -12750 -1 -1 2 -12750 -1 -1 0 8500 115 122 2 -25500 116 119 0 12750 117 118 2 -21250 -1 -1 2 -21250 -1 -1 0 12750 120 121 2 -29750 -1 -1 2 -29750 -1 -1 2 -25500 123 126 0 4250 124 125 2 -21250 -1 -1 2 -21250 -1 -1 0 4250 127 128 2 -29750 -1 -1 2 -29750 -1 -1 2 0 130 193 0 -17000 131 162 2 17000 132 147 0 -8500 133 140 2 25500 134 137 0 -4250 135 136 2 29750 -1 -1 2 29750 -1 -1 0 -4250 138 139 2 21250 -1 -1 2 21250 -1 -1 2 25500 141 144 0 -12750 142 143 2 29750 -1 -1 2 29750 -1 -1 0 -12750 145 146 2 21250 -1 -1 2 21250 -1 -1 0 -8500 148 155 2 8500 149 152 0 -4250 150 151 2 12750 -1 -1 2 12750 -1 -1 0 -4250 153 154 2 4250 -1 -1 2 4250 -1 -1 2 8500 156 159 0 -12750 157 158 2 12750 -1 -1 2 12750 -1 -1 0 -12750 160 161 2 4250 -1 -1 2 4250 -1 -1 2 17000 163 178 0 -25500 164 171 2 25500 165 168 0 -21250 166 167 2 29750 -1 -1 2 29750 -1 -1 0 -21250 169 170 2 21250 -1 -1 2 21250 -1 -1 2 25500 172 175 0 -29750 173 174 2 29750 -1 -1 2 29750 -1 -1 0 -29750 176 177 2 21250 -1 -1 2 21250 -1 -1 0 -25500 179 186 2 8500 180 183 0 -21250 181 182 2 12750 -1 -1 2 12750 -1 -1 0 -21250 184 185 2 4250 -1 -1 2 4250 -1 -1 2 8500 187 190 0 -29750 188 189 2 12750 -1 -1 2 12750 -1 -1 0 -29750 191 192 2 4250 -1 -1 2 4250 -1 -1 0 -17000 194 225 2 -17000 195 210 0 -8500 196 203 2 -8500 197 200 0 -4250 198 199 2 -4250 -1 -1 2 -4250 -1 -1 0 -4250 201 202 2 -12750 -1 -1 2 -12750 -1 -1 2 -8500 204 207 0 -12750 205 206 2 -4250 -1 -1 2 -4250 -1 -1 0 -12750 208 209 2 -12750 -1 -1 2 -12750 -1 -1 0 -8500 211 218 2 -25500 212 215 0 -4250 213 214 2 -21250 -1 -1 2 -21250 -1 -1 0 -4250 216 217 2 -29750 -1 -1 2 -29750 -1 -1 2 -25500 219 222 0 -12750 220 221 2 -21250 -1 -1 2 -21250 -1 -1 0 -12750 223 224 2 -29750 -1 -1 2 -29750 -1 -1 2 -17000 226 241 0 -25500 227 234 2 -8500 228 231 0 -21250 229 230 2 -4250 -1 -1 2 -4250 -1 -1 0 -21250 232 233 2 -12750 -1 -1 2 -12750 -1 -1 2 -8500 235 238 0 -29750 236 237 2 -4250 -1 -1 2 -4250 -1 -1 0 -29750 239 240 2 -12750 -1 -1 2 -12750 -1 -1 0 -25500 242 249 2 -25500 243 246 0 -21250 244 245 2 -21250 -1 -1 2 -21250 -1 -1 0 -21250 247 248 2 -29750 -1 -1 2 -29750 -1 -1 2 -25500 250 253 0 -29750 251 252 2 -21250 -1 -1 2 -21250 -1 -1 0 -29750 254 255 2 -29750 -1 -1 2 -29750 -1 -1 2 101 257 384 0 0 258 321 0 17000 259 290 2 17050 260 275 0 25500 261 268 2 25525 262 265 0 29750 263 264 2 29762 -1 -1 2 29762 -1 -1 0 29750 266 267 2 21288 -1 -1 2 21288 -1 -1 2 25525 269 272 0 21250 270 271 2 29762 -1 -1 2 29762 -1 -1 0 21250 273 274 2 21288 -1 -1 2 21288 -1 -1 0 25500 276 283 2 8576 277 280 0 29750 278 279 2 12813 -1 -1 2 12813 -1 -1 0 29750 281 282 2 4338 -1 -1 2 4338 -1 -1 2 8576 284 287 0 21250 285 286 2 12813 -1 -1 2 12813 -1 -1 0 21250 288 289 2 4338 -1 -1 2 4338 -1 -1 2 17050 291 306 0 8500 292 299 2 25525 293 296 0 12750 294 295 2 29762 -1 -1 2 29762 -1 -1 0 12750 297 298 2 21288 -1 -1 2 21288 -1 -1 2 25525 300 303 0 4250 301 302 2 29762 -1 -1 2 29762 -1 -1 0 4250 304 305 2 21288 -1 -1 2 21288 -1 -1 0 8500 307 314 2 8576 308 311 0 12750 309 310 2 12813 -1 -1 2 12813 -1 -1 0 12750 312 313 2 4338 -1 -1 2 4338 -1 -1 2 8576 315 318 0 4250 316 317 2 12813 -1 -1 2 12813 -1 -1 0 4250 319 320 2 4338 -1 -1 2 4338 -1 -1 0 -17000 322 353 2 17050 323 338 0 -8500 324 331 2 25525 325 328 0 -4250 326 327 2 29762 -1 -1 2 29762 -1 -1 0 -4250 329 330 2 21288 -1 -1 2 21288 -1 -1 2 25525 332 335 0 -12750 333 334 2 29762 -1 -1 2 29762 -1 -1 0 -12750 336 337 2 21288 -1 -1 2 21288 -1 -1 0 -8500 339 346 2 8576 340 343 0 -4250 341 342 2 12813 -1 -1 2 12813 -1 -1 0 -4250 344 345 2 4338 -1 -1 2 4338 -1 -1 2 8576 347 350 0 -12750 348 349 2 12813 -1 -1 2 12813 -1 -1 0 -12750 351 352 2 4338 -1 -1 2 4338 -1 -1 2 17050 354 369 0 -25500 355 362 2 25525 356 359 0 -21250 357 358 2 29762 -1 -1 2 29762 -1 -1 0 -21250 360 361 2 21288 -1 -1 2 21288 -1 -1 2 25525 363 366 0 -29750 364 365 2 29762 -1 -1 2 29762 -1 -1 0 -29750 367 368 2 21288 -1 -1 2 21288 -1 -1 0 -25500 370 377 2 8576 371 374 0 -21250 372 373 2 12813 -1 -1 2 12813 -1 -1 0 -21250 375 376 2 4338 -1 -1 2 4338 -1 -1 2 8576 378 381 0 -29750 379 380 2 12813 -1 -1 2 12813 -1 -1 0 -29750 382 383 2 4338 -1 -1 2 4338 -1 -1 0 237 385 448 2 -16949 386 417 0 17118 387 402 2 -8423 388 395 0 25559 389 392 2 -4161 390 391 0 29779 -1 -1 0 29779 -1 -1 2 -4161 393 394 0 21339 -1 -1 0 21339 -1 -1 0 25559 396 399 2 -12686 397 398 0 29779 -1 -1 0 29779 -1 -1 2 -12686 400 401 0 21339 -1 -1 0 21339 -1 -1 2 -8423 403 410 0 8678 404 407 2 -4161 405 406 0 12898 -1 -1 0 12898 -1 -1 2 -4161 408 409 0 4457 -1 -1 0 4457 -1 -1 0 8678 411 414 2 -12686 412 413 0 12898 -1 -1 0 12898 -1 -1 2 -12686 415 416 0 4457 -1 -1 0 4457 -1 -1 0 17118 418 433 2 -25474 419 426 0 25559 420 423 2 -21211 421 422 0 29779 -1 -1 0 29779 -1 -1 2 -21211 424 425 0 21339 -1 -1 0 21339 -1 -1 0 25559 427 430 2 -29737 428 429 0 29779 -1 -1 0 29779 -1 -1 2 -29737 431 432 0 21339 -1 -1 0 21339 -1 -1 2 -25474 434 441 0 8678 435 438 2 -21211 436 437 0 12898 -1 -1 0 12898 -1 -1 2 -21211 439 440 0 4457 -1 -1 0 4457 -1 -1 0 8678 442 445 2 -29737 443 444 0 12898 -1 -1 0 12898 -1 -1 2 -29737 446 447 0 4457 -1 -1 0 4457 -1 -1 2 -108 449 457 0 -100 -1 450 0 -17050 451 454 0 -8575 452 453 0 -4337 -1 -1 0 -12812 -1 -1 0 -25525 455 456 0 -21287 -1 -1 0 -29762 -1 -1 0 -16881 458 489 2 -17054 459 474 0 -8321 460 467 2 -8581 461 464 0 -4042 462 463 2 -4344 -1 -1 2 -4344 -1 -1 0 -4042 465 466 2 -12817 -1 -1 2 -12817 -1 -1 2 -8581 468 471 0 -12601 469 470 2 -4344 -1 -1 2 -4344 -1 -1 0 -12601 472 473 2 -12817 -1 -1 2 -12817 -1 -1 0 -8321 475 482 2 -25527 476 479 0 -4042 477 478 2 -21290 -1 -1 2 -21290 -1 -1 0 -4042 480 481 2 -29763 -1 -1 2 -29763 -1 -1 2 -25527 483 486 0 -12601 484 485 2 -21290 -1 -1 2 -21290 -1 -1 0 -12601 487 488 2 -29763 -1 -1 2 -29763 -1 -1 2 -17054 490 505 0 -25440 491 498 2 -8581 492 495 0 -21160 493 494 2 -4344 -1 -1 2 -4344 -1 -1 0 -21160 496 497 2 -12817 -1 -1 2 -12817 -1 -1 2 -8581 499 502 0 -29720 500 501 2 -4344 -1 -1 2 -4344 -1 -1 0 -29720 503 504 2 -12817 -1 -1 2 -12817 -1 -1 0 -25440 506 513 2 -25527 507 510 0 -21160 508 509 2 -21290 -1 -1 2 -21290 -1 -1 0 -21160 511 512 2 -29763 -1 -1 2 -29763 -1 -1 2 -25527 514 517 0 -29720 515 516 2 -21290 -1 -1 2 -21290 -1 -1 0 -29720 518 519 2 -29763 -1 -1 2 -29763 -1 -1
+ boundMins -100 -0.004 -108.078
+ boundMaxs 237.62 21.643 101.658
+ blockSize 100 1500 100
+}
+$grp GenericEntity {
+ PR_SupplyCache_v1_500 {
+  components {
+   RplComponent "{60E64491698AB2ED}" {
+   }
+   Hierarchy "{60E644916C6E045D}" {
+   }
+  }
+  coords 32.781 0 0
+  {
+   GenericEntity StorageBase : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+    components {
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+     Hierarchy "{5DD88AA44C03D98C}" {
+      Enabled 1
+     }
+    }
+    coords 0 0 0
+    {
+     GenericEntity SupplyCache_500 : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+      components {
+       SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+        m_aContainers {
+         SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+          m_vBoundingVolumeMins -1.987 0 -1.584
+          m_vBoundingVolumeMaxs 1.996 1.341 1.666
+         }
+        }
+       }
+       Hierarchy "{5DD88DAE2FE5459F}" {
+       }
+      }
+      coords 0 0 0
+      {
+       GenericEntity : "{0E1733FAF9ACCBE8}Prefabs/Props/Military/SupplyBox/SupplyPortableContainers/SupplyPortableContainer_01/SupplyPortableContainers_01_large_storage.et" {
+        coords 0.573 0 0.768
+        angleY -93.597
+       }
+       $grp GenericEntity : "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et" {
+        {
+         coords 1.288 0 0.12
+         angleY -89.085
+        }
+        {
+         coords 1.187 0 -0.977
+         angleY -179.085
+        }
+       }
+       GenericEntity : "{B1017A36B1F2229E}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V6_storage.et" {
+        coords -0.896 0 -0.675
+        angleY 93.403
+       }
+       $grp GenericEntity : "{D07C2D4844753F76}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_storage.et" {
+        {
+         coords -1.661 0 0.658
+         angleY 90.403
+        }
+        {
+         coords 0.333 0 0.176
+         angleY -18.597
+        }
+       }
+       GenericEntity : "{DA3D4CF729F32F6B}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V5_storage.et" {
+        coords 1.315 0 1.184
+        angleY 0.403
+       }
+      }
+     }
+     GenericEntity : "{D925ED033D4BB0DD}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_Wall_01_Supplies_FIA.et" {
+      components {
+       Hierarchy "{5E6AF6CE8E7BB992}" {
+       }
+      }
+      coords -1.529 1.358 -1.342
+      angleY -0.821
+     }
+    }
+   }
+  }
+ }
+ {
+ }
+ PR_SupplyCache_v1_Containers_500 {
+  components {
+   RplComponent "{60E64491698AB2ED}" {
+   }
+   Hierarchy "{60E644916C6E045D}" {
+   }
+  }
+  {
+   GenericEntity StorageBaseContainer : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+    components {
+     Hierarchy "{60E76A9EF7C51016}" {
+      Enabled 1
+     }
+    }
+    coords 8.057 1.68 -0.608
+    {
+     GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+      components {
+       SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+        m_aContainers {
+         SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+          m_vBoundingVolumeMins -1.704 0 -5.061
+          m_vBoundingVolumeMaxs 1.424 2.642 3.823
+         }
+        }
+        m_aEncapsulators {
+         SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+          m_aActions {
+           SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+            m_bEnableResourceGain 1
+            m_fResourceGain 1500
+            m_fResourceGainTickrate 3600
+           }
+          }
+         }
+        }
+       }
+       SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+        m_bOrientChildrenToTerrain 0
+       }
+       Hierarchy "{5DE29DEA85CE9EE7}" {
+       }
+      }
+      coords -1.793 0.001 -0.664
+      {
+       GenericEntity : "{190CC54D175F52CB}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_10ft.et" {
+        coords -0.136 -0.001 -3.727
+        angleY -92.416
+       }
+      }
+     }
+     GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+      components {
+       Hierarchy "{60E76A9EF7C5100F}" {
+        Enabled 1
+       }
+      }
+      coords -3.813 0 2.872
+      angleX 1.448
+      angleY -7.426
+      angleZ -0.523
+     }
+     $grp GenericEntity : "{4BF528DF7A469909}Prefabs/Props/Construction/PalletJack_01.et" {
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51000}" {
+         Enabled 1
+        }
+       }
+       coords -4.775 0 -2.393
+       angleY 93.613
+      }
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51007}" {
+         Enabled 1
+        }
+       }
+       coords 3.511 0 -2.945
+       angleY 0.819
+      }
+     }
+     GenericEntity : "{51B08BDA20AF8FF7}Prefabs/Props/Industrial/Pallets/WoodenPalletBox_01.et" {
+      components {
+       Hierarchy "{60E76A9EF7C5103A}" {
+        Enabled 1
+       }
+      }
+      coords -4.341 0 -2.425
+      angleY -89.335
+     }
+     $grp GenericEntity : "{BE7B5BAFE1A16A50}Prefabs/Props/Military/Fortification/BarbedTape_Coil.et" {
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51039}" {
+         Enabled 1
+        }
+       }
+       coords 0.21 0 -3.815
+       angleY -3.43
+      }
+      {
+       components {
+        Hierarchy "{60E76A9EF7C5103F}" {
+         Enabled 1
+        }
+       }
+       coords 0.229 0 -4.991
+       angleY -0.492
+      }
+     }
+     GenericEntity : "{CB033C658E372CED}Prefabs/Props/Construction/PlankPile/PlankPile_01_Large.et" {
+      components {
+       Hierarchy "{60E76A9EF7C51032}" {
+        Enabled 1
+       }
+      }
+      coords -4.464 0 0.549
+     }
+     $grp GenericEntity : "{DB4F61D5F37432F7}Prefabs/Props/Military/Camps/PalletFuel_01.et" {
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51035}" {
+         Enabled 1
+        }
+       }
+       coords 3.358 0 -1.785
+       angleY 176.173
+      }
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51034}" {
+         Enabled 1
+        }
+       }
+       coords 3.297 0 0.133
+       angleY -88.159
+      }
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51036}" {
+         Enabled 1
+        }
+       }
+       coords 3.198 0 1.629
+       angleY -90
+      }
+     }
+     GenericEntity : "{DDF59362051B28BC}Prefabs/Props/Military/Fortification/BarbedTape_KnifeRest.et" {
+      components {
+       Hierarchy "{60E76A9EF7C5102F}" {
+        Enabled 1
+       }
+      }
+      coords 5.031 0 0.146
+      angleY 4.513
+     }
+     GenericEntity : "{E105D2F87098E1D8}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_LoiterPoint.et" {
+      components {
+       Hierarchy "{60E76A9EF7C5102D}" {
+       }
+      }
+      coords -4.918 0 3.25
+      angleY -88.08
+     }
+     $grp GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51023}" {
+        }
+       }
+       coords 1.538 0 1.686
+       angleY 116.995
+      }
+      {
+       components {
+        Hierarchy "{60E76A9EF7C51021}" {
+        }
+       }
+       coords 1.274 0 0.594
+       angleY -83.606
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity Location_2 : "{90634F6BA6DF3F5D}Prefabs/Compositions/Misc/SubCompositions/Building/Garage_E_01_FIA_01.et" {
+ coords 135.472 0 -5
+ angleY 0
+}
+GenericEntity : "{E044076F7F9408B4}Prefabs/Compositions/Slotted/SlotFlatSmall/PR_SupplyCache_S_FIA_04.et" {
+ coords -13.881 7.392 15.432
+}

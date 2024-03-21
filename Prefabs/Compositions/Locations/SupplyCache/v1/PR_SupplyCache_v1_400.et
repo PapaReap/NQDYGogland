@@ -1,0 +1,86 @@
+GenericEntity {
+ ID "60E64490A337AA70"
+ components {
+  RplComponent "{60E64491698AB2ED}" {
+  }
+  Hierarchy "{60E644916C6E045D}" {
+  }
+ }
+ {
+  GenericEntity StorageBase : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+   ID "60E64490A337AA4A"
+   components {
+    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+     m_bOrientChildrenToTerrain 0
+    }
+    Hierarchy "{5DD88AA44C03D98C}" {
+     Enabled 1
+    }
+   }
+   coords 0 0 0
+   {
+    GenericEntity SupplyCache_400 : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+     ID "60E64490A337AA45"
+     components {
+      SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+       m_aContainers {
+        SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+         m_vBoundingVolumeMins -1.987 0 -1.584
+         m_vBoundingVolumeMaxs 1.996 1.341 1.666
+        }
+       }
+      }
+      Hierarchy "{5DD88DAE2FE5459F}" {
+      }
+     }
+     coords 0 0 0
+     {
+      GenericEntity : "{0E1733FAF9ACCBE8}Prefabs/Props/Military/SupplyBox/SupplyPortableContainers/SupplyPortableContainer_01/SupplyPortableContainers_01_large_storage.et" {
+       ID "60E64490A337AA41"
+       coords 0.573 0 0.768
+       angleY -93.597
+      }
+      $grp GenericEntity : "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et" {
+       {
+        ID "60E64490A3341054"
+        coords 1.187 0 -0.977
+        angleY -179.085
+       }
+       {
+        ID "60E64490A337AA5E"
+        coords 1.288 0 0.12
+        angleY -89.085
+       }
+      }
+      GenericEntity : "{B1017A36B1F2229E}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V6_storage.et" {
+       ID "60E64490A3341056"
+       coords -0.896 0 -0.675
+       angleY 93.403
+      }
+      $grp GenericEntity : "{D07C2D4844753F76}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_storage.et" {
+       {
+        ID "60E64490A3341050"
+        coords -1.661 0 0.658
+        angleY 90.403
+       }
+       {
+        ID "60E64490A33448CD"
+        coords 0.333 0 0.176
+        angleY -18.597
+       }
+      }
+     }
+    }
+    GenericEntity : "{D925ED033D4BB0DD}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_Wall_01_Supplies_FIA.et" {
+     ID "60E64490A337AA47"
+     components {
+      Hierarchy "{5E6AF6CE8E7BB992}" {
+      }
+     }
+     coords -1.529 1.358 -1.342
+     angleY -0.821
+    }
+   }
+  }
+ }
+}

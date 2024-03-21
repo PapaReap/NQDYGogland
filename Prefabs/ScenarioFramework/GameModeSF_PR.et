@@ -1,0 +1,113 @@
+SCR_BaseGameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ ID "56B2B479C6B96951"
+ components {
+  SignalsManagerComponent "{5DD02D41D43BEB5D}" {
+  }
+  SCR_CommunicationSoundComponent "{5DD02D41D43BEB61}" {
+  }
+  SCR_ArsenalManagerComponent "{5DD02D5147FA066A}" {
+  }
+  SCR_DebriefingScreenComponent "{5DD226FA391B27D3}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5DD226FD4A5F1B71}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5DD226FD6102C14F}" {
+     m_sContentImage "{8E135C7AA80F6861}UI/Textures/MissionLoadingScreens/CO_Arland_05.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5DD226FD058AA1CE}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5DD226FD273E6D0E}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5DD226FCC53C35CA}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5DD226FCF2E395CE}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5DD226FCFE36A7E3}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5DD226FCFB618250}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5DD226FCE74310C7}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5DD226FCE290C355}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_GameModeSFManager "{5DD02D41D43BEB63}" {
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
+   }
+  }
+  SCR_RespawnTimerComponent "{5DD02D402C30B264}" {
+   m_fRespawnTime 5
+  }
+  SCR_SpawnProtectionComponent "{5DD02D400D30EB7A}" {
+   m_fProtectionTime 10
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5DD02D406A8771F4}" {
+   m_bRandomStartingDaytime 1
+   m_fDayTimeAcceleration 0.5
+   m_fNightTimeAcceleration 12
+   m_bRandomStartingWeather 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5DD02D4053CD8D2B}" {
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5DBC51EEF3C24007}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5DBC51EEE4F6CA5F}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5DBC51EEB52AC4A0}" {
+     m_sTitleText "Objectives"
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5DBC51EEBD67B56B}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#AR-BriefingCampaign_VictoryCondition_01"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5DBC51EE48ECC72F}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-BriefingCampaign_VictoryCondition_02"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5DBC51EE79CE1222}" {
+       m_sObjectiveQuadName "Reconfigure"
+       m_sDescription "#AR-BriefingCampaign_VictoryCondition_03"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5DBC51EE3D4D21FA}" {
+     m_bIsInteractible 1
+     m_sTitleText "Introduction"
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5DBC51EE22692608}" {
+       m_sContentImage "{F355C5692BEDC1E5}UI/Textures/FieldManual/MPModes/Conflict/Images/Conflict_loadScreen_UI.edds"
+       m_sContentTitleText "#AR-BriefingCampaign_Hint_Name_01"
+       m_sContentDescriptionText "#AR-FieldManual_Page_Conflict_Text_02"
+      }
+      SCR_WelcomeScreenIntroduction "{5DBC51EFE530F95A}" {
+       m_sContentImage "{EFF804FB17026599}UI/Textures/FieldManual/MPModes/Conflict/Images/Conflict_service_antenna_UI.edds"
+       m_sContentTitleText "#AR-BriefingCampaign_Hint_Name_02"
+       m_sContentDescriptionText "#AR-BriefingCampaign_Hint_Description_02"
+      }
+      SCR_WelcomeScreenIntroduction "{5DBC51EFB2672274}" {
+       m_sContentImage "{E00CCCF1DB6DE5F3}UI/Textures/FieldManual/MPModes/Conflict/Images/Conflict_service_supply_UI.edds"
+       m_sContentTitleText "#AR-BriefingCampaign_Hint_Name_03"
+       m_sContentDescriptionText "#AR-BriefingCampaign_Hint_Description_03"
+      }
+     }
+    }
+   }
+  }
+  SerializerInventoryStorageManagerComponent "{5DD02D514056ACCE}" {
+  }
+ }
+ coords 120.757 1.001 156.387
+ PlayerControllerPrefab "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et"
+}

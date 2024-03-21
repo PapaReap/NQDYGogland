@@ -1,0 +1,59 @@
+SCR_BaseTaskManager {
+ ID "60D67ADA4F22D567"
+ components {
+  SCR_TextsTaskManagerComponent "{58F0BAE2BB50533C}" : "{6F59CB11B5383430}Prefabs/MP/Managers/Tasks/TaskManagerComponent.ct" {
+  }
+  SCR_UITaskManagerComponent "{60D67ADA4F22D54A}" {
+  }
+  RplComponent "{60D67ADA4F22D54E}" {
+   Streamable Disabled
+  }
+ }
+ {
+  SCR_ScenarioFrameworkTaskClearAreaSupportEntity {
+   ID "60D67AD9D90C6C3B"
+   coords 0.624 -0.033 -0.167
+  }
+  SCR_ScenarioFrameworkTaskDefendSupportEntity {
+   ID "60D67AD929455442"
+   coords 0.979 -0.344 -0.413
+  }
+  SCR_ScenarioFrameworkTaskDeliverSupportEntity {
+   ID "60D67AD94B838275"
+   coords 0.933 -0.427 -0.37
+  }
+  SCR_ScenarioFrameworkTaskDestroySupportEntity {
+   ID "60D67AD958FA8674"
+   coords 0.931 -0.432 -0.366
+  }
+  SCR_ScenarioFrameworkTaskExtractSupportEntity {
+   ID "60D67AD9650E49BE"
+   coords 0.918 -0.441 -0.373
+  }
+  SCR_ScenarioFrameworkTaskKillSupportEntity {
+   ID "60D67AD977F1DAB8"
+   coords 0.911 -0.445 -0.378
+  }
+  SCR_ScenarioFrameworkTaskSupportEntity {
+   ID "60D67AD88584D130"
+   coords 0.909 -0.45 -0.373
+  }
+  SCR_CampaignTaskSupportEntity : "{44E2F4E355FDF0DF}Prefabs/Tasks/SupportEntities/CampaignTaskSupportEntity.et" {
+   ID "60D67ADA4F22D55E"
+   coords 0 0 0
+  }
+  SCR_TriggerTaskSupportEntity : "{4C8DA18200A21299}Prefabs/Tasks/SupportEntities/TriggerTaskSupportEntity.et" {
+   ID "60D67ADA4F22D55C"
+  }
+  SCR_CampaignBuildingTaskSupportEntity : "{B5CCD7203D442A19}Prefabs/Tasks/SupportEntities/CampaignBuildingTaskSupportEntity.et" {
+   ID "60D67ADA4F22D553"
+   coords 0 0 0
+  }
+  SCR_EditorTaskSupportEntity : "{CB9D29FD69ABF3F3}Prefabs/Tasks/SupportEntities/EditorTaskSupportEntity.et" {
+   ID "60D67ADA4F22D550"
+  }
+  SCR_BaseTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
+   ID "60D67ADA4F22D551"
+  }
+ }
+}

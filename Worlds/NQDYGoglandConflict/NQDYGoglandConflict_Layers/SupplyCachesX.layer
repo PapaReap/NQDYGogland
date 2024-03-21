@@ -1,0 +1,223 @@
+$grp GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+ SupplyCache_Airport_1 {
+  coords 4968.146 28.281 11955.396
+  angleY -179.952
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D453938FA2CE085"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ SupplyCache_StPierre_Harbor_3 {
+  coords 9985.821 2.359 1523.785
+  angleY 16.881
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D453938FA2CE085"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+$grp GenericEntity : "{22D2EFA80AC9DBD0}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_03.et" {
+ SupplyCache_Airport_2 {
+  coords 4976.926 28.281 11952.284
+  angleY 178.999
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D45393876460D01"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ SupplyCache_StPierre_Harbor_1 {
+  coords 9961.073 2.531 1557.286
+  angleY -163.967
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D45393876460D01"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity SupplyCache_StPierre_1 : "{4239449B3D22E425}Prefabs/Compositions/Locations/Eden/SupplyCache_StPierre_FIA_01.et" {
+ coords 9689.018 14.024 1558.482
+ Flags 2098179
+}
+$grp GenericEntity : "{962EB289CF844AA2}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_06.et" {
+ SupplyCache_Airport_3 {
+  coords 4944.24 28.416 11863.355
+  angleY 88.201
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D45393949376AB5"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ SupplyCache_StPierre_Harbor_5 {
+  coords 9922.7 3.75 1648.255
+  angleY 98.159
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D45393949376AB5"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+SCR_SpawnPoint : "{CEA2B24051A44525}PrefabsEditable/SpawnPoints/E_SpawnPoint_US.et" {
+ coords 7280.396 8.886 5373.864
+}
+$grp GenericEntity : "{FA7A86697340C58C}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_05.et" {
+ SupplyCache_StPierre_Harbor_4 {
+  coords 10028.925 2.687 1594.854
+  angleY 106.207
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D4539393E1536C3"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ SupplyCache_StPierre_Harbor_2 {
+  coords 9941.109 2.541 1562.344
+  angleY 175.303
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5D4539393E1536C3"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_bEnableResourceGain 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

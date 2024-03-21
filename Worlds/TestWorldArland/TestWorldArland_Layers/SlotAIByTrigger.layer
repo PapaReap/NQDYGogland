@@ -1,0 +1,87 @@
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ Area1 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesDuringRuntime 1
+    m_bDynamicDespawn 1
+    m_iDynamicDespawnRange 100
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 1020.36 38.714 2490.903
+  {
+   GenericEntity LayerAIAirport : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 9.848 -0.043 -16.528
+    {
+     GenericEntity SlotAI1 : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_sFactionKey "US"
+        m_sObjectToSpawn "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et"
+        m_aExcludedEditableEntityLabels {
+         0
+        }
+       }
+      }
+      coords 3.134 2.22 26.125
+     }
+     GenericEntity SlotMarker1 : "{E537867C6E760514}Prefabs/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerMilitary "{60EA0E55F11BBE19}" {
+         m_sMapMarkerText "Test marker"
+        }
+       }
+      }
+      coords 10.051 0.329 -3.733
+     }
+    }
+   }
+  }
+ }
+ Area2 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesDuringRuntime 1
+    m_bExcludeFromDynamicDespawn 1
+    m_iDynamicDespawnRange 50
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 919.823 39 2642.872
+  {
+   GenericEntity LayerTriggers : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    coords -4.932 0 0.805
+    {
+     GenericEntity SlotTrigger1 : "{D183AFE8DAF9793D}Prefabs/ScenarioFramework/Components/SlotTrigger.et" {
+      components {
+       SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
+        m_bShowDebugShapesDuringRuntime 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
+          m_fAreaRadius 10
+         }
+        }
+        m_aTriggerActions {
+         SCR_ScenarioFrameworkActionSpawnObjects#3993#3 "{60EA0E4AE44AA5E8}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "LayerAIAirport"
+          }
+         }
+        }
+       }
+      }
+      coords 32.764 0 -1.334
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,204 @@
+GenericEntity {
+ ID "60E76A92A95747C2"
+ components {
+  RplComponent "{60E64491698AB2ED}" {
+  }
+  Hierarchy "{60E644916C6E045D}" {
+  }
+ }
+ {
+  GenericEntity StorageBaseContainer : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+   ID "60E76A92A95747FB"
+   components {
+    Hierarchy "{60E76A9EF7C51016}" {
+     Enabled 1
+    }
+   }
+   coords 8.057 1.68 -0.608
+   {
+    GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+     ID "60E76A92A9572A73"
+     components {
+      SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+       m_aContainers {
+        SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+         m_vBoundingVolumeMins -1.704 0 -5.061
+         m_vBoundingVolumeMaxs 1.424 2.642 3.823
+        }
+       }
+       m_aEncapsulators {
+        SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+         m_aActions {
+          SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+           m_bEnableResourceGain 1
+           m_fResourceGain 1500
+           m_fResourceGainTickrate 3600
+          }
+         }
+        }
+       }
+      }
+      SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+       m_bOrientChildrenToTerrain 0
+      }
+      Hierarchy "{5DE29DEA85CE9EE7}" {
+      }
+     }
+     coords -1.793 0.001 -0.664
+     {
+      GenericEntity : "{13A99500A14FA14C}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_20ft.et" {
+       ID "60E76A92A9572B8E"
+       coords -0.331 -0.001 0.73
+      }
+     }
+    }
+    GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+     ID "60E76A92A95747FF"
+     components {
+      Hierarchy "{60E76A9EF7C5100F}" {
+       Enabled 1
+      }
+     }
+     coords -3.813 0 2.872
+     angleX 1.448
+     angleY -7.426
+     angleZ -0.523
+    }
+    $grp GenericEntity : "{4BF528DF7A469909}Prefabs/Props/Construction/PalletJack_01.et" {
+     {
+      ID "60E76A92A9572A70"
+      components {
+       Hierarchy "{60E76A9EF7C51007}" {
+        Enabled 1
+       }
+      }
+      coords 3.511 0 -2.945
+      angleY 0.819
+     }
+     {
+      ID "60E76A92A9572A71"
+      components {
+       Hierarchy "{60E76A9EF7C51000}" {
+        Enabled 1
+       }
+      }
+      coords -4.775 0 -2.393
+      angleY 93.613
+     }
+    }
+    GenericEntity : "{51B08BDA20AF8FF7}Prefabs/Props/Industrial/Pallets/WoodenPalletBox_01.et" {
+     ID "60E76A92A9572A76"
+     components {
+      Hierarchy "{60E76A9EF7C5103A}" {
+       Enabled 1
+      }
+     }
+     coords -4.341 0 -2.425
+     angleY -89.335
+    }
+    $grp GenericEntity : "{BE7B5BAFE1A16A50}Prefabs/Props/Military/Fortification/BarbedTape_Coil.et" {
+     {
+      ID "60E76A92A9572A74"
+      components {
+       Hierarchy "{60E76A9EF7C51039}" {
+        Enabled 1
+       }
+      }
+      coords 0.21 0 -3.815
+      angleY -3.43
+     }
+     {
+      ID "60E76A92A9572A7B"
+      components {
+       Hierarchy "{60E76A9EF7C5103F}" {
+        Enabled 1
+       }
+      }
+      coords 0.229 0 -4.991
+      angleY -0.492
+     }
+    }
+    GenericEntity : "{CB033C658E372CED}Prefabs/Props/Construction/PlankPile/PlankPile_01_Large.et" {
+     ID "60E76A92A9572A7A"
+     components {
+      Hierarchy "{60E76A9EF7C51032}" {
+       Enabled 1
+      }
+     }
+     coords -4.464 0 0.549
+    }
+    $grp GenericEntity : "{DB4F61D5F37432F7}Prefabs/Props/Military/Camps/PalletFuel_01.et" {
+     {
+      ID "60E76A92A9572A7E"
+      components {
+       Hierarchy "{60E76A9EF7C51034}" {
+        Enabled 1
+       }
+      }
+      coords 3.297 0 0.133
+      angleY -88.159
+     }
+     {
+      ID "60E76A92A9572A7F"
+      components {
+       Hierarchy "{60E76A9EF7C51035}" {
+        Enabled 1
+       }
+      }
+      coords 3.358 0 -1.785
+      angleY 176.173
+     }
+     {
+      ID "60E76A92A95747EB"
+      components {
+       Hierarchy "{60E76A9EF7C51036}" {
+        Enabled 1
+       }
+      }
+      coords 3.198 0 1.629
+      angleY -90
+     }
+    }
+    GenericEntity : "{DDF59362051B28BC}Prefabs/Props/Military/Fortification/BarbedTape_KnifeRest.et" {
+     ID "60E76A92A95747F6"
+     components {
+      Hierarchy "{60E76A9EF7C5102F}" {
+       Enabled 1
+      }
+     }
+     coords 5.031 0 0.146
+     angleY 4.513
+    }
+    GenericEntity : "{E105D2F87098E1D8}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_LoiterPoint.et" {
+     ID "60E76A92A95747F5"
+     components {
+      Hierarchy "{60E76A9EF7C5102D}" {
+      }
+     }
+     coords -4.918 0 3.25
+     angleY -88.08
+    }
+    $grp GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+     {
+      ID "60E76A92A95747F2"
+      components {
+       Hierarchy "{60E76A9EF7C51023}" {
+       }
+      }
+      coords 1.538 0 1.686
+      angleY 116.995
+     }
+     {
+      ID "60E76A92A95747F3"
+      components {
+       Hierarchy "{60E76A9EF7C51021}" {
+       }
+      }
+      coords 1.274 0 0.594
+      angleY -83.606
+     }
+    }
+   }
+  }
+ }
+}

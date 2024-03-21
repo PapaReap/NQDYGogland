@@ -1,0 +1,18 @@
+GenericEntity : "{1E4C8AD00BBB16AA}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_Base.et" {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_FactionAffiliationComponent "{5CCEC6039525B984}" {
+   "faction affiliation" "USSR"
+  }
+ }
+ {
+  SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+   ID "60E2393A8223D17F"
+   components {
+    Hierarchy "{60E2393A8529B0B0}" {
+    }
+   }
+   coords 0 0 0.031
+  }
+ }
+}

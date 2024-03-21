@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{D365C7B83DA0AC12}Prefabs/ScenarioFramework/Components/PR_Area.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

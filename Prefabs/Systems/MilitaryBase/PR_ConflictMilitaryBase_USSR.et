@@ -1,0 +1,166 @@
+GenericEntity {
+ ID "60E07149C1F0CAD2"
+ components {
+  BaseRadioComponent "{60E07149C1F7462F}" {
+   "Turned on" 1
+   Transceivers {
+    RelayTransceiver "{60E07149C1F746D6}" {
+     "Transmitting Range" 500
+     "Frequency resolution" 1
+    }
+   }
+  }
+  SCR_CampaignBuildingProviderComponent "{60E0714DC0EF41B1}" {
+   m_fBuildingRadius 150
+  }
+  SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+   m_GraphLinesData SCR_GraphLinesData "{60E07149C1F746DD}" {
+   }
+   m_bShowNotifications 0
+  }
+  SCR_CampaignMilitaryBaseMapDescriptorComponent "{60E07149C1F746DF}" {
+   MainType "Radio/ Tower"
+  }
+  SCR_CampaignSeizingComponent "{60E07149C1F746D8}" {
+   m_iRadius 50
+   m_fMaximumSeizingTime 60
+   m_fMinimumSeizingTime 5
+   m_iMaximumSeizingCharacters 12
+   m_fRespawnCooldownPeriod 20
+   m_bGradualTimerReset 1
+   m_bIgnoreNonPlayableAttackers 1
+   m_bShowNotifications 0
+   m_fExtraTimePerService 45
+  }
+  SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+   m_iSupplies 250
+   m_iSuppliesMax 500
+   m_fOperationalRadius 25
+  }
+  SCR_EditableSystemComponent "{60E07149C1F746DB}" {
+   m_EntityType SYSTEM
+   m_UIInfo SCR_EditableDescriptorUIInfo "{60E07149C1F746C5}" {
+    Name "#AR-MapLocation_MilitaryBase"
+    Icon "{DD5F23CBB1731598}UI/Textures/Editor/EditableEntities/Systems/EditableEntity_System_Base.edds"
+   }
+   m_EntityInteraction SCR_EditableEntityInteraction "{60E07149C1F746C0}" {
+   }
+   m_bAutoRegister ALWAYS
+   m_Flags 2052
+  }
+  SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+  }
+  SCR_MilitaryBaseAreaMeshComponent "{60E07149C1F706E7}" {
+   m_fHeight 30
+   m_vResolution 48
+   m_Material "{E65E61D1541003E2}Assets/Editor/VirtualArea/VirtualArea.emat"
+  }
+  SCR_ResourceComponent "{60E07149C1F706E6}" {
+   m_aConsumers {
+    SCR_ResourceConsumer "{60E07149C1F706EB}" {
+     m_sDebugName "Free Building Consumer"
+     m_eResourceRights ALL
+     m_eGeneratorIdentifier DEFAULT
+     m_fResourceRange 100
+     m_fBuyMultiplier 1
+     m_fSellMultiplier 1
+     m_ContainerQueue SCR_ResourceConsumerContainerQueue "{60E07149C1F706ED}" {
+      m_StoragePolicies {
+       SCR_ResourceConsumerStoragePolicy "{60E07149C1F706EF}" {
+        m_StorageQueue SCR_ResourceConsumerContainerStorageQueueExtended "{60E07149C1F706D1}" {
+        }
+        m_eStorageType STORED
+       }
+      }
+     }
+    }
+   }
+   m_aGenerators {
+    SCR_ResourceGenerator "{60E07149C1F706D3}" {
+     m_sDebugName "Free Building Generator"
+     m_eResourceRights ALL
+     m_fStorageRange 100
+     m_ContainerQueue SCR_ResourceGeneratorContainerQueue "{60E07149C1F706D2}" {
+      m_StoragePolicies {
+       SCR_ResourceGeneratorStoragePolicy "{60E07149C1F706D4}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{60E07149C1F706D7}" {
+        }
+        m_eStorageType STORED
+       }
+      }
+     }
+     m_aActions {
+      SCR_ResourceGeneratorActionStore "{60E07149C1F706D9}" {
+      }
+      SCR_ResourceGeneratorActionDropContainers "{60E07149C1F706DB}" {
+      }
+     }
+    }
+   }
+   m_eDebugVisualizationFlags 5
+  }
+  RplComponent "{60E07149C1F706DD}" {
+   Streamable Disabled
+  }
+ }
+ coords 899.447 0.185 901.325
+ {
+  SCR_CampaignSpawnPointGroup {
+   ID "60E07149C1F0CAD3"
+   components {
+    SCR_MapDescriptorComponent "{60E07149C1F706DC}" {
+     VisibleOnMap 0
+     MainType Spawnpoint
+    }
+    RplComponent "{60E07149C1F706DF}" {
+     Streamable Disabled
+    }
+    Hierarchy "{60E07149C1F706C1}" {
+    }
+   }
+   coords 0 0 0
+   m_fSpawnRadius 10
+   m_sFaction ""
+   m_bUseNearbySpawnPositions 1
+  }
+  GenericEntity : "{811ECBE58F51D9A2}Prefabs/MP/Campaign/Assets/CampaignHQRadioBase.et" {
+   ID "60E07149C1F0CAD5"
+   components {
+    Hierarchy "{60E07149C1F706C2}" {
+    }
+   }
+   coords -2 0.75 -3
+  }
+  $grp GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+   {
+    ID "60E0714912226671"
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+      m_eGroupType FIRETEAM
+     }
+    }
+    coords 0 0 11.98
+   }
+   {
+    ID "60E0714938383856"
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_sDefaultWaypointPrefab "{3AB6B883AF54D965}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamBackup.et"
+      m_eGroupType FIRETEAM
+     }
+    }
+    coords 0 0 14.092
+   }
+  }
+  GenericEntity : "{CE8211EE99C0EF28}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Reinforce_USSR.et" {
+   ID "60E0714F02A0D7F0"
+   coords 0 0 0
+   {
+    SCR_DefendWaypoint {
+     ID "60E0714CB980C8E9"
+    }
+   }
+  }
+ }
+}

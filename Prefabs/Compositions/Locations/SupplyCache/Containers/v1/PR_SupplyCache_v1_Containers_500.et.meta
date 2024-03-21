@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B0C39178EB462A97}Prefabs/Compositions/Locations/SupplyCache/Containers/v1/PR_SupplyCache_v1_Containers_500.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

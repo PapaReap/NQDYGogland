@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{DFBABEA712394E79}Prefabs/Groups/INDFOR/Group_FIA_MG_M.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

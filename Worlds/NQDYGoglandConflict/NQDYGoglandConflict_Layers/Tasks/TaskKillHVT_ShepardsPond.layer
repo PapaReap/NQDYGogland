@@ -1,0 +1,365 @@
+GenericEntity Area_ShepherdsPond : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ components {
+  SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+   m_iRandomPercent 100
+   m_fAreaRadius 75
+   m_iDynamicDespawnRange 300
+   m_bShowDebugShapesInWorkbench 1
+  }
+ }
+ coords 5264.689 11.121 10145.058
+ Flags 2097155
+ {
+  GenericEntity LayerTaskKill_ShepherdsPond : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+     m_iRandomPercent 100
+     m_eActivationType ON_TRIGGER_ACTIVATION
+     m_sTaskTitle "Eliminate Officer"
+     m_sTaskDescription "Intel recovered suggest a location of a HVT in the area of Shephers Pond"
+    }
+   }
+   coords -2.168 0.091 -9.564
+   Flags 2097155
+   {
+    PR_SpawnPatrolTrigger ShephersPond_AI_Spawn {
+     coords -147.172 -9.042 -33.949
+     Flags 2097155
+     TriggerShapeType Sphere
+     SphereRadius 700
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     m_sOwnerFactionKey "US"
+     GroupType "Group: Rifle Squad (6)"
+     spawnPosition "ShephersPond_AI_Spawn"
+     waypointPosition {
+      "ShephersPond_AI_Spawn"
+     }
+     waypointType {
+      4
+     }
+     completionRadius {
+      200
+     }
+     completionType {
+      2
+     }
+     delayTimer 10
+     deleteTrigger 1
+     debugLogs 1
+    }
+    PR_SpawnPrefabTrigger ShepherdsPond_commandtruck_3 {
+     coords -41.413 -5.554 -51.669
+     angleY -59.172
+     Flags 2097155
+     TriggerShapeType Sphere
+     SphereRadius 400
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     m_sOwnerFactionKey "USSR"
+     m_eActivationPresence ANY_CHARACTER
+     PrefabType "Command Truck USSR"
+     m_aNameOfObjectsToSpawnOnActivation {
+      "ShepherdsPond_commandtruck_3"
+     }
+     delayTimer 10
+     debugLogs 1
+    }
+    PR_SpawnTaskTrigger ShephersPond_TaskTrigger {
+     coords 1341.92 -98.666 -919.51
+     Flags 2097155
+     TriggerShapeType Sphere
+     SphereRadius 200
+     BoxMaxs 5 5 5
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     m_sOwnerFactionKey "US"
+     m_aNameOfTasksToSpawnOnActivation {
+      "LayerTaskKill_ShepherdsPond"
+     }
+     delayTimerToSpawnTask 10
+     deleteTrigger 1
+     debugLogs 1
+    }
+    $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+     Layer_SP_OfficerSpawns {
+      components {
+       SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+        m_SpawnChildren RANDOM_ONE
+        m_iRandomPercent 100
+       }
+      }
+      coords -1.713 0.009 -6.072
+      Flags 2097155
+      {
+       $grp GenericEntity : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
+        SlotKill_ShepherdsPond_1 {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_SpawnChildren RANDOM_MULTIPLE
+           m_iRandomPercent 0
+           m_sObjectToSpawn "{5916FEB237BFB514}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer_Intel.et"
+           m_bShowDebugShapesInWorkbench 0
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC064A9E08D9C4}" {
+            m_aLayerName {
+             "Layer_SP_WP1"
+            }
+           }
+           m_bSpawnAIOnWPPos 0
+          }
+         }
+         coords -59.496 -3.871 -64.475
+         angleY 12.329
+         Flags 2097155
+        }
+        SlotKill_ShepherdsPond_2 {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sFactionKey "USSR"
+           m_sObjectToSpawn "{5916FEB237BFB514}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer_Intel.et"
+           m_bShowDebugShapesInWorkbench 0
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC064B8B94BCFA}" {
+            m_aLayerName {
+             "Slot_SP_WP2_1"
+            }
+           }
+           m_bSpawnAIOnWPPos 0
+          }
+         }
+         coords 70.88 1.768 99.067
+         angleY 175.012
+         Flags 2097155
+        }
+        SlotKill_ShepherdsPond_4 {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sObjectToSpawn "{5916FEB237BFB514}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer_Intel.et"
+           m_bShowDebugShapesInWorkbench 0
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0649C07DF396}" {
+            m_aLayerName {
+             "Slot_SP_WP4_1"
+            }
+           }
+           m_bSpawnAIOnWPPos 0
+          }
+         }
+         coords -277.382 6.146 83.857
+         angleY 77.876
+         Flags 2097155
+        }
+        SlotKill_ShepherdsPond_3 {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sObjectToSpawn "{5916FEB237BFB514}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer_Intel.et"
+           m_bShowDebugShapesInWorkbench 0
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC064F01D267B8}" {
+            m_aLayerName {
+             "SlotWaypoint_SP_WP3_cycle"
+            }
+           }
+           m_sWPToSpawn "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et"
+          }
+         }
+         coords -109.771 -10.011 -53.543
+         angleY -81.913
+         Flags 2097155
+        }
+       }
+      }
+     }
+     Layer_SP_WP1 {
+      coords -58.107 -5.705 -68.182
+      Flags 2097155
+      {
+       GenericEntity Slot_SP_WP1_1 : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        components {
+         SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+          m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{60DC064A21E08919}" {
+           m_fCompletionRadius 1
+           m_eAIWaypointCompletionType Any
+          }
+         }
+        }
+        coords -3.195 1.843 -2.884
+        Flags 2097155
+       }
+      }
+     }
+     Layer_SP_WP2 {
+      coords 60.381 0.764 85.019
+      Flags 2097155
+      {
+       GenericEntity Slot_SP_WP2_1 : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        components {
+         SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+          m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{60DC064A21E08919}" {
+           m_fCompletionRadius 9
+           m_eAIWaypointCompletionType Any
+          }
+         }
+        }
+        coords 5.722 1.013 14.305
+        Flags 2097155
+       }
+      }
+     }
+     Layer_SP_WP3 {
+      coords -98.692 -8.517 -66.861
+      Flags 2097155
+      {
+       $grp GenericEntity : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        SlotWaypoint_SP_WP3_1 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{60DC064594D466F8}" {
+            m_fCompletionRadius 1
+           }
+          }
+         }
+         coords -12.443 -1.482 7.336
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP3_3 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{60DC0645AC7DC1F2}" {
+            m_fCompletionRadius 1
+           }
+          }
+         }
+         coords 9.872 -1.631 3.004
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP3_2 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{60DC0645B9E93035}" {
+            m_fCompletionRadius 1
+           }
+          }
+         }
+         coords 43.653 2.73 15.447
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP3_cycle {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{60DC064071D008C9}" {
+            m_fCompletionRadius 1
+           }
+          }
+         }
+         coords 31.417 2.685 -0.916
+         Flags 2097155
+        }
+       }
+      }
+     }
+     Layer_SP_WP4 {
+      coords -277.797 5.102 72.528
+      Flags 2097155
+      {
+       GenericEntity Slot_SP_WP4_1 : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        components {
+         SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+          m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{60DC064A21E08919}" {
+           m_fCompletionRadius 1
+           m_eAIWaypointCompletionType Any
+          }
+         }
+        }
+        coords -0.661 1.053 5.908
+        Flags 2097155
+       }
+      }
+     }
+     Layer_SP_WP_Patrol {
+      coords -44.549 5.168 -181.412
+      Flags 2097155
+      {
+       $grp GenericEntity : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        SlotWaypoint_SP_WP_1 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{5F1A98EEB541C386}" {
+           }
+          }
+         }
+         coords 24.444 -9.714 147.902
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP_2 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{5F1A98EEA8BE37C6}" {
+           }
+          }
+         }
+         coords 122.986 -1.551 147.819
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP_3 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{5F1A98EEA416913A}" {
+           }
+          }
+         }
+         coords 115.942 -4.069 249.507
+         Flags 2097155
+        }
+        CycleWaypoint_SP_WP_Cycle {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{5F1A98EEBAF88E76}" {
+           }
+          }
+         }
+         coords -1.915 -9.789 105.279
+         Flags 2097155
+        }
+        SlotWaypoint_SP_WP_4 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{5F1A98EEA416913A}" {
+           }
+          }
+         }
+         coords 73.312 -3.339 340.924
+         Flags 2097155
+        }
+       }
+      }
+     }
+     Layer_SP_Patrol2 {
+      coords -44.196 1.251 -186.412
+      Flags 2097155
+      {
+       GenericEntity Patrol2 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+        coords 0.406 -0.001 0.079
+        Flags 2097155
+        {
+         GenericEntity SlotAI2 : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{5F1A98EEDF9F8A95}" {
+             m_aLayerName {
+              "CycleWaypoint_SP_WP_Cycle"
+             }
+            }
+            m_bSpawnAIOnWPPos 1
+           }
+          }
+          coords -0.862 2.009 4.936
+          Flags 2097155
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
