@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{2F444C9C704A816A}Prefabs/Characters/Campaign/Final/US_MG_Johnny.et"
+ Name "{E7780202592E99D9}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX_FAST.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }

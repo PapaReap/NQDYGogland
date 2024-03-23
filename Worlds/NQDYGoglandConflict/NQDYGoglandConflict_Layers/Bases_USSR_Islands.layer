@@ -10,6 +10,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 200
@@ -168,6 +169,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 240
@@ -312,6 +314,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
@@ -458,6 +461,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 260

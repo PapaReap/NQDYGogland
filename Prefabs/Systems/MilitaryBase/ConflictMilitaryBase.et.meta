@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

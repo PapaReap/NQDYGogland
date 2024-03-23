@@ -68,17 +68,34 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
           m_fAreaRadius 10
          }
         }
-        m_aTriggerActions {
-         SCR_ScenarioFrameworkActionSpawnObjects#3993#3 "{60EA0E4AE44AA5E8}" {
-          m_iMaxNumberOfActivations 1
-          m_aNameOfObjectsToSpawnOnActivation {
-           "LayerAIAirport"
-          }
-         }
-        }
        }
       }
-      coords 32.764 0 -1.334
+     }
+    }
+   }
+  }
+ }
+ Area3 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bDynamicDespawn 1
+    m_iDynamicDespawnRange 200
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 1866.378 38.999 2831.377
+  {
+   GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    coords -2.225 0.001 0.194
+    {
+     GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+      components {
+       SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+        m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+        m_eGroupType FIRETEAM
+       }
+      }
+      coords -13.148 0 -19.626
      }
     }
    }

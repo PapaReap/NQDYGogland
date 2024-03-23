@@ -1,0 +1,50 @@
+SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+ coords 4775.578 7.847 10688.511
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5690D9DB9BA76597}" {
+  }
+  SCR_FactionPlayerLoadout "{5690D9DB9400735C}" {
+   m_sLoadoutResource "{305087F7627D5B0C}Prefabs/Characters/Campaign/Final/CPR_USSR_Player.et"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11BF78EF03}" {
+   m_sLoadoutName "Grenadier [PapaReap]"
+   m_sLoadoutResource "{602A3529BE7390D2}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A4547FC1}" {
+   m_sLoadoutName " DTRAX [Medic] Fast"
+   m_sLoadoutResource "{E7780202592E99D9}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX_FAST.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D65E117C52FB57}" {
+   m_sLoadoutName "AR (JohnnyReap)"
+   m_sLoadoutResource "{8495756C7AF9DFA5}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_MG_Johnny.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60B03789D012E242}" {
+   m_sLoadoutName "MG [Peace]"
+   m_sLoadoutResource "{0F3B6A845B801795}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Player_MGPeace.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D812B87350D820}" {
+   m_sLoadoutName "Grenadier (Sarge)"
+   m_sLoadoutResource "{270020DF55ABE65F}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_Sarge.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A3BACB4C}" {
+   m_sLoadoutName "AT"
+   m_sLoadoutResource "{69024316ECB38006}Prefabs/Characters/Campaign/Final/CPR_US_Player_AT.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A6D00E35}" {
+   m_sLoadoutName "Sniper"
+   m_sLoadoutResource "{828B0DD9661E1457}Prefabs/Characters/Campaign/Final/CPR_US_Player_Sniper.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60E275A1059472F2}" {
+   m_sLoadoutName "Grenadier [PapaReap] ext"
+   m_sLoadoutResource "{F77FCC8B17800579}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap_ext.et"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}

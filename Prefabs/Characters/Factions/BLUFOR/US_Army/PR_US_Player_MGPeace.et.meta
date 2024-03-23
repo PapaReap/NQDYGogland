@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{9257B476F380E16E}Prefabs/Characters/Campaign/Final/US_Grenadier_Sarge.et"
+ Name "{0F3B6A845B801795}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Player_MGPeace.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }
