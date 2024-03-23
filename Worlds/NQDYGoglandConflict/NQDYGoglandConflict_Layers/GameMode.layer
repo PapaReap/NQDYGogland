@@ -1,0 +1,128 @@
+SCR_GameModeCampaign GameMode_Campaign1 : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ components {
+  EPF_PersistenceManagerComponent "{60C364E02FB2B6D6}" {
+   components {
+    EPF_PersistentDoorStateManagerComponent "{60C37013DA0B3FDC}" {
+    }
+    SCR_RespawnSystemComponent "{60C578151B46EEB5}" {
+     components {
+      SCR_FreeSpawnHandlerComponent "{60C578157E6C917F}" {
+      }
+      SCR_PossessSpawnHandlerComponent "{60C578168CDEE0B9}" {
+      }
+      SCR_SpawnPointSpawnHandlerComponent "{60C57816951258DC}" {
+      }
+     }
+     m_SpawnLogic SCR_MenuSpawnLogic "{60C5781522A01F4B}" {
+     }
+     m_fDeployMenuOpenDelay 10
+    }
+   }
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60C364E04369EBF7}" {
+    m_sDatabaseName "NQDYCampaignEdenPersist"
+   }
+  }
+  SCR_CommandingManagerComponent "{5D16783AFAE684F8}" {
+   m_iMaxAIPerGroup 3
+  }
+  SCR_DataCollectorComponent "{5ADE83EE64329989}" {
+   m_bOptionalKicking 1
+  }
+  SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_fDOTScale 0.5
+   m_fRegenScale 1.25
+   m_fTourniquetStrengthMultiplier 0.4
+   m_fCompartmentRegenerationRateMultiplier 5
+   m_fRegenerationMaxLoadoutWeight 60
+  }
+  SCR_GameModeSFManager "{60D68E14F30FB0C5}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{60D68E14F74DF57F}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F723764F}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F70D6FB2}" {
+     m_eTypeOfTask DEFEND
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4E0735A}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4C722DA}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4A22890}" {
+     m_eTypeOfTask LAST
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F48DA0C9}" {
+     m_eTypeOfTask EXTRACTION
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F46A2BC0}" {
+     m_eTypeOfTask DEFAULT
+    }
+   }
+   m_iMaxNumberOfTasks 100
+   m_bDynamicDespawn 1
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+  }
+  SCR_RepairSupportStationComponent "{60B20C3951B5BBED}" {
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
+   m_fDeployMenuOpenDelay 10
+  }
+  SCR_RespawnTimerComponent "{5B2A94A0E605AAFF}" {
+   m_fRespawnTime 45
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5CC49B5A1313B84E}" {
+   m_iStartingHours 6
+   m_bRandomStartingDaytime 0
+   m_fDayTimeAcceleration 1
+  }
+  SCR_VotingManagerComponent "{5650BB6B6089393A}" {
+   m_aVotingTemplates {
+    SCR_VotingKick "{58EA836E8F9304A4}" {
+     m_fThreshold 0.667
+     m_iMinParticipation 0.667
+    }
+   }
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
+   m_sXPRewardsConfig "{8227B4636C73C5B5}Configs/Campaign/CampaignXPRewards.conf"
+  }
+ }
+ coords 4771.542 7.837 10711.727
+ m_iControlPointsThreshold 14
+ m_iSuppliesReplenishThreshold 0
+ m_iQuickSuppliesReplenishThreshold 0
+ m_fQuickSuppliesReplenishMultiplier 2
+ m_iSuppliesArrivalInterval 10
+ m_iRegularSuppliesIncome 2
+ m_iRegularSuppliesIncomeExtra 0
+ m_iMinStartingSupplies 25
+ m_iMaxStartingSupplies 175
+ m_iSpawnCost 80
+ m_iSupplyDepotIconThreshold 600
+ m_iSuicideRespawnDelay 60
+}

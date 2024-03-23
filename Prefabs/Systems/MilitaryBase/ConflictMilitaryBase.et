@@ -1,0 +1,11 @@
+GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ ID "5AFC9B0D8792F4E2"
+ components {
+  SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+   m_fMaximumSeizingTime 420
+   m_fMinimumSeizingTime 180
+   m_iMaximumSeizingCharacters 12
+   m_bIgnoreNonPlayableAttackers 0
+  }
+ }
+}

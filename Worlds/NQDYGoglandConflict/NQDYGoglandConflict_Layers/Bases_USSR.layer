@@ -10,6 +10,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 175
@@ -102,6 +103,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 60
@@ -159,6 +161,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 180
@@ -302,6 +305,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 200
@@ -459,6 +463,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 80
@@ -610,6 +615,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 220
@@ -773,6 +779,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 125
@@ -840,6 +847,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 50
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 0
@@ -900,6 +908,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 180
@@ -1051,6 +1060,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
@@ -1197,6 +1207,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 50
@@ -1254,6 +1265,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 75
@@ -1311,6 +1323,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 25
@@ -1368,6 +1381,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
     m_iRadius 150
+    m_bIsControlPoint 1
    }
    SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
     m_iSupplies 260
@@ -1510,39 +1524,73 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      {
       GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
        coords -27.885 0.276 19.812
-      }
-      GenericEntity SlotAI_ReinforceBase_Rivinkallio_1 : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
-       components {
-        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-         m_bEnableRepeatedSpawn 1
-         m_iRepeatedSpawnNumber 2
-         m_fRepeatedSpawnTimer 400
-         m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
-         m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60EA0E7294457B58}" {
-          m_aLayerName {
-           "SlotWaypoint_Defend_RivinkallioBase"
+       {
+        $grp GenericEntity : "{E123BAC59A9B3D5F}Prefabs/ScenarioFramework/Components/SlotDefend.et" {
+         SlotDefend_FireGroup_11 {
+          components {
+           SCR_ScenarioFrameworkSlotDefend "{5C52E161597D867A}" {
+            m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60EC02D75939FF63}" {
+             m_aLayerName {
+              "SlotWaypoint_Defend_RivinkallioBase"
+             }
+            }
+            m_bSpawnAIOnWPPos 0
+           }
           }
+          coords 118.261 -7.543 220.919
+          Flags 2097155
+         }
+         SlotDefend_FireGroup_12 {
+          components {
+           SCR_ScenarioFrameworkSlotDefend "{5C52E161597D867A}" {
+            m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
+           }
+          }
+          coords 93.387 -7.619 192.488
+          Flags 2097155
          }
         }
        }
-       coords -397.42 -5.685 3.768
       }
-      $grp GenericEntity : "{E123BAC59A9B3D5F}Prefabs/ScenarioFramework/Components/SlotDefend.et" {
-       SlotDefend_FireGroup_1 {
+      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+       SlotAI_ReinforceBase_Rivinkallio_1 {
         components {
-         SCR_ScenarioFrameworkSlotDefend "{5C52E161597D867A}" {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bEnableRepeatedSpawn 1
+          m_iRepeatedSpawnNumber 2
+          m_fRepeatedSpawnTimer 400
           m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60EA0E7294457B58}" {
+           m_aLayerName {
+            "SlotWaypoint_Defend_RivinkallioBase"
+           }
+          }
+          m_bBalanceOnPlayersCount 1
+          m_iMinUnitsInGroup 2
          }
         }
-        coords 90.376 -7.267 240.73
+        coords -397.42 -5.685 3.768
+       }
+       SlotDefend_FireGroup_1 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
+          m_bBalanceOnPlayersCount 1
+          m_iMinUnitsInGroup 2
+         }
+        }
+        coords 90.524 -7.263 240.691
        }
        SlotDefend_FireGroup_2 {
         components {
-         SCR_ScenarioFrameworkSlotDefend "{5C52E161597D867A}" {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
           m_sObjectToSpawn "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et"
+          m_bBalanceOnPlayersCount 1
+          m_iMinUnitsInGroup 2
          }
         }
-        coords 65.502 -7.343 212.3
+        coords 65.125 -7.325 209.39
        }
       }
      }
@@ -1564,7 +1612,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
  }
  Area_Default {
-  coords 5762.433 -0 10103.575
+  coords 5762.433 0 10103.575
   {
    GenericEntity Layer_Default : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     coords -10.768 0 20.71

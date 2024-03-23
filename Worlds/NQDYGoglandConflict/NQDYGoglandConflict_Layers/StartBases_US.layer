@@ -17,13 +17,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E09758FCAF3A2B"
     coords 6.858 0.325 -3
    }
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
   }
  }
@@ -44,13 +44,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
   }
   coords 4179.347 37.729 9945.76
   {
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
   }
  }
@@ -77,13 +77,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords 5.593 0 29.498
     angleY -20.719
    }
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
@@ -96,7 +96,6 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
      RelayTransceiver "{60E09758FCAF3A13}" {
-      "Transmitting Range" 1000
      }
     }
    }
@@ -114,13 +113,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E09758FCAF3A2B"
     coords -8.701 -0.306 53.041
    }
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
@@ -149,13 +148,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E09758FCAF3A2B"
     coords -87.615 -1.145 34.559
    }
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
@@ -186,13 +185,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords 40.107 1.305 -9.645
     angleY 2.643
    }
-   GenericEntity {
-    ID "60E09759AD1F42E8"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E09759D06062F8"
-    Flags 2097155
+   $grp GenericEntity {
+    {
+     Flags 2097155
+    }
+    {
+     Flags 2097155
+    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
