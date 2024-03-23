@@ -29,6 +29,19 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    EncumbranceMassMin 90
    EncumbranceMassMax 160
   }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Role_Medic"
+    Icon "{F3FCC3B9732551D9}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Character_Medic.edds"
+    m_Image "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+    m_aAuthoredLabels + {
+     24
+    }
+    m_aAutoLabels {
+     122 44
+    }
+   }
+  }
   SCR_MapDescriptorComponent "{60B20C24521178D2}" {
    VisibleOnMap 0
    MainType Unit
@@ -58,12 +71,12 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    Override 1
    Identity Identity "{5584CBC6363C648B}" {
     VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
-     Head "{EAF055495BA85CA1}Prefabs/Characters/Heads/Head_White_02.et"
+     Head "{32583C88222142FD}Prefabs/Characters/Heads/Head_White_04.et"
      Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
     }
-    Name "John"
-    Alias "PapaReap"
-    Surname "McGregor"
+    Name "Dave"
+    Alias "DTRAX"
+    Surname "LaTrax"
    }
   }
   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {

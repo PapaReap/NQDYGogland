@@ -20,22 +20,23 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
   FactionAffiliationComponent "{520EC961FB0A2E90}" {
    "faction affiliation" "US"
   }
-  SCR_CampaignBuildingComponent "{60B20C269FAD94D0}" {
+  SCR_CampaignBuildingComponent "{60EE8D78C2FA65B6}" {
   }
-  SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-   m_fDOTScale 0.25
-  }
-  SCR_MapDescriptorComponent "{60B20C269FAD94CB}" {
+  SCR_MapDescriptorComponent "{60EE8D78C2FA644F}" {
    VisibleOnMap 0
    MainType Unit
    UnitType Infantry
   }
-  CharacterGrenadeSlotComponent "{5A6CDA0CCF43068E}" {
-   WeaponTemplate "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et"
-  }
-  SCR_ResourceComponent "{60B20C269FAD94CD}" {
+  SCR_ResourceComponent "{60EE8D78C2FA6449}" {
    m_aConsumers {
     SCR_ResourceConsumer "{5E6485852E650CC4}" : "{E77EA96D4FC48177}Configs/Resources/Supplies/Consumers/Generic/Consumer_Self.conf" {
+    }
+   }
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+     Head "{D7C470712EC4D596}Prefabs/Characters/Heads/Head_White_05.et"
     }
    }
   }

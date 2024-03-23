@@ -29,6 +29,19 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    EncumbranceMassMin 90
    EncumbranceMassMax 160
   }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Role_AutomaticRifleman"
+    Icon "{EF1F445746A3391A}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Character_MachineGunner.edds"
+    m_Image "{43EA535E240F0B17}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_AR.edds"
+    m_aAuthoredLabels + {
+     34
+    }
+    m_aAutoLabels {
+     122 43
+    }
+   }
+  }
   SCR_MapDescriptorComponent "{60D655AEFFF39917}" {
    VisibleOnMap 0
    MainType Unit
@@ -47,7 +60,7 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    WeaponTemplate "{D2B48DEBEF38D7D7}Prefabs/Weapons/MachineGuns/M249/MG_M249.et"
   }
   CharacterWeaponSlotComponent "{520EA1D2F659CFB7}" {
-   WeaponTemplate "{81EB948E6414BD6F}Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII.et"
+   WeaponTemplate "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
   }
   CharacterWeaponSlotComponent "{520EA1D2F659CFDC}" {
    AttachType InventoryStorageSlot "{9113A68B4D97E2E6}" {
@@ -61,7 +74,7 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
      Head "{24644218743CDFBD}Prefabs/Characters/Heads/Head_White_09.et"
      Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
     }
-    Name "Johnmy"
+    Name "Johnny"
     Alias "JohnnyReap"
     Surname "McGregor"
    }
@@ -108,6 +121,12 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
       "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{4EEDDB27C023B8B9}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et" "{4EEDDB27C023B8B9}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et" "{4EEDDB27C023B8B9}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et" "{4EEDDB27C023B8B9}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
      }
     }
+    ItemsInitConfigurationItem "{60EE8367FEE0D7A5}" {
+     TargetStorage "Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et"
+     PrefabsToSpawn {
+      "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et"
+     }
+    }
     ItemsInitConfigurationItem "{60D655AEFFF39979}" {
      TargetStorage "Prefabs/Characters/Uniforms/Jacket_US_BDU_rolledup.et"
      PrefabsToSpawn {
@@ -118,5 +137,5 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
   }
  }
  coords 0 0 0
- angleY -95
+ angleY -30.021
 }

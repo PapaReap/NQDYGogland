@@ -29,6 +29,19 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    EncumbranceMassMin 90
    EncumbranceMassMax 160
   }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Role_Sniper"
+    Icon "{0A78405E73C36477}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Character_Sharpshooter.edds"
+    m_Image "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+    m_aAuthoredLabels + {
+     33
+    }
+    m_aAutoLabels {
+     122 47
+    }
+   }
+  }
   SCR_MapDescriptorComponent "{60D812BB0466E17E}" {
    VisibleOnMap 0
    MainType Unit
@@ -44,10 +57,10 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
    WeaponTemplate "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et"
   }
   CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
-   WeaponTemplate "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et"
+   WeaponTemplate "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
   }
   CharacterWeaponSlotComponent "{520EA1D2F659CFB7}" {
-   WeaponTemplate "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+   WeaponTemplate "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et"
   }
   CharacterWeaponSlotComponent "{520EA1D2F659CFDC}" {
    AttachType InventoryStorageSlot "{9113A68B4D97E2E6}" {
@@ -61,9 +74,9 @@ SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_
      Head "{143245D81F2BAB94}Prefabs/Characters/Heads/Head_White_10.et"
      Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
     }
-    Name "John"
-    Alias "PapaReap"
-    Surname "McGregor"
+    Name "Nat"
+    Alias "SARGE"
+    Surname "Baum"
    }
   }
   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {

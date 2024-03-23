@@ -33,10 +33,6 @@ SCR_AIWorld AIWorld_Gogland : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et"
  coords 4779.372 7.844 10686.511
  LimitOfSpawnedAIAgents 420
 }
-RadioManagerEntity {
- coords 4820.854 27.47 11589.093
- Flags 2097155
-}
 PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 4776.189 7.85 10695.884
 }
@@ -52,10 +48,6 @@ ItemPreviewManagerEntity ItemPreviewManagerEntity1 {
  PreviewWorld "{4391FE7994EE6FE2}Prefabs/World/Game/InventoryPreviewWorld.et"
  DefaultRenderAttributes PreviewRenderAttributes "{52EF3E2AF2E07544}" {
  }
-}
-SCR_BaseTaskManager {
- coords 4774.632 7.845 10693.635
- Flags 2097155
 }
 SCR_MapLocator {
  coords 4775.267 7.84 10695.104

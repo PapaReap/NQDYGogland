@@ -1,0 +1,290 @@
+SCR_GameModeCampaign GameMode_Campaign1 : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ components {
+  EPF_PersistenceManagerComponent "{60C364E02FB2B6D6}" {
+   components {
+    EPF_PersistentDoorStateManagerComponent "{60C37013DA0B3FDC}" {
+    }
+    SCR_RespawnSystemComponent "{60C578151B46EEB5}" {
+     components {
+      SCR_FreeSpawnHandlerComponent "{60C578157E6C917F}" {
+      }
+      SCR_PossessSpawnHandlerComponent "{60C578168CDEE0B9}" {
+      }
+      SCR_SpawnPointSpawnHandlerComponent "{60C57816951258DC}" {
+      }
+     }
+     m_SpawnLogic SCR_MenuSpawnLogic "{60C5781522A01F4B}" {
+     }
+     m_fDeployMenuOpenDelay 10
+    }
+   }
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60C364E04369EBF7}" {
+    m_sDatabaseName "NQDYCampaignEdenPersist"
+   }
+  }
+  SCR_CommandingManagerComponent "{5D16783AFAE684F8}" {
+   m_iMaxAIPerGroup 3
+  }
+  SCR_DataCollectorComponent "{5ADE83EE64329989}" {
+   m_bOptionalKicking 1
+  }
+  SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_fDOTScale 0.5
+   m_fRegenScale 1.25
+   m_fTourniquetStrengthMultiplier 0.4
+   m_fCompartmentRegenerationRateMultiplier 5
+   m_fRegenerationMaxLoadoutWeight 60
+  }
+  SCR_GameModeSFManager "{60D68E14F30FB0C5}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{60D68E14F74DF57F}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F723764F}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F70D6FB2}" {
+     m_eTypeOfTask DEFEND
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4E0735A}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4C722DA}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F4A22890}" {
+     m_eTypeOfTask LAST
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F48DA0C9}" {
+     m_eTypeOfTask EXTRACTION
+    }
+    SCR_ScenarioFrameworkTaskType "{60D68E14F46A2BC0}" {
+     m_eTypeOfTask DEFAULT
+    }
+   }
+   m_iMaxNumberOfTasks 100
+   m_bDynamicDespawn 1
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+  }
+  SCR_RepairSupportStationComponent "{60B20C3951B5BBED}" {
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
+   m_fDeployMenuOpenDelay 10
+  }
+  SCR_RespawnTimerComponent "{5B2A94A0E605AAFF}" {
+   m_fRespawnTime 45
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5CC49B5A1313B84E}" {
+   m_iStartingHours 6
+   m_bRandomStartingDaytime 0
+   m_fDayTimeAcceleration 1
+  }
+  SCR_VotingManagerComponent "{5650BB6B6089393A}" {
+   m_aVotingTemplates {
+    SCR_VotingKick "{58EA836E8F9304A4}" {
+     m_fThreshold 0.667
+     m_iMinParticipation 0.667
+    }
+   }
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_sHeaderTitle "#AR-Campaign_ScenarioName_Everon"
+  }
+  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
+   m_sXPRewardsConfig "{8227B4636C73C5B5}Configs/Campaign/CampaignXPRewards.conf"
+  }
+ }
+ coords 4771.542 7.837 10711.727
+ m_iControlPointsThreshold 14
+ m_iSuppliesReplenishThreshold 0
+ m_iQuickSuppliesReplenishThreshold 0
+ m_fQuickSuppliesReplenishMultiplier 2
+ m_iSuppliesArrivalInterval 10
+ m_iRegularSuppliesIncome 2
+ m_iRegularSuppliesIncomeExtra 0
+ m_iMinStartingSupplies 25
+ m_iMaxStartingSupplies 175
+ m_iSpawnCost 80
+ m_iSupplyDepotIconThreshold 600
+ m_iSuicideRespawnDelay 60
+}
+SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 4761.314 7.848 10724.667
+ Factions {
+  SCR_CampaignFaction "{50B30C3AF4BFD934}" {
+   m_bIsPlayable 0
+  }
+  SCR_CampaignFaction "{50B30C3ADB052C80}" {
+   m_aRanks {
+    SCR_CharacterRank "{60EF4E5A1B6BEEF8}" {
+     m_iRank COLONEL
+     m_sRankName "Colonel"
+     m_sRankNameUpper "COLONEL"
+     m_sRankNameShort "Col"
+     m_sInsignia "AR_Rank_OF-4"
+    }
+    SCR_CharacterRank "{60B02285BBAEAA50}" {
+     m_iRank COLONEL
+     m_sRankName "Colonel"
+     m_sRankNameUpper "COLONEL"
+     m_sRankNameShort "Col"
+     m_sInsignia "AR_Rank_OF-4"
+    }
+   }
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0EE815FA292}" {
+    }
+    SCR_EntityCatalogMultiList "{5C9E82F29B327997}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{60569780DE4EE17A}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{5D23482664F150D9}" {
+         m_aEntityDataList {
+          SCR_EntityCatalogEditorData "{6052BB10DE50FA41}" {
+           m_eValidEditorModes EDIT
+          }
+         }
+        }
+        SCR_EntityCatalogEntry "{6064E51C196084B2}" {
+         m_sEntityPrefab "{9CB496688A3BCC3E}Prefabs/MP/Campaign/Assets/CampaignMobileAssemblyWest.et"
+         m_aEntityDataList {
+          SCR_EntityCatalogEditorData "{6064E51C31106C57}" {
+           m_eValidEditorModes 33
+          }
+          SCR_EntityCatalogSpawnerData "{6064E51C30E92A0B}" {
+           m_eSlotTypes VEHICLE_MEDIUM
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EEB3F124F9}" {
+    }
+   }
+  }
+  SCR_CampaignFaction "{56F0C3A6336375DC}" {
+   UIInfo SCR_FactionUIInfo "{5570936866E0AD08}" {
+   }
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0EABE8B7B2A}" {
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EABB80080C}" {
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EAB887A0C4}" {
+    }
+   }
+  }
+ }
+ m_aRanks {
+  SCR_RankIDCampaign "{5CB0777E83631136}" {
+   m_iRequestCD -1
+   m_iRadioRespawnCooldown 600
+   m_iFastTravelCooldown 3600
+   m_eRadioMsg DEMOTION_RENEGADE
+  }
+  SCR_RankIDCampaign "{5CB0777E828E61F3}" {
+   m_iRequestCD 105
+   m_iRadioRespawnCooldown 45
+   m_iFastTravelCooldown 600
+   m_eRadioMsg PROMOTION_PRIVATE
+  }
+  SCR_RankIDCampaign "{5CB0777E803B7EA2}" {
+   m_iRequiredXP 500
+  }
+  SCR_RankIDCampaign "{5CB0777E8F0E82AF}" {
+   m_iRequiredXP 1300
+  }
+  SCR_RankIDCampaign "{5CB0777E8BE66EC2}" {
+   m_iRequiredXP 2400
+  }
+  SCR_RankIDCampaign "{5CB0777E8AD658D6}" {
+   m_iRequiredXP 3800
+   m_iRequestCD 900
+  }
+  SCR_RankIDCampaign "{5CB0777E88380770}" {
+   m_iRequiredXP 5500
+   m_iRequestCD 900
+  }
+  SCR_RankIDCampaign "{60B0228606853055}" {
+   m_iRank COLONEL
+   m_iRequiredXP 11000
+   m_iRadioRespawnCooldown 27
+   m_iFastTravelCooldown 240
+  }
+ }
+}
+SCR_BaseTaskManager : "{576572CA95E0A7E8}Prefabs/MP/Campaign/PR_SFCampaignTaskManager.et" {
+ coords 4774.632 7.845 10693.635
+}
+SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+ coords 4775.578 7.847 10688.511
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5690D9DB9BA76597}" {
+   m_sLoadoutResource "{8D89B17BCFBFAE45}Prefabs/Characters/Campaign/Final/Campaign_US_Player.et"
+  }
+  SCR_FactionPlayerLoadout "{5690D9DB9400735C}" {
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11BF78EF03}" {
+   m_sLoadoutName "Grenadier (PapaReap)"
+   m_sLoadoutResource "{602A3529BE7390D2}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap.et"
+   m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5EE0FA11A4547FC1}" {
+   m_sLoadoutName "Medic (DTRAX)"
+   m_sLoadoutResource "{E7780202592E99D9}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX_FAST.et"
+   m_sLoadoutImage "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D65E117C52FB57}" {
+   m_sLoadoutName "AR (JohnnyReap)"
+   m_sLoadoutResource "{DFE02241733695CB}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_AR_Johnny.et"
+   m_sLoadoutImage "{43EA535E240F0B17}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_AR.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60B03789D012E242}" {
+   m_sLoadoutName "MG (Peace)"
+   m_sLoadoutResource "{0F3B6A845B801795}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_MG_Peace.et"
+   m_sLoadoutImage "{D68798DF09F5BE8E}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_MG.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60D812B87350D820}" {
+   m_sLoadoutName "Sniper (SARGE)"
+   m_sLoadoutResource "{270020DF55ABE65F}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Sniper_Sarge.et"
+   m_sLoadoutImage "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60E275A1059472F2}" {
+   m_sLoadoutName "Grenadier (PapaReap) e"
+   m_sLoadoutResource "{F77FCC8B17800579}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap_ext.et"
+   m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60EE8D79EFA7A30A}" {
+   m_sLoadoutName "Medic (Dtrax) e"
+   m_sLoadoutResource "{0ED18E1A4D3808C6}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX.et"
+   m_sLoadoutImage "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}
