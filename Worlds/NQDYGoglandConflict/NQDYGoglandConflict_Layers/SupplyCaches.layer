@@ -493,6 +493,94 @@ $grp GenericEntity {
      }
     }
    }
+   GenericEntity : "{5DE506736DF06EAE}Prefabs/Compositions/Locations/SupplyCache/v1/PR_SupplyCache_v1_300.et" {
+    coords 75.966 32.469 -3227.154
+    angleY -153.876
+    {
+     GenericEntity {
+      ID "60E64490C1758212"
+      {
+       GenericEntity {
+        ID "60E64490C1758216"
+        coords -2.147 1.358 -1.607
+        angleY 1.135
+       }
+      }
+     }
+    }
+   }
+   $grp GenericEntity : "{69DC2B60A4C10386}Prefabs/Compositions/Locations/SupplyCache/v1/PR_SupplyCache_v1_140.et" {
+    {
+     coords -646.563 9.282 -640.747
+     angleY 89.013
+     {
+      GenericEntity {
+       ID "60E64493ECC174C9"
+       {
+        GenericEntity {
+         ID "60E64493ECC174C1"
+         coords -0.854 1.529 2.446
+        }
+       }
+      }
+     }
+    }
+    {
+     coords 531.633 9.438 -1265.703
+     angleY -92.379
+     {
+      GenericEntity {
+       ID "60E64493ECC174C9"
+       {
+        GenericEntity {
+         ID "60E64493ECC174C1"
+         coords -3.819 1.358 -0.529
+         angleY 11.264
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity : "{B0C39178EB462A97}Prefabs/Compositions/Locations/SupplyCache/Containers/v1/PR_SupplyCache_v1_Containers_500.et" {
+    coords -350.127 39.55 -231.243
+    angleY -176.137
+   }
+   $grp GenericEntity : "{F70568A8DFA088D5}Prefabs/Compositions/Locations/SupplyCache/v1/PR_SupplyCache_v1_100.et" {
+    {
+     coords 263.949 -21.099 -1099.468
+     angleY 56.966
+     {
+      GenericEntity {
+       ID "60E64490479D7F10"
+       {
+        GenericEntity {
+         ID "60E64490479D7F14"
+         coords -2.505 1.358 -1.337
+        }
+       }
+      }
+     }
+    }
+    {
+     coords -474.276 -41.709 -2517.459
+     angleX -0.177
+     angleY 80.433
+     angleZ -1.052
+     {
+      GenericEntity {
+       ID "60E64490479D7F10"
+       {
+        GenericEntity {
+         ID "60E64490479D7F14"
+         coords -2.018 1.358 -1.391
+         angleY 6.959
+        }
+       }
+      }
+     }
+    }
+   }
   }
  }
 }
