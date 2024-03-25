@@ -236,6 +236,179 @@ $grp GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRel
       }
      }
     }
+    {
+     coords -148.65 -53.257 -96.322
+     angleY 177.278
+     {
+      SCR_AIWaypoint {
+       ID "60E2393A8223D17F"
+       coords -2.603 -0.615 -3.507
+       CompletionRadius 2
+      }
+      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -20.915 -1.565 -66.695
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -25.479 -1.61 -90.156
+        CompletionRadius 2
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -27.771 -1.564 -107.077
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -38.513 -1.565 -129.812
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -45.161 -1.565 -148.968
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -77.155 -1.597 -165.505
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -97.874 -4.193 -170.939
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -120.355 -6.447 -184.873
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -143.604 -4.642 -203.196
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -122.268 -6.446 -185.334
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -99.728 -4.56 -172.54
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -78.357 -1.597 -165.571
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -46.113 -1.565 -148.388
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -39.088 -1.565 -129.961
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -28.083 -1.56 -107.643
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -25.935 -1.713 -90.903
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -20.621 -1.565 -66.621
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -13.729 -2.091 -29.057
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -3.555 -0.775 -4.941
+        CompletionRadius 1
+       }
+       {
+        components {
+         Hierarchy "{60E2393A8529B0B0}" {
+         }
+        }
+        coords -13.891 -2.11 -28.858
+        CompletionRadius 1
+       }
+      }
+     }
+    }
    }
    GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
     components {

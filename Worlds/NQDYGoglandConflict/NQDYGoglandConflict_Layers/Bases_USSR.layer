@@ -34,7 +34,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
      }
     }
     coords -377.707 -2.24 -110.444
-    Flags 2097155
     {
      SCR_DefendWaypoint {
       ID "60E0714CB980C8E9"
@@ -43,14 +42,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       CompletionRadius 150
      }
     }
-   }
-   GenericEntity {
-    ID "60E0714912226671"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714938383856"
-    Flags 2097155
    }
    $grp GenericEntity : "{CE8211EE99C0EF28}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Reinforce_USSR.et" {
     PR_AmbientPatrolSpawnpoint_Reinforce_USSR_testing {
@@ -64,7 +55,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       }
      }
      coords 102.126 -0.005 -221.078
-     Flags 2097155
      {
       SCR_DefendWaypoint {
        ID "60E0714CB980C8E9"
@@ -81,7 +71,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       }
      }
      coords 83.875 -0.001 -164.33
-     Flags 2097155
      {
       SCR_DefendWaypoint {
        ID "60E0714CB980C8E9"

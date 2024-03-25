@@ -347,6 +347,39 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 83.431 2.266 43.607
    }
+   PR_SpawnPatrolTrigger PR_SpawnPatrolTrigger_3 {
+    components {
+     EPF_PersistenceComponent "{60F07453F7204299}" {
+      m_bSelfSpawn 0
+      m_pSaveData EPF_EntitySaveDataClass "{60F08DD020914FD6}" {
+       m_bSaveRemainingLifetime 0
+       m_aComponents {
+        EPF_ComponentSaveDataClass "{60F08DD03C0910FB}" {
+        }
+       }
+      }
+     }
+    }
+    coords 754.564 0.728 44.83
+    TriggerShapeType Sphere
+    SphereRadius 600
+    DrawShape 1
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    GroupType "Group: Light Fire Team (4)"
+    spawnPosition "PR_SpawnPatrolTrigger_3"
+    waypointType {
+     2
+    }
+    completionRadius {
+     100
+    }
+    completionType {
+     2
+    }
+    deleteTrigger 1
+    debugLogs 1
+   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords 0 0.466 25.553

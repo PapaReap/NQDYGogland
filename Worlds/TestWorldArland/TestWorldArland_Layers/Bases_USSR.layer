@@ -1,10 +1,30 @@
-PR_SpawnPatrolTrigger {
- coords 1048.225 39.002 2477.453
+PR_SpawnPatrolTrigger myspawnntrg {
+ components {
+  EPF_PersistenceComponent "{60F074516DC360BA}" {
+   m_bUseChangeTracker 1
+   m_bSelfSpawn 0
+  }
+ }
+ coords 1546.934 39.969 2477.453
+ TriggerShapeType Sphere
+ SphereRadius 50
+ DrawShape 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
  m_sOwnerFactionKey "US"
  GroupSide US
- waypointPosition {
-  ""
+ spawnPosition "myspawnntrg"
+ waypointType {
+  2
  }
+ completionRadius {
+  114.5
+ }
+ completionType {
+  2
+ }
+ deleteTrigger 1
+ debugLogs 1
 }
 SCR_CharacterTriggerEntity : "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et" {
  coords 1719.066 39.001 2842.563

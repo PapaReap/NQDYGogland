@@ -1,3 +1,12 @@
+SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ components {
+  Hierarchy "{60E2393A8529B0B0}" {
+  }
+ }
+ coords 1061.234 39 2418.992
+ angleY 88.639
+ CompletionRadius 1
+}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
  Area1 {
   components {
@@ -28,7 +37,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         }
        }
       }
-      coords 3.134 2.22 26.125
+      coords 486.692 2.92 -120.158
      }
      GenericEntity SlotMarker1 : "{E537867C6E760514}Prefabs/ScenarioFramework/Components/SlotMarker.et" {
       components {
