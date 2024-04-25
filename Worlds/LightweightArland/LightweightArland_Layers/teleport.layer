@@ -1,0 +1,76 @@
+PR_SpawnPatrolTrigger GuardPoint_Trigger {
+ coords 749.652 0.312 2152.54
+ TriggerShapeType Sphere
+ SphereRadius 100
+ DrawShape 1
+ ShapeColor 0.016 0.906 0.035 0.098
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_GroupSide US
+ m_bTeleportAfterSpawn 1
+ m_sTeleportPosition {
+  "GP_Set_01" "GP_Set_02" "GP_Set_03" "GP_Set_04"
+ }
+ m_eAIGroupFormation Column
+ m_bHoldFire 0
+ m_aWaypointCollection {
+  "WP_GuardPoint_SA_01"
+ }
+ m_bDebugLogs 1
+ {
+  $grp GenericEntity : "{3B54EDD7958D9E3F}Prefabs/AI/Waypoints/PR_AIWaypoint_GuardPoint_Set.et" {
+   GP_Set_01 {
+    coords -48.224 0 8.595
+    {
+     GenericEntity GuardPosition_01 {
+      ID "610A6B90E1669C5F"
+     }
+     SCR_SmartActionWaypoint WP_GuardPoint_SA_01 {
+      ID "610A6B909D0FED4D"
+      CompletionType Any
+      m_sStaticEntityName "GuardPosition_01"
+     }
+    }
+   }
+   GP_Set_02 {
+    coords -52.087 0 18.17
+    {
+     GenericEntity GuardPosition_02 {
+      ID "610A6B90E1669C5F"
+     }
+     SCR_SmartActionWaypoint WP_GuardPoint_SA_02 {
+      ID "610A6B909D0FED4D"
+      CompletionType Any
+      m_sStaticEntityName "GuardPosition_02"
+     }
+    }
+   }
+   GP_Set_03 {
+    coords -44.07 0 14.044
+    {
+     GenericEntity GuardPosition_03 {
+      ID "610A6B90E1669C5F"
+     }
+     SCR_SmartActionWaypoint WP_GuardPoint_SA_03 {
+      ID "610A6B909D0FED4D"
+      CompletionType Any
+      m_sStaticEntityName "GuardPosition_03"
+     }
+    }
+   }
+   GP_Set_04 {
+    coords -45.456 0.001 18.658
+    {
+     GenericEntity GuardPosition_04 {
+      ID "610A6B90E1669C5F"
+     }
+     SCR_SmartActionWaypoint WP_GuardPoint_SA_04 {
+      ID "610A6B909D0FED4D"
+      CompletionType Any
+      m_sStaticEntityName "GuardPosition_04"
+     }
+    }
+   }
+  }
+ }
+}

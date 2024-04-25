@@ -1,0 +1,12 @@
+SCR_SmartActionWaypoint {
+ ID "60F24BB2F5022D2B"
+ coords 57.062 -0.015 932.668
+ Type "CaptureWaypoint"
+ Title "Capture Relay Waypoint"
+ AIBehaviorTree "{D9C7103B689010DC}AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt"
+ AIBehaviorTreeMoveTo "{A3755C1F88DED8D6}AI/BehaviorTrees/Waypoints/WP_Move.bt"
+ CompletionRadius 20
+ Autocomplete 0
+ CompletionType Any
+ m_sSmartActionTag "CapturePoint"
+}

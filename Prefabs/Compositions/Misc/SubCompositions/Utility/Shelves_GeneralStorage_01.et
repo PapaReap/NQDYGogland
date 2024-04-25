@@ -1,0 +1,106 @@
+GenericEntity : "{1CA1A9D19D7C8445}Prefabs/Props/Furniture/Rack_01_Short.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_SlotCompositionComponent "{60F506755DC4CEB4}" {
+   m_bOrientChildrenToTerrain 0
+  }
+  Hierarchy "{60F506755DC4CEBC}" {
+  }
+ }
+ {
+  GenericEntity : "{2F2BBFDA3A2C73D4}Prefabs/Props/Civilian/RadioSmall_01_black.et" {
+   ID "60F506755DC48034"
+   components {
+    Hierarchy "{60F506755DC4CEB8}" {
+     Enabled 1
+    }
+   }
+   coords -0.712 0.886 0.377
+   angleY 9.941
+  }
+  GenericEntity : "{3800AA04761AE0EC}Prefabs/Props/Civilian/Notebook_01_Single_Blue.et" {
+   ID "60F506755DC48036"
+   components {
+    Hierarchy "{60F506755DC4CEBA}" {
+     Enabled 1
+    }
+   }
+   coords -0.295 1.514 0.429
+   angleY -177.445
+  }
+  $grp GenericEntity : "{590D0CC992E8AC25}Prefabs/Compositions/Misc/SubCompositions/Decorations/Crate_Bottles_01.et" {
+   {
+    ID "60F506755DC4803A"
+    coords -1.259 1.371 0.372
+    angleY -3.91
+   }
+   {
+    ID "60F506755DC4803F"
+    coords -0.477 0.418 0.373
+    angleY -177.21
+   }
+  }
+  GenericEntity : "{6FC9E85153AE41B1}Prefabs/Props/Civilian/WoodKindling_Crate_01.et" {
+   ID "60F506755DC48021"
+   components {
+    Hierarchy "{60F506755DC4CEA6}" {
+     Enabled 1
+    }
+   }
+   coords -1.307 0.412 0.37
+   angleY -5.604
+  }
+  GenericEntity : "{A7BF5BFDD21FD360}Prefabs/Props/Crates/Crate_01_ivory.et" {
+   ID "60F506755DC48025"
+   components {
+    Hierarchy "{60F506755DC4CEA0}" {
+     Enabled 1
+    }
+   }
+   coords -1.308 1.85 0.369
+   angleY 0.069
+  }
+  GenericEntity : "{ABA40158860E5B6B}Prefabs/Props/Crates/Crate_01_brown.et" {
+   ID "60F506755DC48027"
+   components {
+    Hierarchy "{60F506755DC4CEA2}" {
+     Enabled 1
+    }
+   }
+   coords -0.59 1.85 0.364
+   angleY -6.513
+  }
+  $grp GenericEntity : "{C2C1CEA73A4D8779}Prefabs/Props/Civilian/Notebook_01_Stack.et" {
+   {
+    ID "60F506755DC48026"
+    components {
+     Hierarchy "{60F506755DC4CEAC}" {
+      Enabled 1
+     }
+    }
+    coords -0.302 1.442 0.434
+    angleY 178.916
+   }
+   {
+    ID "60F506755DC48029"
+    components {
+     Hierarchy "{60F506755DC4CEAD}" {
+      Enabled 1
+     }
+    }
+    coords -0.302 1.376 0.434
+    angleY 173.975
+   }
+   {
+    ID "60F506755DC4CE8C"
+    components {
+     Hierarchy "{60F506755DC4CEA8}" {
+      Enabled 1
+     }
+    }
+    coords -0.565 1.376 0.426
+    angleY 177.458
+   }
+  }
+ }
+}

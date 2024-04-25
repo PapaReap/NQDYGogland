@@ -1,0 +1,76 @@
+SCR_AIWorld SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ coords 1399.82 39 2182.782
+ {
+  CommentEntity {
+   coords 0 1 0
+   m_Comment "SCR_AIWorld: "\
+   "Configure navigation mesh"
+   m_Color 0 0 0
+   m_FaceCamera 1
+   m_TextBackground 1
+   m_BackgroundColor 1 0.6 0
+   m_BackgroundTransparency 0
+  }
+ }
+}
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 1399.599 39 2182.296
+}
+$grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ ConflictMilitaryBase {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+   }
+  }
+  coords 1300.453 39.01 2109.462
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ ConflictMilitaryBase2 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+   }
+  }
+  coords 854.301 38.999 2743.535
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+}

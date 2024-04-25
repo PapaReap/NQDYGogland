@@ -1,0 +1,1339 @@
+$grp GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ Relay01_Sayvo_lighthouse {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 2000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2624.888 2.158 4151.799
+  angleY -88.639
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+       }
+      }
+     }
+    }
+    coords -5.473 20.436 -5.081
+    angleY 174.145
+    Flags 3
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    coords 335.271 0.836 649.973
+    angleY 88.639
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords -8.146 -0.073 3.857
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -146.693 -0.246 127.707
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -256.363 -0.213 231.726
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -358.411 -0.243 312.631
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -217.134 -0.022 191.281
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -93.608 -0.15 88.894
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -27.744 0.143 20.963
+       CompletionRadius 2
+      }
+     }
+    }
+   }
+   GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+     }
+    }
+    coords 226.237 1.363 480.366
+    angleY 88.639
+   }
+   GenericEntity : "{BDBB74BC15EAC056}Prefabs/Props/Military/Antennas/Antenna_USSR_02/Antenna_USSR_02.et" {
+    coords -6.198 23.011 -5.084
+    angleY 97.419
+   }
+  }
+ }
+ Relay01_Sayvo_sea {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 1900
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 4434.312 1.507 4510.906
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+        CanAggregate 1
+       }
+      }
+     }
+    }
+    coords 1.561 1.672 -0.123
+    angleY -180
+   }
+   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
+    {
+     coords -4.699 -11.27 20.393
+     angleY -130.109
+     scale 1.76
+    }
+    {
+     coords -20.966 -13.71 8.839
+     angleY -179.59
+     scale 1.832
+    }
+    {
+     coords -37.503 -13.504 26.124
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -27.383 -13.977 23.179
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -23.549 -43.112 38.95
+     angleY -173.409
+     scale 4.876
+    }
+    {
+     coords -41.948 -42.622 7.165
+     angleY 19.662
+     scale 4.354
+    }
+   }
+   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
+    {
+     coords -17.975 0.284 5.257
+     angleY -90
+    }
+    {
+     coords -23.178 -2.894 5.255
+     angleY -90
+    }
+   }
+   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
+    {
+     coords -8.093 -3.727 10.202
+    }
+    {
+     coords -18.043 -3.728 10.219
+    }
+    {
+     coords -18.044 -3.73 18.152
+    }
+    {
+     coords -8.094 -3.73 18.135
+    }
+    {
+     coords -8.097 -3.731 26.112
+    }
+    {
+     coords -18.042 -3.73 26.127
+    }
+    {
+     coords -28.031 -3.731 26.124
+    }
+    {
+     coords -28.032 -3.729 10.216
+    }
+    {
+     coords -28.033 -3.731 18.149
+    }
+   }
+   StaticModelEntity : "{6A004A8F0571D456}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_small.et" {
+    coords 1.581 0.47 0.748
+    {
+     GenericEntity {
+      ID "5E0EE6168CAE86C7"
+      coords -0.565 21 0.019
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{73AEA0148D58F723}Prefabs/Structures/Infrastructure/Naval/Sheds/FishermanShed_02_V1.et" {
+    coords -4.145 0.258 0.291
+    angleY -90
+   }
+   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
+    {
+     coords 0.784 -18.001 -1.352
+     scale 1.84
+    }
+    {
+     coords -33.933 -10.458 37.562
+     scale 1.27
+    }
+    {
+     coords -23.975 -14.614 6.496
+     scale 1.84
+    }
+    {
+     coords -25.655 -39.534 36.581
+     scale 4.552
+    }
+    {
+     coords -49.374 -32.844 40.593
+     scale 3.142
+    }
+    {
+     coords -2.332 -42.22 4.817
+     scale 4.552
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
+    coords -1.602 -3.73 0.772
+    angleY 0
+   }
+   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
+    coords -12.097 -3.728 0.772
+   }
+   StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+    coords -23.055 -0.085 17.779
+   }
+   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
+    {
+     coords -8.085 -13.099 -1.59
+     angleY -46.118
+    }
+    {
+     coords -33.32 -12.01 6.991
+     angleY -26.833
+     scale 1.25
+    }
+    {
+     coords -28.067 -34.551 5.947
+     angleY -17.448
+     scale 3.34
+    }
+    {
+     coords -41.583 -22.771 28.378
+     angleY -79.57
+     scale 2.474
+    }
+   }
+  }
+ }
+ Relay02_Isosommeri_lighthouse {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 2000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2799.89 10.03 2312.285
+  angleY -88.639
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+       }
+      }
+     }
+    }
+    coords -6.001 20.457 -4.494
+    angleY 98.305
+    Flags 3
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    coords -252.143 -9.234 195.265
+    angleY 88.639
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords -1.328 0.141 1.41
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 216.639 5.924 242.246
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 62.579 1.614 230.092
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -129.968 2.338 226.008
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -232.237 2.35 86.892
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -101.626 5.798 -3.576
+       CompletionRadius 2
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 129.707 2.603 119.213
+       CompletionRadius 1
+      }
+     }
+    }
+   }
+   GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+     }
+    }
+    coords -263.101 -3.405 337.145
+    angleY 88.639
+   }
+   GenericEntity : "{BDBB74BC15EAC056}Prefabs/Props/Military/Antennas/Antenna_USSR_02/Antenna_USSR_02.et" {
+    coords -6.198 23.011 -5.084
+    angleY 97.419
+   }
+  }
+ }
+ Relay03_Sakkiluoto_sea1 {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 2000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 6380.739 1.664 9570.858
+  angleY 68.178
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+        CanAggregate 1
+       }
+      }
+     }
+    }
+    coords 1.561 1.672 -0.123
+    angleY -180
+   }
+   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
+    {
+     coords -9.847 -13.942 16.057
+     angleY -130.109
+     scale 1.76
+    }
+    {
+     coords -20.966 -13.71 8.839
+     angleY -179.59
+     scale 1.832
+    }
+    {
+     coords -38.35 -13.504 22.492
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -27.383 -13.977 23.179
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -23.549 -43.112 38.95
+     angleY -173.409
+     scale 4.876
+    }
+    {
+     coords -41.948 -42.622 7.165
+     angleY 19.662
+     scale 4.354
+    }
+   }
+   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
+    {
+     coords -17.975 0.284 5.257
+     angleY -90
+    }
+    {
+     coords -23.178 -2.894 5.255
+     angleY -90
+    }
+   }
+   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
+    {
+     coords -8.093 -3.727 10.202
+    }
+    {
+     coords -18.043 -3.728 10.219
+    }
+    {
+     coords -18.044 -3.73 18.152
+    }
+    {
+     coords -8.094 -3.73 18.135
+    }
+    {
+     coords -8.097 -3.731 26.112
+    }
+    {
+     coords -18.042 -3.73 26.127
+    }
+    {
+     coords -28.031 -3.731 26.124
+    }
+    {
+     coords -28.032 -3.729 10.216
+    }
+    {
+     coords -28.033 -3.731 18.149
+    }
+   }
+   StaticModelEntity : "{6A004A8F0571D456}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_small.et" {
+    coords 1.581 0.47 0.748
+    {
+     GenericEntity {
+      ID "5E0EE6168CAE86C7"
+      coords -0.565 21 0.019
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{73AEA0148D58F723}Prefabs/Structures/Infrastructure/Naval/Sheds/FishermanShed_02_V1.et" {
+    coords -4.145 0.258 0.291
+    angleY -90
+   }
+   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
+    {
+     coords 0.784 -18.001 -1.352
+     scale 1.84
+    }
+    {
+     coords -33.933 -11.392 37.562
+     scale 1.27
+    }
+    {
+     coords -23.976 -15.245 6.495
+     scale 1.84
+    }
+    {
+     coords -25.655 -39.534 36.581
+     scale 4.552
+    }
+    {
+     coords -49.374 -32.844 40.593
+     scale 3.142
+    }
+    {
+     coords -2.332 -42.22 4.817
+     scale 4.552
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
+    coords -1.602 -3.73 0.772
+    angleY 0
+   }
+   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
+    coords -12.097 -3.728 0.772
+   }
+   StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+    coords -23.055 -0.085 17.779
+    {
+     GenericEntity {
+      ID "5D1EB45A4E161DE0"
+      coords -7.898 0.343 -7.434
+      angleY -173.197
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DE9"
+      coords 7.772 0.343 8.055
+      angleY 179.964
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEA"
+      coords -7.825 0.343 0.327
+      angleY 2.319
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEB"
+      coords -7.676 0.343 8.055
+      angleY 175.955
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DED"
+      coords 7.881 0.343 -7.398
+      angleY 4.083
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEE"
+      coords -0.062 0.343 8.08
+      angleY 80.221
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEF"
+      coords -0.062 0.343 -7.434
+      angleY 91.326
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DF5"
+      coords 7.851 0.343 0.327
+      angleY 0.23
+     }
+    }
+   }
+   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
+    {
+     coords -8.085 -13.099 -1.59
+     angleY -46.118
+    }
+    {
+     coords -33.32 -12.01 6.991
+     angleY -26.833
+     scale 1.25
+    }
+    {
+     coords -28.067 -34.551 5.947
+     angleY -17.448
+     scale 3.34
+    }
+    {
+     coords -37.978 -22.771 27.714
+     angleY -79.57
+     scale 2.474
+    }
+   }
+  }
+ }
+ Relay03_Sakkiluoto_sea2 {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 2000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 8227.349 0.99 10264.433
+  angleY -95.586
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+        CanAggregate 1
+       }
+      }
+     }
+    }
+    coords 1.561 1.672 -0.123
+    angleY -180
+   }
+   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
+    {
+     coords -12.734 -13.222 12.793
+     angleY -151.2
+     scale 1.76
+    }
+    {
+     coords -20.966 -13.71 8.839
+     angleY -179.59
+     scale 1.832
+    }
+    {
+     coords -37.503 -13.504 26.124
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -27.383 -13.977 23.179
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -23.549 -43.112 38.95
+     angleY -173.409
+     scale 4.876
+    }
+    {
+     coords -41.948 -42.622 7.165
+     angleY 19.662
+     scale 4.354
+    }
+   }
+   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
+    {
+     coords -17.975 0.284 5.257
+     angleY -90
+    }
+    {
+     coords -23.178 -2.894 5.255
+     angleY -90
+    }
+   }
+   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
+    {
+     coords -8.093 -3.727 10.202
+    }
+    {
+     coords -18.043 -3.728 10.219
+    }
+    {
+     coords -18.044 -3.73 18.152
+    }
+    {
+     coords -8.094 -3.73 18.135
+    }
+    {
+     coords -8.097 -3.731 26.112
+    }
+    {
+     coords -18.042 -3.73 26.127
+    }
+    {
+     coords -28.031 -3.731 26.124
+    }
+    {
+     coords -28.032 -3.729 10.216
+    }
+    {
+     coords -28.033 -3.731 18.149
+    }
+   }
+   StaticModelEntity : "{6A004A8F0571D456}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_small.et" {
+    coords 1.581 0.47 0.748
+    {
+     GenericEntity {
+      ID "5E0EE6168CAE86C7"
+      coords -0.565 21 0.019
+      {
+       GenericEntity {
+        ID "5E0670C4B6BF785A"
+        coords 0.001 -0.003 -0.003
+       }
+      }
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{73AEA0148D58F723}Prefabs/Structures/Infrastructure/Naval/Sheds/FishermanShed_02_V1.et" {
+    coords -4.145 0.258 0.291
+    angleY -90
+   }
+   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
+    {
+     coords 0.784 -18.001 -1.352
+     scale 1.84
+    }
+    {
+     coords -33.933 -10.458 35.644
+     scale 1.27
+    }
+    {
+     coords -23.975 -14.614 6.496
+     scale 1.84
+    }
+    {
+     coords -25.655 -39.534 36.581
+     scale 4.552
+    }
+    {
+     coords -49.374 -32.844 40.593
+     scale 3.142
+    }
+    {
+     coords -2.332 -42.22 4.817
+     scale 4.552
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
+    coords -1.602 -3.73 0.772
+    angleY 0
+   }
+   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
+    coords -12.097 -3.728 0.772
+   }
+   StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+    coords -23.055 -0.085 17.779
+    {
+     GenericEntity {
+      ID "5D1EB45A4E161DE0"
+      coords -7.896 0.343 -7.435
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DE9"
+      coords 7.772 0.343 8.055
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEA"
+      coords -7.825 0.343 0.326
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEB"
+      coords -7.678 0.343 8.055
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DED"
+      coords 7.882 0.343 -7.398
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEE"
+      coords -0.062 0.343 8.078
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEF"
+      coords -0.062 0.343 -7.434
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DF5"
+      coords 7.852 0.343 0.326
+     }
+    }
+   }
+   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
+    {
+     coords -8.085 -13.099 -1.59
+     angleY -46.118
+    }
+    {
+     coords -33.32 -12.01 6.991
+     angleY -26.833
+     scale 1.25
+    }
+    {
+     coords -28.067 -34.551 5.947
+     angleY -17.448
+     scale 3.34
+    }
+    {
+     coords -41.583 -22.771 28.378
+     angleY -79.57
+     scale 2.474
+    }
+   }
+  }
+ }
+ Relay04_Ruuskeri_sea1 {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 1400
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 7978.29 0 5730.813
+  angleY 78.301
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+        CanAggregate 1
+       }
+      }
+     }
+    }
+    coords 1.561 1.672 -0.123
+    angleY -180
+   }
+   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
+    {
+     coords -4.701 -11.27 20.395
+     angleY -130.109
+     scale 1.76
+    }
+    {
+     coords -20.965 -13.71 8.841
+     angleY -179.59
+     scale 1.832
+    }
+    {
+     coords -37.502 -13.504 26.127
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -27.382 -13.977 23.182
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -23.549 -43.112 38.952
+     angleY -173.409
+     scale 4.876
+    }
+    {
+     coords -41.95 -42.622 7.168
+     angleY 19.662
+     scale 4.354
+    }
+   }
+   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
+    {
+     coords -17.976 0.284 5.259
+     angleY -90
+    }
+    {
+     coords -23.18 -2.894 5.257
+     angleY -90
+    }
+   }
+   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
+    {
+     coords -8.092 -3.727 10.205
+    }
+    {
+     coords -18.043 -3.728 10.222
+    }
+    {
+     coords -18.043 -3.73 18.153
+    }
+    {
+     coords -8.096 -3.73 18.138
+    }
+    {
+     coords -8.098 -3.731 26.114
+    }
+    {
+     coords -18.043 -3.73 26.129
+    }
+    {
+     coords -28.03 -3.731 26.127
+    }
+    {
+     coords -28.034 -3.729 10.218
+    }
+    {
+     coords -28.035 -3.731 18.15
+    }
+   }
+   StaticModelEntity : "{6A004A8F0571D456}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_small.et" {
+    coords 1.582 0.47 0.751
+    {
+     GenericEntity {
+      ID "5E0EE6168CAE86C7"
+      coords -0.565 21 0.019
+      {
+       GenericEntity {
+        ID "5E0670C4B6BF785A"
+        {
+         GenericEntity {
+          ID "5A0882CA93C16A09"
+          coords 0.001 0.376 0.003
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{73AEA0148D58F723}Prefabs/Structures/Infrastructure/Naval/Sheds/FishermanShed_02_V1.et" {
+    coords -4.147 0.258 0.294
+    angleY -90
+    {
+     Building {
+      ID "567A6B7110E2E7A0"
+      coords 0 0 0
+     }
+     Building {
+      ID "567A6B7110E2E7DF"
+      coords -0.001 0 0
+     }
+     EnvironmentProbeEntity {
+      ID "5E6CB177D8031F95"
+      coords 0.13 2.469 -0.396
+     }
+     GenericEntity {
+      ID "5B18D233A58363CE"
+      coords 0 0 0
+      {
+       GenericEntity {
+        ID "5B18D23345BEDDAA"
+        coords 0.033 0.45 -2.707
+       }
+      }
+     }
+     GenericEntity {
+      ID "567A6B7110E2E79A"
+      coords -0.001 0 0
+     }
+    }
+   }
+   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
+    {
+     coords 0.785 -18.001 -1.351
+     scale 1.84
+    }
+    {
+     coords -33.935 -10.458 37.565
+     scale 1.27
+    }
+    {
+     coords -23.977 -14.614 6.499
+     scale 1.84
+    }
+    {
+     coords -25.654 -39.534 36.584
+     scale 4.552
+    }
+    {
+     coords -49.375 -32.844 40.595
+     scale 3.142
+    }
+    {
+     coords -2.333 -42.22 4.818
+     scale 4.552
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
+    coords -1.603 -3.73 0.773
+    angleY 0
+    {
+     GenericEntity {
+      ID "5B10D8714B81D9CC"
+      coords 0 0 0
+     }
+     GenericEntity {
+      ID "5B10D8714B81D9DA"
+      coords 0 0 0
+     }
+     GenericEntity {
+      ID "5B10D8714B81D9AF"
+      coords 0 0 0
+     }
+     GenericEntity {
+      ID "5B10D8714B81DE5E"
+      coords 0 0 0
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
+    coords -12.099 -3.728 0.774
+    {
+     GenericEntity {
+      ID "5B10D873AF22181D"
+      coords -0.001 0 0.001
+     }
+     GenericEntity {
+      ID "5B10D873AF221863"
+      coords 0 0 -0.001
+     }
+    }
+   }
+   StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+    coords -23.057 -0.085 17.78
+    {
+     GenericEntity {
+      ID "5D1EB45A4E161DE0"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords -0.001 0.339 0.061
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DE9"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords -0.001 0.339 0.062
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEA"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords -0.001 0.339 0.065
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEB"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords -0.001 0.339 0.062
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DED"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords 0 0.339 0.065
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEE"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords -0.002 0.339 0.062
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DEF"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords 0 0.339 0.063
+       }
+      }
+     }
+     GenericEntity {
+      ID "5D1EB45A4E161DF5"
+      {
+       GenericEntity {
+        ID "5A26B380A63C2147"
+        coords 0.002 0.339 0.064
+       }
+      }
+     }
+     GenericEntity {
+      ID "5E92E7227A7E45AB"
+      coords 0 0.85 0.25
+     }
+    }
+   }
+   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
+    {
+     coords -8.084 -13.099 -1.587
+     angleY -46.118
+    }
+    {
+     coords -33.319 -12.01 6.994
+     angleY -26.833
+     scale 1.25
+    }
+    {
+     coords -28.066 -34.551 5.949
+     angleY -17.448
+     scale 3.34
+    }
+    {
+     coords -41.583 -22.771 28.38
+     angleY -79.57
+     scale 2.474
+    }
+   }
+  }
+ }
+ Relay04_Ruuskeri_sea2 {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 1400
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_FactionAffiliationComponent "{5C727AD73024FB13}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 9277.419 0 6141.296
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        Duration 30
+        CanAggregate 1
+       }
+      }
+     }
+    }
+    coords 1.561 1.672 -0.123
+    angleY -180
+   }
+   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
+    {
+     coords -4.699 -11.27 20.393
+     angleY -130.109
+     scale 1.76
+    }
+    {
+     coords -20.966 -13.71 8.839
+     angleY -179.59
+     scale 1.832
+    }
+    {
+     coords -37.503 -13.504 26.124
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -27.383 -13.977 23.179
+     angleY 103.124
+     scale 1.76
+    }
+    {
+     coords -23.549 -43.112 38.95
+     angleY -173.409
+     scale 4.876
+    }
+    {
+     coords -41.948 -42.622 7.165
+     angleY 19.662
+     scale 4.354
+    }
+   }
+   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
+    {
+     coords -17.975 0.284 5.257
+     angleY -90
+    }
+    {
+     coords -23.178 -2.894 5.255
+     angleY -90
+    }
+   }
+   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
+    {
+     coords -8.093 -3.727 10.202
+    }
+    {
+     coords -18.043 -3.728 10.219
+    }
+    {
+     coords -18.044 -3.73 18.152
+    }
+    {
+     coords -8.094 -3.73 18.135
+    }
+    {
+     coords -8.097 -3.731 26.112
+    }
+    {
+     coords -18.042 -3.73 26.127
+    }
+    {
+     coords -28.031 -3.731 26.124
+    }
+    {
+     coords -28.032 -3.729 10.216
+    }
+    {
+     coords -28.033 -3.731 18.149
+    }
+   }
+   StaticModelEntity : "{6A004A8F0571D456}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_small.et" {
+    coords 1.581 0.47 0.748
+    {
+     GenericEntity {
+      ID "5E0EE6168CAE86C7"
+      coords -0.565 21 0.019
+     }
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{73AEA0148D58F723}Prefabs/Structures/Infrastructure/Naval/Sheds/FishermanShed_02_V1.et" {
+    coords -4.145 0.258 0.291
+    angleY -90
+   }
+   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
+    {
+     coords 0.784 -18.001 -1.352
+     scale 1.84
+    }
+    {
+     coords -33.933 -10.458 37.562
+     scale 1.27
+    }
+    {
+     coords -23.975 -14.614 6.496
+     scale 1.84
+    }
+    {
+     coords -25.655 -39.534 36.581
+     scale 4.552
+    }
+    {
+     coords -49.374 -32.844 40.593
+     scale 3.142
+    }
+    {
+     coords -2.332 -42.22 4.817
+     scale 4.552
+    }
+   }
+   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
+    coords -1.602 -3.73 0.772
+    angleY 0
+   }
+   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
+    coords -12.097 -3.728 0.772
+   }
+   StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+    coords -23.055 -0.085 17.779
+   }
+   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
+    {
+     coords -8.085 -13.099 -1.59
+     angleY -46.118
+    }
+    {
+     coords -33.32 -12.01 6.991
+     angleY -26.833
+     scale 1.25
+    }
+    {
+     coords -28.067 -34.551 5.947
+     angleY -17.448
+     scale 3.34
+    }
+    {
+     coords -41.583 -22.771 28.378
+     angleY -79.57
+     scale 2.474
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+PR_TaskCollectionsArrayManager NotUsedATM : "{0A119D1E0E6C4921}Prefabs/ScenarioFramework/Components/PR_TaskCollectionManager.et" {
+ coords 846.711 39 2627.098
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_aCollectionNames {
+  "TaskCollection_01" "TaskCollection_02" "TaskCollection_03"
+ }
+}
+SCR_AIGroup : "{24E78E5A255B17A0}Prefabs/Groups/OPFOR/Group_USSR_GL_M.et" {
+ coords 2760.057 76.892 1616.69
+ Flags 2097155
+ DynamicsimLastlodDistance 5000
+ m_aStaticWaypoints {
+  "wp1" "wp2" "wp3"
+ }
+}
+SCR_ChimeraAIAgent myagent : "{B4C861A6DA2F5E05}AI/AIAgents/SCR_ChimeraAIAgentFull.et" {
+ components {
+  Hierarchy "{61194B2D17363277}" {
+  }
+ }
+ coords 2740.454 77.514 1619.096
+ Flags 2097155
+ DynamicsimLastlodDistance 0
+}

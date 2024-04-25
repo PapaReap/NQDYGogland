@@ -1,0 +1,631 @@
+$grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_USSR.et" {
+ BaseSayvo_w_ussr {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 1700
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+    m_bIsControlPoint 1
+   }
+   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+    m_iSupplies 200
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 1306.425 2.75 5018.831
+  angleY -51.176
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords -15.136 0 0.034
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_iRespawnWaves 1
+      m_iGroupMultiplier 1
+     }
+    }
+    coords -437.254 1.662 653.24
+    Flags 3
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 405.435 -1.455 -585.372
+      CompletionRadius 100
+     }
+    }
+   }
+   GenericEntity {
+    ID "60E0714912226671"
+    coords -23.245 0.25 74.334
+   }
+   GenericEntity {
+    ID "60E0714938383856"
+    coords 15.225 0 50.422
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E07149C1F0CAD3"
+    coords 0 0 0
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    coords -231.8 0.118 244.545
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords -1.658 0.048 5.788
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 44.128 0.377 57.134
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 117.729 0.214 208.842
+       CompletionRadius 2
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 131.589 2.029 288.661
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 235.529 0.507 194.188
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 330.244 2.476 108.107
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 517.518 -0.174 78.346
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 475.264 0.128 7.107
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 389.629 0.744 -60.265
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 290.418 0.163 -156.974
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 212.42 0.163 -108.584
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 158.173 0.628 -47.695
+       CompletionRadius 1
+      }
+     }
+    }
+   }
+  }
+ }
+ BaseSakkiluoto_ne_ussr2 {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 1650
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+    m_bIsControlPoint 1
+   }
+   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+    m_iSupplies 240
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 9760.94 5.645 10640.543
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords -15.136 0.124 0.034
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    coords -371.098 -0.487 -214.11
+    Flags 2097155
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 392.148 0.487 223.479
+      Flags 2097155
+      CompletionRadius 75
+     }
+    }
+   }
+   GenericEntity {
+    ID "60E0714912226671"
+    coords 0 0.181 11.98
+   }
+   GenericEntity {
+    ID "60E0714938383856"
+    coords 0 0.194 12.427
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E07149C1F0CAD3"
+    coords 0 -0.001 0
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    coords 3.914 -1.029 23.428
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords 50.165 -0.405 31.462
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 182.201 0.663 25.302
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 272.47 0.102 -53.964
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 247.928 -0.148 38.565
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 237.71 -1.855 110.53
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 196.555 -0.766 128.342
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 103.248 -2.225 133.276
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 48.964 -2.333 137.106
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 23.641 -0.312 71.33
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 4.684 -0.763 3.163
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 125.524 -1.516 52.058
+       CompletionRadius 2
+      }
+     }
+    }
+   }
+  }
+ }
+ BaseIsosommeri_sw_ussr {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 400
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+    m_bIsControlPoint 1
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2423.082 5.673 1823.194
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords -15.136 -0.779 0.034
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    coords -371.098 -0.487 -214.11
+    Flags 2097155
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 392.148 0.487 223.479
+      Flags 2097155
+      CompletionRadius 75
+     }
+    }
+   }
+   GenericEntity {
+    ID "60E0714912226671"
+    coords 0 5.047 50.171
+   }
+   GenericEntity {
+    ID "60E0714938383856"
+    coords 83.431 2.266 43.607
+   }
+   PR_SpawnPatrolTrigger PR_SpawnPatrolTrigger_3 {
+    components {
+     EPF_PersistenceComponent "{60F07453F7204299}" {
+      m_bSelfSpawn 0
+      m_pSaveData EPF_EntitySaveDataClass "{60F08DD020914FD6}" {
+       m_bSaveRemainingLifetime 0
+       m_aComponents {
+        EPF_ComponentSaveDataClass "{60F08DD03C0910FB}" {
+        }
+       }
+      }
+     }
+    }
+    coords 754.564 0.728 44.83
+    TriggerShapeType Sphere
+    SphereRadius 600
+    DrawShape 1
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    GroupType "Group: Light Fire Team (4)"
+    spawnPosition "PR_SpawnPatrolTrigger_3"
+    waypointType {
+     2
+    }
+    completionRadius {
+     100
+    }
+    completionType {
+     2
+    }
+    deleteTrigger 1
+    debugLogs 1
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E07149C1F0CAD3"
+    coords 0 0.466 25.553
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    components {
+     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+      m_eGroupType TEAM_MG
+     }
+    }
+    coords -67.372 1.332 78.743
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords 61.317 0.338 50.736
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 120.992 -0.53 88.195
+       CompletionRadius 2
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 177.483 -0.774 186.118
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 150.028 -0.719 227.99
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 113.38 -0.412 176.046
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 101.218 -0.467 108.469
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 188.054 -0.12 62.794
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 238.829 0.182 57.438
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 156.884 -0.601 73.966
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 131.707 23.258 56.42
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 84.781 0.642 59.021
+       CompletionRadius 1
+      }
+     }
+    }
+   }
+  }
+ }
+ BaseRuuskeri_e_ussr {
+  components {
+   BaseRadioComponent "{60E07149C1F7462F}" {
+    Transceivers {
+     RelayTransceiver "{60E07149C1F746D6}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
+    m_iRadius 150
+    m_bIsControlPoint 1
+   }
+   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
+    m_iSupplies 260
+   }
+   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 10178.22 6.61 6450.926
+  {
+   GenericEntity {
+    ID "60E07149C1F0CAD5"
+    coords -15.136 0.565 0.034
+   }
+   GenericEntity {
+    ID "60E0714F02A0D7F0"
+    coords -371.098 -0.487 -214.11
+    Flags 2097155
+    {
+     SCR_DefendWaypoint {
+      ID "60E0714CB980C8E9"
+      coords 392.148 0.487 223.479
+      Flags 2097155
+      CompletionRadius 75
+     }
+    }
+   }
+   GenericEntity {
+    ID "60E0714912226671"
+    coords -81.029 1.234 11.98
+   }
+   GenericEntity {
+    ID "60E0714938383856"
+    coords -71.814 0.846 82.717
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E07149C1F0CAD3"
+    coords 0 -0.001 0
+   }
+   GenericEntity : "{514F05948917EF83}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Patrol_USSR.et" {
+    coords 52.905 -4.761 -44.987
+    {
+     SCR_AIWaypoint {
+      ID "60E2393A8223D17F"
+      coords -3.58 -0.006 8.795
+      CompletionRadius 2
+     }
+     $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -18.471 2.133 31.125
+       CompletionRadius 2
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -67.518 5.032 26.564
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -116.025 5.994 61.586
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -125.722 6.743 68.767
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -125.299 25.388 72.465
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -123.4 5.993 66.59
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -88.657 5.963 40.511
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -40.522 4.69 29.376
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords -14.03 1.25 27.154
+       CompletionRadius 1
+      }
+      {
+       components {
+        Hierarchy "{60E2393A8529B0B0}" {
+        }
+       }
+       coords 7.308 -0.729 -1.579
+       CompletionRadius 1
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,22 @@
+GenericEntity {
+ ID "610970CAC03F28ED"
+ components {
+  RplComponent "{610970CAC03F28E7}" {
+  }
+  Hierarchy "{610A6241A0E65CD0}" {
+  }
+ }
+ coords 1346.627 37.836 2967.174
+ {
+  SCR_SmartActionWaypoint : "{06C976CBF4EC1182}Prefabs/AI/Waypoints/PR_AIWaypoint_GuardPoint_SA.et" {
+   ID "610A6B909D0FED4D"
+   coords 0 0 0
+   m_sStaticEntityName "PR_GuardPointPosition_1"
+  }
+  GenericEntity : "{09BD9E80DA8923B8}Prefabs/Systems/Compositions/PatrolPoint/PR_GuardPointPosition.et" {
+   ID "610A6B90E1669C5F"
+   coords 0 0 0
+   angleY 0
+  }
+ }
+}

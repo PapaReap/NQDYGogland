@@ -1,0 +1,225 @@
+GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ ID "5C727AD73024FB47"
+ components {
+  BaseRadioComponent "{5C727AD73024FB2A}" {
+   Transceivers {
+    RelayTransceiver "{5C727AD73024FB39}" {
+     "Transmitting Range" 1100
+    }
+   }
+  }
+  SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+   m_sBaseName ""
+   m_sBaseNameUpper ""
+  }
+  SCR_CampaignMilitaryBaseMapDescriptorComponent "{5CD2C48C8F5A230F}" {
+   MainType "Radio/ Tower"
+  }
+  SCR_EditableSystemComponent "{5C727AD73024FB14}" {
+   m_EntityType SYSTEM
+   m_UIInfo SCR_EditableDescriptorUIInfo "{5C727AD73024FB16}" {
+    Name "#AR-EditableEntity_TransmitterTower_01_Name"
+    Icon "{DD5F23CBB1731598}UI/Textures/Editor/EditableEntities/Systems/EditableEntity_System_Base.edds"
+   }
+   m_EntityInteraction SCR_EditableEntityInteraction "{5C727AD73024FB11}" {
+   }
+   m_bAutoRegister ALWAYS
+   m_Flags 2052
+  }
+  RplComponent "{5C727AD73024FB19}" {
+   Streamable Disabled
+  }
+ }
+ angleY -108.326
+ Flags 1027
+ {
+  GenericEntity {
+   ID "5C727AD606EB0C1C"
+   components {
+    SoundComponent "{5C727AD63C4F48D4}" {
+     Filenames {
+     }
+     IncludeInactive 1
+    }
+    SCR_AISmartActionComponent "{60F24B9034E8A791}" {
+     AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+     Tags {
+      "CaptureRelay_"
+     }
+    }
+    SCR_AISmartActionSentinelComponent "{60F24B9858205AF7}" {
+     AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+     Tags {
+      "CoverPost"
+     }
+     m_fLookDirectionRange 90
+    }
+    ActionsManagerComponent "{5C727AD65C3206FA}" {
+     ActionContexts {
+      UserActionContext "{5C727AD65994845D}" {
+       ContextName "CampaignReconfigureRelay"
+       Position PointInfo "{5C727AD67780F8A4}" {
+       }
+      }
+     }
+     additionalActions {
+      SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+       ParentContextList {
+       }
+       UIInfo UIInfo "{5C727AD6914D5B43}" {
+        Name "#AR-Campaign_Action_ReconfigureRelay-UC"
+       }
+       Duration 10
+      }
+     }
+    }
+   }
+   coords 0.023 0.892 1.562
+   angleY 90.645
+   Flags 1027
+  }
+  GenericEntity : "{03DE957D8161212B}Prefabs/Props/Civilian/Notebook_01_Open.et" {
+   ID "60F54C5ABB8D2D8E"
+   components {
+    Hierarchy "{60F54C583AD95A2F}" {
+    }
+   }
+   coords 0.115 0.891 1.111
+   angleY -94.521
+  }
+  GenericEntity PaperMap_01_folded_60F54C59C0231F92 : "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" {
+   ID "60F54C5ABB8D2D94"
+   coords -0.119 0.885 0.764
+   angleY 53.114
+  }
+  GameEntity : "{2CB0AA2A87842C18}Prefabs/Props/Civilian/LampKerosene_01/LampKerosene_01_military_USSR.et" {
+   ID "60F54C5ABB8D2D8B"
+   components {
+    Hierarchy "{60F54C58335B7DA2}" {
+    }
+   }
+   coords 0.154 1.372 1
+   angleY 115.263
+  }
+  GenericEntity : "{B496AC9BEE590838}Prefabs/Compositions/Misc/SubCompositions/Utility/Shelves_GeneralStorage_01.et" {
+   ID "60F54C5ABB8D2D99"
+   coords -0.266 0 0.147
+   angleY 83.905
+   Flags 1027
+   {
+    GenericEntity {
+     ID "5CB0F58EB691FB83"
+     coords -1.309 1.85 0.369
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FB86"
+     coords -1.26 1.371 0.372
+     Flags 1027
+     {
+      GenericEntity {
+       ID "5CB0D990B6C742C8"
+       coords -0.12 0.015 -0.055
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6C742CA"
+       coords 0.009 0.039 -0.051
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6C742CB"
+       coords 0.142 0.004 -0.09
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6D8C890"
+       coords -0.097 0.014 0.088
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6D8C896"
+       coords 0.008 0 0.085
+       Flags 1027
+      }
+     }
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FB8E"
+     coords -0.591 1.85 0.364
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBA9"
+     coords -0.478 0.418 0.373
+     Flags 1027
+     {
+      GenericEntity {
+       ID "5CB0D990B6C742C8"
+       coords -0.122 0.015 -0.055
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6C742CA"
+       coords 0.007 0.039 -0.051
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6C742CB"
+       coords 0.14 0.004 -0.09
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6D8C890"
+       coords -0.099 0.014 0.088
+       Flags 1027
+      }
+      GenericEntity {
+       ID "5CB0D990B6D8C896"
+       coords 0.006 0 0.085
+       Flags 1027
+      }
+     }
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBAB"
+     coords -1.307 0.412 0.37
+     Flags 1027
+     {
+      GenericEntity {
+       ID "5C64CB17312C16AE"
+       coords 0 0 0
+       Flags 1027
+      }
+     }
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBB1"
+     coords -0.303 1.442 0.434
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBB2"
+     coords -0.303 1.376 0.434
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBB3"
+     coords -0.565 1.376 0.426
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBB5"
+     coords -0.295 1.514 0.429
+     Flags 1027
+    }
+    GenericEntity {
+     ID "5CB0F58EB691FBBD"
+     coords -0.381 0.886 0.396
+     angleY -16.863
+     Flags 1027
+    }
+   }
+  }
+ }
+}

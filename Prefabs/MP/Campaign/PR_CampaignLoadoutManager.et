@@ -1,0 +1,67 @@
+SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
+ ID "56B2B47708C4F23A"
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{60FD3A161928635B}" {
+   m_sLoadoutName "#AR-Loadout_Editor_NewArsenalLoadout_Name"
+   m_sLoadoutResource "{8D89B17BCFBFAE45}Prefabs/Characters/Campaign/Final/Campaign_US_Player.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD3A1619286350}" {
+   m_sLoadoutName "#AR-Loadout_Editor_NewArsenalLoadout_Name"
+   m_sLoadoutResource "{F063CEEB9295E9B6}Prefabs/Characters/Campaign/Final/Campaign_USSR_Player.et"
+   m_sAffiliatedFaction "USSR"
+  }
+  SCR_PlayerArsenalLoadout "{60FD3A1619286356}" {
+   m_sLoadoutName "#AR-Loadout_Editor_SavedArsenalLoadout_Name"
+   m_sLoadoutResource "{BE7CA93E188A5B58}Prefabs/Characters/Campaign/Final/Campaign_US_Base.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_PlayerArsenalLoadout "{60FD3A1619286357}" {
+   m_sLoadoutName "#AR-Loadout_Editor_SavedArsenalLoadout_Name"
+   m_sLoadoutResource "{918C557BF3506286}Prefabs/Characters/Campaign/Final/Campaign_USSR_Base.et"
+   m_sAffiliatedFaction "USSR"
+  }
+  SCR_FactionPlayerLoadout "{60FD411A4B743353}" {
+   m_sLoadoutName "Grenadier (PapaReap)"
+   m_sLoadoutResource "{602A3529BE7390D2}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap.et"
+   m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B0F42002A}" {
+   m_sLoadoutName "Medic (DTRAX)"
+   m_sLoadoutResource "{E7780202592E99D9}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX.et"
+   m_sLoadoutImage "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B0C4C8C74}" {
+   m_sLoadoutName "AR (JohnnyReap)"
+   m_sLoadoutResource "{DFE02241733695CB}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_AR_Johnny.et"
+   m_sLoadoutImage "{43EA535E240F0B17}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_AR.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B12D1F00A}" {
+   m_sLoadoutName "MG (Peace)"
+   m_sLoadoutResource "{0F3B6A845B801795}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_MG_Peace.et"
+   m_sLoadoutImage "{D68798DF09F5BE8E}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_MG.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B134ABF6A}" {
+   m_sLoadoutName "Sarge (SARGE)"
+   m_sLoadoutResource "{270020DF55ABE65F}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Sniper_Sarge.et"
+   m_sLoadoutImage "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B1169C574}" {
+   m_sLoadoutName "Grenadier (PapaReap) e"
+   m_sLoadoutResource "{F77FCC8B17800579}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Grenadier_PapaReap_ext.et"
+   m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{60FD411B163AC579}" {
+   m_sLoadoutName "Medic (DTRAX) e"
+   m_sLoadoutResource "{0ED18E1A4D3808C6}Prefabs/Characters/Factions/BLUFOR/US_Army/PR_US_Medic_DTRAX_ext.et"
+   m_sLoadoutImage "{8D3E9B959DCE2B60}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Medic.edds"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}

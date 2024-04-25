@@ -1,0 +1,408 @@
+$grp PR_SpawnPatrolTrigger {
+ Trigger_takeRelay {
+  coords 1453.133 39 2784.628
+  Flags 2097155
+  TriggerShapeType Sphere
+  SphereRadius 500
+  DrawShape 1
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_bDebugLogs 1
+  m_sSpawnPosition "wp_01"
+  m_iRespawnCount 5
+  m_iRespawnTimerMin 5
+  m_bUseRandomRespawnTimer 1
+  m_iRespawnTimerMax 30
+  m_eAIGroupFormation Column
+  m_eAICharacterStance CROUCH
+  m_fPerceptionFactor 2.8
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "Waypoint_Set_2"
+  }
+ }
+ {
+  coords 1318.047 39.009 2792.774
+  TriggerShapeType Sphere
+  SphereRadius 342.9
+  DrawShape 1
+  ShapeColor 0.906 0.016 0.027 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_bDebugLogs 1
+  m_eAIGroupFormation Column
+  m_bHoldFire 0
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "Waypoint_Set_4"
+  }
+  m_CollectionSortOrder "RAMDOM DIRECTION"
+  m_WaypointSortOrder "RAMDOM DIRECTION"
+ }
+ {
+  coords 1797.868 53.94 2261.603
+  TriggerShapeType Sphere
+  SphereRadius 482.5
+  DrawShape 1
+  ShapeColor 0.016 0.906 0.035 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_bDebugLogs 1
+  m_eAIGroupFormation Column
+  m_bHoldFire 0
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "Waypoint_Set_6" "Waypoint_Set_7" "Waypoint_Set_8"
+  }
+  m_CollectionSortOrder "RAMDOM MIX"
+  m_SpawnCollections "RANDOM ONE"
+  {
+   $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    Waypoint_Set_6 {
+     components {
+      Hierarchy "{61077CF3AD0F8EFD}" {
+      }
+     }
+     coords -176.817 -12.048 40.503
+     {
+      SCR_AIWaypoint wp_z2 : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+       components {
+        Hierarchy "{61046A29C05BDB8A}" {
+        }
+       }
+       coords 101.561 0.58 174.769
+      }
+      SCR_AIWaypoint wp_z3 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+       components {
+        Hierarchy "{60FE9866DE5896F8}" {
+        }
+       }
+       coords 71.98 -2.917 245.194
+      }
+      SCR_TimedWaypoint wp_z1 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+       components {
+        Hierarchy "{61046A29768C3FAF}" {
+        }
+       }
+       coords 137.803 0 86.231
+       CompletionRadius 10
+       CompletionType Any
+       m_holdingTime 30
+      }
+     }
+    }
+    Waypoint_Set_7 {
+     components {
+      Hierarchy "{61077CF3B698FC8A}" {
+      }
+     }
+     coords -218.933 -14.255 48.678
+     {
+      SCR_AIWaypoint wp_z5 : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+       components {
+        Hierarchy "{61046A29C05BDB8A}" {
+        }
+       }
+       coords 28.331 0.845 98.932
+      }
+      SCR_AIWaypoint wp_z6 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+       components {
+        Hierarchy "{60FE9866DE5896F8}" {
+        }
+       }
+       coords -13.647 0.48 120.706
+      }
+      SCR_TimedWaypoint wp_z4 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+       components {
+        Hierarchy "{61046A29768C3FAF}" {
+        }
+       }
+       coords 77.356 2.731 84.649
+       CompletionRadius 10
+       CompletionType Any
+       m_holdingTime 30
+      }
+     }
+    }
+    Waypoint_Set_8 {
+     components {
+      Hierarchy "{61077CF3BBD5FABD}" {
+      }
+     }
+     coords -71.653 -0.298 74.225
+     {
+      SCR_AIWaypoint wp_z8 : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+       components {
+        Hierarchy "{61046A29C05BDB8A}" {
+        }
+       }
+       coords 5.864 -10.099 -125.813
+      }
+      SCR_AIWaypoint wp_z9 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+       components {
+        Hierarchy "{60FE9866DE5896F8}" {
+        }
+       }
+       coords -15.126 -12.648 -144.291
+      }
+      SCR_TimedWaypoint wp_z7 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+       components {
+        Hierarchy "{61046A29768C3FAF}" {
+        }
+       }
+       coords 26.384 -6.477 -98.312
+       CompletionRadius 10
+       CompletionType Any
+       m_holdingTime 30
+      }
+     }
+    }
+   }
+  }
+ }
+}
+SCR_SmartActionWaypoint : "{04A06A6742FB0AF8}Prefabs/AI/Waypoints/AIWaypoint_UserAction.et" {
+ coords 1278.678 39 2720.446
+}
+SCR_DefendWaypoint wp_defend_patrol : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+ coords 1374.922 38.101 2849.177
+}
+SCR_EntityWaypoint wp_attack : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
+ components {
+  Hierarchy "{610510B1CD1D9AB0}" {
+  }
+ }
+ coords 1293.45 37.72 2884.565
+ CompletionRadius 50
+ m_sEntityName "Character_US_AR_610510B7EB050CC6"
+}
+SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+ coords 1357.937 38.227 2841.14
+}
+AIWaypointCycle wp_09_cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ components {
+  Hierarchy "{610510BB19B4D9E3}" {
+  }
+ }
+ coords 1577.04 38 2898.742
+}
+SCR_DefendWaypoint wp_defend_back : "{3AB6B883AF54D965}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamBackup.et" {
+ components {
+  Hierarchy "{610510B64822989B}" {
+  }
+ }
+ coords 1310.403 37.811 2875.899
+ CompletionRadius 50
+}
+SCR_DefendWaypoint wp_loiter : "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et" {
+ coords 1433.683 39.01 2777.507
+}
+SCR_AIGroup g1 : "{657590C1EC9E27D3}Prefabs/Groups/OPFOR/Group_USSR_LightFireTeam.et" {
+ coords 1257.303 38.104 2837.364
+ Flags 2097155
+ m_aStaticWaypoints {
+  "wp_10" "wp_11" "wp_09_cycle"
+ }
+}
+SCR_EntityWaypoint wp_getin : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
+ coords 1339.262 39 2740.276
+ m_sEntityName "BTR1"
+}
+SCR_AIWaypoint wp_11 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ components {
+  Hierarchy "{610510BB0E4DDDA7}" {
+  }
+ }
+ coords 1630.612 38.766 2913.561
+ AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+}
+SCR_BoardingWaypoint : "{8AD8C82346156494}Prefabs/AI/Waypoints/AIWaypoint_GetInSelected.et" {
+ coords 1314.482 39 2742.629
+}
+$grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ Waypoint_Set_2 {
+  coords 1314.071 39 2762.602
+  {
+   SCR_AIWaypoint wp_02 : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+    components {
+     Hierarchy "{61046A29C05BDB8A}" {
+     }
+    }
+    coords 101.561 0 11.425
+   }
+   SCR_AIWaypoint wp_01 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+    components {
+     Hierarchy "{60FE9866DE5896F8}" {
+     }
+    }
+    coords 73.074 0 3.849
+   }
+   SCR_TimedWaypoint wp_02a : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+    components {
+     Hierarchy "{61046A29768C3FAF}" {
+     }
+    }
+    coords 137.802 0 20.462
+    CompletionRadius 10
+    CompletionType Any
+    m_holdingTime 30
+   }
+   SCR_SmartActionWaypoint wp_03_captureRelay : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
+    components {
+     Hierarchy "{60FE9866D5234122}" {
+     }
+    }
+    coords 251.509 -0.001 52.561
+    m_sStaticEntityName "Relay_01"
+   }
+  }
+ }
+ Waypoint_Set_3 {
+  coords 1392.701 38.828 2830.085
+  {
+   $grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+    wp_1_move {
+     components {
+      Hierarchy "{60FE9866E3F38615}" {
+      }
+     }
+     coords -41.084 0.171 22.42
+    }
+    wp_move2 {
+     components {
+      Hierarchy "{60FE9866E3F38615}" {
+      }
+     }
+     coords 40.149 -0.828 46.097
+    }
+   }
+   SCR_DefendWaypoint wp_defend_hierachy : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 1.024 -0.827 56.688
+    angleY 0
+    CompletionRadius 20
+    m_holdingTime 30
+   }
+  }
+ }
+ Waypoint_Set_4 {
+  coords 1516.872 38.932 2854.087
+  {
+   SCR_TimedWaypoint wp_08_wait : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+    components {
+     Hierarchy "{610510BD40327B1F}" {
+     }
+    }
+    coords -220.42 0.068 -110.344
+    m_holdingTime 30
+   }
+   SCR_AIWaypoint wp_10 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+    components {
+     Hierarchy "{610510BB0E4DDDA7}" {
+     }
+    }
+    coords -201.906 -1.025 -86.686
+    AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+   }
+   SCR_BoardingWaypoint wp_09_getin_nearest : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+    components {
+     Hierarchy "{610510BF0C90E4EA}" {
+     }
+    }
+    coords -180.098 0.068 -116.104
+    CompletionType Any
+    m_bDriverAllowed 1
+   }
+  }
+ }
+ Waypoint_Set_5 {
+  coords 1301.582 39 2735.599
+  {
+   $grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+    wp_1_move2 {
+     components {
+      Hierarchy "{60FE9866E3F38615}" {
+      }
+     }
+     coords -41.084 0.171 22.42
+    }
+    wp_move3 {
+     components {
+      Hierarchy "{60FE9866E3F38615}" {
+      }
+     }
+     coords 40.149 -0.828 46.097
+    }
+   }
+   SCR_DefendWaypoint wp_defend_hierachy2 : "{AAE8882E0DE0761A}Prefabs/AI/Waypoints/AIWaypoint_Defend_Hierarchy.et" {
+    coords 1.024 -0.827 56.688
+    angleY 0
+    CompletionRadius 20
+    m_holdingTime 30
+   }
+  }
+ }
+ Waypoint_Set_10 {
+  coords 1880.541 35.763 2052.425
+  {
+   SCR_AIWaypoint wp_z14 : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+    components {
+     Hierarchy "{61046A29C05BDB8A}" {
+     }
+    }
+    coords 101.561 0.58 174.769
+   }
+   SCR_AIWaypoint wp_z15 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+    components {
+     Hierarchy "{60FE9866DE5896F8}" {
+     }
+    }
+    coords 71.98 -2.917 245.194
+   }
+   SCR_TimedWaypoint wp_z13 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+    components {
+     Hierarchy "{61046A29768C3FAF}" {
+     }
+    }
+    coords 137.803 0 86.231
+    CompletionRadius 10
+    CompletionType Any
+    m_holdingTime 30
+   }
+  }
+ }
+}
+SCR_DefendWaypoint wp_defend : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ components {
+  Hierarchy "{610510B666725957}" {
+  }
+ }
+ coords 1293.603 38.001 2884.462
+}
+SCR_EntityWaypoint wp_follow : "{A0509D3C4DD4475E}Prefabs/AI/Waypoints/AIWaypoint_Follow.et" {
+ components {
+  Hierarchy "{610510B448D7BB39}" {
+  }
+ }
+ coords 1373.459 38.905 2816.072
+ m_sEntityName "g1"
+}
+Vehicle BTR1 : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
+ components {
+  Hierarchy "{610510B84D878EFB}" {
+  }
+ }
+ coords 1345.782 39 2740.261
+}
+GenericEntity Relay_01 : "{DB04D6564D4AB421}Prefabs/Systems/MilitaryBase/PR_ConflictRelayRadio.et" {
+ coords 1576.207 39.001 2821.497
+ {
+  GenericEntity {
+   ID "60CE57DB23758B88"
+   components {
+    SCR_AISmartActionSentinelComponent "{60F50668D09A8FE4}" {
+     Enabled 0
+    }
+   }
+  }
+ }
+}

@@ -1,14 +1,64 @@
+$grp GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ {
+  coords 878.426 39 2702.726
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F815170354129A}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "Base1"
+      }
+     }
+    }
+    coords -1.418 0.892 0.456
+   }
+   GenericEntity : "{B496AC9BEE590838}Prefabs/Compositions/Misc/SubCompositions/Utility/Shelves_GeneralStorage_01.et" {
+    coords -0.072 0 -0.04
+   }
+  }
+ }
+ {
+  coords 1296.788 39 2140.589
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F815170354129A}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "Base1"
+      }
+     }
+    }
+    coords -1.418 0.892 0.456
+   }
+   GenericEntity : "{B496AC9BEE590838}Prefabs/Compositions/Misc/SubCompositions/Utility/Shelves_GeneralStorage_01.et" {
+    coords -0.072 0 -0.04
+   }
+  }
+ }
+}
 $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
- SP01_Pohjoissivunkallio {
+ SP01_Airport {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
      RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1200
      }
     }
    }
    SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
     m_iRadius 130
+   }
+   SCR_CampaignSeizingComponent "{60E09758FCAF3A0D}" {
+    Enabled 1
+    m_fMaximumSeizingTime 20
+    m_bIgnoreNonPlayableAttackers 0
+    m_bShowNotifications 1
+    m_fExtraTimePerService 0
    }
   }
   coords 849.414 39.12 2745.803
@@ -19,16 +69,24 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
   }
  }
- SP02_Korkiala_needRelay {
+ SP02_Airport {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
      RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1300
      }
     }
    }
    SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
     m_iRadius 130
+   }
+   SCR_CampaignSeizingComponent "{60E09758FCAF3A0D}" {
+    Enabled 1
+    m_fMaximumSeizingTime 20
+    m_bIgnoreNonPlayableAttackers 0
+    m_bShowNotifications 1
+    m_fExtraTimePerService 0
    }
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 220

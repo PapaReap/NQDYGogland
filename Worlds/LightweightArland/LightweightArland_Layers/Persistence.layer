@@ -1,0 +1,225 @@
+PR_SpawnTaskTrigger SpawnTaskTrigger_Move_TaskMove1 {
+ coords 887.584 39 2660.727
+ TriggerShapeType Sphere
+ SphereRadius 9
+ DrawShape 1
+ ShapeColor 1 0.008 0 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_Persistent_Entity_612D306226C3A957"
+ m_aNameOfTasksToSpawnOnActivation {
+  "TaskMove1"
+ }
+ m_bUseMoveTaskDestination 1
+ m_sLocationToMoveTaskTo "Persistence_Entity_TaskMove1_move"
+ m_bUseRandomTasks 1
+ m_iRandomTaskCount 4
+}
+PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
+ coords 654.634 39 2596.629
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_aTaskNames {
+  "TaskMove1" "TaskDestroy1"
+ }
+}
+SCR_ChimeraCharacter PR_Persistent_Entity_612D306226C3A957 : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
+ components {
+  EventHandlerManagerComponent "{530284308E2527DD}" {
+   EventHandlers {
+    BaseEventHandler "{5A5A94D957DB58B7}" {
+     EventName ""
+    }
+   }
+  }
+  ClimbingDataComponent "{5304A49E934A0758}" {
+   Enabled 0
+  }
+  ColliderHistoryComponent "{566C7EDBB7BCC719}" {
+   Enabled 0
+  }
+ }
+ coords 887.307 39 2650.404
+}
+GenericEntity Launcher_M72A3_base_612C58CAD5D2983C : "{37F022D0CDC84C11}Prefabs/Weapons/Launchers/M72/Launcher_M72A3_base.et" {
+ components {
+  EPF_PersistenceComponent "{5A28749C602565F8}" {
+   m_bSelfSpawn 0
+  }
+ }
+ coords 886.111 39 2659.697
+}
+$grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+ Persistence_Entity_613019954416DD54 {
+  coords 2496.613 78.143 2713.125
+ }
+ Persistence_Entity_TaskMove1_move {
+  coords 849.582 39 2742.862
+ }
+ Persistence_Entity_61301995CE56ACFD {
+  coords 1280.411 39 2198.027
+ }
+}
+GenericEntity Launcher_M72A3_612C58CAD6589908 : "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et" {
+ coords 885.467 39 2662.058
+}
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ Area_TaskDestroy1 {
+  coords 784.31 39.001 2615.185
+  {
+   GenericEntity TaskDestroy1 : "{265A8A1492CB6189}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDestroy.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskDestroy "{5A6513F41BA457C8}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords -4.495 -0.002 2.785
+    {
+     GenericEntity SlotDestroy1 {
+      ID "5E74C9091EDFA9EF"
+     }
+    }
+   }
+  }
+ }
+ Area_TaskMove1 {
+  coords 896.17 39 2635.481
+  {
+   GenericEntity TaskMove1 : "{3512D2F2BF47D345}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskMove.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 0.222 0 -0.006
+    {
+     GenericEntity SlotMoveTo3 {
+      ID "5E74C90810FBB0CE"
+     }
+    }
+   }
+  }
+ }
+ Area_TaskClearArea {
+  coords 2799.418 78.689 1643.618
+  {
+   PR_SpawnPatrolTrigger {
+    components {
+     Hierarchy "{612D7C47EA7B895A}" {
+     }
+    }
+    coords -6.589 -2.241 -19.655
+    TriggerShapeType Sphere
+    SphereRadius 900
+    DrawShape 1
+    ShapeColor 1 0.008 0 0.078
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_bRefreshToggle 1
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "PR_Persistent_Entity_SpawnPatrol_6"
+    m_bKeepGroupActive 1
+    m_eAIGroupFormation Column
+    m_bHoldFire 0
+    m_bCycleWaypoints 1
+    m_aWaypointCollection {
+     "TaskClearArea_Set"
+    }
+   }
+   PR_SpawnTaskTrigger PR_SpawnTaskTrigger_2 {
+    components {
+     Hierarchy "{612D7C47948CEDE0}" {
+     }
+    }
+    coords -9.094 -4.24 -18.407
+    TriggerShapeType Sphere
+    SphereRadius 1000
+    DrawShape 1
+    ShapeColor 0.016 0.906 0.035 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Persistence_Entity_PR_SpawnTaskTrigger_2"
+    m_aNameOfTasksToSpawnOnActivation {
+     "TaskClearArea1"
+    }
+    m_iDelayTimerToSpawnTask 10
+   }
+   SCR_ChimeraCharacter PR_Persistent_Entity_SpawnPatrol_6 : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
+    coords -44.854 -1.2 -19.455
+   }
+   SCR_ChimeraCharacter Persistence_Entity_PR_SpawnTaskTrigger_2 : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+    coords -21.97 -3.441 -25.799
+   }
+   GenericEntity TaskClearArea_Set : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    components {
+     Hierarchy "{612D7C5988058A28}" {
+     }
+    }
+    coords 96.14 -8.615 19.424
+    {
+     $grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+      wp1 {
+       components {
+        Hierarchy "{612D7C4719DDF809}" {
+        }
+       }
+       coords -89.489 3.602 -32.467
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+      }
+      wp2 {
+       components {
+        Hierarchy "{612D7C471C1AE400}" {
+        }
+       }
+       coords 104.199 -12.337 64.005
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+      }
+      wp3 {
+       components {
+        Hierarchy "{612D7C47219BBABD}" {
+        }
+       }
+       coords 498.133 -67.854 499.891
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+      }
+     }
+    }
+   }
+   GenericEntity TaskClearArea1 : "{C248387C4E5A9DE8}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskClearArea.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_bPlaceMarkerOnSubjectSlot 1
+     }
+    }
+    coords -3.123 -4.268 3.367
+    {
+     GenericEntity SlotClearArea1 {
+      ID "5E9A6605B11E6EF5"
+      components {
+       SCR_ScenarioFrameworkSlotClearArea "{5A633AF525D5B972}" {
+        m_bShowDebugShapesDuringRuntime 1
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A633AF5368D26A3}" {
+          m_fAreaRadius 91
+          m_fActivationCountdownTimer 30
+          m_bNotificationEnabled 1
+         }
+        }
+        m_sTaskTitle "Clear Arleville"
+        m_sTaskDescription "Clear Arleville of all opposition"
+       }
+      }
+      coords -2.163 0.004 -0.31
+     }
+    }
+   }
+  }
+ }
+}

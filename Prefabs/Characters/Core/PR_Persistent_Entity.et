@@ -1,0 +1,133 @@
+SCR_ChimeraCharacter : "{37578B1666981FCE}Prefabs/Characters/Core/Character_Base.et" {
+ ID "520EC961A090B1EE"
+ components {
+  ChimeraAIControlComponent "{520EA1D2DB109F34}" {
+   components {
+    AICharacterMovementComponent "{520EA1D2DB109F01}" {
+     Enabled 0
+    }
+    AIPathfindingComponent "{56349A6F9C02E7A1}" {
+     Enabled 0
+    }
+   }
+  }
+  SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+   "Additional hit zones" {
+    SCR_CharacterHealthHitZone Health {
+     DamageReduction 0
+     DamageThreshold 1000000
+     "Collision multiplier" 0
+     "Melee multiplier" 0
+     "Kinetic multiplier" 0
+     "Fragmentation multiplier" 0
+     "Explosive multiplier" 0
+     "Incendiary multiplier" 0
+    }
+    SCR_CharacterBloodHitZone Blood {
+     CriticalDamage 1
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterResilienceHitZone Resilience {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHeadHitZone Head {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone Chest {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone Abdomen {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone Hips {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RArm {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LArm {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RForearm {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LForearm {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RHand {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LHand {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RThigh {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LThigh {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RCalf {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LCalf {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone RFoot {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone LFoot {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+    SCR_CharacterHitZone Neck {
+     DamageThreshold 1000000
+     m_fRegenerationDelay 0
+     m_fFullRegenerationTime 0
+    }
+   }
+   "Fall damage min speed" 100
+   "Fall damage max speed" 1000
+   CollisionVelocityThreshold 100000
+   "Heavy damage threshold" 1000000
+   m_fBleedingParticleRateScale 0
+   m_fDOTScale 0
+   m_fRegenScale 5
+   m_fUnconsciousRegenerationScale 10000
+  }
+ }
+}

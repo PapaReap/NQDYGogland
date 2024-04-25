@@ -1,0 +1,10 @@
+GameEntity : "{1CE762D0A53A395A}Prefabs/Props/Civilian/LampKerosene_01/LampKerosene_01_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "TinyDestructible"
+  }
+ }
+ coords -0.882 1.378 0.518
+ angleY -23.93
+}

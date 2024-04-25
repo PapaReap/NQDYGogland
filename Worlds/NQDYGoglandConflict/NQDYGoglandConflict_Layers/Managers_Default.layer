@@ -7,9 +7,6 @@ SCR_AIWorld AIWorld_Gogland : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et"
    NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
     NavmeshFilesConfig BaseNavmeshFilesConfig "{5AF8B9A1D80D8DFA}" : "{568C7122442FC9F2}Configs/Navmesh/Navmesh_CTI_Campaign_Eden_Soldier.conf" {
      NavmeshFile "{20E5B728C88940C2}Worlds/Gamemaster/Navmeshes/gogland_navmesh.nmn"
-     NavmeshFileOveride {
-      "{20E5B728C88940C2}Worlds/Gamemaster/Navmeshes/gogland_navmesh.nmn"
-     }
     }
    }
   }
@@ -31,7 +28,8 @@ SCR_AIWorld AIWorld_Gogland : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et"
   }
  }
  coords 4779.372 7.844 10686.511
- LimitOfSpawnedAIAgents 420
+ LimitOfSpawnedAIAgents 600
+ m_iActiveAILimit 400
 }
 PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 4776.189 7.85 10695.884

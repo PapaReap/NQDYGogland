@@ -1,0 +1,64 @@
+$grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ ConflictMilitaryBase3 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2500.416 79.064 2710.673
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ ConflictMilitaryBase4 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "USSR"
+   }
+  }
+  coords 2184.237 63.592 1374.433
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+}

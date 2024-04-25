@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3757F06924A51A50}Configs/Navmesh/Navmesh_CTI_Campaign_Arland_Soldier.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

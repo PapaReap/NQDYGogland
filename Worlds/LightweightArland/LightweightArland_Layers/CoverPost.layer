@@ -1,0 +1,357 @@
+$grp PR_SpawnPatrolTrigger {
+ TowerDownstairs_USSR_Trigger {
+  coords 1364.349 38.102 2954.101
+  angleY 180
+  TriggerShapeType Sphere
+  SphereRadius 100
+  DrawShape 1
+  ShapeColor 0.016 0.906 0.035 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_GroupType "Man: Machine Gun (1)"
+  m_bTeleportAfterSpawn 1
+  m_sTeleportPosition {
+   "Defend_1"
+  }
+  m_bHoldFire 0
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "WP_Downstairs_Set"
+  }
+  m_WaypointSortOrder "RAMDOM MIX"
+  m_iDelayTimer 5
+  m_bDebugLogs 1
+  {
+   GenericEntity WP_Downstairs_Set : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    components {
+     Hierarchy "{610B43F9B9359921}" {
+     }
+    }
+    coords 1.69 0.911 -5.614
+    angleY 180
+    {
+     $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+      Defend_1 {
+       components {
+        Hierarchy "{610B43F22E827D69}" {
+        }
+       }
+       coords -0.89 0 8.19
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+       CompletionRadius 1
+       CompletionType Any
+       m_fPriorityLevel 2000
+       m_holdingTime 30
+       m_DefendPresets {
+        SCR_DefendWaypointPreset "{58D6884489389713}" {
+         m_aTagsForSearch {
+          "CoverPost"
+         }
+        }
+       }
+      }
+      Defend_2 {
+       components {
+        Hierarchy "{610B43F22E827D69}" {
+        }
+       }
+       coords -1.71 0 -1.316
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+       CompletionRadius 1
+       CompletionType Any
+       m_fPriorityLevel 2000
+       m_holdingTime 30
+       m_DefendPresets {
+        SCR_DefendWaypointPreset "{58D6884489389713}" {
+         m_aTagsForSearch {
+          "CoverPost"
+         }
+        }
+       }
+      }
+      Defend_3 {
+       components {
+        Hierarchy "{610B43F22E827D69}" {
+        }
+       }
+       coords -3.822 0 7.127
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+       CompletionRadius 1
+       CompletionType Any
+       m_fPriorityLevel 2000
+       m_holdingTime 30
+       m_DefendPresets {
+        SCR_DefendWaypointPreset "{58D6884489389713}" {
+         m_aTagsForSearch {
+          "CoverPost"
+         }
+        }
+       }
+      }
+      Defend_4 {
+       components {
+        Hierarchy "{610B43F22E827D69}" {
+        }
+       }
+       coords 2.145 -0.95 8.879
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+       CompletionRadius 1
+       CompletionType Any
+       m_fPriorityLevel 2000
+       m_holdingTime 30
+       m_DefendPresets {
+        SCR_DefendWaypointPreset "{58D6884489389713}" {
+         m_aTagsForSearch {
+          "CoverPost"
+         }
+        }
+       }
+      }
+      Defend_5 {
+       components {
+        Hierarchy "{610B43F22E827D69}" {
+        }
+       }
+       coords 5.483 0 9.624
+       AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+       CompletionRadius 1
+       CompletionType Any
+       m_fPriorityLevel 2000
+       m_holdingTime 30
+       m_DefendPresets {
+        SCR_DefendWaypointPreset "{58D6884489389713}" {
+         m_aTagsForSearch {
+          "CoverPost"
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ TowerUpstairs_USSR_Trigger {
+  coords 1368.324 38 2955.154
+  angleY 180
+  Flags 2097155
+  TriggerShapeType Sphere
+  SphereRadius 100
+  DrawShape 1
+  ShapeColor 0.016 0.906 0.035 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_GroupType "Group: Light Fire Team (4)"
+  m_bTeleportAfterSpawn 1
+  m_sTeleportPosition {
+   "DefendUpstairs_1"
+  }
+  m_eAIGroupFormation Column
+  m_bHoldFire 0
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "WP_Upstairs_Set"
+  }
+  m_WaypointSortOrder "RAMDOM MIX"
+  m_iDelayTimer 5
+  m_bDebugLogs 1
+ }
+ TowerRoof_USSR_Trigger {
+  coords 1372.318 37.995 2956.716
+  angleY 180
+  Flags 2097155
+  TriggerShapeType Sphere
+  SphereRadius 100
+  DrawShape 1
+  ShapeColor 0.016 0.906 0.035 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  m_GroupType "Group: Sniper Team (2)"
+  m_bTeleportAfterSpawn 1
+  m_sTeleportPosition {
+   "DefendRoof_1"
+  }
+  m_bHoldFire 0
+  m_bCycleWaypoints 1
+  m_aWaypointCollection {
+   "WP_Roof_Set"
+  }
+  m_WaypointSortOrder "RAMDOM MIX"
+  m_iDelayTimer 5
+  m_bDebugLogs 1
+ }
+}
+SCR_SmartActionWaypoint : "{04A06A6742FB0AF8}Prefabs/AI/Waypoints/AIWaypoint_UserAction.et" {
+ coords 1361.773 39.013 2967.897
+ AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+ m_sStaticEntityName "Defend_1_SA"
+}
+$grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ WP_Roof_Set {
+  components {
+   Hierarchy "{610B43F9B9359921}" {
+   }
+  }
+  coords 1363.75 46.988 2959.256
+  {
+   $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+    DefendRoof_1 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords 3.052 0.001 3.766
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendRoof_2 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords -2.256 0.001 6.549
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendRoof_3 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords 4.775 -0.006 10.408
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendRoof_4 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords -3.777 -0.002 -1.497
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+   }
+  }
+ }
+ WP_Upstairs_Set {
+  components {
+   Hierarchy "{610B43F9B9359921}" {
+   }
+  }
+  coords 1362.384 42.809 2959.619
+  {
+   $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+    DefendUpstairs_1 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords 6.553 0 7.68
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendUpstairs_2 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords 6.881 0 0.846
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendUpstairs_3 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords -1.031 -0 -1.141
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendUpstairs_4 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords -0.559 -0 7.991
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+    DefendUpstairs_5 {
+     components {
+      Hierarchy "{610B43F22E827D69}" {
+      }
+     }
+     coords 2.253 1.52 9.266
+     CompletionRadius 1
+     CompletionType Any
+     m_fPriorityLevel 2000
+     m_holdingTime 90
+    }
+   }
+  }
+ }
+}
+$grp SCR_SmartActionWaypoint : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoint_ObservationPost.et" {
+ Defend_1_SA {
+  coords 1361.778 39.013 2967.75
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_sStaticEntityName "Defend_1"
+  m_sSmartActionTag "CoverPost"
+ }
+ Defend_2_SA {
+  coords 1360.961 39.013 2958.406
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_sStaticEntityName "Defend_2"
+  m_sSmartActionTag "CoverPost"
+ }
+ Defend_3_SA {
+  coords 1358.833 39.013 2966.848
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_sStaticEntityName "Defend_3"
+  m_sSmartActionTag "CoverPost"
+ }
+ Defend_4_SA {
+  coords 1364.806 38.063 2968.593
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_sStaticEntityName "Defend_4"
+  m_sSmartActionTag "CoverPost"
+ }
+ Defend_5_SA {
+  coords 1368.149 39.013 2969.336
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_sStaticEntityName "Defend_5"
+  m_sSmartActionTag "CoverPost"
+ }
+}
+GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+ coords 1361.784 39.013 2967.746
+ angleY 0
+}

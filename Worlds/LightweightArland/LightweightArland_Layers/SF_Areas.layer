@@ -1,0 +1,66 @@
+SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ coords 1302.908 38.999 2712.59
+}
+SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ coords 1242.248 39 2709.774
+}
+GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ components {
+  SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+   m_bShowDebugShapesInWorkbench 1
+  }
+ }
+ coords 2555.773 88.999 1835.465
+ Flags 2097155
+ {
+  GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+   coords 1.851 -1.171 -7.926
+   Flags 2097155
+   {
+    $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+     Layer2_AI {
+      coords -4.98 -2.218 -15.99
+      Flags 2097155
+      {
+       GenericEntity SlotAI1 : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et"
+         }
+        }
+        coords 19.123 -0.467 -5.36
+        Flags 2097155
+       }
+      }
+     }
+     Layer2_WP {
+      coords -11.581 1.282 8.845
+      Flags 2097155
+      {
+       $grp GenericEntity : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+        SlotMoveTo1 {
+         coords 56.004 -6.785 -4.269
+         Flags 2097155
+        }
+        SlotMoveTo2 {
+         coords 184.662 -19.451 26.966
+         Flags 2097155
+        }
+       }
+       GenericEntity SlotWaypoint1 : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+        components {
+         SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+          m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{610451CAAD68BC99}" {
+          }
+         }
+        }
+        coords 177.12 -16.863 -31.513
+        Flags 2097155
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

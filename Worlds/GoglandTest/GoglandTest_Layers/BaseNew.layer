@@ -1,0 +1,59 @@
+$grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
+ SP01_BaldRidge {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 420
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 4743.697 7.844 10754.565
+  Flags 2097155
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+    Flags 2097155
+   }
+  }
+ }
+ SP02_Arleville {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 530
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+   SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
+    m_iSupplies 220
+   }
+  }
+  coords 4193.767 44.388 10014.174
+  Flags 2097155
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    Flags 2097155
+   }
+  }
+ }
+}

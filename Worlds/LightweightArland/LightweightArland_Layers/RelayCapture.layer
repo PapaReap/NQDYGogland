@@ -1,0 +1,498 @@
+PR_SpawnPatrolTrigger Trigger_CaptureRelay {
+ coords 1337.994 39 2779.243
+ Flags 2097155
+ TriggerShapeType Sphere
+ SphereRadius 250
+ DrawShape 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_sSpawnPosition "Waypoint_Set_1"
+ m_bCycleWaypoints 1
+ m_bDebugLogs 1
+}
+$grp GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ Relay033 {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 100
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {
+    m_sBaseName ""
+    m_sBaseNameUpper ""
+   }
+   SCR_CampaignMilitaryBaseMapDescriptorComponent "{5CD2C48C8F5A230F}" {
+    MainType "Radio/ Tower"
+   }
+   SCR_EditableSystemComponent "{5C727AD73024FB14}" {
+    m_EntityType SYSTEM
+    m_UIInfo SCR_EditableDescriptorUIInfo "{5C727AD73024FB16}" {
+     Name "#AR-EditableEntity_TransmitterTower_01_Name"
+     Icon "{DD5F23CBB1731598}UI/Textures/Editor/EditableEntities/Systems/EditableEntity_System_Base.edds"
+    }
+    m_EntityInteraction SCR_EditableEntityInteraction "{5C727AD73024FB11}" {
+    }
+    m_bAutoRegister ALWAYS
+    m_Flags 2052
+   }
+   RplComponent "{5C727AD73024FB19}" {
+    Streamable Disabled
+   }
+  }
+  coords 1386.858 39 2761.581
+  angleY -108.326
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SoundComponent "{5C727AD63C4F48D4}" {
+      Filenames {
+      }
+      IncludeInactive 1
+     }
+     SCR_AISmartActionComponent "{60F24B9034E8A791}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "CaptureRelay_03"
+      }
+     }
+     SCR_AISmartActionSentinelComponent "{60F24B9858205AF7}" {
+      AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+      Tags {
+       "CoverPost"
+      }
+      m_fLookDirectionRange 90
+     }
+     ActionsManagerComponent "{5C727AD65C3206FA}" {
+      ActionContexts {
+       UserActionContext "{5C727AD65994845D}" {
+        ContextName "CampaignReconfigureRelay"
+        Position PointInfo "{5C727AD67780F8A4}" {
+        }
+       }
+      }
+      additionalActions {
+       SCR_CampaignReconfigureRelayUserAction "{5C727AD67B0A97A0}" {
+        ParentContextList {
+        }
+        UIInfo UIInfo "{5C727AD6914D5B43}" {
+         Name "#AR-Campaign_Action_ReconfigureRelay-UC"
+        }
+        Duration 10
+       }
+      }
+     }
+    }
+    coords 0.023 0.892 1.562
+    angleY 90.645
+    Flags 2098179
+   }
+   GenericEntity : "{03DE957D8161212B}Prefabs/Props/Civilian/Notebook_01_Open.et" {
+    components {
+     Hierarchy "{60F54C583AD95A2F}" {
+     }
+    }
+    coords 0.115 0.891 1.111
+    angleY -94.521
+    Flags 2098179
+   }
+   GenericEntity PaperMap_01_folded_60F54C59C0231F92 : "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" {
+    coords -0.119 0.885 0.764
+    angleY 53.114
+    Flags 2098179
+   }
+   GameEntity : "{2CB0AA2A87842C18}Prefabs/Props/Civilian/LampKerosene_01/LampKerosene_01_military_USSR.et" {
+    components {
+     Hierarchy "{60F54C58335B7DA2}" {
+     }
+    }
+    coords 0.154 1.372 1
+    angleY 115.263
+    Flags 2098179
+   }
+   GenericEntity : "{B496AC9BEE590838}Prefabs/Compositions/Misc/SubCompositions/Utility/Shelves_GeneralStorage_01.et" {
+    coords -0.266 0 0.147
+    angleY 83.905
+    Flags 2098179
+    {
+     GenericEntity {
+      ID "5CB0F58EB691FB86"
+      coords -1.26 1.371 0.372
+      Flags 1027
+      {
+       GenericEntity {
+        ID "5CB0D990B6C742C8"
+        coords -0.12 0.015 -0.055
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6C742CA"
+        coords 0.009 0.039 -0.051
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6C742CB"
+        coords 0.142 0.004 -0.09
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6D8C890"
+        coords -0.097 0.014 0.088
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6D8C896"
+        coords 0.008 0 0.085
+        Flags 1027
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBA9"
+      coords -0.478 0.418 0.373
+      Flags 1027
+      {
+       GenericEntity {
+        ID "5CB0D990B6C742C8"
+        coords -0.122 0.015 -0.055
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6C742CA"
+        coords 0.007 0.039 -0.051
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6C742CB"
+        coords 0.14 0.004 -0.09
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6D8C890"
+        coords -0.099 0.014 0.088
+        Flags 1027
+       }
+       GenericEntity {
+        ID "5CB0D990B6D8C896"
+        coords 0.006 0 0.085
+        Flags 1027
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBAB"
+      coords -1.307 0.412 0.37
+      Flags 1027
+      {
+       GenericEntity {
+        ID "5C64CB17312C16AE"
+        coords 0 0 0
+        Flags 1027
+       }
+      }
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FB83"
+      coords -1.309 1.85 0.369
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FB8E"
+      coords -0.591 1.85 0.364
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBBD"
+      coords -0.381 0.886 0.396
+      angleY -16.863
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBB5"
+      coords -0.295 1.514 0.429
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBB1"
+      coords -0.303 1.442 0.434
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBB2"
+      coords -0.303 1.376 0.434
+      Flags 1027
+     }
+     GenericEntity {
+      ID "5CB0F58EB691FBB3"
+      coords -0.565 1.376 0.426
+      Flags 1027
+     }
+    }
+   }
+  }
+ }
+ Relay03xx {
+  coords 1379.876 39 2748.884
+  Flags 2098179
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F815170354129A}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "CaptureRelay_03"
+      }
+     }
+    }
+    coords 0 0 0
+    Flags 2098179
+   }
+  }
+ }
+ Relay04 {
+  coords 1778.185 39.01 2853.671
+  Flags 2097155
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F815170354129A}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "CaptureRelay_04"
+      }
+     }
+    }
+   }
+  }
+ }
+ Relay05 {
+  coords 1440.526 39 2786.106
+  Flags 2097155
+  {
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F815170354129A}" {
+      AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+      Tags {
+       "CaptureRelay_05"
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity Waypoint_Set_1 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ coords 1360.612 38 2875.351
+ Flags 2097155
+ {
+  $grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+   WP_1 {
+    components {
+     Hierarchy "{60F364A75BE39B37}" {
+     }
+    }
+    coords 2.113 1 -98.951
+    Flags 2097155
+   }
+   WP_5 {
+    components {
+     Hierarchy "{60F364A765D4182B}" {
+     }
+    }
+    coords 164.876 0.041 23.737
+    Flags 2097155
+   }
+   WP_6 {
+    components {
+     Hierarchy "{60F364A765D4182B}" {
+     }
+    }
+    coords -50.828 -0.221 -22.679
+    Flags 2097155
+   }
+   WP_2b {
+    components {
+     Hierarchy "{60F364A765D4182B}" {
+     }
+    }
+    coords 80.005 1 -82.005
+    Flags 2097155
+    CompletionRadius 2
+   }
+   WP_3b {
+    components {
+     Hierarchy "{60F364A765D4182B}" {
+     }
+    }
+    coords 79.992 1 -81.281
+    Flags 2097155
+    CompletionRadius 2
+   }
+  }
+  $grp SCR_SmartActionWaypoint : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
+   WP_2_CaptureRelay3 {
+    components {
+     Hierarchy "{60F24B9F2A7828CD}" {
+     }
+    }
+    coords 18.962 1.163 -93.808
+    angleY 159.887
+    Flags 2097155
+    CompletionRadius 2
+    m_sStaticEntityName "Relay03"
+    m_sSmartActionTag "CaptureRelay_03"
+   }
+   WP_4_CaptureRelay4 {
+    components {
+     Hierarchy "{60F24B9F2A7828CD}" {
+     }
+    }
+    coords 417.249 1 -20.667
+    angleY -107.404
+    Flags 2097155
+    CompletionRadius 1
+    m_sStaticEntityName "Relay04"
+    m_sSmartActionTag "CaptureRelay_04"
+   }
+   WP_3_CaptureRelay5 {
+    components {
+     Hierarchy "{60F24B9F2A7828CD}" {
+     }
+    }
+    coords 79.975 1.101 -87.791
+    angleY -107.404
+    Flags 2097155
+    CompletionRadius 1
+    m_sStaticEntityName "Relay05"
+    m_sSmartActionTag "CaptureRelay_05"
+   }
+  }
+ }
+}
+GenericEntity Relay03 : "{DB04D6564D4AB421}Prefabs/Systems/MilitaryBase/PR_ConflictRelayRadio.et" {
+ coords 1380.453 39 2780.526
+ Flags 2097155
+ {
+  GenericEntity {
+   ID "60CE57DB23758B88"
+   components {
+    SCR_AISmartActionComponent "{60F50668BBF06A68}" {
+     Tags {
+      "CaptureRelay_03"
+     }
+    }
+   }
+  }
+ }
+}
+SCR_DestructibleBuildingEntity : "{F50905235FBAA094}Prefabs/Structures/Military/Houses/GuardBox_01/GuardBox_01_beige.et" {
+ coords 1440.557 0 2750.441
+ Flags 2622467
+ {
+  GenericEntity : "{5AEBED5BC2C90263}Prefabs/Props/Furniture/TableWorkshop_01_Base.et" {
+   components {
+    Hierarchy "{60F54C4C13DB2EF5}" {
+    }
+   }
+   coords 0.209 0 -0.353
+  }
+ }
+}
+$grp GenericEntity : "{FB13D67599A6A54E}Prefabs/Systems/MilitaryBase/PR_ConflictRelayRadio_Shelfx.et" {
+ Relay04xx {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 100
+     }
+    }
+   }
+  }
+  coords 1790.456 39.01 2844.303
+  angleY -135.058
+  Flags 2098179
+  {
+   GameEntity {
+    ID "60F54C5ABB8D2D8B"
+    Flags 2098179
+   }
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F24B9034E8A791}" {
+      Tags {
+       "CaptureRelay_04"
+      }
+     }
+    }
+    Flags 2098179
+   }
+   GenericEntity {
+    ID "60F54C5ABB8D2D8E"
+    Flags 2098179
+   }
+   GenericEntity {
+    ID "60F54C5ABB8D2D99"
+    Flags 2098179
+   }
+   GenericEntity PaperMap_01_folded_60F54C5AD530A95A {
+    ID "60F54C5ABB8D2D94"
+    Flags 2098179
+   }
+  }
+ }
+ Relay05xx {
+  components {
+   BaseRadioComponent "{5C727AD73024FB2A}" {
+    Transceivers {
+     RelayTransceiver "{5C727AD73024FB39}" {
+      "Transmitting Range" 100
+     }
+    }
+   }
+  }
+  coords 1441.567 -0.009 2749.44
+  angleY -84.254
+  Flags 2622467
+  {
+   GameEntity {
+    ID "60F54C5ABB8D2D8B"
+    Flags 2622467
+   }
+   GenericEntity {
+    ID "5C727AD606EB0C1C"
+    components {
+     SCR_AISmartActionComponent "{60F24B9034E8A791}" {
+      Tags {
+       "CaptureRelay_05"
+      }
+     }
+    }
+    coords 0.806 1.003 0.577
+    angleY 56.502
+    Flags 2622467
+   }
+   GenericEntity {
+    ID "60F54C5ABB8D2D8E"
+    Flags 2622467
+   }
+   GenericEntity {
+    ID "60F54C5ABB8D2D99"
+    Flags 2622467
+   }
+   GenericEntity PaperMap_01_folded_60F54C4DBCAD7554 {
+    ID "60F54C5ABB8D2D94"
+    Flags 2622467
+   }
+  }
+ }
+}

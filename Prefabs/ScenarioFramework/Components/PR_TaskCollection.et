@@ -1,0 +1,16 @@
+PR_TaskCollections {
+ ID "61225E88A6E83FE9"
+ components {
+  SCR_EditableCommentComponent "{61225ED7AC7E25A7}" {
+   m_EntityType COMMENT
+   m_UIInfo SCR_BlockUIInfo "{61225ED710CB241E}" {
+    Name "Task Collection"
+   }
+   m_sColor 1 0.921 0 1
+   m_fSizeCoef 0.8
+  }
+  RplComponent "{612256D34056F6B8}" {
+  }
+ }
+ coords 873.061 39 2625.994
+}

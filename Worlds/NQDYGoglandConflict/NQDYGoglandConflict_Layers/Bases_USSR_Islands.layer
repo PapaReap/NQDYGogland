@@ -1,3 +1,21 @@
+$grp Vehicle : "{1547EB34123B4AE3}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MTT.et" {
+ Mi8MTT1_BaseSakkiluoto_ne_ussr2 {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 10055.538 3.544 10761.572
+ }
+ Mi8MTT1_BaseSayvo_w_ussr {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 1194.202 3.407 5061.442
+ }
+}
 $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_USSR.et" {
  BaseSayvo_w_ussr {
   components {
@@ -41,6 +59,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       ID "60E0714CB980C8E9"
       coords 405.435 -1.455 -585.372
       CompletionRadius 100
+      m_bFastInit 0
      }
     }
    }
@@ -194,6 +213,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       coords 392.148 0.487 223.479
       Flags 2097155
       CompletionRadius 75
+      m_bFastInit 0
      }
     }
    }
@@ -336,12 +356,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       coords 392.148 0.487 223.479
       Flags 2097155
       CompletionRadius 75
+      m_bFastInit 0
      }
     }
    }
    GenericEntity {
     ID "60E0714912226671"
-    coords 0 5.047 50.171
+    coords 26.349 0.952 186.41
    }
    GenericEntity {
     ID "60E0714938383856"
@@ -351,34 +372,21 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     components {
      EPF_PersistenceComponent "{60F07453F7204299}" {
       m_bSelfSpawn 0
-      m_pSaveData EPF_EntitySaveDataClass "{60F08DD020914FD6}" {
-       m_bSaveRemainingLifetime 0
+      m_pSaveData EPF_EntitySaveDataClass "{611E4CBB73A5FE4D}" {
        m_aComponents {
-        EPF_ComponentSaveDataClass "{60F08DD03C0910FB}" {
+        EPF_ComponentSaveDataClass "{611E4CBA86E1D83F}" {
         }
        }
       }
      }
     }
-    coords 754.564 0.728 44.83
+    coords 657.76 -4.608 -58.171
     TriggerShapeType Sphere
-    SphereRadius 600
+    SphereRadius 1000
     DrawShape 1
+    ShapeColor 1 0.008 0 0.078
     TriggerActivationType "First change"
     PeriodicQueries 1
-    GroupType "Group: Light Fire Team (4)"
-    spawnPosition "PR_SpawnPatrolTrigger_3"
-    waypointType {
-     2
-    }
-    completionRadius {
-     100
-    }
-    completionType {
-     2
-    }
-    deleteTrigger 1
-    debugLogs 1
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
@@ -519,6 +527,7 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
       coords 392.148 0.487 223.479
       Flags 2097155
       CompletionRadius 75
+      m_bFastInit 0
      }
     }
    }
@@ -627,5 +636,43 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     }
    }
   }
+ }
+}
+$grp Vehicle : "{A295678AF2AE1205}Prefabs/Vehicles/Naval/RHIB/RHIB_Base.et" {
+ RHIB_BaseIsosommeri_sw_ussr {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 2643.519 0 2048.715
+  angleY 102.132
+ }
+ RHIB_BaseRuuskeri_e_ussr {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 10274.099 0 6426.157
+  angleY 100.515
+ }
+ RHIB_BaseSakkiluoto_ne_ussr2 {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 9799.271 0 10553.533
+  angleY 36.137
+ }
+ RHIB_BaseSayvo_w_ussr {
+  components {
+   EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+    m_bSelfSpawn 0
+   }
+  }
+  coords 1139.766 0 4887.893
+  angleY -60.329
  }
 }

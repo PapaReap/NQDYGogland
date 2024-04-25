@@ -1,0 +1,46 @@
+SCR_AIWorld AIWorld_Gogland : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60F76E94B22B5CA7}" {
+     NavmeshFile "{20E5B728C88940C2}Worlds/Gamemaster/Navmeshes/gogland_navmesh.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{A32430981C1ACB9C}Worlds/Gamemaster/Navmeshes/lowres_navmesh/gogland_lowres_navmesh.nmn"
+    }
+   }
+  }
+ }
+ coords 4754.772 28.17 11392.244
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 595.29 34.492 2494.788
+}
+ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+ coords 582.552 34.164 2487.571
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 585.703 35.008 2491.917
+}
+ItemPreviewManagerEntity ItemPreviewManagerEntity1 {
+ coords 589.474 33.765 2488.256
+ PreviewWorld "{4391FE7994EE6FE2}Prefabs/World/Game/InventoryPreviewWorld.et"
+ DefaultRenderAttributes PreviewRenderAttributes "{52EF3E2AF2E07544}" {
+ }
+}
+SCR_MapLocator {
+ coords 589.914 33.684 2488.084
+ Flags 2097155
+ m_WorldDirections SCR_MapLocationQuadHint "{5AAA8B37D1168EEB}" : "{ABA21F381437DFE8}Configs/Map/MapLocatorHints/LocationHintsEveron.conf" {
+ }
+}
+HitRegistrationManager HitRegManager1 : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
+ coords 590.742 33.346 2487.024
+}
+BasePreloadManager PreloadManager_Campaign1 : "{32BFDCDE99092FCE}Prefabs/World/Game/PreloadManager_Campaign.et" {
+ coords 588.265 34.734 2491.924
+}

@@ -1,0 +1,22 @@
+GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
+ ID "5C727AD73024FB47"
+ coords 878.426 39 2702.726
+ {
+  GenericEntity {
+   ID "5C727AD606EB0C1C"
+   components {
+    SCR_AISmartActionComponent "{60F815170354129A}" {
+     AIBehaviorTree "{5650FFC80B622F10}AI/BehaviorTrees/SmartActions/SA_CaptureRelay.bt"
+     Tags {
+      "Base1"
+     }
+    }
+   }
+   coords -1.418 0.892 0.456
+  }
+  GenericEntity : "{B496AC9BEE590838}Prefabs/Compositions/Misc/SubCompositions/Utility/Shelves_GeneralStorage_01.et" {
+   ID "60F8150A378A1869"
+   coords -0.072 -0 -0.04
+  }
+ }
+}

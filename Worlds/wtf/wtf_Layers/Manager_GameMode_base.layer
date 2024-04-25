@@ -1,0 +1,3 @@
+SCR_GameModeCampaign GameMode_Campaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ coords 1398.791 39 2181.584
+}

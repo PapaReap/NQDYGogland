@@ -1,0 +1,16 @@
+PR_TaskCollectionsArrayManager {
+ ID "61293B89D3ABF3E0"
+ components {
+  SCR_EditableCommentComponent "{61293AEDAA817F19}" {
+   m_EntityType COMMENT
+   m_UIInfo SCR_BlockUIInfo "{61293C2C786721DE}" {
+    Name "Task Collection Manager"
+   }
+   m_sColor 1 0.922 0 1
+   m_fSizeCoef 0.8
+  }
+  RplComponent "{61293AEDAE029011}" {
+  }
+ }
+ coords 661.367 39 2662.201
+}

@@ -1,0 +1,13 @@
+PR_AIWaypoint {
+ ID "610451C6A0920C95"
+ components {
+  Hierarchy "{610463A8DD2B35BD}" {
+  }
+ }
+ coords 2687.019 389.014 5186.562
+ Type "Move"
+ Title "Simple move wyapoint"
+ AIBehaviorTreeMoveTo "{A3755C1F88DED8D6}AI/BehaviorTrees/Waypoints/WP_Move.bt"
+ CompletionRadius 5
+ CompletionType Any
+}

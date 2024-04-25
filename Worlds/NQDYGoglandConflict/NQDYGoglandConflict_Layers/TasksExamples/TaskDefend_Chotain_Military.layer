@@ -1,0 +1,521 @@
+GenericEntity Layer_Laruns_1_WP : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+ coords 5199.413 9.781 9980.313
+ Flags 2097155
+ {
+  GenericEntity SlotWaypoint_Laruns_1_WP_1 : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+   components {
+    SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+     m_Waypoint SCR_ScenarioFrameworkWaypointLoiterCO "{60DC067F4AF1535A}" {
+      m_fCompletionRadius 1
+      m_eAIWaypointCompletionType Any
+     }
+    }
+   }
+   coords 1.185 0.33 -7.54
+   Flags 2097155
+  }
+ }
+}
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ Area_Chotain_3_Military_Defend {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iRandomPercent 100
+    m_fAreaRadius 63.05
+    m_iDynamicDespawnRange 1100
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 5239.223 11.123 10106.267
+  Flags 2097155
+  {
+   PR_SpawnTaskTrigger TaskSpawn_Chotain_3_Military_Defend {
+    coords -304.124 79.623 -107.898
+    Flags 2097155
+    TriggerShapeType Sphere
+    SphereRadius 450
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_aNameOfTasksToSpawnOnActivation {
+     "LayerTaskDefend_Chotain_Militay"
+    }
+   }
+   GenericEntity LayerTaskDefend_Chotain_Militay : "{775C493CE872C3A5}Prefabs/ScenarioFramework/Components/LayerTaskDefend.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskDefend "{5C52E161174024CB}" {
+      m_sFactionKey "US"
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_sTaskTitle "URGENT!!! Defend Military Base Chotain"
+      m_sTaskDescription "Personel at the \"Military Base Chotain\" have informed us that enemy forces are in route to their location, and that it is only a matter of minutes before they invade."\
+      ""\
+      "Move your ass's now to support them, ASAP!!!"
+      m_sTaskPrefab "{888DC29A0B4F3F20}Prefabs/ScenarioFramework/Tasks/TaskDefend.et"
+      m_bPlaceMarkerOnSubjectSlot 1
+      m_sTriggerName "TriggerDefend_Chotain_Militay"
+      m_sCountdownTitleText "DEFEND BASE"
+      m_fDefendTime 1200
+      m_aFactionSettings {
+       SCR_ScenarioFrameworkTaskDefendAttackingFaction "{5C5A81043FCD0717}" {
+        m_sFactionKey "USSR"
+       }
+       SCR_ScenarioFrameworkTaskDefendDefendingFaction "{5C5A8104314438A8}" {
+        m_sFactionKey "US"
+       }
+      }
+      m_fMinDefenderPercentageRatio 0.51
+      m_aAttackerLayerNames {
+       "Attacker_USSR_Chotain_Militay"
+      }
+     }
+    }
+    coords -2.168 0.38 -9.564
+    Flags 2097155
+    {
+     PR_SpawnPatrolTrigger SpawnPatrol_CM_US {
+      coords 16.646 -0.111 64.36
+      Flags 2097155
+      TriggerShapeType Sphere
+      SphereRadius 800
+      TriggerActivationType "First change"
+      PeriodicQueries 1
+     }
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      Defender_US_Chotain_Militay {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_iRandomPercent 100
+        }
+       }
+       coords 2.085 -0.361 8.664
+       Flags 2097155
+       {
+        GenericEntity TriggerDefend_Chotain_Militay : "{D183AFE8DAF9793D}Prefabs/ScenarioFramework/Components/SlotTrigger.et" {
+         components {
+          SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
+           m_aPlugins {
+            SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
+             m_fAreaRadius 250
+             m_eActivationPresence ANY_CHARACTER
+            }
+           }
+          }
+         }
+         coords 1.521 0.353 -21.83
+         Flags 2097155
+        }
+        GenericEntity Slot_Defend_Chotain_Militay : "{E123BAC59A9B3D5F}Prefabs/ScenarioFramework/Components/SlotDefend.et" {
+         components {
+          SCR_ScenarioFrameworkSlotDefend "{5C52E161597D867A}" {
+           m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et"
+          }
+         }
+         coords -40.946 0.551 -5.823
+         angleY -0.777
+         Flags 2097155
+        }
+       }
+      }
+      Attacker_USSR_Chotain_Militay_1 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_bEnableRepeatedSpawn 1
+         m_iRepeatedSpawnNumber 2
+         m_fRepeatedSpawnTimer 300
+        }
+       }
+       coords 6.527 -0.669 15.14
+       Flags 2097155
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_CM_1 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0657D835A059}" {
+             m_aLayerName {
+              "Layer_CM_WP1"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 2
+            m_eAIGroupFormation StaggeredColumn
+            m_eAICombatType SUPPRESSIVE
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -749.262 136.085 547.35
+          angleY 101.549
+          Flags 2097155
+         }
+         SlotAI_CM_2 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0651933E2C31}" {
+             m_aLayerName {
+              "Layer_CM_WP2"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 4
+            m_eAIGroupFormation StaggeredColumn
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -75.501 -4.369 588.132
+          angleY 169.199
+          Flags 2097155
+         }
+         SlotAI_CM_3 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0651B1D8AC97}" {
+             m_aLayerName {
+              "Layer_CM_WP3"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 2
+            m_eAIGroupFormation StaggeredColumn
+            m_eAICombatType SUPPRESSIVE
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -491.457 110.232 26.56
+          angleY 95.547
+          Flags 2097155
+         }
+        }
+       }
+      }
+      Layer_CM_WP1 {
+       coords -3.002 0.56 -12.839
+       Flags 2097155
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+         Slot_CM_WP2_Move_2_Attack {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointAttack "{60DC065642A80020}" {
+             m_fCompletionRadius 30
+             m_eAIWaypointCompletionType Any
+            }
+           }
+          }
+          coords -23.312 0.193 22.823
+          Flags 2097155
+         }
+         Slot_CM_WP1_Move_1 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointMove "{60DC065AF0263F7E}" {
+            }
+           }
+          }
+          coords -203.917 15.507 139.514
+          Flags 2097155
+         }
+        }
+       }
+      }
+      Attacker_USSR_Chotain_Militay_2 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_bEnableRepeatedSpawn 1
+         m_iRepeatedSpawnNumber 2
+         m_fRepeatedSpawnTimer 420
+        }
+       }
+       coords -62.982 1.178 -19.837
+       Flags 2097155
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_CM_1b {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{43C7A28EEB660FF8}Prefabs/Groups/OPFOR/Group_USSR_Team_GL.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0657D835A059}" {
+             m_aLayerName {
+              "Slot_CM_WP1"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 2
+            m_eAIGroupFormation StaggeredColumn
+            m_eAICombatType SUPPRESSIVE
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -581.171 130.438 343.225
+          angleY 101.549
+          Flags 2097155
+         }
+         SlotAI_CM_2b {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0651933E2C31}" {
+             m_aLayerName {
+              "Layer_CM_WP2"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 4
+            m_eAIGroupFormation StaggeredColumn
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -599.578 105.441 731.253
+          angleY 169.199
+          Flags 2097155
+         }
+         SlotAI_CM_3b {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bEnableRepeatedSpawn 1
+            m_sObjectToSpawn "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGroup.et"
+            m_bShowDebugShapesInWorkbench 0
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0651B1D8AC97}" {
+             m_aLayerName {
+              "Layer_CM_WP3"
+             }
+            }
+            m_sWPToSpawn "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et"
+            m_bBalanceOnPlayersCount 1
+            m_iMinUnitsInGroup 2
+            m_eAIGroupFormation StaggeredColumn
+            m_eAICombatType SUPPRESSIVE
+            m_fPerceptionFactor 0.75
+           }
+          }
+          coords -276.404 86.788 -51.556
+          angleY 95.547
+          Flags 2097155
+         }
+        }
+       }
+      }
+      Layer_CM_WP2 {
+       coords 4.671 -0.42 6.005
+       Flags 2097155
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+         Slot_CM_WP2_Move_1 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointMove "{60DC065AF0263F7E}" {
+            }
+           }
+          }
+          coords -117.818 5.641 294.067
+          Flags 2097155
+         }
+         Slot_CM_WP2_Move_2 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointMove "{60DC065AF0263F7E}" {
+            }
+           }
+          }
+          coords 47.753 -2.112 64.752
+          Flags 2097155
+         }
+         Slot_CM_WP2_Move_3_Attack {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointAttack "{60DC065642A80020}" {
+             m_fCompletionRadius 30
+             m_eAIWaypointCompletionType Any
+            }
+           }
+          }
+          coords -40.673 0.942 14.448
+          Flags 2097155
+         }
+        }
+       }
+      }
+      Layer_CM_WP3 {
+       coords -22.444 -0.655 -13.676
+       Flags 2097155
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/ScenarioFramework/Components/SlotWaypoint.et" {
+         Slot_CM_WP3_Move_2_Attack {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointAttack "{60DC065642A80020}" {
+             m_fCompletionRadius 30
+             m_eAIWaypointCompletionType Any
+            }
+           }
+          }
+          coords -23.312 0.193 22.823
+          Flags 2097155
+         }
+         Slot_CM_WP3_Move_1 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointMove "{60DC065AF0263F7E}" {
+            }
+           }
+          }
+          coords -203.917 48.018 -133.834
+          Flags 2097155
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ Area_Laruns_1_Informant {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_fAreaRadius 63.452
+    m_iDynamicDespawnRange 300
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 5167.08 11.125 10008.802
+  Flags 2097155
+  {
+   PR_SpawnTaskTrigger TaskSpawn_Laruns_1_Move {
+    coords -85.876 83.346 -1231.078
+    Flags 2097155
+    TriggerShapeType Sphere
+    SphereRadius 100
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_aNameOfTasksToSpawnOnActivation {
+     "LayerTask_Laruns_1_Move"
+    }
+   }
+   GenericEntity LayerTask_Laruns_1_Move : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_sTaskTitle "Meet Informant"
+      m_sTaskDescription "Go to the town of Laruns. At the dinner, you are to meet up with an informant claiming to have information about a possible attack on a nearby base."\
+      ""\
+      "Time is of the essence, drop what you were planning and move out to gather any information you can from this informant."
+      m_bPlaceMarkerOnSubjectSlot 0
+     }
+    }
+    coords -1.076 0.027 -0.613
+    Flags 2097155
+    {
+     GenericEntity SlotAI_Laruns_1_Informant : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_sObjectToSpawn "{2F912ED6E399FF47}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Unarmed.et"
+        m_bShowDebugShapesInWorkbench 0
+        m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{60DC0676A7012F20}" {
+         m_aLayerName {
+          "SlotWaypoint_Laruns_1_WP_1"
+         }
+        }
+        m_sWPToSpawn "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et"
+        m_iMinUnitsInGroup 2
+        m_eAIGroupFormation StaggeredColumn
+        m_eAICombatType SUPPRESSIVE
+        m_fPerceptionFactor 0.75
+       }
+      }
+      coords -35.087 4.936 -8.074
+      angleY 30.716
+      Flags 2097155
+     }
+     GenericEntity SlotMoveTo_Laruns_1 : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 1
+          m_eActivationPresence PLAYER
+         }
+        }
+        m_bCanBeGarbageCollected 0
+       }
+      }
+      coords -34.75 5.96 -7.603
+      Flags 2097155
+     }
+    }
+   }
+  }
+ }
+ Area_Chotain_2_Military_Move {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_fAreaRadius 63.452
+    m_iDynamicDespawnRange 300
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 5299.465 11.128 10022.458
+  Flags 2097155
+  {
+   PR_SpawnTaskTrigger TaskSpawn_Chotain_2_Military_Move {
+    coords 128.774 78.549 -1203.563
+    Flags 2097155
+    TriggerShapeType "Oriented Bounding Box"
+    SphereRadius 100
+    BoxMaxs 1.5 2 1.5
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_aNameOfTasksToSpawnOnActivation {
+     "LayerTaskMove_Chotain_2_Military"
+    }
+   }
+   GenericEntity LayerTaskMove_Chotain_2_Military : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_sTaskTitle "Support Chotain Military"
+      m_sTaskDescription "The Informant's sources state that Russian Forces intend on counter attacking the \"Military Base Chotain\" we seized earlier This month. There is a Imminent threat of attack."\
+      ""\
+      "Move to the base now and provide support until the threat subsides."
+      m_bPlaceMarkerOnSubjectSlot 0
+     }
+    }
+    coords -1.076 0.027 -0.613
+    Flags 2097155
+    {
+     GenericEntity SlotMoveTo_Chotain_2_Military : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 40
+          m_eActivationPresence PLAYER
+         }
+        }
+        m_bCanBeGarbageCollected 0
+       }
+      }
+      coords 2.918 -0.823 -7.603
+      Flags 2097155
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,149 @@
+GenericEntity QRFSpawnpointsLayer1 : "{63D611AA694A8AE3}Prefabs/ScenarioFramework/Compositions/QRFSpawnpointsLayer.et" {
+ coords 884.694 37.099 2581.304
+ {
+  GenericEntity QRFSpawnpoint1 {
+   ID "6054EE897FB6C21B"
+  }
+ }
+}
+GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ coords 961.885 39 2655.023
+ {
+  GenericEntity TaskDefendAreaAndTarget1 : "{18B9A717BAE9FF57}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendAreaAndTarget.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDefend "{5C52E161174024CB}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 423.153 0 122.733
+   {
+    GenericEntity Attacker_USSR2 {
+     ID "5E9A660A1E43898C"
+    }
+    GenericEntity Defender_US2 {
+     ID "5E9A660A1E43B86F"
+    }
+   }
+  }
+  GenericEntity TaskDefendArea1 : "{2B0E0A06A4475EA3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendArea.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDefend "{5C52E161174024CB}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords -337.142 0 -48.14
+   {
+    GenericEntity Attacker_USSR1 {
+     ID "5E9A6605F6F0B5F1"
+    }
+    GenericEntity Defender_US1 {
+     ID "5E9A6605F6F0B5E4"
+    }
+   }
+  }
+  GenericEntity LayerTaskDefend1 : "{775C493CE872C3A5}Prefabs/ScenarioFramework/Components/LayerTaskDefend.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDefend "{5C52E161174024CB}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 19.518 0.633 48.257
+   {
+    GenericEntity SlotDefend1 : "{E123BAC59A9B3D5F}Prefabs/ScenarioFramework/Components/SlotDefend.et" {
+     coords 0.003 0 0.001
+    }
+   }
+  }
+  GenericEntity LayerTaskDeliver1 : "{88821DCA414AF4C7}Prefabs/ScenarioFramework/Components/LayerTaskDeliver.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords -110.22 0 -33.976
+   {
+    GenericEntity SlotDelivery1 : "{4C2EF5C1E53FE511}Prefabs/ScenarioFramework/Components/SlotDelivery.et" {
+     coords 0.003 0 0.002
+    }
+    GenericEntity SlotPick1 : "{9F70B00322910AED}Prefabs/ScenarioFramework/Components/SlotPick.et" {
+     coords 0.005 0 0.007
+    }
+   }
+  }
+  GenericEntity TaskDefendTarget1 : "{A651662FD0667288}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendTarget.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDefend "{5C52E161174024CB}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 792.598 0 239.444
+   {
+    GenericEntity Slot_Defend1 {
+     ID "5E9A6605E0762C64"
+    }
+   }
+  }
+  GenericEntity TaskDeliverVehicles1 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 79.37 0.001 -191.554
+   {
+    GenericEntity SlotMoveTo2 {
+     ID "5E74C90E3ED35D79"
+     components {
+      SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+       m_aPlugins {
+        SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+         m_fAreaRadius 34.5
+         m_aCustomTriggerConditions {
+          SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+           m_aPrefabFilter {
+            SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+             m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+             m_iPrefabCount 1
+            }
+            SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+             m_sSpecificPrefabName "{9A0D72816DFFDB7F}Prefabs/Vehicles/Wheeled/M923A1/M923A1.et"
+            }
+           }
+          }
+         }
+        }
+       }
+       m_sTaskDescription "Deliver 1x any M151A2 and 1x M923A1 basic variant"
+      }
+     }
+    }
+   }
+  }
+  GenericEntity TaskClearArea1 : "{C248387C4E5A9DE8}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskClearArea.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 165.854 0 -271.641
+   {
+    GenericEntity SlotClearArea2 {
+     ID "5E9A6605B11E6EF5"
+    }
+   }
+  }
+  GenericEntity LayerTaskClearArea1 : "{CDC0845AD90BA073}Prefabs/ScenarioFramework/Components/LayerTaskClearArea.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+    }
+   }
+   coords 69.54 -1.286 -41.27
+   {
+    GenericEntity SlotClearArea1 : "{E53456990A756229}Prefabs/ScenarioFramework/Components/SlotClearArea.et" {
+     coords -0.001 0.001 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,152 @@
+$grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
+ SP01_Pohjoissivunkallio {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 5290.813 11.125 10064.897
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+ SP02_Korkiala_needRelay {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 4179.382 37.727 9945.727
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+ SP03_Kappeliniem {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 5795.825 5.094 8239.859
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+ SP04_Notkonhelli {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 4698.457 12.861 7506.045
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+ SP05_Liivalahti {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 4698.579 12.849 7505.835
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+ SP06_Maahelli {
+  components {
+   BaseRadioComponent "{60E09758FCAF3A19}" {
+    Transceivers {
+     RelayTransceiver "{60E09758FCAF3A13}" {
+      "Transmitting Range" 1000
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
+    m_iRadius 130
+   }
+  }
+  coords 5692.021 5.619 3732.304
+  {
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    coords 6.858 0 -3
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    coords 0 0 0
+   }
+  }
+ }
+}

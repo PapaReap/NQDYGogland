@@ -1,3 +1,12 @@
+Vehicle RHIB_BaseMaahelli_US : "{A295678AF2AE1205}Prefabs/Vehicles/Naval/RHIB/RHIB_Base.et" {
+ components {
+  EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
+   m_bSelfSpawn 0
+  }
+ }
+ coords 5754.18 0 3611.236
+ angleY -145.574
+}
 $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
  SP01_Pohjoissivunkallio {
   components {

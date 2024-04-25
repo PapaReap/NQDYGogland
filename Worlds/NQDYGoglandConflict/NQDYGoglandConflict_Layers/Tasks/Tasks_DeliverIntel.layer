@@ -1,0 +1,75 @@
+PR_SpawnTaskTrigger SpawnTaskTrigger_01 {
+ coords 4620.445 3.901 11046.354
+ TriggerShapeType Sphere
+ SphereRadius 100
+ DrawShape 1
+ ShapeColor 1 0.008 0 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+ m_aNameOfTasksToSpawnOnActivation {
+  "TaskDeliverIntel_Pohjoiskorkia_caves"
+ }
+ m_bUseTaskPool 1
+ m_aTaskTypesFilter {
+  PR_TaskType "{613163600F480ABC}" {
+   m_TypeOfTask DELIVER
+  }
+ }
+ m_aMoveTaskDestinationToFilter {
+  PR_TaskMove "{6131636EE17EDF3E}" {
+   m_MoveTaskDestinationTo MAIN_BASE
+  }
+ }
+ m_iRandomTaskCount 2
+ m_iDelayTimerToSpawnTask 5
+ m_iDelayTimerBetweenEachTask 10
+}
+PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
+ coords 650.308 39 2678.574
+ m_bDebugLogs 1
+ m_aTaskNames {
+  "LayerTaskClearArea1" "LayerTaskDefend1" "LayerTaskDeliver1" "LayerTaskKill1" "TaskClearArea1" "TaskDefendArea1" "TaskDefendAreaAndTarget1" "TaskDefendTarget1" "TaskDeliverVehicles1" "TaskKill1"
+ }
+}
+SCR_ChimeraCharacter Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+ coords 4645.068 4.881 11033.125
+}
+GenericEntity Area_Pohjoiskorkia : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ coords 4386.888 79.925 9906.461
+ {
+  GenericEntity TaskDeliverIntel_Pohjoiskorkia_caves : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+     m_eActivationType ON_TRIGGER_ACTIVATION
+     m_aActivationActions {
+      SCR_ScenarioFrameworkActionExecuteFunction "{612E54492AB65DB6}" {
+      }
+     }
+    }
+   }
+   coords -0.045 0 18.543
+   {
+    GenericEntity SlotDelivery_Pohjoiskorkia_caves {
+     ID "5E74C909218B71FF"
+     components {
+      SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+       m_aAssociatedTaskLayers {
+        "TaskDeliverIntel_Pohjoiskorkia_caves"
+       }
+      }
+     }
+     coords 30.074 -0.995 -17.911
+    }
+    GenericEntity SlotPick_Pohjoiskorkia_caves {
+     ID "5E74C909218B7182"
+     coords -42.844 -32.672 -120.17
+     angleY -22.479
+    }
+   }
+  }
+ }
+}

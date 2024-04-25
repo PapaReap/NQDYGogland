@@ -1,0 +1,17 @@
+SCR_SmartActionWaypoint {
+ ID "610A6782EE31752B"
+ components {
+  Hierarchy "{610A688D1B8D2CAE}" {
+  }
+ }
+ coords 57.062 -0.015 932.668
+ Type "GuardWaypoint"
+ Title "Guard Point Waypoint"
+ AIBehaviorTree "{D9C7103B689010DC}AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt"
+ AIBehaviorTreeMoveTo "{A3755C1F88DED8D6}AI/BehaviorTrees/Waypoints/WP_Move.bt"
+ CompletionRadius 1
+ Autocomplete 0
+ CompletionType Any
+ m_sStaticEntityName "GuardPointPosition_01"
+ m_sSmartActionTag "GuardPoint"
+}

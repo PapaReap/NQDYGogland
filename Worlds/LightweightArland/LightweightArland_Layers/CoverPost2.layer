@@ -1,0 +1,131 @@
+$grp SCR_DefendWaypoint : "{0AB63F524C44E0D2}PrefabsEditable/Auto/AI/Waypoints/E_AIWaypoint_DefendSmall.et" {
+ WP_Defend_01 {
+  components {
+   Hierarchy "{610B43F7ABB7CC30}" {
+   }
+  }
+  coords 7379.286 16.18 5552.322
+  angleY -180
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_holdingTime 30
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+   }
+  }
+ }
+ WP_Defend_02 {
+  components {
+   Hierarchy "{610B43F7ABB7CC30}" {
+   }
+  }
+  coords 7374.613 16.18 5550.335
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_holdingTime 30
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+   }
+  }
+ }
+ WP_Defend_03 {
+  components {
+   Hierarchy "{610B43F7ABB7CC30}" {
+   }
+  }
+  coords 7369.115 16.18 5547.703
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_holdingTime 30
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+   }
+  }
+ }
+ WP_Defend_04 {
+  components {
+   Hierarchy "{610B43F7ABB7CC30}" {
+   }
+  }
+  coords 7364.905 16.18 5546.061
+  CompletionRadius 1
+  CompletionType Any
+  m_fPriorityLevel 2000
+  m_holdingTime 30
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+   }
+  }
+ }
+}
+GenericEntity op_holder : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ coords 2013.682 51.925 3022.658
+ {
+  PR_SpawnPatrolTrigger op_trg {
+   components {
+    Hierarchy "{6108868CD471D364}" {
+    }
+   }
+   coords -17.72 0 6.628
+   TriggerShapeType Sphere
+   SphereRadius 100
+   DrawShape 1
+   ShapeColor 0.906 0.016 0.027 0.098
+   TriggerActivationType "First change"
+   PeriodicQueries 1
+   m_GroupType "Man: Machine Gun (1)"
+   m_eAIGroupFormation Column
+   m_bHoldFire 0
+   m_aWaypointCollection {
+    "set_wp_op"
+   }
+   m_iDelayTimer 10
+   m_bDebugLogs 1
+  }
+  GenericEntity set_wp_op : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+   components {
+    Hierarchy "{6108868CA6ED247D}" {
+    }
+   }
+   coords -15.519 0 4.79
+   {
+    SCR_AIWaypoint wp_op_1 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+     components {
+      Hierarchy "{610510BB0E4DDDA7}" {
+      }
+     }
+     coords 5.986 0 -0.942
+     AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+     CompletionRadius 2
+    }
+    SCR_SmartActionWaypoint wp_op_2 : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoint_ObservationPost.et" {
+     components {
+      Hierarchy "{6108868BEC3A6816}" {
+      }
+     }
+     coords 23.484 0 -6.356
+     CompletionRadius 1
+     m_sStaticEntityName "op_1"
+     m_sSmartActionTag "ObservationPost_1"
+    }
+   }
+  }
+  GenericEntity op_1 : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+   components {
+    SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+     AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+     Tags {
+      "ObservationPost_1"
+     }
+    }
+    Hierarchy "{6108868BE1B18AF7}" {
+    }
+   }
+   coords 8.136 0 -1.057
+   angleY 0
+  }
+ }
+}

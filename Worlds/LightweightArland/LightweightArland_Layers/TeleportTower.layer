@@ -1,0 +1,96 @@
+PR_SpawnPatrolTrigger teleTrig {
+ coords 626.67 0.174 2329.232
+ TriggerShapeType Sphere
+ SphereRadius 100
+ DrawShape 1
+ ShapeColor 0.016 0.906 0.035 0.098
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_GroupSide US
+ m_bTeleportAfterSpawn 1
+ m_sTeleportPosition {
+  "wp_tp_1" "wp_tp_2" "wp_tp_3"
+ }
+ m_eAIGroupFormation Column
+ m_bHoldFire 0
+ m_bCycleWaypoints 1
+ m_aWaypointCollection {
+  "wp_tp_1" "wp_tp_2"
+ }
+ m_bDebugLogs 1
+}
+$grp SCR_SmartActionWaypoint : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoint_ObservationPost.et" {
+ wp_tp_3 {
+  components {
+   Hierarchy "{6108868BEC3A6816}" {
+   }
+  }
+  coords 610.779 7.118 2342.992
+  CompletionRadius 1
+  m_sStaticEntityName "tp_3"
+ }
+ wp_tp_1 {
+  components {
+   Hierarchy "{6108868BEC3A6816}" {
+   }
+  }
+  coords 600.21 6.949 2305.543
+  CompletionRadius 1
+  m_sStaticEntityName "tp_1"
+ }
+ wp_tp_2 {
+  components {
+   Hierarchy "{6108868BEC3A6816}" {
+   }
+  }
+  coords 655.654 7.328 2294.292
+  CompletionRadius 1
+  m_sStaticEntityName "tp_2"
+ }
+}
+$grp GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+ tp_1 {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+   }
+   Hierarchy "{6108868BE1B18AF7}" {
+   }
+  }
+  coords 601.905 6.949 2305.846
+  angleY 0
+ }
+ tp_2 {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+   }
+   Hierarchy "{6108868BE1B18AF7}" {
+   }
+  }
+  coords 655.951 7.328 2294.147
+  angleY 0
+ }
+ tp_3 {
+  components {
+   SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+    AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+   }
+   Hierarchy "{6108868BE1B18AF7}" {
+   }
+  }
+  coords 609.492 7.118 2342.788
+  angleY 0
+ }
+}
+$grp SCR_DestructibleBuildingEntity : "{FBCE1861B987EA68}Prefabs/Structures/Military/Houses/GuardTower_01/GuardTower_01.et" {
+ {
+  coords 601.854 1.162 2303.907
+ }
+ {
+  coords 610.818 0 2341.013
+ }
+ {
+  coords 655.919 0 2293.781
+ }
+}

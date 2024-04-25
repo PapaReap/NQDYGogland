@@ -1,0 +1,16 @@
+SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Modes/Conflict/PR_GameMode_CampaignSF.et" {
+ components {
+  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
+    m_sDatabaseName "LightweightArlandTesting"
+   }
+  }
+  SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
+   m_bRandomStartingDaytime 0
+   m_fDayTimeAcceleration 1
+   m_bRandomStartingWeather 0
+  }
+ }
+ coords 6790.321 52.286 5650.282
+ m_iControlPointsThreshold 18
+}

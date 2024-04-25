@@ -1,0 +1,15 @@
+SCR_CampaignFactionManager CampaignFactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 1395.48 39 2191.417
+ {
+  CommentEntity {
+   coords 0 1 0
+   m_Comment "CampaignFactionManager: "\
+   "Make sure one faction is non-playable to use for Independent units."
+   m_Color 0 0 0
+   m_FaceCamera 1
+   m_TextBackground 1
+   m_BackgroundColor 1 0.6 0
+   m_BackgroundTransparency 0
+  }
+ }
+}
