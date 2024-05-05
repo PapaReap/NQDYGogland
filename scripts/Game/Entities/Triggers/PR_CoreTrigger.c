@@ -11,7 +11,7 @@ class PR_CoreTriggerClass : SCR_BaseTriggerEntityClass
 class PR_CoreTrigger : SCR_BaseTriggerEntity
 {
 	//! PR Spawn Patrol: Utilities - Toggle to refresh EOnInit during testing.
-	[Attribute("false", UIWidgets.CheckBox,"Toggle to refresh EOnInit during testing.  ", category: "PR Core: Utilities")]
+	[Attribute("false", UIWidgets.CheckBox,"Toggle to refresh EOnInit on 'Log Console' during testing.  ", category: "PR Core: Utilities")]
 	protected bool m_bRefreshToggle;
 
 	//! PR Spawn Patrol: Utilities - Write logs to file.
@@ -85,7 +85,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 
 	//------------------------------------------------------------------------------------------------
 	//! Deletes entity
-	void deleteEntity(IEntity entity, string name)
+	protected void deleteEntity(IEntity entity, string name)
 	{
 		if (m_bDebugLogs)
 		{
@@ -99,9 +99,59 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		SCR_EntityHelper.DeleteEntityAndChildren(entity);
 	}
 
+	//---
+	//! Makes a random name for entity
+	protected string GetRandomName(string prefixName)
+	{
+		int iRanNum = Math.RandomInt(1, 10000);
+		string randomName = prefixName + iRanNum;
+		return randomName;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! GET ALL CHILDREN FROM A COLLECTION
+	//void GetAllChildren(IEntity parent, notnull inout array<IEntity> allChildren, bool debugLogs)
+	void GetAllChildrenNames(IEntity parent, notnull inout array<string> allChildren, bool debugLogs)
+	{
+		if (!parent)
+			return;
+
+		IEntity child = parent.GetChildren();
+
+		if (!child)
+			child = parent;
+		
+		string name = child.GetName();
+		if (!name)
+		{
+			Print(string.Format("[PR_Core_Trigger] (GetAllChildren) %1 : Trigger: %2 : No child name to return, checking parent name!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+			name = parent.GetName();
+			if (!name)
+			{
+				Print(string.Format("[PR_Core_Trigger] (GetAllChildren) %1 : Trigger: %2 : No parent name to return, check parent name!", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
+				return;
+			} else
+			{
+				allChildren.InsertAt(name, 0);
+				Print(string.Format("[PR_Core_Trigger] (GetAllChildren) %1 : Trigger: %2 : Using parent name, children are not proper for this instance, probably a vehicle with lots of children!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+				return;
+			}
+		}
+
+		int childCount = 0;
+		while (child)
+		{
+			childCount = childCount+ 1;
+			allChildren.InsertAt(name, 0);
+			child = child.GetSibling();
+			if (child)
+				name = child.GetName();
+		}
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	//! Kills entity
-	void KillUnit(IEntity entity)
+	protected void KillUnit(IEntity entity)
 	{
 		SCR_DamageManagerComponent damageMananager = SCR_DamageManagerComponent.Cast(entity.FindComponent(SCR_DamageManagerComponent));
 		if (damageMananager)
@@ -110,7 +160,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 
 	//------------------------------------------------------------------------------------------------
 	//! Teleports units to position after spawning, useful for placing over water, in buildings, etc...
-	void TeleportObject(string whatToMove, string whereToMove)
+	protected void TeleportObject(string whatToMove, string whereToMove)
 	{
 		IEntity objectToTeleport = GetGame().GetWorld().FindEntityByName(whatToMove);
 		IEntity objectToTeleportTo = GetGame().GetWorld().FindEntityByName(whereToMove);
@@ -121,12 +171,11 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 
 	//------------------------------------------------------------------------------------------------
 	//--- Persistence cleanup
-	void PersistenceCleanup()
+	protected void PersistenceCleanup()
 	{
 		IEntity persistentObject = GetGame().GetWorld().FindEntityByName(m_sPersistentObject);
 		if (m_bUsePersistence)
 		{
-			//persistentObject = GetGame().GetWorld().FindEntityByName(m_sPersistentObject);
 			if (persistentObject)
 			{
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": persistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
@@ -144,6 +193,8 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		} else if (persistentObject)
 		{
 			Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": persistentObject is alive, is not necessary and needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
+			KillUnit(persistentObject);
+			GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, persistentObject, m_sPersistentObject);
 		}
 	}
 
@@ -199,7 +250,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	}
 
 	//------------------------------------------------------------------------------------------------
-	void SetOwnerFaction(Faction faction)
+	protected void SetOwnerFaction(Faction faction)
 	{
 		m_OwnerFaction = faction;
 	}

@@ -120,7 +120,7 @@ class PR_TaskCollectionsArrayManager : GenericEntity
 
         // reads PR_TaskCollectionsArray_ConfigStruct into m_config
         //configLoadContext.ReadValue("", m_config);
-		SaveConfig();
+//		SaveConfig();
 		
 		return true;
     }

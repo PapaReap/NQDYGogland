@@ -275,7 +275,7 @@ class PR_SpawnPatrol
 				{
 					array<IEntity> waypointArray = {};
 					IEntity wpHolder = GetGame().GetWorld().FindEntityByName(waypointCollectionsArray.Get(_i));
-					array<IEntity> newWaypointArray = {};
+					//array<IEntity> newWaypointArray = {}; don't think i need anymore
 
 					GetAllChildren(wpHolder, waypointArray, debugLogs);
 

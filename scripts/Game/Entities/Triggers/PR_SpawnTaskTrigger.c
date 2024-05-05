@@ -4,10 +4,7 @@ Author: PapaReap
 ToDo:
 Make trigger run loop option
 Maybe make a player distance check to task?
-Get global array updated
-Add random min/max for delay timer and delay between tasks
-Check box to remove task from global array
-Slider to pick amount of tasks
+Get global array updated. Check?
 */
 
 [EntityEditorProps(category: "GameScripted/ScriptWizard", description: "ScriptWizard generated script file.")]
@@ -18,12 +15,19 @@ class PR_SpawnTaskTriggerClass : PR_CoreTriggerClass
 
 class PR_SpawnTaskTrigger : PR_CoreTrigger
 {
-	//! PR Task Spawner: Tasks - Individual Entries
-	[Attribute(desc: "Task Layer Name to spawn. I.E. LayerTaskMove1, LayerTaskDefend1, etc...  ", category: "PR Task Spawner: Tasks - Individual Entries")]
-	protected ref array<string> m_aNameOfTasksToSpawnOnActivation;
+	//! PR Task Spawner: Tasks - Individual Tasks - Individual tasks to assign, with optional move feature.
+	[Attribute(desc: "Individual tasks to assign, with optional move feature.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	protected ref array<ref PR_TaskDetails> m_aIndividualTasks;
 
 	//! PR Task Spawner: Tasks - Global Task Pool
-	[Attribute("false", UIWidgets.CheckBox,"Use tasks from the global task pool set by 'PR_TaskCollectionsManager'. NOTE: Overrides 'Individual Entries' from above.  ", category: "PR Task Spawner: Tasks - Global Task Pool")]
+	//! Use tasks from the global task pool set by 'PR_TaskCollection'.
+	//! NOTE: Overrides 'Individual Tasks' from above.
+	static string hintUseAllAvailableTasksFromPool = (
+	"Use tasks from the global task pool set by 'PR_TaskCollection'." + "<br />" +
+	"----------------------------------------------------------------------------" + "<br />" +
+	"NOTE: Overrides 'Individual Tasks' from above.  "
+	);
+	[Attribute("false", UIWidgets.CheckBox, hintUseAllAvailableTasksFromPool, category: "PR Task Spawner: Tasks - Global Task Pool")]
 	protected bool m_bUseTaskPool;
 
 	//! PR Task Spawner: Tasks - Global Task Pool
@@ -34,41 +38,43 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	[Attribute(desc: "Filter available tasks for the scenario. You can have more than 1 filter.  ", category: "PR Task Spawner: Tasks - Global Task Pool")]
 	protected ref array<ref PR_TaskType> m_aTaskTypesFilter;
 
-	//! PR Task Spawner: Tasks - Move task destination.
-	[Attribute("false", UIWidgets.CheckBox,"Move task destination.  ", category: "PR Task Spawner: Tasks - Move Task")]
-	protected bool m_bUseMoveTaskDestination;
-
-	//! PR Task Spawner: Tasks - Move Task - Object name to move task to.
-	[Attribute(desc: "Object name to move task to.  ", category: "PR Task Spawner: Tasks - Move Task")]
-	protected string m_sLocationToMoveTaskTo;
-
-	//! PR Task Spawner: Tasks - Move Task - Move task destination to, filter. Will pick a random location. Overrides 'Location To Move Task To' above.
-	[Attribute(desc: "Move task destination to, filter. Will pick a random location. Overrides 'Location To Move Task To' above.  ", category: "PR Task Spawner: Tasks - Move Task")]
-	protected ref array<ref PR_TaskMove> m_aMoveTaskDestinationToFilter;
-
-	//! PR Task Spawner: Tasks - Use random respawn timer: Uses a min value from above and max value below.
-	[Attribute("false", UIWidgets.CheckBox,"Pick random tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
+	//! PR Task Spawner: Tasks - Pick random tasks from all avaliable task list above.
+	[Attribute("false", UIWidgets.CheckBox,"Pick random tasks from all avaliable tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected bool m_bUseRandomTasks;
 
 	//--- Amount of delay before spawning task
-	[Attribute("1", desc: "Amount of random tasks to pick. 'Use Random Tasks' must be checked.  ", category: "PR Task Spawner: Tasks - Spawner")]
+	[Attribute("1", desc: "Amount of random tasks to pick. 'Use Random Tasks' must be checked. -1 will use all avaliable tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected int m_iRandomTaskCount;
 
-	//--- Amount of delay before spawning task
-	[Attribute(desc: "Amount of delay before spawning task. In seconds.  ", category: "PR Task Spawner: Tasks - Spawner")]
-	protected int m_iDelayTimerToSpawnTask;
+	//! PR Task Spawner: Tasks - Spawner - Use random delay timer: Uses min and max values below.
+	[Attribute("false", UIWidgets.CheckBox,"Use random delay timer: Uses min and max values below.  ", category: "PR Task Spawner: Tasks - Spawner")]
+	protected bool m_bUseFirstTaskRandomDelayTimer;
 
 	//--- Amount of delay before spawning task
-	[Attribute(desc: "Amount of delay between spawning each task. In seconds.  ", category: "PR Task Spawner: Tasks - Spawner")]
-	protected int m_iDelayTimerBetweenEachTask;
+	[Attribute("0", UIWidgets.EditBox, "Amount of delay before spawning first task. In seconds.  Minimum value if used with 'Use Random Delay Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
+	protected int m_iDelayTimerToSpawnFirstTaskMin;
 
-	protected ref array<PR_TASK_ESFTaskType> m_aESFTaskTypesAvailable = {}; //PR_TASK_ESFTaskMove
+	//! PR Task Spawner: Tasks - Spawner - Delay timer max value: Maximum amount of delay before spawning task if used with random timer. (seconds)
+	[Attribute("0", UIWidgets.EditBox, "Maximum amount of delay before spawning task if used with 'Use Random Delay Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
+	protected int m_iDelayTimerToSpawnFirstTaskMax;
+
+	//! PR Task Spawner: Tasks - Spawner - Use random delay between tasks timer: Uses min and max values below.
+	[Attribute("false", UIWidgets.CheckBox,"Use random delay between tasks timer: Uses min and max values below.  ", category: "PR Task Spawner: Tasks - Spawner")]
+	protected bool m_bUseRandomDelayBetweenTasksTimer;
+
+	//! PR Task Spawner: Tasks - Spawner - Amount of delay between spawning each task. In seconds.  Minimum value if used with 'Use Random Delay Between Tasks Timer'. (seconds)
+	[Attribute("0", UIWidgets.EditBox, "Amount of delay between spawning each task. In seconds.  Minimum value if used with 'Use Random Delay Between Tasks Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
+	protected int m_iDelayTimerBetweenEachTaskMin;
+
+	//! PR Task Spawner: Tasks - Spawner - Delay timer max value: Maximum amount of delay before spawning task if used with 'Use Random Delay Between Tasks Timer'. (seconds)
+	[Attribute("0", UIWidgets.EditBox, "Maximum amount of delay before spawning task if used with 'Use Random Delay Between Tasks Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
+	protected int m_iDelayTimerBetweenEachTaskMax;
+
+	protected ref array<PR_TASK_ESFTaskType> m_aESFTaskTypesAvailable = {};
 	protected ref array<string> m_aTaskArrayFiltered = {};
 	protected ref array<int> m_aTaskTypesAvailableArray = {};
 	protected ref array<string> m_aTaskArrayGlobal = {}; //PR_TaskCollections.GetTaskArrayGlobal();
 	protected ref array<string> m_aTaskCollectionsArray = {};
-
-	protected ref array<PR_TASK_ESFTaskMove> m_aESFTaskTypesMove = {};
 
 	//------------------------------------------------------------------------------------------------
 	//! EOnInit
@@ -78,19 +84,28 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 		if (m_bIsTestingMode)
 		{
-			if (m_bUseTaskPool)
+			if (m_aIndividualTasks.Count() > 0)
 			{
+				foreach (PR_TaskDetails taskDetails : m_aIndividualTasks)
+				{
+					SetIndividualTasks(taskDetails, m_aIndividualTasks);
+				}
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aIndividualTasksToSpawnOnActivation: %3", m_sLogMode, m_sTriggerName, m_aIndividualTasksToSpawnOnActivation), LogLevel.WARNING);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_bMoveTaskDestinationArray: %3", m_sLogMode, m_sTriggerName, m_bMoveTaskDestinationArray), LogLevel.WARNING);
+			}
+
+			if (m_bUseTaskPool)
 				GetTaskPool();
-			} else
+			else
 				GetTaskIndividual();
 
 			if (GetTaskArrayFiltered().Count() == 0)
 			{
-				Print("[PR_SpawnTaskTrigger] (EOnInit): Trigger: " + m_sTriggerName + ": ScenarioFramework: No valid tasks to spawn! ", LogLevel.ERROR);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
 				return;
 			}
 
-			GetTasks();
+			GetTasksFinal();
 		}
 	}
 
@@ -104,31 +119,38 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			return;
 
 		if (m_bIsTriggerActivated)
-			return; 
+			return;
 
-		m_bIsTriggerActivated = true; 
+		m_bIsTriggerActivated = true;
 
-		int delay = m_iDelayTimerToSpawnTask * 1000;
+		//--- Delay to spawn first task
+		int delay = m_iDelayTimerToSpawnFirstTaskMin * 1000;
 
-		if (!m_iDelayTimerBetweenEachTask)
-			m_iDelayTimerBetweenEachTask = 0;
+		if (m_bUseFirstTaskRandomDelayTimer)
+			delay = Math.RandomInt(m_iDelayTimerToSpawnFirstTaskMin * 1000, m_iDelayTimerToSpawnFirstTaskMax * 1000);
 
-		int delayBetween = m_iDelayTimerBetweenEachTask * 1000;
+		//--- Individual task details
+		if (m_aIndividualTasks.Count() > 0)
+		{
+			foreach (PR_TaskDetails taskDetails : m_aIndividualTasks)
+			{
+				SetIndividualTasks(taskDetails, m_aIndividualTasks);
+			}
+		}
 
 		if (m_bUseTaskPool)
-		{
 			GetTaskPool();
-		} else
+		else
 			GetTaskIndividual();
 
 		if (GetTaskArrayFiltered().Count() == 0)
 		{
-			Print("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": ScenarioFramework: No valid tasks to spawn! ", LogLevel.ERROR);
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
 			return;
 		}
-		
+
 		//--- End up with m_aTaskCollectionsArray
-		GetTasks();
+		GetTasksFinal();
 
 		//--- Setup global tasks
 		if (m_bUseTaskPool)
@@ -140,70 +162,291 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			{
 				if (m_aTaskArrayGlobal.Find(task) > -1)
 				{
-					Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": PR_TaskCollections.GetTaskArrayGlobal() Count Before: " + (PR_TaskCollections.GetTaskArrayGlobal()).Count()), LogLevel.NORMAL);
-					Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": Task has been removed from the PR_TaskCollections global array: " + task), LogLevel.WARNING);
+					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : Task has been removed from the PR_TaskCollections global array: %3", m_sLogMode, m_sTriggerName, task), LogLevel.ERROR);
 					m_aTaskArrayGlobal.Remove(m_aTaskArrayGlobal.Find(task));
 				}
 			}
 
 			PR_TaskCollections.SetTaskArrayGlobal(m_aTaskArrayGlobal);
-			Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": PR_TaskCollections.GetTaskArrayGlobal() Count Final: " + (PR_TaskCollections.GetTaskArrayGlobal()).Count()), LogLevel.NORMAL);
 		}
 
-		
 		//--- Get base info
-		if (m_bUseMoveTaskDestination)
+		GetBaseInfo();
+
+		foreach (string taskName : m_aTaskCollectionsArray)
 		{
-			FactionManager factionManager;
-			SCR_CampaignFaction mainBase;
-			SCR_CampaignMilitaryBaseComponent hq;
-			int baseID = -1;
-			string callsignName = "";
-			IEntity owner;
-			string name = "";
-			vector location;
-			int controlPointsHeld;
-			SCR_MilitaryBaseSystem baseManager;
-			array<SCR_MilitaryBaseComponent> bases = {};
-			array<SCR_CampaignMilitaryBaseComponent> controlPoints = {};
-			array<SCR_CampaignMilitaryBaseComponent> friendlyPoints = {};
-			array<SCR_CampaignMilitaryBaseComponent> enemyPoints = {};
-			SCR_CampaignMilitaryBaseComponent campaignBase;
-			SCR_MilitaryBaseComponent base;
-			Faction baseFaction;
-			GetBaseInfo();
-			
-			//--- Move here is neccessary
-			IEntity moveToEntity = GetGame().GetWorld().FindEntityByName(m_sLocationToMoveTaskTo);
-			if (moveToEntity)
+			int index = m_aIndividualTasksToSpawnOnActivation.Find(taskName);
+			if (index == -1)
+				continue;
+
+			bool useMoveTaskDestination = m_bMoveTaskDestinationArray.Get(index);
+			if (useMoveTaskDestination)
 			{
-				TeleportObject(m_aTaskCollectionsArray.Get(0), m_sLocationToMoveTaskTo);
+				array<ref PR_MoveTask> taskMoveDetails = m_aTaskMoveDetailsArray.Get(index);
+				if (taskMoveDetails.Count() == 0)
+					continue;
+
+				string taskSectionToMove;
+				array<string> moveSectionTo = {};
+				array<int> moveSectionToRandomBases = {};
+				bool insertBaseNameInTaskInfos;
+
+				foreach (PR_MoveTask details : taskMoveDetails)
+				{
+					taskSectionToMove = details.m_sTaskSectionToMove;
+					moveSectionTo = details.m_sMoveSectionTo;
+					moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
+					insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
+
+					if (!taskSectionToMove)
+						continue;
+
+					array<string> combinedArray = {};
+					array<string> combinedBaseArray = {};
+					string callSign;
+
+					if (moveSectionTo.Count() > 0)
+					{
+						int moveSectionToCount = 0;
+						moveSectionToCount = moveSectionTo.Count();
+						IEntity holder;
+						array<string> moveSectionToCountArray = {};
+						int _i = 0;
+						while (moveSectionToCount > _i)
+						{
+							holder = GetGame().GetWorld().FindEntityByName(moveSectionTo.Get(_i));
+							if (holder)
+								GetAllChildrenNames(holder, moveSectionToCountArray, m_bDebugLogs);
+
+							_i++;
+						}
+						combinedArray = moveSectionToCountArray;
+					}
+
+					if (moveSectionToRandomBases.Count() > 0) //   GetBaseNames(), GetBaseVectors(), GetBaseIDs(), GetBaseCallsigns()
+					{
+						foreach (int baseType : moveSectionToRandomBases)
+						{
+							switch (baseType)
+							{
+								case 0: // "None"
+									break;
+
+								case 1: // "Main Base"
+								{
+									string hq = GetBaseNames().Get(0);
+									if (hq)
+										combinedBaseArray.Insert(hq);
+									break;
+								}
+								case 2: // "Random Base CP - Friendly"
+								{
+									if (m_aFriendlyPoints.Count() > 0)
+									{
+										foreach (string base : m_aFriendlyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 3: // "Random Base CP - Enemy"
+								{
+									if (m_aEnemyPoints.Count() > 0)
+									{
+										foreach (string base : m_aEnemyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 4: // "Random Base CP"
+								{
+									if (m_aFriendlyPoints.Count() > 0)
+									{
+										foreach (string base : m_aFriendlyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									if (m_aEnemyPoints.Count() > 0)
+									{
+										foreach (string base : m_aEnemyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 5: // "Random All Base and Relays"
+								{
+									if (GetBaseNames().Count() > 0)
+									{
+										foreach (string base : GetBaseNames())
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+							}
+						}
+
+						if (insertBaseNameInTaskInfos)
+						{
+							foreach (string baseName : combinedBaseArray)
+							{
+								Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : GetBaseNames().Find(baseName): %3", m_sLogMode, m_sTriggerName, GetBaseNames().Find(baseName)), LogLevel.WARNING);
+								index = GetBaseNames().Find(baseName);
+								if (!index == -1)
+									continue;
+
+								Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : taskName: %3", m_sLogMode, m_sTriggerName, taskName), LogLevel.WARNING);
+								Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : GetBaseCallsigns(): %3", m_sLogMode, m_sTriggerName, GetBaseCallsigns()), LogLevel.WARNING);
+								Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : GetBaseCallsigns().Get(index): %3", m_sLogMode, m_sTriggerName, GetBaseCallsigns().Get(index)), LogLevel.WARNING);
+
+								UpdateTitles(taskName, index);
+							}
+						}
+					}
+
+					foreach (string baseName : combinedBaseArray)
+					{
+						combinedArray.Insert(baseName);
+					}
+
+					if (combinedArray.Count() == 0)
+						return;
+
+					int randomIndex = combinedArray.GetRandomIndex();
+					string whereToMove = combinedArray.Get(randomIndex);
+
+					TeleportObject(taskSectionToMove, whereToMove);
+				}
 			}
-			// m_sLocationToMoveTaskTo // Location to move task to <string>
-			// m_aMoveTaskDestinationToFilter // Move task destination to, filter <array>
 		}
 
-		
-		
-		//--- Persistence
+		//--- Persistence cleanup
 		PersistenceCleanup();
-		
-		GetGame().GetCallqueue().CallLater(SpawnObjects, delay, false, m_aTaskCollectionsArray, SCR_ScenarioFrameworkEActivationType.ON_TRIGGER_ACTIVATION, delayBetween, m_bDebugLogs);
+
+		GetGame().GetCallqueue().CallLater(SpawnObjects, delay, false, m_aTaskCollectionsArray, SCR_ScenarioFrameworkEActivationType.ON_TRIGGER_ACTIVATION/*, delayBetween*/);
 
 		Deactivate();
 	}
 
-	//---
+	//------------------------------------------------------------------------------------------------
+	protected void UpdateTitles(string taskName, int index)
+	{
+		IEntity layerTask = GetLayer(taskName);
+		if (!layerTask)
+			return;
+
+		string hqCallsign = GetBaseCallsigns().Get(0);
+		if (!hqCallsign)
+			hqCallsign = "Unknown HQ";
+
+		string callSign = GetBaseCallsigns().Get(index);
+		if (!callSign)
+			callSign = "Unknown Location";
+
+		SCR_ScenarioFrameworkLayerBase layerComponent = SCR_ScenarioFrameworkLayerBase.Cast(layerTask.FindComponent(SCR_ScenarioFrameworkLayerBase));
+
+		IEntity child = layerComponent.GetOwner().GetChildren();
+		if (!child)
+			return;
+
+		while (child)
+		{
+			string title;
+			string description;
+
+			SCR_ScenarioFrameworkSlotPick slotPick = SCR_ScenarioFrameworkSlotPick.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotPick));
+			if (slotPick)
+			{
+				title = slotPick.GetTaskTitle(0);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (UpdateTitles) slotPick title: %2", m_sLogMode, title), LogLevel.WARNING);
+				title = string.Format(title, callSign, hqCallsign);
+				description = slotPick.GetTaskTitle(1);
+				description = string.Format(description, callSign, hqCallsign);
+				string titleUpdate1 = slotPick.GetTaskTitle(2);
+				titleUpdate1 = string.Format(titleUpdate1, callSign, hqCallsign);
+				string descriptionUpdate1 = slotPick.GetTaskTitle(3);
+				descriptionUpdate1 = string.Format(descriptionUpdate1, callSign, hqCallsign);
+				string titleUpdate2 = slotPick.GetTaskTitle(4);
+				titleUpdate2 = string.Format(titleUpdate2, callSign, hqCallsign);
+				string descriptionUpdate2 = slotPick.GetTaskTitle(5);
+				descriptionUpdate2 = string.Format(descriptionUpdate2, callSign, hqCallsign);
+
+				slotPick.SetTitleAndDescriptions(title, description, titleUpdate1, descriptionUpdate1, titleUpdate2, descriptionUpdate2);
+			} else
+			{
+				SCR_ScenarioFrameworkSlotTask slotBase = SCR_ScenarioFrameworkSlotTask.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotTask));
+				if (slotBase)
+				{
+					title = slotBase.GetTaskTitle(0);
+					Print(string.Format("[PR_SpawnTaskTrigger] %1 : (UpdateTitles) title: %2", m_sLogMode, title), LogLevel.WARNING);
+					title = string.Format(title, callSign, hqCallsign);
+					Print(string.Format("[PR_SpawnTaskTrigger] %1 : (UpdateTitles) title: %2", m_sLogMode, title), LogLevel.WARNING); // remove after testing
+					description = slotBase.GetTaskDescription(0);
+					description = string.Format(description, callSign, hqCallsign);
+
+					SCR_ScenarioFrameworkSlotClearArea slotClearArea = SCR_ScenarioFrameworkSlotClearArea.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotClearArea));
+					if (slotClearArea)
+						slotClearArea.SetTitleAndDescription(title, description);
+
+					SCR_ScenarioFrameworkSlotDefend slotDefend = SCR_ScenarioFrameworkSlotDefend.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotDefend));
+					if (slotDefend)
+						slotDefend.SetTitleAndDescription(title, description);
+
+					SCR_ScenarioFrameworkSlotExtraction slotExtraction = SCR_ScenarioFrameworkSlotExtraction.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotExtraction));
+					if (slotExtraction)
+						slotExtraction.SetTitleAndDescription(title, description);
+
+					SCR_ScenarioFrameworkSlotDestroy slotDestroy = SCR_ScenarioFrameworkSlotDestroy.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotDestroy));
+					if (slotDestroy)
+						slotDestroy.SetTitleAndDescription(title, description);
+
+					SCR_ScenarioFrameworkSlotKill slotKill = SCR_ScenarioFrameworkSlotKill.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotKill));
+					if (slotKill)
+						slotKill.SetTitleAndDescription(title, description);
+				}
+			}
+
+			child = child.GetSibling();
+		}
+	}
+
+	protected ref array<string> m_aIndividualTasksToSpawnOnActivation = {};
+	protected ref array<bool> m_bMoveTaskDestinationArray = {};
+	protected ref array<array<ref PR_MoveTask>> m_aTaskMoveDetailsArray = {};
+	protected ref array<string> m_aNameOfTasksToSpawnOnActivation = m_aIndividualTasksToSpawnOnActivation;
+
+	//------------------------------------------------------------------------------------------------
+	//!
+	protected void SetIndividualTasks(PR_TaskDetails taskDetails, array<ref PR_TaskDetails> individualTasks)
+	{
+		string taskName = taskDetails.m_sTaskName;
+		m_aIndividualTasksToSpawnOnActivation.Insert(taskName);
+
+		bool useMoveTaskDestination = taskDetails.m_bUseMoveTaskDestination; // get bool later
+		m_bMoveTaskDestinationArray.Insert(useMoveTaskDestination);
+
+		array<ref PR_MoveTask> taskMoveDetails = taskDetails.m_aTaskMoveDetails;
+		m_aTaskMoveDetailsArray.Insert(taskMoveDetails);
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Tasks from Individual Entries
-	void GetTaskIndividual()
+	protected void GetTaskIndividual()
 	{
 		if (m_aNameOfTasksToSpawnOnActivation.Count() > 0)
 			GetLayerTask(m_aNameOfTasksToSpawnOnActivation, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
 	}
-	
-	//---
+
+	//------------------------------------------------------------------------------------------------
 	//! Tasks from global pool
-	void GetTaskPool()
+	protected void GetTaskPool()
 	{
 		m_aTaskArrayGlobal = PR_TaskCollections.GetTaskArrayGlobal();
 
@@ -216,7 +459,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		//--- Gather available task types
 		if (m_bUseAllAvailableTasksFromPool)
 		{
-			m_aTaskTypesAvailableArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+			m_aTaskTypesAvailableArray = {1, 4, 5, 9, 10, 11, 12};
 		} else
 		if (m_aESFTaskTypesAvailable.Find(0) == 0)
 		{
@@ -225,26 +468,27 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		{
 			m_aTaskTypesAvailableArray = m_aESFTaskTypesAvailable;
 		}
-		
+
 		if (m_bDebugLogs && m_bIsTestingMode)
 		{
 			foreach (int index, string x : m_aTaskArrayGlobal)
 			{
-				Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_aTaskArrayGlobal: [" + index + "] " + x), LogLevel.NORMAL);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aTaskArrayGlobal: [ %3 ] : %3", m_sLogMode, m_sTriggerName, index, x), LogLevel.NORMAL);
 			}
-			Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_aESFTaskTypesAvailable: " + m_aESFTaskTypesAvailable), LogLevel.NORMAL);
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aESFTaskTypesAvailable: [ %3 ]", m_sLogMode, m_sTriggerName, m_aESFTaskTypesAvailable), LogLevel.NORMAL);
 		}
 
 		if (m_aTaskArrayGlobal.Count() > 0)
 			GetLayerTask(m_aTaskArrayGlobal, m_aTaskTypesAvailableArray);
 
 		SetNameOfTasksToSpawnOnActivation(GetTaskArrayFiltered());
-		Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_aNameOfTasksToSpawnOnActivation: " + GetTaskArrayFiltered()), LogLevel.NORMAL);
+		if (m_bDebugLogs)
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aNameOfTasksToSpawnOnActivation: %3", m_sLogMode, m_sTriggerName, GetTaskArrayFiltered()), LogLevel.NORMAL);
 	}
-	
-	//---
+
+	//------------------------------------------------------------------------------------------------
 	//! Packs tasks into a final array
-	void GetTasks()
+	protected void GetTasksFinal()
 	{
 		if (m_bUseRandomTasks)
 		{
@@ -253,12 +497,15 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			if (m_iRandomTaskCount > randomArray.Count())
 				m_iRandomTaskCount = randomArray.Count();
 
+			if (m_iRandomTaskCount == -1)
+				m_iRandomTaskCount = randomArray.Count();
+
 			array<string> tempArray = {};
 			for (int i; i < m_iRandomTaskCount; i++)
 			{
 				int randomIndex = randomArray.GetRandomIndex();
-				string name = randomArray.Get(randomIndex);
-				tempArray.Insert(name);
+				string taskName = randomArray.Get(randomIndex);
+				tempArray.Insert(taskName);
 				randomArray.Remove(randomIndex);
 			}
 			m_aTaskCollectionsArray = tempArray;
@@ -269,14 +516,86 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		{
 			foreach (int index, string x : m_aTaskCollectionsArray)
 			{
-				Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_aTaskCollectionsArray: [" + index + "] " + x), LogLevel.NORMAL);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aTaskCollectionsArray: [ %3 ] %4", m_sLogMode, m_sTriggerName, index, x), LogLevel.NORMAL);
 			}
 		}
 	}
-	
-	//---
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aBaseNames;
+	protected ref array<string> m_aBaseNames = {};
+	protected void SetBaseNames(string name)
+	{
+		if (!name)
+			name = "";
+		m_aBaseNames.Insert(name);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aBaseNames;
+	array<string> GetBaseNames()
+	{
+		return m_aBaseNames;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aBaseVectors
+	protected ref array<vector> m_aBaseVectors = {};
+	protected void SetBaseVectors(vector location)
+	{
+		if (!location)
+			location = "0 0 0";
+		m_aBaseVectors.Insert(location);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aBaseVectors;
+	array<vector> GetBaseVectors()
+	{
+		return m_aBaseVectors;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aBaseIDs
+	protected ref array<int> m_aBaseIDs = {};
+	protected void SetBaseIDs(int baseID)
+	{
+		if (!baseID)
+			baseID = -1;
+		m_aBaseIDs.Insert(baseID);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aBaseIDs;
+	array<int> GetBaseIDs()
+	{
+		return m_aBaseIDs;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aBaseCallsigns
+	protected ref array<string> m_aBaseCallsigns = {};
+	protected void SetBaseCallsigns(string callsign)
+	{
+		if (!callsign)
+			callsign = "";
+		m_aBaseCallsigns.Insert(callsign);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aBaseCallsigns;
+	array<string> GetBaseCallsigns()
+	{
+		return m_aBaseCallsigns;
+	}
+
+	protected ref array<string> m_aControlPoints = {};
+	protected ref array<string> m_aFriendlyPoints = {};
+	protected ref array<string> m_aEnemyPoints = {};
+
+	//------------------------------------------------------------------------------------------------
 	//! Get all base information
-	void GetBaseInfo()
+	protected void GetBaseInfo()
 	{
 		//--- Get base info
 		FactionManager factionManager = GetGame().GetFactionManager();
@@ -288,131 +607,122 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				SCR_CampaignFaction mainBase = SCR_CampaignFaction.Cast(m_OwnerFaction.(SCR_CampaignFaction.GetMainBase()));
 				if (mainBase)
 				{
+					SCR_Faction faction;
+					SCR_MilitaryBaseCallsign callsignInfo;
+					string callsignNameOnly;
 					SCR_CampaignMilitaryBaseComponent hq;
 					hq = mainBase.GetMainBase();
+					IEntity owner;
+					string name;
+
 					if (hq)
 					{
-						int baseID = -1;
-						string callsignName = "";
-						IEntity owner;
-						string name = "";
-						vector location;
 
+						faction = SCR_Faction.Cast(factionManager.GetFactionByKey(m_OwnerFactionKey));
 						owner = hq.GetOwner();
-						location = owner.GetOrigin();
-						baseID = hq.GetCallsign();
-						callsignName = hq.GetCallsignDisplayName();
+						name = owner.GetName();
+						if (!name)
+							name = GetRandomName("HQ_");
 
-						int controlPointsHeld = mainBase.GetControlPointsHeld();
-
-						if (m_bDebugLogs)
-						{
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : HQ: " + hq), LogLevel.NORMAL);
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : HQ name: " + name), LogLevel.NORMAL);
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : HQ Location: " + location), LogLevel.NORMAL);
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : HQ ID: " + baseID), LogLevel.NORMAL);
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : HQ callsignName: " + callsignName), LogLevel.NORMAL);
-							Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Control points held: " + controlPointsHeld), LogLevel.NORMAL);
-						}
+						SetBaseNames(name);
+						SetBaseVectors(owner.GetOrigin());
+						SetBaseIDs(hq.GetCallsign()); // index
+						callsignInfo = faction.GetBaseCallsignByIndex(hq.GetCallsign());
+						SetBaseCallsigns(callsignInfo.GetCallsignShort());
 
 						SCR_MilitaryBaseSystem baseManager = SCR_MilitaryBaseSystem.GetInstance();
-
 						if (!baseManager)
 							return;
 
 						array<SCR_MilitaryBaseComponent> bases = {};
-						array<SCR_CampaignMilitaryBaseComponent> controlPoints = {};
-						array<SCR_CampaignMilitaryBaseComponent> friendlyPoints = {};
-						array<SCR_CampaignMilitaryBaseComponent> enemyPoints = {};
-
 						baseManager.GetBases(bases);
-
-						SCR_CampaignMilitaryBaseComponent campaignBase;
 
 						foreach (SCR_MilitaryBaseComponent base : bases)
 						{
-							campaignBase = SCR_CampaignMilitaryBaseComponent.Cast(base);
+							SCR_CampaignMilitaryBaseComponent campaignBase = SCR_CampaignMilitaryBaseComponent.Cast(base);
 							if (!campaignBase)
 								continue;
 
-							Faction baseFaction;
-							baseFaction = base.GetFaction();
 							owner = base.GetOwner();
 							name = owner.GetName();
-							location = owner.GetOrigin();
-							baseID = base.GetCallsign();
-							callsignName = base.GetCallsignDisplayName();
-							owner.GetName();
+							if (!name)
+								name = GetRandomName("Base_");
+
+							if (GetBaseNames().Find(name) == -1)
+							{
+								SetBaseNames(name);
+								SetBaseVectors(owner.GetOrigin());
+								SetBaseIDs(base.GetCallsign());
+								callsignInfo = faction.GetBaseCallsignByIndex(base.GetCallsign());
+								SetBaseCallsigns(callsignInfo.GetCallsignShort());
+							}
 
 							//--- Gather all control points
 							if (campaignBase.IsControlPoint())
 							{
-								controlPoints.Insert(campaignBase);
+								m_aControlPoints.Insert(name);
 
 								//--- Filter friendly vs enemy/open points
-								if (baseFaction == m_OwnerFaction)
-								{
-									friendlyPoints.Insert(campaignBase);
-								} else
-									enemyPoints.Insert(campaignBase);
+								Faction baseFaction = base.GetFaction();
 
-								if (m_bDebugLogs)
-									Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : Base name: " + name + " : location: " + location + " : callsignName: " + callsignName), LogLevel.NORMAL);
+								if (baseFaction == m_OwnerFaction)
+									m_aFriendlyPoints.Insert(name);
+								else
+									m_aEnemyPoints.Insert(name);
 							}
-							if (m_bDebugLogs)
-								Print(("[PR_SpawnTaskTrigger] " + m_sLogMode + " : baseID: " + baseID), LogLevel.NORMAL);
 						}
 
 						if (m_bDebugLogs)
 						{
-							PrintFormat("[PR_SpawnTaskTrigger] " + m_sLogMode + " : controlPoints: %1", controlPoints);
-							PrintFormat("[PR_SpawnTaskTrigger] " + m_sLogMode + " : friendlyPoints: %1", friendlyPoints);
-							PrintFormat("[PR_SpawnTaskTrigger] " + m_sLogMode + " : enemyPoints: %1", enemyPoints);
+							Print(string.Format("[PR_SpawnTaskTrigger] %1 : GetBaseNames(): %2", m_sLogMode, GetBaseNames()), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] %1 : ControlPoints: %2", m_sLogMode, m_aControlPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] %1 : FriendlyPoints: %2", m_sLogMode, m_aFriendlyPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] %1 : EnemyPoints: %2", m_sLogMode, m_aEnemyPoints), LogLevel.NORMAL);
 						}
 					} else
-						Print("[PR_SpawnTaskTrigger] " + m_sLogMode + " : No hq!", LogLevel.WARNING);
+						Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No hq!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 				} else
-					Print("[PR_SpawnTaskTrigger] " + m_sLogMode + " : No mainBase!", LogLevel.WARNING);
+					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No mainBase!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 			} else
-				Print("[PR_SpawnTaskTrigger] " + m_sLogMode + " : No m_OwnerFaction!", LogLevel.WARNING);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No m_OwnerFaction!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 		} else
-			Print("[PR_SpawnTaskTrigger] " + m_sLogMode + " : No factionManager!", LogLevel.WARNING);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! returns m_aTaskArrayFiltered
-	array<string> GetTaskArrayFiltered()
-	{
-		return m_aTaskArrayFiltered;
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No factionManager!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 	}
 
 	//------------------------------------------------------------------------------------------------
 	//! sets m_aTaskArrayFiltered
-	void SetTaskArrayFiltered(array<string> taskArrayFiltered)
+	protected void SetTaskArrayFiltered(array<string> taskArrayFiltered)
 	{
 		m_aTaskArrayFiltered = taskArrayFiltered;
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! returns m_aTaskArrayFiltered
+	protected array<string> GetTaskArrayFiltered()
+	{
+		return m_aTaskArrayFiltered;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aNameOfTasksToSpawnOnActivation
+	protected void SetNameOfTasksToSpawnOnActivation(array<string> nameOfTasksToSpawnOnActivation)
+	{
+		if (m_bDebugLogs)
+			Print(string.Format("[PR_SpawnTaskTrigger] (SetNameOfTasksToSpawnOnActivation): Trigger: %1 : nameOfTasksToSpawnOnActivation: %2", m_sTriggerName, nameOfTasksToSpawnOnActivation), LogLevel.NORMAL);
+
+		m_aNameOfTasksToSpawnOnActivation = nameOfTasksToSpawnOnActivation;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! returns m_aNameOfTasksToSpawnOnActivation
-	array<string> GetNameOfTasksToSpawnOnActivation()
+	protected array<string> GetNameOfTasksToSpawnOnActivation()
 	{
 		return m_aNameOfTasksToSpawnOnActivation;
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! sets m_aNameOfTasksToSpawnOnActivation
-	void SetNameOfTasksToSpawnOnActivation(array<string> nameOfTasksToSpawnOnActivation)
-	{
-		if (m_bDebugLogs)
-			Print(("[PR_SpawnTaskTrigger] (SetNameOfTasksToSpawnOnActivation): Trigger: " + m_sTriggerName + ": nameOfTasksToSpawnOnActivation: " + nameOfTasksToSpawnOnActivation), LogLevel.NORMAL);
-		
-		m_aNameOfTasksToSpawnOnActivation = nameOfTasksToSpawnOnActivation;
-	}
-
-	//------------------------------------------------------------------------------------------------
 	//! Spawn tasks from array
-	protected void SpawnObjects(notnull array<string> aObjectsNames, SCR_ScenarioFrameworkEActivationType eActivationType, int delayBetween)
+	protected void SpawnObjects(notnull array<string> aObjectsNames, SCR_ScenarioFrameworkEActivationType eActivationType/*, int delayBetween*/)
 	{
 		int nameCount = aObjectsNames.Count(); // gets elements count of array "aObjectsNames"
 		int sleep = 0;
@@ -422,58 +732,77 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			string sTaskName = aObjectsNames.Get(i);
 			IEntity object = GetGame().GetWorld().FindEntityByName(sTaskName);
 			if (m_bDebugLogs)
-			{
-				Print(("[PR_SpawnTaskTrigger] (SpawnObjects): Trigger: " + m_sTriggerName + ": Task Index: [" + i + "]. Task Name: " + sTaskName), LogLevel.NORMAL);
-			}
+				Print(string.Format("[PR_SpawnTaskTrigger] (SpawnObjects): Trigger: %1 : Task Index: [ %2 ]. Task Name: %3", m_sTriggerName, i, sTaskName), LogLevel.NORMAL);
 
 			if (!object)
 			{
-				Print(("[PR_SpawnTaskTrigger] (SpawnObjects): Trigger: " + m_sTriggerName + ": ScenarioFramework: Can't spawn object set in slot " + aObjectsNames.Get(i) + ". Slot doesn't exist"), LogLevel.ERROR);
+				Print(string.Format("[PR_SpawnTaskTrigger] (SpawnObjects): %1 : Trigger: %2 : ScenarioFramework: Can't spawn object set in slot (%3). Slot doesn't exist", m_sLogMode, m_sTriggerName, aObjectsNames.Get(i)), LogLevel.ERROR);
 				continue;
 			}
 
 			SCR_ScenarioFrameworkLayerBase layer = SCR_ScenarioFrameworkLayerBase.Cast(object.FindComponent(SCR_ScenarioFrameworkLayerBase));
 			if (!layer)
 			{
-				Print("[PR_SpawnTaskTrigger] (SpawnObjects): Trigger: " + m_sTriggerName + ": ScenarioFramework: Can't spawn object - the slot doesn't have SCR_ScenarioFrameworkLayerBase component", LogLevel.ERROR);
+				Print(string.Format("[PR_SpawnTaskTrigger] (SpawnObjects) %1 : Trigger: %2 : ScenarioFramework: Can't spawn object - the slot doesn't have SCR_ScenarioFrameworkLayerBase component", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
 				continue;
 			}
 
 			//--- Complete, now spawn it in mission
 			GetGame().GetCallqueue().CallLater(layer.Init, sleep, false, null, eActivationType);
+
+			//--- Random delay between tasks
+			int delayBetween = m_iDelayTimerBetweenEachTaskMin * 1000;
+
+			if (m_bUseRandomDelayBetweenTasksTimer)
+				delayBetween = Math.RandomInt(m_iDelayTimerBetweenEachTaskMin * 1000, m_iDelayTimerBetweenEachTaskMax * 1000);
+
 			sleep = sleep + delayBetween;
 		}
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Retrieve tasks available for spawning, checks for valid layer against name
-	void GetLayerTask(notnull array<string> taskArrayGlobal, array<int> taskTypesAvailable)
+	//! Get task layer
+	protected IEntity GetLayer(string taskName)
+	{
+		IEntity layerTask = GetWorld().FindEntityByName(taskName);
+
+		if (!layerTask)
+		{
+			Print(string.Format("[PR_SpawnTaskTrigger] (GetLayer): Trigger: %1 : No valid layer! Check 'LayerTask' taskName is correct. : %2", m_sTriggerName, taskName), LogLevel.ERROR);
+			return null;
+		}
+
+		SCR_ScenarioFrameworkLayerBase selectedLayer = SCR_ScenarioFrameworkLayerBase.Cast(layerTask.FindComponent(SCR_ScenarioFrameworkLayerBase));
+
+		if (selectedLayer)
+		{
+			SCR_ScenarioFrameworkArea area = selectedLayer.GetParentArea();
+			if (!area)
+			{
+				Print(string.Format("[PR_SpawnTaskTrigger] (GetLayer): Trigger: %1 : No valid area! Check 'LayerTask' is inside a area. : %2", m_sTriggerName, taskName), LogLevel.ERROR);
+				return null;
+			}
+		} else
+		{
+			Print(string.Format("[PR_SpawnTaskTrigger] (GetLayer): Trigger: %1 : No valid layer! Check 'LayerTask' is of proper base. : %2", m_sTriggerName, taskName), LogLevel.ERROR);
+			return null;
+		}
+
+		return layerTask;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Retrieve tasks available for spawning, checks for valid layer against taskName
+	protected void GetLayerTask(notnull array<string> taskArrayGlobal, array<int> taskTypesAvailable)
 	{
 		array<string> taskArrayFiltered = {};
-		SCR_ScenarioFrameworkLayerBase selectedLayer;
 
-		foreach (/*int index, */string name : taskArrayGlobal)
+		foreach (string taskName : taskArrayGlobal)
 		{
-			/*string*/ //name = taskArrayGlobal.Get(index);
-			IEntity layerTask = GetWorld().FindEntityByName(name);
+			IEntity layerTask = GetLayer(taskName);
 
 			if (!layerTask)
-			{
-				Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": No valid layer! Check 'LayerTask' name is correct. : " + name), LogLevel.ERROR);
 				continue;
-			}
-
-			selectedLayer = SCR_ScenarioFrameworkLayerBase.Cast(layerTask.FindComponent(SCR_ScenarioFrameworkLayerBase));
-			if (selectedLayer)
-			{
-				SCR_ScenarioFrameworkArea area = selectedLayer.GetParentArea();
-				if (!area)
-				{
-					Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": No valid area! Check 'LayerTask' is inside a area. : " + name), LogLevel.ERROR);
-					continue;
-				}
-			} else
-				Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": No valid layer! Check 'LayerTask' is of proper base. : " + name), LogLevel.ERROR);
 
 			EntityPrefabData prefabData = layerTask.GetPrefabData();
 			if (prefabData)
@@ -483,9 +812,9 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				ResourceName prefabName = prefabData.GetPrefab().GetAncestor().GetName();
 
 				if (m_bDebugLogs && m_bIsTestingMode)
-					Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": name: " + name + " prefabName: " + prefabName), LogLevel.NORMAL);
+					Print(string.Format("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: %1 : taskName: %2 : prefabName: %3", m_sTriggerName, taskName, prefabName), LogLevel.NORMAL);
 
-				if (taskArrayFiltered.Find(name) == -1)
+				if (taskArrayFiltered.Find(taskName) == -1)
 				{
 					foreach (int type : taskTypesAvailable)
 					{
@@ -496,26 +825,26 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 								if (prefabName == "Prefabs/ScenarioFramework/Components/LayerTaskDeliver.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 2: // DELIVER_INTEL
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 3: // DELIVER_VEHICLE
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 4: // DESTROY
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Components/LayerTaskDestroy.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDestroy.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 5: // DEFEND
@@ -524,59 +853,62 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendArea.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendAreaAndTarget.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendTarget.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 6: // DEFEND_AREA
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendArea.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 7: // DEFEND_AREA_AND_TARGET
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendAreaAndTarget.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 8: // DEFEND_TARGET
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendTarget.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 9: // KILL & TaskKill
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Components/LayerTaskKill.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskKill.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 10: // CLEAR_AREA & TaskClearArea
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Components/LayerTaskClearArea.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskClearArea.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 11: // MOVE
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Components/LayerTaskMove.et"
 								|| prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskMove.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 							case 12: // EXFIL
 							{
 								if (prefabName == "Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskExfil.et")
-									taskArrayFiltered.Insert(name);
+									taskArrayFiltered.Insert(taskName);
 								break;
 							};
 						}
 					}
 				}
 			} else
-				Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": No prefabData! Make sure layer Activation type is set to 'ON_TRIGGER_ACTIVATION' : [" + name + "] "), LogLevel.WARNING);
+			{
+				Print(string.Format("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: %1 : No prefabData! Make sure layer Activation type is set to 'ON_TRIGGER_ACTIVATION' : [ %2 ]", m_sTriggerName, taskName), LogLevel.WARNING);
+				continue;
+			}
 		}
 
 		SetTaskArrayFiltered(taskArrayFiltered);
@@ -584,7 +916,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		{
 			foreach (int index, string x : taskArrayFiltered)
 			{
-				Print(("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: " + m_sTriggerName + ": taskArrayFiltered: [" + index + "] " + x), LogLevel.NORMAL);
+				Print(string.Format("[PR_SpawnTaskTrigger] (GetLayerTask): Trigger: %1 : taskArrayFiltered: [ %2 ] : %3", m_sTriggerName, index, x), LogLevel.NORMAL);
 			}
 		}
 	}
@@ -607,61 +939,181 @@ class PR_TaskType
 
 enum PR_TASK_ESFTaskType
 {
-	NONE,					// 0
-	DELIVER, 				// 1		{88821DCA414AF4C7}Prefabs/ScenarioFramework/Components/LayerTaskDeliver.et
-	DELIVER_INTEL,			// 2		{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et
-	DELIVER_VEHICLE,			// 3		{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et
-	DESTROY, 				// 4		{5EDF39860639027D}Prefabs/ScenarioFramework/Components/LayerTaskDestroy.et || {265A8A1492CB6189}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDestroy.et
-	DEFEND, 					// 5		{775C493CE872C3A5}Prefabs/ScenarioFramework/Components/LayerTaskDefend.et
-	DEFEND_AREA,				// 6		{2B0E0A06A4475EA3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendArea.et
-	DEFEND_AREA_AND_TARGET,	// 7		{18B9A717BAE9FF57}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendAreaAndTarget.et
-	DEFEND_TARGET,			// 8		{A651662FD0667288}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendTarget.et
-	KILL, 					// 9		{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et || {B506343A3BF60DB3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskKill.et
-	CLEAR_AREA,				// 10	{CDC0845AD90BA073}Prefabs/ScenarioFramework/Components/LayerTaskClearArea.et || {C248387C4E5A9DE8}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskClearArea.et
-	MOVE,					// 11	{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et || {3512D2F2BF47D345}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskMove.et
-	EXFIL,					// 12	{172146470FF780EB}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskExfil.et
+	"None" = 0, 					// 0
+	"Deliver - All" = 1, 			// 1		{88821DCA414AF4C7}Prefabs/ScenarioFramework/Components/LayerTaskDeliver.et
+	"Deliver - Intel" = 2, 			// 2		{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et
+	"Deliver - Vehicle" = 3, 		// 3		{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et
+	"Destroy" = 4, 					// 4		{5EDF39860639027D}Prefabs/ScenarioFramework/Components/LayerTaskDestroy.et || {265A8A1492CB6189}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDestroy.et
+	"Defend - All" = 5, 			// 5		{775C493CE872C3A5}Prefabs/ScenarioFramework/Components/LayerTaskDefend.et
+	"Defend - Area" = 6, 			// 6		{2B0E0A06A4475EA3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendArea.et
+	"Defend - Area and Target" = 7,// 7		{18B9A717BAE9FF57}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendAreaAndTarget.et
+	"Defend - Target" = 8, 			// 8		{A651662FD0667288}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDefendTarget.et
+	"Kill" = 9, 					// 9		{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et || {B506343A3BF60DB3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskKill.et
+	"Clear Area" = 10, 				// 10	{CDC0845AD90BA073}Prefabs/ScenarioFramework/Components/LayerTaskClearArea.et || {C248387C4E5A9DE8}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskClearArea.et
+	"Move" = 11, 					// 11	{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et || {3512D2F2BF47D345}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskMove.et
+	"Exfil" = 12, 					// 12	{172146470FF780EB}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskExfil.et
 }
 
-//////////////
-// Helper class for designer to specify what tasks will be available in this area
 [BaseContainerProps()]
-class PR_TaskMove
+class PR_TaskDetails
 {
-	[Attribute("Type of task", UIWidgets.ComboBox,"Move task destination to.  ", enums: ParamEnumArray.FromEnum(PR_TASK_ESFTaskMove))]
-	protected PR_TASK_ESFTaskMove m_MoveTaskDestinationTo;
+	//! PR Task Spawner: Tasks - Individual Tasks - Name of task to spawn.
+	[Attribute(desc: "Name of task to spawn.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	string m_sTaskName;
 
-	//------------------------------------------------------------------------------------------------
-	//! \return
-	PR_TASK_ESFTaskMove GetTaskMove()
-	{
-		return m_MoveTaskDestinationTo;
-	}
+	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
+	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	bool m_bUseMoveTaskDestination;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - If you desire the Area, task layer, or slots to be moved to another location, add details here.
+	[Attribute(desc: "If you desire the Area, task layer, or slots to be moved to another location, add details here.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	ref array<ref PR_MoveTask> m_aTaskMoveDetails;
+}
+
+[BaseContainerProps()]
+class PR_MoveTask
+{
+	//! PR Task Spawner: Tasks - Individual Tasks
+	//! Task section name. Area, task layer, or slot.
+	//! i.e. Area_01, TaskMove_1, SlotPick2.
+	//! Area: Moves area and all children.
+	//! Task layer: Moves task layer and all children.
+	//! Slot: Moves slot and Children.
+	static string hintTaskSectionToMove = (
+	"Task section name. Area, task layer, or slot.  " + "<br />" +
+	"i.e. Area_01, TaskMove_1, SlotPick2.  " + "<br />" + "<br />" +
+	"Area: Moves area and all children.  " + "<br />" +
+	"Task layer: Moves task layer and all children.  " + "<br />" +
+	"Slot: Moves slot and Children.  " + "<br />" +
+	"----------------------------------------------------------------------" + "<br />" +
+	"Requires: 'Move Section To' or 'Move Section To Random'"
+	);
+	[Attribute(desc: hintTaskSectionToMove)]
+	string m_sTaskSectionToMove;
+
+	//! PR Task Spawner: Tasks - Individual Tasks
+	//! Object name to move task section to.
+	//! More than one will pick a random location.
+	//! This can combine with 'Move Section To Random'.
+	static string hintMoveSectionTo = (
+	"Object name to move task section to.  " + "<br />" +
+	"-----------------------------------------------------------------------------------" + "<br />" +
+	"More than one will pick a random location.  " + "<br />" +
+	"Locations can grouped to make a collection, i.e. inside genericEnity.  " + "<br />" +
+	"Be sure they have hierarchy added to them.  " + "<br />" + "<br />" +
+	"This can combine with 'Move Section To Random Bases'.  "
+	);
+	[Attribute(desc: hintMoveSectionTo)]
+	ref array<string> m_sMoveSectionTo;
+
+	//! PR Task Spawner: Tasks - Individual Tasks
+	//! Random locations to move task section to.
+	//! This can combine with 'Move Section To'.
+	static string hintMoveSectionToRandom = (
+	"Random locations to move task section to.  " + "<br />" +
+	"----------------------------------------------------" + "<br />" +
+	"This can combine with 'Move Section To'.  "
+	);
+	[Attribute("", UIWidgets.ComboBox, desc: hintMoveSectionToRandom, enums: ParamEnumArray.FromEnum(PR_TASK_ESFTaskMove))]
+	ref array<int> m_sMoveSectionToRandomBases;
+
+	static string hintInsertBaseNameInTaskInfos = (
+	"Inserts base callsign name into the task slot titles where '%1' is used.  " + "<br />" +
+	"'%2' will always use main base callsign.  " + "<br />" +
+	"i.e. 'Move to Point %2' will display 'Move to Point Alabama'.  " + "<br />" +
+	"----------------------------------------------------------------------------------------" + "<br />" +
+	"Only works in combination with 'Move Section To Random Bases' above.  "
+	);
+	//! PR Task Spawner: Tasks - Individual Tasks - Adds base callsign name in the task titles where '%1' is used.
+	//! "'%2' will always use main base callsign.  "
+	//! "I.E. 'Move to Point %2' will display 'Move to Point Alabama'.  "
+	//! "Only works in combination with 'Move Section To Random Bases' above.  "
+	[Attribute("false", UIWidgets.CheckBox, hintInsertBaseNameInTaskInfos, category: "PR Task Spawner: Tasks - Individual Tasks")]
+	bool m_bInsertBaseNameInTaskInfos;
 }
 
 enum PR_TASK_ESFTaskMove
 {
-	NONE,					// 0
-	MAIN_BASE, 				// 1
-	RANDOM_BASE_FRIENDLY,	// 2
-	RANDOM_BASE_ENEMY,		// 3
-	RANDOM_BASE,			// 4
+	"None" = 0,						// 0
+	"Main Base" = 1,					// 1
+	"Random Base CP - Friendly" = 2,	// 2
+	"Random Base CP - Enemy" = 3,	// 3
+	"Random Base CP" = 4,			// 4
+	"Random All Base and Relays" = 5,// 5
 }
 
-
-enum PR_TaskTypeList // this is only a placeholder for now
+modded class SCR_ScenarioFrameworkSlotPick
 {
-	"Conflict Relay Radio" = 0,			// 0
-	"Trigger Task" = 1,					// 1
-	"Man: GL (1)" = 2,					// 2
-	"Man: Unarmed (1)" = 3,				// 3
-	"Group: Fire Team (4)" = 4,			// 4  default
-	"Group: Light Fire Team (4)" = 5,	// 5
-	"Group: Machine Gun Team (2)" = 6,	// 6
-	"Group: Medical Section (2)" = 7,	// 7
-	"Group: Rifle Squad (6)" = 8,		// 8
-	"Group: Sentry Team (2)" = 9,		// 9
-	"Group: AT Team (4)" = 10,			// 10
-	"Group: Sniper Team (2)" = 11,		// 11
-	"Group: GL Team (4)" = 12,			// 12
-	"Group: Suppress Team (4)" = 13,		// 13
+	void SetTitleAndDescriptions(string taskTitle, string taskDescription, string titleUpdate1, string descriptionUpdate1, string titleUpdate2, string descriptionUpdate2)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+		m_sTaskTitleUpdated1 = titleUpdate1;
+		m_sTaskDescriptionUpdated1 = descriptionUpdate1;
+		m_sTaskTitleUpdated2 = titleUpdate2;
+		m_sTaskDescriptionUpdated2 = descriptionUpdate2;
+	}
+
+	override string GetTaskTitle(int iState = 0)
+	{
+		if (iState == 0)
+			return super.GetTaskTitle();
+		else if (iState == 1)
+			return m_sTaskTitleUpdated1;
+		else if (iState == 2)
+			return m_sTaskTitleUpdated2;
+		else if (iState == 4)
+			return super.GetTaskTitle();
+		else if (iState == 5)
+			return m_sTaskTitleUpdated1;
+		else if (iState == 6)
+			return m_sTaskTitleUpdated2;
+
+		return string.Empty;
+	}
+}
+
+modded class SCR_ScenarioFrameworkSlotClearArea
+{
+	void SetTitleAndDescription(string taskTitle, string taskDescription)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+	}
+}
+
+modded class SCR_ScenarioFrameworkSlotDefend
+{
+	void SetTitleAndDescription(string taskTitle, string taskDescription)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+	}
+}
+
+modded class SCR_ScenarioFrameworkSlotExtraction
+{
+	void SetTitleAndDescription(string taskTitle, string taskDescription)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+	}
+}
+
+modded class SCR_ScenarioFrameworkSlotKill
+{
+	void SetTitleAndDescription(string taskTitle, string taskDescription)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+	}
+}
+
+modded class SCR_ScenarioFrameworkSlotDestroy
+{
+	void SetTitleAndDescription(string taskTitle, string taskDescription)
+	{
+		m_sTaskTitle = taskTitle;
+		m_sTaskDescription = taskDescription;
+	}
 }

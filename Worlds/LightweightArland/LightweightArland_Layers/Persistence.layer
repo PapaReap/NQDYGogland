@@ -56,7 +56,7 @@ $grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Compone
   coords 2496.613 78.143 2713.125
  }
  Persistence_Entity_TaskMove1_move {
-  coords 849.582 39 2742.862
+  coords 779.312 39 2610.802
  }
  Persistence_Entity_61301995CE56ACFD {
   coords 1280.411 39 2198.027

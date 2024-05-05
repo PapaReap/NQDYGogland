@@ -23,8 +23,12 @@ class PR_TaskCollections : GenericEntity
 	protected bool m_bDebugLogs;
 	
 	//!
-	[Attribute("Set LayerTask to 'ON_TRIGGER_ACTIVATION'", desc: "LayerTask must be set to 'ON_TRIGGER_ACTIVATION' to work with this collection  ", category: "PR Task Collection: Manager")]
-	protected string m_sREQUIRED; // this array is unique for this instance
+	[Attribute("NOTE: Only one 'PR_TaskCollection' module allowed on map.", desc: "Only one 'PR_TaskCollection' module allowed on map. More than one can cause unintended results.  ", category: "PR Task Collection: Manager")]
+	protected string m_sONLY_ONE_MODULE_ALLOWED_Read_Hint;
+	
+	//!
+	[Attribute("NOTE: Set LayerTask to 'ON_TRIGGER_ACTIVATION'", desc: "LayerTask must be set to 'ON_TRIGGER_ACTIVATION' to work with this collection  ", category: "PR Task Collection: Manager")]
+	protected string m_sREQUIRED_Read_Hint;
 
 	//!
 	[Attribute("true", UIWidgets.CheckBox,"Include tasks in global task array to combine with other 'PR Task Collection Managers'  ", category: "PR Task Collection: Manager")]
