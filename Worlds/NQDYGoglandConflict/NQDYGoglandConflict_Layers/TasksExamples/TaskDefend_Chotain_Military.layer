@@ -36,9 +36,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     SphereRadius 450
     TriggerActivationType "First change"
     PeriodicQueries 1
-    m_aNameOfTasksToSpawnOnActivation {
-     "LayerTaskDefend_Chotain_Militay"
-    }
    }
    GenericEntity LayerTaskDefend_Chotain_Militay : "{775C493CE872C3A5}Prefabs/ScenarioFramework/Components/LayerTaskDefend.et" {
     components {
@@ -404,9 +401,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     SphereRadius 100
     TriggerActivationType "First change"
     PeriodicQueries 1
-    m_aNameOfTasksToSpawnOnActivation {
-     "LayerTask_Laruns_1_Move"
-    }
    }
    GenericEntity LayerTask_Laruns_1_Move : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
     components {
@@ -481,9 +475,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     BoxMaxs 1.5 2 1.5
     TriggerActivationType "First change"
     PeriodicQueries 1
-    m_aNameOfTasksToSpawnOnActivation {
-     "LayerTaskMove_Chotain_2_Military"
-    }
    }
    GenericEntity LayerTaskMove_Chotain_2_Military : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
     components {

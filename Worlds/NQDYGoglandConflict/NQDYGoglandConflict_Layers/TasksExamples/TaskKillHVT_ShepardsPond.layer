@@ -55,9 +55,6 @@ GenericEntity Area_ShepherdsPond : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/
      BoxMaxs 5 5 5
      TriggerActivationType "First change"
      PeriodicQueries 1
-     m_aNameOfTasksToSpawnOnActivation {
-      "LayerTaskKill_ShepherdsPond"
-     }
     }
     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
      Layer_SP_OfficerSpawns {

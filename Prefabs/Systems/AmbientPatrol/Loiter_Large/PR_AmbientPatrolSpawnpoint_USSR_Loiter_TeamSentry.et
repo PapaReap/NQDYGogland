@@ -1,0 +1,16 @@
+GenericEntity {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+   m_sDefaultWaypointPrefab "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et"
+   m_eGroupType TEAM_SENTRY
+   m_bBalanceOnPlayersCount 0
+  }
+  SCR_FactionAffiliationComponent "{614E340E160C2FE9}" {
+   "faction affiliation" "USSR"
+  }
+  Hierarchy "{614E340E1A020A17}" {
+  }
+ }
+ coords 5932.388 2.865 8648.663
+}

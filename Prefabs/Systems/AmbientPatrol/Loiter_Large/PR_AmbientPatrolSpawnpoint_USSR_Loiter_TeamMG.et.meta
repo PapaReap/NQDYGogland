@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DBE80AFB85865B0F}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_TeamMG.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -9,19 +9,22 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 	protected int m_iGroupMultiplier;
 	/* Courtesy of JeTZz */
 
-	/* PapaReap */
-	[Attribute(defvalue: "0", desc: "Scale group sizes based on number of players", category: "Group Scaling - WIP")]
+	//--- PapaReap >>>
+	[Attribute(defvalue: "0", desc: "Scale group sizes based on number of players.  ", category: "Group Scaling - WIP")]
 	bool m_bBalanceOnPlayersCount;
-	/* PapaReap */
-	[Attribute(defvalue: "1", desc: "Least amount of AIs in the group after balancing occurs. Will not exceed maximum number of units defined in the group prefab.", category: "Group Scaling - WIP")]
+
+	[Attribute(defvalue: "1", desc: "Least amount of AIs in the group after balancing occurs. Will not exceed maximum number of units defined in the group prefab.  ", category: "Group Scaling - WIP")]
 	int m_iMinUnitsInGroup;
-	/* PapaReap */
+
+	[Attribute(defvalue: "-1", desc: "Maximum amount of AIs in the group after balancing occurs. Will not exceed maximum number of units defined in the group prefab. -1 has no effect.  ", category: "Group Scaling - WIP")]
+	int m_iMaxUnitsInGroup;
+
 	[Attribute(defvalue: "12", desc: "Default player count used for scaling if no mission header is used.", category: "Group Scaling - WIP")]
 	int m_iDefaultPlayerCountForScaling;
 
-	/* PapaReap */
 	ref array<ResourceName> m_aAIPrefabsForRemoval = {};
 	SCR_AIGroup m_Group;
+	//--- PapaReap <<<
 
 	//------------------------------------------------------------------------------------------------
 	int GetMaxPlayersForGameMode(FactionKey factionName = "")
@@ -30,10 +33,17 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 		SCR_MissionHeader header = SCR_MissionHeader.Cast(GetGame().GetMissionHeader());
 
 	//	SCR_MissionHeaderCampaign myData = SCR_MissionHeaderCampaign.Cast(MissionHeader.ReadMissionHeader("Missions/NQDYCampaignGogland.conf"))\n
-		if (!header)
-			Print(("[PR] Mission Header: " + header), LogLevel.NORMAL);
-			Print(("[PR] Default Player Scaling: %1" + m_iDefaultPlayerCountForScaling), LogLevel.NORMAL);
+		if (header)
+		{
+			Print(("[PR_AmbientPatrolSpawnPointComponent] Mission Header: " + header), LogLevel.NORMAL);
+			Print(("[PR_AmbientPatrolSpawnPointComponent] header.m_iPlayerCount: " + header.m_iPlayerCount), LogLevel.NORMAL);
+			//return m_iDefaultPlayerCountForScaling;	//TODO: make a constant
+		}
+		else
+		{
+			Print(("[PR_AmbientPatrolSpawnPointComponent] Default Player Scaling: %1" + m_iDefaultPlayerCountForScaling), LogLevel.NORMAL);
 			return m_iDefaultPlayerCountForScaling;	//TODO: make a constant
+		}
 
 		return header.m_iPlayerCount;
 	}
@@ -91,19 +101,25 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 		{
 			if (m_iMembersAlive > 0)
 				m_Group.SetMaxUnitsToSpawn(m_iMembersAlive);
-				//Print(("[PR] PreBal Units To Spawn: " + m_iMembersAlive), LogLevel.NORMAL);
 
-			//--- PapaReap
+			//--- PapaReap >>>
 			if (m_bBalanceOnPlayersCount)
 			{
 				float iUnitsToSpawn = Math.Map(GetPlayersCount(), 1, GetMaxPlayersForGameMode(), Math.RandomInt(1, 3), m_iMembersAlive);
-				//Print(("[PR] MemAlive Units To Spawn: " + m_iMembersAlive), LogLevel.NORMAL);
-				Print(("[PR] Bal Units To Spawn: " + iUnitsToSpawn), LogLevel.NORMAL);
 
 				if (iUnitsToSpawn < m_iMinUnitsInGroup)
 					iUnitsToSpawn = m_iMinUnitsInGroup;
+
+				if (m_iMaxUnitsInGroup > 0)
+				{
+					if (iUnitsToSpawn > m_iMaxUnitsInGroup)
+						iUnitsToSpawn = m_iMaxUnitsInGroup;
+				}
+
+				Print(string.Format("[PR_AmbientPatrolSpawnPointComponent] SpawnPatrol/m_bBalanceOnPlayersCount: iUnitsToSpawn: %1", iUnitsToSpawn), LogLevel.NORMAL);
 				m_Group.SetMaxUnitsToSpawn(iUnitsToSpawn);
 			}
+			//--- PapaReap <<<
 
 			/* Gramps added >>> */
 			if (m_iRespawnPeriod > 0)
@@ -137,7 +153,8 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 		// Set up respawn timestamp, convert s to ms, reset original group size
 		m_fRespawnTimestamp = world.GetServerTimestamp().PlusSeconds(m_iRespawnPeriod);
 		/* Gramps added >>> */
-		if (m_iRespawnWaves != -1) m_iRespawnWaves--;
+		if (m_iRespawnWaves != -1)
+			m_iRespawnWaves--;
 		/* <<< Gramps added */
 		m_iMembersAlive = -1;
 		m_bSpawned = false;
@@ -148,12 +165,10 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 	int GetPlayersCount(FactionKey factionName = "")
 	{
 		if (factionName.IsEmpty())
-			//Print(("[PR] GetPlayersCount, factionName.IsEmpty(): " + GetGame().GetPlayerManager().GetPlayerCount()), LogLevel.NORMAL);
 			return GetGame().GetPlayerManager().GetPlayerCount();
 
 		FactionManager factionManager = GetGame().GetFactionManager();
 		if (!factionManager)
-			Print(("[PR] GetPlayersCount, factionManager: " + factionManager), LogLevel.DEBUG);
 			return -1;
 
 		int iCnt = 0;
@@ -169,7 +184,7 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 			if (playerController.GetLocalControlledEntityFaction() == factionManager.GetFactionByKey(factionName))
 				iCnt++;
 		}
-		Print(("[PR] GetPlayersCount, factionManager: " + iCnt), LogLevel.DEBUG);
+		Print(string.Format("[PR_AmbientPatrolSpawnPointComponent] GetPlayersCount, iCnt: %1", iCnt), LogLevel.WARNING);
 		return iCnt;
 	}
 }

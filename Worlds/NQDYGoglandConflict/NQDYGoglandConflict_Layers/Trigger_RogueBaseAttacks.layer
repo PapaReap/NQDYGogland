@@ -8,6 +8,7 @@ $grp PR_SpawnPatrolTrigger {
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 10
+  m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
@@ -23,7 +24,6 @@ $grp PR_SpawnPatrolTrigger {
   m_iDelayTimerMin 600
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 1800
-  m_bDebugLogs 1
   {
    $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     Set_01_N_WP_01_Rivinkallio {
@@ -315,6 +315,7 @@ $grp PR_SpawnPatrolTrigger {
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 10
+  m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
@@ -330,7 +331,6 @@ $grp PR_SpawnPatrolTrigger {
   m_iDelayTimerMin 600
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 1800
-  m_bDebugLogs 1
   {
    $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     Set_02_C_WP_06_Liiralahdenjarvi {
@@ -546,6 +546,7 @@ $grp PR_SpawnPatrolTrigger {
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 10
+  m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
@@ -561,7 +562,6 @@ $grp PR_SpawnPatrolTrigger {
   m_iDelayTimerMin 600
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 1800
-  m_bDebugLogs 1
   {
    $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     Set_03_S_WP_10_Teollisuusalue {

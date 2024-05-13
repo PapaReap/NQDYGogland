@@ -1,0 +1,10 @@
+GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+   m_eGroupType FIRETEAM
+   m_bBalanceOnPlayersCount 1
+  }
+ }
+ coords 5205.568 9.251 9075.393
+}

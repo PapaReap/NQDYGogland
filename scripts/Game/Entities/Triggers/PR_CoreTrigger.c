@@ -34,17 +34,22 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	//--- Trigger Activation
 	[Attribute("0", UIWidgets.ComboBox, "By whom the trigger is activated", "", ParamEnumArray.FromEnum(PR_Core_EActivationPresence), category: "PR Core: Trigger Activation")]
 	protected PR_Core_EActivationPresence m_ActivationPresence;
+	
+	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
+	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
+	protected bool m_bOverrideActivationPresence;
 
 	//--- Flag to track activation status "isTriggerActivated"
 	protected bool m_bIsTriggerActivated = false;
 	protected bool m_bIsTestingMode = false;
 
-	BaseWorld m_World;
-	IEntity m_Trigger;
-	string m_sTriggerName;
-	string m_sPath = "$EnfusionPersistenceFramework:Scripts/Game/EPF_PersistenceComponent.c";
-	bool m_bEPF_ModExist = false;
-	string m_sLogMode = "(OnActivate)";
+	protected BaseWorld m_World;
+	protected IEntity m_Trigger;
+	protected string m_sTriggerName;
+	protected string m_sPath = "$EnfusionPersistenceFramework:Scripts/Game/EPF_PersistenceComponent.c";
+	protected bool m_bEPF_ModExist = false;
+	protected string m_sLogMode = "(OnActivate)";
+	protected IEntity m_PersistentObject;
 
 	override protected void EOnInit(IEntity owner)
 	{
@@ -74,7 +79,9 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 
 		if (m_bUsePersistence)
 		{
-			if (FileIO.FileExists(m_sPath))
+			m_PersistentObject = GetWorld().FindEntityByName(m_sPersistentObject);
+			
+			if (m_PersistentObject && FileIO.FileExists(m_sPath))
 			{
 				m_bEPF_ModExist = true;
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is enabled"), LogLevel.NORMAL);
@@ -90,9 +97,8 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		if (m_bDebugLogs)
 		{
 			if (!name)
-			{
 				name = "No_Name";
-			};
+
 			Print(("[PR_Core_Trigger] (deleteEntity): Entity: " + name + ": Deleted entity: " + entity), LogLevel.WARNING);
 		}
 
@@ -173,37 +179,64 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	//--- Persistence cleanup
 	protected void PersistenceCleanup()
 	{
-		IEntity persistentObject = GetGame().GetWorld().FindEntityByName(m_sPersistentObject);
 		if (m_bUsePersistence)
 		{
-			if (persistentObject)
+			if (m_PersistentObject)
 			{
-				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": persistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
-				KillUnit(persistentObject);
-				GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, persistentObject, m_sPersistentObject);
+				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
+				KillUnit(m_PersistentObject);
+				GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, m_PersistentObject, m_sPersistentObject);
 			} else
 			{
 				if (m_bEPF_ModExist)
 				{
-					Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": persistentObject is null, exiting trigger: " + m_sPersistentObject), LogLevel.NORMAL);
+					Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is null, exiting trigger: " + m_sPersistentObject), LogLevel.NORMAL);
 					GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
 					return;
 				}
 			}
-		} else if (persistentObject)
+		} else if (m_PersistentObject)
 		{
-			Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": persistentObject is alive, is not necessary and needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
-			KillUnit(persistentObject);
-			GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, persistentObject, m_sPersistentObject);
+			Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, is not necessary and needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
+			KillUnit(m_PersistentObject);
+			GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, m_PersistentObject, m_sPersistentObject);
 		}
 	}
 
+	protected int exitLoop = 0;
 	//------------------------------------------------------------------------------------------------
 	//! Override this method in inherited class to define a new filter.
-	override bool ScriptedEntityFilterForQuery(IEntity ent)
+	protected override bool ScriptedEntityFilterForQuery(IEntity ent)
 	{
+		if (m_bUsePersistence && m_bEPF_ModExist)
+		{
+			if (!m_PersistentObject && exitLoop == 0)
+			{
+				exitLoop = 1;
+				Print(string.Format("[PR_SpawnTaskTrigger] (ScriptedEntityFilterForQuery) : Trigger: %2 : m_PersistentObject %3 is not here. Deleting Trigger.", m_sLogMode, m_sTriggerName, m_sPersistentObject), LogLevel.WARNING);
+				GetGame().GetCallqueue().CallLater(deleteEntity, 0, false, m_Trigger, m_sTriggerName);
+				return false;
+			}
+		}
+		
+		if (m_bOverrideActivationPresence)
+		{
+			int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
+			if (playerCount == 0)
+				return false;
+			
+			FactionManager factionManager = GetGame().GetFactionManager();
+			if (factionManager)
+				m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
+			return true;
+		}
+		
 		if (m_ActivationPresence == PR_Core_EActivationPresence.PLAYER || m_ActivationPresence == PR_Core_EActivationPresence.ANY_CHARACTER)
 		{
+			int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
+			if (playerCount == 0)
+				return false;
+			
 			SCR_ChimeraCharacter chimeraCharacter = SCR_ChimeraCharacter.Cast(ent);
 			if (!chimeraCharacter)
 				return false;

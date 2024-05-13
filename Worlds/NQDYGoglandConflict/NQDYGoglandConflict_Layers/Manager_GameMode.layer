@@ -5,6 +5,9 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
     m_sDatabaseName "NQDYGoglandConflict"
    }
   }
+  SCR_GameModeSFManager "{60FD5A50534ED456}" {
+   m_bDynamicDespawn 1
+  }
   SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
    m_bRandomStartingDaytime 0
    m_fDayTimeAcceleration 1

@@ -1,0 +1,10 @@
+GenericEntity : "{3B561E195E06E730}Prefabs/Systems/AmbientPatrol/Defend_Large/PR_AmbientPatrolSpawnpoint_USSR_Defend_TeamSentry.et" {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+   m_bBalanceOnPlayersCount 1
+   m_iMaxUnitsInGroup 1
+  }
+ }
+ coords 0 0 0
+}

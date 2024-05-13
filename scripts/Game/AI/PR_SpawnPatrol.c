@@ -589,16 +589,16 @@ class PR_SpawnPatrol
 			}// else
 				//Print(("[PR_SpawnTaskTrigger] (EOnInit): Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is disabled"), LogLevel.WARNING);
 			*/
-			
+
 			SCR_AICombatComponent combatComponent = SCR_AICombatComponent.Cast(agentEntity.FindComponent(SCR_AICombatComponent));
-			/*if (combatComponent)
+			if (combatComponent)
 			{
 				combatComponent.SetAISkill(skill);
 				combatComponent.SetCombatType(combatType);
 				combatComponent.SetHoldFire(holdFire);
 				combatComponent.SetPerceptionFactor(perceptionFactor);
-			}*/
-
+			}
+			EAISkill aiSkill = combatComponent.GetAISkill();
 			SCR_AIInfoComponent infoComponent = SCR_AIInfoComponent.Cast(agentEntity.FindComponent(SCR_AIInfoComponent));
 			/*if (infoComponent)
 			{

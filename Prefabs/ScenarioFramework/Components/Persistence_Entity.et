@@ -11,8 +11,6 @@ SCR_ChimeraCharacter : "{284E735C6C70DAD2}Prefabs/Characters/Factions/BLUFOR/US_
     }
    }
   }
-  ChimeraAIControlComponent "{520EA1D2DB109F34}" {
-  }
   EPF_PersistenceComponent "{5A12D8F4DFED6D84}" {
    m_pSaveData EPF_CharacterSaveDataClass "{5A12D8F4DA8632DC}" {
     m_aComponents {
@@ -138,8 +136,6 @@ SCR_ChimeraCharacter : "{284E735C6C70DAD2}Prefabs/Characters/Factions/BLUFOR/US_
      TargetStorage "Prefabs/Characters/Uniforms/Jacket_US_BDU_rolledup.et"
     }
    }
-  }
-  CharacterAnimationComponent "{520EA1D2F659C994}" {
   }
  }
 }

@@ -13,7 +13,7 @@ GenericEntity {
    coords 0 0 0
    m_sStaticEntityName "PR_GuardPointPosition_1"
   }
-  GenericEntity : "{09BD9E80DA8923B8}Prefabs/Systems/Compositions/PatrolPoint/PR_GuardPointPosition.et" {
+  GenericEntity : "{09BD9E80DA8923B8}Prefabs/AI/Waypoints/PR_GuardPointPosition.et" {
    ID "610A6B90E1669C5F"
    coords 0 0 0
    angleY 0

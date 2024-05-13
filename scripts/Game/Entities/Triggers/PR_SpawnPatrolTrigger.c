@@ -211,9 +211,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 		int delay = m_iDelayTimerMin * 1000;
 
 		if (m_bUseRandomDelayTimer)
-		{
 			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
-		}
 
 		if (m_bDebugLogs)
 		{
@@ -229,9 +227,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 
 		IEntity spawnPos = GetGame().GetWorld().FindEntityByName(m_sSpawnPosition);
 		if (!spawnPos)
-		{
 			spawnPos = m_World.FindEntityByID(this.GetID());
-		};
 
 		if (m_bUseRandomRespawnTimer)
 		{

@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "5CCEC603A58CB072"
+ components {
+  SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+   m_eGroupType TEAM_MG
+   m_bBalanceOnPlayersCount 0
+  }
+  SCR_FactionAffiliationComponent "{614E340EF5A3145D}" {
+   "faction affiliation" "USSR"
+  }
+  Hierarchy "{614E340EF9B6F629}" {
+  }
+ }
+ coords 5932.388 2.865 8648.663
+}

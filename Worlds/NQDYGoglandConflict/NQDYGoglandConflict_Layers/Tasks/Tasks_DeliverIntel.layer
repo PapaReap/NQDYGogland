@@ -1,98 +1,151 @@
-$grp GenericEntity {
- TaskDeliverIntel_Suurkyla_move {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
+PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel {
+ coords 5070.05 16.91 9544.013
+ TriggerShapeType Sphere
+ SphereRadius 500
+ DrawShape 1
+ ShapeColor 0.046 0 1 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 50
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_bOverrideActivationPresence 1
+ m_aIndividualTasks {
+  PR_TaskDetails "{613802B2DA10B658}" {
+   m_sTaskName "TaskDeliverIntel_Suurkyla"
+   m_bUsePersistentTask 1
+   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Suurkyla"
+   m_bUseMoveTaskDestination 1
+   m_aTaskMoveDetails {
+    PR_MoveTask "{613802B2E6E682B1}" {
+     m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Suurkyla"
+     m_sMoveSectionToRandomBases {
+      1
+     }
+     m_bInsertBaseNameInTaskInfos 1
+    }
+    PR_MoveTask "{613802B56EC76EB7}" {
+     m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla"
+     m_sMoveSectionTo {
+      "TaskDeliverIntel_Suurkyla_MoveCollection"
+     }
+    }
    }
   }
-  coords 5206.896 10.734 8858.979
- }
- TaskDeliverIntel_Suurkyla_move2 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
+  PR_TaskDetails "{61508AE9B0BCCB79}" {
+   m_sTaskName "TaskDeliverIntel_Pohjoiskorkia_caves"
+   m_bUsePersistentTask 1
+   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+   m_bUseMoveTaskDestination 1
+   m_aTaskMoveDetails {
+    PR_MoveTask "{61508AE9F366643C}" {
+     m_sTaskSectionToMove "SlotDelivery_Pohjoiskorkia_caves"
+     m_sMoveSectionToRandomBases {
+      1
+     }
+     m_bInsertBaseNameInTaskInfos 1
+    }
+    PR_MoveTask "{61508AE92090E4BA}" {
+     m_sTaskSectionToMove "SlotPick_Pohjoiskorkia_caves"
+     m_sMoveSectionTo {
+      "TaskDeliverIntel_Pohjoiskorkia_caves_MoveCollection"
+     }
+    }
    }
   }
-  coords 5210.205 10.945 8888.135
- }
- TaskDeliverIntel_Suurkyla_move3 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
+  PR_TaskDetails "{61508AE96772D7CC}" {
+   m_sTaskName "TaskDeliverIntel_ArmeijanVarikko"
+   m_bUsePersistentTask 1
+   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko"
+   m_bUseMoveTaskDestination 1
+   m_aTaskMoveDetails {
+    PR_MoveTask "{61508AE89E3D1A5A}" {
+     m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_ArmeijanVarikko"
+     m_sMoveSectionToRandomBases {
+      1
+     }
+     m_bInsertBaseNameInTaskInfos 1
+    }
+    PR_MoveTask "{61508AE8AB451C4B}" {
+     m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_ArmeijanVarikko"
+     m_sMoveSectionTo {
+      "TaskDeliverIntel_ArmeijanVarikko_MoveCollection"
+     }
+    }
    }
   }
-  coords 5140.504 12.429 8923.387
  }
- TaskDeliverIntel_Suurkyla_move4 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5145.033 12.319 8916.938
- }
- TaskDeliverIntel_Suurkyla_move5 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5144.367 12.143 8925.973
- }
- TaskDeliverIntel_Suurkyla_move6 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5248.808 12.525 8997.463
- }
- TaskDeliverIntel_Suurkyla_move7 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5255.213 12.526 8996.568
- }
- TaskDeliverIntel_Suurkyla_move8 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5253.17 12.041 8987.534
- }
- TaskDeliverIntel_Suurkyla_move9 {
-  components {
-   Hierarchy "{613802B54F5287D4}" {
-   }
-  }
-  coords 5098.019 14.073 8917.537
- }
+ m_bUseRandomTasks 1
+ m_iRandomTaskCount -1
+ m_bUseFirstTaskRandomDelayTimer 1
+ m_iDelayTimerToSpawnFirstTaskMin 5
+ m_iDelayTimerToSpawnFirstTaskMax 15
+ m_bUseRandomDelayBetweenTasksTimer 1
+ m_iDelayTimerBetweenEachTaskMin 60
+ m_iDelayTimerBetweenEachTaskMax 61
 }
 PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
  coords 650.308 39 2678.574
+ m_bRefreshToggle 1
  m_bDebugLogs 1
  m_aTaskNames {
   "LayerTaskClearArea1" "LayerTaskDefend1" "LayerTaskDeliver1" "LayerTaskKill1" "TaskClearArea1" "TaskDefendArea1" "TaskDefendAreaAndTarget1" "TaskDefendTarget1" "TaskDeliverVehicles1" "TaskKill1"
  }
 }
-SCR_ChimeraCharacter Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
- coords 4645.068 4.881 11033.125
+$grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+ Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 4395.388 84.527 9946.856
+ }
+ Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 4544.847 11.804 8857.318
+ }
+ Persistence_Entity_TaskDeliverIntel_Suurkyla {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 5143.324 14.814 8924.794
+ }
+}
+GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ coords 4397.833 80.192 9899.354
 }
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
  Area_Pohjoiskorkia {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 500
+   }
+  }
   coords 4386.888 79.925 9906.461
   {
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Pohjoiskorkia_caves {
-    components {
-     Hierarchy "{613802B2AE84BE4A}" {
-     }
-    }
     coords -4.552 -0.087 1.876
+    Flags 2097155
     TriggerShapeType Sphere
-    SphereRadius 2000
+    SphereRadius 500
     DrawShape 1
     ShapeColor 0.046 0 1 0.078
     TriggerActivationType "First change"
     PeriodicQueries 1
     UpdatePeriod 60
+    m_bRefreshToggle 1
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "PR_Persistent_Entity_613802B2C619BC7C"
+    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+    m_ActivationPresence ANY_CHARACTER
+    m_bOverrideActivationPresence 1
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
       m_sTaskName "TaskDeliverIntel_Pohjoiskorkia_caves"
@@ -100,30 +153,40 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_aTaskMoveDetails {
        PR_MoveTask "{613802B2E6E682B1}" {
         m_sTaskSectionToMove "SlotDelivery_Pohjoiskorkia_caves"
-        m_sMoveSectionToRandom {
+        m_sMoveSectionToRandomBases {
          1
+        }
+        m_bInsertBaseNameInTaskInfos 1
+       }
+       PR_MoveTask "{614A2EDF92D80922}" {
+        m_sTaskSectionToMove "SlotPick_Pohjoiskorkia_caves"
+        m_sMoveSectionTo {
+         "TaskDeliverIntel_Pohjoiskorkia_caves_MoveCollection"
         }
        }
       }
      }
     }
-    m_aTaskTypesFilter {
-     PR_TaskType "{612E54540C050DC2}" {
-     }
-    }
-    m_iDelayTimerToSpawnTask 60
-    {
-     SCR_ChimeraCharacter PR_Persistent_Entity_613802B2C619BC7C : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
-      coords 2.491 -0.038 -3.567
-     }
-    }
+    m_bUseRandomTasks 1
+    m_iDelayTimerToSpawnFirstTaskMin 10
+    m_iDelayTimerToSpawnFirstTaskMax 15
    }
    GenericEntity TaskDeliverIntel_Pohjoiskorkia_caves : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
       m_eActivationType ON_TRIGGER_ACTIVATION
+      m_sTaskTitle "Locate Intel Pohjoiskorkia"
+      m_sTaskDescription "Search the area around Pohjoiskorkia for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
-      m_sTaskDescriptionUpdated "Deliver the intel back to your main base"
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionDeleteEntity "{615854B244F55C30}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{615854B24EE01B29}" {
+         m_sEntityName "TaskDeliverIntel_Pohjoiskorkia_caves"
+        }
+       }
+      }
+      m_sTaskTitleUpdated ""
+      m_sTaskDescriptionUpdated ""
      }
     }
     coords -0.045 0 18.543
@@ -134,7 +197,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
         m_aPlugins {
          SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
-          m_fAreaRadius 4
+          m_fAreaRadius 2
+          m_bOnce 0
          }
         }
         m_aAssociatedTaskLayers {
@@ -142,48 +206,339 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         }
        }
       }
-      coords 25.266 -0.995 -6.938
+      coords 25.266 0.735 -6.939
      }
      GenericEntity SlotPick_Pohjoiskorkia_caves {
       ID "5E74C909218B7182"
       components {
        SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
-        m_sTaskDescriptionUpdated1 "Deliver the intel back to your main base"
+        m_bShowDebugShapesDuringRuntime 1
+        m_sTaskTitle "Locate Intel Pohjoiskorkia"
+        m_sTaskDescription "Search the area around Pohjoiskorkia for hidden intel"
+        m_aActionsOnCreated {
+         SCR_ScenarioFrameworkActionSpawnObjects "{61524B0874039E0B}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "Layer_TaskDeliverIntel_Pohjoiskorkia_caves_AI"
+          }
+         }
+        }
+        m_sTaskTitleUpdated1 "Deliver Intel to base %2"
+        m_sTaskDescriptionUpdated1 "Return recovered intel back to your main base %2"
+        m_sTaskTitleUpdated2 "Locate the dropped intel"
+        m_sTaskDescriptionUpdated2 "Return to last known position to search for lost intel"
        }
       }
-      coords -42.844 -32.672 -120.17
+      coords 21.594 0.826 -8.413
       angleY -22.479
+     }
+    }
+   }
+   GenericEntity Layer_TaskDeliverIntel_Pohjoiskorkia_caves_AI : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_SpawnChildren RANDOM_ONE
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords -0.35 0.263 18.778
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      Layer_TaskDeliverIntel_Pohjoiskorkia_caves_AI_02 {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -19.129 -7.662 -52.66
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -11.247 19.732 10.264
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 5.631 -33.803 -122.127
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -47.908 -1.491 20.011
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 111.078 -16.608 -71.445
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -78.909 -33.841 -76.516
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_02_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 24.028 0.903 -87.296
+         }
+        }
+       }
+      }
+      Layer_TaskDeliverIntel_Pohjoiskorkia_caves_AI_01 {
+       coords -6.586 0.567 -0.478
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 44.401 -14.316 -27.567
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 57.183 -9.883 73.776
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 12.074 0.495 22.145
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 117.743 -8.861 22.654
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -26.622 -0.388 23.141
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 99.38 -6.427 -44.118
+         }
+         SlotAI_TaskDeliverIntel_Pohjoiskorkia_caves_01_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -123.421 -30.324 -45.798
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity TaskDeliverIntel_Pohjoiskorkia_caves_MoveCollection : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    coords 3.094 0.067 -0.084
+    {
+     $grp GenericEntity {
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_01 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -45.97 -32.716 -101.552
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_02 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -42.615 -33.241 -98.111
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_03 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 17.575 -32.912 -102.571
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_04 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 31.598 -32.703 -109.991
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_05 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 24.716 -32.848 -103.755
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_06 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -22.698 -32.76 -101.456
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_07 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -67.959 -32.845 -78.445
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_08 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -86.517 -32.852 -56.134
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_09 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -89.526 -32.893 -48.952
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_10 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -89.929 -33.029 -43.706
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_11 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 45.854 -14.744 5.423
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_12 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 51.834 -14.586 -5.029
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_13 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 22.454 1.824 -68.696
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_14 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 0.555 2.127 39.618
+      }
+      TaskDeliverIntel_Pohjoiskorkia_caves_move_15 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 7.46 2.23 43.687
+      }
      }
     }
    }
   }
  }
- Area_TaskDeliverIntel_Suurkyla {
+ Area_Suurkyla {
   components {
    SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
-    m_bShowDebugShapesDuringRuntime 1
-    m_iDynamicDespawnRange 30
-    m_bShowDebugShapesInWorkbench 1
+    m_fAreaRadius 50
+    m_iDynamicDespawnRange 500
    }
   }
   coords 5156.221 10.688 8966.867
   {
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Suurkyla {
-    components {
-     Hierarchy "{613802B2AE84BE4A}" {
-     }
-    }
     coords 0.401 -0.051 6.334
+    Flags 2097155
     TriggerShapeType Sphere
-    SphereRadius 2000
+    SphereRadius 500
     DrawShape 1
     ShapeColor 0.046 0 1 0.078
     TriggerActivationType "First change"
     PeriodicQueries 1
-    UpdatePeriod 60
+    UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "PR_Persistent_Entity_613802B2C619BC7C2"
+    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Suurkyla"
+    m_ActivationPresence ANY_CHARACTER
+    m_bOverrideActivationPresence 1
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
       m_sTaskName "TaskDeliverIntel_Suurkyla"
@@ -191,41 +546,47 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_aTaskMoveDetails {
        PR_MoveTask "{613802B2E6E682B1}" {
         m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Suurkyla"
-        m_sMoveSectionToRandom {
+        m_sMoveSectionToRandomBases {
          1
         }
+        m_bInsertBaseNameInTaskInfos 1
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla"
         m_sMoveSectionTo {
-         "TaskDeliverIntel_Suurkyla_move" "TaskDeliverIntel_Suurkyla_move2" "TaskDeliverIntel_Suurkyla_move3" "TaskDeliverIntel_Suurkyla_move4" "TaskDeliverIntel_Suurkyla_move5" "TaskDeliverIntel_Suurkyla_move6" "TaskDeliverIntel_Suurkyla_move7" "TaskDeliverIntel_Suurkyla_move8" "TaskDeliverIntel_Suurkyla_move9"
+         "TaskDeliverIntel_Suurkyla_MoveCollection"
         }
        }
       }
      }
     }
-    m_aTaskTypesFilter {
-     PR_TaskType "{612E54540C050DC2}" {
-     }
-    }
-    m_iDelayTimerToSpawnTask 60
-    {
-     SCR_ChimeraCharacter PR_Persistent_Entity_613802B2C619BC7C2 : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
-      coords 2.491 -0.038 -3.567
-     }
-    }
+    m_bUseRandomTasks 1
+    m_iRandomTaskCount -1
+    m_bUseFirstTaskRandomDelayTimer 1
+    m_iDelayTimerToSpawnFirstTaskMin 60
+    m_iDelayTimerToSpawnFirstTaskMax 70
+    m_bUseRandomDelayBetweenTasksTimer 1
+    m_iDelayTimerBetweenEachTaskMin 10
+    m_iDelayTimerBetweenEachTaskMax 20
    }
    GenericEntity TaskDeliverIntel_Suurkyla : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
       m_bShowDebugShapesDuringRuntime 1
       m_eActivationType ON_TRIGGER_ACTIVATION
-      m_bExcludeFromDynamicDespawn 1
-      m_sTaskTitle "Deliver Intel"
+      m_sTaskTitle "Locate Intel Suurkyla"
       m_sTaskDescription "Search southern Suurkyla for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionDeleteEntity "{6152C566E66855E3}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{6152C566E89EBE84}" {
+         m_sEntityName "TaskDeliverIntel_Suurkyla"
+        }
+       }
+      }
       m_bShowDebugShapesInWorkbench 1
-      m_sTaskDescriptionUpdated "Return recovered intel back to your main base"
+      m_sTaskTitleUpdated ""
+      m_sTaskDescriptionUpdated ""
      }
     }
     coords -0.044 0 0.046
@@ -236,7 +597,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
         m_aPlugins {
          SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
-          m_fAreaRadius 4
+          m_fAreaRadius 2
+          m_bOnce 0
          }
         }
         m_aAssociatedTaskLayers {
@@ -244,15 +606,28 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         }
        }
       }
-      coords 6.656 -0.995 44.15
+      coords 3.927 -0.216 -0.153
      }
      GenericEntity SlotPick_TaskDeliverIntel_Suurkyla {
       ID "5E74C909218B7182"
       components {
        SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
         m_bShowDebugShapesDuringRuntime 1
+        m_bExcludeFromDynamicDespawn 1
+        m_sTaskTitle "Locate Intel Suurkyla"
         m_sTaskDescription "Search southern Suurkyla for hidden intel"
-        m_sTaskDescriptionUpdated1 "Return recovered intel back to your main base"
+        m_aActionsOnCreated {
+         SCR_ScenarioFrameworkActionSpawnObjects "{61524B0748E21259}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "Layer_TaskDeliverIntel_Suurkyla_AI"
+          }
+         }
+        }
+        m_sTaskTitleUpdated1 "Deliver Intel to base %2"
+        m_sTaskDescriptionUpdated1 "Return recovered intel back to your main base %2"
+        m_sTaskTitleUpdated2 "Locate the dropped intel"
+        m_sTaskDescriptionUpdated2 "Return to last known position to search for lost intel"
        }
       }
       coords 0.043 0.127 -0.034
@@ -260,6 +635,645 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
+   GenericEntity Layer_TaskDeliverIntel_Suurkyla_AI : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_SpawnChildren RANDOM_ONE
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_bExcludeFromDynamicDespawn 1
+     }
+    }
+    coords -0.358 0.052 -1.51
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      Layer_TaskDeliverIntel_Suurkyla_AI_01 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_bExcludeFromDynamicDespawn 1
+        }
+       }
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_Suurkyla_01_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -8.241 0.295 -30.902
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 61.852 -3.311 -9.134
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -11.648 0.042 -96.353
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -20.308 1.619 139.39
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 104.375 -3.337 23.306
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 97.402 0.876 30.538
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_01_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -118.368 -0.707 23.273
+         }
+        }
+       }
+      }
+      Layer_TaskDeliverIntel_Suurkyla_AI_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_bExcludeFromDynamicDespawn 1
+        }
+       }
+       coords -6.586 0.567 -0.478
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_Suurkyla_02_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -17.008 1.479 150.041
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 151.773 -7.202 -7.73
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -7.123 0.171 -45.712
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -88.354 0.005 -65.597
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -71.841 -0.475 50.483
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 100.346 0.317 23.629
+         }
+         SlotAI_TaskDeliverIntel_Suurkyla_02_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_bExcludeFromDynamicDespawn 1
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -98.339 10.495 34.215
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity TaskDeliverIntel_Suurkyla_MoveCollection : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    coords 0.069 0.008 -1.042
+    {
+     $grp GenericEntity {
+      TaskDeliverIntel_Suurkyla_move_01 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 50.606 0.038 -106.847
+      }
+      TaskDeliverIntel_Suurkyla_move_02 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 53.915 0.249 -77.69
+      }
+      TaskDeliverIntel_Suurkyla_move_03 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -15.786 1.733 -42.438
+      }
+      TaskDeliverIntel_Suurkyla_move_04 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -11.257 1.623 -48.887
+      }
+      TaskDeliverIntel_Suurkyla_move_05 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -11.923 1.447 -39.853
+      }
+      TaskDeliverIntel_Suurkyla_move_06 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 92.518 1.829 31.638
+      }
+      TaskDeliverIntel_Suurkyla_move_07 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 98.923 1.83 30.743
+      }
+      TaskDeliverIntel_Suurkyla_move_08 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 96.88 1.345 21.709
+      }
+      TaskDeliverIntel_Suurkyla_move_09 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -58.271 3.377 -48.288
+      }
+      TaskDeliverIntel_Suurkyla_move_10 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -106.856 3.749 28.436
+      }
+      TaskDeliverIntel_Suurkyla_move_11 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -105.751 11.106 33.702
+      }
+      TaskDeliverIntel_Suurkyla_move_12 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -117.144 0.346 23.206
+      }
+     }
+    }
+   }
   }
  }
+ Area_ArmeijanVarikko {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesDuringRuntime 1
+    m_bExcludeFromDynamicDespawn 1
+    m_iDynamicDespawnRange 500
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 4524.867 11.155 8824.958
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_ArmeijanVarikko {
+    coords 0.401 -0.051 6.334
+    Flags 2097155
+    TriggerShapeType Sphere
+    SphereRadius 500
+    DrawShape 1
+    ShapeColor 0.046 0 1 0.078
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 50
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko"
+    m_ActivationPresence ANY_CHARACTER
+    m_bOverrideActivationPresence 1
+    m_aIndividualTasks {
+     PR_TaskDetails "{613802B2DA10B658}" {
+      m_sTaskName "TaskDeliverIntel_ArmeijanVarikko"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{613802B2E6E682B1}" {
+        m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_ArmeijanVarikko"
+        m_sMoveSectionToRandomBases {
+         1
+        }
+        m_bInsertBaseNameInTaskInfos 1
+       }
+       PR_MoveTask "{613802B56EC76EB7}" {
+        m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_ArmeijanVarikko"
+        m_sMoveSectionTo {
+         "TaskDeliverIntel_ArmeijanVarikko_MoveCollection"
+        }
+       }
+      }
+     }
+    }
+    m_iDelayTimerToSpawnFirstTaskMin 30
+    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity TaskDeliverIntel_ArmeijanVarikko : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+      m_bShowDebugShapesDuringRuntime 1
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_bExcludeFromDynamicDespawn 1
+      m_sTaskTitle "Locate Intel Armeijan Varikko"
+      m_sTaskDescription "Search Armeijan Varikko for hidden intel"
+      m_bPlaceMarkerOnSubjectSlot 0
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionDeleteEntity "{6152C57B5941F368}" {
+        m_iMaxNumberOfActivations 1
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{6152C57B6A89530F}" {
+         m_sEntityName "TaskDeliverIntel_ArmeijanVarikko"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+      m_sTaskTitleUpdated ""
+      m_sTaskDescriptionUpdated ""
+     }
+    }
+    coords -0.044 0 0.046
+    {
+     GenericEntity SlotDelivery_TaskDeliverIntel_ArmeijanVarikko {
+      ID "5E74C909218B71FF"
+      components {
+       SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
+          m_fAreaRadius 2
+          m_bOnce 0
+         }
+        }
+        m_aAssociatedTaskLayers {
+         "TaskDeliverIntel_ArmeijanVarikko"
+        }
+       }
+      }
+      coords 6.656 0.001 3.63
+     }
+     GenericEntity SlotPick_TaskDeliverIntel_ArmeijanVarikko {
+      ID "5E74C909218B7182"
+      components {
+       SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+        m_bShowDebugShapesDuringRuntime 1
+        m_bExcludeFromDynamicDespawn 1
+        m_sID "TaskDeliverIntel_ArmeijanVarikko_IF"
+        m_sTaskTitle "Locate Intel Armeijan Varikko"
+        m_sTaskDescription "Search Armeijan Varikko for hidden intel"
+        m_aActionsOnCreated {
+         SCR_ScenarioFrameworkActionSpawnObjects "{61524B08DCD327FD}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "Layer_TaskDeliverIntel_ArmeijanVarikko_AI"
+          }
+         }
+        }
+        m_sTaskTitleUpdated1 "Deliver Intel to base %2"
+        m_sTaskDescriptionUpdated1 "Return recovered intel back to your main base %2"
+        m_sTaskTitleUpdated2 "Locate the dropped intel"
+        m_sTaskDescriptionUpdated2 "Return to last known position to search for lost intel"
+       }
+      }
+      coords 0.043 0.127 -0.034
+      angleY -22.479
+     }
+    }
+   }
+   GenericEntity Layer_TaskDeliverIntel_ArmeijanVarikko_AI : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_SpawnChildren RANDOM_ONE
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords -3.319 0.001 0.196
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      Layer_TaskDeliverIntel_ArmeijanVarikko_01 {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 4.121 0 -19.862
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -15.266 8.942 -23.622
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 7.646 0.46 36.264
+          angleY -179.102
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -65.89 14.693 78.783
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -96.357 14.204 -61.623
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 53.086 0.321 51.811
+          angleY 178.77
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_01_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 48.057 0.139 3.446
+         }
+        }
+       }
+      }
+      Layer_TaskDeliverIntel_ArmeijanVarikko_02 {
+       coords -6.586 0.567 -0.478
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_05_LRGS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 55.688 26.349 137.34
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_04_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 213.912 9.192 -26.005
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_02_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -29.156 -0.289 -10.991
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_03_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 88.115 5.515 29.517
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_01_LFTS {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 79.587 -4.508 -27.637
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_06_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -11.518 4.24 -19.5
+         }
+         SlotAI_TaskDeliverIntel_ArmeijanVarikko_02_07_WR {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords -22.295 21.641 -77.903
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity TaskDeliverIntel_ArmeijanVarikko_MoveCollection : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    coords 0.069 0.008 -1.042
+    {
+     $grp GenericEntity {
+      TaskDeliverIntel_ArmeijanVarikko_move_05 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -22.798 5.622 -23.139
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_06 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -24.11 1.826 -22.987
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_07 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -38.525 1.146 1.744
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_08 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -39.055 0.938 0.118
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_09 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -45.728 0.938 -17.623
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_10 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 38.292 1.094 17.112
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_11 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 37.826 1.094 2.295
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_12 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords 37.536 1.106 -5.756
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_01 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -20.872 9.805 -20.988
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_02 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -17.405 9.811 -24.328
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_03 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -22.831 5.622 -23.145
+      }
+      TaskDeliverIntel_ArmeijanVarikko_move_04 {
+       components {
+        Hierarchy "{613802B54F5287D4}" {
+        }
+       }
+       coords -20.888 5.643 -17.521
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity : "{CAE986C2BF5D5859}Prefabs/Props/Industrial/CargoContainers/CargoContainer_01/CargoContainer_01_10ft_Base.et" {
+ coords 4372.785 79.104 9904.509
 }

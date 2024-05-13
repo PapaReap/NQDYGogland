@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DF52E2B7B38B565A}Prefabs/Systems/AmbientPatrol/Defend_Large"
+ Configurations {
+  FolderResourceClass PC {
+  }
+  FolderResourceClass XBOX_ONE : PC {
+  }
+  FolderResourceClass XBOX_SERIES : PC {
+  }
+  FolderResourceClass PS4 : PC {
+  }
+  FolderResourceClass PS5 : PC {
+  }
+  FolderResourceClass HEADLESS : PC {
+  }
+ }
+}

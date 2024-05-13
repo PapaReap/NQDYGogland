@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{AFB53DA5B0A84218}Prefabs/Systems/AmbientPatrol/Defend_Large/PR_AmbientPatrolSpawnpoint_USSR_Defend_TeamSentry_scaled.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

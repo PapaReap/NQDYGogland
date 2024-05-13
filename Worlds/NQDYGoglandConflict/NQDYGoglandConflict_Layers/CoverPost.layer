@@ -8,17 +8,14 @@ $grp PR_SpawnPatrolTrigger {
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
+  m_bDebugLogs 1
   m_GroupSide US
   m_bTeleportAfterSpawn 1
-  m_sTeleportPosition {
-   "GP_Set_05" "GP_Set_06" "GP_Set_07" "GP_Set_08"
-  }
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_aWaypointCollection {
    "attack_01"
   }
-  m_bDebugLogs 1
   {
    SCR_EntityWaypoint attack_01 : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
     components {
@@ -98,18 +95,15 @@ $grp PR_SpawnPatrolTrigger {
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
+  m_bDebugLogs 1
   m_GroupType "Group: Machine Gun Team (2)"
   m_bTeleportAfterSpawn 1
-  m_sTeleportPosition {
-   "GP_Set_01" "GP_Set_02" "GP_Set_03" "GP_Set_04"
-  }
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_bCycleWaypoints 1
   m_aWaypointCollection {
    "Defend_1" "Defend_2" "Defend_3" "Defend_4"
   }
-  m_bDebugLogs 1
   {
    $grp GenericEntity : "{3B54EDD7958D9E3F}Prefabs/AI/Waypoints/PR_AIWaypoint_GuardPoint_Set.et" {
     GP_Set_04 {
