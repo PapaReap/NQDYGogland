@@ -34,7 +34,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	//--- Trigger Activation
 	[Attribute("0", UIWidgets.ComboBox, "By whom the trigger is activated", "", ParamEnumArray.FromEnum(PR_Core_EActivationPresence), category: "PR Core: Trigger Activation")]
 	protected PR_Core_EActivationPresence m_ActivationPresence;
-	
+
 	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
 	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
 	protected bool m_bOverrideActivationPresence;
@@ -80,7 +80,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		if (m_bUsePersistence)
 		{
 			m_PersistentObject = GetWorld().FindEntityByName(m_sPersistentObject);
-			
+
 			if (m_PersistentObject && FileIO.FileExists(m_sPath))
 			{
 				m_bEPF_ModExist = true;
@@ -105,7 +105,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		SCR_EntityHelper.DeleteEntityAndChildren(entity);
 	}
 
-	//---
+	//------------------------------------------------------------------------------------------------
 	//! Makes a random name for entity
 	protected string GetRandomName(string prefixName)
 	{
@@ -115,8 +115,41 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Finds closest player from another entity
+	protected IEntity GetClosestPlayerEntity(IEntity entityFrom, int distance)
+	{
+		if (!entityFrom)
+			return null;
+
+		array<int> playerIDs = {};
+		GetGame().GetPlayerManager().GetPlayers(playerIDs);
+
+		IEntity closestEntity;
+		IEntity entityToBeChecked;
+
+		foreach (int playerID : playerIDs)
+		{
+			entityToBeChecked = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerID);
+			if (!entityToBeChecked)
+				continue;
+
+			float actualDistance = vector.DistanceXZ(entityFrom.GetOrigin(), entityToBeChecked.GetOrigin());
+Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2 : actualDistance: %3", m_sLogMode, m_sTriggerName, actualDistance), LogLevel.WARNING);
+			if (actualDistance < distance)
+			{
+				closestEntity = entityToBeChecked;
+				distance = actualDistance;
+			}
+		}
+
+		if (!closestEntity)
+			return null;
+
+		return closestEntity;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! GET ALL CHILDREN FROM A COLLECTION
-	//void GetAllChildren(IEntity parent, notnull inout array<IEntity> allChildren, bool debugLogs)
 	void GetAllChildrenNames(IEntity parent, notnull inout array<string> allChildren, bool debugLogs)
 	{
 		if (!parent)
@@ -126,7 +159,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 
 		if (!child)
 			child = parent;
-		
+
 		string name = child.GetName();
 		if (!name)
 		{
@@ -154,7 +187,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 				name = child.GetName();
 		}
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 	//! Kills entity
 	protected void KillUnit(IEntity entity)
@@ -203,40 +236,40 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		}
 	}
 
-	protected int exitLoop = 0;
+	protected int m_iExitLoop = 0;
 	//------------------------------------------------------------------------------------------------
 	//! Override this method in inherited class to define a new filter.
 	protected override bool ScriptedEntityFilterForQuery(IEntity ent)
 	{
 		if (m_bUsePersistence && m_bEPF_ModExist)
 		{
-			if (!m_PersistentObject && exitLoop == 0)
+			if (!m_PersistentObject && m_iExitLoop == 0)
 			{
-				exitLoop = 1;
+				m_iExitLoop = 1;
 				Print(string.Format("[PR_SpawnTaskTrigger] (ScriptedEntityFilterForQuery) : Trigger: %2 : m_PersistentObject %3 is not here. Deleting Trigger.", m_sLogMode, m_sTriggerName, m_sPersistentObject), LogLevel.WARNING);
 				GetGame().GetCallqueue().CallLater(deleteEntity, 0, false, m_Trigger, m_sTriggerName);
 				return false;
 			}
 		}
-		
+
 		if (m_bOverrideActivationPresence)
 		{
 			int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
 			if (playerCount == 0)
 				return false;
-			
+
 			FactionManager factionManager = GetGame().GetFactionManager();
 			if (factionManager)
 				m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
 			return true;
 		}
-		
+
 		if (m_ActivationPresence == PR_Core_EActivationPresence.PLAYER || m_ActivationPresence == PR_Core_EActivationPresence.ANY_CHARACTER)
 		{
 			int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
 			if (playerCount == 0)
 				return false;
-			
+
 			SCR_ChimeraCharacter chimeraCharacter = SCR_ChimeraCharacter.Cast(ent);
 			if (!chimeraCharacter)
 				return false;

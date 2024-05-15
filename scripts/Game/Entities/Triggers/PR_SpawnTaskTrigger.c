@@ -3,7 +3,6 @@ Author: PapaReap
 
 ToDo:
 Make trigger run loop option?
-Maybe make a player distance check to task?
 Get global array updated. Check?
 */
 
@@ -38,11 +37,15 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	[Attribute(desc: "Filter available tasks for the scenario. You can have more than 1 filter.  ", category: "PR Task Spawner: Tasks - Global Task Pool")]
 	protected ref array<ref PR_TaskType> m_aTaskTypesFilter;
 
-	//! PR Task Spawner: Tasks - Pick random tasks from all avaliable task list above.
+	//! PR Task Spawner: Tasks - Spawner - How far away from the task layer does any player need to be to spawn task. -1 will not use the distance check. (meters)
+	[Attribute("-1", desc: "How far away from the task layer does any player need to be to spawn task. -1 will not use the distance check. (meters)  ", category: "PR Task Spawner: Tasks - Spawner")]
+	protected int m_iPlayerDistanceToSpawnTask;
+
+	//! PR Task Spawner: Tasks - Spawner - Pick random tasks from all avaliable task list above.
 	[Attribute("false", UIWidgets.CheckBox,"Pick random tasks from all avaliable tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected bool m_bUseRandomTasks;
 
-	//--- Amount of delay before spawning task
+	//! PR Task Spawner: Tasks - Spawner - Amount of delay before spawning task
 	[Attribute("1", desc: "Amount of random tasks to pick. 'Use Random Tasks' must be checked. -1 will use all avaliable tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected int m_iRandomTaskCount;
 
@@ -50,7 +53,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	[Attribute("false", UIWidgets.CheckBox,"Use random delay timer: Uses min and max values below.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected bool m_bUseFirstTaskRandomDelayTimer;
 
-	//--- Amount of delay before spawning task
+	//! PR Task Spawner: Tasks - Spawner - Amount of delay before spawning task
 	[Attribute("0", UIWidgets.EditBox, "Amount of delay before spawning first task. In seconds.  Minimum value if used with 'Use Random Delay Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
 	protected int m_iDelayTimerToSpawnFirstTaskMin;
 
@@ -947,7 +950,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				}
 
 				if (firstRun)
-					GetGame().GetCallqueue().CallLater(FinalCheckForPlayersBeforeTask, sleep, false, layer, eActivationType, sleep, delayBetween, object, sTaskName);
+					GetGame().GetCallqueue().CallLater(FinalCheckForPlayersBeforeTask, sleep, false, layer, eActivationType, object, sTaskName);
 
 				//--- Random delay between tasks
 				delayBetween = m_iDelayTimerBetweenEachTaskMin * 1000;
@@ -958,7 +961,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				sleep = sleep + delayBetween;
 
 				if (!firstRun)
-					GetGame().GetCallqueue().CallLater(FinalCheckForPlayersBeforeTask, sleep, false, layer, eActivationType, sleep, delayBetween, object, sTaskName);
+					GetGame().GetCallqueue().CallLater(FinalCheckForPlayersBeforeTask, sleep, false, layer, eActivationType, object, sTaskName);
 			}
 		}
 		else
@@ -978,13 +981,26 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 	//------------------------------------------------------------------------------------------------
 	//! Last check for players existing in mission before spawning tasks
-	protected void FinalCheckForPlayersBeforeTask(SCR_ScenarioFrameworkLayerBase layer, SCR_ScenarioFrameworkEActivationType eActivationType, int sleep, int delayBetween, IEntity object, string sTaskName)
+	protected void FinalCheckForPlayersBeforeTask(SCR_ScenarioFrameworkLayerBase layer, SCR_ScenarioFrameworkEActivationType eActivationType, IEntity object, string sTaskName)
 	{
+		IEntity player;
+		bool firstRun = false;
+		if (m_iPlayerDistanceToSpawnTask > -1)
+		{
+			IEntity layerTask = GetGame().GetWorld().FindEntityByName(sTaskName);
+			player = GetClosestPlayerEntity(layerTask, m_iPlayerDistanceToSpawnTask);
+			if (player)
+			{
+				firstRun = true;
+				Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : taskName: %2 : A player is too close to spawn task! Aquiring new tasks.", m_sTriggerName, sTaskName), LogLevel.WARNING);
+			}
+		}
+
 		int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
-		if (playerCount > 0)
+		if (playerCount > 0 && !player)
 		{
 			GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2 : delayBetween: %3", m_sLogMode, layer, delayBetween), LogLevel.WARNING);
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
 			//--- Cleanup persistent task object
 			if (!m_bUseTaskPool && object)
 			{
@@ -1018,11 +1034,18 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		}
 		else
 		{
+			int delay = 1000;
 			GetGame().GetCallqueue().Remove(FinalCheckForPlayersBeforeTask);
 			GetGame().GetCallqueue().Remove(SpawnObjects);
+			//--- stir the tasks up again
+			GetTasksFinal();
 			m_aTaskCollectionsArray = GetIndividualTasksToSpawnOnActivation();
-			GetGame().GetCallqueue().CallLater(SpawnObjects, 1000, false, m_aTaskCollectionsArray, SCR_ScenarioFrameworkEActivationType.ON_TRIGGER_ACTIVATION, false);
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) sTaskName: %2 : delayBetween: %3 : No players active, waiting for players to join!", m_sLogMode, sTaskName, delayBetween), LogLevel.WARNING);
+			if (m_aTaskCollectionsArray.Count() == 1)
+				delay = 60000;
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) m_aTaskCollectionsArray: %2", m_sLogMode, m_aTaskCollectionsArray), LogLevel.WARNING);
+			GetGame().GetCallqueue().CallLater(SpawnObjects, delay, false, m_aTaskCollectionsArray, SCR_ScenarioFrameworkEActivationType.ON_TRIGGER_ACTIVATION, firstRun);
+			if (!player)
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) sTaskName: %2 : No players active, waiting for players to join!", m_sLogMode, sTaskName), LogLevel.WARNING);
 		}
 	}
 
