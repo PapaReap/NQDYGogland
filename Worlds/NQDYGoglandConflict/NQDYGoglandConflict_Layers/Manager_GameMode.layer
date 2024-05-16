@@ -1,5 +1,12 @@
 SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Modes/Conflict/PR_GameMode_CampaignSF.et" {
  components {
+  SignalsManagerComponent "{615F4996D4B0C4C6}" {
+  }
+  SCR_CommunicationSoundComponent "{615F4990D6AB32DF}" {
+   Filenames {
+    "{CEA788D79A641BBF}Sounds/UI/UI.acp"
+   }
+  }
   EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
    m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
     m_sDatabaseName "NQDYGoglandConflict"
