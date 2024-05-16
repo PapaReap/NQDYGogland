@@ -369,17 +369,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords 83.431 2.266 43.607
    }
    PR_SpawnPatrolTrigger PR_SpawnPatrolTrigger_3 {
-    components {
-     EPF_PersistenceComponent "{60F07453F7204299}" {
-      m_bSelfSpawn 0
-      m_pSaveData EPF_EntitySaveDataClass "{611E4CBB73A5FE4D}" {
-       m_aComponents {
-        EPF_ComponentSaveDataClass "{611E4CBA86E1D83F}" {
-        }
-       }
-      }
-     }
-    }
     coords 657.76 -4.608 -58.171
     TriggerShapeType Sphere
     SphereRadius 1000

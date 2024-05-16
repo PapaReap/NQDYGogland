@@ -3,13 +3,13 @@ $grp PR_SpawnPatrolTrigger {
   coords 4994.431 22.656 9340.765
   TriggerShapeType Sphere
   SphereRadius 900
-  DrawShape 1
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 10
+  UpdatePeriod 60
   m_bRefreshToggle 1
   m_bDebugLogs 1
+  m_bOverrideActivationPresence 1
   m_sSpawnPosition "WP_01_00_Spawn"
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
@@ -188,12 +188,12 @@ $grp PR_SpawnPatrolTrigger {
   coords 5400.249 95.947 7593.195
   TriggerShapeType Sphere
   SphereRadius 900
-  DrawShape 1
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 10
+  UpdatePeriod 60
   m_bDebugLogs 1
+  m_bOverrideActivationPresence 1
   m_GroupType "Group: AT Team (4)"
   m_sSpawnPosition "WP_02_00_Spawn"
   m_iRespawnCount -1
@@ -291,12 +291,12 @@ $grp PR_SpawnPatrolTrigger {
   coords 6095.221 61.23 5793.327
   TriggerShapeType Sphere
   SphereRadius 1000
-  DrawShape 1
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 10
+  UpdatePeriod 60
   m_bDebugLogs 1
+  m_bOverrideActivationPresence 1
   m_GroupType "Group: AT Team (4)"
   m_sSpawnPosition "WP_03_00_Spawn"
   m_iRespawnCount -1
@@ -378,12 +378,12 @@ $grp PR_SpawnPatrolTrigger {
   coords 6935.097 63.545 3708.178
   TriggerShapeType Sphere
   SphereRadius 1100
-  DrawShape 1
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 10
+  UpdatePeriod 60
   m_bDebugLogs 1
+  m_bOverrideActivationPresence 1
   m_GroupType "Group: Sentry Team (2)"
   m_sSpawnPosition "WP_04_00_Spawn"
   m_iRespawnCount -1
@@ -477,12 +477,12 @@ $grp PR_SpawnPatrolTrigger {
   coords 6967.508 97.316 1926.539
   TriggerShapeType Sphere
   SphereRadius 1100
-  DrawShape 1
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 10
+  UpdatePeriod 60
   m_bDebugLogs 1
+  m_bOverrideActivationPresence 1
   m_GroupType "Group: GL Team (4)"
   m_sSpawnPosition "WP_05_00_Spawn"
   m_iRespawnCount -1
@@ -598,6 +598,7 @@ $grp PR_SpawnPatrolTrigger {
 }
 PR_SpawnTaskTrigger {
  coords 4635.473 5.601 10983.458
+ Flags 2097155
  m_aTaskTypesFilter {
   PR_TaskType "{612E54540C050DC2}" {
   }
@@ -605,4 +606,5 @@ PR_SpawnTaskTrigger {
 }
 PR_TaskCollections : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
  coords 4622.292 5.396 11023.047
+ Flags 2097155
 }

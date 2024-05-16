@@ -4,6 +4,7 @@ Author: PapaReap
 ToDo:
 Make trigger run loop option?
 Get global array updated. Check?
+Maybe make task complete delete persistent entitiy?
 */
 
 [EntityEditorProps(category: "GameScripted/ScriptWizard", description: "ScriptWizard generated script file.")]
@@ -424,6 +425,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	protected ref array<string> m_aIndividualTasksToSpawnOnActivation = {};
 	protected ref array<bool> m_bUsePersistentTaskArray = {};
 	protected ref array<string> m_sPersistentTaskObjectArray = {};
+	protected ref array<bool> m_bNeutralizePersistentTaskObject = {};
 	protected ref array<bool> m_bMoveTaskDestinationArray = {};
 	protected ref array<array<ref PR_MoveTask>> m_aTaskMoveDetailsArray = {};
 
@@ -434,6 +436,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		string taskName = taskDetails.m_sTaskName;
 		bool usePersistentTask = taskDetails.m_bUsePersistentTask;
 		string persistentTaskObjectName = taskDetails.m_sPersistentTaskObject;
+		bool neutralizePersistentTaskObject = taskDetails.m_bNeutralizePersistentTaskObject;
 		bool useMoveTaskDestination = taskDetails.m_bUseMoveTaskDestination;
 		array<ref PR_MoveTask> taskMoveDetails = taskDetails.m_aTaskMoveDetails;
 		IEntity persistentTaskObject;
@@ -456,6 +459,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		Print(string.Format("[PR_SpawnTaskTrigger] %1 : (SetIndividualTasks) taskName: %2, GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, taskName, GetIndividualTasksToSpawnOnActivation()), LogLevel.WARNING);
 		SetUsePersistentTaskArray(usePersistentTask);
 		SetPersistentTaskObjectArray(persistentTaskObjectName);
+		SetNeutralizePersistentTaskObjectArray(neutralizePersistentTaskObject);
 		SetMoveTaskDestinationArray(useMoveTaskDestination);
 		SetTaskMoveDetailsArray(taskMoveDetails);
 	}
@@ -502,6 +506,20 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		return m_sPersistentTaskObjectArray;
 	}
 
+	//---
+	//! sets m_bNeutralizePersistentTaskObject;
+	protected void SetNeutralizePersistentTaskObjectArray	(bool neutralizePersistentTaskObject)
+	{
+		m_bNeutralizePersistentTaskObject.Insert(neutralizePersistentTaskObject);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! returns m_bNeutralizePersistentTaskObject;
+	protected array<bool> GetNeutralizePersistentTaskObjectArray()
+	{
+		return m_bNeutralizePersistentTaskObject;
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	//! sets m_bMoveTaskDestinationArray;
 	protected void SetMoveTaskDestinationArray(bool useMoveTaskDestination)
@@ -585,6 +603,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			array<string> randomIndividualTasksToSpawnOnActivation = GetIndividualTasksToSpawnOnActivation();
 			array<bool> randomUsePersistentTaskArray = GetUsePersistentTaskArray();
 			array<string> randomPersistentTaskObjectArray = GetPersistentTaskObjectArray();
+			array<bool> randomNeutralizePersistentTaskObjectArray = GetNeutralizePersistentTaskObjectArray();
 			array<bool> randomMoveTaskDestinationArray = GetMoveTaskDestinationArray();
 			array<array<ref PR_MoveTask>> randomTaskMoveDetailsArray = GetTaskMoveDetailsArray();
 
@@ -597,6 +616,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			array<string> tempTaskNameArray = {};
 			array<bool> tempUsePersistentTaskArray = {};
 			array<string> tempPersistentTaskObjectArray = {};
+			array<bool> tempNeutralizePersistentTaskObjectArray = {};
 			array<bool> tempMoveTaskDestinationArray = {};
 			array<array<ref PR_MoveTask>> tempTaskMoveDetailsArray = {};
 
@@ -609,6 +629,8 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				tempUsePersistentTaskArray.Insert(usePersistentTask);
 				string persistentTaskObjectName = randomPersistentTaskObjectArray.Get(randomIndex);
 				tempPersistentTaskObjectArray.Insert(persistentTaskObjectName);
+				bool neutralizePersistentTaskObject = randomNeutralizePersistentTaskObjectArray.Get(randomIndex);
+				tempNeutralizePersistentTaskObjectArray.Insert(neutralizePersistentTaskObject);
 				bool useMoveTaskDestination = randomMoveTaskDestinationArray.Get(randomIndex);
 				tempMoveTaskDestinationArray.Insert(useMoveTaskDestination);
 				array<ref PR_MoveTask> taskMoveDetails = randomTaskMoveDetailsArray.Get(randomIndex);
@@ -617,6 +639,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				randomIndividualTasksToSpawnOnActivation.Remove(randomIndex);
 				randomUsePersistentTaskArray.Remove(randomIndex);
 				randomPersistentTaskObjectArray.Remove(randomIndex);
+				randomNeutralizePersistentTaskObjectArray.Remove(randomIndex);
 				randomMoveTaskDestinationArray.Remove(randomIndex);
 				randomTaskMoveDetailsArray.Remove(randomIndex);
 			}
@@ -639,6 +662,12 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			foreach (string x : tempPersistentTaskObjectArray)
 			{
 				SetPersistentTaskObjectArray(x);
+			}
+
+			m_bNeutralizePersistentTaskObject = {};
+			foreach (bool x : tempNeutralizePersistentTaskObjectArray)
+			{
+				SetNeutralizePersistentTaskObjectArray(x);
 			}
 
 			m_bMoveTaskDestinationArray = {};
@@ -1009,7 +1038,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				if (index > -1)
 				{
 					bool usePersistentTask = GetUsePersistentTaskArray().Get(index);
-					if (usePersistentTask)
+					if (usePersistentTask && m_bNeutralizePersistentObject)// get new bool here
 					{
 						string persistentTaskObjectName = GetPersistentTaskObjectArray().Get(index);
 						IEntity persistentTaskObject = GetGame().GetWorld().FindEntityByName(persistentTaskObjectName);
@@ -1250,14 +1279,18 @@ class PR_TaskDetails
 	[Attribute(desc: "Name of task to spawn.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	string m_sTaskName;
 
-	//! PR Task Spawner: EPF Persistence - Use Enfusion Persistent Framework
+	//! PR Task Spawner: Tasks - Individual Tasks - Use Enfusion Persistent Framework
 	[Attribute("false", UIWidgets.CheckBox,"Use Enfusion Persistent Framework.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	bool m_bUsePersistentTask;
 
-	//! PR Task Spawner: EPF Persistence - Object name to use for persistence trigger, if object is dead, trigger will not work.
+	//! PR Task Spawner: Tasks - Individual Tasks - Object name to use for persistence trigger, if object is dead, trigger will not work.
 	[Attribute(desc: "Object name to use for persistence task, upon task activation, object will be neutralized, task will not work on restart.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	string m_sPersistentTaskObject;
 
+	//! PR Task Spawner: Tasks - Individual Tasks - Neutralize Persistent Object on task activation.
+	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on task activation. If not, object can be nueutralized by other means in the mission. IE on task complete.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	bool m_bNeutralizePersistentTaskObject;
+	
 	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
 	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	bool m_bUseMoveTaskDestination;

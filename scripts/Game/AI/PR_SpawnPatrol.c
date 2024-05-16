@@ -672,7 +672,7 @@ class PR_SpawnPatrol
 	void KeepGroupActive(SCR_AIGroup kgaGroup, array<AIAgent> agents)
 	{
 		int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
-		if (playerCount == 0)
+		/*if (playerCount == 0)
 		{
 			if (GetKGACounter() >= 60)
 			{
@@ -682,7 +682,7 @@ class PR_SpawnPatrol
 			}
 			SetKGACounter(m_vKGACounter++);
 			return;
-		}
+		}*/
 
 		if (!kgaGroup || !agents || agents.Count() == 0)
 		{
@@ -693,7 +693,7 @@ class PR_SpawnPatrol
 		AIAgent leader = kgaGroup.GetLeaderAgent();
 		if (!leader)
 			return;
-
+Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), LogLevel.NORMAL);
 		if (leader.GetLOD() == 10)
 		{
 			foreach (int index, AIAgent agent : agents)

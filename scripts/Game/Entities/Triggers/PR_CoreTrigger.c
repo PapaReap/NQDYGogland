@@ -23,8 +23,12 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	protected bool m_bUsePersistence;
 
 	//! PR Task Spawner: EPF Persistence - Object name to use for persistence trigger, if object is dead, trigger will not work.
-	[Attribute(desc: "Object name to use for persistence trigger, upon trigger activation, object will be neutralized, trigger will not work on restart.  ", category: "PR Core: EPF Persistence")]
+	[Attribute(desc: "Object name to use for persistence trigger. If 'Neutralize Persistent Object' below is used, upon trigger activation, object will be neutralized, trigger will not work on restart.  ", category: "PR Core: EPF Persistence")]
 	protected string m_sPersistentObject;
+
+	//! PR Task Spawner: EPF Persistence - Use Enfusion Persistent Framework
+	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on trigger activation. If not, object can be nueutralized by other means in the mission.  ", category: "PR Core: EPF Persistence")]
+	protected bool m_bNeutralizePersistentObject;
 
 	//--- Trigger Activation
 	[Attribute("US", desc: "Faction which is used for area control calculation. Leave empty for any faction. UPPERCASE: US, USSR, FIA", category: "PR Core: Trigger Activation")]
@@ -214,14 +218,14 @@ Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2
 	{
 		if (m_bUsePersistence)
 		{
-			if (m_PersistentObject)
+			if (m_PersistentObject && m_bNeutralizePersistentObject)
 			{
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
 				KillUnit(m_PersistentObject);
 				GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, m_PersistentObject, m_sPersistentObject);
 			} else
 			{
-				if (m_bEPF_ModExist)
+				if (m_bEPF_ModExist && !m_PersistentObject)
 				{
 					Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is null, exiting trigger: " + m_sPersistentObject), LogLevel.NORMAL);
 					GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
