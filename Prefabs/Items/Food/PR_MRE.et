@@ -1,0 +1,72 @@
+GenericEntity : "{C95E11C60810F432}Prefabs/Items/Core/Item_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "MRE"
+     Description "Meal, Ready-to-Eat, and is a self-contained ration of food that can be heated and eaten, like chili or beef stew."
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.5
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 500
+     DimensionScaler 0.01
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     ItemActionAnimAttributes "{59FA82EB1216C72A}" {
+     }
+     CharacterModifierAttributes "{5A52F6068020DD98}" {
+     }
+     PreviewRenderAttributes "{5A5AEE4BCB65677F}" {
+      CameraPreset Top
+      CameraDistanceToItem 1.45
+      FOV 10
+      AspectRatio 1
+     }
+     SCR_ItemOfInterestAttribute "{5EB2A60B76A5120E}" {
+      m_InterestType FOOD
+     }
+     SCR_SelectionMenuPreviewAttributes "{5EC2E1094D47FD36}" {
+     }
+    }
+    CommonItemType "FOOD"
+   }
+  }
+  MeshObject "{61621B1691DAAF76}" {
+   Object "{250B64167B3A6475}Assets/Items/Food/MRE_01.xob"
+  }
+  RigidBody "{61621B1691DAAF68}" {
+   Mass 4
+   CenterOfMass 0 0.02 0
+   LinearDamping 0.5
+   AngularDamping 0.5
+   AngularSleepingThreashold 1
+   ModelGeometry 1
+   CCDRadius 0.02
+  }
+  SCR_ConsumableItemComponent "{6162349DB40DABBC}" {
+   m_ConsumableEffect SCR_ConsumableSalineBag "{6162349DBE5D419E}" {
+    m_bDeleteOnUse 0
+    m_fApplyToSelfDuration 10
+    m_fApplyToOtherDuration 10
+    m_fItemRegenerationDuration 90
+    m_fItemAbsoluteRegenerationAmount 1500
+   }
+  }
+  SCR_SoundDataComponent "{5B18D20ED0099A17}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{02B22546DD1483B8}Sounds/Items/_SharedData/PickUp/Items_PickUp_FieldDressing_US.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{02B22546DD1483B8}Sounds/Items/_SharedData/PickUp/Items_PickUp_FieldDressing_US.acp"
+    }
+   }
+  }
+ }
+ coords -2.9 0 6.3
+}

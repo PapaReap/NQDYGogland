@@ -102,6 +102,10 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 	[Attribute("false", UIWidgets.CheckBox,"Group will continue movement even outside of player range, their simulation will not be stopped. By default groups cache at around 1km. NOTE: Use with caution, too many units might degrade server performance.  ", category: "PR Spawn Patrol: Group")]
 	protected bool m_bKeepGroupActive;
 
+	//! PR SPAWN PATROL: GROUP - Suspend the groups movement if no active players in mission.
+	[Attribute("true", UIWidgets.CheckBox,"Suspend the groups movement if no active players in mission.  ", category: "PR Spawn Patrol: Group")]
+	protected bool m_bSuspendIfNoPlayers;
+	
 	//! PR SPAWN PATROL: TELEPORT TO POSITION
 	[Attribute("false", UIWidgets.CheckBox,"Teleport group to position after spawn? Useful for hard to place areas, like over water, towers, etc...  ", category: "PR Spawn Patrol: SPECIAL: Teleport To Position")]
 	protected bool m_bTeleportAfterSpawn;
@@ -244,7 +248,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 		if (m_aTeleportPosition.Count() == 0)
 			m_aTeleportPosition.Insert(spawnPos.GetName());
 
-		protected array<bool> m_aBoolArray = {m_bCycleWaypoints, m_bDebugLogs, m_bUseRandomRespawnTimer, m_bHoldFire, m_bKeepGroupActive, m_bTeleportAfterSpawn};
+		protected array<bool> m_aBoolArray = {m_bCycleWaypoints, m_bDebugLogs, m_bUseRandomRespawnTimer, m_bHoldFire, m_bKeepGroupActive, m_bSuspendIfNoPlayers, m_bTeleportAfterSpawn};
 		protected array<int> m_aIntArray = {
 			m_iRerunCounter, // 0
 			m_iRespawnTimerMin, // 1

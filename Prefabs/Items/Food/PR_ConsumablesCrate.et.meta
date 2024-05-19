@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{4B7DBE79CF6B5AED}Prefabs/Items/Food/Meat_01_Dry.et"
+ Name "{CB25098FE5F686E1}Prefabs/Items/Food/PR_ConsumablesCrate.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

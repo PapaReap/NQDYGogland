@@ -1,0 +1,65 @@
+GenericEntity : "{3D5594CC62AAFB88}Prefabs/Props/Military/AmmoBoxes/AmmoBox_81mm_mortar_3rnd.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{4A41CF9C9A805BB2}Assets/Props/Military/Furniture/US/TableMilitary_US_02_Cabinet.xob"
+   LODFactors {
+    5 2 1.5 1 1 1
+   }
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "HugeDestructible"
+  }
+  SCR_ArsenalComponent "{61623AEF4F4FFA7C}" {
+   m_eSupplyCostType RESPAWN_COST
+   m_eSupportedArsenalItemTypes HEAL
+   m_eSupportedArsenalItemModes 34
+   m_bGetDefaultIfNoFaction 0
+  }
+  SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+   Attributes SCR_ItemAttributeCollection "{5476CDB2EAD8225E}" {
+    ItemDisplayName UIInfo "{5476CDB2C82B5543}" {
+     Name "Consumables Supply Box"
+     Description "Food, water and medical supplies"
+    }
+    CommonItemType "FOOD"
+    m_Size SLOT_3x3
+   }
+   InitialStorageSlots {
+    InventoryStorageSlot MRE {
+     Prefab "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+    }
+    InventoryStorageSlot Crackers {
+     Prefab "{E954B25BC16C0B52}Prefabs/Items/Food/PR_ArmyCrackers_Soviet_01.et"
+    }
+    InventoryStorageSlot DryMeat {
+     Prefab "{AB896E30FC3CAA35}Prefabs/Items/Food/PR_Meat_01_Dry.et"
+    }
+    InventoryStorageSlot LegMeat {
+     Prefab "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+    }
+    InventoryStorageSlot ConsumablesCarrier {
+     Prefab "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+    }
+    InventoryStorageSlot US_Canteen {
+     Prefab "{630FB4AD4A735264}Prefabs/Items/Equipment/Canteens/Canteen_US_01.et"
+    }
+   }
+  }
+  ActionsManagerComponent "{5476B36C403D4CC0}" {
+   ActionContexts {
+    UserActionContext "{5476B36C47B0461A}" {
+     Position PointInfo "{5476B36C45ADDA89}" {
+      Offset 0.37 0.5 -0.1
+     }
+     Radius 1
+     Height 1
+    }
+   }
+  }
+  Hierarchy "{61633DA261194EAA}" {
+  }
+ }
+ coords -3.257 0.114 4.521
+ angleY 179.163
+}

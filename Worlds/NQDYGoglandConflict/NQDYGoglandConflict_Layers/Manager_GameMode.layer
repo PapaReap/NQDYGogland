@@ -23,4 +23,5 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
  }
  coords 6790.321 52.286 5650.282
  m_iControlPointsThreshold 18
+ m_iSuicideRespawnDelay 60
 }

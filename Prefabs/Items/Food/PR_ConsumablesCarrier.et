@@ -1,0 +1,151 @@
+GenericEntity {
+ ID "616339B8FBB709C7"
+ components {
+  MeshObject "{616339B894C8C868}" {
+   Object "{FC930E77AC4BF984}Assets/Props/Civilian/CarrierFood_01/CarrierFood_01.xob"
+   LODFactors {
+    1 1 1 1
+   }
+  }
+  RigidBody "{616339B894C8C85E}" {
+   Mass 5
+   ModelGeometry 1
+  }
+  SCR_FuelInventoryItemComponent "{616339B894C8CEA5}" {
+   Attributes SCR_ItemAttributeCollection "{616339B894C8CEA8}" {
+    ItemDisplayName SCR_ItemHintUIInfo "{616339B894C8C9D5}" {
+     Name "Consumables Carrier"
+     Description "Consumables Carrier for food, drink or medical"
+     m_aItemHints {
+      SCR_FuelItemHintsUIInfo "{616339B894C8C987}" {
+       Name "Used for carrying food"
+       Icon "{889DEEAE12D64559}UI/Imagesets/SupportStations/InventoryHints.imageset"
+       IconSetName "refuel-1"
+      }
+      SCR_InventoryItemHintUIInfo "{616339B894C8C9EB}" {
+       Name "Can also be used to carry water"
+       Icon "{889DEEAE12D64559}UI/Imagesets/SupportStations/InventoryHints.imageset"
+       IconSetName "refuel-2"
+      }
+      SCR_InventoryItemHintUIInfo "{616339B894C8C9E4}" {
+       Name "Can also be used to carry medical supplies"
+       Icon "{2BB9FACCC5A47EEB}UI/Imagesets/Conflict/services-icons-bw.imageset"
+       IconSetName "Medical_Items"
+      }
+     }
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{616339B894C8C936}" {
+     Weight 1
+     SizeSetupStrategy Manual
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{616339B894C8C91B}" {
+     AnimationAttachments {
+      AnimationAttachmentInfo "{616339B894C8C91A}" {
+       AnimGraph "{7448534CC9BB5495}Assets/Items/Fuel/workspaces/Jerrycan.agr"
+       AnimInstance "{DB71459BEC12E8B1}Assets/Items/Fuel/workspaces/Jerrycan_player.asi"
+       BindingName "Gadget"
+      }
+     }
+     AllowInspection 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{616339B894C8C956}" {
+      CameraOrbitAngles 0 15 15
+      CameraDistanceToItem 0.6
+      ItemRenderRotation 0 -90 0
+      PreviewPrefab "{627F29E940C7A12A}Prefabs/Props/Civilian/CarrierFood_01/CarrierFood_01.et"
+      LodModel 1
+     }
+     CharacterModifierAttributes "{616339B894C8C94C}" {
+      StanceLimits 0.025 1
+      SpeedLimit 4
+      ADSSpeedLimit 4
+      SpeedLimitItemPrimaryAction 0
+      SpeedLimitHighready 4
+      Supress1hShooting 1
+      AllowGadgetUse 1
+      CanBeEquippedInVehicle 0
+     }
+    }
+    m_Size SLOT_2x2
+    m_eQuickSlotSize SLOT_1x1
+    m_SlotType SLOT_GADGETS_STORAGE
+    m_bStackable 0
+   }
+   m_fFuelWeightPerLiter 0.45
+  }
+  SCR_FuelManagerComponent "{616339B894C8CEE3}" {
+   FuelNodes {
+    SCR_FuelNode "{616339B894C8CEEE}" {
+     FuelType Other
+     MaxFuel 20
+     FuelCapPosition PointInfo "{616339B894C8CE82}" {
+      Offset 0.0352 0.4697 -0.1526
+     }
+     m_fInitialFuelTankState 20
+     m_iFuelLeakSpeed 1
+     m_eFuelNodeType 0
+    }
+   }
+  }
+  SCR_FuelSupportStationComponent "{616339B894C8CE0E}" {
+   m_sOnUseSoundEffectFile "{9DD9C6279F4489B4}Sounds/SupportStations/SupportStations_Vehicles.acp"
+   m_sOnUseSoundEffectEventName "SOUND_VEHICLE_REFUEL_DONE"
+   m_sOnUpdateSoundEffectEventName "SOUND_VEHICLE_REFUEL"
+   m_fRange -1
+   m_bIgnoreSelf 1
+   m_BackupMaxFlowCapacity MANUAL
+   m_EmptyInvalidReason FUEL_CANISTER_EMPTY
+  }
+  SCR_SoundDataComponent "{616339B894C8CE64}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{616339B894C8CE70}" {
+     m_sSoundProject "{E566304399CE084C}Sounds/Items/_SharedData/PickUp/Items_PickUp_Refueling_Kit.acp"
+     m_sSoundEventName "SOUND_PICK_UP"
+    }
+    SCR_AudioSourceConfiguration "{616339B894C8CE6C}" {
+     m_sSoundProject "{E566304399CE084C}Sounds/Items/_SharedData/PickUp/Items_PickUp_Refueling_Kit.acp"
+     m_sSoundEventName "SOUND_EQUIP"
+     m_eFlags 0
+    }
+    SCR_AudioSourceConfiguration "{616339B894C8CE66}" {
+     m_sSoundProject "{157FD27548B36E28}Sounds/Items/_SharedData/Drop/Items_Drop_RefuelingKit.acp"
+     m_sSoundEventName "SOUND_DROP"
+    }
+   }
+  }
+  SCR_SupportStationGadgetComponent "{616339B894C8CE53}" {
+   m_eAnimVariable ADRIANOV
+   m_aSupportStationTypes {
+    200
+   }
+  }
+  ActionsManagerComponent "{616339B894CF7449}" {
+   ActionContexts {
+    UserActionContext "{616339B894C8CFB5}" {
+     ContextName "default"
+     Position PointInfo "{616339B894C8CFB9}" {
+      Offset 0 0.225 0
+     }
+     Radius 0.4
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{616339B894C8CF9D}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{616339B894C8CF9C}" {
+      Name "#AR-Inventory_PickUp"
+     }
+    }
+   }
+  }
+  RplComponent "{616339B894CF7447}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{616339B894CF7478}" {
+  }
+ }
+ coords 0 0 0
+}

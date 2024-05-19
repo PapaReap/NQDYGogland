@@ -522,5 +522,10 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
    ID "5D8AF9E44A46E605"
    Flags 1048576
   }
+  GenericEntity : "{CB25098FE5F686E1}Prefabs/Items/Food/PR_ConsumablesCrate.et" {
+   ID "61634256F3A2AC5A"
+   coords -3.257 0.114 4.521
+   angleY 179.163
+  }
  }
 }

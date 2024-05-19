@@ -1,0 +1,43 @@
+GenericEntity : "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  MeshObject "{5DF4D66E1693BA9C}" {
+   Object "{FC930E77AC4BF984}Assets/Props/Civilian/CarrierFood_01/CarrierFood_01.xob"
+  }
+  SCR_FuelInventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName SCR_ItemHintUIInfo "{5222EB4D07D865FA}" {
+     Name "Food Carrier"
+     Description "Food Carrier"
+     m_aItemHints {
+      SCR_FuelItemHintsUIInfo "{5E10EC951D193671}" {
+       Name "Used for carrying food"
+      }
+      SCR_InventoryItemHintUIInfo "{5E10EC953AA3C860}" {
+       Name "Can also be used to carry water"
+      }
+      SCR_InventoryItemHintUIInfo "{5E10EC953BF6D906}" {
+       Name "Can also be used to carry medical supplies"
+       Icon "{2BB9FACCC5A47EEB}UI/Imagesets/Conflict/services-icons-bw.imageset"
+       IconSetName "Medical_Items"
+      }
+     }
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5E027EF2E904B38F}" {
+      PreviewPrefab "{627F29E940C7A12A}Prefabs/Props/Civilian/CarrierFood_01/CarrierFood_01.et"
+     }
+    }
+   }
+  }
+  SCR_FuelManagerComponent "{5DF4E851BB96728E}" {
+   FuelNodes {
+    SCR_FuelNode "{5DF4E851B99B1EA4}" {
+     m_fInitialFuelTankState 20
+     m_eFuelNodeType 0
+    }
+   }
+  }
+ }
+ coords 931.642 39 2615.665
+}

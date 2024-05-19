@@ -36,6 +36,7 @@ class PR_SpawnPatrol
 	protected bool m_bDebugLogs;
 	protected bool m_bCycleWaypoints;
 	protected bool m_bKeepGroupActive;
+	protected bool m_bSuspendIfNoPlayers;
 	protected bool m_bTeleportAfterSpawn;
 	protected int m_iRerunCounter = 0;
 	protected int m_iRespawnTimer = 0;
@@ -82,7 +83,8 @@ class PR_SpawnPatrol
 		bool useRandomRespawnTimer = boolArray.Get(2);
 		bool holdFire = boolArray.Get(3);
 		bool keepGroupActive = boolArray.Get(4);
-		bool teleportAfterSpawn = boolArray.Get(5);
+		bool suspendIfNoPlayers = boolArray.Get(5);
+		bool teleportAfterSpawn = boolArray.Get(6);
 
 		array<string> teleportPosition = m_sStringArray.Get(0);
 		//Print(("[PR_SpawnPatrol] (PRSpawnPatrol) teleportPosition: " + teleportPosition), LogLevel.NORMAL);
@@ -362,7 +364,8 @@ class PR_SpawnPatrol
 			}
 		}
 
-		SetKeepGroupActive(keepGroupActive);
+		SetKeepGroupActive(keepGroupActive); //suspendIfNoPlayers
+		SetSuspendIfNoPlayers(keepGroupActive);
 		// Set Behaviors
 		SetAISkillB(skill);
 		SetCombatTypeB(combatType);
@@ -649,7 +652,7 @@ class PR_SpawnPatrol
 		//Print(("[PR_SpawnPatrol] (Behaviors Float): " + perceptionFactor), LogLevel.NORMAL);
 
 		if (keepGroupActive)
-			GetGame().GetCallqueue().CallLater(KeepGroupActive, 1000, true, groupGA, agents);
+			GetGame().GetCallqueue().CallLater(KeepGroupActive, 750, true, groupGA, agents);
 	}
 
 	int m_vKGACounter = 0;
@@ -671,8 +674,9 @@ class PR_SpawnPatrol
 	//! Keeps group active, even when no near player in area
 	void KeepGroupActive(SCR_AIGroup kgaGroup, array<AIAgent> agents)
 	{
+		bool suspendIfNoPlayers = GetSuspendIfNoPlayers();
 		int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
-		/*if (playerCount == 0)
+		if (playerCount == 0 && suspendIfNoPlayers)
 		{
 			if (GetKGACounter() >= 60)
 			{
@@ -682,18 +686,18 @@ class PR_SpawnPatrol
 			}
 			SetKGACounter(m_vKGACounter++);
 			return;
-		}*/
+		}
 
 		if (!kgaGroup || !agents || agents.Count() == 0)
 		{
-			GetGame().GetCallqueue().Remove(KeepGroupActive); // needs testing, not sure how to properly remove callqueue
+			GetGame().GetCallqueue().Remove(KeepGroupActive);
 			return;
 		}
 
 		AIAgent leader = kgaGroup.GetLeaderAgent();
 		if (!leader)
 			return;
-Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), LogLevel.NORMAL);
+		//Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), LogLevel.NORMAL);
 		if (leader.GetLOD() == 10)
 		{
 			foreach (int index, AIAgent agent : agents)
@@ -728,6 +732,7 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 		bool useRandomRespawnTimer = GetRandomRespawnTimer();
 		bool holdFire = GetHoldFireB();
 		bool keepGroupActive = GetKeepGroupActive();
+		bool suspendIfNoPlayers = GetSuspendIfNoPlayers();
 		bool teleportAfterSpawn = GetTeleportAfterSpawn();
 		array<bool> boolArray = {cycleWaypoints, debugLogs, useRandomRespawnTimer, holdFire, keepGroupActive, teleportAfterSpawn};
 		array<string> teleportPosition = GetTeleportPosition();
@@ -815,24 +820,17 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	*/
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_vOldVector;
-	vector GetOldVector()
-	{
-		return m_vOldVector;
-	}
-
-	//------------------------------------------------------------------------------------------------
 	//! sets m_vOldVector
 	void SetOldVector(vector distance)
 	{
 		m_vOldVector = distance;
 	}
-
+	
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iAISkill;
-	int GetAISkillB()
+	//! returns m_vOldVector;
+	vector GetOldVector()
 	{
-		return m_iAISkill;
+		return m_vOldVector;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -843,10 +841,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iAICombatType;
-	int GetCombatTypeB()
+	//! returns m_iAISkill;
+	int GetAISkillB()
 	{
-		return m_iAICombatType;
+		return m_iAISkill;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -857,10 +855,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bHoldFire;
-	bool GetHoldFireB()
+	//! returns m_iAICombatType;
+	int GetCombatTypeB()
 	{
-		return m_bHoldFire;
+		return m_iAICombatType;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -871,10 +869,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iAIGroupFormation;
-	int GetGroupFormationB()
+	//! returns m_bHoldFire;
+	bool GetHoldFireB()
 	{
-		return m_iAIGroupFormation;
+		return m_bHoldFire;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -885,10 +883,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iAICharacterStance;
-	int GetCharacterStanceB()
+	//! returns m_iAIGroupFormation;
+	int GetGroupFormationB()
 	{
-		return m_iAICharacterStance;
+		return m_iAIGroupFormation;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -899,10 +897,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iAIMovementType;
-	int GetMovementTypeB()
+	//! returns m_iAICharacterStance;
+	int GetCharacterStanceB()
 	{
-		return m_iAIMovementType;
+		return m_iAICharacterStance;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -913,10 +911,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_fPerceptionFactor;
-	float GetPerceptionFactorB()
+	//! returns m_iAIMovementType;
+	int GetMovementTypeB()
 	{
-		return m_fPerceptionFactor;
+		return m_iAIMovementType;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -927,10 +925,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iSpawnSide;
-	int GetSpawnSide()
+	//! returns m_fPerceptionFactor;
+	float GetPerceptionFactorB()
 	{
-		return m_iSpawnSide;
+		return m_fPerceptionFactor;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -941,10 +939,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iGroupType
-	int GetGroupType()
+	//! returns m_iSpawnSide;
+	int GetSpawnSide()
 	{
-		return m_iGroupType;
+		return m_iSpawnSide;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -955,10 +953,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_vSpawnPosition
-	vector GetSpawnPosition()
+	//! returns m_iGroupType
+	int GetGroupType()
 	{
-		return m_vSpawnPosition;
+		return m_iGroupType;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -969,10 +967,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bCycleWaypoints
-	bool GetCycleWaypoints()
+	//! returns m_vSpawnPosition
+	vector GetSpawnPosition()
 	{
-		return m_bCycleWaypoints;
+		return m_vSpawnPosition;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -983,10 +981,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bDebugLogs
-	bool GetDebugLogs()
+	//! returns m_bCycleWaypoints
+	bool GetCycleWaypoints()
 	{
-		return m_bDebugLogs;
+		return m_bCycleWaypoints;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -997,10 +995,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bKeepGroupActive
-	bool GetKeepGroupActive()
+	//! returns m_bDebugLogs
+	bool GetDebugLogs()
 	{
-		return m_bKeepGroupActive;
+		return m_bDebugLogs;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1011,10 +1009,24 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bTeleportAfterSpawn
-	bool GetTeleportAfterSpawn()
+	//! returns m_bKeepGroupActive
+	bool GetKeepGroupActive()
 	{
-		return m_bTeleportAfterSpawn;
+		return m_bKeepGroupActive;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! sets m_bSuspendIfNoPlayers
+	void SetSuspendIfNoPlayers(bool suspendIfNoPlayers)
+	{
+		m_bSuspendIfNoPlayers = suspendIfNoPlayers;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! returns m_bSuspendIfNoPlayers
+	bool GetSuspendIfNoPlayers()
+	{
+		return m_bSuspendIfNoPlayers;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1023,12 +1035,12 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	{
 		m_bTeleportAfterSpawn = teleportAfterSpawn;
 	}
-
+	
 	//------------------------------------------------------------------------------------------------
-	//! returns m_bUseRandomRespawnTimer
-	bool GetRandomRespawnTimer()
+	//! returns m_bTeleportAfterSpawn
+	bool GetTeleportAfterSpawn()
 	{
-		return m_bUseRandomRespawnTimer;
+		return m_bTeleportAfterSpawn;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1039,10 +1051,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_aTeleportPosition
-	array<string> GetTeleportPosition()
+	//! returns m_bUseRandomRespawnTimer
+	bool GetRandomRespawnTimer()
 	{
-		return m_aTeleportPosition;
+		return m_bUseRandomRespawnTimer;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1053,10 +1065,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_aWaypointCollection
-	array<string> GetWaypointCollection()
+	//! returns m_aTeleportPosition
+	array<string> GetTeleportPosition()
 	{
-		return m_aWaypointCollection;
+		return m_aTeleportPosition;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1067,10 +1079,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iRerunCounter
-	int GetRerunCounter()
+	//! returns m_aWaypointCollection
+	array<string> GetWaypointCollection()
 	{
-		return m_iRerunCounter;
+		return m_aWaypointCollection;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1081,10 +1093,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iRespawnTimerMin
-	int GetRespawnTimerMin()
+	//! returns m_iRerunCounter
+	int GetRerunCounter()
 	{
-		return m_iRespawnTimerMin;
+		return m_iRerunCounter;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1095,10 +1107,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iRespawnTimerMax
-	int GetRespawnTimerMax()
+	//! returns m_iRespawnTimerMin
+	int GetRespawnTimerMin()
 	{
-		return m_iRespawnTimerMax;
+		return m_iRespawnTimerMin;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1109,10 +1121,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iRespawnCount
-	int GetRespawnCount()
+	//! returns m_iRespawnTimerMax
+	int GetRespawnTimerMax()
 	{
-		return m_iRespawnCount;
+		return m_iRespawnTimerMax;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1123,10 +1135,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iTeleportSortOrder
-	int GetTeleportSortOrder()
+	//! returns m_iRespawnCount
+	int GetRespawnCount()
 	{
-		return m_iTeleportSortOrder;
+		return m_iRespawnCount;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1137,10 +1149,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iCollectionSortOrder
-	int GetCollectionSortOrder()
+	//! returns m_iTeleportSortOrder
+	int GetTeleportSortOrder()
 	{
-		return m_iCollectionSortOrder;
+		return m_iTeleportSortOrder;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1151,10 +1163,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iWaypointSortOrder
-	int GetWaypointSortOrder()
+	//! returns m_iCollectionSortOrder
+	int GetCollectionSortOrder()
 	{
-		return m_iWaypointSortOrder;
+		return m_iCollectionSortOrder;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1165,10 +1177,10 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! returns m_iSpawnCollections
-	int GetSpawnCollections()
+	//! returns m_iWaypointSortOrder
+	int GetWaypointSortOrder()
 	{
-		return m_iSpawnCollections;
+		return m_iWaypointSortOrder;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1176,6 +1188,13 @@ Print(("[PR_SpawnPatrol] (KeepActive) leader.GetLOD(): " + leader.GetLOD()), Log
 	void SetSpawnCollections(int spawnCollections)
 	{
 		m_iSpawnCollections = spawnCollections;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_iSpawnCollections
+	int GetSpawnCollections()
+	{
+		return m_iSpawnCollections;
 	}
 
 	//------------------------------------------------------------------------------------------------

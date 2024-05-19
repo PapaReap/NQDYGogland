@@ -40,25 +40,25 @@ SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/
  }
  m_aRanks {
   SCR_RankIDCampaign "{5CB0777E803B7EA2}" {
-   m_iRequiredXP 500
+   m_iRequiredXP 450
   }
   SCR_RankIDCampaign "{5CB0777E8F0E82AF}" {
-   m_iRequiredXP 1300
+   m_iRequiredXP 1100
   }
   SCR_RankIDCampaign "{5CB0777E8BE66EC2}" {
-   m_iRequiredXP 2400
+   m_iRequiredXP 2000
   }
   SCR_RankIDCampaign "{5CB0777E8AD658D6}" {
-   m_iRequiredXP 3800
+   m_iRequiredXP 3200
    m_iRequestCD 900
   }
   SCR_RankIDCampaign "{5CB0777E88380770}" {
-   m_iRequiredXP 5500
+   m_iRequiredXP 4500
    m_iRequestCD 900
   }
   SCR_RankIDCampaign "{60B0228606853055}" {
    m_iRank COLONEL
-   m_iRequiredXP 11000
+   m_iRequiredXP 6000
    m_iRadioRespawnCooldown 27
    m_iFastTravelCooldown 240
   }

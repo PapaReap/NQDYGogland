@@ -8,6 +8,8 @@ class PR_CoreTriggerClass : SCR_BaseTriggerEntityClass
 	// prefab properties here
 }
 
+
+
 class PR_CoreTrigger : SCR_BaseTriggerEntity
 {
 	//! PR Spawn Patrol: Utilities - Toggle to refresh EOnInit during testing.
@@ -39,9 +41,21 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	[Attribute("0", UIWidgets.ComboBox, "By whom the trigger is activated", "", ParamEnumArray.FromEnum(PR_Core_EActivationPresence), category: "PR Core: Trigger Activation")]
 	protected PR_Core_EActivationPresence m_ActivationPresence;
 
+	//! PR Core: Trigger Activation - Override options for special cases
+	[Attribute(desc: "Override options for special cases.  ", category: "PR Core: Trigger Activation")]
+	protected ref array<ref PR_OverrideTriggerActivation> m_aOverrideOptions;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - Individual tasks to assign, with optional move feature.
+//	[Attribute(desc: "Individual tasks to assign, with optional move feature.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	protected ref array<ref PR_TaskDetails> m_aIndividualTasks;
+	
 	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
-	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
-	protected bool m_bOverrideActivationPresence;
+//	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
+	protected bool m_bOverrideActivationPresence;// = false;
+	
+	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
+//	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
+//	protected bool m_bActivateIfObjectMissing;
 
 	//--- Flag to track activation status "isTriggerActivated"
 	protected bool m_bIsTriggerActivated = false;
@@ -91,6 +105,17 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is enabled"), LogLevel.NORMAL);
 			} else
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is disabled"), LogLevel.WARNING);
+		}
+		
+		if (m_aOverrideOptions.Count() > 0)
+		{
+			foreach (PR_OverrideTriggerActivation activationOptions : m_aOverrideOptions)
+			{
+				//bool overrideActivationPresence = m_aOverrideOptions.m_bOverrideActivationPresence;
+				//SetIndividualTasks(taskDetails);
+			}
+			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, m_sTriggerName, GetIndividualTasksToSpawnOnActivation()), LogLevel.WARNING);
+			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_bMoveTaskDestinationArray: %3", m_sLogMode, m_sTriggerName, m_bMoveTaskDestinationArray), LogLevel.WARNING);
 		}
 	}
 
@@ -332,4 +357,32 @@ enum PR_Core_EActivationPresence
 	ANY_CHARACTER,
 	//SPECIFIC_CLASS,
 	//SPECIFIC_PREFAB_NAME,
+}
+
+[BaseContainerProps()]
+class PR_OverrideTriggerActivation
+{
+	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
+	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
+	bool m_bOverrideActivationPresence;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - Use Enfusion Persistent Framework
+//	[Attribute("false", UIWidgets.CheckBox,"Use Enfusion Persistent Framework.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	bool m_bUsePersistentTask;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - Object name to use for persistence trigger, if object is dead, trigger will not work.
+//	[Attribute(desc: "Object name to use for persistence task, upon task activation, object will be neutralized, task will not work on restart.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	string m_sPersistentTaskObject;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - Neutralize Persistent Object on task activation.
+//	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on task activation. If not, object can be nueutralized by other means in the mission. IE on task complete.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	bool m_bNeutralizePersistentTaskObject;
+	
+	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
+//	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	bool m_bUseMoveTaskDestination;
+
+	//! PR Task Spawner: Tasks - Individual Tasks - If you desire the Area, task layer, or slots to be moved to another location, add details here.
+//	[Attribute(desc: "If you desire the Area, task layer, or slots to be moved to another location, add details here.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+//	ref array<ref PR_MoveTask> m_aTaskMoveDetails;
 }

@@ -456,7 +456,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		}
 
 		SetIndividualTasksToSpawnOnActivation(taskName);
-		Print(string.Format("[PR_SpawnTaskTrigger] %1 : (SetIndividualTasks) taskName: %2, GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, taskName, GetIndividualTasksToSpawnOnActivation()), LogLevel.WARNING);
+		//Print(string.Format("[PR_SpawnTaskTrigger] %1 : (SetIndividualTasks) taskName: %2, GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, taskName, GetIndividualTasksToSpawnOnActivation()), LogLevel.NORMAL);
 		SetUsePersistentTaskArray(usePersistentTask);
 		SetPersistentTaskObjectArray(persistentTaskObjectName);
 		SetNeutralizePersistentTaskObjectArray(neutralizePersistentTaskObject);
@@ -1012,6 +1012,9 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	//! Last check for players existing in mission before spawning tasks
 	protected void FinalCheckForPlayersBeforeTask(SCR_ScenarioFrameworkLayerBase layer, SCR_ScenarioFrameworkEActivationType eActivationType, IEntity object, string sTaskName)
 	{
+		if (!layer)
+			Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : taskName: %2 : No layer exists! Check tasks.", m_sTriggerName, sTaskName), LogLevel.ERROR);
+		
 		IEntity player;
 		bool firstRun = false;
 		if (m_iPlayerDistanceToSpawnTask > -1)
@@ -1028,8 +1031,8 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
 		if (playerCount > 0 && !player)
 		{
-			GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
+			//GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
+			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
 			//--- Cleanup persistent task object
 			if (!m_bUseTaskPool && object)
 			{
@@ -1038,7 +1041,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				if (index > -1)
 				{
 					bool usePersistentTask = GetUsePersistentTaskArray().Get(index);
-					if (usePersistentTask && m_bNeutralizePersistentObject)// get new bool here
+					if (usePersistentTask && m_bNeutralizePersistentObject)
 					{
 						string persistentTaskObjectName = GetPersistentTaskObjectArray().Get(index);
 						IEntity persistentTaskObject = GetGame().GetWorld().FindEntityByName(persistentTaskObjectName);
@@ -1054,6 +1057,12 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				}
 			}
 
+			if (layer)
+			{
+				GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
+				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
+			}
+			
 			if (GetIndividualTasksToSpawnOnActivation().Count() == 0)
 			{
 				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) No more tasks, removing call queue!", m_sLogMode), LogLevel.WARNING);
@@ -1238,6 +1247,127 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			}
 		}
 	}
+	
+	//------------------------------------------------------------------------------------------------
+/*	void Finish(bool showMsg = true)
+	{
+		FactionManager factionManager = GetGame().GetFactionManager();
+		if (factionManager)
+		{
+			m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
+			//if (m_OwnerFaction)
+		}
+		showMsg = SCR_FactionManager.SGetLocalPlayerFaction() == m_OwnerFaction;// m_TargetFaction;
+		super.Finish(showMsg);
+		
+		SCR_XPHandlerComponent comp = SCR_XPHandlerComponent.Cast(GetGame().GetGameMode().FindComponent(SCR_XPHandlerComponent));
+		
+		// Reward XP for seizing a base or reconfiguring a relay
+		if (comp && !GetTaskManager().IsProxy() && GetType() == SCR_CampaignTaskType.CAPTURE)
+		{
+			PlayerManager playerManager = GetGame().GetPlayerManager();
+			array<int> players = {};
+			playerManager.GetPlayers(players);
+			array<SCR_BaseTaskExecutor> assignees = {};
+			GetAssignees(assignees);
+			vector baseOrigin = m_TargetBase.GetOwner().GetOrigin();
+			int radius = m_TargetBase.GetRadius();
+			int radiusSq;
+			Faction playerFaction;
+			IEntity playerEntity;
+			bool isAssignee;
+			int assigneeID;
+			SCR_EXPRewards rewardID;
+			
+			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
+				rewardID = SCR_EXPRewards.RELAY_RECONFIGURED;
+			else
+				rewardID = SCR_EXPRewards.BASE_SEIZED;
+			
+			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
+				radiusSq = 50 * 50;
+			else
+				radiusSq = radius * radius;
+			
+			foreach (int playerId : players)
+			{
+				playerEntity = playerManager.GetPlayerControlledEntity(playerId);
+				
+				if (!playerEntity)
+					continue;
+				
+				playerFaction = SCR_CampaignReconfigureRelayUserAction.GetPlayerFaction(playerEntity);
+				
+				if (playerFaction != m_OwnerFaction)//m_TargetFaction)
+					continue;
+				
+				if (vector.DistanceSq(playerEntity.GetOrigin(), baseOrigin) < radiusSq)
+				{
+					isAssignee = false;
+					
+					foreach (SCR_BaseTaskExecutor assignee : assignees)
+					{
+						assigneeID = SCR_BaseTaskExecutor.GetTaskExecutorID(assignee);
+						
+						if (assigneeID == playerId)
+						{
+							isAssignee = true;
+							break;
+						}
+					}
+					
+					float multiplier = 1.0;
+					
+					if (m_bIsPriority)
+						multiplier = 1.5;
+
+					comp.AwardXP(playerId, rewardID, multiplier, isAssignee);
+				}
+			}
+		}
+		
+		string baseName;
+		
+		if (m_TargetBase)
+			baseName = GetBaseNameWithCallsign();
+		
+		if (showMsg)
+		{
+			// TODO make this nicer
+			if (m_bIndividualTask)
+			{
+				if (IsAssignedToLocalPlayer())
+				{
+					if (DoneByAssignee())
+					{
+						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+					}
+					else
+					{
+						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_FAILED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_FAILED);
+					}
+				}
+				else
+				{
+					if (m_aAssignees && m_aAssignees.Count() > 0)
+					{
+						string text;
+						string par1;
+						string par2;
+						string par3;
+						string par4;
+						string par5;
+						GetFinishTextData(text, par1, par2, par3, par4, par5);
+						SCR_PopUpNotification.GetInstance().PopupMsg(text, prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: par1, param2: par2, param3: par3, param4: par4, sound: SCR_SoundEvent.TASK_SUCCEED);
+					}
+					else
+						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+				}
+			}
+			else
+				SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+		}
+	}*/
 }
 
 // Helper class for designer to specify what tasks will be available in this area

@@ -1,0 +1,58 @@
+GenericEntity : "{C95E11C60810F432}Prefabs/Items/Core/Item_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Crackers"
+     Description "Crackers, ready to eat"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.2
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 500
+     DimensionScaler 0.01
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     ItemActionAnimAttributes "{59FA82EB1216C72A}" {
+     }
+     CharacterModifierAttributes "{5A52F6068020DD98}" {
+     }
+     PreviewRenderAttributes "{5A5AEE4BCB65677F}" {
+      CameraPreset Top
+      CameraDistanceToItem 1.45
+      FOV 10
+      AspectRatio 1
+     }
+     SCR_ItemOfInterestAttribute "{5EB2A60B76A5120E}" {
+      m_InterestType FOOD
+     }
+     SCR_SelectionMenuPreviewAttributes "{5EC2E1094D47FD36}" {
+     }
+    }
+    CommonItemType "FOOD"
+   }
+  }
+  MeshObject "{6162349FA5C8E8B7}" {
+   Object "{A47ED22E6647430A}Assets/Items/Food/ArmyCrackers_Soviet_01.xob"
+  }
+  RigidBody "{6162349FA5C8E8A9}" {
+   LinearDamping 0.5
+   AngularDamping 0.5
+   AngularSleepingThreashold 1
+   ModelGeometry 1
+   CCDRadius 0.015
+  }
+  SCR_ConsumableItemComponent "{61623AE8EA990B3F}" {
+   m_ConsumableEffect SCR_ConsumableEffectHealthItems "{61623AE8E90FAA90}" {
+    m_fApplyToSelfDuration 5
+    m_fApplyToOtherDuration 5
+   }
+   m_bVisibleEquipped 1
+  }
+ }
+ coords 3118.714 15.855 2738.387
+}

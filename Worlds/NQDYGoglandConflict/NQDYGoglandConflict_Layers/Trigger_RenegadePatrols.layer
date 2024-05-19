@@ -303,6 +303,7 @@ $grp PR_SpawnPatrolTrigger {
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1
   m_iRespawnTimerMax 3600
+  m_bKeepGroupActive 1
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_bCycleWaypoints 1
@@ -390,6 +391,7 @@ $grp PR_SpawnPatrolTrigger {
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1
   m_iRespawnTimerMax 3600
+  m_bKeepGroupActive 1
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_bCycleWaypoints 1
@@ -489,6 +491,7 @@ $grp PR_SpawnPatrolTrigger {
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1
   m_iRespawnTimerMax 3600
+  m_bKeepGroupActive 1
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_bCycleWaypoints 1

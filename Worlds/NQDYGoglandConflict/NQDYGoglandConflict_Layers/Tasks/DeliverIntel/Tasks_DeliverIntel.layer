@@ -438,192 +438,19 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
    }
   }
  }
- m_iPlayerDistanceToSpawnTask 800
+ m_iPlayerDistanceToSpawnTask 600
  m_bUseRandomTasks 1
  m_iRandomTaskCount -1
  m_bUseFirstTaskRandomDelayTimer 1
- m_iDelayTimerToSpawnFirstTaskMin 5
- m_iDelayTimerToSpawnFirstTaskMax 15
+ m_iDelayTimerToSpawnFirstTaskMin 1800
+ m_iDelayTimerToSpawnFirstTaskMax 2700
  m_bUseRandomDelayBetweenTasksTimer 1
- m_iDelayTimerBetweenEachTaskMin 60
- m_iDelayTimerBetweenEachTaskMax 61
-}
-PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
- coords 650.308 39 2678.574
- m_bRefreshToggle 1
- m_bDebugLogs 1
- m_aTaskNames {
-  "LayerTaskClearArea1" "LayerTaskDefend1" "LayerTaskDeliver1" "LayerTaskKill1" "TaskClearArea1" "TaskDefendArea1" "TaskDefendAreaAndTarget1" "TaskDefendTarget1" "TaskDeliverVehicles1" "TaskKill1"
- }
+ m_iDelayTimerBetweenEachTaskMin 3600
+ m_iDelayTimerBetweenEachTaskMax 10800
 }
 StaticModelEntity : "{51453500F5727B57}Prefabs/Structures/Industrial/Containers/FuelTanks/FuelTank_02/FuelTank_02_Pump_green.et" {
  coords 7050.834 0 3945.702
  angleY -16.345
-}
-$grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
- Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 4395.388 84.527 9946.856
- }
- Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 4544.847 11.804 8857.318
- }
- Persistence_Entity_TaskDeliverIntel_Suurkyla_sw {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5143.324 14.814 8924.794
- }
- Persistence_Entity_TaskDeliverIntel_Haukkavuori {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5544.55 123.406 6809.472
- }
- Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 7348.961 10.507 5094.207
- }
- Persistence_Entity_TaskDeliverIntel_Miettila {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 7050.712 101.687 3945.698
- }
- Persistence_Entity_TaskDeliverIntel_Teollisuusalue {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 7546.925 18.562 3176.441
- }
- Persistence_Entity_TaskDeliverIntel_Mattila {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 6720.869 103.767 2090.041
- }
- Persistence_Entity_TaskDeliverIntel_Reactor {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 8004.986 5.047 1980.311
- }
- Persistence_Entity_TaskDeliverIntel_Lounatrivi {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 7374.282 8.507 1043.894
- }
- Persistence_Entity_TaskDeliverIntel_Pohjoisrivi {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 4628.373 10.667 10993.698
- }
- Persistence_Entity_TaskDeliverIntel_Suurkyla_n {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5488.458 10.436 9290.797
- }
- Persistence_Entity_TaskDeliverIntel_Suurkyla {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5504.906 9.36 9035.485
- }
- Persistence_Entity_TaskDeliverIntel_Kappeliniemi {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5796.385 10.598 8749.6
- }
- Persistence_Entity_TaskDeliverIntel_Niemenkyla {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 6262.311 13.021 7457.808
- }
- Persistence_Entity_TaskDeliverIntel_Jokela {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 4996.431 11.9 6465.208
- }
- Persistence_Entity_TaskDeliverIntel_Kiiskinkyla {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 7144.763 9.547 5296.281
- }
- Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 5814.462 39.823 5863.386
- }
- Persistence_Entity_TaskDeliverIntel_Lounatkyla {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 6795.598 129.898 2883.187
- }
- Persistence_Entity_TaskDeliverIntel_Heikinhelli {
-  components {
-   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
-    EnableDamage 0
-   }
-  }
-  coords 6093.719 11.127 1487.827
- }
-}
-GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
- coords 4397.833 80.192 9899.354
 }
 GenericEntity : "{A46F8469F129E154}Prefabs/Props/Military/CargoContainers/CargoContainer_01_military_base.et" {
  coords 5796.432 10.406 8749.422
@@ -773,6 +600,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     {
      $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
       Layer_TaskDeliverIntel_AI_Pohjoiskorkia_caves_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords 0 0 0
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -1279,6 +1111,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       Layer_TaskDeliverIntel_AI_Suurkyla_sw_02 {
        components {
         SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
          m_bExcludeFromDynamicDespawn 1
         }
        }
@@ -1466,6 +1299,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   {
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_ArmeijanVarikko {
     coords 0.401 -0.051 6.334
+    Flags 2097155
     TriggerShapeType Sphere
     SphereRadius 500
     DrawShape 1
@@ -1671,6 +1505,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_ArmeijanVarikko_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -2054,6 +1893,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Haukkavuori_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -2493,6 +2337,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Kiiskinkyla_s_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -2950,6 +2799,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       Layer_TaskDeliverIntel_AI_Miettila_02 {
        components {
         SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
          m_bExcludeFromDynamicDespawn 1
         }
        }
@@ -3417,6 +3267,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       Layer_TaskDeliverIntel_AI_Teollisuusalue_02 {
        components {
         SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
          m_bExcludeFromDynamicDespawn 1
         }
        }
@@ -3880,6 +3731,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Mattila_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -4270,6 +4126,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Reactor_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -4660,6 +4521,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Lounatrivi_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -5127,6 +4993,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Pohjoisrivi_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -5591,6 +5462,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       Layer_TaskDeliverIntel_AI_Suurkyla_n_02 {
        components {
         SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
          m_bExcludeFromDynamicDespawn 1
         }
        }
@@ -6163,6 +6035,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       Layer_TaskDeliverIntel_AI_Suurkyla_02 {
        components {
         SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
          m_bExcludeFromDynamicDespawn 1
         }
        }
@@ -6668,6 +6541,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Kappeliniemi_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -7100,6 +6978,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Niemenkyla_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -7679,6 +7562,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Jokela_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -8188,6 +8076,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Liiralahdenjarvi_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -8550,6 +8443,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Kiiskinkyla_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -8989,6 +8887,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Lounatkyla_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
@@ -9442,6 +9345,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       Layer_TaskDeliverIntel_AI_Heikinhelli_02 {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_BASED_ON_PLAYERS_COUNT
+        }
+       }
        coords -6.586 0.567 -0.478
        {
         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {

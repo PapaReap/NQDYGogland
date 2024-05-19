@@ -1,0 +1,57 @@
+GenericEntity : "{C95E11C60810F432}Prefabs/Items/Core/Item_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Leg Meat"
+     Description "Prime leg meat ready for cooking"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 1
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 500
+     DimensionScaler 0.01
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     ItemActionAnimAttributes "{59FA82EB1216C72A}" {
+     }
+     CharacterModifierAttributes "{5A52F6068020DD98}" {
+     }
+     PreviewRenderAttributes "{5A5AEE4BCB65677F}" {
+      CameraPreset Top
+      CameraDistanceToItem 1.45
+      FOV 10
+      AspectRatio 1
+     }
+     SCR_ItemOfInterestAttribute "{5EB2A60B76A5120E}" {
+      m_InterestType FOOD
+     }
+     SCR_SelectionMenuPreviewAttributes "{5EC2E1094D47FD36}" {
+     }
+    }
+    CommonItemType "FOOD"
+    m_Size SLOT_2x1
+    m_eQuickSlotSize SLOT_2x1
+   }
+  }
+  MeshObject "{6162349FC573EAEB}" {
+   Object "{4C5DB4BC63F4D4F0}Assets/Items/Food/MeatLeg_01.xob"
+  }
+  RigidBody "{6162349FC573EAEC}" {
+   ModelGeometry 1
+  }
+  SCR_ConsumableItemComponent "{61623AE900B95FF7}" {
+   m_ConsumableEffect SCR_ConsumableEffectHealthItems "{61623AE916E634DD}" {
+    m_fApplyToSelfDuration 10
+    m_fApplyToOtherDuration 10
+   }
+   m_bVisibleEquipped 1
+  }
+ }
+ coords -2.6 0 6.3
+ scale 0.6
+}

@@ -1,0 +1,11 @@
+PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
+ coords 650.308 39 2678.574
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_aTaskNames {
+  "LayerTaskClearArea1" "LayerTaskDefend1" "LayerTaskDeliver1" "LayerTaskKill1" "TaskClearArea1" "TaskDefendArea1" "TaskDefendAreaAndTarget1" "TaskDefendTarget1" "TaskDeliverVehicles1" "TaskKill1"
+ }
+}
+GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ coords 4397.833 80.192 9899.354
+}

@@ -1,0 +1,58 @@
+GenericEntity : "{C95E11C60810F432}Prefabs/Items/Core/Item_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Dried Meat"
+     Description "Dried meat, ready to eat"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.5
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 500
+     DimensionScaler 0.01
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     ItemActionAnimAttributes "{59FA82EB1216C72A}" {
+     }
+     CharacterModifierAttributes "{5A52F6068020DD98}" {
+     }
+     PreviewRenderAttributes "{5A5AEE4BCB65677F}" {
+      CameraPreset Top
+      CameraDistanceToItem 1.45
+      FOV 10
+      AspectRatio 1
+     }
+     SCR_ItemOfInterestAttribute "{5EB2A60B76A5120E}" {
+      m_InterestType FOOD
+     }
+     SCR_SelectionMenuPreviewAttributes "{5EC2E1094D47FD36}" {
+     }
+    }
+    CommonItemType "FOOD"
+   }
+  }
+  MeshObject "{6162349FB9AD040B}" {
+   Object "{6073CC0058821B73}Assets/Items/Food/Meat_01_Dry.xob"
+  }
+  RigidBody "{6162349FB9AD040C}" {
+   Mass 5
+   LinearDamping 0.5
+   AngularDamping 0.5
+   ModelGeometry 1
+  }
+  SCR_ConsumableItemComponent "{61623AE89F721844}" {
+   m_ConsumableEffect SCR_ConsumableEffectHealthItems "{61623AE8A1D1012B}" {
+    m_fApplyToSelfDuration 10
+    m_fApplyToOtherDuration 10
+   }
+   m_bVisibleEquipped 1
+  }
+ }
+ coords -2.6 0 6.3
+ scale 0.6
+}

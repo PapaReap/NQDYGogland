@@ -1,0 +1,58 @@
+$grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+ Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6583.04 2.893 -1570.612
+ }
+ Persistence_Entity_TaskDeliverSupplies_Jokela {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6584.206 2.893 -1570.956
+ }
+ Persistence_Entity_TaskDeliverSupplies_Jokela_n {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6585.433 2.893 -1570.908
+ }
+ Persistence_Entity_TaskDeliverSupplies_Lansikallio {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6586.263 2.893 -1571.033
+ }
+ Persistence_Entity_TaskDeliverSupplies_Korkiala {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6587.514 2.893 -1571.316
+ }
+ Persistence_Entity_TaskDeliverSupplies_Purjekallio {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6589.145 2.893 -1571.242
+ }
+ Persistence_Entity_TaskDeliverSupplies_Niemenkyla {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6590.375 2.893 -1571.338
+ }
+}
