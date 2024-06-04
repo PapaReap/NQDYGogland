@@ -9,7 +9,11 @@ $grp PR_SpawnPatrolTrigger {
   UpdatePeriod 60
   m_bRefreshToggle 1
   m_bDebugLogs 1
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F635083AF}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_sSpawnPosition "WP_01_00_Spawn"
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
@@ -193,7 +197,11 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F64BB19BD}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_GroupType "Group: AT Team (4)"
   m_sSpawnPosition "WP_02_00_Spawn"
   m_iRespawnCount -1
@@ -296,7 +304,11 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F6811B37E}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_GroupType "Group: AT Team (4)"
   m_sSpawnPosition "WP_03_00_Spawn"
   m_iRespawnCount -1
@@ -384,7 +396,11 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F6C0D4E46}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_GroupType "Group: Sentry Team (2)"
   m_sSpawnPosition "WP_04_00_Spawn"
   m_iRespawnCount -1
@@ -484,7 +500,11 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F76F08EEB}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_GroupType "Group: GL Team (4)"
   m_sSpawnPosition "WP_05_00_Spawn"
   m_iRespawnCount -1

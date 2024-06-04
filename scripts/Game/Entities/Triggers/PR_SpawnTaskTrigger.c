@@ -50,18 +50,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	[Attribute("1", desc: "Amount of random tasks to pick. 'Use Random Tasks' must be checked. -1 will use all avaliable tasks from list above.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected int m_iRandomTaskCount;
 
-	//! PR Task Spawner: Tasks - Spawner - Use random delay timer: Uses min and max values below.
-	[Attribute("false", UIWidgets.CheckBox,"Use random delay timer: Uses min and max values below.  ", category: "PR Task Spawner: Tasks - Spawner")]
-	protected bool m_bUseFirstTaskRandomDelayTimer;
-
-	//! PR Task Spawner: Tasks - Spawner - Amount of delay before spawning task
-	[Attribute("0", UIWidgets.EditBox, "Amount of delay before spawning first task. In seconds.  Minimum value if used with 'Use Random Delay Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
-	protected int m_iDelayTimerToSpawnFirstTaskMin;
-
-	//! PR Task Spawner: Tasks - Spawner - Delay timer max value: Maximum amount of delay before spawning task if used with random timer. (seconds)
-	[Attribute("0", UIWidgets.EditBox, "Maximum amount of delay before spawning task if used with 'Use Random Delay Timer'. (seconds)  ", "0 inf 1", category: "PR Task Spawner: Tasks - Spawner")]
-	protected int m_iDelayTimerToSpawnFirstTaskMax;
-
 	//! PR Task Spawner: Tasks - Spawner - Use random delay between tasks timer: Uses min and max values below.
 	[Attribute("false", UIWidgets.CheckBox,"Use random delay between tasks timer: Uses min and max values below.  ", category: "PR Task Spawner: Tasks - Spawner")]
 	protected bool m_bUseRandomDelayBetweenTasksTimer;
@@ -129,12 +117,13 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			return;
 
 		m_bIsTriggerActivated = true;
+		m_sLogMode = "(OnActivate)";
 
 		//--- Delay to spawn first task
-		int delay = m_iDelayTimerToSpawnFirstTaskMin * 1000;
+		int delay = m_iDelayTimerMin * 1000;
 
-		if (m_bUseFirstTaskRandomDelayTimer)
-			delay = Math.RandomInt(m_iDelayTimerToSpawnFirstTaskMin * 1000, m_iDelayTimerToSpawnFirstTaskMax * 1000);
+		if (m_bUseRandomDelayTimer)
+			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
 
 		Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
 
@@ -506,20 +495,20 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		return m_sPersistentTaskObjectArray;
 	}
 
-	//---
+	//------------------------------------------------------------------------------------------------
 	//! sets m_bNeutralizePersistentTaskObject;
 	protected void SetNeutralizePersistentTaskObjectArray	(bool neutralizePersistentTaskObject)
 	{
 		m_bNeutralizePersistentTaskObject.Insert(neutralizePersistentTaskObject);
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 	//! returns m_bNeutralizePersistentTaskObject;
 	protected array<bool> GetNeutralizePersistentTaskObjectArray()
 	{
 		return m_bNeutralizePersistentTaskObject;
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 	//! sets m_bMoveTaskDestinationArray;
 	protected void SetMoveTaskDestinationArray(bool useMoveTaskDestination)
@@ -1014,7 +1003,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	{
 		if (!layer)
 			Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : taskName: %2 : No layer exists! Check tasks.", m_sTriggerName, sTaskName), LogLevel.ERROR);
-		
+
 		IEntity player;
 		bool firstRun = false;
 		if (m_iPlayerDistanceToSpawnTask > -1)
@@ -1031,8 +1020,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
 		if (playerCount > 0 && !player)
 		{
-			//GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
-			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
 			//--- Cleanup persistent task object
 			if (!m_bUseTaskPool && object)
 			{
@@ -1062,7 +1049,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				GetGame().GetCallqueue().CallLater(layer.Init, 1000, false, null, eActivationType);
 				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) layer: %2", m_sLogMode, layer), LogLevel.WARNING);
 			}
-			
+
 			if (GetIndividualTasksToSpawnOnActivation().Count() == 0)
 			{
 				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) No more tasks, removing call queue!", m_sLogMode), LogLevel.WARNING);
@@ -1247,7 +1234,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			}
 		}
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 /*	void Finish(bool showMsg = true)
 	{
@@ -1259,9 +1246,9 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		}
 		showMsg = SCR_FactionManager.SGetLocalPlayerFaction() == m_OwnerFaction;// m_TargetFaction;
 		super.Finish(showMsg);
-		
+
 		SCR_XPHandlerComponent comp = SCR_XPHandlerComponent.Cast(GetGame().GetGameMode().FindComponent(SCR_XPHandlerComponent));
-		
+
 		// Reward XP for seizing a base or reconfiguring a relay
 		if (comp && !GetTaskManager().IsProxy() && GetType() == SCR_CampaignTaskType.CAPTURE)
 		{
@@ -1278,46 +1265,46 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			bool isAssignee;
 			int assigneeID;
 			SCR_EXPRewards rewardID;
-			
+
 			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
 				rewardID = SCR_EXPRewards.RELAY_RECONFIGURED;
 			else
 				rewardID = SCR_EXPRewards.BASE_SEIZED;
-			
+
 			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
 				radiusSq = 50 * 50;
 			else
 				radiusSq = radius * radius;
-			
+
 			foreach (int playerId : players)
 			{
 				playerEntity = playerManager.GetPlayerControlledEntity(playerId);
-				
+
 				if (!playerEntity)
 					continue;
-				
+
 				playerFaction = SCR_CampaignReconfigureRelayUserAction.GetPlayerFaction(playerEntity);
-				
+
 				if (playerFaction != m_OwnerFaction)//m_TargetFaction)
 					continue;
-				
+
 				if (vector.DistanceSq(playerEntity.GetOrigin(), baseOrigin) < radiusSq)
 				{
 					isAssignee = false;
-					
+
 					foreach (SCR_BaseTaskExecutor assignee : assignees)
 					{
 						assigneeID = SCR_BaseTaskExecutor.GetTaskExecutorID(assignee);
-						
+
 						if (assigneeID == playerId)
 						{
 							isAssignee = true;
 							break;
 						}
 					}
-					
+
 					float multiplier = 1.0;
-					
+
 					if (m_bIsPriority)
 						multiplier = 1.5;
 
@@ -1325,12 +1312,12 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				}
 			}
 		}
-		
+
 		string baseName;
-		
+
 		if (m_TargetBase)
 			baseName = GetBaseNameWithCallsign();
-		
+
 		if (showMsg)
 		{
 			// TODO make this nicer
@@ -1420,7 +1407,7 @@ class PR_TaskDetails
 	//! PR Task Spawner: Tasks - Individual Tasks - Neutralize Persistent Object on task activation.
 	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on task activation. If not, object can be nueutralized by other means in the mission. IE on task complete.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	bool m_bNeutralizePersistentTaskObject;
-	
+
 	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
 	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	bool m_bUseMoveTaskDestination;

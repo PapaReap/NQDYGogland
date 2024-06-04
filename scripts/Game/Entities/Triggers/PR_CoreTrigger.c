@@ -44,18 +44,18 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	//! PR Core: Trigger Activation - Override options for special cases
 	[Attribute(desc: "Override options for special cases.  ", category: "PR Core: Trigger Activation")]
 	protected ref array<ref PR_OverrideTriggerActivation> m_aOverrideOptions;
+	
+	//! PR SPAWN PATROL: DETAILS - Use random delay timer: Uses a min and max values below.
+	[Attribute("false", UIWidgets.CheckBox,"Use random delay timer: Uses a min and max values below.  ", category: "PR Core: Trigger Timer Delay")]
+	protected bool m_bUseRandomDelayTimer;
 
-	//! PR Task Spawner: Tasks - Individual Tasks - Individual tasks to assign, with optional move feature.
-//	[Attribute(desc: "Individual tasks to assign, with optional move feature.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	protected ref array<ref PR_TaskDetails> m_aIndividualTasks;
-	
-	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
-//	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
-	protected bool m_bOverrideActivationPresence;// = false;
-	
-	//! Trigger Activation: Activate trigger on first query. Override 'Activation Presence'
-//	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
-//	protected bool m_bActivateIfObjectMissing;
+	//--- PR SPAWN PATROL: DETAILS - Amount of delay before spawning group, min
+	[Attribute("0", UIWidgets.EditBox, "Default delay after trigger is activated. Minimum value if 'Use Random Delay Timer' enabled. (seconds)  ", "0 inf 1", category: "PR Core: Trigger Timer Delay")]
+	protected int m_iDelayTimerMin;
+
+	//! PR SPAWN PATROL: DETAILS - Maximum delay after trigger is activated. Needs 'Use Random Delay Timer' enabled. (seconds)
+	[Attribute("0", UIWidgets.EditBox, "Maximum delay after trigger is activated. Needs 'Use Random Delay Timer' enabled. (seconds)  ", "0 inf 1", category: "PR Core: Trigger Timer Delay")]
+	protected int m_iDelayTimerMax;
 
 	//--- Flag to track activation status "isTriggerActivated"
 	protected bool m_bIsTriggerActivated = false;
@@ -69,6 +69,10 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	protected string m_sLogMode = "(OnActivate)";
 	protected IEntity m_PersistentObject;
 
+	bool overrideActivationPresence = false;
+	bool activateIfObjectMissing = false;
+	string missingObjectName;
+
 	override protected void EOnInit(IEntity owner)
 	{
 		FactionManager factionManager = GetGame().GetFactionManager();
@@ -76,6 +80,8 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 			m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
 
 		super.EOnInit(owner);
+
+		m_sLogMode = "(EOnInit)";
 
 		m_World = owner.GetWorld();
 		m_Trigger = m_World.FindEntityByID(this.GetID());
@@ -90,7 +96,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		if (SCR_Global.IsEditMode())
 		{
 			m_bIsTestingMode = true;
-			m_sLogMode = "(EOnInit)";
+			m_sLogMode = "(IsEditMode)";
 		}
 
 		Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": Game is in edit mode: " + m_bIsTestingMode), LogLevel.NORMAL);
@@ -106,16 +112,15 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 			} else
 				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is disabled"), LogLevel.WARNING);
 		}
-		
+
 		if (m_aOverrideOptions.Count() > 0)
 		{
 			foreach (PR_OverrideTriggerActivation activationOptions : m_aOverrideOptions)
 			{
-				//bool overrideActivationPresence = m_aOverrideOptions.m_bOverrideActivationPresence;
-				//SetIndividualTasks(taskDetails);
+				overrideActivationPresence = activationOptions.m_bOverrideActivationPresence;
+				activateIfObjectMissing = activationOptions.m_bActivateIfObjectMissing;
+				missingObjectName = activationOptions.m_sMissingObjectName;
 			}
-			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, m_sTriggerName, GetIndividualTasksToSpawnOnActivation()), LogLevel.WARNING);
-			//Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_bMoveTaskDestinationArray: %3", m_sLogMode, m_sTriggerName, m_bMoveTaskDestinationArray), LogLevel.WARNING);
 		}
 	}
 
@@ -232,9 +237,16 @@ Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2
 	{
 		IEntity objectToTeleport = GetGame().GetWorld().FindEntityByName(whatToMove);
 		IEntity objectToTeleportTo = GetGame().GetWorld().FindEntityByName(whereToMove);
+		if (!objectToTeleport || !objectToTeleportTo)
+		{
+			Print("[PR_Core_Trigger] (TeleportObject) Issue with teleporting object, check if objects exists! ", LogLevel.ERROR);
+			return;
+		}
 		vector position = objectToTeleportTo.GetOrigin();
-		Print(("[PR_SpawnPatrol] (TeleportObject) objectToTeleport: " + objectToTeleport + " objectToTeleportTo: " + objectToTeleportTo + " position: " + position), LogLevel.NORMAL);
-		objectToTeleport.SetOrigin(position)
+		Print(("[PR_Core_Trigger] (TeleportObject) objectToTeleport: " + objectToTeleport + " objectToTeleportTo: " + objectToTeleportTo + " position: " + position), LogLevel.NORMAL);
+		Print(string.Format("[PR_Core_Trigger] (TeleportObject) %1 : Trigger: %2 : objectToTeleport: %3 : posPre: %4", m_sLogMode, m_sTriggerName, objectToTeleport, objectToTeleport.GetOrigin()), LogLevel.WARNING);
+		objectToTeleport.SetOrigin(position);
+		objectToTeleport.Update();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -281,15 +293,23 @@ Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2
 			}
 		}
 
-		if (m_bOverrideActivationPresence)
+		if (overrideActivationPresence)
 		{
 			int playerCount = GetGame().GetPlayerManager().GetPlayerCount();
 			if (playerCount == 0)
 				return false;
 
+			if (activateIfObjectMissing)
+			{
+				IEntity missingObject = GetGame().GetWorld().FindEntityByName(missingObjectName);
+				if (missingObject)
+					return false;
+			}
+			
 			FactionManager factionManager = GetGame().GetFactionManager();
 			if (factionManager)
 				m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
+			
 			return true;
 		}
 
@@ -312,6 +332,13 @@ Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2
 			if (m_ActivationPresence == PR_Core_EActivationPresence.PLAYER)
 				return EntityUtils.IsPlayer(ent);
 
+			if (activateIfObjectMissing)
+			{
+				IEntity missingObject = GetGame().GetWorld().FindEntityByName(missingObjectName);
+				if (missingObject)
+					return false;
+			}
+			
 			return true;
 		}
 
@@ -366,18 +393,18 @@ class PR_OverrideTriggerActivation
 	[Attribute("false", UIWidgets.CheckBox,"Activate trigger on first query. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
 	bool m_bOverrideActivationPresence;
 
-	//! PR Task Spawner: Tasks - Individual Tasks - Use Enfusion Persistent Framework
-//	[Attribute("false", UIWidgets.CheckBox,"Use Enfusion Persistent Framework.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	bool m_bUsePersistentTask;
+	//! Trigger Activation: Activate trigger if object is missing from the map. Override 'Activation Presence'
+	[Attribute("false", UIWidgets.CheckBox,"Activate trigger if object is missing from the map. Override 'Activation Presence'  ", category: "PR Core: Trigger Activation")]
+	bool m_bActivateIfObjectMissing;
 
-	//! PR Task Spawner: Tasks - Individual Tasks - Object name to use for persistence trigger, if object is dead, trigger will not work.
-//	[Attribute(desc: "Object name to use for persistence task, upon task activation, object will be neutralized, task will not work on restart.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	string m_sPersistentTaskObject;
+	//! Trigger Activation: Object name to watch for to go missing, useful for triggering once a object is deleted.
+	[Attribute(desc: "Object name to watch for to go missing, useful for triggering once a object is deleted. Only works with 'Activate If Object Missing' from above is checked.  ", category: "PR Core: Trigger Activation")]
+	string m_sMissingObjectName;
 
 	//! PR Task Spawner: Tasks - Individual Tasks - Neutralize Persistent Object on task activation.
 //	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on task activation. If not, object can be nueutralized by other means in the mission. IE on task complete.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 //	bool m_bNeutralizePersistentTaskObject;
-	
+
 	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
 //	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 //	bool m_bUseMoveTaskDestination;

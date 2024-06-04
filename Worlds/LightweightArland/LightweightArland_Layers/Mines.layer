@@ -1,0 +1,131 @@
+PR_SpawnPrefabTrigger mineTrg {
+ coords 1085.81 38.999 2405.037
+ TriggerShapeType Sphere
+ SphereRadius 5
+ DrawShape 1
+ ShapeColor 0.046 0 1 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 1.1
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_Persistent_Object_1"
+ m_bNeutralizePersistentObject 1
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{617470800EE7ED8F}" {
+  }
+ }
+ m_bUseRandomDelayTimer 1
+ m_iDelayTimerMin 5
+ m_iDelayTimerMax 10
+ m_aPrefabDetails {
+  PR_PrefabDetails "{6174709767F5E7C6}" {
+   m_aObjectLocationsToSpawnOn {
+    "mineMove_1"
+   }
+   m_bUseRandomPositions 1
+   m_fRandomPercentage 50
+  }
+  PR_PrefabDetails "{6174709A6CA8B8AF}" {
+   m_aObjectLocationsToSpawnOn {
+    "mineMove_2"
+   }
+   m_bUseRandomPositions 1
+   m_fRandomPercentage 80
+  }
+ }
+ {
+  GenericEntity PR_Persistent_Object_1 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   components {
+    SCR_MineInventoryItemComponent "{61755BB46F93131A}" {
+     Enabled 0
+    }
+   }
+   coords 7.309 0.012 -6.182
+  }
+  $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+   mineMove_1 {
+    components {
+     Hierarchy "{6174708CEDBE04F7}" {
+     }
+    }
+    coords 11.142 0.001 -0.035
+    {
+     $grp GenericEntity {
+      ge_1 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords 57.846 0 -63.652
+      }
+      ge_2 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -3.161 0 -40.298
+      }
+      ge_3 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -12.779 0 39.87
+      }
+      ge_4 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -59.479 0 38.011
+      }
+     }
+    }
+   }
+   mineMove_2 {
+    components {
+     Hierarchy "{6174708CEDBE04F7}" {
+     }
+    }
+    coords -77.907 0.001 116.642
+    {
+     $grp GenericEntity {
+      ge_5 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords 57.846 0 -63.652
+      }
+      ge_6 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -3.161 0 -40.298
+      }
+      ge_7 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -12.779 0 39.87
+      }
+      ge_8 {
+       components {
+        Hierarchy "{6174708CC8E64666}" {
+        }
+       }
+       coords -59.479 0 38.011
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity MineFlag_US_61756160E84E8B0B : "{EC13D4E934B2ADD8}Prefabs/Items/Demining/MineFlags/MineFlag_US.et" {
+ coords 1093.49 39.01 2398.488
+}

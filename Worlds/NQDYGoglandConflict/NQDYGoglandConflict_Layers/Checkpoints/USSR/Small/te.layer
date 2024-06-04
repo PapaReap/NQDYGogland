@@ -1,0 +1,10 @@
+GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ components {
+  RplComponent "{5A7C8AEEFC85B766}" {
+   Enabled 0
+  }
+  Hierarchy "{617E0258963C50E2}" {
+  }
+ }
+ coords 5398.121 51.192 6376.786
+}

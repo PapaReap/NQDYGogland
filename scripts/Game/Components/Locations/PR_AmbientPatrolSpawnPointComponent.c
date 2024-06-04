@@ -128,7 +128,7 @@ modded class SCR_AmbientPatrolSpawnPointComponent : ScriptComponent
 					m_Group.SpawnUnits();
 				}
 			else /* <<< Gramps added */
-			m_Group.SpawnUnits();
+				m_Group.SpawnUnits();
 
 			//int count = m_Group.GetAgentsCount();
 			//Print(("[PR] GetAgentsCount: " + count), LogLevel.NORMAL);

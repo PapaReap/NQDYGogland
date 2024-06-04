@@ -1,3 +1,30 @@
+SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Modes/Conflict/PR_GameMode_CampaignSF.et" {
+ components {
+  SignalsManagerComponent "{615F4996D4B0C4C6}" {
+  }
+  SCR_CommunicationSoundComponent "{615F4990D6AB32DF}" {
+   Filenames {
+    "{CEA788D79A641BBF}Sounds/UI/UI.acp"
+   }
+  }
+  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
+    m_sDatabaseName "NQDYGoglandConflict"
+   }
+  }
+  SCR_GameModeSFManager "{60FD5A50534ED456}" {
+   m_bDynamicDespawn 1
+  }
+  SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
+   m_bRandomStartingDaytime 0
+   m_fDayTimeAcceleration 1
+   m_bRandomStartingWeather 0
+  }
+ }
+ coords 6790.321 52.286 5650.282
+ m_iControlPointsThreshold 18
+ m_iSuicideRespawnDelay 60
+}
 SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
  coords 758.494 40.786 2651.66
  Factions {
@@ -63,4 +90,10 @@ SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/
    m_iFastTravelCooldown 240
   }
  }
+}
+SCR_BaseTaskManager : "{576572CA95E0A7E8}Prefabs/MP/Campaign/PR_SFCampaignTaskManager.et" {
+ coords 756.674 40.631 2649.717
+}
+SCR_LoadoutManager : "{EB3542286300CF2A}Prefabs/MP/Campaign/PR_CampaignLoadoutManager.et" {
+ coords 6828.15 52.126 5652.972
 }

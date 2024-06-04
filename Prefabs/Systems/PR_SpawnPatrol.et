@@ -1,0 +1,18 @@
+PR_SpawnPatrolTrigger {
+ ID "617E0003B9627647"
+ components {
+  Hierarchy "{617D05CAEE5FD3A8}" {
+  }
+ }
+ coords 1125.697 39.22 2276.513
+ angleX -0.894
+ angleY -0.028
+ angleZ 1.79
+ TriggerShapeType Sphere
+ SphereRadius 10
+ DrawShape 1
+ ShapeColor 0.251 0 0.502 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bDebugLogs 1
+}

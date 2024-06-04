@@ -8,19 +8,15 @@ $grp PR_SpawnPatrolTrigger {
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
+  m_bDebugLogs 1
   m_GroupType "Man: Machine Gun (1)"
   m_bTeleportAfterSpawn 1
-  m_sTeleportPosition {
-   "Defend_1"
-  }
   m_bHoldFire 0
   m_bCycleWaypoints 1
   m_aWaypointCollection {
    "WP_Downstairs_Set"
   }
   m_WaypointSortOrder "RAMDOM MIX"
-  m_iDelayTimer 5
-  m_bDebugLogs 1
   {
    GenericEntity WP_Downstairs_Set : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
@@ -141,11 +137,9 @@ $grp PR_SpawnPatrolTrigger {
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
+  m_bDebugLogs 1
   m_GroupType "Group: Light Fire Team (4)"
   m_bTeleportAfterSpawn 1
-  m_sTeleportPosition {
-   "DefendUpstairs_1"
-  }
   m_eAIGroupFormation Column
   m_bHoldFire 0
   m_bCycleWaypoints 1
@@ -153,8 +147,6 @@ $grp PR_SpawnPatrolTrigger {
    "WP_Upstairs_Set"
   }
   m_WaypointSortOrder "RAMDOM MIX"
-  m_iDelayTimer 5
-  m_bDebugLogs 1
  }
  TowerRoof_USSR_Trigger {
   coords 1372.318 37.995 2956.716
@@ -166,19 +158,15 @@ $grp PR_SpawnPatrolTrigger {
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
+  m_bDebugLogs 1
   m_GroupType "Group: Sniper Team (2)"
   m_bTeleportAfterSpawn 1
-  m_sTeleportPosition {
-   "DefendRoof_1"
-  }
   m_bHoldFire 0
   m_bCycleWaypoints 1
   m_aWaypointCollection {
    "WP_Roof_Set"
   }
   m_WaypointSortOrder "RAMDOM MIX"
-  m_iDelayTimer 5
-  m_bDebugLogs 1
  }
 }
 SCR_SmartActionWaypoint : "{04A06A6742FB0AF8}Prefabs/AI/Waypoints/AIWaypoint_UserAction.et" {
@@ -277,7 +265,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
       Hierarchy "{610B43F22E827D69}" {
       }
      }
-     coords -1.031 -0 -1.141
+     coords -1.031 0 -1.141
      CompletionRadius 1
      CompletionType Any
      m_fPriorityLevel 2000
@@ -288,7 +276,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
       Hierarchy "{610B43F22E827D69}" {
       }
      }
-     coords -0.559 -0 7.991
+     coords -0.559 0 7.991
      CompletionRadius 1
      CompletionType Any
      m_fPriorityLevel 2000
@@ -307,6 +295,9 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
     }
    }
   }
+ }
+ {
+  coords 882.018 9.589 2070.013
  }
 }
 $grp SCR_SmartActionWaypoint : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoint_ObservationPost.et" {
@@ -349,6 +340,17 @@ $grp SCR_SmartActionWaypoint : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoin
   m_fPriorityLevel 2000
   m_sStaticEntityName "Defend_5"
   m_sSmartActionTag "CoverPost"
+ }
+}
+$grp GenericEntity : "{EC13D4E934B2ADD8}Prefabs/Items/Demining/MineFlags/MineFlag_US.et" {
+ MineFlag_US_61756160E84E8B0B2 {
+  coords 980.871 0.981 1845.604
+ }
+ MineFlag_US_61756160E84E8B0B3 {
+  coords 962.103 1.117 1852.763
+ }
+ MineFlag_US_61756160E84E8B0B4 {
+  coords 943.752 0.989 1859.815
  }
 }
 GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {

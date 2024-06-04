@@ -1,0 +1,64 @@
+https://discord.com/channels/105462288051380224/976155351999201390/1241654175839031396
+asking about briefing
+
+
+Deliver to the farmhouse west of Purjekallio<br />2x Consumable Carriers<br />3x MRE<br />2x Jerry Can
+
+Deliver to the town of Niemenkyla<br />3x Consumable Carriers<br />3x MRE<br />2x Jerry Can<br />2x Legs of Meat
+
+*** TASKS_KILLHVT ***
+Eliminate HVT Haukkavuori
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an officer that is responsible for the deaths of many local townsfolk.<br />
+His last know location was in the hills, south of Haukkavuori.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Moderate.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Kiiskinkyla Ship
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an officer that is responsible for the deaths of many local townsfolk.<br />
+His location is the aboard the cargo ship Gronzny, east of Kiiskinkyla.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: High.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Kippariniemi
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an officer that is responsible for the deaths of many local townsfolk.<br />
+His location is the around the area of Kippariniemi.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Low.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Lounatjarvi
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is known for smuggling arms to the local resistence. While he himself isn't known to bare arms, his known associates should be well armed.<br />
+His last known location is near the lake Lounatjarvi.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Unknown.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Makiinpaallys
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an researcher that is doing development of weapons of mass destruction.<br />
+His location is the around the area of Makiinpaallys.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Unknown.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Suurlinna
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an officer that is responsible for the deaths of many local townsfolk.<br />
+His location is the around the area of Suurlinna.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: High.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Vahasomerikonlahti
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an murderer disguised as a medic, he is anything but a medic with the blood he has on his hands.<br />
+He is hiding out in the area of Vahasomerikonlahti.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Moderate.<br />
+Bringing him back alive is not a option.

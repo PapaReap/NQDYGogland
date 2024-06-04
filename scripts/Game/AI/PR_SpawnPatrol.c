@@ -25,7 +25,7 @@ class PR_SpawnPatrol
 
 	SCR_AIGroup m_Group;
 	protected bool m_bHoldFire = false;
-	protected float m_fPerceptionFactor = 1;
+	protected float m_fPerceptionFactor;// = 1;
 
 	protected int m_iSpawnSide;
 	protected int m_iGroupType;
@@ -38,22 +38,24 @@ class PR_SpawnPatrol
 	protected bool m_bKeepGroupActive;
 	protected bool m_bSuspendIfNoPlayers;
 	protected bool m_bTeleportAfterSpawn;
-	protected int m_iRerunCounter = 0;
-	protected int m_iRespawnTimer = 0;
-	protected int m_iRespawnCount = -1;
-	protected int m_iTeleportSortOrder = 0;
-	protected int m_iCollectionSortOrder = 0;
-	protected int m_iWaypointSortOrder = 0;
-	protected int m_iSpawnCollections = 0;
+	protected bool m_bNeutralizePersistentObjectIfGroupIsDead;
+	protected int m_iRerunCounter;// = 0;
+	protected int m_iRespawnTimer;// = 0;
+	protected int m_iRespawnCount;// = -1;
+	protected int m_iTeleportSortOrder;// = 0;
+	protected int m_iCollectionSortOrder;// = 0;
+	protected int m_iWaypointSortOrder;// = 0;
+	protected int m_iSpawnCollections;// = 0;
 	protected bool m_bUseRandomRespawnTimer;
-	protected int m_iRespawnTimerMin = 0;
-	protected int m_iRespawnTimerMax = 0;
+	protected int m_iRespawnTimerMin;// = 0;
+	protected int m_iRespawnTimerMax;// = 0;
 
-	protected int m_iAISkill = 50;
-	protected int m_iAICombatType = 1;
-	protected int m_iAIGroupFormation = 0;
-	protected int m_iAICharacterStance = 0;
-	protected int m_iAIMovementType = 1;
+	protected int m_iAISkill;// = 50;
+	protected int m_iAICombatType;// = 1;
+	protected int m_iAIGroupFormation;// = 0;
+	protected int m_iAIMovementType;// = 1;
+	
+	protected IEntity m_PersistentObject;
 
 	//------------------------------------------------------------------------------------------------
 	/*!
@@ -66,7 +68,8 @@ class PR_SpawnPatrol
 		array<bool> boolArray,
 		array<array<string>> m_sStringArray,
 		array<int> intArray,
-		float perceptionFactor
+		float perceptionFactor,
+		IEntity persistentObject
 	)
 	*/
 	void PRSpawnPatrol(
@@ -76,7 +79,8 @@ class PR_SpawnPatrol
 		array<bool> boolArray,
 		array<array<string>> m_sStringArray,
 		array<int> intArray,
-		float perceptionFactor
+		float perceptionFactor,
+		IEntity persistentObject
 	)
 	{
 		bool debugLogs = boolArray.Get(1);
@@ -85,9 +89,9 @@ class PR_SpawnPatrol
 		bool keepGroupActive = boolArray.Get(4);
 		bool suspendIfNoPlayers = boolArray.Get(5);
 		bool teleportAfterSpawn = boolArray.Get(6);
+		bool neutralizePersistentObjectIfGroupIsDead = boolArray.Get(7);
 
 		array<string> teleportPosition = m_sStringArray.Get(0);
-		//Print(("[PR_SpawnPatrol] (PRSpawnPatrol) teleportPosition: " + teleportPosition), LogLevel.NORMAL);
 		array<string> waypointCollection = m_sStringArray.Get(1);
 
 		int rerunCounter = intArray.Get(0);
@@ -101,10 +105,11 @@ class PR_SpawnPatrol
 		int skill = intArray.Get(8);
 		int combatType = intArray.Get(9);
 		int groupFormation = intArray.Get(10);
-		int characterStance = intArray.Get(11);
-		int movementType = intArray.Get(12);
+
 		string m_SpawnGroup = GetGroupToSpawn(spawnSide, groupType);
 
+		SetPersistentObject(persistentObject);
+		
 		//--- Generate the resource
 		Resource resource = GenerateAndValidateResource(m_SpawnGroup);
 
@@ -370,19 +375,18 @@ class PR_SpawnPatrol
 		SetAISkillB(skill);
 		SetCombatTypeB(combatType);
 		SetHoldFireB(holdFire);
+		SetPerceptionFactorB(perceptionFactor);
 		SetGroupFormationB(groupFormation);
-		SetCharacterStanceB(characterStance);
-		SetMovementTypeB(movementType);
 		SetTeleportAfterSpawn(teleportAfterSpawn);
 		SetTeleportPosition(teleportPosition);
 		SetTeleportSortOrder(teleportSortOrder);
 		SetDebugLogs(debugLogs);
+		//neutralizePersistentObjectIfGroupIsDead
+		SetNeutralizePersistentObjectIfGroupIsDead(neutralizePersistentObjectIfGroupIsDead);
 
 		//--- Stuff to do after group death
 		if (respawnCount != 0)
 		{
-			if (respawnCount > 0)
-				respawnCount--;
 			SetSpawnSide(spawnSide);
 			SetGroupType(groupType);
 			SetSpawnPosition(spawnPosition);
@@ -397,6 +401,12 @@ class PR_SpawnPatrol
 			SetWaypointSortOrder(waypointSortOrder);
 			SetSpawnCollections(spawnCollections);
 			m_Group.GetOnEmpty().Insert(AfterGroupIsEmpty);
+		}
+		else
+		{
+			Print(("[PR_SpawnPatrol] neutralizePersistentObjectIfGroupIsDead: " + neutralizePersistentObjectIfGroupIsDead), LogLevel.WARNING);
+			if (neutralizePersistentObjectIfGroupIsDead)
+				m_Group.GetOnEmpty().Insert(AfterGroupIsEmpty);
 		}
 	}
 
@@ -445,8 +455,6 @@ class PR_SpawnPatrol
 		int combatType = GetCombatTypeB();
 		bool holdFire = GetHoldFireB();
 		int groupFormation = GetGroupFormationB();
-		int characterStance = GetCharacterStanceB();
-		int movementType = GetMovementTypeB();
 		float perceptionFactor = GetPerceptionFactorB();
 		string m_sPath = "$EnfusionPersistenceFramework:Scripts/Game/EPF_PersistenceComponent.c";
 		bool m_bEPF_ModExist = false;
@@ -594,26 +602,27 @@ class PR_SpawnPatrol
 			*/
 
 			SCR_AICombatComponent combatComponent = SCR_AICombatComponent.Cast(agentEntity.FindComponent(SCR_AICombatComponent));
+			EAISkill aiSkill;
+			EAICombatType aiCombatType;
 			if (combatComponent)
 			{
 				combatComponent.SetAISkill(skill);
 				combatComponent.SetCombatType(combatType);
 				combatComponent.SetHoldFire(holdFire);
 				combatComponent.SetPerceptionFactor(perceptionFactor);
+				
+				aiSkill = combatComponent.GetAISkill();
+				aiCombatType = combatComponent.GetCombatType();
+				Print(string.Format("[PR_SpawnPatrol]  (Behaviors AI) aiSkill: %1", aiSkill), LogLevel.WARNING);
+				Print(string.Format("[PR_SpawnPatrol]  (Behaviors AI) aiCombatType: %1", aiCombatType), LogLevel.WARNING);
 			}
-			EAISkill aiSkill = combatComponent.GetAISkill();
-			SCR_AIInfoComponent infoComponent = SCR_AIInfoComponent.Cast(agentEntity.FindComponent(SCR_AIInfoComponent));
-			/*if (infoComponent)
-			{
-				infoComponent.SetStance(characterStance);
-				infoComponent.SetMovementType(movementType);
-			}*/
-			//Print(("[PR_SpawnPatrol] (Behaviors AI) characterStance: " + characterStance + " movementType:" + movementType), LogLevel.NORMAL);
+			//EAISkill aiSkill = combatComponent.GetAISkill();
+
+			SCR_AIInfoComponent infoComponent;
+			infoComponent = SCR_AIInfoComponent.Cast(agentEntity.FindComponent(SCR_AIInfoComponent));
 
 			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetAISkill: " + combatComponent.GetAISkill()), LogLevel.NORMAL);
 			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetCombatType: " + combatComponent.GetCombatType()), LogLevel.NORMAL);
-			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetStance: " + infoComponent.GetStance()), LogLevel.NORMAL); // errors
-			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetMovementType: " + infoComponent.GetMovementType()), LogLevel.NORMAL); // errors
 			//GetGame().GetCallqueue().CallLater(ActivateThem, 1000, true, agentEntity, agent, groupGA);
 		}
 
@@ -628,15 +637,6 @@ class PR_SpawnPatrol
 		}
 		*/
 
-		/*
-		SCR_AIInfoComponent infoComponent = SCR_AIInfoComponent.Cast(groupGA.FindComponent(SCR_AIInfoComponent));
-		if (infoComponent)
-		{
-			infoComponent.SetStance(characterStance);
-			infoComponent.SetMovementType(movementType);
-		}
-		*/
-
 		// Set formation
 		AIFormationComponent formComp = AIFormationComponent.Cast(groupGA.FindComponent(AIFormationComponent));
 		if (!formComp)
@@ -646,7 +646,7 @@ class PR_SpawnPatrol
 		}
 		formComp.SetFormation(SCR_Enum.GetEnumName(SCR_EAIGroupFormation, groupFormation));
 
-		array<int> behaviorArray = {skill, combatType, groupFormation, characterStance, movementType};
+		array<int> behaviorArray = {skill, combatType, groupFormation};
 		//Print(("[PR_SpawnPatrol] (Behaviors Bool): " + holdFire), LogLevel.NORMAL);
 		//Print(("[PR_SpawnPatrol] (Behaviors Int): " + behaviorArray), LogLevel.NORMAL);
 		//Print(("[PR_SpawnPatrol] (Behaviors Float): " + perceptionFactor), LogLevel.NORMAL);
@@ -721,9 +721,38 @@ class PR_SpawnPatrol
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Kills entity
+	protected void KillUnit(IEntity entity)
+	{
+		SCR_DamageManagerComponent damageMananager = SCR_DamageManagerComponent.Cast(entity.FindComponent(SCR_DamageManagerComponent));
+		if (damageMananager)
+			damageMananager.Kill(Instigator.CreateInstigator(null));
+	}
+	
+	//------------------------------------------------------------------------------------------------
 	//! What to do after all groupA members are dead
 	void AfterGroupIsEmpty(SCR_AIGroup groupA)
 	{
+		bool neutralizePersistentObjectIfGroupIsDead = GetNeutralizePersistentObjectIfGroupIsDead();
+		IEntity persistentObject = GetPersistentObject();
+		int respawnCount = GetRespawnCount();
+		
+		if (neutralizePersistentObjectIfGroupIsDead)
+		{
+			if (persistentObject)
+			{
+				Print(string.Format("[PR_SpawnPatrol] AfterGroupIsEmpty : persistentObject: %1", persistentObject.GetName()), LogLevel.WARNING);
+				KillUnit(persistentObject);
+				SCR_EntityHelper.DeleteEntityAndChildren(persistentObject);
+				if (respawnCount == 0)
+					return;
+			}
+		}
+		
+		if (respawnCount != 0)
+			respawnCount--;
+		SetRespawnCount(respawnCount);
+		
 		int spawnSide = GetSpawnSide();
 		int groupType = GetGroupType();
 		vector spawnPosition = GetSpawnPosition();
@@ -734,14 +763,13 @@ class PR_SpawnPatrol
 		bool keepGroupActive = GetKeepGroupActive();
 		bool suspendIfNoPlayers = GetSuspendIfNoPlayers();
 		bool teleportAfterSpawn = GetTeleportAfterSpawn();
-		array<bool> boolArray = {cycleWaypoints, debugLogs, useRandomRespawnTimer, holdFire, keepGroupActive, teleportAfterSpawn};
+		array<bool> boolArray = {cycleWaypoints, debugLogs, useRandomRespawnTimer, holdFire, keepGroupActive, suspendIfNoPlayers, teleportAfterSpawn, neutralizePersistentObjectIfGroupIsDead};
 		array<string> teleportPosition = GetTeleportPosition();
 		array<string> waypointCollection = GetWaypointCollection();
 		array<array<string>> stringArray = {teleportPosition, waypointCollection};
 		int rerunCounter = GetRerunCounter();
 		int respawnTimerMin = GetRespawnTimerMin();
 		int respawnTimerMax = GetRespawnTimerMax();
-		int respawnCount = GetRespawnCount();
 		int teleportSortOrder = GetTeleportSortOrder();
 		int collectionSortOrder = GetCollectionSortOrder();
 		int waypointSortOrder = GetWaypointSortOrder();
@@ -749,8 +777,6 @@ class PR_SpawnPatrol
 		int skill = GetAISkillB();
 		int combatType = GetCombatTypeB();
 		int groupFormation = GetGroupFormationB();
-		int characterStance = GetCharacterStanceB();
-		int movementType = GetMovementTypeB();
 		float perceptionFactor = GetPerceptionFactorB();
 
 		int spawnCollections = GetSpawnCollections();
@@ -765,9 +791,7 @@ class PR_SpawnPatrol
 			spawnCollections, // 7
 			skill, // 8
 			combatType, // 9
-			groupFormation, // 10
-			characterStance, // 11
-			movementType // 12
+			groupFormation // 10
 		};
 
 		int delay = respawnTimerMin * 1000;
@@ -802,7 +826,8 @@ class PR_SpawnPatrol
 			boolArray,
 			stringArray,
 			intArray,
-			perceptionFactor
+			perceptionFactor,
+			persistentObject
 		);
 	}
 
@@ -890,34 +915,6 @@ class PR_SpawnPatrol
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! sets m_iAICharacterStance
-	void SetCharacterStanceB(int characterStance)
-	{
-		m_iAICharacterStance = characterStance;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! returns m_iAICharacterStance;
-	int GetCharacterStanceB()
-	{
-		return m_iAICharacterStance;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! sets m_iAIMovementType
-	void SetMovementTypeB(int movementType)
-	{
-		m_iAIMovementType = movementType;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! returns m_iAIMovementType;
-	int GetMovementTypeB()
-	{
-		return m_iAIMovementType;
-	}
-
-	//------------------------------------------------------------------------------------------------
 	//! sets m_fPerceptionFactor
 	void SetPerceptionFactorB(float perceptionFactor)
 	{
@@ -931,6 +928,21 @@ class PR_SpawnPatrol
 		return m_fPerceptionFactor;
 	}
 
+	//------------------------------------------------------------------------------------------------
+	//! sets m_PersistentObject
+	void SetPersistentObject(IEntity persistentObject)
+	{
+		m_PersistentObject = persistentObject;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_PersistentObject;
+	IEntity GetPersistentObject()
+	{
+		return m_PersistentObject;
+	}	
+	
+	
 	//------------------------------------------------------------------------------------------------
 	//! sets m_iSpawnSide
 	void SetSpawnSide(int spawnSide)
@@ -1001,6 +1013,20 @@ class PR_SpawnPatrol
 		return m_bDebugLogs;
 	}
 
+	//------------------------------------------------------------------------------------------------
+	//! sets m_bNeutralizePersistentObjectIfGroupIsDead
+	void SetNeutralizePersistentObjectIfGroupIsDead(bool neutralizePersistentObjectIfGroupIsDead)
+	{
+		m_bNeutralizePersistentObjectIfGroupIsDead = neutralizePersistentObjectIfGroupIsDead;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! returns m_bNeutralizePersistentObjectIfGroupIsDead
+	bool GetNeutralizePersistentObjectIfGroupIsDead()
+	{
+		return m_bNeutralizePersistentObjectIfGroupIsDead;
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	//! sets m_bKeepGroupActive
 	void SetKeepGroupActive(bool keepGroupActive)

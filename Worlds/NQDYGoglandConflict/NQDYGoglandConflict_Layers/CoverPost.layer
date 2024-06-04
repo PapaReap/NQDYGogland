@@ -89,6 +89,7 @@ $grp PR_SpawnPatrolTrigger {
  GuardPointUSSR_Trigger {
   coords 7368.656 16.18 5551.583
   angleY 180
+  Flags 2097155
   TriggerShapeType Sphere
   SphereRadius 225
   DrawShape 1
@@ -109,6 +110,7 @@ $grp PR_SpawnPatrolTrigger {
     GP_Set_04 {
      coords 3.708 0 5.471
      angleY 180
+     Flags 2097155
      {
       GenericEntity GuardPosition_04 {
        ID "610A6B90E1669C5F"
@@ -120,10 +122,12 @@ $grp PR_SpawnPatrolTrigger {
          }
         }
        }
+       Flags 2097155
       }
       SCR_SmartActionWaypoint WP_GuardPoint_SA_04 {
        ID "610A6B909D0FED4D"
        angleY 180
+       Flags 2097155
        CompletionType Any
        m_fPriorityLevel 1000
        m_sStaticEntityName "GuardPosition_04"
@@ -134,6 +138,7 @@ $grp PR_SpawnPatrolTrigger {
     GP_Set_03 {
      coords -0.46 0 3.747
      angleY 180
+     Flags 2097155
      {
       GenericEntity GuardPosition_03 {
        ID "610A6B90E1669C5F"
@@ -145,10 +150,12 @@ $grp PR_SpawnPatrolTrigger {
          }
         }
        }
+       Flags 2097155
       }
       SCR_SmartActionWaypoint WP_GuardPoint_SA_03 {
        ID "610A6B909D0FED4D"
        angleY 180
+       Flags 2097155
        CompletionType Any
        m_fPriorityLevel 1000
        m_sStaticEntityName "GuardPosition_03"
@@ -159,6 +166,7 @@ $grp PR_SpawnPatrolTrigger {
     GP_Set_02 {
      coords -6.011 0 0.086
      angleY 180
+     Flags 2097155
      {
       GenericEntity GuardPosition_02 {
        ID "610A6B90E1669C5F"
@@ -170,11 +178,13 @@ $grp PR_SpawnPatrolTrigger {
          }
         }
        }
+       Flags 2097155
       }
       SCR_SmartActionWaypoint WP_GuardPoint_SA_02 {
        ID "610A6B909D0FED4D"
        coords 0 0 -1.039
        angleY 180
+       Flags 2097155
        CompletionType Any
        m_fPriorityLevel 1000
        m_sStaticEntityName "GuardPosition_02"
@@ -185,6 +195,7 @@ $grp PR_SpawnPatrolTrigger {
     GP_Set_01 {
      coords -10.598 0 -0.841
      angleY 180
+     Flags 2097155
      {
       GenericEntity GuardPosition_01 {
        ID "610A6B90E1669C5F"
@@ -195,11 +206,13 @@ $grp PR_SpawnPatrolTrigger {
          }
         }
        }
+       Flags 2097155
       }
       SCR_SmartActionWaypoint WP_GuardPoint_SA_01 {
        ID "610A6B909D0FED4D"
        coords 0 0 0
        angleY 167.924
+       Flags 2097155
        CompletionType Any
        m_fPriorityLevel 1000
        m_sStaticEntityName "GuardPosition_01"
@@ -219,6 +232,7 @@ $grp SCR_DefendWaypoint : "{0AB63F524C44E0D2}PrefabsEditable/Auto/AI/Waypoints/E
   }
   coords 7379.286 16.18 5552.322
   angleY -180
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -234,6 +248,7 @@ $grp SCR_DefendWaypoint : "{0AB63F524C44E0D2}PrefabsEditable/Auto/AI/Waypoints/E
    }
   }
   coords 7374.613 16.18 5550.335
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -249,6 +264,7 @@ $grp SCR_DefendWaypoint : "{0AB63F524C44E0D2}PrefabsEditable/Auto/AI/Waypoints/E
    }
   }
   coords 7369.115 16.18 5547.703
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -264,6 +280,7 @@ $grp SCR_DefendWaypoint : "{0AB63F524C44E0D2}PrefabsEditable/Auto/AI/Waypoints/E
    }
   }
   coords 7364.905 16.18 5546.061
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -281,6 +298,7 @@ $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Def
    }
   }
   coords 7379.264 16.18 5552.402
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -292,6 +310,7 @@ $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Def
    }
   }
   coords 7375.017 16.506 5550.707
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -303,6 +322,7 @@ $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Def
    }
   }
   coords 7368.924 16.73 5548.14
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -314,6 +334,7 @@ $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Def
    }
   }
   coords 7364.901 16.855 5546.188
+  Flags 2097155
   CompletionRadius 1
   CompletionType Any
   m_fPriorityLevel 2000
@@ -328,5 +349,6 @@ SCR_AIGroup : "{B50B7BF31273C2A6}Prefabs/Groups/OPFOR/Group_USSR_MG_M.et" {
  }
  coords 7375.162 16.165 5553.949
  angleY -180
+ Flags 2097155
  m_bSnapToTerrain 0
 }

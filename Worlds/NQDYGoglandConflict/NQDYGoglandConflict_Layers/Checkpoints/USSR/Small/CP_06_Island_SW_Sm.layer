@@ -1,0 +1,854 @@
+PR_RandomizerTrigger CP_06_Island_SW_Sm_Random {
+ coords 2515.809 6.586 1993.754
+ TriggerShapeType Sphere
+ ShapeColor 0.046 0 1 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 1
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_PersistObject_CP_06_Island_SW_Sm_Random"
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{6176769741DA0012}" {
+   m_bOverrideActivationPresence 1
+  }
+ }
+ m_aRandomizerDetails {
+  PR_RandomizerDetails "{6176769E9AA88F65}" {
+   m_aPrefabsToRandomize {
+    "Set_CP_06_Island_SW_Sm_01"
+   }
+   m_bPickRandomOne 1
+   m_sObjectToMove "SPT_CP_06_Island_SW_Sm_01"
+  }
+ }
+ {
+  GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_Random : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   components {
+    SCR_MineDamageManager "{61755BB46F931321}" {
+     Enabled 0
+    }
+   }
+   coords 0.072 0.004 -0.019
+  }
+ }
+}
+PR_SpawnPatrolTrigger SPT_CP_06_Island_SW_Sm_01 {
+ components {
+  RplComponent "{617B025E192B93FA}" {
+   Enabled 0
+   AutoHierarchy 1
+  }
+  Hierarchy "{617B025AF64C6E16}" {
+   Enabled 0
+  }
+ }
+ coords 2522.289 6.625 1997.53
+ TriggerShapeType Sphere
+ SphereRadius 800
+ ShapeColor 0.502 0 0.376 0.098
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 2
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_PersistObject_SPT_CP_06_Island_SW_Sm_01"
+ m_bNeutralizePersistentObjectIfGroupIsDead 1
+ m_GroupType "Group: Sentry Team (2)"
+ m_eAISkill ROOKIE
+ m_fPerceptionFactor 0.25
+ m_aWaypointCollection {
+  "WP_CP_06_Island_SW_Sm_01"
+ }
+ {
+  SCR_DefendWaypoint WP_CP_06_Island_SW_Sm_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+   components {
+    Hierarchy "{617E024D9F66262B}" {
+    }
+   }
+   coords -0.003 0.005 0.001
+   CompletionRadius 10
+  }
+  GenericEntity PR_PersistObject_SPT_CP_06_Island_SW_Sm_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   coords -0.004 0.009 -0.038
+  }
+ }
+}
+GenericEntity Set_CP_06_Island_SW_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ components {
+  RplComponent "{5A7C8AEEFC85B766}" {
+   Enabled 0
+  }
+ }
+ coords 2519.115 6.6 1996.443
+ {
+  $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+   CP_06_Island_SW_Sm_01_01 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 2.586 -0.225 -24.208
+    angleY -72.735
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_02 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords -65.505 1.571 -26.772
+    angleX 1.851
+    angleY 41.094
+    angleZ -0.761
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_03 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords -198.708 0.226 -138.003
+    angleX -0.969
+    angleY -175.042
+    angleZ 0.814
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_03 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_04 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 141.751 3.07 -85.613
+    angleX -0.879
+    angleY -100.908
+    angleZ 0.169
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_04 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_05 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 317.552 -3.495 -91.151
+    angleX -2.802
+    angleY -79.47
+    angleZ 0.389
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_05 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_06 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 493.683 -4.016 -72.662
+    angleX 2.001
+    angleY 63.534
+    angleZ 0.004
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_06 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.068 -0.674
+        angleX -1.307
+        angleY 177.285
+        angleZ -2.34
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.831 0.237 2.52
+          angleX 4.359
+          angleY 8.37
+          angleZ 8.848
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.663 0.084 0.819
+          angleX 0.972
+          angleY -129.55
+          angleZ -2.497
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 0
+            angleX 0
+            angleY -65.682
+            angleZ 0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.122 0.041 -2.346
+          angleX -9.965
+          angleY -92.559
+          angleZ -1.063
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.615 0.274 0.185
+          angleX 17.605
+          angleY -115.349
+          angleZ -23.01
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.456 -0.173 -4.511
+          angleX 1.92
+          angleY -50.083
+          angleZ -0.547
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.484 0.416 0.955
+          angleX 28
+          angleY -74.384
+          angleZ -6.469
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.883 0.197 1.957
+          angleX -20.849
+          angleY 38.313
+          angleZ 6.018
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.237 0.062 -2.755
+          angleX 7.815
+          angleY 110.614
+          angleZ -1.175
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_07 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 686.715 2.299 -3.211
+    angleX -1.704
+    angleY 84.919
+    angleZ 1.05
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_07 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.07 -0.674
+        angleY 177.305
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.225 0.136 0.696
+          angleX -0.363
+          angleY -168.827
+          angleZ -8.928
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.113 2.514
+          angleX -0.609
+          angleY 5.484
+          angleZ 7.166
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.669 0.055 0.813
+          angleX 5.315
+          angleY -130.243
+          angleZ -7.193
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 0
+            angleX 0
+            angleY -64.897
+            angleZ 0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.128 0.526 -2.323
+          angleX -15.208
+          angleY -94.865
+          angleZ 7.735
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.631 0.178 0.179
+          angleX 6.56
+          angleY -114.774
+          angleZ -6.264
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.472 0.58 -4.504
+          angleX -18.18
+          angleY -45.973
+          angleZ -13.877
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.503 0.189 0.959
+          angleX 8.911
+          angleY -72.239
+          angleZ 0.664
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.896 0.119 1.952
+          angleX -4.439
+          angleY 38.617
+          angleZ 5.664
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.244 0.614 -2.729
+          angleX 14.147
+          angleY 110.031
+          angleZ -3.165
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   CP_06_Island_SW_Sm_01_08 {
+    components {
+     RplComponent "{5A7C8AEEFC85B766}" {
+      Enabled 0
+     }
+     Hierarchy "{617C344895152D08}" {
+     }
+    }
+    coords 744.662 1.216 -12.234
+    angleX 0.833
+    angleY 21.415
+    angleZ 0.327
+    {
+     GenericEntity PR_PersistObject_CP_06_Island_SW_Sm_01_08 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords 0.648 0.07 0.803
+      {
+       GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+        coords -0.879 -0.071 -0.674
+        angleX -1.788
+        angleY 177.305
+        angleZ 0.084
+        {
+         GenericEntity {
+          ID "5CC6B48B9C8C2BA0"
+          coords -2.222 0.166 0.697
+          angleX -12.038
+          angleY -166.663
+          angleZ -5.03
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2BF4"
+          coords -1.841 0.462 2.5
+          angleX 12.298
+          angleY 8.994
+          angleZ 11.16
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2B94"
+          coords -1.666 0.024 0.818
+          angleX -1.204
+          angleY -129.562
+          angleZ -1.325
+          {
+           DecalEntity {
+            ID "56E0B29F4975B6A9"
+            coords 0 0 -0
+            angleX 0
+            angleY -65.682
+            angleZ -0
+           }
+          }
+         }
+         GenericEntity {
+          ID "5CC6B48B9C8C2A7C"
+          coords 2.119 0 -2.338
+          angleY -92.806
+          angleZ 0
+         }
+         GenericEntity {
+          ID "5CC6B4BF288B3FF4"
+          coords -2.625 0.114 0.186
+          angleX 19.537
+          angleY -117.077
+          angleZ -20.023
+         }
+         GenericEntity {
+          ID "5E5AD06E26C12FE8"
+          coords 1.463 0 -4.519
+          angleY -50.116
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2BDB"
+          coords -2.499 0.236 0.958
+          angleX 6.044
+          angleY -72.324
+          angleZ -11.568
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2A48"
+          coords -1.89 0.061 1.961
+          angleX 2.19
+          angleY 40.443
+          angleZ 1.544
+         }
+         StaticModelEntity {
+          ID "5CC6B48B9C8C2B00"
+          coords 2.233 0 -2.746
+          angleY 110.782
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

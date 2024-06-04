@@ -1,0 +1,362 @@
+PR_RandomizerTrigger CP_01_N_Sm_Trg {
+ components {
+  Hierarchy "{617D05CAE2ACDF1A}" {
+  }
+ }
+ coords 1131.673 39 2316.529
+ Flags 1027
+ TriggerShapeType Sphere
+ SphereRadius 5
+ DrawShape 1
+ ShapeColor 0.046 0 1 0.078
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_PersistObject_CP_01_N_Sm_Trg"
+ m_aRandomizerDetails {
+  PR_RandomizerDetails "{61783CB2539A55E6}" {
+   m_aPrefabsToRandomize {
+    "Set_CP_01_N_Sm_01"
+   }
+   m_bPickRandomOne 1
+   m_sObjectToMove "ptrig"
+   m_sObjectToMoveTo "car1"
+  }
+ }
+ {
+  GenericEntity PR_PersistObject_CP_01_N_Sm_Trg : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   coords 0.451 0 -0.187
+  }
+ }
+}
+PR_SpawnPatrolTrigger moveTrg {
+ components {
+  Hierarchy "{617D05CAEE5FD3A8}" {
+  }
+ }
+ coords 1125.697 39.22 2276.513
+ angleX -0.894
+ angleY -0.028
+ angleZ 1.79
+ TriggerShapeType Sphere
+ SphereRadius 10
+ DrawShape 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bDebugLogs 1
+ m_GroupSide US
+ m_GroupType "Man: Unarmed (1)"
+}
+GenericEntity Set_CP_01_N_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+ components {
+  RplComponent "{5A7C8AEEFC85B766}" {
+   Enabled 0
+  }
+  Hierarchy "{61772BDD227598D2}" {
+  }
+ }
+ coords 982.927 0.803 1841.695
+ angleY -34.672
+ {
+  $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_PersistObject_CP_01_N_Sm_01_01 {
+    components {
+     RplComponent "{61755BB46F935B68}" {
+      "Rpl State Override" None
+     }
+    }
+    coords 36.48 8.279 235.85
+    angleX 2.207
+    angleY -0.033
+    angleZ -1.528
+    {
+     GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+      coords 0.885 0 2.086
+      angleX -0.619
+      angleY 133.741
+      angleZ 0.647
+      {
+       GenericEntity {
+        ID "5CC6B48B9C8C2BA0"
+        coords -2.25 -0.031 0.8
+        angleY -165.47
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2BF4"
+        coords -1.831 -0.035 2.688
+        angleX -0.583
+        angleY 5.611
+        angleZ -0.679
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2B94"
+        coords -1.707 -0.027 0.81
+        angleX -0.956
+        angleY -129.719
+        angleZ 0.83
+        {
+         DecalEntity {
+          ID "56E0B29F4975B6A9"
+          coords -0.001 0 0
+          angleX -90
+          angleY 180
+          angleZ -178.266
+         }
+        }
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2A7C"
+        coords 2.299 0.001 -2.003
+        angleX -1.089
+        angleY -96.268
+        angleZ 1.42
+       }
+       GenericEntity {
+        ID "5CC6B4BF288B3FF4"
+        coords -2.673 -0.031 0.274
+        angleY -104.623
+       }
+       GenericEntity {
+        ID "5E5AD06E26C12FE8"
+        coords 2.559 0.078 -4.005
+        angleX -5.966
+        angleY -55.37
+        angleZ -2.412
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2BDB"
+        coords -2.507 -0.031 1.127
+        angleY -69.67
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2A48"
+        coords -1.894 -0.031 2.016
+        angleY 42.427
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2B00"
+        coords 2.416 0.023 -2.387
+        angleX 6.433
+        angleY 103.585
+        angleZ 0.114
+       }
+       GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+        components {
+         SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+          m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+         }
+        }
+        coords -1.259 -0.015 -1.255
+        angleX -0.55
+        angleY 8.383
+        angleZ -0.707
+       }
+      }
+     }
+    }
+   }
+   PR_PersistObject_CP_01_N_Sm_01_02 {
+    components {
+     RplComponent "{61755BB46F935B68}" {
+      "Rpl State Override" None
+     }
+    }
+    coords 40.96 8.73 244.447
+    angleX 0.922
+    angleY -24.333
+    angleZ -1.534
+    {
+     GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+      coords 0.438 0.006 0.071
+      angleX -0.471
+      angleY 133.737
+      angleZ -1.727
+      {
+       GenericEntity {
+        ID "5CC6B48B9C8C2BA0"
+        coords -2.25 -0.031 0.8
+        angleY -165.47
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2BF4"
+        coords -1.831 -0.035 2.688
+        angleX -0.583
+        angleY 5.611
+        angleZ -0.679
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2B94"
+        coords -1.707 -0.027 0.81
+        angleX -0.956
+        angleY -129.719
+        angleZ 0.83
+        {
+         DecalEntity {
+          ID "56E0B29F4975B6A9"
+          coords -0.001 0 0
+          angleX -90
+          angleY 180
+          angleZ -178.266
+         }
+        }
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2A7C"
+        coords 2.299 0.001 -2.003
+        angleX -1.089
+        angleY -96.268
+        angleZ 1.42
+       }
+       GenericEntity {
+        ID "5CC6B4BF288B3FF4"
+        coords -2.673 -0.031 0.274
+        angleY -104.623
+       }
+       GenericEntity {
+        ID "5E5AD06E26C12FE8"
+        coords 2.559 0.078 -4.005
+        angleX -5.966
+        angleY -55.37
+        angleZ -2.412
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2BDB"
+        coords -2.507 -0.031 1.127
+        angleY -69.67
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2A48"
+        coords -1.894 -0.031 2.016
+        angleY 42.427
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2B00"
+        coords 2.416 0.023 -2.387
+        angleX 6.433
+        angleY 103.585
+        angleZ 0.114
+       }
+       GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+        components {
+         SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+          m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+         }
+        }
+        coords -1.259 -0.015 -1.255
+        angleX -0.55
+        angleY 8.383
+        angleZ -0.707
+       }
+      }
+     }
+    }
+   }
+   PR_PersistObject_CP_01_N_Sm_01_03 {
+    components {
+     RplComponent "{61755BB46F935B68}" {
+      "Rpl State Override" None
+     }
+    }
+    coords 45.148 9.121 252.505
+    angleX -0.398
+    angleY 8.302
+    angleZ -0.802
+    {
+     GenericEntity : "{9483333BFD9E2D0F}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_USSR_01.et" {
+      coords 0.442 0.016 0.344
+      angleX -0.855
+      angleY 133.742
+      angleZ -0.267
+      {
+       GenericEntity {
+        ID "5CC6B48B9C8C2BA0"
+        coords -2.25 -0.031 0.8
+        angleY -165.47
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2BF4"
+        coords -1.831 -0.035 2.688
+        angleX -0.583
+        angleY 5.611
+        angleZ -0.679
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2B94"
+        coords -1.707 -0.027 0.81
+        angleX -0.956
+        angleY -129.719
+        angleZ 0.83
+        {
+         DecalEntity {
+          ID "56E0B29F4975B6A9"
+          coords -0.001 0 0
+          angleX -90
+          angleY 180
+          angleZ -178.266
+         }
+        }
+       }
+       GenericEntity {
+        ID "5CC6B48B9C8C2A7C"
+        coords 2.299 0.001 -2.003
+        angleX -1.089
+        angleY -96.268
+        angleZ 1.42
+       }
+       GenericEntity {
+        ID "5CC6B4BF288B3FF4"
+        coords -2.673 -0.031 0.274
+        angleY -104.623
+       }
+       GenericEntity {
+        ID "5E5AD06E26C12FE8"
+        coords 2.559 0.078 -4.005
+        angleX -5.966
+        angleY -55.37
+        angleZ -2.412
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2BDB"
+        coords -2.507 -0.031 1.127
+        angleY -69.67
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2A48"
+        coords -1.894 -0.031 2.016
+        angleY 42.427
+       }
+       StaticModelEntity {
+        ID "5CC6B48B9C8C2B00"
+        coords 2.416 0.023 -2.387
+        angleX 6.433
+        angleY 103.585
+        angleZ 0.114
+       }
+       GenericEntity : "{A73205DEA8361F26}Prefabs/Systems/AmbientPatrol/AmbientPatrolSpawnpoint_USSR.et" {
+        components {
+         SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
+          m_sDefaultWaypointPrefab "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et"
+         }
+        }
+        coords -1.282 0 -1.231
+        angleX -0.55
+        angleY 8.383
+        angleZ -0.707
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+PR_SpawnPatrolTrigger ptrig : "{AE322BE5DA5A4DD3}Prefabs/Systems/PR_SpawnPatrol.et" {
+ coords 1126.769 39.043 2292.477
+ angleX 0
+ angleY 0
+ angleZ 0
+}
+Vehicle car1 : "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" {
+ coords 1112.509 39 2346.379
+}

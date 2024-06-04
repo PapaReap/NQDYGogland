@@ -1,0 +1,90 @@
+$grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
+ Persistence_Entity_TaskKill_HVT_Kippariniemi {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6592.499 2.894 -1571.019
+ }
+ Persistence_Entity_TaskKill_HVT_Makiinpaallys {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6593.626 2.894 -1571.198
+ }
+ Persistence_Entity_TaskKill_TRG_Makiinpaallys {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6594.828 2.894 -1571.264
+ }
+ Persistence_Entity_TaskKill_TRG_Kiiskinkyla_ship {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6597.609 2.894 -1571.201
+ }
+ Persistence_Entity_TaskKill_HVT_Kiiskinkyla_ship {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6596.376 2.894 -1571.176
+ }
+ Persistence_Entity_TaskKill_HVT_Suurlinna {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6598.917 2.894 -1570.963
+ }
+ Persistence_Entity_TaskKill_TRG_Suurlinna {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6599.918 2.894 -1570.794
+ }
+ Persistence_Entity_TaskKill_HVT_Haukkavuori {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6592.501 2.894 -1569.94
+ }
+ Persistence_Entity_TaskKill_TRG_Haukkavuori {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6593.723 2.889 -1570.209
+ }
+ Persistence_Entity_TaskKill_HVT_Vahasomerikonlahti {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6594.858 2.883 -1570.293
+ }
+ Persistence_Entity_TaskKill_HVT_Lounatjarvi {
+  components {
+   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
+    EnableDamage 0
+   }
+  }
+  coords 6596.283 2.888 -1570.259
+ }
+}

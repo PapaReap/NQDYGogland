@@ -1,280 +1,331 @@
 /*
-  Author: PapaReap
+Author: PapaReap
 */
 
 [EntityEditorProps(category: "GameScripted/ScriptWizard", description: "ScriptWizard generated script file.")]
-class PR_SpawnPrefabTriggerClass : SCR_BaseTriggerEntityClass
+class PR_SpawnPrefabTriggerClass : PR_CoreTriggerClass
 {
 	// prefab properties here
-};
+}
 
-enum PR_Prefab_EActivationPresence
+class PR_SpawnPrefabTrigger : PR_CoreTrigger
 {
-	PLAYER = 0,
-	ANY_CHARACTER,
-	//SPECIFIC_CLASS,
-	//SPECIFIC_PREFAB_NAME,
-};
-
-class PR_SpawnPrefabTrigger : SCR_BaseTriggerEntity
-{
-	/*--- Default trigger stuff ---*/
-	//[Attribute(desc: "Faction which is used for area control calculation.", category: "Faction Trigger")]
-	[Attribute(desc: "Faction which is used for area control calculation. Leave empty for any faction.", category: "Trigger Activation")]
-	protected FactionKey m_sOwnerFactionKey;
-	protected Faction m_OwnerFaction;
-
-	void SetOwnerFaction(Faction faction)
-	{
-		m_OwnerFaction = faction;
-	}
-
-	[Attribute("0", UIWidgets.ComboBox, "By whom the trigger is activated", "", ParamEnumArray.FromEnum(PR_Prefab_EActivationPresence), category: "Trigger Activation")]
-	protected PR_Prefab_EActivationPresence	m_eActivationPresence;
-
-/*	override bool ScriptedEntityFilterForQuery(IEntity ent)
-	{
-		if (!m_OwnerFaction || !IsAlive(ent))
-			return false;
-
-		FactionAffiliationComponent factionAffiliation = FactionAffiliationComponent.Cast(ent.FindComponent(FactionAffiliationComponent));
-		return factionAffiliation && factionAffiliation.GetAffiliatedFaction() == m_OwnerFaction;
-	}*/
-
-	//! Override this method in inherited class to define a new filter.
-	override bool ScriptedEntityFilterForQuery(IEntity ent)
-	{
-		if (m_eActivationPresence == PR_Prefab_EActivationPresence.PLAYER || m_eActivationPresence == PR_Prefab_EActivationPresence.ANY_CHARACTER)
-		{
-			SCR_ChimeraCharacter chimeraCharacter = SCR_ChimeraCharacter.Cast(ent);	
-			if (!chimeraCharacter)
-				return false;
-				
-			if (m_OwnerFaction && chimeraCharacter.GetFaction() != m_OwnerFaction)
-				return false;
-				
-			if (!IsAlive(ent))
-				return false;
-				
-			if (m_eActivationPresence == PR_Prefab_EActivationPresence.PLAYER)
-				return EntityUtils.IsPlayer(ent);
-			
-			return true;
-		}
-	
-		//In case of vehicle, we first need to check if it is alive and then check the faction
-		Vehicle vehicle = Vehicle.Cast(ent);
-		if (vehicle)
-		{
-			if (!IsAlive(ent))
-				return false;
-			
-			if (!m_OwnerFaction)
-				return true;
-			
-			return vehicle.GetFaction() == m_OwnerFaction;
-		}
-		
-		if (!m_OwnerFaction)
-			return true;
-			
-		FactionAffiliationComponent factionAffiliation = FactionAffiliationComponent.Cast(ent.FindComponent(FactionAffiliationComponent));
-		if (!factionAffiliation)
-			return true;
-		
-		return factionAffiliation.GetAffiliatedFaction() == m_OwnerFaction;
-	}
-
-	//---
-	override protected void EOnInit(IEntity owner)
-	{
-		FactionManager factionManager = GetGame().GetFactionManager();
-		if (factionManager)
-			m_OwnerFaction = factionManager.GetFactionByKey(m_sOwnerFactionKey);
-	}
-
-	//---
+	//------------------------------------------------------------------------------------------------
 	void PR_SpawnPrefabTrigger(IEntitySource src, IEntity parent)
 	{
 		SetEventMask(EntityEvent.INIT);
 	}
 
-	//--- Prefab type to spawn
-	[Attribute("0", UIWidgets.ComboBox, "Prefab to spawn.  ", enums: ParamEnumArray.FromEnum(PR_PrefabTypeList), category: "PR Spawn Prefab Details")]
-	protected PR_PrefabTypeList PrefabType;
+	//! PR Spawn Prefab Details: Individual Prefabs to spawn.
+	[Attribute(desc: "Individual Prefabs to spawn.  ", category: "PR Spawn Prefab Details")]
+	protected ref array<ref PR_PrefabDetails> m_aPrefabDetails;
 
-	//--- Group spawn position
-	[Attribute(desc: "Object names to spawn on. I.E. Trigger_USSR_Morton_Defend, Trig_US_Area1_Patrol, etc...  ", category: "PR Spawn Prefab Details")]
-//	protected string spawnPosition;
-	protected ref array<string> m_aNameOfObjectsToSpawnOnActivation;
+	//protected bool isTriggerActivated = false; //--- Flag to track activation status
 
-	//--- Amount of delay before spawning prefab
-	[Attribute(desc: "Amount of delay before spawning prefab. In seconds.  ", category: "PR Spawn Prefab Details")]
-	protected int delayTimer;
+//	override protected event void EOnInit(IEntity owner)
+//	{
+//		super.EOnInit(owner);
 
-	//--- Delete trigger after use?   switch this to check box???
-	[Attribute(desc: "Delete trigger? If yes, enter trigger name. I.E. Trigger_USSR_Morton_Defend, Trig_US_Area1_Patrol, etc... ", category: "PR Spawn Prefab Details")]
-	protected string deleteTrigger;
-
-	//--- Write Logs
-	[Attribute("false", UIWidgets.CheckBox,"Write logs to file.  ", category: "PR Spawn Prefab Details")]
-	protected bool debugLogs;
-
-
-	private ref PR_SpawnPrefab m_PR_SpawnPrefab; //--- Call to spawner script on trigger activation
-
-	protected bool isTriggerActivated = false; //--- Flag to track activation status
+//		Deactivate();*/
+//	}
 
 	override protected event void OnActivate(IEntity ent)
 	{
 		super.OnActivate(ent);
 
-		if (isTriggerActivated)
-			return; //--- Exit if the trigger has already been activated
+		if (!Replication.IsServer())
+			return;
 
-		isTriggerActivated = true; //--- Set the activation flag
+		if (m_bIsTriggerActivated)
+			return;
 
-		int delay = delayTimer * 1000;
-		int ptype = PrefabType;
-
-		if (debugLogs)
-		{
-			Print( // should setup a debug option for print logs, also pass to spawner
-			"PR Trigger info = Spawn prefab type: " + PrefabType +
-			", Spawn position: " + m_aNameOfObjectsToSpawnOnActivation +
-			", Delay: " + delay +
-			" sec, Delete trigger: " + deleteTrigger
-			);
-		}
-
-//		if (ptype == 1)
-//		{
-//			SpawnObjects(m_aNameOfObjectsToSpawnOnActivation, SCR_ScenarioFrameworkEActivationType.ON_TRIGGER_ACTIVATION);
-//		} else {
+		m_bIsTriggerActivated = true; //--- Set the activation flag
+		m_sLogMode = "(OnActivate)";
 		
-			m_PR_SpawnPrefab = new PR_SpawnPrefab();
-	
-			foreach (string sObjectName : m_aNameOfObjectsToSpawnOnActivation)
+		//--- Delay after activation
+		int delay = m_iDelayTimerMin * 1000;
+
+		if (m_bUseRandomDelayTimer)
+			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
+
+		Print(string.Format("[PR_SpawnPrefabTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
+
+		IEntity persistentObject;
+
+		if (m_bUsePersistence)
+		{
+			if (m_bIsTestingMode)
+				persistentObject = GetWorld().FindEntityByName(m_sPersistentObject);
+			else
+				persistentObject = GetGame().GetWorld().FindEntityByName(m_sPersistentObject);
+
+			if (!persistentObject)
 			{
-				IEntity spawnPos = GetGame().GetWorld().FindEntityByName(sObjectName);
-		
-				if (debugLogs)
-				{
-					Print("PR Spawn position: " + sObjectName);
-				}
-		
-				protected array<bool> pr_BoolArray = {/*cycleWaypoints, */debugLogs};
-				//--- Execute the Prefab spawning using a delayed call
-				GetGame().GetCallqueue().CallLater(
-					m_PR_SpawnPrefab.PRSpawnPrefab,
-					delay,
-					false,
-					ptype,
-					spawnPos.GetOrigin(),
-					pr_BoolArray
-				);
+				Print(string.Format("[PR_SpawnPrefabTrigger] %1 : No persistentObject: %2. Exiting!", m_sLogMode, m_sPersistentObject), LogLevel.WARNING);
+				return;
 			}
-//		}
-		
-		if (deleteTrigger)
-		{
-			int sleep = delay + 10000;
-			BaseWorld world = ent.GetWorld();
-			IEntity trigger = world.FindEntityByName(deleteTrigger);
-			GetGame().GetCallqueue().CallLater(deleteEntity, sleep, false, trigger);
 		}
+
+		int prefabType;
+		array<string> objectLocationsToSpawnOn;
+		bool useRandomPositions;
+		float randomPercentage;
+
+		if (m_aPrefabDetails.Count() > 0)
+		{
+			foreach (PR_PrefabDetails prefabDetails : m_aPrefabDetails)
+			{
+				prefabType = prefabDetails.m_PrefabType;
+				objectLocationsToSpawnOn = prefabDetails.m_aObjectLocationsToSpawnOn;
+				useRandomPositions = prefabDetails.m_bUseRandomPositions;
+				randomPercentage = prefabDetails.m_fRandomPercentage;
+
+				array<string> combinedArray = {};
+
+				if (objectLocationsToSpawnOn.Count() > 0)
+				{
+					int objectLocationsCount = 0;
+					objectLocationsCount = objectLocationsToSpawnOn.Count();
+					IEntity holder;
+					array<string> objectLocationsCountArray = {};
+					int _i = 0;
+					while (objectLocationsCount > _i)
+					{
+						holder = GetGame().GetWorld().FindEntityByName(objectLocationsToSpawnOn.Get(_i));
+						if (holder)
+							GetAllChildrenNames(holder, objectLocationsCountArray, m_bDebugLogs);
+
+						_i++;
+					}
+
+					combinedArray = objectLocationsCountArray;
+					if (useRandomPositions)
+					{
+						if (combinedArray.Count() > 1)
+						{
+							int arrayCount = Math.Round(combinedArray.Count() * (randomPercentage * 0.01));
+							Print(string.Format("[PR_SpawnPrefabTrigger] %1 : arrayCount: %2", m_sLogMode, arrayCount), LogLevel.WARNING);
+							array<string> tempArray = {};
+							int randomIndex;
+							_i = 0;
+							while (arrayCount > _i)
+							{
+								randomIndex = combinedArray.GetRandomIndex();
+								tempArray.Insert(combinedArray.Get(randomIndex));
+								combinedArray.Remove(randomIndex);
+								_i++;
+							}
+							combinedArray = tempArray;
+						}
+					}
+				} else
+					Print(string.Format("[PR_SpawnPrefabTrigger] %1 : Trigger: %2 : No positions to spawn on objectLocationsToSpawnOn: %3", m_sLogMode, m_sTriggerName, objectLocationsToSpawnOn), LogLevel.ERROR);
+
+				foreach (string sObjectName : combinedArray)
+				{
+					IEntity object = GetWorld().FindEntityByName(sObjectName);
+					if (!object)
+					{
+						Print(string.Format("[PR_SpawnPrefabTrigger] %1 : Trigger: %2 : No object for sObjectName: %3", m_sLogMode, m_sTriggerName, sObjectName), LogLevel.ERROR);
+						continue;
+					}
+
+					vector spawnPos = object.GetOrigin();
+
+					string m_SpawnPrefab = GetPrefabType(prefabType);
+
+					//--- Generate the resource
+					Resource resource = GenerateAndValidateResource(m_SpawnPrefab);
+
+					if (!resource)
+					{
+						Print(string.Format("[PR_SpawnPrefabTrigger] %1 : Trigger: %2 : Unable to load resource for the m_SpawnPrefab: %3", m_sLogMode, m_sTriggerName, m_SpawnPrefab), LogLevel.ERROR);
+						continue;
+					}
+
+					//--- Generate spawn parameters and spawn the prefab
+					if (!m_bIsTestingMode)
+						GetGame().GetCallqueue().CallLater(SpawnPrefab, delay, false, resource, spawnPos);
+				}
+			}
+		}
+
+		//--- Persistence cleanup
+		PersistenceCleanup();
 
 		Deactivate();
 	}
 
-	void deleteEntity(IEntity owner)
+	//------------------------------------------------------------------------------------------------
+	//! Generate Spawn Parameters
+	protected EntitySpawnParams GenerateSpawnParameters(vector position)
 	{
-		if (debugLogs)
-		{
-			Print("[PR]: Deleted Entity: " + owner);
-			SCR_EntityHelper.DeleteEntityAndChildren(owner);
-		}
+		EntitySpawnParams params = EntitySpawnParams();
+		params.TransformMode = ETransformMode.WORLD;
+		params.Transform[3] = position; //--- Assign the position to those parameters
+		return params;
 	}
-	
-/*	protected void SpawnObjects(notnull array<string> aObjectsNames, SCR_ScenarioFrameworkEActivationType eActivationType)
+
+	//------------------------------------------------------------------------------------------------
+	//! Generate and Validate Resources
+	protected Resource GenerateAndValidateResource(string resourceToLoad)
 	{
-		IEntity object;
-		SCR_ScenarioFrameworkLayerBase layer;
+		Resource resource = Resource.Load(resourceToLoad);
 
-		foreach (string sObjectName : aObjectsNames)
+		if (!resource.IsValid())
 		{
-			object = GetGame().GetWorld().FindEntityByName(sObjectName);
-			if (!object)
-			{
-				PrintFormat("ScenarioFramework: Can't spawn object set in slot %1. Slot doesn't exist", sObjectName, LogLevel.ERROR);
-				continue;
-			}
-			layer = SCR_ScenarioFrameworkLayerBase.Cast(object.FindComponent(SCR_ScenarioFrameworkLayerBase));
-			if (!layer)
-			{
-				PrintFormat("ScenarioFramework: Can't spawn object - the slot doesn't have SCR_ScenarioFrameworkLayerBase component", sObjectName, LogLevel.ERROR);
-				continue;
-			}
-			layer.Init(null, eActivationType);
+			Print(("[PR GenerateAndValidateResource] Resource is invalid: " + resourceToLoad), LogLevel.ERROR);
+			return null;
 		}
-	}*/
 
-};
+		return resource;
+	}
 
+	//------------------------------------------------------------------------------------------------
+	//! Spawn Prefab
+	protected void SpawnPrefab(Resource resource, vector spawnPos)
+	{
+		StaticModelEntity spawnedPrefab = StaticModelEntity.Cast(GetGame().SpawnEntityPrefab(resource, null, GenerateSpawnParameters(spawnPos)));
+	}
 
-//--- Setup trigger dropdown lists
-/*enum PR_PrefabSpawnSideList
-{
-	"US" = 0,				// 0
-	"USSR" = 1,				// 1  default
-	"FIA" = 2				// 2
-};*/
+	//------------------------------------------------------------------------------------------------
+	//! Get Prefab type
+	protected string GetPrefabType(int spawnPrefabType)
+	{
+		switch (spawnPrefabType)
+		{
+			case 0: // Mine US
+			{
+				return "{B63D38376558C9DD}PrefabsEditable/Mines/E_Mine_M15AT.et";
+			};
+			case 1: // Mine USSR
+			{
+				return "{44DCCCB56D42C43B}PrefabsEditable/Mines/E_Mine_TM62M.et";
+			};
+			case 2: // Conflict Relay Radio
+			{
+				return "{DB04D6564D4AB421}Prefabs/Systems/MilitaryBase/ConflictRelayRadio_NQDY_Base.et";//"{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et";
+			};
+			//case 3: // Command Truck USSR
+			//{
+			//	return "{1BABF6B33DA0AEB6}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_command.et";
+			//};
+			//case 4: //
+			//{
+			//	return "";
+			//};
+			//case 5: //
+			//{
+			//	return "";
+			//};
+			//case 6: //
+			//{
+			//	return "";
+			//};
+			//case 7: //
+			//{
+			//	return "";
+			//};
+			//case 8: //
+			//{
+			//	return "";
+			//};
+			//case 9: //
+			//{
+			//	return "";
+			//};
+			//case 10: //
+			//{
+			//	return "";
+			//};
+			//case 11: //
+			//{
+			//	return "";
+			//};
+			//case 12: //
+			//{
+			//	return "";
+			//};
+			//case 13: //
+			//{
+			//	return "";
+			//};
+			//case 14: //
+			//{
+			//	return "";
+			//};
+			//case 15: //
+			//{
+			//	return "";
+			//};
+			//case 16: //
+			//{
+			//	return "";
+			//};
+			//case 17: //
+			//{
+			//	return "";
+			//};
+			//case 18: //
+			//{
+			//	return "";
+			//};
+			//case 19: //
+			//{
+			//	return "";
+			//};
+			//case 20: //
+			//{
+			//	return "";
+			//};
+			//default:
+			//{
+			//	return "";
+			//};
+		};
+		return "<ERROR>";
+	}
+}
 
 enum PR_PrefabTypeList
 {
-	"Conflict Relay Radio" = 0,			// 0
-	"Command Truck USSR" = 1,					// 1
-	"Man: GL (1)" = 2,					// 2
-	"Man: Unarmed (1)" = 3,				// 3
-	"Group: Fire Team (4)" = 4,			// 4  default
-	"Group: Light Fire Team (4)" = 5,	// 5
-	"Group: Machine Gun Team (2)" = 6,	// 6
-	"Group: Medical Section (2)" = 7,	// 7
-	"Group: Rifle Squad (6)" = 8,		// 8
-	"Group: Sentry Team (2)" = 9,		// 9
-	"Group: AT Team (4)" = 10,			// 10
-	"Group: Sniper Team (2)" = 11,		// 11
-	"Group: GL Team (4)" = 12,			// 12
-	"Group: Suppress Team (4)" = 13	// 13
-};
-/*
-enum PR_PrefabWaypointTypeList
+	"AT Mine US" = 0,			// 0
+	"AT Mine USSR" = 1,			// 1 default
+	"Conflict Relay Radio" = 2,	// 2
+//	"" = 3,	// 3
+//	"" = 4,	// 4
+//	"" = 5,	// 5
+//	"" = 6,	// 6
+//	"" = 7,	// 7
+//	"" = 8,	// 8
+//	"" = 9,	// 9
+//	"" = 10,	// 10
+//	"" = 11,	// 11
+//	"" = 12,	// 12
+//	"" = 13	// 13
+}
+
+[BaseContainerProps()]
+class PR_PrefabDetails
 {
-	"[R]    ATTACK" = 0,				// 0  	Good. Fast walk to waypoint, I assume they attack if enemy in area. No further waypoints.
-	//"CAPTURE_RELAY",				// 1  	Errors out: Waypoint is not set properly. AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt . Unknown use?
-	"[R]    DEFEND" = 1,				// 1  	Good. Fast walk to waypoint, defends completion radius. No further waypoints.
-	"[R]    DEFEND_CP" = 2,				// 2  	Good. Slow walk to waypoint, defends completion radius. No further waypoints.
-	"[R]    DEFEND_LARGE_CO" = 3,		// 3  	Good. Slow walk to waypoint, defends completion radius. No further waypoints.
-	//"FOLLOW",						// 6  	Spawns, no movement to waypoint. Unknown use?
-	"[C]    FORCED_MOVE" = 4,			// 4  	Good. Fast walk to waypoint, moves to next waypoint. Note: Cycles ok.
-	//"GETIN",						// 8  	Fast walk to waypoint, didn't enter vehicle. No further waypoints. Unknown use?
-	"[C]    GETIN_NEAREST" = 5,			// 5  	Fast walk to waypoint, enters vehicle then exits. Moves to next waypoint. Note: Cycles ok.
-	//"GETIN_SELECTED",				// 10  	Errors out: Wrong class of provided Waypoint! AI/BehaviorTrees/Chimera/Group/GetInNearestVehicle.bt . Unknown use?
-	//"GETOUT",						// 11	Hard to test, probably exits vehicle when it is working.
-	"[C]    MOVE" = 6,					// 6  	default Good. Fast walk to waypoint. Moves to next waypoint. Cycles ok.
-	//"OBSERVATION_POST",			// 13	Errors out: Waypoint is not set properly. AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt . Unknown use?
-	//"OPEN_GATE",					// 14	Errors out: Waypoint is not set properly! AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt . Unknown use?
-	"[C]    PATROL" = 7,				// 7	Good. Slow walk to waypoint, moves to next waypoint. Note: Cycles ok.
-	"[R]    SCOUT" = 8,					// 8	Good. Fast walk to waypoint, Leader fast walks to scout ahead within area, group follows in formation. Scouts completion radius. No further waypoints.
-	"[R]    SEARCH_DESTROY" = 9,		// 9	Good. Fast walk to waypoint, Group searches area in formation. Search completion radius. No further waypoints.
-	//"USER_ACTION",				// 18	Errors out: Reason: Unspecified smart action tag. Scripts/Game/AI/Behavior/SCR_SmartActionWaypoint.c:27 Function GetSmartActionEntity. Unknown use?
-	"[C]    WAIT" = 10,					// 10	Fast walk to waypoint, holds at waypoint for specific time (further research to see if time can be set).  Note: Cycles ok after wait.
-	"CAPTURE_RELAY" = 11				// 1  	Errors out: Waypoint is not set properly. AI/BehaviorTrees/Waypoints/WP_EnactSmartAction.bt . Unknown use?
-};*/
-/*
-enum PR_PrefabCompletionTypeList
-{
-	"All" = 0,				// 0 default
-	"Leader" = 1,			// 1
-	"Any" = 2				// 2
-};*/
+	//--- PR Spawn Prefab Details: Prefab type to spawn
+	[Attribute("1", UIWidgets.ComboBox, "Prefab to spawn.  ", enums: ParamEnumArray.FromEnum(PR_PrefabTypeList), category: "PR Spawn Prefab Details")]
+	PR_PrefabTypeList m_PrefabType;
+
+	static string m_sHintObjectLocationsToSpawnOn = "	";
+	//--- PR Spawn Prefab Details: Object location names to spawn prefab on. Can be a collection name.
+	[Attribute(desc: m_sHintObjectLocationsToSpawnOn/*"Object location names to spawn prefab on. Can be a collection name. Can combine individual & collections.  "*/, category: "PR Spawn Prefab Details")]
+	ref array<string> m_aObjectLocationsToSpawnOn;
+
+	//! PR Spawn Prefab Details: Pick random one position from all avaliable positions. Overrides 'Use Random Positions' below.
+	[Attribute("false", UIWidgets.CheckBox,"Pick random one position from all avaliable positions. Overrides 'Use Random Positions' below.  ", category: "PR Spawn Prefab Details")]
+	bool m_bPickRandomOne;
+	
+	//! PR Spawn Prefab Details: Pick random positions from all avaliable locations.
+	[Attribute("false", UIWidgets.CheckBox,"Pick random positions from all avaliable locations.  ", category: "PR Spawn Prefab Details")]
+	bool m_bUseRandomPositions;
+
+	//! PR Spawn Prefab Details: Random percentage of locations to use.
+	[Attribute(defvalue: "100", uiwidget: UIWidgets.EditBox, desc: "Random percentage of locations to use.", params: "0 100 1", category: "PR Spawn Prefab Details")]
+	float m_fRandomPercentage;
+}

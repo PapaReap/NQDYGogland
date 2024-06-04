@@ -1,3 +1,19 @@
+PR_SpawnPatrolTrigger {
+ coords 719.588 39 2610.454
+ TriggerShapeType Sphere
+ DrawShape 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 5
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{616724CE807A73A7}" {
+   m_bOverrideActivationPresence 1
+   m_bActivateIfObjectMissing 1
+   m_sMissingObjectName "PR_Persistent_Entity_Test"
+  }
+ }
+ m_GroupType "Man: Unarmed (1)"
+}
 PR_SpawnTaskTrigger SpawnTaskTrigger_Move_TaskMove1 {
  coords 887.584 39 2660.727
  TriggerShapeType Sphere
@@ -9,11 +25,16 @@ PR_SpawnTaskTrigger SpawnTaskTrigger_Move_TaskMove1 {
  m_bDebugLogs 1
  m_bUsePersistence 1
  m_sPersistentObject "PR_Persistent_Entity_612D306226C3A957"
- m_aNameOfTasksToSpawnOnActivation {
-  "TaskMove1"
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{61675A2D3A7AD1AE}" {
+   m_bOverrideActivationPresence 1
+  }
  }
- m_bUseMoveTaskDestination 1
- m_sLocationToMoveTaskTo "Persistence_Entity_TaskMove1_move"
+ m_aIndividualTasks {
+  PR_TaskDetails "{616724C2D2C3A13D}" {
+   m_sTaskName "LayerTaskKill2"
+  }
+ }
  m_bUseRandomTasks 1
  m_iRandomTaskCount 4
 }
@@ -25,23 +46,43 @@ PR_TaskCollections TaskCollection_01 : "{2800010EBA0A5BB9}Prefabs/ScenarioFramew
   "TaskMove1" "TaskDestroy1"
  }
 }
-SCR_ChimeraCharacter PR_Persistent_Entity_612D306226C3A957 : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
- components {
-  EventHandlerManagerComponent "{530284308E2527DD}" {
-   EventHandlers {
-    BaseEventHandler "{5A5A94D957DB58B7}" {
-     EventName ""
+$grp SCR_ChimeraCharacter : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
+ PR_Persistent_Entity_612D306226C3A957 {
+  components {
+   EventHandlerManagerComponent "{530284308E2527DD}" {
+    EventHandlers {
+     BaseEventHandler "{5A5A94D957DB58B7}" {
+      EventName ""
+     }
     }
    }
+   ClimbingDataComponent "{5304A49E934A0758}" {
+    Enabled 0
+   }
+   ColliderHistoryComponent "{566C7EDBB7BCC719}" {
+    Enabled 0
+   }
   }
-  ClimbingDataComponent "{5304A49E934A0758}" {
-   Enabled 0
-  }
-  ColliderHistoryComponent "{566C7EDBB7BCC719}" {
-   Enabled 0
-  }
+  coords 887.307 39 2650.404
  }
- coords 887.307 39 2650.404
+ PR_Persistent_Entity_Test {
+  components {
+   EventHandlerManagerComponent "{530284308E2527DD}" {
+    EventHandlers {
+     BaseEventHandler "{5A5A94D957DB58B7}" {
+      EventName ""
+     }
+    }
+   }
+   ClimbingDataComponent "{5304A49E934A0758}" {
+    Enabled 0
+   }
+   ColliderHistoryComponent "{566C7EDBB7BCC719}" {
+    Enabled 0
+   }
+  }
+  coords 733.88 39 2609.336
+ }
 }
 GenericEntity Launcher_M72A3_base_612C58CAD5D2983C : "{37F022D0CDC84C11}Prefabs/Weapons/Launchers/M72/Launcher_M72A3_base.et" {
  components {
@@ -144,10 +185,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_bDebugLogs 1
     m_bUsePersistence 1
     m_sPersistentObject "Persistence_Entity_PR_SpawnTaskTrigger_2"
-    m_aNameOfTasksToSpawnOnActivation {
-     "TaskClearArea1"
-    }
-    m_iDelayTimerToSpawnTask 10
    }
    SCR_ChimeraCharacter PR_Persistent_Entity_SpawnPatrol_6 : "{2F10F67ADDA21158}Prefabs/Characters/Core/PR_Persistent_Entity.et" {
     coords -44.854 -1.2 -19.455
@@ -217,6 +254,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       coords -2.163 0.004 -0.31
+     }
+    }
+   }
+  }
+ }
+ Area_LayerTaskKill2 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesDuringRuntime 1
+    m_iDynamicDespawnRange 40
+    m_bShowDebugShapesInWorkbench 1
+   }
+  }
+  coords 723.342 39 2585.704
+  {
+   GenericEntity LayerTaskKill2 : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 1.546 0 -2.734
+    {
+     GenericEntity SlotKill_LayerTaskKill2 : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
+      components {
+       SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+        m_sObjectToSpawn "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+        m_aActionsOnCreated {
+         SCR_ScenarioFrameworkActionDeleteEntity "{616724C2ABD738FB}" {
+          m_Getter SCR_ScenarioFrameworkGetEntityByName "{616724C2AE8A8B3F}" {
+           m_sEntityName "PR_Persistent_Entity_Test"
+          }
+         }
+        }
+       }
+      }
+      coords -0.003 0 -0.003
      }
     }
    }

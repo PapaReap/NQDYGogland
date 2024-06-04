@@ -9,7 +9,11 @@ $grp PR_SpawnPatrolTrigger {
   UpdatePeriod 60
   m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F78F17EE3}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1
@@ -316,7 +320,11 @@ $grp PR_SpawnPatrolTrigger {
   UpdatePeriod 60
   m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2F7D4BF2A2}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1
@@ -547,7 +555,11 @@ $grp PR_SpawnPatrolTrigger {
   UpdatePeriod 60
   m_bDebugLogs 1
   m_ActivationPresence ANY_CHARACTER
-  m_bOverrideActivationPresence 1
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61675A2E86872329}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_iRespawnCount -1
   m_iRespawnTimerMin 900
   m_bUseRandomRespawnTimer 1

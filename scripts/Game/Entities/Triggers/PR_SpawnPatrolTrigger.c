@@ -70,6 +70,10 @@ enum PR_ECollectionSpawn
 
 class PR_SpawnPatrolTrigger : PR_CoreTrigger
 {
+	//! PR Task Spawner: EPF Persistence - Use Enfusion Persistent Framework
+	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object when all group members are dead.  ", category: "PR Core: EPF Persistence")]
+	protected bool m_bNeutralizePersistentObjectIfGroupIsDead;
+	
 	//! PR SPAWN PATROL: GROUP - Group side to spawn:
 	[Attribute("1", UIWidgets.ComboBox, "Side to spawn.  ", enums: ParamEnumArray.FromEnum(PR_ESpawnSideList), category: "PR Spawn Patrol: Group")]
 	protected PR_ESpawnSideList m_GroupSide;
@@ -130,17 +134,9 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 	[Attribute(defvalue: EAICombatType.NORMAL.ToString(), UIWidgets.ComboBox, "AI combat type", "", ParamEnumArray.FromEnum(EAICombatType), category: "PR Spawn Patrol: Behavior")]
 	EAICombatType m_eAICombatType; // done
 
-	//! PR SPAWN PATROL: BEHAVIOR - Character Stance: AI character stance
-	[Attribute(defvalue: ECharacterStance.STAND.ToString(), UIWidgets.ComboBox, "AI character stance", "", ParamEnumArray.FromEnum(ECharacterStance), category: "PR Spawn Patrol: Behavior")]
-	ECharacterStance m_eAICharacterStance; // done
-
-	//! PR SPAWN PATROL: BEHAVIOR - Movement Type: AI movement speed
-	[Attribute(defvalue: EMovementType.WALK.ToString(), UIWidgets.ComboBox, "AI movement speed", "", ParamEnumArray.FromEnum(EMovementType), category: "PR Spawn Patrol: Behavior")]
-	EMovementType m_eAIMovementType; // done
-
 	//! PR SPAWN PATROL: BEHAVIOR - Hold Fire: If AI in the group should hold fire
-	[Attribute(defvalue: "0", desc: "If AI in the group should hold fire", category: "PR Spawn Patrol: Behavior")]
-	bool m_bHoldFire; // done
+//	[Attribute(defvalue: "0", desc: "If AI in the group should hold fire", category: "PR Spawn Patrol: Behavior")]
+	bool m_bHoldFire = 0; // done
 
 	//! PR SPAWN PATROL: BEHAVIOR - Perception Factor: Sets perception ability. Affects speed at which perception detects targets. Bigger value means proportionally faster detection.
 	[Attribute(defvalue: "1", uiwidget: UIWidgets.EditBox, desc: "Sets perception ability. Affects speed at which perception detects targets. Bigger value means proportionally faster detection.", params: "0 100 0.001", category: "PR Spawn Patrol: Behavior")]
@@ -170,18 +166,6 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 	[Attribute("0", UIWidgets.ComboBox, "How many collections to use from 'Waypoint Collections'. If % is used, it will round down. Always a min of 1 collection.  ", enums: ParamEnumArray.FromEnum(PR_ECollectionSpawn), category: "PR Spawn Patrol: Waypoint")]
 	protected PR_ECollectionSpawn m_SpawnCollections;
 
-	//--- PR SPAWN PATROL: DETAILS - Amount of delay before spawning group, min
-	[Attribute("0", UIWidgets.EditBox, "Amount of delay before spawning group.  Minimum value if used with random delay timer. (seconds)  ", "0 inf 1", category: "PR Spawn Patrol: Timers")]
-	protected int m_iDelayTimerMin;
-
-	//! PR SPAWN PATROL: DETAILS - Use random delay timer: Uses a min value from above and max value below.
-	[Attribute("false", UIWidgets.CheckBox,"Use random delay timer: Uses a min value from above and max value below.  ", category: "PR Spawn Patrol: Timers")]
-	protected bool m_bUseRandomDelayTimer;
-
-	//! PR SPAWN PATROL: DETAILS - Delay timer max value: Maximum amount of delay before spawning group if used with random timer. (seconds)
-	[Attribute("0", UIWidgets.EditBox, "Maximum amount of delay before spawning group if used with random timer. (seconds)  ", "0 inf 1", category: "PR Spawn Patrol: Timers")]
-	protected int m_iDelayTimerMax;
-
 	/* Can't get this working for now, will comment out until further work done!
 	[Attribute("false", UIWidgets.CheckBox,"Is trigger repeatable after deactivation? Will not work if 'Delete Trigger' is used.  ", category: "PR Spawn Patrol Details")]
 	protected bool m_bIsTriggerRepeatable; //isTriggerRepeatable
@@ -208,6 +192,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 			return;
 
 		m_bIsTriggerActivated = true;
+		m_sLogMode = "(OnActivate)";
 
 		//--- Persistence
 		PersistenceCleanup();
@@ -248,7 +233,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 		if (m_aTeleportPosition.Count() == 0)
 			m_aTeleportPosition.Insert(spawnPos.GetName());
 
-		protected array<bool> m_aBoolArray = {m_bCycleWaypoints, m_bDebugLogs, m_bUseRandomRespawnTimer, m_bHoldFire, m_bKeepGroupActive, m_bSuspendIfNoPlayers, m_bTeleportAfterSpawn};
+		protected array<bool> m_aBoolArray = {m_bCycleWaypoints, m_bDebugLogs, m_bUseRandomRespawnTimer, m_bHoldFire, m_bKeepGroupActive, m_bSuspendIfNoPlayers, m_bTeleportAfterSpawn, m_bNeutralizePersistentObjectIfGroupIsDead};
 		protected array<int> m_aIntArray = {
 			m_iRerunCounter, // 0
 			m_iRespawnTimerMin, // 1
@@ -260,9 +245,7 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 			spawnCollections, // 7
 			m_eAISkill, // 8
 			m_eAICombatType, // 9
-			m_eAIGroupFormation, // 10
-			m_eAICharacterStance, // 11
-			m_eAIMovementType // 12
+			m_eAIGroupFormation // 10
 		};
 
 		//--- Execute the AI spawning using a delayed call
@@ -276,7 +259,8 @@ class PR_SpawnPatrolTrigger : PR_CoreTrigger
 			m_aBoolArray,
 			m_sStringArray,
 			m_aIntArray,
-			m_fPerceptionFactor
+			m_fPerceptionFactor,
+			m_PersistentObject
 		);
 
 		Deactivate();

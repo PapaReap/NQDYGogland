@@ -1,0 +1,169 @@
+GenericEntity : "{CD00FFBAFD036BE2}Prefabs/Weapons/Core/Explosives_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SignalsManagerComponent "{61755BB46F931337}" {
+  }
+  SoundComponent "{61755BB46F93132B}" {
+  }
+  BaseTriggerComponent "{61755BB46F931329}" {
+   PROJECTILE_EFFECTS {
+    AIExplosionEffect "{61755BB46F93132D}" {
+    }
+   }
+  }
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{D2523D7D02534079}Assets/Vegetation/Debris/Leaves/leaf_Salix_fragilis.xob"
+   PixelSizeScale 0.1
+   CastShadow 0
+   CastFarShadow 0
+   RainOccluder 0
+   WetnessOccluder 0
+   ReceiveLight 0
+  }
+  RigidBody "{5968D9C731425A95}" {
+   LinearSleepingThreashold 0.5
+   AngularSleepingThreashold 0.5
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_MineDamageManager "{61755BB46F931321}" {
+   Enabled 0
+   "Additional hit zones" {
+    SCR_MineHitZone Main {
+     HZDefault 1
+     MaxHealth 20
+     "Explosive multiplier" 0.001
+    }
+   }
+  }
+  SCR_MineInventoryItemComponent "{61755BB46F93131A}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{61755BB46F931318}" {
+    ItemDisplayName WeaponUIInfo "{61755BB46F931319}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{61755BB46F93131F}" {
+     Weight 1
+     SizeSetupStrategy Manual
+     RestingAdditiveRotationLS 0 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{61755BB46F93131D}" {
+     IkSettings {
+      ItemIKSettings "{61755BB46F931312}" {
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 1
+       IkSettingsStand 6
+       IkSettingsCrouch 6
+       IkSettingsProne 6
+      }
+     }
+     AnimationInstance "{AF06D3F738A50403}anims/workspaces/player/player_main_heavy.asi"
+     AnimationIKPose "{5EF679CCFE1123FD}Assets/Weapons/Explosives/Mine_M15AT/anims/p_mine_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{61755BB46F931311}" {
+      CameraPreset Left
+      CameraOrbitAngles -45 0 0
+      CameraDistanceToItem 0.32
+      CameraOffset 0 -0.05 0
+      ItemRenderRotation 0 0 0
+      AnimationInstance "{EFDC6FADA926C158}anims/workspaces/player/player_inventory_heavy.asi"
+     }
+     CharacterModifierAttributes "{61755BB46F931317}" {
+      StanceLimits 0.05 1
+      SpeedLimit 1.6
+      ADSSpeedLimit 1
+      SpeedLimitItemPrimaryAction 1
+      SpeedLimitHighready 1
+      AllowGadgetUse 0
+      AllowJumping 0
+     }
+     HolsteredItemAttributes "{61755BB46F931315}" {
+      HiddenHolstered 1
+     }
+    }
+    CommonItemType "NONE"
+   }
+  }
+  SCR_PlaceableItemComponent "{61755BB46F93130B}" {
+   m_fMaxPlacementDistance 2
+   m_ePlacementType XYZ
+  }
+  SCR_PressureTriggerComponent "{61755BB46F93130E}" {
+   Enabled 0
+  }
+  SCR_MineWeaponComponent "{61755BB46F93130C}" {
+   AllowedRaise "Only lowered"
+   UIInfo GrenadeUIInfo "{61755BB46F93130D}" {
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5CDCD73FF80278AD}" : "{BAA581D6496CB2FE}Configs/WeaponInfo/MagazineIndicators/mine_m15at.conf" {
+    }
+    m_sAmmoType "#AR-AmmoType_M15"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags HE
+   }
+   BeActiveWhenDropped 1
+   BeActiveWhenInitWithoutParent 1
+  }
+  ActionsManagerComponent "{61755BB46F931307}" {
+   Enabled 0
+   ActionContexts {
+    UserActionContext "{61755BB46F931305}" {
+     ContextName "default"
+     Position PointInfo "{61755BB46F93137B}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_MinePickUpItemAction "{61755BB46F93137E}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{61755BB46F9378C7}" {
+      Name "#AR-Inventory_Pickup"
+     }
+    }
+    SCR_MineEquipWeaponAction "{61755BB46F9378C5}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{61755BB46F9378C4}" {
+      Name "#AR-Inventory_Equip"
+     }
+     "Sort Priority" 1
+    }
+    SCR_MineEquipHolsterAction "{61755BB46F935B61}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{61755BB46F935B6E}" {
+      Name "#AR-Inventory_EquipHolster"
+     }
+    }
+    SCR_ActivateMineUserAction "{61755BB46F935B6F}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{61755BB46F935B6C}" {
+      Name "#AR-UserAction_Activate_Mine"
+     }
+     "Sort Priority" -1
+     m_fArmingDelay 0
+    }
+    SCR_MineAddFlagAction "{61755BB46F935B6D}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{61755BB46F935B6A}" {
+      Name "#AR-UserAction_Add_Flag"
+     }
+    }
+   }
+  }
+  RplComponent "{61755BB46F935B68}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{61755BB46F935B76}" {
+  }
+ }
+}
