@@ -3,7 +3,6 @@ $grp PR_SpawnPrefabTrigger {
   coords 4620.877 32.742 9286.281
   TriggerShapeType Sphere
   SphereRadius 5
-  DrawShape 1
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
@@ -199,7 +198,6 @@ $grp PR_SpawnPrefabTrigger {
   coords 5465.337 97.495 7593.889
   TriggerShapeType Sphere
   SphereRadius 5
-  DrawShape 1
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
@@ -395,7 +393,6 @@ $grp PR_SpawnPrefabTrigger {
   coords 6151.521 76.857 5790.281
   TriggerShapeType Sphere
   SphereRadius 5
-  DrawShape 1
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
@@ -591,7 +588,6 @@ $grp PR_SpawnPrefabTrigger {
   coords 6977.829 60.942 3725.304
   TriggerShapeType Sphere
   SphereRadius 5
-  DrawShape 1
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
@@ -787,7 +783,6 @@ $grp PR_SpawnPrefabTrigger {
   coords 6959.247 100.541 1970.824
   TriggerShapeType Sphere
   SphereRadius 5
-  DrawShape 1
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
