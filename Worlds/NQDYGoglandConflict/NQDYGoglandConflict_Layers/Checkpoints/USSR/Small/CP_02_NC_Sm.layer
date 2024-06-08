@@ -132,14 +132,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5423.519 97.728 7621.063
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -171,14 +176,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5416.416 98.111 7623.086
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -210,14 +220,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5417.518 98.028 7622.585
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_03"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -249,14 +264,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.057 97.996 7622.459
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_04"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -288,14 +308,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.018 97.998 7622.475
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_05"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -327,14 +352,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.051 98 7622.456
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_06"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -366,14 +396,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.035 97.998 7622.481
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_07"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -405,14 +440,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.005 97.996 7622.44
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_08"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -444,14 +484,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.047 98.002 7622.475
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_09"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -483,14 +528,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5416.881 97.89 7619.68
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_10"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -522,14 +572,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5417.959 97.809 7618.929
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_11"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -561,14 +616,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5419.038 97.723 7618.094
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_12"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -600,14 +660,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5420.011 97.732 7618.954
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_13"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {
@@ -639,14 +704,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 5418.542 97.786 7618.853
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_02_NC_Sm_14"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BBD30BA36}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_aWaypointCollection {

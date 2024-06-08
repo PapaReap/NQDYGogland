@@ -29,24 +29,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E07149C1F0CAD5"
     coords 21.381 0 10.112
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-     }
-    }
-    coords -377.707 -2.24 -110.444
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 263.493 -3.534 135.725
-      Flags 2097155
-      CompletionRadius 150
-     }
-    }
-   }
    $grp GenericEntity : "{CE8211EE99C0EF28}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Reinforce_USSR.et" {
     PR_AmbientPatrolSpawnpoint_Reinforce_USSR_testing {
      components {
@@ -123,25 +105,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 0 0.062 -7.644
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -579.1 15.26 41.457
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 530.926 -14.416 -51.305
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords 0 0.062 13.027
@@ -177,19 +140,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E07149C1F0CAD5"
     coords -15.136 0 0.034
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -371.098 -0.487 -214.11
-    Flags 3
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 392.148 0.487 223.479
-      CompletionRadius 75
-      m_bFastInit 0
-     }
-    }
    }
    GenericEntity {
     ID "60E0714912226671"
@@ -326,25 +276,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E07149C1F0CAD5"
     coords -0.102 0 -56.458
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnWaves 1
-      m_iGroupMultiplier 2
-     }
-    }
-    coords 132.943 -70.323 642.276
-    Flags 3
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords -138.193 70.323 -697.01
-      CompletionRadius 80
-      m_bFastInit 0
-     }
-    }
    }
    GenericEntity {
     ID "60E0714912226671"
@@ -498,27 +429,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 0 -0.089 -7.644
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -506.34 7.719 41.457
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 495.627 -7.228 -51.305
-      Flags 2097155
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords 0 -0.082 13.027
@@ -646,19 +556,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E07149C1F0CAD5"
     coords -15.136 0 0.034
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -207.132 25.956 516.764
-    Flags 3
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 200.96 -26.044 -518.324
-      CompletionRadius 150
-      m_bFastInit 0
-     }
-    }
    }
    GenericEntity {
     ID "60E0714912226671"
@@ -829,27 +726,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords -6.627 0.548 -7.644
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_eGroupType TEAM_MG
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iRespawnWaves 1
-      m_iGroupMultiplier 2
-     }
-    }
-    coords -331.223 17.98 280.586
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 340.292 -16.423 -235.215
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords -45.652 1.144 13.027
@@ -898,27 +774,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords -5.949 -1.249 -26.528
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -506.34 7.719 41.457
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 495.627 -7.228 -51.305
-      Flags 2097155
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords -3.688 -1.917 10.233
@@ -962,27 +817,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E0714938383856"
     coords 0 -0.089 -7.644
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -506.34 7.719 41.457
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 495.627 -7.228 -51.305
-      Flags 2097155
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
@@ -1116,25 +950,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E0714938383856"
     coords 0 -0.222 -7.644
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -419.024 -68.032 -564.675
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 391.221 74.092 544.481
-      CompletionRadius 80
-      m_bFastInit 0
-     }
-    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
@@ -1272,25 +1087,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 0 0 -48.383
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords 197.382 21.996 -512.358
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords -209.849 -21.996 491.104
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords 0 -0.048 13.027
@@ -1334,25 +1130,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E0714938383856"
     coords 0 0.031 45.406
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords 273.139 -1.582 -512.358
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords -280.68 1.624 491.104
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
@@ -1398,25 +1175,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 0 0 43.987
    }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnPeriod 30
-      m_fAILimitThreshold 0.66
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -310.239 12.659 -431.291
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 294.393 -12.659 429.854
-      CompletionRadius 60
-      m_bFastInit 0
-     }
-    }
-   }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
     coords -6.677 0 -14.33
@@ -1452,19 +1210,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E07149C1F0CAD5"
     coords -4.859 0.001 3.362
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -32.122 64.941 664.467
-    Flags 3
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 31.047 -64.94 -657.851
-      CompletionRadius 75
-      m_bFastInit 0
-     }
-    }
    }
    GenericEntity {
     ID "60E0714912226671"

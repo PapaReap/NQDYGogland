@@ -45,25 +45,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords -15.136 0 0.034
    }
    GenericEntity {
-    ID "60E0714F02A0D7F0"
-    components {
-     SCR_AmbientPatrolSpawnPointComponent "{5CCEC6036BBF3EDD}" {
-      m_iRespawnWaves 1
-      m_iGroupMultiplier 1
-     }
-    }
-    coords -437.254 1.662 653.24
-    Flags 3
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 405.435 -1.455 -585.372
-      CompletionRadius 100
-      m_bFastInit 0
-     }
-    }
-   }
-   GenericEntity {
     ID "60E0714912226671"
     coords -23.245 0.25 74.334
    }
@@ -204,20 +185,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords -15.136 0.124 0.034
    }
    GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -371.098 -0.487 -214.11
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 392.148 0.487 223.479
-      Flags 2097155
-      CompletionRadius 75
-      m_bFastInit 0
-     }
-    }
-   }
-   GenericEntity {
     ID "60E0714912226671"
     coords 0 0.181 11.98
    }
@@ -347,20 +314,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     coords -15.136 -0.779 0.034
    }
    GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -371.098 -0.487 -214.11
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 392.148 0.487 223.479
-      Flags 2097155
-      CompletionRadius 75
-      m_bFastInit 0
-     }
-    }
-   }
-   GenericEntity {
     ID "60E0714912226671"
     coords 26.349 0.952 186.41
    }
@@ -368,14 +321,34 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
     ID "60E0714938383856"
     coords 83.431 2.266 43.607
    }
-   PR_SpawnPatrolTrigger PR_SpawnPatrolTrigger_3 {
-    coords 657.76 -4.608 -58.171
+   PR_SpawnPatrolTrigger SPT_BaseIsosommeri_sw_ussr {
+    components {
+     Hierarchy "{6190676004DC6A9F}" {
+     }
+    }
+    coords 639.364 -2.093 -29.227
+    angleX 6.874
+    angleY -1.349
+    angleZ -10.704
     TriggerShapeType Sphere
-    SphereRadius 1000
-    DrawShape 1
+    SphereRadius 1
     ShapeColor 1 0.008 0 0.078
     TriggerActivationType "First change"
     PeriodicQueries 1
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "PR_PersistObject_SPT_BaseIsosommeri_sw_ussr"
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{619067601A720DB8}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_bNeutralizePersistentObjectIfGroupIsDead 1
+    {
+     GenericEntity PR_PersistObject_SPT_BaseIsosommeri_sw_ussr : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords -0.86 0.424 1.113
+     }
+    }
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
@@ -505,20 +478,6 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    GenericEntity {
     ID "60E07149C1F0CAD5"
     coords -15.136 0.565 0.034
-   }
-   GenericEntity {
-    ID "60E0714F02A0D7F0"
-    coords -371.098 -0.487 -214.11
-    Flags 2097155
-    {
-     SCR_DefendWaypoint {
-      ID "60E0714CB980C8E9"
-      coords 392.148 0.487 223.479
-      Flags 2097155
-      CompletionRadius 75
-      m_bFastInit 0
-     }
-    }
    }
    GenericEntity {
     ID "60E0714912226671"

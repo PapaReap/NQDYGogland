@@ -130,14 +130,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.085 78.017 5797.068
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -171,14 +176,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6185.832 77.869 5797.305
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -212,14 +222,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6186.149 78.21 5795.938
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_03"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -253,14 +268,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.303 78.272 5796.074
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_04"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -294,14 +314,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.359 78.296 5795.987
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_05"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -335,14 +360,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6186.62 78.105 5796.558
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_06"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -376,14 +406,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.837 78.099 5796.895
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_07"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -417,14 +452,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.697 78.252 5796.291
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_08"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -458,14 +498,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.536 78.21 5796.416
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_09"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -499,14 +544,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.498 78.21 5796.404
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_10"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -540,14 +590,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.442 78.245 5796.234
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_11"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -581,14 +636,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.318 78.234 5796.241
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_12"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -622,14 +682,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 6187.349 78.241 5796.22
   TriggerShapeType Sphere
-  SphereRadius 600
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Sm_13"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23BD8582B1A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -10142,7 +10207,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords -0.001 -0 0
+             coords -0.001 0 0
              angleX 0
              angleY -32.179
              angleZ 0

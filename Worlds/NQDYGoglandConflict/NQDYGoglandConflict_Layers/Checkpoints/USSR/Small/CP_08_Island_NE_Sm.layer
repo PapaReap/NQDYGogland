@@ -74,14 +74,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 9766.959 5.468 10611.733
   TriggerShapeType Sphere
-  SphereRadius 800
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_08_Island_NE_Sm_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23B0DDEF490}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -115,14 +120,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 9766.967 5.469 10611.747
   TriggerShapeType Sphere
-  SphereRadius 800
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_08_Island_NE_Sm_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23B0DDEF490}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -156,14 +166,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 9766.923 5.469 10611.732
   TriggerShapeType Sphere
-  SphereRadius 800
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_08_Island_NE_Sm_03"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23B0DDEF490}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -197,14 +212,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 9766.573 5.467 10611.668
   TriggerShapeType Sphere
-  SphereRadius 800
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_08_Island_NE_Sm_04"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23B0DDEF490}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -238,14 +258,19 @@ $grp PR_SpawnPatrolTrigger {
   }
   coords 9766.607 5.469 10611.646
   TriggerShapeType Sphere
-  SphereRadius 800
+  SphereRadius 1
   ShapeColor 0.502 0 0.376 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 2
+  UpdatePeriod 10
   m_bDebugLogs 1
   m_bUsePersistence 1
   m_sPersistentObject "PR_PersistObject_SPT_CP_08_Island_NE_Sm_05"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{618CE23B0DDEF490}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
   m_bNeutralizePersistentObjectIfGroupIsDead 1
   m_GroupType "Group: Sentry Team (2)"
   m_eAISkill ROOKIE
@@ -323,10 +348,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -418,10 +443,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -513,10 +538,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -608,10 +633,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -703,10 +728,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -798,10 +823,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -905,10 +930,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1005,10 +1030,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1105,10 +1130,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1205,10 +1230,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1305,10 +1330,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1405,10 +1430,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1517,10 +1542,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1617,10 +1642,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1715,10 +1740,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1813,10 +1838,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -1911,10 +1936,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2011,10 +2036,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2111,10 +2136,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2223,10 +2248,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2323,10 +2348,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2423,10 +2448,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2523,10 +2548,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2623,10 +2648,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2723,10 +2748,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2823,10 +2848,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -2935,10 +2960,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -3035,10 +3060,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -3135,16 +3160,16 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
           GenericEntity {
            ID "5CC6B48B9C8C2A7C"
-           coords 2.143 -0 -2.276
+           coords 2.143 0 -2.276
            angleX -16.529
            angleY -92.173
            angleZ -2.757
@@ -3235,10 +3260,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -3335,10 +3360,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -3435,10 +3460,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }
@@ -3535,10 +3560,10 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29F4975B6A9"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -65.682
-             angleZ -0
+             angleZ 0
             }
            }
           }

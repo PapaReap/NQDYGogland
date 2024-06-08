@@ -153,9 +153,5 @@ GenericEntity {
     coords 0 0 14.092
    }
   }
-  GenericEntity : "{CE8211EE99C0EF28}Prefabs/Systems/AmbientPatrol/PR_AmbientPatrolSpawnpoint_Reinforce_USSR.et" {
-   ID "60E0714F02A0D7F0"
-   coords 0 0 0
-  }
  }
 }

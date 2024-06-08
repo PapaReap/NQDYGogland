@@ -45,14 +45,19 @@ PR_SpawnPatrolTrigger SPT_CP_07_Island_E_Sm_01 {
  }
  coords 10160.991 7.917 6445.513
  TriggerShapeType Sphere
- SphereRadius 800
+ SphereRadius 1
  ShapeColor 0.502 0 0.376 0.098
  TriggerActivationType "First change"
  PeriodicQueries 1
- UpdatePeriod 2
+ UpdatePeriod 10
  m_bDebugLogs 1
  m_bUsePersistence 1
  m_sPersistentObject "PR_PersistObject_SPT_CP_07_Island_E_Sm_01"
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{618CE23B06F0EE85}" {
+   m_bOverrideActivationPresence 1
+  }
+ }
  m_bNeutralizePersistentObjectIfGroupIsDead 1
  m_GroupType "Group: Sentry Team (2)"
  m_eAISkill ROOKIE
@@ -128,10 +133,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }
@@ -223,10 +228,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }
@@ -316,10 +321,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }
@@ -411,10 +416,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }
@@ -506,10 +511,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }
@@ -601,10 +606,10 @@ GenericEntity Set_CP_07_Island_E_Sm_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions
           {
            DecalEntity {
             ID "56E0B29F4975B6A9"
-            coords 0 0 -0
+            coords 0 0 0
             angleX 0
             angleY -65.682
-            angleZ -0
+            angleZ 0
            }
           }
          }

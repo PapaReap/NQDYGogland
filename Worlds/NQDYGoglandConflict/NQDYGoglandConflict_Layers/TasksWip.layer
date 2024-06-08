@@ -31,7 +31,7 @@ GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Ar
      m_eActivationType ON_TRIGGER_ACTIVATION
     }
    }
-   coords -337.142 0 -48.14
+   coords -337.142 0 -205.419
    {
     GenericEntity Attacker_USSR1 {
      ID "5E9A6605F6F0B5F1"
