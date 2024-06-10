@@ -1,7 +1,7 @@
 PR_SpawnTaskTrigger TaskTrg_TaskDeliverSupplies_Master {
  coords 5078.767 19.137 9574.018
  TriggerShapeType Sphere
- SphereRadius 500
+ SphereRadius 1
  ShapeColor 0.046 0 1 0.078
  TriggerActivationType "First change"
  PeriodicQueries 1
@@ -57,9 +57,6 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverSupplies_Master {
  m_iPlayerDistanceToSpawnTask 600
  m_bUseRandomTasks 1
  m_iRandomTaskCount -1
- m_bUseFirstTaskRandomDelayTimer 1
- m_iDelayTimerToSpawnFirstTaskMin 1800
- m_iDelayTimerToSpawnFirstTaskMax 2700
  m_bUseRandomDelayBetweenTasksTimer 1
  m_iDelayTimerBetweenEachTaskMin 3600
  m_iDelayTimerBetweenEachTaskMax 10800
@@ -94,8 +91,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -1.668 0.122 -0.764
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Pohjoissivunkallio_farmhouse : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -300,6 +298,42 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 5018.059 5.843 6420.802
   {
+   PR_RemoveEntitiesTrigger RemoveEntities_TaskDeliverSupplies_Jokela {
+    coords 2.538 0.298 2.923
+    TriggerShapeType Sphere
+    SphereRadius 30.4
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    m_bRefreshToggle 1
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Jokela"
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61916BB85C8B7208}" {
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Persistence_Entity_TaskDeliverSupplies_Jokela"
+     }
+    }
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61916BB94D55ACEE}" {
+      m_sSpecificPrefabName "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      m_bIncludeChildren 1
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61916BB96F3FAFE3}" {
+      m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      m_bIncludeChildren 1
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61916BBA8B65B4CC}" {
+      m_sSpecificPrefabName "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      m_bIncludeChildren 1
+      m_iPrefabCountToRemove 2
+     }
+    }
+   }
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverSupplies_Jokela {
     coords -9.258 1.182 -15.252
     Flags 2097155
@@ -319,8 +353,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Jokela"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -4.054 -0.39 -1.319
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Jokela : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -547,8 +582,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Jokela_n"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Jokela_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -3.913 -0.024 -1.907
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Jokela_n : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -775,8 +811,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Lansikallio"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Lansikallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -3.893 0 -1.971
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Lansikallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -1010,8 +1047,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Korkiala"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Korkiala : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -3.875 0.086 -2.125
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Korkiala : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -1238,8 +1276,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Purjekallio"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Purjekallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -3.887 -0.02 -1.989
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Purjekallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -1466,8 +1505,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskName "TaskDeliverSupplies_Niemenkyla"
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
+   }
+   GenericEntity Persistence_Entity_TaskDeliverSupplies_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -3.869 0.031 -2.084
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Niemenkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {

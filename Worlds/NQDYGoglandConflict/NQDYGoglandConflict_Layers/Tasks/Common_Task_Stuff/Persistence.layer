@@ -1,266 +1,331 @@
 GenericEntity PersistenceObjectJail : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
  coords 6587.779 2.916 -1561.919
+ Flags 2097155
  {
   $grp GenericEntity : "{1FFB6B5828D2B35F}Prefabs/Rocks/Granite/GraniteRock_03.et" {
    {
     coords 17.31 -11.565 3.243
     angleY -130.109
     scale 1.76
+    Flags 2163715
    }
    {
     coords 1.043 -14.005 -8.311
     angleY -179.59
     scale 1.832
+    Flags 2163715
    }
    {
     coords -15.494 -13.799 8.974
     angleY 103.124
     scale 1.76
+    Flags 2163715
    }
    {
     coords -5.374 -14.272 6.029
     angleY 103.124
     scale 1.76
+    Flags 2163715
    }
    {
     coords -1.54 -43.407 21.8
     angleY -173.409
     scale 4.876
+    Flags 2163715
    }
    {
     coords -19.939 -42.917 -9.985
     angleY 19.662
     scale 4.354
+    Flags 2163715
    }
   }
   $grp GenericEntity : "{5C2139DAEAD2935E}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v3.et" {
    {
     coords 4.034 -0.011 -11.893
     angleY -90
+    Flags 2163715
    }
    {
     coords -1.169 -3.189 -11.895
     angleY -90
+    Flags 2163715
    }
   }
   $grp SCR_DestructibleBuildingEntity : "{686B4C83AC940895}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_flat.et" {
    {
     coords 13.916 -4.022 -6.948
+    Flags 2163715
    }
    {
     coords 3.966 -4.023 -6.931
+    Flags 2163715
    }
    {
     coords 3.965 -4.025 1.002
+    Flags 2163715
    }
    {
     coords 13.915 -4.025 0.985
+    Flags 2163715
    }
    {
     coords 13.912 -4.026 8.962
+    Flags 2163715
    }
    {
     coords 3.967 -4.025 8.977
+    Flags 2163715
    }
    {
     coords -6.022 -4.026 8.974
+    Flags 2163715
    }
    {
     coords -6.023 -4.024 -6.934
+    Flags 2163715
    }
    {
     coords -6.024 -4.026 0.999
+    Flags 2163715
    }
    {
     coords 13.89 -4.018 16.915
+    Flags 2163715
    }
    {
     coords 3.945 -4.017 16.93
+    Flags 2163715
    }
    {
     coords -6.043 -4.018 16.927
+    Flags 2163715
    }
   }
   $grp GenericEntity : "{9633134198F3AB1A}Prefabs/Rocks/Granite/GraniteRock_01.et" {
    {
     coords 22.793 -18.296 -18.502
     scale 1.84
+    Flags 2163715
    }
    {
     coords -11.924 -10.753 20.412
     scale 1.27
+    Flags 2163715
    }
    {
     coords -1.966 -14.909 -10.654
     scale 1.84
+    Flags 2163715
    }
    {
     coords -3.646 -39.829 19.431
     scale 4.552
+    Flags 2163715
    }
    {
     coords -27.365 -33.139 23.443
     scale 3.142
+    Flags 2163715
    }
    {
     coords 19.677 -42.515 -12.333
     scale 4.552
+    Flags 2163715
    }
   }
   SCR_DestructibleBuildingEntity : "{985A4C85EBEF38AA}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_10m_end.et" {
    coords 20.407 -4.025 -16.378
    angleY 0
+   Flags 2163715
    {
     GenericEntity {
      ID "5B10D8714B81D9CC"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D9DA"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D9AF"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81DE5E"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D986"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D995"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D9B8"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D8714B81D9E1"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DE0C"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DE18"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DE21"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DE65"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DE70"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D8714B81DEC4"
      coords 0 0 0
+     Flags 2622467
     }
    }
   }
   SCR_DestructibleBuildingEntity : "{A35BDA0682C87897}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_corner_90.et" {
    coords 9.912 -4.023 -16.378
+   Flags 2163715
    {
     GenericEntity {
      ID "5B10D873AF22181D"
      coords 0 0 0
+     Flags 2622467
     }
     GenericEntity {
      ID "5B10D873AF221863"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D873AF221826"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D873AF221833"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D873AF2218DF"
      coords 0 0 0
+     Flags 2622467
     }
     SCR_DestructibleBuildingEntity {
      ID "5B10D873AF2218EA"
      coords 0 0 0
+     Flags 2622467
     }
    }
   }
   $grp SCR_DestructibleBuildingEntity : "{A7DE92CA47404D69}Prefabs/Structures/Infrastructure/Naval/Piers/PierConcrete_01_wall_10m.et" {
    {
     coords 8.906 2.017 -10.361
+    Flags 2163715
    }
    {
     coords -1.118 1.952 -10.341
+    Flags 2163715
    }
    {
     coords -11.107 1.89 -10.314
+    Flags 2163715
    }
    {
     coords 8.874 2.005 20.042
+    Flags 2163715
    }
    {
     coords -11.139 1.878 20.089
+    Flags 2163715
    }
    {
     coords -1.15 1.94 20.061
+    Flags 2163715
    }
    {
     coords 13.479 2.098 15.09
     angleY -89.976
+    Flags 2163715
    }
    {
     coords 13.423 1.971 -4.923
     angleY -89.976
+    Flags 2163715
    }
    {
     coords 13.454 2.033 5.066
     angleY -89.976
+    Flags 2163715
    }
    {
     coords -15.439 1.762 15.096
     angleY -89.976
+    Flags 2163715
    }
    {
     coords -15.495 1.635 -4.917
     angleY -89.976
+    Flags 2163715
    }
    {
     coords -15.465 1.697 5.072
     angleY -89.976
+    Flags 2163715
    }
   }
   $grp GenericEntity : "{FA6727A124372434}Prefabs/Rocks/Granite/GraniteRock_02.et" {
    {
     coords 13.924 -13.394 -18.74
     angleY -46.118
+    Flags 2163715
    }
    {
     coords -11.311 -12.305 -10.159
     angleY -26.833
     scale 1.25
+    Flags 2163715
    }
    {
     coords -6.058 -34.846 -11.203
     angleY -17.448
     scale 3.34
+    Flags 2163715
    }
    {
     coords -19.574 -23.066 11.228
     angleY -79.57
     scale 2.474
+    Flags 2163715
    }
   }
  }

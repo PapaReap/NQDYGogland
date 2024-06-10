@@ -1,58 +1,65 @@
 $grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
- Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse {
+ Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouseXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6583.04 2.893 -1570.612
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Jokela {
+ Persistence_Entity_TaskDeliverSupplies_JokelaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6584.206 2.893 -1570.956
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Jokela_n {
+ Persistence_Entity_TaskDeliverSupplies_Jokela_nXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6585.433 2.893 -1570.908
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Lansikallio {
+ Persistence_Entity_TaskDeliverSupplies_LansikallioXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6586.263 2.893 -1571.033
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Korkiala {
+ Persistence_Entity_TaskDeliverSupplies_KorkialaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6587.514 2.893 -1571.316
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Purjekallio {
+ Persistence_Entity_TaskDeliverSupplies_PurjekallioXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6589.145 2.893 -1571.242
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverSupplies_Niemenkyla {
+ Persistence_Entity_TaskDeliverSupplies_NiemenkylaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6590.375 2.893 -1571.338
+  Flags 2097155
  }
 }

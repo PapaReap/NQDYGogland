@@ -190,6 +190,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				array<string> moveSectionTo = {};
 				array<int> moveSectionToRandomBases = {};
 				bool insertBaseNameInTaskInfos;
+				array<string> additionalObjectsToMove = {};
 
 				foreach (PR_MoveTask details : taskMoveDetails)
 				{
@@ -197,6 +198,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 					moveSectionTo = details.m_sMoveSectionTo;
 					moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
 					insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
+					additionalObjectsToMove = details.m_sAdditionalObjectsToMove;
 
 					if (!taskSectionToMove)
 						continue;
@@ -318,6 +320,16 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 					string whereToMove = combinedArray.Get(randomIndex);
 
 					TeleportObject(taskSectionToMove, whereToMove);
+					if (additionalObjectsToMove.Count() > 0)
+					{
+						IEntity object;
+						foreach (string objectName : additionalObjectsToMove)
+						{
+							object = GetGame().GetWorld().FindEntityByName(objectName);
+							if (object)
+								TeleportObject(objectName, whereToMove);
+						}
+					}
 				}
 			}
 		}
@@ -1236,7 +1248,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	}
 
 	//------------------------------------------------------------------------------------------------
-/*	void Finish(bool showMsg = true)
+	void Finish(bool showMsg = true)
 	{
 		FactionManager factionManager = GetGame().GetFactionManager();
 		if (factionManager)
@@ -1245,36 +1257,36 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			//if (m_OwnerFaction)
 		}
 		showMsg = SCR_FactionManager.SGetLocalPlayerFaction() == m_OwnerFaction;// m_TargetFaction;
-		super.Finish(showMsg);
+	//	super.Finish(showMsg);
 
 		SCR_XPHandlerComponent comp = SCR_XPHandlerComponent.Cast(GetGame().GetGameMode().FindComponent(SCR_XPHandlerComponent));
 
 		// Reward XP for seizing a base or reconfiguring a relay
-		if (comp && !GetTaskManager().IsProxy() && GetType() == SCR_CampaignTaskType.CAPTURE)
+		if (comp && !GetTaskManager().IsProxy()/*&& GetType() == SCR_CampaignTaskType.CAPTURE*/)
 		{
 			PlayerManager playerManager = GetGame().GetPlayerManager();
 			array<int> players = {};
 			playerManager.GetPlayers(players);
 			array<SCR_BaseTaskExecutor> assignees = {};
-			GetAssignees(assignees);
-			vector baseOrigin = m_TargetBase.GetOwner().GetOrigin();
-			int radius = m_TargetBase.GetRadius();
-			int radiusSq;
+		//	GetAssignees(assignees);
+		//	vector baseOrigin = m_TargetBase.GetOwner().GetOrigin();
+		//	int radius = m_TargetBase.GetRadius();
+		//	int radiusSq;
 			Faction playerFaction;
 			IEntity playerEntity;
 			bool isAssignee;
 			int assigneeID;
 			SCR_EXPRewards rewardID;
 
-			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
+		//	if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
+		//		rewardID = SCR_EXPRewards.RELAY_RECONFIGURED;
+		//	else
 				rewardID = SCR_EXPRewards.RELAY_RECONFIGURED;
-			else
-				rewardID = SCR_EXPRewards.BASE_SEIZED;
 
-			if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
-				radiusSq = 50 * 50;
-			else
-				radiusSq = radius * radius;
+		//	if (m_TargetBase.GetType() == SCR_ECampaignBaseType.RELAY)
+		//		radiusSq = 50 * 50;
+		//	else
+		//		radiusSq = radius * radius;
 
 			foreach (int playerId : players)
 			{
@@ -1287,8 +1299,8 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 				if (playerFaction != m_OwnerFaction)//m_TargetFaction)
 					continue;
-
-				if (vector.DistanceSq(playerEntity.GetOrigin(), baseOrigin) < radiusSq)
+comp.AwardXP(playerId, rewardID, 1, true);
+				/*if (vector.DistanceSq(playerEntity.GetOrigin(), baseOrigin) < radiusSq)
 				{
 					isAssignee = false;
 
@@ -1309,52 +1321,52 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 						multiplier = 1.5;
 
 					comp.AwardXP(playerId, rewardID, multiplier, isAssignee);
-				}
+				}*/
 			}
 		}
 
-		string baseName;
+	//	string baseName;
 
-		if (m_TargetBase)
-			baseName = GetBaseNameWithCallsign();
+	//	if (m_TargetBase)
+	//		baseName = GetBaseNameWithCallsign();
 
-		if (showMsg)
-		{
+		//if (showMsg)
+		//{
 			// TODO make this nicer
-			if (m_bIndividualTask)
-			{
-				if (IsAssignedToLocalPlayer())
-				{
-					if (DoneByAssignee())
-					{
-						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
-					}
-					else
-					{
-						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_FAILED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_FAILED);
-					}
-				}
-				else
-				{
-					if (m_aAssignees && m_aAssignees.Count() > 0)
-					{
-						string text;
-						string par1;
-						string par2;
-						string par3;
-						string par4;
-						string par5;
-						GetFinishTextData(text, par1, par2, par3, par4, par5);
-						SCR_PopUpNotification.GetInstance().PopupMsg(text, prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: par1, param2: par2, param3: par3, param4: par4, sound: SCR_SoundEvent.TASK_SUCCEED);
-					}
-					else
-						SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
-				}
-			}
-			else
-				SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
-		}
-	}*/
+			//if (m_bIndividualTask)
+			//{
+				//if (IsAssignedToLocalPlayer())
+				//{
+				//	if (DoneByAssignee())
+				//	{
+				//		SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+				//	}
+				//	else
+				//	{
+				//		SCR_PopUpNotification.GetInstance().PopupMsg(TASK_FAILED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_FAILED);
+				//	}
+				//}
+				//else
+				//{
+					//if (m_aAssignees && m_aAssignees.Count() > 0)
+					//{
+						//string text;
+						//string par1;
+						//string par2;
+						//string par3;
+						//string par4;
+						//string par5;
+						//GetFinishTextData(text, par1, par2, par3, par4, par5);
+						//SCR_PopUpNotification.GetInstance().PopupMsg(text, prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: par1, param2: par2, param3: par3, param4: par4, sound: SCR_SoundEvent.TASK_SUCCEED);
+					//}
+					//else
+						//SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+				//}
+			//}
+			//else
+			//	SCR_PopUpNotification.GetInstance().PopupMsg(TASK_COMPLETED_TEXT + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: baseName, sound: SCR_SoundEvent.TASK_SUCCEED, text2: SCR_BaseTask.TASK_HINT_TEXT, text2param1: SCR_PopUpNotification.TASKS_KEY_IMAGE_FORMAT);
+		//}
+	}
 }
 
 // Helper class for designer to specify what tasks will be available in this area
@@ -1477,6 +1489,9 @@ class PR_MoveTask
 	//! "Only works in combination with 'Move Section To Random Bases' above.  "
 	[Attribute("false", UIWidgets.CheckBox, hintInsertBaseNameInTaskInfos, category: "PR Task Spawner: Tasks - Individual Tasks")]
 	bool m_bInsertBaseNameInTaskInfos;
+
+	[Attribute(desc: "Additional objects to move to final destination of tasks")]
+	ref array<string> m_sAdditionalObjectsToMove;
 }
 
 enum PR_TASK_ESFTaskMove

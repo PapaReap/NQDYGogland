@@ -1,7 +1,7 @@
 PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
  coords 5070.05 16.91 9544.013
  TriggerShapeType Sphere
- SphereRadius 500
+ SphereRadius 1
  ShapeColor 0.046 0 1 0.078
  TriggerActivationType "First change"
  PeriodicQueries 1
@@ -448,9 +448,6 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
  m_iPlayerDistanceToSpawnTask 600
  m_bUseRandomTasks 1
  m_iRandomTaskCount -1
- m_bUseFirstTaskRandomDelayTimer 1
- m_iDelayTimerToSpawnFirstTaskMin 1800
- m_iDelayTimerToSpawnFirstTaskMax 2700
  m_bUseRandomDelayBetweenTasksTimer 1
  m_iDelayTimerBetweenEachTaskMin 3600
  m_iDelayTimerBetweenEachTaskMax 10800
@@ -511,8 +508,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
     m_bUseRandomTasks 1
-    m_iDelayTimerToSpawnFirstTaskMin 10
-    m_iDelayTimerToSpawnFirstTaskMax 15
    }
    GenericEntity TaskDeliverIntel_Pohjoiskorkia_caves : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -594,6 +589,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.113 0.263 17.988
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Pohjoiskorkia_caves : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -915,9 +913,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_bUseRandomTasks 1
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -1005,6 +1000,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla_sw : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.472 0.018 -0.022
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla_sw : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -1309,8 +1307,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_ArmeijanVarikko : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -1397,6 +1393,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.203 0.002 -1.984
    }
    GenericEntity Layer_TaskDeliverIntel_AI_ArmeijanVarikko : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -1682,8 +1681,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 60
    }
    GenericEntity TaskDeliverIntel_Haukkavuori : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -1770,6 +1767,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Haukkavuori : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.12 0 -1.003
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Haukkavuori : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -2111,8 +2111,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 60
    }
    GenericEntity TaskDeliverIntel_Kiiskinkyla_s : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -2199,6 +2197,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.577 0.003 0.252
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kiiskinkyla_s : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -2543,9 +2544,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_bUseRandomTasks 1
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -2583,7 +2581,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sTaskDescriptionUpdated ""
      }
     }
-    coords -0.044 0 0.046
+    coords -0.044 -1.401 0.046
+    angleX 6.236
+    angleY 0.196
+    angleZ 1.801
     {
      GenericEntity SlotDelivery_TaskDeliverIntel_Miettila {
       ID "5E74C909218B71FF"
@@ -2633,6 +2634,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Miettila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.272 -1.482 -0.604
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Miettila : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -2996,9 +3000,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -3086,6 +3087,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Teollisuusalue : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.3 0.001 0.241
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Teollisuusalue : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -3460,8 +3464,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Mattila : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -3548,6 +3550,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Mattila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.534 -0.033 -0.183
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Mattila : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -3840,8 +3845,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Reactor : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -3928,6 +3931,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Reactor : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.298 0 0.21
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Reactor : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -4220,8 +4226,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Lounatrivi : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -4308,6 +4312,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Lounatrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.531 0.015 0.175
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Lounatrivi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -4677,8 +4684,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Pohjoisrivi : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -4765,6 +4770,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Pohjoisrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.409 -0.007 0.158
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Pohjoisrivi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -5116,9 +5124,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_bUseRandomTasks 1
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 40
-    m_iDelayTimerToSpawnFirstTaskMax 45
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -5206,6 +5211,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.386 -0.006 0.056
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla_n : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -5674,9 +5682,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_bUseRandomTasks 1
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 40
-    m_iDelayTimerToSpawnFirstTaskMax 45
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -5764,6 +5769,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.441 0.014 -0.067
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -6180,8 +6188,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Kappeliniemi : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -6268,6 +6274,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Kappeliniemi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.643 -0.001 0.306
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kappeliniemi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -6602,8 +6611,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Niemenkyla : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -6690,6 +6697,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.316 0.116 -0.25
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Niemenkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -7171,8 +7181,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Jokela : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -7259,6 +7267,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.553 -0.049 0.01
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Jokela : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -7670,8 +7681,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Liiralahdenjarvi : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -7758,6 +7767,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.256 -0.001 -0.313
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Liiralahdenjarvi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -8022,8 +8034,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 60
    }
    GenericEntity TaskDeliverIntel_Kiiskinkyla : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -8110,6 +8120,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Kiiskinkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.449 0.026 0.272
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kiiskinkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -8451,8 +8464,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Lounatkyla : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -8539,6 +8550,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Lounatkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.303 -0.002 0.161
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Lounatkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -8894,8 +8908,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
      }
     }
-    m_iDelayTimerToSpawnFirstTaskMin 30
-    m_iDelayTimerToSpawnFirstTaskMax 120
    }
    GenericEntity TaskDeliverIntel_Heikinhelli : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -8982,6 +8994,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       angleY -22.479
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskDeliverIntel_Heikinhelli : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.39 0 0.132
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Heikinhelli : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {

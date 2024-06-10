@@ -173,8 +173,7 @@ class PR_RandomizerTrigger : PR_CoreTrigger
 					continue;
 				}
 
-				Print(string.Format("[PR_RandomizerTrigger] %1 : Trigger: %2 : keeperArray: %3", m_sLogMode, m_sTriggerName, keeperArray), LogLevel.ERROR);
-				
+				Print(string.Format("[PR_RandomizerTrigger] %1 : Trigger: %2 : keeperArray: %3", m_sLogMode, m_sTriggerName, keeperArray), LogLevel.NORMAL);
 				
 				foreach (string sObjectName : combinedArray)
 				{
@@ -206,28 +205,13 @@ class PR_RandomizerTrigger : PR_CoreTrigger
 							objectToTeleportTo = GetGame().GetWorld().FindEntityByName(objectToMoveTo);
 							
 							if (!objectToTeleportTo)
-							{
 								Print("[PR_SpawnPatrol] (TeleportObject) Issue with teleporting object, check if objects exists! ", LogLevel.ERROR);
-							}
 							else
-							{
-							GetGame().GetCallqueue().CallLater(TeleportObject, 1000, false, objectToMove, objectToMoveTo);
-							//vector position = objectToTeleportTo.GetOrigin();
-							//objectToTeleport.SetOrigin(position);
-							//Update();
-							Print(string.Format("[PR_RandomizerTrigger] %1 : Trigger: %2 : objectToTeleport: %3 : posPost2: %4", m_sLogMode, m_sTriggerName, objectToMove, objectToTeleport.GetOrigin()), LogLevel.WARNING);
-							}
+								GetGame().GetCallqueue().CallLater(TeleportObject, 1000, false, objectToMove, objectToMoveTo);
 						}
 					}
 					else
-					{
 						GetGame().GetCallqueue().CallLater(TeleportObject, 1000, false, objectToMove, objectToMoveTo);
-						//GetGame().GetCallqueue().CallLater(MoveTrigger, 2000, false, objectToMove, objectToMoveTo);
-						//vector position = objectToTeleportTo.GetOrigin();
-						//objectToTeleport.SetOrigin(position);
-						//objectToTeleport.Update();
-						//Print(string.Format("[PR_RandomizerTrigger] %1 : Trigger: %2 : objectToTeleport: %3 : posPost: %4", m_sLogMode, m_sTriggerName, objectToTeleport, objectToTeleport.GetOrigin()), LogLevel.WARNING);
-					}
 				}
 			}
 		}
@@ -235,30 +219,6 @@ class PR_RandomizerTrigger : PR_CoreTrigger
 		PersistenceCleanup();
 
 		Deactivate();
-	}
-	
-	void AfterGroupIsEmpty(SCR_AIGroup group)
-	{
-	
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! GetGame().GetCallqueue().CallLater(MoveTrigger, 1000, false, objectToMove, objectToMoveTo);
-	void MoveTrigger(string whatToMove, string whereToMove)
-	{
-		IEntity triggerToMove = GetGame().GetWorld().FindEntityByName(whatToMove);
-		IEntity moveToObject = GetGame().GetWorld().FindEntityByName(whereToMove);
-		if (!triggerToMove || !moveToObject)
-		{
-			Print(string.Format("[PR_RandomizerTrigger] (MoveTrigger) %1 : Trigger: %2 : triggerToMove: %3 : Issue with teleporting object, check if objects exists!", m_sLogMode, m_sTriggerName, whatToMove), LogLevel.ERROR);
-			return;
-		}
-		
-		Print(string.Format("[PR_RandomizerTrigger] (MoveTrigger) %1 : Trigger: %2 : triggerToMove: %3 : posPre: %4", m_sLogMode, m_sTriggerName, whatToMove, triggerToMove.GetOrigin()), LogLevel.NORMAL);
-		vector position = moveToObject.GetOrigin();
-		triggerToMove.SetOrigin(position);
-		triggerToMove.Update();
-		Print(string.Format("[PR_RandomizerTrigger] (MoveTrigger) %1 : Trigger: %2 : triggerToMove: %3 : posPost: %4", m_sLogMode, m_sTriggerName, whatToMove, triggerToMove.GetOrigin()), LogLevel.NORMAL);
 	}
 }
 

@@ -62,7 +62,9 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 	protected bool m_bIsTestingMode = false;
 
 	protected BaseWorld m_World;
-	protected IEntity m_Trigger;
+	protected BaseGameTriggerEntity m_Trigger;
+	protected float m_fRadius;
+	//protected IEntity m_Trigger;
 	protected string m_sTriggerName;
 	protected string m_sPath = "$EnfusionPersistenceFramework:Scripts/Game/EPF_PersistenceComponent.c";
 	protected bool m_bEPF_ModExist = false;
@@ -84,7 +86,9 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		m_sLogMode = "(EOnInit)";
 
 		m_World = owner.GetWorld();
-		m_Trigger = m_World.FindEntityByID(this.GetID());
+		m_Trigger = BaseGameTriggerEntity.Cast(m_World.FindEntityByID(this.GetID()));
+		m_fRadius = m_Trigger.GetSphereRadius(); 
+		//Print(string.Format("[PR_Core_Trigger] %1 : Trigger: %2 : m_fRadius: %3", m_sLogMode, m_sTriggerName, m_fRadius), LogLevel.WARNING);
 		m_sTriggerName = m_Trigger.GetName();
 		if (!m_sTriggerName)
 		{
@@ -168,7 +172,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 				continue;
 
 			float actualDistance = vector.DistanceXZ(entityFrom.GetOrigin(), entityToBeChecked.GetOrigin());
-Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2 : actualDistance: %3", m_sLogMode, m_sTriggerName, actualDistance), LogLevel.WARNING);
+			Print(string.Format("[PR_Core_Trigger] (GetClosestPlayerEntity) %1 : Trigger: %2 : actualDistance: %3", m_sLogMode, m_sTriggerName, actualDistance), LogLevel.WARNING);
 			if (actualDistance < distance)
 			{
 				closestEntity = entityToBeChecked;

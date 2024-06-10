@@ -1,0 +1,4 @@
+Randomize supply caches
+Random mines by ai
+Random ambush by ai
+Add xp for tasks

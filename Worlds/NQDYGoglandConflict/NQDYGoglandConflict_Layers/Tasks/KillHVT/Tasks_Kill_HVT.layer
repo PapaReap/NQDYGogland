@@ -1,7 +1,7 @@
 PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Master {
  coords 5075.285 17.748 9553.997
  TriggerShapeType Sphere
- SphereRadius 500
+ SphereRadius 1
  ShapeColor 0.046 0 1 0.078
  TriggerActivationType "First change"
  PeriodicQueries 1
@@ -120,9 +120,6 @@ PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Master {
  m_iPlayerDistanceToSpawnTask 600
  m_bUseRandomTasks 1
  m_iRandomTaskCount -1
- m_bUseFirstTaskRandomDelayTimer 1
- m_iDelayTimerToSpawnFirstTaskMin 1800
- m_iDelayTimerToSpawnFirstTaskMax 2700
  m_bUseRandomDelayBetweenTasksTimer 1
  m_iDelayTimerBetweenEachTaskMin 3600
  m_iDelayTimerBetweenEachTaskMax 10800
@@ -173,9 +170,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -253,6 +247,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       coords -4.986 0 -0.003
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskKill_HVT_Kippariniemi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 1.737 -0 -2.33
    }
    GenericEntity Layer_TaskKill_HVT_AI_Kippariniemi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -675,9 +672,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 10
-    m_iDelayTimerToSpawnFirstTaskMax 20
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -745,6 +739,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
       coords -4.986 0 -0.003
      }
+    }
+   }
+   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    Persistence_Entity_TaskKill_HVT_Makiinpaallys {
+     coords 1.433 -0.001 -2.781
+    }
+    Persistence_Entity_TaskKill_TRG_Makiinpaallys {
+     coords 1.492 0.01 -2.901
     }
    }
    GenericEntity Layer_TaskKill_HVT_AI_Makiinpaallys : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1417,9 +1419,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 10
-    m_iDelayTimerToSpawnFirstTaskMax 20
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -1482,6 +1481,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
       coords -4.986 0 -0.003
      }
+    }
+   }
+   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    Persistence_Entity_TaskKill_HVT_Kiiskinkyla_ship {
+     coords 1.995 0 -1.989
+    }
+    Persistence_Entity_TaskKill_TRG_Kiiskinkyla_ship {
+     coords 1.82 0 -1.847
     }
    }
    GenericEntity TaskKill_HVT_MoveCollection_Kiiskinkyla_ship : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
@@ -1774,9 +1781,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 10
-    m_iDelayTimerToSpawnFirstTaskMax 20
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -1842,6 +1846,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
       coords -4.986 0 -0.003
      }
+    }
+   }
+   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    Persistence_Entity_TaskKill_HVT_Suurlinna {
+     coords 1.839 0.675 -1.935
+    }
+    Persistence_Entity_TaskKill_TRG_Suurlinna {
+     coords 1.68 0.593 -1.748
     }
    }
    GenericEntity Layer_TaskKill_HVT_AI_Suurlinna : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -2225,9 +2237,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 10
-    m_iDelayTimerToSpawnFirstTaskMax 20
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -2293,6 +2302,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       }
       coords -4.986 0 -0.003
      }
+    }
+   }
+   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    Persistence_Entity_TaskKill_TRG_Haukkavuori {
+     coords 3.845 -1.719 -2.717
+    }
+    Persistence_Entity_TaskKill_HVT_Haukkavuori {
+     coords 2.526 -1.716 -3.609
     }
    }
    GenericEntity Layer_TaskKill_HVT_AI_Haukkavuori : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -2557,9 +2574,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -2621,6 +2635,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       coords -4.986 0 -0.003
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskKill_HVT_Vahasomerikonlahti : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 1.372 -0.197 -2.546
    }
    GenericEntity Layer_TaskKill_HVT_AI_Vahasomerikonlahti : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {
@@ -2905,9 +2922,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     }
     m_iPlayerDistanceToSpawnTask 300
     m_iRandomTaskCount -1
-    m_bUseFirstTaskRandomDelayTimer 1
-    m_iDelayTimerToSpawnFirstTaskMin 60
-    m_iDelayTimerToSpawnFirstTaskMax 70
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
@@ -2969,6 +2983,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       coords -4.986 0 -0.003
      }
     }
+   }
+   GenericEntity Persistence_Entity_TaskKill_HVT_Lounatjarvi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 1.366 -0.193 -3.057
    }
    GenericEntity Layer_TaskKill_HVT_AI_Lounatjarvi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
     components {

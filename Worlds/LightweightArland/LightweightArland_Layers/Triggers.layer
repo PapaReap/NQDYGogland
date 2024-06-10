@@ -14,7 +14,6 @@ $grp PR_SpawnPatrolTrigger {
   m_bUseRandomRespawnTimer 1
   m_iRespawnTimerMax 30
   m_eAIGroupFormation Column
-  m_eAICharacterStance CROUCH
   m_fPerceptionFactor 2.8
   m_bCycleWaypoints 1
   m_aWaypointCollection {
@@ -23,6 +22,7 @@ $grp PR_SpawnPatrolTrigger {
  }
  {
   coords 1318.047 39.009 2792.774
+  Flags 2097155
   TriggerShapeType Sphere
   SphereRadius 342.9
   DrawShape 1
@@ -31,7 +31,6 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   m_bDebugLogs 1
   m_eAIGroupFormation Column
-  m_bHoldFire 0
   m_bCycleWaypoints 1
   m_aWaypointCollection {
    "Waypoint_Set_4"
@@ -49,7 +48,6 @@ $grp PR_SpawnPatrolTrigger {
   PeriodicQueries 1
   m_bDebugLogs 1
   m_eAIGroupFormation Column
-  m_bHoldFire 0
   m_bCycleWaypoints 1
   m_aWaypointCollection {
    "Waypoint_Set_6" "Waypoint_Set_7" "Waypoint_Set_8"

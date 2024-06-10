@@ -1,162 +1,182 @@
 $grp SCR_ChimeraCharacter : "{54E6CD3E2CAEAD0B}Prefabs/ScenarioFramework/Components/Persistence_Entity.et" {
- Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves {
+ Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_cavesXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6573.7 2.861 -1568.424
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko {
+ Persistence_Entity_TaskDeliverIntel_ArmeijanVarikkoxxx {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6574.431 2.888 -1570.678
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Suurkyla_sw {
+ Persistence_Entity_TaskDeliverIntel_Suurkyla_swXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6580.07 2.892 -1568.977
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Haukkavuori {
+ Persistence_Entity_TaskDeliverIntel_HaukkavuoriXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6576.115 2.889 -1570.732
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s {
+ Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_sXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6574.047 2.867 -1569.406
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Miettila {
+ Persistence_Entity_TaskDeliverIntel_MiettilaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6580.165 2.892 -1569.698
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Teollisuusalue {
+ Persistence_Entity_TaskDeliverIntel_TeollisuusalueXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6581.095 2.892 -1568.914
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Mattila {
+ Persistence_Entity_TaskDeliverIntel_MattilaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6578.914 2.892 -1569.738
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Reactor {
+ Persistence_Entity_TaskDeliverIntel_ReactorXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6576.173 2.883 -1568.928
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Lounatrivi {
+ Persistence_Entity_TaskDeliverIntel_LounatriviXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6577.701 2.892 -1569.668
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Pohjoisrivi {
+ Persistence_Entity_TaskDeliverIntel_PohjoisriviXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6574.997 2.864 -1568.602
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Suurkyla_n {
+ Persistence_Entity_TaskDeliverIntel_Suurkyla_nXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6578.885 2.892 -1568.938
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Suurkyla {
+ Persistence_Entity_TaskDeliverIntel_SuurkylaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6577.474 2.892 -1568.854
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Kappeliniemi {
+ Persistence_Entity_TaskDeliverIntel_KappeliniemiXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6580.116 2.892 -1570.632
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Niemenkyla {
+ Persistence_Entity_TaskDeliverIntel_NiemenkylaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6581.072 2.892 -1569.646
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Jokela {
+ Persistence_Entity_TaskDeliverIntel_JokelaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6578.925 2.892 -1570.597
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Kiiskinkyla {
+ Persistence_Entity_TaskDeliverIntel_KiiskinkylaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6581.183 2.892 -1570.6
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi {
+ Persistence_Entity_TaskDeliverIntel_LiiralahdenjarviXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6575.15 2.868 -1569.644
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Lounatkyla {
+ Persistence_Entity_TaskDeliverIntel_LounatkylaXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6576.22 2.883 -1569.735
+  Flags 2097155
  }
- Persistence_Entity_TaskDeliverIntel_Heikinhelli {
+ Persistence_Entity_TaskDeliverIntel_HeikinhelliXXX {
   components {
    SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
     EnableDamage 0
    }
   }
   coords 6577.892 2.892 -1570.672
+  Flags 2097155
  }
 }

@@ -39,6 +39,7 @@ PR_SpawnPatrolTrigger moveTrg {
  angleX -0.894
  angleY -0.028
  angleZ 1.79
+ Flags 2097155
  TriggerShapeType Sphere
  SphereRadius 10
  DrawShape 1
@@ -356,6 +357,7 @@ PR_SpawnPatrolTrigger ptrig : "{AE322BE5DA5A4DD3}Prefabs/Systems/PR_SpawnPatrol.
  angleX 0
  angleY 0
  angleZ 0
+ Flags 2097155
 }
 Vehicle car1 : "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" {
  coords 1112.509 39 2346.379
