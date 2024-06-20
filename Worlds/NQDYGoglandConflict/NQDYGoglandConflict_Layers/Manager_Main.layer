@@ -15,14 +15,26 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
   SCR_GameModeSFManager "{60FD5A50534ED456}" {
    m_bDynamicDespawn 1
   }
+  SCR_PlayerSpawnPointManagerComponent "{60FD5890E213777A}" {
+   m_bRadioVehicleSpawningEnabled 1
+  }
+  SCR_RepairSupportStationComponent "{60FD5A506839447C}" {
+   m_iBaseSupplyCostOnUse 1
+  }
   SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
    m_bRandomStartingDaytime 0
    m_fDayTimeAcceleration 1
    m_bRandomStartingWeather 0
   }
+  SCR_XPHandlerComponent "{60FD5890E214D77E}" {
+   m_iVeterancyXPAwardThreshold 150
+  }
  }
  coords 6790.321 52.286 5650.282
  m_iControlPointsThreshold 18
+ m_iRegularSuppliesIncome 5
+ m_iRegularSuppliesIncomeExtra 0
+ m_iSpawnCost 100
  m_iSuicideRespawnDelay 60
 }
 SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {

@@ -60,7 +60,7 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
     }
     SCR_EditorLinkEntry "{60E29556B9B795EB}" {
      m_Prefab "{93E5381B6280917D}PrefabsEditable/Auto/Compositions/Misc/SubCompositions/Storage/E_Storage_Supplies_US_02.et"
-     m_vPosition 4.228 0.001 -0.126
+     m_vPosition 4.24 0.001 -0.229
      m_vAngles 0 0 0
      m_fScale 1
     }
@@ -78,13 +78,13 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
     }
     SCR_EditorLinkEntry "{60E29556B9B0581F}" {
      m_Prefab "{308E000E2051D357}PrefabsEditable/Auto/Systems/SpawnPoints/E_SpawnPosition.et"
-     m_vPosition 2.892 0.01 -3.131
-     m_vAngles 0 48.015 0
+     m_vPosition 6.557 0.213 -5.701
+     m_vAngles 0 -19.148 0
      m_fScale 1
     }
     SCR_EditorLinkEntry "{60E29556B9B0581E}" {
      m_Prefab "{308E000E2051D357}PrefabsEditable/Auto/Systems/SpawnPoints/E_SpawnPosition.et"
-     m_vPosition 3.101 0.01 2.293
+     m_vPosition 3.12 0.01 2.602
      m_vAngles 0 1.025 0
      m_fScale 1
     }
@@ -112,6 +112,20 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
      m_vAngles 0.267 -3.338 1.02
      m_fScale 1
     }
+    SCR_EditorLinkEntry "{61A0DCBEBAA39128}" {
+     m_Prefab "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et"
+     m_vPosition -6.489 0.01 -1.546
+    }
+    SCR_EditorLinkEntry "{61A0DCBEED995B19}" {
+     m_Prefab "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et"
+     m_vPosition 4.11 0.01 -5.277
+     m_vAngles 0 180 0
+    }
+    SCR_EditorLinkEntry "{61A0DCBFDAB0DA97}" {
+     m_Prefab "{CB25098FE5F686E1}Prefabs/Items/Food/PR_ConsumablesCrate.et"
+     m_vPosition -3.257 0.114 4.521
+     m_vAngles 0 180 0
+    }
    }
   }
  }
@@ -122,10 +136,12 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
   }
   GenericEntity {
    ID "5D088D2F37FC4116"
+   coords 4.374 0.1 0.055
    Flags 1048576
   }
   GenericEntity {
    ID "5D088D2F37FC414A"
+   coords 2.469 0 0.898
    Flags 1048576
    {
     DecalEntity {
@@ -166,6 +182,15 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
     }
     GenericEntity {
      ID "5D371AC8D914191C"
+     components {
+      SCR_CampaignBuildingProviderComponent "{5EBCED04D0321687}" {
+       m_aBudgetsToEvaluate {
+        SCR_CampaignBuildingMaxValueBudgetToEvaluateData "{5EFAB309A0482ACF}" {
+         m_iMaxValue 2400
+        }
+       }
+      }
+     }
      Flags 1048576
     }
     GenericEntity {
@@ -468,30 +493,100 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
   }
   GenericEntity {
    ID "5D45393F6D84F038"
+   components {
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     m_aConsumers {
+      SCR_ResourceConsumer "{5DE4B6C41E28EB13}" {
+       m_fResourceRange 2.5
+      }
+     }
+    }
+   }
+   coords 4.24 0.001 -0.229
    Flags 1048576
    {
     GenericEntity {
      ID "5D45393F647955A1"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 4.5
+        }
+       }
+      }
+     }
+     coords 1.396 -0.001 -0.553
      Flags 1048576
     }
     GenericEntity {
      ID "5D45393F647955A3"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 2.5
+        }
+       }
+      }
+     }
+     coords -1.118 -0.001 -1.182
      Flags 1048576
     }
     GenericEntity {
      ID "5D45393F647955A4"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 2.5
+        }
+       }
+      }
+     }
+     coords 1.35 -0.001 1.329
      Flags 1048576
     }
     GenericEntity {
      ID "5D45393F647955A7"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 2.5
+        }
+       }
+      }
+     }
+     coords 1.381 -0.001 0.758
      Flags 1048576
     }
     GenericEntity {
      ID "5D45393F647955AD"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 2.5
+        }
+       }
+      }
+     }
+     coords -1.595 -0.001 -0.038
      Flags 1048576
     }
     GenericEntity {
      ID "5D45393F647955AF"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aGenerators {
+        SCR_ResourceGenerator "{5D3CDAE701F5A224}" {
+         m_fStorageRange 2.5
+        }
+       }
+      }
+     }
+     coords -1.521 -0.001 1.182
      Flags 1048576
      {
       GenericEntity {
@@ -504,28 +599,191 @@ GenericEntity : "{D4DDD345A352E97B}Prefabs/Compositions/Slotted/SlotFlatSmall/He
   }
   GenericEntity {
    ID "5DCAAA1B4390DB17"
+   coords 6.557 0.213 -5.701
+   angleY -19.148
    Flags 1048576
   }
   GenericEntity {
    ID "5DCAAA1B4390DB29"
+   coords 3.12 0.01 2.602
+   angleY 0
    Flags 1048576
   }
   GenericEntity {
    ID "5E3E8ACD623910C4"
+   components {
+    SCR_ResourceComponent "{5E3298BE225F0743}" {
+     m_aConsumers {
+      SCR_ResourceConsumer "{5E3298A9D628A54F}" {
+       m_fResourceRange 3.5
+      }
+     }
+     m_aGenerators {
+      SCR_ResourceGenerator "{5E3298A9DB3BDCA7}" {
+       m_fStorageRange 3.5
+      }
+     }
+    }
+   }
+   coords 6.163 0 1.675
    Flags 1048576
   }
   GenericEntity {
    ID "5E5CAA510BAF98DE"
+   coords 7.339 0 -0.692
    Flags 1048576
   }
   SCR_SpawnPoint {
    ID "5D8AF9E44A46E605"
    Flags 1048576
   }
+  $grp GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+   {
+    ID "619C5A2D8CD3776C"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aContainers {
+       SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+        m_vBoundingVolumeMins -1.704 0 -5.061
+        m_vBoundingVolumeMaxs 1.424 2.642 3.823
+       }
+      }
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_fResourceGain 1500
+          m_fResourceGainTickrate 3600
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+      m_aConsumers {
+       SCR_ResourceConsumer "{5DE4B6C41E28EB13}" {
+        m_fResourceRange 2.5
+       }
+      }
+     }
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+     Hierarchy "{5DE29DEA85CE9EE7}" {
+     }
+    }
+    coords -6.489 0.01 -1.546
+    {
+     GenericEntity : "{13A99500A14FA14C}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_20ft.et" {
+      ID "619C5A2D8CD3682B"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+          m_fResourceValueCurrent 0
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+      coords -0.078 0 0.21
+     }
+    }
+   }
+   {
+    ID "619C5A2F7F8841CE"
+    components {
+     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+      m_aContainers {
+       SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+        m_vBoundingVolumeMins -1.704 0 -5.061
+        m_vBoundingVolumeMaxs 1.424 2.642 3.823
+       }
+      }
+      m_aEncapsulators {
+       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+        m_aActions {
+         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+          m_fResourceGain 0
+          m_fResourceGainTickrate 0
+         }
+         SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{5DE296D4A665ABCD}" {
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+     }
+     SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+      m_bOrientChildrenToTerrain 0
+     }
+     Hierarchy "{5DE29DEA85CE9EE7}" {
+     }
+    }
+    coords 4.11 0.01 -5.277
+    angleY 180
+    {
+     GenericEntity : "{190CC54D175F52CB}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_10ft.et" {
+      ID "619C5A2F7F8FF18F"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+          m_fResourceValueCurrent 0
+          m_eOnEmptyBehavior NONE
+         }
+        }
+       }
+      }
+      coords -0.238 0 -1.306
+      angleY -92.416
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+   {
+    ID "619C5A2A0218EEA2"
+    components {
+     SCR_ResourceComponent "{5E3298BE225F0743}" {
+      m_aConsumers {
+       SCR_ResourceConsumer "{5E3298A9D628A54F}" {
+        m_fResourceRange 7
+       }
+      }
+      m_aGenerators {
+       SCR_ResourceGenerator "{5E3298A9DB3BDCA7}" {
+        m_fStorageRange 7
+       }
+      }
+     }
+     Hierarchy "{60E76A9EF7C5100F}" {
+      Enabled 1
+     }
+    }
+    coords -4.868 0 4.048
+    angleX -0.328
+    angleY -89.874
+    angleZ -1.504
+   }
+   {
+    ID "619C5A2F79BED285"
+    components {
+     Hierarchy "{60E76A9EF7C5100F}" {
+      Enabled 1
+     }
+    }
+    coords 5.254 0.181 -5.241
+    angleX -1.488
+    angleY 177.518
+    angleZ 0.396
+   }
+  }
   GenericEntity : "{CB25098FE5F686E1}Prefabs/Items/Food/PR_ConsumablesCrate.et" {
    ID "61634256F3A2AC5A"
    coords -3.257 0.114 4.521
-   angleY 179.163
+   angleY 180
   }
  }
 }

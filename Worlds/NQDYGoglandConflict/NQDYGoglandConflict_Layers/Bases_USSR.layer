@@ -22,6 +22,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 4737.815 7.844 10778.159
   {
@@ -90,6 +97,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5536.262 5.905 9114.65
   {
@@ -133,6 +147,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 4522.736 11.156 8820.214
@@ -269,6 +290,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 5544.096 123.406 6838.263
@@ -414,6 +442,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 6108.238 7.957 1504.724
   {
@@ -549,6 +584,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 7143.206 6.326 5224.388
@@ -706,6 +748,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5877.442 38.481 5722.254
   {
@@ -759,24 +808,31 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5971.957 37.619 2957.947
   {
    GenericEntity {
     ID "60E07149C1F0CAD5"
-    coords 0.046 0.014 -0.075
+    coords 0.046 0.007 -0.075
    }
    GenericEntity {
     ID "60E0714912226671"
-    coords -6.484 -1.988 11.98
+    coords -1.181 -0.288 11.98
    }
    GenericEntity {
     ID "60E0714938383856"
-    coords -5.949 -1.249 -26.528
+    coords 13.802 2.287 2.395
    }
    SCR_CampaignSpawnPointGroup {
     ID "60E07149C1F0CAD3"
-    coords -3.688 -1.917 10.233
+    coords 1.026 -0.416 10.233
    }
   }
  }
@@ -802,6 +858,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 7301.47 5.306 1068.086
@@ -935,6 +998,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 7002.18 100.585 4001.605
@@ -1072,6 +1142,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5387.053 6.875 4569.768
   {
@@ -1115,6 +1192,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 6291.323 7.813 7594.603
@@ -1160,6 +1244,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
    }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 8010.909 5 2050.777
   {
@@ -1203,6 +1294,13 @@ $grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
     "faction affiliation" "USSR"
+   }
+   SCR_ResourceComponent "{60E07149C1F706E6}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E07149C1F706D3}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 7490.982 18.562 3163.431

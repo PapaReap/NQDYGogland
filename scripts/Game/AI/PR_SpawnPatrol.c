@@ -282,7 +282,6 @@ class PR_SpawnPatrol
 				{
 					array<IEntity> waypointArray = {};
 					IEntity wpHolder = GetGame().GetWorld().FindEntityByName(waypointCollectionsArray.Get(_i));
-					//array<IEntity> newWaypointArray = {}; don't think i need anymore
 
 					GetAllChildren(wpHolder, waypointArray, debugLogs);
 
@@ -319,15 +318,11 @@ class PR_SpawnPatrol
 							namesArray.Remove(randomIndex);
 
 							if (debugLogs)
-							{
 								Print(("[PR_SpawnPatrol] (PRSpawnPatrol) randomIndex Index: " + randomIndex + " Name: " + name), LogLevel.NORMAL);
-							}
 						}
 						namesArray = namesArrayRandom;
 						if (debugLogs)
-						{
 							Print(("[PR_SpawnPatrol] (PRSpawnPatrol) Randomized namesArray: " + namesArray), LogLevel.NORMAL);
-						}
 					}
 
 					_i++;
@@ -345,31 +340,24 @@ class PR_SpawnPatrol
 			m_Group.AddWaypointToGroup(waypoint);
 			cycleWaypointArray.Insert(waypoint);
 			if (debugLogs)
-			{
 				Print(("[PR_SpawnPatrol] (PRSpawnPatrol) cycleWaypointArray Index: " + index + " Name: " + name), LogLevel.NORMAL);
-			}
 		}
 
 		//--- Set waypoints to cycle if enabled
 		bool cycleWaypoints = boolArray.Get(0);
 
 		if (cycleWaypointArray.IsEmpty())
-		{
 			Print("[PR_SpawnPatrol] (PRSpawnPatrol) Cycle waypoints were empty", LogLevel.NORMAL);
-			//return;
-		}
 
 		if (!cycleWaypointArray.IsEmpty() && cycleWaypoints)
 		{
 			cycleWaypointArray.Insert(cycleWaypointArray[0]);
 			AddCycleWaypoint(m_Group, cycleWaypointArray.Get(0).GetOrigin(), cycleWaypointArray, rerunCounter, debugLogs);
 			if (debugLogs)
-			{
 				Print(("[PR_SpawnPatrol] (PRSpawnPatrol) CycleWaypoints: " + cycleWaypointArray), LogLevel.NORMAL);
-			}
 		}
 
-		SetKeepGroupActive(keepGroupActive); //suspendIfNoPlayers
+		SetKeepGroupActive(keepGroupActive);
 		SetSuspendIfNoPlayers(keepGroupActive);
 		// Set Behaviors
 		SetAISkillB(skill);
@@ -381,7 +369,6 @@ class PR_SpawnPatrol
 		SetTeleportPosition(teleportPosition);
 		SetTeleportSortOrder(teleportSortOrder);
 		SetDebugLogs(debugLogs);
-		//neutralizePersistentObjectIfGroupIsDead
 		SetNeutralizePersistentObjectIfGroupIsDead(neutralizePersistentObjectIfGroupIsDead);
 
 		//--- Stuff to do after group death
@@ -432,19 +419,13 @@ class PR_SpawnPatrol
 		bool keepGroupActive = GetKeepGroupActive();
 		bool teleportAfterSpawn = GetTeleportAfterSpawn();
 		array<string> teleportPosition = GetTeleportPosition();
-//Print(("[PR_SpawnPatrol] (GetGroupAgents) teleportPosition: " + teleportPosition), LogLevel.NORMAL);
+
 		int teleportSortOrder = GetTeleportSortOrder();
 		string whereToMove = "";
 
 		array<AIAgent> agents = {};
 		groupGA.GetAgents(agents);
-		//AIAgent leader = groupGA.GetLeaderAgent(); // works
-		//Print(("[PR_SpawnPatrol] (GetAgentsCount) leader: " + leader), LogLevel.NORMAL);
 
-		//IEntity leaderEntity = groupGA.GetLeaderEntity(); // works
-		//Print(("[PR_SpawnPatrol] (GetAgentsCount) leaderEntity: " + leaderEntity), LogLevel.NORMAL);
-		//AIFormationComponent formationComponent = groupGA.GetFormationComponent(); // works
-		//Print(("[PR_SpawnPatrol] (GetAgentsCount) formationComponent: " + formationComponent), LogLevel.NORMAL);
 		AIWaypoint currentWaypoint = groupGA.GetCurrentWaypoint(); // works
 		Print(("[PR_SpawnPatrol] (GetGroupAgents) currentWaypoint: " + currentWaypoint), LogLevel.NORMAL);
 		int groupSize = groupGA.GetAgentsCount();
@@ -544,63 +525,6 @@ class PR_SpawnPatrol
 				}
 			}
 
-			/* have to put on hold, too much time involved + issues without running EPF
-			static string m_sPathPersistence = "$EnfusionPersistenceFramework:Scripts/Game/EPF_PersistenceComponent.c";
-			if (FileIO.FileExists(m_sPath))
-			{
-				Print("[PR_SpawnPatrolTrigger] (OnActivate) persistenceComponent: Exists", LogLevel.NORMAL);
-				m_bEPF_ModExist = true;
-
-				
-				if (FileIO.FileExists("$profile:EPF_Persistence/PR_Persistence.c"))
-				{
-					//FileHandle file = FileIO.OpenFile("$profile:EPF_Persistence/PR_Persistence.c"),FileMode.READ);
-				//	ParseHandle parser = FileIO.BeginParse("$profile:EPF_Persistence/PR_Persistence.c");
-				//	Print("*******PR******* parser" + parser);
-					FileHandle fileR = FileIO.OpenFile("$profile:EPF_Persistence/PR_Persistence.c", FileMode.READ);
-
-					if (fileR)
-					{
-						string line;
-						while(fileR.ReadLine(line) >= 0)
-						{
-							Print(line);
-						}
-						fileR.Close();
-					}
-					
-					if (!persistenceComponent)
-					{
-					    Print(("[PR_SpawnPatrolTrigger] (OnActivate) persistenceComponent: " + persistenceComponent), LogLevel.NORMAL);
-					} else
-					{
-					    Print(("[PR_SpawnPatrolTrigger] (OnActivate) agentName: " + agentName + " :persistenceComponet: " + persistenceComponent), LogLevel.NORMAL);
-					}
-					//m_bEPF_ModExist = true;
-	
-					//EPF_PersistenceComponent persistenceComponent = EPF_PersistenceComponent.Cast(agentEntity.FindComponent(EPF_PersistenceComponent));
-					//if (!persistenceComponent)
-					//{
-					//	Print(("[PR_SpawnPatrolTrigger] (OnActivate) persistenceComponent: " + persistenceComponent), LogLevel.NORMAL);
-					//} else
-					//{
-					//	Print(("[PR_SpawnPatrolTrigger] (OnActivate) agentName: " + agentName + " :persistenceComponet: " + persistenceComponent), LogLevel.NORMAL);
-						//	EPF_PersistenceComponentClass settings = EPF_ComponentData<EPF_PersistenceComponentClass>.Get(persistenceComponent); // need a fix
-						//	Print(("[PR_SpawnPatrolTrigger] (OnActivate) agentName: " + agentName + " :settings: " + settings), LogLevel.NORMAL);
-						//	Print(("[PR_SpawnPatrolTrigger] (OnActivate) agentName: " + agentName + " :settings.m_bSelfSpawn: " + settings.m_bSelfSpawn), LogLevel.NORMAL);
-	
-						//	string persistentId = EPF_PersistenceComponent.GetPersistentId(agentEntity); // need a fix
-						//	Print(("[PR_SpawnPatrolTrigger] (OnActivate) agentName: " + agentName + " : persistentId: " + persistentId), LogLevel.NORMAL);
-						//	if (!settings.m_bSelfSpawn) 
-						//		EPF_PersistentRootEntityCollection.ForceSelfSpawn(persistenceComponent, persistentId, true); 
-							//EPF_PersistenceComponentClass.m_bSelfSpawn = true;
-							//bool EPF_PersistenceComponentClass.m_bSelfSpawn = true;
-					//}
-				}
-			}// else
-				//Print(("[PR_SpawnTaskTrigger] (EOnInit): Trigger: " + m_sTriggerName + ": EPF_PersistenceComponent exists: " + (FileIO.FileExists(m_sPath)) + ": Persistence is disabled"), LogLevel.WARNING);
-			*/
-
 			SCR_AICombatComponent combatComponent = SCR_AICombatComponent.Cast(agentEntity.FindComponent(SCR_AICombatComponent));
 			EAISkill aiSkill;
 			EAICombatType aiCombatType;
@@ -616,26 +540,10 @@ class PR_SpawnPatrol
 				Print(string.Format("[PR_SpawnPatrol]  (Behaviors AI) aiSkill: %1", aiSkill), LogLevel.WARNING);
 				Print(string.Format("[PR_SpawnPatrol]  (Behaviors AI) aiCombatType: %1", aiCombatType), LogLevel.WARNING);
 			}
-			//EAISkill aiSkill = combatComponent.GetAISkill();
 
 			SCR_AIInfoComponent infoComponent;
 			infoComponent = SCR_AIInfoComponent.Cast(agentEntity.FindComponent(SCR_AIInfoComponent));
-
-			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetAISkill: " + combatComponent.GetAISkill()), LogLevel.NORMAL);
-			//Print(("[PR_SpawnPatrol] (Behaviors AI) GetCombatType: " + combatComponent.GetCombatType()), LogLevel.NORMAL);
-			//GetGame().GetCallqueue().CallLater(ActivateThem, 1000, true, agentEntity, agent, groupGA);
 		}
-
-		/*
-		SCR_AICombatComponent combatComponent = SCR_AICombatComponent.Cast(groupGA.FindComponent(SCR_AICombatComponent));
-		if (combatComponent)
-		{
-			combatComponent.SetAISkill(skill);
-			combatComponent.SetCombatType(combatType);
-			combatComponent.SetHoldFire(holdFire);
-			combatComponent.SetPerceptionFactor(perceptionFactor);
-		}
-		*/
 
 		// Set formation
 		AIFormationComponent formComp = AIFormationComponent.Cast(groupGA.FindComponent(AIFormationComponent));
@@ -647,9 +555,6 @@ class PR_SpawnPatrol
 		formComp.SetFormation(SCR_Enum.GetEnumName(SCR_EAIGroupFormation, groupFormation));
 
 		array<int> behaviorArray = {skill, combatType, groupFormation};
-		//Print(("[PR_SpawnPatrol] (Behaviors Bool): " + holdFire), LogLevel.NORMAL);
-		//Print(("[PR_SpawnPatrol] (Behaviors Int): " + behaviorArray), LogLevel.NORMAL);
-		//Print(("[PR_SpawnPatrol] (Behaviors Float): " + perceptionFactor), LogLevel.NORMAL);
 
 		if (keepGroupActive)
 			GetGame().GetCallqueue().CallLater(KeepGroupActive, 750, true, groupGA, agents);
@@ -706,18 +611,6 @@ class PR_SpawnPatrol
 					agent.SetLOD(9);
 			}
 		}
-
-		// Remove this after testing
-	/*	if (GetDebugLogs())
-		{
-			vector oldVector = GetOldVector();
-			SetOldVector(kgaGroup.GetOrigin());
-			float distance = vector.Distance(kgaGroup.GetOrigin(), oldVector);
-			vector position = kgaGroup.GetOrigin();
-			Print(("[PR_SpawnPatrol] (KeepActive) Group Position: " + position), LogLevel.NORMAL);
-			Print(("[PR_SpawnPatrol] (KeepActive) distance: " + distance), LogLevel.NORMAL);
-			Print(("[PR_SpawnPatrol] (KeepActive) GetLOD: " + kgaGroup.GetLOD()), LogLevel.NORMAL);
-		}	*/
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -832,17 +725,6 @@ class PR_SpawnPatrol
 	}
 
 	//! GETTERS/SETTERS
-/*
-	int GetRandomIndex()
-	{
-		if (Count() > 0)
-		{
-			return Math.RandomInt(0, Count());
-		}
-
-		return -1;
-	}
-	*/
 
 	//------------------------------------------------------------------------------------------------
 	//! sets m_vOldVector
@@ -941,8 +823,7 @@ class PR_SpawnPatrol
 	{
 		return m_PersistentObject;
 	}	
-	
-	
+		
 	//------------------------------------------------------------------------------------------------
 	//! sets m_iSpawnSide
 	void SetSpawnSide(int spawnSide)
@@ -1254,9 +1135,7 @@ class PR_SpawnPatrol
 		waypoint.SetRerunCounter(rerunCounter);
 		groupCW.AddWaypoint(waypoint);
 		if (debugLogs)
-		{
 			Print(("[PR_SpawnPatrol] (AddCycleWaypoint) Added cycle waypoint to groupCW: " + waypoint + ", Waypoint Queue: " + cycleWaypointArray), LogLevel.NORMAL);
-		}
 	}
 
 	//------------------------------------------------------------------------------------------------

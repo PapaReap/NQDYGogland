@@ -1,0 +1,359 @@
+GenericEntity : "{76D4FE49EA6C57F3}Prefabs/Compositions/Slotted/SlotFlatLarge/LivingArea_L_US_01.et" {
+ ID "5282DCB5DFC8538F"
+ {
+  GenericEntity {
+   ID "5D0A8E5C8B14AE22"
+   {
+    GenericEntity {
+     ID "5D82CDCACC77FB9A"
+     {
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C0"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C3"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C8"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5CA"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5CD"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D0"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D1"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D3"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D5"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D6"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5D1ED93CFFD779A0"
+   {
+    GenericEntity {
+     ID "5D82CDCACC77FB9A"
+     {
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C0"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C3"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5C8"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5CA"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5CD"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D0"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D1"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D3"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D5"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+      GenericEntity {
+       ID "5D82CDCAC3BBC5D6"
+       components {
+        SCR_ResourceComponent "{5D247A59598D71AE}" {
+         m_aContainers {
+          SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+           m_fResourceValueCurrent 0
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5D45393DE220C780"
+   {
+    GenericEntity {
+     ID "5D45393E0B3C6D2D"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393E0B3C6D2F"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5D45393E27E7F1AF"
+   {
+    GenericEntity {
+     ID "5D45393E54132E60"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393E54132E62"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393E54132E65"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393E54132E68"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393E54132E6E"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

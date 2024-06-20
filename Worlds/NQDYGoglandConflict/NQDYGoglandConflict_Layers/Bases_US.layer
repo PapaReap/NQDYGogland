@@ -19,6 +19,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignMilitaryBaseComponent "{60E09758FCAF3A17}" {
     m_iRadius 130
    }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5290.831 11.125 10064.896
   {
@@ -50,6 +57,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 220
    }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 4179.347 37.729 9945.76
   {
@@ -76,6 +90,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 115
+   }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 5795.822 5.094 8239.819
@@ -114,6 +135,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 325
    }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 6489.521 7.5 6861.593
   angleY 36.072
@@ -150,6 +178,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 125
    }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
+   }
   }
   coords 5692.083 5.6 3732.212
   {
@@ -184,6 +219,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
    SCR_CampaignSuppliesComponent "{60E09758FCAF3A00}" {
     m_iSupplies 100
+   }
+   SCR_ResourceComponent "{60E09758FCAF3A7D}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{60E09758FCAF3A68}" {
+      m_fStorageRange 2
+     }
+    }
    }
   }
   coords 4698.448 12.862 7506.073

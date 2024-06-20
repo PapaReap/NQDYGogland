@@ -1,0 +1,22 @@
+Vehicle : "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" {
+ ID "44EC665ABD2FF04B"
+ components {
+  BaseVehicleNodeComponent "{20FB66C5B2237133}" {
+   components {
+    SCR_CarControllerComponent_SA "{20FB66C5BC92275B}" {
+     EngineStartupChance 95
+    }
+   }
+  }
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{619B3651D56D61A4}" {
+      m_BudgetType RANK_CORPORAL
+      m_Value 2
+     }
+    }
+   }
+  }
+ }
+}

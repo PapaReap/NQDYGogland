@@ -21,37 +21,37 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverSupplies_Master {
   PR_TaskDetails "{61634CCE4819CE7F}" {
    m_sTaskName "TaskDeliverSupplies_Jokela"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Jokela"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Jokela"
   }
   PR_TaskDetails "{61634CCE49B6A3CA}" {
    m_sTaskName "TaskDeliverSupplies_Jokela_n"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Jokela_n"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Jokela_n"
   }
   PR_TaskDetails "{61634CD8C681C7C1}" {
    m_sTaskName "TaskDeliverSupplies_Korkiala"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Korkiala"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Korkiala"
   }
   PR_TaskDetails "{61634CD55CDABD8E}" {
    m_sTaskName "TaskDeliverSupplies_Lansikallio"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Lansikallio"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Lansikallio"
   }
   PR_TaskDetails "{61655C53239633A8}" {
    m_sTaskName "TaskDeliverSupplies_Niemenkyla"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Niemenkyla"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Niemenkyla"
   }
   PR_TaskDetails "{61508AE96772D7CC}" {
    m_sTaskName "TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
   }
   PR_TaskDetails "{61655C485BB7B2DA}" {
    m_sTaskName "TaskDeliverSupplies_Purjekallio"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverSupplies_Purjekallio"
+   m_sPersistentTaskObject "Pers_TaskDeliverSupplies_Purjekallio"
   }
  }
  m_iPlayerDistanceToSpawnTask 600
@@ -84,7 +84,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -92,7 +92,57 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse {
+    coords 3.234 -0.304 3.074
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -1.668 0.122 -0.764
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Pohjoissivunkallio_farmhouse : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -237,7 +287,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
+         m_sEntityName "Pers_TaskDeliverSupplies_Pohjoissivunkallio_farmhouse"
         }
        }
       }
@@ -271,7 +321,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Pohjoissivunkallio"
-        m_sTaskDescription "Deliver to the farmhouse south of Pohjoissivunkallio<br />3x Consumable Carriers<br />2x Legs of Meat"
+        m_sTaskDescription "Deliver to the farmhouse south of Pohjoissivunkallio<br />"\
+        "3x Consumable Carriers<br />"\
+        "2x Legs of Meat"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -298,42 +350,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 5018.059 5.843 6420.802
   {
-   PR_RemoveEntitiesTrigger RemoveEntities_TaskDeliverSupplies_Jokela {
-    coords 2.538 0.298 2.923
-    TriggerShapeType Sphere
-    SphereRadius 30.4
-    DrawShape 1
-    ShapeColor 0 0.502 0.502 0.098
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    m_bRefreshToggle 1
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Jokela"
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61916BB85C8B7208}" {
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Persistence_Entity_TaskDeliverSupplies_Jokela"
-     }
-    }
-    m_aRemovePrefabDetails {
-     PR_RemovePrefabFilter "{61916BB94D55ACEE}" {
-      m_sSpecificPrefabName "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
-      m_bIncludeChildren 1
-      m_iPrefabCountToRemove 2
-     }
-     PR_RemovePrefabFilter "{61916BB96F3FAFE3}" {
-      m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
-      m_bIncludeChildren 1
-      m_iPrefabCountToRemove 3
-     }
-     PR_RemovePrefabFilter "{61916BBA8B65B4CC}" {
-      m_sSpecificPrefabName "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
-      m_bIncludeChildren 1
-      m_iPrefabCountToRemove 2
-     }
-    }
-   }
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverSupplies_Jokela {
     coords -9.258 1.182 -15.252
     Flags 2097155
@@ -346,7 +362,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Jokela"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Jokela"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -354,7 +370,63 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Jokela {
+    coords 3.592 -0.304 3.3
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Jokela"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Jokela"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Jokela"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Jokela"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Jokela {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Jokela {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -4.054 -0.39 -1.319
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Jokela : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -499,7 +571,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Jokela"
+         m_sEntityName "Pers_TaskDeliverSupplies_Jokela"
         }
        }
       }
@@ -536,7 +608,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Jokela"
-        m_sTaskDescription "Deliver to the town of Jokela<br />2x Consumable Carriers<br />3x MRE<br />2x Jerry Can"
+        m_sTaskDescription "Deliver to the town of Jokela<br />"\
+        "2x Consumable Carriers<br />"\
+        "3x MRE<br />"\
+        "2x Jerry Can"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -575,7 +650,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Jokela_n"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Jokela_n"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -583,7 +658,62 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Jokela_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Jokela_n {
+    coords 3.156 0.017 3.2
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Jokela_n"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Jokela_n"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Jokela_n"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Jokela_n"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{630FB4AD4A735264}Prefabs/Items/Equipment/Canteens/Canteen_US_01.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      }
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Jokela_n {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Jokela_n {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Jokela_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -3.913 -0.024 -1.907
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Jokela_n : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -728,7 +858,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Jokela_n"
+         m_sEntityName "Pers_TaskDeliverSupplies_Jokela_n"
         }
        }
       }
@@ -765,7 +895,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies North Jokela"
-        m_sTaskDescription "Deliver to the small community north of Jokela<br />2x Canteen<br />2x MRE<br />1x Jerry Can"
+        m_sTaskDescription "Deliver to the small community north of Jokela<br />"\
+        "2x Canteen<br />"\
+        "2x MRE<br />"\
+        "1x Jerry Can"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -804,7 +937,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Lansikallio"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Lansikallio"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -812,7 +945,69 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Lansikallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Lansikallio {
+    coords 3.052 0 3.486
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Lansikallio"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Lansikallio"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Lansikallio"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Lansikallio"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{6196424E034E4DD4}" {
+      m_aSpecificPrefabNames {
+       "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 4
+     }
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Lansikallio {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Lansikallio {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Lansikallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -3.893 0 -1.971
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Lansikallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -957,7 +1152,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Lansikallio"
+         m_sEntityName "Pers_TaskDeliverSupplies_Lansikallio"
         }
        }
       }
@@ -978,6 +1173,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
              SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
               m_sSpecificPrefabName "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
              }
+             SCR_ScenarioFrameworkPrefabFilterCount "{61634CD0B27A9FEE}" {
+              m_sSpecificPrefabName "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 3
+             }
              SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
               m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
               m_bIncludeChildren 1
@@ -985,11 +1185,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
              }
              SCR_ScenarioFrameworkPrefabFilterCount "{61634CCD460A6CE4}" {
               m_sSpecificPrefabName "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
-              m_bIncludeChildren 1
-              m_iPrefabCount 3
-             }
-             SCR_ScenarioFrameworkPrefabFilterCount "{61634CD0B27A9FEE}" {
-              m_sSpecificPrefabName "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
               m_bIncludeChildren 1
               m_iPrefabCount 3
              }
@@ -1001,7 +1196,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Lansikallio"
-        m_sTaskDescription "Deliver to the farm community of Lansikallio<br />2x Consumable Carriers<br />3x Legs of Meat<br />4x MRE<br />3x Jerry Can"
+        m_sTaskDescription "Deliver to the farm community of Lansikallio<br />"\
+        "2x Consumable Carriers<br />"\
+        "3x Legs of Meat<br />"\
+        "4x MRE<br />"\
+        "3x Jerry Can"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -1040,7 +1239,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Korkiala"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Korkiala"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -1048,7 +1247,62 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Korkiala : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Korkiala {
+    coords 3.342 -0.05 2.652
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Korkiala"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Korkiala"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Korkiala"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Korkiala"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{630FB4AD4A735264}Prefabs/Items/Equipment/Canteens/Canteen_US_01.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+      }
+     }
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Korkiala {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Korkiala {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Korkiala : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -3.875 0.086 -2.125
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Korkiala : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1193,7 +1447,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Korkiala"
+         m_sEntityName "Pers_TaskDeliverSupplies_Korkiala"
         }
        }
       }
@@ -1214,14 +1468,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
              SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
               m_sSpecificPrefabName "{630FB4AD4A735264}Prefabs/Items/Equipment/Canteens/Canteen_US_01.et"
              }
+             SCR_ScenarioFrameworkPrefabFilterCount "{61634CCD460A6CE4}" {
+              m_sSpecificPrefabName "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+              m_bIncludeChildren 1
+             }
              SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
               m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
               m_bIncludeChildren 1
               m_iPrefabCount 2
-             }
-             SCR_ScenarioFrameworkPrefabFilterCount "{61634CCD460A6CE4}" {
-              m_sSpecificPrefabName "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
-              m_bIncludeChildren 1
              }
             }
            }
@@ -1230,7 +1484,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Korkiala"
-        m_sTaskDescription "Deliver to the village of Korkiala<br />2x Canteen<br />1x Leg of Meat<br />2x MRE"
+        m_sTaskDescription "Deliver to the village of Korkiala<br />"\
+        "2x Canteen<br />"\
+        "1x Leg of Meat<br />"\
+        "2x MRE"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -1269,7 +1526,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Purjekallio"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Purjekallio"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -1277,7 +1534,63 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Purjekallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Purjekallio {
+    coords 3.651 0.169 3.594
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Purjekallio"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Purjekallio"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Purjekallio"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Purjekallio"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Jokela2 {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Jokela2 {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Purjekallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -3.887 -0.02 -1.989
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Purjekallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1422,7 +1735,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Purjekallio"
+         m_sEntityName "Pers_TaskDeliverSupplies_Purjekallio"
         }
        }
       }
@@ -1459,7 +1772,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Purjekallio"
-        m_sTaskDescription "Deliver to the farmhouse west of Purjekallio<br />2x Consumable Carriers<br />3x MRE<br />2x Jerry Can"
+        m_sTaskDescription "Deliver to the farmhouse west of Purjekallio<br />"\
+        "2x Consumable Carriers<br />"\
+        "3x MRE<br />"\
+        "2x Jerry Can"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1
@@ -1498,7 +1814,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverSupplies_Niemenkyla"
+    m_sPersistentObject "Pers_TaskDeliverSupplies_Niemenkyla"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -1506,7 +1822,69 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverSupplies_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   PR_TaskOptimizerTrigger Opt_TaskDeliverSupplies_Niemenkyla {
+    coords 3.201 -0.04 2.573
+    TriggerShapeType Sphere
+    SphereRadius 30
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverSupplies_Niemenkyla"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverSupplies_Niemenkyla"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverSupplies_Niemenkyla"
+    m_PlayerXPTaskReward "Deliver Supplies (40)"
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverSupplies_Niemenkyla"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61930DD1230AD752}" {
+      m_aSpecificPrefabNames {
+       "{7902C0F57CCACC95}Prefabs/Items/Food/PR_ConsumablesCarrier.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61964248E5071991}" {
+      m_aSpecificPrefabNames {
+       "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
+      }
+      m_iPrefabCountToRemove 3
+     }
+     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+      m_aSpecificPrefabNames {
+       "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+     PR_RemovePrefabFilter "{61964241B2A3DE79}" {
+      m_aSpecificPrefabNames {
+       "{CD23D85E73B53D82}Prefabs/Items/Food/PR_MeatLeg_01.et"
+      }
+      m_iPrefabCountToRemove 2
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverSupplies_Niemenkyla {
+       coords -12.062 -0.001 -7.016
+      }
+      Pers_Fail_TaskDeliverSupplies_Niemenkyla {
+       coords -12.105 0 -7.254
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverSupplies_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -3.869 0.031 -2.084
    }
    GenericEntity Layer_TaskDeliverSupplies_AI_Niemenkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1651,7 +2029,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverSupplies_Niemenkyla"
+         m_sEntityName "Pers_TaskDeliverSupplies_Niemenkyla"
         }
        }
       }
@@ -1694,7 +2072,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          }
         }
         m_sTaskTitle "Deliver Supplies Niemenkyla"
-        m_sTaskDescription "Deliver to the town of Niemenkyla<br />3x Consumable Carriers<br />3x MRE<br />2x Jerry Can<br />2x Legs of Meat"
+        m_sTaskDescription "Deliver to the town of Niemenkyla<br />"\
+        "3x Consumable Carriers<br />"\
+        "3x MRE<br />"\
+        "2x Jerry Can<br />"\
+        "2x Legs of Meat"
         m_aActionsOnCreated {
          SCR_ScenarioFrameworkActionSpawnObjects "{61634CC9E47D5741}" {
           m_iMaxNumberOfActivations 1

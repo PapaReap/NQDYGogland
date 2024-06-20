@@ -1,0 +1,126 @@
+Default
+SCR_EditableEntityComponent
+	Entity Budget Cost
+		Campaign
+			Value
+		Prop<to rank
+			RANK_
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotFlatSmall
+E_Antenna_S_US_01.et
+	Radio Relay Station 275 - Private (keep)
+
+E_AmmoStorage_S_US_01.et
+	Ammunition Supply Point 325 - Private (keep)
+
+E_VehicleMaintenance_S_US_01.et
+	Light Vehicle Maintenance point 250 - Private (keep)
+		M151A2 Off-road - Open Top 110 - Private (keep)
+		M151A2 Off-road 120 - Private (keep)
+		M998 Light Utility Vehicle - Open Top 150 - Private (keep)
+		M998 Light Utility Vehicle 150 - Private (keep)
+		M998 Light Utility Vehicle - Canopy 200 - Private (keep)
+		M1025 Light Armored Vehicle 240 - Corporal (keep)
+		M997 Ambulance 225 - Private (keep)
+	//	M151A2 Armed Off-road - M2 280 - Private (Changed to Corporal 2)
+		M1025 Light Armored Vehicle - M2 475 - Corporal (keep)
+
+E_FuelStorage_S_US_01.et
+	Small Fuel Supply point 150 - Private (keep)
+
+E_LivingArea_S_US_01.et
+	Living Quarters 275 - Sergeant (keep)
+
+E_Bunker_S_US_01.et
+	Bunker 140 - Private (keep)
+
+E_SandbagPosition_S_US_01.et
+	Defensive Position 100 - Private (keep)
+
+E_SandbagPosition_S_US_02.et
+	Defensive position 140 - Private (keep)
+
+E_SandbagPosition_S_US_03.et
+	Defensive position 105 - Private (keep)
+
+E_SandbagPosition_S_US_04.et
+	Defensive position 105 - Private (keep)
+
+E_MachineGunNest_S_US_01.et
+	Machine-Gun Nest 225 - Corporal (keep)
+
+E_MachineGunNest_S_US_02.et
+	Machine-Gun Nest 350 - Corporal (keep)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotRoadSmall
+E_Barricade_S_US_01.et
+	Roadblock 60 - Private (keep)
+
+E_Checkpoint_S_US_01.et
+	Checkpoint 75 - Private (keep)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotRoadMedium
+E_Barricade_M_US_01.et
+	Roadblock 85 - Private (keep)
+
+E_Checkpoint_M_US_01.et
+	Checkpoint 225 - Corporal (keep)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotRoadLarge
+E_Barricade_L_US_01.et
+	Roadblock 100 - Private (keep)
+
+E_Checkpoint_L_US_01.et
+	Checkpoint 350 - Corporal (keep)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotFlatMedium
+E_FieldHospital_M_US_01.et
+	Field Hospital 300 - Corporal (keep)
+
+E_VehicleMaintenance_M_US_01.et
+//	Heavy Vehicle Maintenance point 300 - Private (Changed to Corporal 2, cost to 500)
+		M151A2 Off-road - Open Top 110 - Private (keep)
+		M151A2 Off-road 120 - Private (keep)
+		M998 Light Utility Vehicle - Open Top 150 - Private (keep)
+		M998 Light Utility Vehicle 150 - Private (keep)
+		M998 Light Utility Vehicle - Canopy 200 - Private (keep)
+		M1025 Light Armored Vehicle 240 - Corporal (keep)
+		M997 Ambulance 225 - Private (keep)
+	//	M151A2 Armed Off-road - M2 280 - Private (Changed to Corporal 2)
+		M1025 Light Armored Vehicle - M2 475 - Corporal (keep)
+
+	//	M923A1 Transport Truck 200 - Private (Changed to Corporal 2, cost to 450)
+	//	M923A1 Transport Truck - Canopy 200 - Private (Changed to Corporal 2, cost to 450)
+	//	M923A1 Fuel Truck 160 - Private (Changed to Corporal 2, cost to 575)
+	//	M923A1 Arsenal Truck 380 - Corporal (Changed to Captain 5, cost to 2500)
+	//	M923A1 Repair Truck 175 - Private (Changed to Corporal 2, cost to 575)
+	//	M923A1 Construction Truck 260 - Private (Changed to Sergeant 3, cost to 660)
+	//	Mobile Command Unit 420 - Sergeant (Changed cost to 920)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Slotted>SlotFlatLarge
+E_LivingArea_L_US_01.et
+	Living Quarters 475 - Sergeant (keep)
+
+E_Helipad_L_US_01.et
+	Helipad 560 - Sergeant (keep)
+
+
+--------------------------------------------------------------------
+ArmaReforger>PrefabsEditable>Auto>Compositions>Misc>FreeRoamBuilding
+E_FloodlightGenerator_S_US_01.et
+	Floodlight 125 - Corporal
+
+
+Vehicles
+SCR_EditableVehicleComponent

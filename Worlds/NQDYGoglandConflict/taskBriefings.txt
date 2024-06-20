@@ -39,10 +39,34 @@ Your objective is to locate and neutralize this HVT.<br />
 Resistance Probability: Unknown.<br />
 Bringing him back alive is not a option.
 
-Eliminate HVT Makiinpaallys
+Eliminate HVT Lounatkorkia
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is known for smuggling arms to the local resistence. While he himself isn't known to bare arms, his known associates should be well armed.<br />
+His last known location is south of the community of Lounatkyla.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Unknown.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Lounatkorkia (Silo)
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an researcher that is doing development of weapons of mass destruction.<br />
+His location is the area south of the community of Lounatkyla.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Unknown.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Makiinpaallys (Silo)
 Recovered intel suggests we have found the location of a new HVT.<br />
 The HVT is an researcher that is doing development of weapons of mass destruction.<br />
 His location is the around the area of Makiinpaallys.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Unknown.<br />
+Bringing him back alive is not a option.
+
+Eliminate HVT Pahalampi
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is known for smuggling arms to the local resistence. While he himself isn't known to bare arms, his known associates should be well armed.<br />
+His last known location is near the lake Pahalampi.<br />
 Your objective is to locate and neutralize this HVT.<br />
 Resistance Probability: Unknown.<br />
 Bringing him back alive is not a option.
@@ -62,3 +86,104 @@ He is hiding out in the area of Vahasomerikonlahti.<br />
 Your objective is to locate and neutralize this HVT.<br />
 Resistance Probability: Moderate.<br />
 Bringing him back alive is not a option.
+
+Eliminate HVT Valikallio
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />
+He is hiding out in the area of Valikallio.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Moderate.<br />
+Bringing him back alive is not a option.
+	// EXTRA TASK
+	Deliver RTO Radio Valikallio
+Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation.
+
+
+Eliminate HVT Alttarkallio
+Recovered intel suggests we have found the location of a new HVT.<br />
+The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />
+He is hiding out in the woods east of Alttarkallio.<br />
+Your objective is to locate and neutralize this HVT.<br />
+Resistance Probability: Moderate.<br />
+Bringing him back alive is not a option.
+	// EXTRA TASK
+	Deliver RTO Radio Alttarkallio
+Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation.
+
+
+*** TASKS_DELIVERINTEL ***
+
+
+
+*** TASKS DELIVER VEHICLES ***
+Deliver vehicles
+Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %2.
+{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et
+
+
+*** TASKS DELIVER SUPPLIES ***
+Deliver Supplies Jokela
+Deliver to the town of Jokela<br />
+2x Consumable Carriers<br />
+3x MRE<br />
+2x Jerry Can
+
+Deliver Supplies North Jokela
+Deliver to the small community north of Jokela<br />
+2x Canteen<br />
+2x MRE<br />
+1x Jerry Can
+
+Deliver Supplies Korkiala
+Deliver to the village of Korkiala<br />
+2x Canteen<br />
+1x Leg of Meat<br />
+2x MRE
+
+Deliver Supplies Lansikallio
+Deliver to the farm community of Lansikallio<br />
+2x Consumable Carriers<br />
+3x Legs of Meat<br />
+4x MRE<br />
+3x Jerry Can
+
+Deliver Supplies Niemenkyla
+Deliver to the town of Niemenkyla<br />
+3x Consumable Carriers<br />
+3x MRE<br />
+2x Jerry Can<br />
+2x Legs of Meat
+
+Deliver Supplies Pohjoissivunkallio
+Deliver to the farmhouse south of Pohjoissivunkallio<br />
+3x Consumable Carriers<br />
+2x Legs of Meat
+
+Deliver Supplies Purjekallio
+Deliver to the farmhouse west of Purjekallio<br />
+2x Consumable Carriers<br />
+3x MRE<br />
+2x Jerry Can
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

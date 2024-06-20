@@ -1,0 +1,58 @@
+GenericEntity : "{77F90F896D5145C8}Prefabs/Compositions/Slotted/SlotFlatSmall/LivingArea_S_US_01.et" {
+ ID "5282DCB5DFC8538F"
+ {
+  GenericEntity {
+   ID "5D45393EBFC416D1"
+   {
+    GenericEntity {
+     ID "5D45393EA8E8F681"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393EA8E8F687"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393EA8E8F68A"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393EA8E8F68C"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

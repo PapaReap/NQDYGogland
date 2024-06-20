@@ -21,15 +21,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{61508AE96772D7CC}" {
    m_sTaskName "TaskDeliverIntel_ArmeijanVarikko"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_ArmeijanVarikko"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{61508AE89E3D1A5A}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_ArmeijanVarikko"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_ArmeijanVarikko"
+     }
     }
     PR_MoveTask "{61508AE8AB451C4B}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_ArmeijanVarikko"
@@ -42,7 +45,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615A5577DA9C36FA}" {
    m_sTaskName "TaskDeliverIntel_Haukkavuori"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Haukkavuori"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Haukkavuori"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615A55770C9F53CD}" {
@@ -51,6 +54,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Haukkavuori"
+     }
     }
     PR_MoveTask "{615A557721DE677F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Haukkavuori"
@@ -63,7 +69,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{6161067CF4B5746B}" {
    m_sTaskName "TaskDeliverIntel_Heikinhelli"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Heikinhelli"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Heikinhelli"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
@@ -72,6 +78,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Heikinhelli"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Heikinhelli"
@@ -84,15 +93,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615F71D615B2820C}" {
    m_sTaskName "TaskDeliverIntel_Jokela"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Jokela"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Jokela"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Jokela"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Jokela"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Jokela"
@@ -105,7 +117,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615F71C3740FB04F}" {
    m_sTaskName "TaskDeliverIntel_Kappeliniemi"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Kappeliniemi"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Kappeliniemi"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
@@ -114,6 +126,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Kappeliniemi"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kappeliniemi"
@@ -126,7 +141,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{616063C43859E2F7}" {
    m_sTaskName "TaskDeliverIntel_Kiiskinkyla"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Kiiskinkyla"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615A5570474C944E}" {
@@ -135,6 +150,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Kiiskinkyla"
+     }
     }
     PR_MoveTask "{615A55704547FD8E}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kiiskinkyla"
@@ -150,15 +168,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615A55703C2A8F29}" {
    m_sTaskName "TaskDeliverIntel_Kiiskinkyla_s"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Kiiskinkyla_s"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615A5570474C944E}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Kiiskinkyla_s"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Kiiskinkyla_s"
+     }
     }
     PR_MoveTask "{615A55704547FD8E}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kiiskinkyla_s"
@@ -174,7 +195,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{616063C379DDDBEE}" {
    m_sTaskName "TaskDeliverIntel_Liiralahdenjarvi"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Liiralahdenjarvi"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
@@ -183,6 +204,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Liiralahdenjarvi"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Liiralahdenjarvi"
@@ -195,7 +219,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{61610671FEE49A5C}" {
    m_sTaskName "TaskDeliverIntel_Lounatkyla"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Lounatkyla"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Lounatkyla"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
@@ -204,6 +228,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Lounatkyla"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Lounatkyla"
@@ -216,15 +243,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615E3952334AE8A5}" {
    m_sTaskName "TaskDeliverIntel_Lounatrivi"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Lounatrivi"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Lounatrivi"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E39523C68BF12}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Lounatrivi"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Lounatrivi"
+     }
     }
     PR_MoveTask "{615E39523C13DCB0}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Lounatrivi"
@@ -237,7 +267,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615E395B5F96DBD1}" {
    m_sTaskName "TaskDeliverIntel_Mattila"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Mattila"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Mattila"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E395B709B42F0}" {
@@ -246,6 +276,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Mattila"
+     }
     }
     PR_MoveTask "{615E395B71F1E088}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Mattila"
@@ -258,7 +291,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615C3DB3B1930493}" {
    m_sTaskName "TaskDeliverIntel_Miettila"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Miettila"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Miettila"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615C3DB3C19D56B1}" {
@@ -267,6 +300,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Miettila"
+     }
     }
     PR_MoveTask "{615C3DB3C10D63A5}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Miettila"
@@ -279,15 +315,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615F71DE1DCA915D}" {
    m_sTaskName "TaskDeliverIntel_Niemenkyla"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Niemenkyla"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Niemenkyla"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Niemenkyla"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Niemenkyla"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Niemenkyla"
@@ -300,7 +339,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{61508AE9B0BCCB79}" {
    m_sTaskName "TaskDeliverIntel_Pohjoiskorkia_caves"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Pohjoiskorkia_caves"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{61508AE9F366643C}" {
@@ -309,6 +348,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Pohjoiskorkia_caves"
+     }
     }
     PR_MoveTask "{61508AE92090E4BA}" {
      m_sTaskSectionToMove "SlotPick_Pohjoiskorkia_caves"
@@ -321,7 +363,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615E394FEAAD859F}" {
    m_sTaskName "TaskDeliverIntel_Pohjoisrivi"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Pohjoisrivi"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Pohjoisrivi"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E394FF4423D5F}" {
@@ -330,6 +372,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Pohjoisrivi"
+     }
     }
     PR_MoveTask "{615E394FF5D89229}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Pohjoisrivi"
@@ -342,15 +387,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615E395F2B9E2A2B}" {
    m_sTaskName "TaskDeliverIntel_Reactor"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Reactor"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Reactor"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E395F34BF18B4}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Reactor"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Reactor"
+     }
     }
     PR_MoveTask "{615E395F3471ECB7}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Reactor"
@@ -363,7 +411,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615F71CB1E4EDCD6}" {
    m_sTaskName "TaskDeliverIntel_Suurkyla"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Suurkyla"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Suurkyla"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{613802B2E6E682B1}" {
@@ -372,6 +420,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Suurkyla"
+     }
     }
     PR_MoveTask "{613802B56EC76EB7}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla"
@@ -384,7 +435,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615F71CBFDF3C14C}" {
    m_sTaskName "TaskDeliverIntel_Suurkyla_n"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Suurkyla_n"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Suurkyla_n"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{613802B2E6E682B1}" {
@@ -393,6 +444,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Suurkyla_n"
+     }
     }
     PR_MoveTask "{613802B56EC76EB7}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla_n"
@@ -405,15 +459,18 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{613802B2DA10B658}" {
    m_sTaskName "TaskDeliverIntel_Suurkyla_sw"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Suurkyla_sw"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Suurkyla_sw"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{613802B2E6E682B1}" {
      m_sTaskSectionToMove "SlotDelivery_TaskDeliverIntel_Suurkyla_sw"
      m_sMoveSectionToRandomBases {
-      1
+      1 2
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Suurkyla_sw"
+     }
     }
     PR_MoveTask "{613802B56EC76EB7}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla_sw"
@@ -426,7 +483,7 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
   PR_TaskDetails "{615E14E8F53066E9}" {
    m_sTaskName "TaskDeliverIntel_Teollisuusalue"
    m_bUsePersistentTask 1
-   m_sPersistentTaskObject "Persistence_Entity_TaskDeliverIntel_Teollisuusalue"
+   m_sPersistentTaskObject "Pers_TaskDeliverIntel_Teollisuusalue"
    m_bUseMoveTaskDestination 1
    m_aTaskMoveDetails {
     PR_MoveTask "{615E14E80CF02CBD}" {
@@ -435,6 +492,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
       1
      }
      m_bInsertBaseNameInTaskInfos 1
+     m_sAdditionalObjectsToMove {
+      "Opt_TaskDeliverIntel_Teollisuusalue"
+     }
     }
     PR_MoveTask "{615E14E80C5AFC1F}" {
      m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Teollisuusalue"
@@ -451,6 +511,9 @@ PR_SpawnTaskTrigger TaskTrg_TaskDeliverIntel_Master {
  m_bUseRandomDelayBetweenTasksTimer 1
  m_iDelayTimerBetweenEachTaskMin 3600
  m_iDelayTimerBetweenEachTaskMax 10800
+}
+GenericEntity : "{01969A28078FCA69}Prefabs/Compositions/Misc/SubCompositions/BarrelClutter_02.et" {
+ coords 7424.912 18.563 3221.358
 }
 StaticModelEntity : "{51453500F5727B57}Prefabs/Structures/Industrial/Containers/FuelTanks/FuelTank_02/FuelTank_02_Pump_green.et" {
  coords 7050.834 0 3945.702
@@ -484,7 +547,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_bRefreshToggle 1
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Pohjoiskorkia_caves"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -497,6 +560,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Pohjoiskorkia_caves"
+        }
        }
        PR_MoveTask "{614A2EDF92D80922}" {
         m_sTaskSectionToMove "SlotPick_Pohjoiskorkia_caves"
@@ -508,6 +574,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
     m_bUseRandomTasks 1
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Pohjoiskorkia_caves {
+    coords 25.223 0.734 11.603
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Pohjoiskorkia_caves"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Pohjoiskorkia_caves"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Pohjoiskorkia_caves"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Pohjoiskorkia_caves"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Pohjoiskorkia_caves {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Pohjoiskorkia_caves {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
    }
    GenericEntity TaskDeliverIntel_Pohjoiskorkia_caves : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -532,7 +635,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F68F3406F}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves"
+         m_sEntityName "Pers_TaskDeliverIntel_Pohjoiskorkia_caves"
         }
        }
       }
@@ -590,7 +693,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Pohjoiskorkia_caves : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Pohjoiskorkia_caves : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.113 0.263 17.988
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Pohjoiskorkia_caves : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -888,7 +991,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Suurkyla_sw"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Suurkyla_sw"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -901,6 +1004,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Suurkyla_sw"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla_sw"
@@ -917,6 +1023,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
    }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Suurkyla_sw {
+    coords 3.886 -0.215 -0.098
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Suurkyla_sw"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Suurkyla_sw"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Suurkyla_sw"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Suurkyla_sw"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Suurkyla_sw {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Suurkyla_sw {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
+   }
    GenericEntity TaskDeliverIntel_Suurkyla_sw : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
@@ -927,6 +1070,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         m_sSound "SOUND_HUD_TASK_CREATED"
        }
       }
+      m_bExcludeFromDynamicDespawn 1
       m_sTaskTitle "Locate Intel Southwestern Suurkyla"
       m_sTaskDescription "Search Southwestern Suurkyla for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
@@ -941,7 +1085,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402E82A3A170}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Suurkyla_sw"
+         m_sEntityName "Pers_TaskDeliverIntel_Suurkyla_sw"
         }
        }
       }
@@ -1001,7 +1145,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla_sw : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Suurkyla_sw : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.472 0.018 -0.022
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla_sw : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1284,7 +1428,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko"
+    m_sPersistentObject "Pers_TaskDeliverIntel_ArmeijanVarikko"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -1297,6 +1441,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_ArmeijanVarikko"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_ArmeijanVarikko"
@@ -1304,6 +1451,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_ArmeijanVarikko"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_ArmeijanVarikko {
+    coords 6.611 0.001 3.679
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_ArmeijanVarikko"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_ArmeijanVarikko"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_ArmeijanVarikko"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_ArmeijanVarikko"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_ArmeijanVarikko {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_ArmeijanVarikko {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -1334,7 +1518,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{61610678DC6D443B}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko"
+         m_sEntityName "Pers_TaskDeliverIntel_ArmeijanVarikko"
         }
        }
       }
@@ -1394,7 +1578,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_ArmeijanVarikko : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_ArmeijanVarikko : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.203 0.002 -1.984
    }
    GenericEntity Layer_TaskDeliverIntel_AI_ArmeijanVarikko : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -1658,7 +1842,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Haukkavuori"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Haukkavuori"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -1671,6 +1855,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Haukkavuori"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Haukkavuori"
@@ -1678,6 +1865,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Haukkavuori"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Haukkavuori {
+    coords 6.612 0 3.674
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Haukkavuori"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Haukkavuori"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Haukkavuori"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Haukkavuori"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Haukkavuori {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Haukkavuori {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -1708,7 +1932,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402FDC697974}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Haukkavuori"
+         m_sEntityName "Pers_TaskDeliverIntel_Haukkavuori"
         }
        }
       }
@@ -1768,7 +1992,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Haukkavuori : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Haukkavuori : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.12 0 -1.003
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Haukkavuori : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -2088,7 +2312,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Kiiskinkyla_s"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -2101,6 +2325,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Kiiskinkyla_s"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kiiskinkyla_s"
@@ -2108,6 +2335,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Kiiskinkyla_s"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Kiiskinkyla_s {
+    coords 6.568 0.066 3.773
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Kiiskinkyla_s"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Kiiskinkyla_s"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Kiiskinkyla_s"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Kiiskinkyla_s"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Kiiskinkyla_s {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Kiiskinkyla_s {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -2138,7 +2402,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F4BDF2EE0}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s"
+         m_sEntityName "Pers_TaskDeliverIntel_Kiiskinkyla_s"
         }
        }
       }
@@ -2198,7 +2462,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Kiiskinkyla_s : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Kiiskinkyla_s : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.577 0.003 0.252
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kiiskinkyla_s : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -2519,7 +2783,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Miettila"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Miettila"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -2532,6 +2796,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Miettila"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Miettila"
@@ -2547,6 +2814,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_bUseRandomDelayBetweenTasksTimer 1
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Miettila {
+    coords 3.703 -1.596 -0.208
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Miettila"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Miettila"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Miettila"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Miettila"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Miettila {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Miettila {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
    }
    GenericEntity TaskDeliverIntel_Miettila : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
@@ -2572,7 +2876,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F620E92B1}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Miettila"
+         m_sEntityName "Pers_TaskDeliverIntel_Miettila"
         }
        }
       }
@@ -2635,7 +2939,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Miettila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Miettila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.272 -1.482 -0.604
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Miettila : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -2975,7 +3279,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Teollisuusalue"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Teollisuusalue"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -2988,6 +3292,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Teollisuusalue"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Teollisuusalue"
@@ -3004,6 +3311,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
    }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Teollisuusalue {
+    coords 3.759 0 0.198
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Teollisuusalue"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Teollisuusalue"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Teollisuusalue"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Teollisuusalue"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Teollisuusalue {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Teollisuusalue {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
+   }
    GenericEntity TaskDeliverIntel_Teollisuusalue : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
@@ -3014,6 +3358,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         m_sSound "SOUND_HUD_TASK_CREATED"
        }
       }
+      m_bExcludeFromDynamicDespawn 1
       m_sTaskTitle "Locate Intel Teollisuusalue"
       m_sTaskDescription "Search southern Teollisuusalue for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
@@ -3028,7 +3373,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402E87EA74E1}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Teollisuusalue"
+         m_sEntityName "Pers_TaskDeliverIntel_Teollisuusalue"
         }
        }
       }
@@ -3088,7 +3433,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Teollisuusalue : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Teollisuusalue : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.3 0.001 0.241
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Teollisuusalue : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -3441,7 +3786,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Mattila"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Mattila"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -3454,6 +3799,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Mattila"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Mattila"
@@ -3461,6 +3809,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Mattila"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Mattila {
+    coords 6.963 0.48 3.064
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Mattila"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Mattila"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Mattila"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Mattila"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Mattila {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Mattila {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -3491,7 +3876,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F5E86B64C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Mattila"
+         m_sEntityName "Pers_TaskDeliverIntel_Mattila"
         }
        }
       }
@@ -3551,7 +3936,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Mattila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Mattila : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.534 -0.033 -0.183
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Mattila : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -3822,7 +4207,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Reactor"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Reactor"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -3835,6 +4220,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Reactor"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Reactor"
@@ -3842,6 +4230,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Reactor"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Reactor {
+    coords 6.607 0 3.676
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Reactor"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Reactor"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Reactor"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Reactor"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Reactor {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Reactor {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -3872,7 +4297,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F71A0B03B}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Reactor"
+         m_sEntityName "Pers_TaskDeliverIntel_Reactor"
         }
        }
       }
@@ -3932,7 +4357,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Reactor : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Reactor : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.298 0 0.21
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Reactor : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -4203,7 +4628,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Lounatrivi"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Lounatrivi"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -4216,6 +4641,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Lounatrivi"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Lounatrivi"
@@ -4223,6 +4651,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Lounatrivi"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Lounatrivi {
+    coords 6.546 0.149 3.911
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Lounatrivi"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Lounatrivi"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Lounatrivi"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Lounatrivi"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Lounatrivi {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Lounatrivi {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -4253,7 +4718,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F5AA0E243}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Lounatrivi"
+         m_sEntityName "Pers_TaskDeliverIntel_Lounatrivi"
         }
        }
       }
@@ -4313,7 +4778,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Lounatrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Lounatrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.531 0.015 0.175
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Lounatrivi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -4661,7 +5126,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Pohjoisrivi"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Pohjoisrivi"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -4674,6 +5139,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Pohjoisrivi"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Pohjoisrivi"
@@ -4681,6 +5149,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Pohjoisrivi"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Pohjoisrivi {
+    coords 6.548 0.163 3.418
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Pohjoisrivi"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Pohjoisrivi"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Pohjoisrivi"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Pohjoisrivi"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Pohjoisrivi {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Pohjoisrivi {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -4711,7 +5216,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F6DFEED0F}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Pohjoisrivi"
+         m_sEntityName "Pers_TaskDeliverIntel_Pohjoisrivi"
         }
        }
       }
@@ -4771,7 +5276,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Pohjoisrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Pohjoisrivi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.409 -0.007 0.158
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Pohjoisrivi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -5099,7 +5604,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Suurkyla_n"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Suurkyla_n"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -5112,6 +5617,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Suurkyla_n"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla_n"
@@ -5128,6 +5636,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
    }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Suurkyla_n {
+    coords 3.705 0.292 -0.947
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Suurkyla_n"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Suurkyla_n"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Suurkyla_n"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Suurkyla_n"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Suurkyla_n {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Suurkyla_n {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
+   }
    GenericEntity TaskDeliverIntel_Suurkyla_n : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
@@ -5138,6 +5683,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         m_sSound "SOUND_HUD_TASK_CREATED"
        }
       }
+      m_bExcludeFromDynamicDespawn 1
       m_sTaskTitle "Locate Intel Northern Suurkyla"
       m_sTaskDescription "Search Northern Suurkyla for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
@@ -5152,7 +5698,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F79892AC9}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Suurkyla_n"
+         m_sEntityName "Pers_TaskDeliverIntel_Suurkyla_n"
         }
        }
       }
@@ -5212,7 +5758,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Suurkyla_n : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.386 -0.006 0.056
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla_n : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -5657,7 +6203,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Suurkyla"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Suurkyla"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -5670,6 +6216,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Suurkyla"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Suurkyla"
@@ -5686,6 +6235,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_iDelayTimerBetweenEachTaskMin 10
     m_iDelayTimerBetweenEachTaskMax 20
    }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Suurkyla {
+    coords 3.906 -0.17 -0.173
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Suurkyla"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Suurkyla"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Suurkyla"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Suurkyla"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Suurkyla {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Suurkyla {
+       coords 0.146 -0.341 -0.415
+      }
+     }
+    }
+   }
    GenericEntity TaskDeliverIntel_Suurkyla : "{31180485D450A1A1}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverIntel.et" {
     components {
      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
@@ -5696,6 +6282,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         m_sSound "SOUND_HUD_TASK_CREATED"
        }
       }
+      m_bExcludeFromDynamicDespawn 1
       m_sTaskTitle "Locate Intel Suurkyla"
       m_sTaskDescription "Search Suurkyla for hidden intel"
       m_bPlaceMarkerOnSubjectSlot 0
@@ -5710,7 +6297,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F75919F81}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Suurkyla"
+         m_sEntityName "Pers_TaskDeliverIntel_Suurkyla"
         }
        }
       }
@@ -5770,7 +6357,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Suurkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Suurkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.441 0.014 -0.067
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Suurkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -6165,7 +6752,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Kappeliniemi"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Kappeliniemi"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -6178,6 +6765,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Kappeliniemi"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kappeliniemi"
@@ -6185,6 +6775,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Kappeliniemi"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Kappeliniemi {
+    coords 6.612 -0.001 3.682
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Kappeliniemi"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Kappeliniemi"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Kappeliniemi"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Kappeliniemi"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Kappeliniemi {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Kappeliniemi {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -6215,7 +6842,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F3C873D3A}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Kappeliniemi"
+         m_sEntityName "Pers_TaskDeliverIntel_Kappeliniemi"
         }
        }
       }
@@ -6275,7 +6902,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Kappeliniemi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Kappeliniemi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.643 -0.001 0.306
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kappeliniemi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -6588,7 +7215,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Niemenkyla"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Niemenkyla"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -6601,6 +7228,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Niemenkyla"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Niemenkyla"
@@ -6608,6 +7238,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Niemenkyla"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Niemenkyla {
+    coords 8.355 -1.498 4.924
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Niemenkyla"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Niemenkyla"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Niemenkyla"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Niemenkyla"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Niemenkyla {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Niemenkyla {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -6638,7 +7305,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F6790947C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Niemenkyla"
+         m_sEntityName "Pers_TaskDeliverIntel_Niemenkyla"
         }
        }
       }
@@ -6698,7 +7365,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Niemenkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.316 0.116 -0.25
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Niemenkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -7158,7 +7825,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Jokela"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Jokela"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -7171,6 +7838,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Jokela"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Jokela"
@@ -7178,6 +7848,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Jokela"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Jokela {
+    coords 6.628 1.03 3.671
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Jokela"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Jokela"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Jokela"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Jokela"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Jokela {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Jokela {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -7208,7 +7915,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F3AE65B1C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Jokela"
+         m_sEntityName "Pers_TaskDeliverIntel_Jokela"
         }
        }
       }
@@ -7234,7 +7941,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         }
        }
       }
-      coords 6.656 0.001 3.63
+      coords 6.656 1.03 3.63
+      angleX 6.204
+      angleY -0.487
+      angleZ -4.494
      }
      GenericEntity SlotPick_TaskDeliverIntel_Jokela {
       ID "5E74C909218B7182"
@@ -7268,7 +7978,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Jokela : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.553 -0.049 0.01
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Jokela : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -7658,7 +8368,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Liiralahdenjarvi"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -7671,6 +8381,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Liiralahdenjarvi"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Liiralahdenjarvi"
@@ -7678,6 +8391,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Liiralahdenjarvi"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Liiralahdenjarvi {
+    coords 6.617 -0.001 3.675
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Liiralahdenjarvi"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Liiralahdenjarvi"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Liiralahdenjarvi"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Liiralahdenjarvi"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Liiralahdenjarvi {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Liiralahdenjarvi {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -7708,7 +8458,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F4F275A74}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi"
+         m_sEntityName "Pers_TaskDeliverIntel_Liiralahdenjarvi"
         }
        }
       }
@@ -7768,7 +8518,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Liiralahdenjarvi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Liiralahdenjarvi : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords -0.256 -0.001 -0.313
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Liiralahdenjarvi : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -8011,7 +8761,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Kiiskinkyla"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -8024,6 +8774,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Kiiskinkyla"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Kiiskinkyla"
@@ -8031,6 +8784,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Kiiskinkyla"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Kiiskinkyla {
+    coords 6.439 0.295 4.094
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Kiiskinkyla"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Kiiskinkyla"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Kiiskinkyla"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Kiiskinkyla"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Kiiskinkyla {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Kiiskinkyla {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -8061,7 +8851,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F4113CC9C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Kiiskinkyla"
+         m_sEntityName "Pers_TaskDeliverIntel_Kiiskinkyla"
         }
        }
       }
@@ -8121,7 +8911,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Kiiskinkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Kiiskinkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.449 0.026 0.272
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Kiiskinkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -8441,7 +9231,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Lounatkyla"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Lounatkyla"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -8454,6 +9244,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Lounatkyla"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Lounatkyla"
@@ -8461,6 +9254,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Lounatkyla"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Lounatkyla {
+    coords 6.587 0.05 3.755
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Lounatkyla"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Lounatkyla"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Lounatkyla"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Lounatkyla"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Lounatkyla {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Lounatkyla {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -8491,7 +9321,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F519F463C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{61610678E6514B56}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Lounatkyla"
+         m_sEntityName "Pers_TaskDeliverIntel_Lounatkyla"
         }
        }
       }
@@ -8551,7 +9381,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Lounatkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Lounatkyla : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.303 -0.002 0.161
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Lounatkyla : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -8885,7 +9715,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     UpdatePeriod 50
     m_bDebugLogs 1
     m_bUsePersistence 1
-    m_sPersistentObject "Persistence_Entity_TaskDeliverIntel_Heikinhelli"
+    m_sPersistentObject "Pers_TaskDeliverIntel_Heikinhelli"
     m_ActivationPresence ANY_CHARACTER
     m_aIndividualTasks {
      PR_TaskDetails "{613802B2DA10B658}" {
@@ -8898,6 +9728,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          1
         }
         m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "Opt_TaskDeliverIntel_Heikinhelli"
+        }
        }
        PR_MoveTask "{613802B56EC76EB7}" {
         m_sTaskSectionToMove "SlotPick_TaskDeliverIntel_Heikinhelli"
@@ -8905,6 +9738,43 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
          "TaskDeliverIntel_MoveCollection_Heikinhelli"
         }
        }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger Opt_TaskDeliverIntel_Heikinhelli {
+    coords 6.609 0.735 3.672
+    TriggerShapeType Sphere
+    SphereRadius 2
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverIntel_Heikinhelli"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61917DF60E955557}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverIntel_Heikinhelli"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "Opt_TaskDeliverIntel_Heikinhelli"
+    m_PlayerXPTaskReward "Deliver Intel (50)"
+    m_fXPMultiplier 1.125
+    m_fMaxDistanceForVolunteerBonus 200
+    m_bUseTaskFailObject 1
+    m_sTaskFailObject "Pers_Fail_TaskDeliverIntel_Heikinhelli"
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Opt_TaskDeliverIntel_Heikinhelli {
+       coords 0.001 -0.019 0.136
+      }
+      Pers_Fail_TaskDeliverIntel_Heikinhelli {
+       coords 0.146 -0.341 -0.415
       }
      }
     }
@@ -8935,7 +9805,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{6161402F0F3B853C}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{6161402F1BE18878}" {
-         m_sEntityName "Persistence_Entity_TaskDeliverIntel_Heikinhelli"
+         m_sEntityName "Pers_TaskDeliverIntel_Heikinhelli"
         }
        }
       }
@@ -8961,7 +9831,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
         }
        }
       }
-      coords 6.656 0.001 3.63
+      coords 6.656 0.737 3.63
      }
      GenericEntity SlotPick_TaskDeliverIntel_Heikinhelli {
       ID "5E74C909218B7182"
@@ -8995,7 +9865,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity Persistence_Entity_TaskDeliverIntel_Heikinhelli : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   GenericEntity Pers_TaskDeliverIntel_Heikinhelli : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
     coords 0.39 0 0.132
    }
    GenericEntity Layer_TaskDeliverIntel_AI_Heikinhelli : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
@@ -9294,6 +10164,28 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
  }
 }
+Vehicle UAZ469_covered_CIV_blue1 : "{C8B16ABCA57679A2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_blue.et" {
+ components {
+  BaseVehicleNodeComponent "{20FB66C5B2237133}" {
+   components {
+    SCR_CarControllerComponent_SA "{20FB66C5BC92275B}" {
+     EngineStartupChance 50
+    }
+   }
+  }
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 9.25
+    }
+    SCR_FuelNode "{5AD4F813E67ECBD3}" {
+     m_fInitialFuelTankState 9.25
+    }
+   }
+  }
+ }
+ coords 7413.793 18.694 3199.56
+}
 $grp GenericEntity : "{CAE986C2BF5D5859}Prefabs/Props/Industrial/CargoContainers/CargoContainer_01/CargoContainer_01_10ft_Base.et" {
  {
   coords 4372.785 79.104 9904.509
@@ -9302,4 +10194,8 @@ $grp GenericEntity : "{CAE986C2BF5D5859}Prefabs/Props/Industrial/CargoContainers
   coords 5814.643 39.585 5863.269
   angleY -25.81
  }
+}
+GameEntity : "{FCC9A062B697948E}Prefabs/Structures/BuildingParts/Ladders/Ladder_Pier_520_B.et" {
+ coords 7425.19 5.577 3220.969
+ angleY -73.809
 }

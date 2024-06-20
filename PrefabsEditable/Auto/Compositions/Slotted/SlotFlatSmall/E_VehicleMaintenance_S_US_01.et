@@ -1,0 +1,82 @@
+GenericEntity : "{ECB8E313DFBD3415}Prefabs/Compositions/Slotted/SlotFlatSmall/VehicleMaintenance_S_US_01.et" {
+ ID "5282DCB5DFC8538F"
+ {
+  GenericEntity {
+   ID "5D45393A2E695E30"
+   {
+    GenericEntity {
+     ID "5D45393A70285E70"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393A70285E75"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393A70285E77"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393A70285E79"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393A70285E7C"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5D45393A70285E7E"
+     components {
+      SCR_ResourceComponent "{5D247A59598D71AE}" {
+       m_aContainers {
+        SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         m_fResourceValueCurrent 0
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

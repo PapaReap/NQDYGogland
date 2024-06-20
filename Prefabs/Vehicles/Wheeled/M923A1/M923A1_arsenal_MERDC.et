@@ -1,0 +1,25 @@
+Vehicle : "{EC657C9B3C73E192}Prefabs/Vehicles/Wheeled/M923A1/M923A1_ammo_MERDC.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  BaseVehicleNodeComponent "{20FB66C5B2237133}" {
+   components {
+    SCR_CarControllerComponent_SA "{20FB66C5BC92275B}" {
+     EngineStartupChance 95
+    }
+   }
+  }
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{5EDC86E4AF8908B6}" {
+      m_Value 2500
+     }
+     SCR_EntityBudgetValue "{5EF07CF434919DE2}" {
+      m_BudgetType RANK_CAPTAIN
+      m_Value 5
+     }
+    }
+   }
+  }
+ }
+}

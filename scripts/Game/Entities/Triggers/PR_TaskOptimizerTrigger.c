@@ -69,7 +69,8 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 		if (m_bUseRandomDelayTimer)
 			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
 
-		Print(string.Format("[PR_TaskOptimizerTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
+		if (m_bDebugLogs)
+			Print(string.Format("[PR_TaskOptimizerTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.NORMAL);
 
 		IEntity persistentObject;
 
@@ -113,13 +114,32 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 			if (m_PlayerXPTaskReward > 0)
 			{
 				SCR_EXPRewards rewardID = GetXPReward();
-				Print(string.Format("[PR_TaskOptimizerTrigger] %1 : m_PlayerXPTaskReward: %2", m_sLogMode, m_PlayerXPTaskReward), LogLevel.WARNING);
+				if (m_bDebugLogs)
+					Print(string.Format("[PR_TaskOptimizerTrigger] %1 : m_PlayerXPTaskReward: %2", m_sLogMode, m_PlayerXPTaskReward), LogLevel.NORMAL);
 
 				GetGame().GetCallqueue().CallLater(RewardTask, delay, false, rewardID);
 			}
 		}
+
+		PersistenceCleanup();
+
+		Deactivate();
 	}
 
+	//------------------------------------------------------------------------------------------------
+	//! sets m_bSubtractXP
+/*	void SetSubtractXP(bool subtractXP)
+	{
+		m_bSubtractXP = subtractXP;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_bSubtractXP;
+	bool GetSubtractXP()
+	{
+		return m_bSubtractXP;
+	}*/
+	
 	protected bool m_bSubtractXP;
 	//------------------------------------------------------------------------------------------------
 	//! sets m_bSubtractXP
@@ -220,7 +240,9 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 		if (factionManager)
 			m_OwnerFaction = factionManager.GetFactionByKey(m_OwnerFactionKey);
 
-		Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : rewardID: %2", m_sLogMode, rewardID), LogLevel.WARNING);
+		if (m_bDebugLogs)
+			Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : rewardID: %2", m_sLogMode, rewardID), LogLevel.NORMAL);
+
 		SCR_XPHandlerComponent comp = SCR_XPHandlerComponent.Cast(GetGame().GetGameMode().FindComponent(SCR_XPHandlerComponent));
 
 		if (comp && !GetTaskManager().IsProxy())
@@ -246,104 +268,118 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 				if (taskEntity)
 				{
 					float actualDistance = vector.DistanceXZ(taskEntity.GetOrigin(), playerEntity.GetOrigin());
-					Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : actualDistance: %3", m_sLogMode, m_sTriggerName, actualDistance), LogLevel.WARNING);
+					if (m_bDebugLogs)
+						Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : actualDistance: %3", m_sLogMode, m_sTriggerName, actualDistance), LogLevel.NORMAL);
+
 					if (actualDistance <= m_fMaxDistanceForVolunteerBonus)
 						volunteer = true;
 				}
-		PlayerController pc = GetGame().GetPlayerManager().GetPlayerController(playerId);
-		if (!pc)
-			return;
+				PlayerController pc = GetGame().GetPlayerManager().GetPlayerController(playerId);
+				if (!pc)
+					return;
 
-		SCR_PlayerXPHandlerComponent compXPPlayer = SCR_PlayerXPHandlerComponent.Cast(pc.FindComponent(SCR_PlayerXPHandlerComponent));
-		if (!compXPPlayer)
-			return;	
-		int playerXPWithPenalty = compXPPlayer.GetPlayerXP();
-		Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : playerXPWithPenalty Pre: %3", m_sLogMode, m_sTriggerName, playerXPWithPenalty), LogLevel.WARNING);	
+				SCR_PlayerXPHandlerComponent compXPPlayer = SCR_PlayerXPHandlerComponent.Cast(pc.FindComponent(SCR_PlayerXPHandlerComponent));
+				if (!compXPPlayer)
+					return;
+
+				int playerXP = compXPPlayer.GetPlayerXP();
+
+				if (m_bDebugLogs)
+					Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : playerXP Pre: %3", m_sLogMode, m_sTriggerName, playerXP), LogLevel.NORMAL);
+
 				if (GetSubtractXP())
 				{
 					int xpSubtract = comp.GetXPRewardAmount(SCR_EXPRewards.CUSTOM_20);
-					
+
 					int XP = comp.GetXPRewardAmount(rewardID);
 					XP = -XP;
 					int addCustomXP = 0;
-					if (xpSubtract > XP) // -40 > -50
-						addCustomXP =  XP - xpSubtract;
-					//else
-						//addCustomXP = xpSubtract - XP;
+					if (xpSubtract > XP)
+						addCustomXP = XP - xpSubtract;
 
 					if (!(addCustomXP == 0))
 						comp.AwardXP(playerId, SCR_EXPRewards.CUSTOM_1, 1, false, addCustomXP);
-					
+
 					comp.AwardXP(playerId, SCR_EXPRewards.CUSTOM_20, 1, false, 0);
-					Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : xpSubtract: %3", m_sLogMode, m_sTriggerName, xpSubtract), LogLevel.WARNING);
-					Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : addCustomXP: %3", m_sLogMode, m_sTriggerName, addCustomXP), LogLevel.WARNING);
+
+					if (m_bDebugLogs)
+					{
+						Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : xpSubtract: %3", m_sLogMode, m_sTriggerName, xpSubtract), LogLevel.WARNING);
+						Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : addCustomXP: %3", m_sLogMode, m_sTriggerName, addCustomXP), LogLevel.WARNING);
+					}
 				}
 				else
 					comp.AwardXP(playerId, rewardID, m_fXPMultiplier, volunteer, m_iCustomXP);
-				
-				playerXPWithPenalty = compXPPlayer.GetPlayerXP();
-				Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : playerXPWithPenalty Post: %3", m_sLogMode, m_sTriggerName, playerXPWithPenalty), LogLevel.WARNING);	
+
+				playerXP = compXPPlayer.GetPlayerXP();
+
+				if (m_bDebugLogs)
+					Print(string.Format("[PR_TaskOptimizerTrigger] (RewardTask) %1 : Trigger: %2 : playerXP Post: %3", m_sLogMode, m_sTriggerName, playerXP), LogLevel.WARNING);
 			}
 		}
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 	//! Cleanup prefabs
 	protected void CleanupPrefabs(array<ref PR_RemovePrefabFilter> removePrefabDetails)
 	{
-		ResourceName prefabType;
+		//ResourceName prefabType;
+		bool includeVariants;
 		int prefabCountToRemove;
 		IEntity prefabEntity;
 		int requiredPrefabCount = 0;
 		int realPrefabCount = 0;
+		array<ResourceName> specificPrefabNames = {};
+		array<ResourceName> specificPrefabNamesArray = {};
 
 		foreach (PR_RemovePrefabFilter prefabDetails : m_aRemovePrefabDetails)
 		{
-			prefabType = prefabDetails.m_sSpecificPrefabName;
+			specificPrefabNames = prefabDetails.m_aSpecificPrefabNames;
+			includeVariants = prefabDetails.m_bIncludeChildrenVariants;
 			prefabCountToRemove = prefabDetails.m_iPrefabCountToRemove;
 			requiredPrefabCount = requiredPrefabCount + prefabCountToRemove;
-			//int realPrefabCount = 0;
 
-			if (!prefabType)
-				continue;
-			//m_bUseTaskFailObject
-			//m_sTaskFailObject
-			if (prefabCountToRemove > 0)
+			if (specificPrefabNames.Count() > 0 && prefabCountToRemove > 0)
 			{
+				foreach (ResourceName prefabType : specificPrefabNames)
+				{
+					if (!prefabType)
+						continue;
+					Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : prefabType: %2", m_sLogMode, prefabType), LogLevel.WARNING);//temp
+					specificPrefabNamesArray.Insert(prefabType);
+				}
+				
+				if (specificPrefabNamesArray.Count() == 0)
+					continue;
+
+				//m_bUseTaskFailObject
+				//m_sTaskFailObject
+								
 				int _i = 0;
 				while (prefabCountToRemove > _i)
 				{
-					prefabEntity = FindNearestPrefab(prefabType, m_Trigger.GetOrigin(), m_fRadius);
-					if (prefabEntity)
+					int _p = 0;
+					while (specificPrefabNamesArray.Count() > _p)
 					{
-						SCR_EntityHelper.DeleteEntityAndChildren(prefabEntity);
-						realPrefabCount++;
+						prefabEntity = FindNearestPrefab(specificPrefabNamesArray.Get(_p), m_Trigger.GetOrigin(), m_fRadius, includeVariants);
+						Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : prefabEntity: %2", m_sLogMode, prefabEntity), LogLevel.WARNING);//temp
+						if (prefabEntity)
+						{
+							SCR_EntityHelper.DeleteEntityAndChildren(prefabEntity);
+							realPrefabCount++;
+							_p = specificPrefabNamesArray.Count();
+						}
+						_p++;
 					}
-
+	
 					_i++;
 				}
-
-				//if (prefabCountToRemove > realPrefabCount && m_bUseTaskFailObject)
-				//{
-				//	if (GetTaskFailObject())
-				//		SCR_EntityHelper.DeleteEntityAndChildren(GetTaskFailObject());
-
-				//	SetSubtractXP(true);
-				//}
-				//else
-				//	SetSubtractXP(false);
-
-				//if (m_PlayerXPTaskReward > 0)
-				//{
-				//	SCR_EXPRewards rewardID = GetXPReward();
-				//	Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : m_PlayerXPTaskReward: %2", m_sLogMode, m_PlayerXPTaskReward), LogLevel.WARNING);
-
-				//	GetGame().GetCallqueue().CallLater(RewardTask, delay, false, rewardID);
-				//}
 			}
 		}
-		
-		Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : requiredPrefabCount: %2 : realPrefabCount: %3", m_sLogMode, requiredPrefabCount, realPrefabCount), LogLevel.WARNING);
+
+		if (m_bDebugLogs)
+			Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : requiredPrefabCount: %2 : realPrefabCount: %3", m_sLogMode, requiredPrefabCount, realPrefabCount), LogLevel.NORMAL);
+
 		if (requiredPrefabCount > realPrefabCount && m_bUseTaskFailObject)
 		{
 			if (GetTaskFailObject())
@@ -353,11 +389,13 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 		}
 		else
 			SetSubtractXP(false);
-		
+
 		if (m_PlayerXPTaskReward > 0)
 		{
 			SCR_EXPRewards rewardID = GetXPReward();
-			Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : m_PlayerXPTaskReward: %2", m_sLogMode, m_PlayerXPTaskReward), LogLevel.WARNING);
+
+			if (m_bDebugLogs)
+				Print(string.Format("[PR_TaskOptimizerTrigger] (CleanupPrefabs) %1 : m_PlayerXPTaskReward: %2", m_sLogMode, m_PlayerXPTaskReward), LogLevel.WARNING);
 
 			GetGame().GetCallqueue().CallLater(RewardTask, 1000, false, rewardID);
 		}
@@ -366,12 +404,15 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 	//--- From Arkensor's EPF scripts, thanks. I've tweaked it to work for my use.
 	protected ResourceName m_sQueryPrefab;
 	protected IEntity m_QueryResult;
+	protected bool m_bIncludeVariants;
 
 	//------------------------------------------------------------------------------------------------
-	protected IEntity FindNearestPrefab(ResourceName prefab, vector origin, float radius)
+	//! Find prefabs within given radius filter
+	protected IEntity FindNearestPrefab(ResourceName prefab, vector origin, float radius, bool includeVariants)
 	{
 		m_sQueryPrefab = prefab;
 		m_QueryResult = null;
+		m_bIncludeVariants = includeVariants;
 		GetGame().GetWorld().QueryEntitiesBySphere(origin, radius, FindNearestPrefab_FirstEntity, FindNearestPrefab_FilterEntities);
 		IEntity result = m_QueryResult;
 		m_QueryResult = null;
@@ -386,33 +427,44 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Filter out entities check for prefab match
 	protected bool FindNearestPrefab_FilterEntities(IEntity ent)
 	{
 		EntityPrefabData prefabData = ent.GetPrefabData();
+		
 		if (!prefabData)
 			return false;
 
 		BaseContainer baseContainer = ent.GetPrefabData().GetPrefab();
+
 		if (!baseContainer)
 			return false;
 
 		string classname = baseContainer.GetClassName();
-		if (!(classname == "GenericEntity"))
+
+		//--- Filter out some garbage
+		if (!(classname == "GenericEntity" || "Vehicle")) // add more classname filters as needed
 			return false;
 
+		if (SCR_BaseContainerTools.GetPrefabResourceName(baseContainer).Contains(m_sQueryPrefab))
+			return true;
+		
+		if (!m_bIncludeVariants)
+			return false;
+		
+		baseContainer = ent.GetPrefabData().GetPrefab().GetAncestor();
+		if (!baseContainer)
+			return false;
+
+		//--- GetAncestor because prefab drops off the hash when using ON_TRIGGER_ACTIVATION, which is what I want to use for this trigger
+	//	ResourceName prefabName = prefabData.GetPrefab().GetName();//temp
+		ResourceName prefabName = prefabData.GetPrefab().GetAncestor().GetName();//temp
+	//	ResourceName prefabName2 = prefabData.GetPrefab().GetParent().GetName();//temp
+
+		Print(string.Format("[PR_TaskOptimizerTrigger] (FindNearestPrefab_FilterEntities) %1 : prefabName: %2", m_sLogMode, prefabName), LogLevel.WARNING);//temp
+	//	Print(string.Format("[PR_TaskOptimizerTrigger] (FindNearestPrefab_FilterEntities) %1 : prefabName2: %2", m_sLogMode, prefabName2), LogLevel.WARNING);//temp
+
 		return SCR_BaseContainerTools.GetPrefabResourceName(baseContainer).Contains(m_sQueryPrefab);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! Gets the prefab the entity uses
-	//! \param entity Instance of which to get the prefab name
-	//! \return the resource name of the prefab or empty string if no prefab was used or entity is invalid
-	protected ResourceName GetPrefabName(IEntity entity)
-	{
-		if (!entity)
-			return string.Empty;
-
-		return SCR_BaseContainerTools.GetPrefabResourceName(entity.GetPrefabData().GetPrefab());
 	}
 }
 
@@ -437,13 +489,13 @@ enum PR_EXPRewards
 [BaseContainerProps()]
 class PR_RemovePrefabFilter
 {
-	//! PR Task Optimizer:
+	//! PR Task Optimizer:  // maybe make this a array???
 	[Attribute(params: "et", desc: "If SPECIFIC_PREFAB_NAME is selected, fill the class name here.", category: "PR Task Optimizer")]
-	ResourceName m_sSpecificPrefabName;
+	ref array<ResourceName> m_aSpecificPrefabNames;
 
 	//! PR Task Optimizer:
-	//[Attribute(defvalue: "0", UIWidgets.CheckBox, desc: "Activate the trigger once or everytime the activation condition is true?", category: "PR Task Optimizer")]
-	//bool m_bIncludeChildren;
+	[Attribute(defvalue: "0", UIWidgets.CheckBox, desc: "If base object is used, include all child variants of base object.", category: "PR Task Optimizer")]
+	bool m_bIncludeChildrenVariants;
 
 	//! PR Task Optimizer: Amount of prefabs to remove, should match slot prefabs required for task. Early removal of prefabs before trigger activates could result in XP loses.
 	[Attribute("1", desc: "Amount of prefabs to remove, should match slot prefabs required for task. Early removal of prefabs before trigger activates could result in XP loses.  ", category: "PR Task Optimizer")]

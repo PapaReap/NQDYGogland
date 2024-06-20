@@ -210,7 +210,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 			} else
 			{
 				allChildren.InsertAt(name, 0);
-				Print(string.Format("[PR_Core_Trigger] (GetAllChildren) %1 : Trigger: %2 : Using parent name, children are not proper for this instance, probably a vehicle with lots of children!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+				Print(string.Format("[PR_Core_Trigger] (GetAllChildren) %1 : Trigger: %2 : Using parent name, children are not proper for this instance, probably a vehicle with lots of children!", m_sLogMode, m_sTriggerName), LogLevel.NORMAL);
 				return;
 			}
 		}
@@ -247,8 +247,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 			return;
 		}
 		vector position = objectToTeleportTo.GetOrigin();
-		Print(("[PR_Core_Trigger] (TeleportObject) objectToTeleport: " + objectToTeleport + " objectToTeleportTo: " + objectToTeleportTo + " position: " + position), LogLevel.NORMAL);
-		Print(string.Format("[PR_Core_Trigger] (TeleportObject) %1 : Trigger: %2 : objectToTeleport: %3 : posPre: %4", m_sLogMode, m_sTriggerName, objectToTeleport, objectToTeleport.GetOrigin()), LogLevel.WARNING);
+		Print(string.Format("[PR_Core_Trigger] (TeleportObject) %1 : Trigger: %2 : objectToTeleport: %3 : objectToTeleportTo: %4", m_sLogMode, m_sTriggerName, objectToTeleport, objectToTeleport, objectToTeleportTo), LogLevel.NORMAL);
 		objectToTeleport.SetOrigin(position);
 		objectToTeleport.Update();
 	}
@@ -261,21 +260,21 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 		{
 			if (m_PersistentObject && m_bNeutralizePersistentObject)
 			{
-				Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
+				Print(("[PR_Core_Trigger] (PersistenceCleanup) " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
 				KillUnit(m_PersistentObject);
 				GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, m_PersistentObject, m_sPersistentObject);
 			} else
 			{
 				if (m_bEPF_ModExist && !m_PersistentObject)
 				{
-					Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is null, exiting trigger: " + m_sPersistentObject), LogLevel.NORMAL);
+					Print(("[PR_Core_Trigger] (PersistenceCleanup) " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is null, exiting trigger: " + m_sPersistentObject), LogLevel.NORMAL);
 					GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
 					return;
 				}
 			}
 		} else if (m_PersistentObject)
 		{
-			Print(("[PR_Core_Trigger] " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, is not necessary and needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
+			Print(("[PR_Core_Trigger] (PersistenceCleanup) " + m_sLogMode + " : Trigger: " + m_sTriggerName + ": m_PersistentObject is alive, is not necessary and needs to die: " + m_sPersistentObject), LogLevel.NORMAL);
 			KillUnit(m_PersistentObject);
 			GetGame().GetCallqueue().CallLater(deleteEntity, 5000, false, m_PersistentObject, m_sPersistentObject);
 		}
@@ -291,7 +290,7 @@ class PR_CoreTrigger : SCR_BaseTriggerEntity
 			if (!m_PersistentObject && m_iExitLoop == 0)
 			{
 				m_iExitLoop = 1;
-				Print(string.Format("[PR_SpawnTaskTrigger] (ScriptedEntityFilterForQuery) : Trigger: %2 : m_PersistentObject %3 is not here. Deleting Trigger.", m_sLogMode, m_sTriggerName, m_sPersistentObject), LogLevel.WARNING);
+				Print(string.Format("[PR_Core_Trigger] (ScriptedEntityFilterForQuery) : Trigger: %2 : m_PersistentObject %3 is not here. Deleting Trigger.", m_sLogMode, m_sTriggerName, m_sPersistentObject), LogLevel.WARNING);
 				GetGame().GetCallqueue().CallLater(deleteEntity, 0, false, m_Trigger, m_sTriggerName);
 				return false;
 			}
@@ -404,16 +403,4 @@ class PR_OverrideTriggerActivation
 	//! Trigger Activation: Object name to watch for to go missing, useful for triggering once a object is deleted.
 	[Attribute(desc: "Object name to watch for to go missing, useful for triggering once a object is deleted. Only works with 'Activate If Object Missing' from above is checked.  ", category: "PR Core: Trigger Activation")]
 	string m_sMissingObjectName;
-
-	//! PR Task Spawner: Tasks - Individual Tasks - Neutralize Persistent Object on task activation.
-//	[Attribute("false", UIWidgets.CheckBox,"Neutralize Persistent Object on task activation. If not, object can be nueutralized by other means in the mission. IE on task complete.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	bool m_bNeutralizePersistentTaskObject;
-
-	//! PR Task Spawner: Tasks - Individual Tasks - Allow moving of Area, task layer, or slots to another destination.
-//	[Attribute("false", UIWidgets.CheckBox,"Allow moving of Area, task layer, or slots to another destination.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	bool m_bUseMoveTaskDestination;
-
-	//! PR Task Spawner: Tasks - Individual Tasks - If you desire the Area, task layer, or slots to be moved to another location, add details here.
-//	[Attribute(desc: "If you desire the Area, task layer, or slots to be moved to another location, add details here.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
-//	ref array<ref PR_MoveTask> m_aTaskMoveDetails;
 }

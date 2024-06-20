@@ -15,6 +15,9 @@ class PR_SpawnTaskTriggerClass : PR_CoreTriggerClass
 
 class PR_SpawnTaskTrigger : PR_CoreTrigger
 {
+	[Attribute("true", UIWidgets.CheckBox, "Repeat If Initial Task Not Found will loop task until one found.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
+	protected bool m_bRepeatIfInitialTaskNotFound;
+	
 	//! PR Task Spawner: Tasks - Individual Tasks - Individual tasks to assign, with optional move feature.
 	[Attribute(desc: "Individual tasks to assign, with optional move feature.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	protected ref array<ref PR_TaskDetails> m_aIndividualTasks;
@@ -67,6 +70,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	protected ref array<int> m_aTaskTypesAvailableArray = {};
 	protected ref array<string> m_aTaskArrayGlobal = {};
 	protected ref array<string> m_aTaskCollectionsArray = {};
+	protected ref array<string> m_aTaskMoveCheckLaterArray = {};
 	protected SCR_GameModeCampaign m_Campaign;
 
 	//------------------------------------------------------------------------------------------------
@@ -117,7 +121,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			return;
 
 		m_bIsTriggerActivated = true;
-		m_sLogMode = "(OnActivate)";
+/*		m_sLogMode = "(OnActivate)";
 
 		//--- Delay to spawn first task
 		int delay = m_iDelayTimerMin * 1000;
@@ -271,6 +275,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 										{
 											combinedBaseArray.Insert(base);
 										}
+										Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aFriendlyPoints combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
 									}
 									if (m_aEnemyPoints.Count() > 0)
 									{
@@ -335,10 +340,245 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		}
 
 		GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, delay, false, delay);
-
+*/
+		SpawnTaskInit();
 		Deactivate();
 	}
 
+	protected void SpawnTaskInit()
+	{
+		m_sLogMode = "(OnActivate)";
+
+		//--- Delay to spawn first task
+		int delay = m_iDelayTimerMin * 1000;
+
+		if (m_bUseRandomDelayTimer)
+			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
+
+		Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
+
+		//--- Individual task details
+		if (m_aIndividualTasks.Count() > 0)
+		{
+			foreach (PR_TaskDetails taskDetails : m_aIndividualTasks)
+			{
+				SetIndividualTasks(taskDetails);
+			}
+		}
+
+		if (m_bUseTaskPool)
+			GetTaskPool();
+		else
+			GetTaskIndividual();
+
+		if (GetTaskArrayFiltered().Count() == 0)
+		{
+			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! Exiting trigger.  ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
+			PersistenceCleanup();
+			GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
+			return;
+		}
+
+		//--- End up with m_aTaskCollectionsArray
+		GetTasksFinal();
+
+		//--- Setup global tasks
+		if (m_bUseTaskPool)
+		{
+			//--- Remove tasks from the global PR_TaskCollections array
+			m_aTaskArrayGlobal = PR_TaskCollections.GetTaskArrayGlobal();
+
+			foreach (string task : m_aTaskCollectionsArray)
+			{
+				if (m_aTaskArrayGlobal.Find(task) > -1)
+				{
+					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : Task has been removed from the PR_TaskCollections global array: %3", m_sLogMode, m_sTriggerName, task), LogLevel.ERROR);
+					m_aTaskArrayGlobal.Remove(m_aTaskArrayGlobal.Find(task));
+				}
+			}
+
+			PR_TaskCollections.SetTaskArrayGlobal(m_aTaskArrayGlobal);
+		}
+
+		//--- Get base info
+		GetBaseInfo();
+
+		bool taskProceed = true;
+		
+		foreach (string taskName : m_aTaskCollectionsArray)
+		{
+			int index = GetIndividualTasksToSpawnOnActivation().Find(taskName);
+			if (index == -1)
+				continue;
+
+			bool useMoveTaskDestination = GetMoveTaskDestinationArray().Get(index);
+			if (useMoveTaskDestination)
+			{
+				array<ref PR_MoveTask> taskMoveDetails = GetTaskMoveDetailsArray().Get(index);
+				if (taskMoveDetails.Count() == 0)
+					continue;
+
+				string taskSectionToMove;
+				array<string> moveSectionTo = {};
+				array<int> moveSectionToRandomBases = {};
+				bool insertBaseNameInTaskInfos;
+				array<string> additionalObjectsToMove = {};
+
+				foreach (PR_MoveTask details : taskMoveDetails)
+				{
+					taskSectionToMove = details.m_sTaskSectionToMove;
+					moveSectionTo = details.m_sMoveSectionTo;
+					moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
+					insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
+					additionalObjectsToMove = details.m_sAdditionalObjectsToMove;
+
+					if (!taskSectionToMove)
+						continue;
+
+					array<string> combinedArray = {};
+					array<string> combinedBaseArray = {};
+					string callSign;
+
+					if (moveSectionTo.Count() > 0)
+					{
+						int moveSectionToCount = 0;
+						moveSectionToCount = moveSectionTo.Count();
+						IEntity holder;
+						array<string> moveSectionToCountArray = {};
+						int _i = 0;
+						while (moveSectionToCount > _i)
+						{
+							holder = GetGame().GetWorld().FindEntityByName(moveSectionTo.Get(_i));
+							if (holder)
+								GetAllChildrenNames(holder, moveSectionToCountArray, m_bDebugLogs);
+
+							_i++;
+						}
+						combinedArray = moveSectionToCountArray;
+					}
+
+					if (moveSectionToRandomBases.Count() > 0) //   GetBaseNames(), GetBaseVectors(), GetBaseIDs(), GetBaseCallsigns()
+					{
+						foreach (int baseType : moveSectionToRandomBases)
+						{
+							switch (baseType)
+							{
+								case 0: // "None"
+									break;
+
+								case 1: // "Main Base"
+								{
+									string hq = GetBaseNames().Get(0);
+									if (hq)
+										combinedBaseArray.Insert(hq);
+									break;
+								}
+								case 2: // "Random Base CP - Friendly"
+								{
+									if (m_aFriendlyPoints.Count() > 0)
+									{
+										foreach (string base : m_aFriendlyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 3: // "Random Base CP - Enemy"
+								{
+									if (m_aEnemyPoints.Count() > 0)
+									{
+										foreach (string base : m_aEnemyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 4: // "Random Base CP"
+								{
+									if (m_aFriendlyPoints.Count() > 0)
+									{
+										foreach (string base : m_aFriendlyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+										Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aFriendlyPoints combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
+									}
+									if (m_aEnemyPoints.Count() > 0)
+									{
+										foreach (string base : m_aEnemyPoints)
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+								case 5: // "Random All Base and Relays"
+								{
+									if (GetBaseNames().Count() > 0)
+									{
+										foreach (string base : GetBaseNames())
+										{
+											combinedBaseArray.Insert(base);
+										}
+									}
+									break;
+								}
+							}
+						}
+
+						if (insertBaseNameInTaskInfos)
+						{
+							foreach (string baseName : combinedBaseArray)
+							{
+								index = GetBaseNames().Find(baseName);
+								if (!index == -1)
+									continue;
+
+								UpdateTitles(taskName, index);
+							}
+						}
+					}
+
+					foreach (string baseName : combinedBaseArray)
+					{
+						combinedArray.Insert(baseName);
+					}
+
+					if (combinedArray.Count() == 0) // maybe reaquire base info?
+					//{
+						//if (m_bRepeatIfInitialTaskNotFound)
+						//{
+						//	GetGame().GetCallqueue().CallLater(SpawnTaskInit, delay, false, delay);
+						//	return;
+						//} else
+							continue;
+					//} else
+						//isTaskCollection = true;
+
+					int randomIndex = combinedArray.GetRandomIndex();
+					string whereToMove = combinedArray.Get(randomIndex);
+
+					TeleportObject(taskSectionToMove, whereToMove);
+					if (additionalObjectsToMove.Count() > 0)
+					{
+						IEntity object;
+						foreach (string objectName : additionalObjectsToMove)
+						{
+							object = GetGame().GetWorld().FindEntityByName(objectName);
+							if (object)
+								TeleportObject(objectName, whereToMove);
+						}
+					}
+				}
+			}
+		}
+
+		if (taskProceed)
+			GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, delay, false, delay);
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	protected void UpdateTitles(string taskName, int index)
 	{
@@ -407,7 +647,10 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 					SCR_ScenarioFrameworkSlotExtraction slotExtraction = SCR_ScenarioFrameworkSlotExtraction.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotExtraction));
 					if (slotExtraction)
+					{
 						slotExtraction.SetTitleAndDescription(title, description);
+						Print(string.Format("[PR_SpawnTaskTrigger] (UpdateTitles) %1 : Trigger: %2 : title: %3 : description: %4", m_sLogMode, m_sTriggerName, title, description), LogLevel.WARNING);
+					}
 
 					SCR_ScenarioFrameworkSlotDestroy slotDestroy = SCR_ScenarioFrameworkSlotDestroy.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotDestroy));
 					if (slotDestroy)
@@ -700,7 +943,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	protected void SetBaseNames(string name)
 	{
 		if (!name)
-			name = "";
+			name = "Unknown Base";
 		m_aBaseNames.Insert(name);
 	}
 
@@ -751,7 +994,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	protected void SetBaseCallsigns(string callsign)
 	{
 		if (!callsign)
-			callsign = "";
+			callsign = "Unknown Callsign";
 		m_aBaseCallsigns.Insert(callsign);
 	}
 
