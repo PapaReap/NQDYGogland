@@ -124,6 +124,3 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
   }
  }
 }
-SCR_ChimeraCharacter Character_USSR_Officer_61AD315BC4AAFE9E : "{5117311FB822FD1F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer.et" {
- coords 1016.385 38.999 2494.515
-}

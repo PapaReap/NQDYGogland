@@ -229,11 +229,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_sTaskFailObject "FailObject_TaskDeliverSupplies_Jokela"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
-      m_sSpecificPrefabName "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
       m_iPrefabCountToRemove 2
      }
      PR_RemovePrefabFilter "{61930DD1230AD752}" {
-      m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
      }
     }
     {
@@ -524,10 +522,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_sTaskFailObject "FailObject_TaskDeliverSupplies_Jokela2"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
-      m_sSpecificPrefabName "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
      }
      PR_RemovePrefabFilter "{61930DD1230AD752}" {
-      m_sSpecificPrefabName "{1F528E76830B4E24}Prefabs/Items/Food/PR_MRE.et"
      }
     }
     {

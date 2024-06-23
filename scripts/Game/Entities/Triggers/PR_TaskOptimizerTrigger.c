@@ -461,7 +461,7 @@ class PR_TaskOptimizerTrigger : PR_CoreTrigger
 		ResourceName prefabName = prefabData.GetPrefab().GetAncestor().GetName();//temp
 	//	ResourceName prefabName2 = prefabData.GetPrefab().GetParent().GetName();//temp
 
-		Print(string.Format("[PR_TaskOptimizerTrigger] (FindNearestPrefab_FilterEntities) %1 : prefabName: %2", m_sLogMode, prefabName), LogLevel.WARNING);//temp
+	//	Print(string.Format("[PR_TaskOptimizerTrigger] (FindNearestPrefab_FilterEntities) %1 : prefabName: %2", m_sLogMode, prefabName), LogLevel.WARNING);//temp
 	//	Print(string.Format("[PR_TaskOptimizerTrigger] (FindNearestPrefab_FilterEntities) %1 : prefabName2: %2", m_sLogMode, prefabName2), LogLevel.WARNING);//temp
 
 		return SCR_BaseContainerTools.GetPrefabResourceName(baseContainer).Contains(m_sQueryPrefab);

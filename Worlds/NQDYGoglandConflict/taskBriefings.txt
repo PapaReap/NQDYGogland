@@ -117,7 +117,10 @@ Now that you have elimated the RTO Operator, recover his radio backpack and deli
 
 *** TASKS DELIVER VEHICLES ***
 Deliver vehicles
-Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %2.
+Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1.
+Important! Exit vehicle quickly after delivery complete.
+They are hot items, and won't last long!
+
 {F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et
 
 

@@ -1,0 +1,37 @@
+SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Modes/Conflict/PR_GameMode_CampaignSF.et" {
+ components {
+  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
+   components {
+    EPF_PersistentDoorStateManagerComponent "{60FD5A50E8047AA0}" {
+     m_pFilter EPF_PersistentDoorStateFilter "{612C47146A4CB4A7}" {
+     }
+    }
+   }
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
+    m_sDatabaseName "NQDYLightweightArland"
+   }
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   Enabled 0
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 1
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 1
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 1
+    }
+   }
+  }
+  SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
+   m_bRandomStartingDaytime 0
+   m_bRandomStartingWeather 0
+  }
+ }
+ coords 6790.321 52.286 5650.282
+ Flags 2097152
+}

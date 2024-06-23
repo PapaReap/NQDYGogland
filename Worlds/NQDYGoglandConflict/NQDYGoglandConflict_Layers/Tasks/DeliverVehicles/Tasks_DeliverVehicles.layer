@@ -20,7 +20,7 @@ $grp PR_SpawnTaskTrigger {
   }
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMin 1800
-  m_iDelayTimerMax 2700
+  m_iDelayTimerMax 3600
   m_aIndividualTasks {
    PR_TaskDetails "{61A3677E33B2BF4C}" {
     m_sTaskName "TaskDeliverVehicles_Friendly_01"
@@ -94,6 +94,114 @@ $grp PR_SpawnTaskTrigger {
      }
     }
    }
+   PR_TaskDetails "{61AF199A850764E3}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_05"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_05"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_05"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_05"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A8A9FF8FA}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_06"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_06"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_06"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_06"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A8A2071D1}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_07"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_07"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_07"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_07"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A8BFCE507}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_08"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_08"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_08"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_08"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A8B88CF49}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_09"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_09"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_09"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_09"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A8B5C163E}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_10"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_10"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_10"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_10"
+      }
+     }
+    }
+   }
   }
   m_bUseRandomTasks 1
   m_iRandomTaskCount -1
@@ -108,7 +216,7 @@ $grp PR_SpawnTaskTrigger {
   ShapeColor 0.046 0 1 0.078
   TriggerActivationType "First change"
   PeriodicQueries 1
-  UpdatePeriod 60
+  UpdatePeriod 120
   RunDefaultQueryFirst 0
   m_bRefreshToggle 1
   m_bDebugLogs 1
@@ -195,6 +303,114 @@ $grp PR_SpawnTaskTrigger {
      }
     }
    }
+   PR_TaskDetails "{61AF199A191B4813}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_05"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_05"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_05"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_05"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A1E370B97}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_06"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_06"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_06"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_06"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A1FAC40DA}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_07"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_07"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_07"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_07"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A1F7F0642}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_08"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_08"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_08"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_08"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A1F0E98F8}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_09"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_09"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_09"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_09"
+      }
+     }
+    }
+   }
+   PR_TaskDetails "{61AF199A1CDBB1E6}" {
+    m_sTaskName "TaskDeliverVehicles_Friendly_10"
+    m_bUsePersistentTask 1
+    m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_10"
+    m_bUseMoveTaskDestination 1
+    m_aTaskMoveDetails {
+     PR_MoveTask "{61686DE82D34CFF1}" {
+      m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_10"
+      m_sMoveSectionToRandomBases {
+       2
+      }
+      m_bInsertBaseNameInTaskInfos 1
+      m_sAdditionalObjectsToMove {
+       "OPT_TaskDeliverVehicles_Friendly_10"
+      }
+     }
+    }
+   }
   }
   m_bUseRandomTasks 1
   m_iRandomTaskCount -1
@@ -210,7 +426,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     m_iDynamicDespawnRange 60
    }
   }
-  coords 5995.636 44.563 4840.497
+  coords 5995.635 44.563 4834.52
   {
    PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_01 {
     coords 0.247 0 -0.774
@@ -253,7 +469,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     coords 0.299 0 -0.654
     TriggerShapeType Sphere
     SphereRadius 35
-    DrawShape 1
     ShapeColor 0 0.502 0.502 0.098
     TriggerActivationType "First change"
     PeriodicQueries 1
@@ -269,20 +484,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_01"
      }
     }
-    m_iDelayTimerMin 5
+    m_iDelayTimerMin 20
     m_sTaskName "OPT_TaskDeliverVehicles_Friendly_01"
     m_PlayerXPTaskReward "Deliver Vehicles (45)"
     m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_01"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
       m_aSpecificPrefabNames {
-       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
       }
       m_bIncludeChildrenVariants 1
      }
      PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
       m_aSpecificPrefabNames {
-       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
       }
       m_bIncludeChildrenVariants 1
      }
@@ -355,8 +570,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
           }
          }
         }
-        m_sTaskDescription "Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1."\
-        "Important! Exit vehicle quickly after delivery complete."\
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
         "They are hot items, and won't last long!"
        }
       }
@@ -415,7 +631,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     coords 0.299 0 -0.654
     TriggerShapeType Sphere
     SphereRadius 35
-    DrawShape 1
     ShapeColor 0 0.502 0.502 0.098
     TriggerActivationType "First change"
     PeriodicQueries 1
@@ -431,20 +646,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_02"
      }
     }
-    m_iDelayTimerMin 5
+    m_iDelayTimerMin 20
     m_sTaskName "OPT_TaskDeliverVehicles_Friendly_02"
     m_PlayerXPTaskReward "Deliver Vehicles (45)"
     m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_02"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
       m_aSpecificPrefabNames {
-       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
       }
       m_bIncludeChildrenVariants 1
      }
      PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
       m_aSpecificPrefabNames {
-       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
       }
       m_bIncludeChildrenVariants 1
      }
@@ -517,8 +732,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
           }
          }
         }
-        m_sTaskDescription "Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1."\
-        "Important! Exit vehicle quickly after delivery complete."\
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
         "They are hot items, and won't last long!"
        }
       }
@@ -577,7 +793,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     coords 0.299 0 -0.654
     TriggerShapeType Sphere
     SphereRadius 35
-    DrawShape 1
     ShapeColor 0 0.502 0.502 0.098
     TriggerActivationType "First change"
     PeriodicQueries 1
@@ -593,20 +808,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_03"
      }
     }
-    m_iDelayTimerMin 5
+    m_iDelayTimerMin 20
     m_sTaskName "OPT_TaskDeliverVehicles_Friendly_03"
     m_PlayerXPTaskReward "Deliver Vehicles (45)"
     m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_03"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
       m_aSpecificPrefabNames {
-       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
       }
       m_bIncludeChildrenVariants 1
      }
      PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
       m_aSpecificPrefabNames {
-       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
       }
       m_bIncludeChildrenVariants 1
      }
@@ -679,8 +894,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
           }
          }
         }
-        m_sTaskDescription "Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1."\
-        "Important! Exit vehicle quickly after delivery complete."\
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
         "They are hot items, and won't last long!"
        }
       }
@@ -739,7 +955,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
     coords 0.299 0 -0.654
     TriggerShapeType Sphere
     SphereRadius 35
-    DrawShape 1
     ShapeColor 0 0.502 0.502 0.098
     TriggerActivationType "First change"
     PeriodicQueries 1
@@ -755,20 +970,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
       m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_04"
      }
     }
-    m_iDelayTimerMin 5
+    m_iDelayTimerMin 20
     m_sTaskName "OPT_TaskDeliverVehicles_Friendly_04"
     m_PlayerXPTaskReward "Deliver Vehicles (45)"
     m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_04"
     m_aRemovePrefabDetails {
      PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
       m_aSpecificPrefabNames {
-       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
       }
       m_bIncludeChildrenVariants 1
      }
      PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
       m_aSpecificPrefabNames {
-       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
       }
       m_bIncludeChildrenVariants 1
      }
@@ -841,8 +1056,981 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
           }
          }
         }
-        m_sTaskDescription "Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1."\
-        "Important! Exit vehicle quickly after delivery complete."\
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_08 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5994.146 44.563 4813.002
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_08 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_08"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_08"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_08"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_08"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_08"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_08 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_08"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_08"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_08"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_08"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_08 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_08 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_08 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_08 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_08"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_08"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_08 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_05 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5993.753 44.562 4807.253
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_05 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_05"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_05"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_05"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_05"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_05"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_05 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_05"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_05"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_05"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_05"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_05 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_05 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_05 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_05 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_05"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_05"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_05 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_06 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5993.61 44.561 4801.8
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_06 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_06"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_06"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_06"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_06"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_06"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_06 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_06"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_06"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_06"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_06"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_06 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_06 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_06 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_06 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_06"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_06"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_06 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_07 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5993.286 44.564 4797.04
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_07 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_07"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_07"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_07"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_07"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_07"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_07 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_07"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_07"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_07"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_07"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_07 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_07 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_07 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_07 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_07"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_07"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_07 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_10 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5993.222 44.562 4792.862
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_10 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_10"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_10"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_10"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_10"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_10"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_10 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_10"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_10"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_10"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_10"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_10 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_10 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_10 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_10 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_10"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_10"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_10 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Friendly_09 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 5992.763 44.563 4787.496
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Friendly_09 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Friendly_09"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Friendly_09"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Friendly_09"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Friendly_09"
+        m_sMoveSectionToRandomBases {
+         1 2
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Friendly_09"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_09 {
+    coords 0.299 0 -0.654
+    TriggerShapeType Sphere
+    SphereRadius 35
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Friendly_09"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Friendly_09"
+     }
+    }
+    m_iDelayTimerMin 20
+    m_sTaskName "OPT_TaskDeliverVehicles_Friendly_09"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Friendly_09"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{47D94E1193A88497}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+     PR_RemovePrefabFilter "{61A44BDF73A0F15C}" {
+      m_aSpecificPrefabNames {
+       "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et" "{81FDAD5EB644CC3D}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered.et" "{48A6D4372444B85A}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport_covered_closed.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Friendly_09 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Friendly_09 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Friendly_09 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Friendly_09 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Friendly_09"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Friendly_09"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Friendly_09 {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_sSpecificPrefabName "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+              m_bIncludeChildren 1
+              m_iPrefabCount 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskTitle "Deliver vehicles  %1"
+        m_sTaskDescription "Deliver 1x M151A2 any variant and 1x M923A1 transport any variant to base %1."\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them."\
         "They are hot items, and won't last long!"
        }
       }

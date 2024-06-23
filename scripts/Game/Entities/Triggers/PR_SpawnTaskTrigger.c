@@ -17,7 +17,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 {
 	[Attribute("true", UIWidgets.CheckBox, "Repeat If Initial Task Not Found will loop task until one found.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	protected bool m_bRepeatIfInitialTaskNotFound;
-	
+
 	//! PR Task Spawner: Tasks - Individual Tasks - Individual tasks to assign, with optional move feature.
 	[Attribute(desc: "Individual tasks to assign, with optional move feature.  ", category: "PR Task Spawner: Tasks - Individual Tasks")]
 	protected ref array<ref PR_TaskDetails> m_aIndividualTasks;
@@ -70,7 +70,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	protected ref array<int> m_aTaskTypesAvailableArray = {};
 	protected ref array<string> m_aTaskArrayGlobal = {};
 	protected ref array<string> m_aTaskCollectionsArray = {};
-	protected ref array<string> m_aTaskMoveCheckLaterArray = {};
+	protected ref array<string> m_aTaskMoveRecheckArray = {};
 	protected SCR_GameModeCampaign m_Campaign;
 
 	//------------------------------------------------------------------------------------------------
@@ -121,230 +121,14 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			return;
 
 		m_bIsTriggerActivated = true;
-/*		m_sLogMode = "(OnActivate)";
 
-		//--- Delay to spawn first task
-		int delay = m_iDelayTimerMin * 1000;
-
-		if (m_bUseRandomDelayTimer)
-			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
-
-		Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
-
-		//--- Individual task details
-		if (m_aIndividualTasks.Count() > 0)
-		{
-			foreach (PR_TaskDetails taskDetails : m_aIndividualTasks)
-			{
-				SetIndividualTasks(taskDetails);
-			}
-		}
-
-		if (m_bUseTaskPool)
-			GetTaskPool();
-		else
-			GetTaskIndividual();
-
-		if (GetTaskArrayFiltered().Count() == 0)
-		{
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! Exiting trigger.  ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
-			PersistenceCleanup();
-			GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
-			return;
-		}
-
-		//--- End up with m_aTaskCollectionsArray
-		GetTasksFinal();
-
-		//--- Setup global tasks
-		if (m_bUseTaskPool)
-		{
-			//--- Remove tasks from the global PR_TaskCollections array
-			m_aTaskArrayGlobal = PR_TaskCollections.GetTaskArrayGlobal();
-
-			foreach (string task : m_aTaskCollectionsArray)
-			{
-				if (m_aTaskArrayGlobal.Find(task) > -1)
-				{
-					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : Task has been removed from the PR_TaskCollections global array: %3", m_sLogMode, m_sTriggerName, task), LogLevel.ERROR);
-					m_aTaskArrayGlobal.Remove(m_aTaskArrayGlobal.Find(task));
-				}
-			}
-
-			PR_TaskCollections.SetTaskArrayGlobal(m_aTaskArrayGlobal);
-		}
-
-		//--- Get base info
-		GetBaseInfo();
-
-		foreach (string taskName : m_aTaskCollectionsArray)
-		{
-			int index = GetIndividualTasksToSpawnOnActivation().Find(taskName);
-			if (index == -1)
-				continue;
-
-			bool useMoveTaskDestination = GetMoveTaskDestinationArray().Get(index);
-			if (useMoveTaskDestination)
-			{
-				array<ref PR_MoveTask> taskMoveDetails = GetTaskMoveDetailsArray().Get(index);
-				if (taskMoveDetails.Count() == 0)
-					continue;
-
-				string taskSectionToMove;
-				array<string> moveSectionTo = {};
-				array<int> moveSectionToRandomBases = {};
-				bool insertBaseNameInTaskInfos;
-				array<string> additionalObjectsToMove = {};
-
-				foreach (PR_MoveTask details : taskMoveDetails)
-				{
-					taskSectionToMove = details.m_sTaskSectionToMove;
-					moveSectionTo = details.m_sMoveSectionTo;
-					moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
-					insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
-					additionalObjectsToMove = details.m_sAdditionalObjectsToMove;
-
-					if (!taskSectionToMove)
-						continue;
-
-					array<string> combinedArray = {};
-					array<string> combinedBaseArray = {};
-					string callSign;
-
-					if (moveSectionTo.Count() > 0)
-					{
-						int moveSectionToCount = 0;
-						moveSectionToCount = moveSectionTo.Count();
-						IEntity holder;
-						array<string> moveSectionToCountArray = {};
-						int _i = 0;
-						while (moveSectionToCount > _i)
-						{
-							holder = GetGame().GetWorld().FindEntityByName(moveSectionTo.Get(_i));
-							if (holder)
-								GetAllChildrenNames(holder, moveSectionToCountArray, m_bDebugLogs);
-
-							_i++;
-						}
-						combinedArray = moveSectionToCountArray;
-					}
-
-					if (moveSectionToRandomBases.Count() > 0) //   GetBaseNames(), GetBaseVectors(), GetBaseIDs(), GetBaseCallsigns()
-					{
-						foreach (int baseType : moveSectionToRandomBases)
-						{
-							switch (baseType)
-							{
-								case 0: // "None"
-									break;
-
-								case 1: // "Main Base"
-								{
-									string hq = GetBaseNames().Get(0);
-									if (hq)
-										combinedBaseArray.Insert(hq);
-									break;
-								}
-								case 2: // "Random Base CP - Friendly"
-								{
-									if (m_aFriendlyPoints.Count() > 0)
-									{
-										foreach (string base : m_aFriendlyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 3: // "Random Base CP - Enemy"
-								{
-									if (m_aEnemyPoints.Count() > 0)
-									{
-										foreach (string base : m_aEnemyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 4: // "Random Base CP"
-								{
-									if (m_aFriendlyPoints.Count() > 0)
-									{
-										foreach (string base : m_aFriendlyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-										Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aFriendlyPoints combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
-									}
-									if (m_aEnemyPoints.Count() > 0)
-									{
-										foreach (string base : m_aEnemyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 5: // "Random All Base and Relays"
-								{
-									if (GetBaseNames().Count() > 0)
-									{
-										foreach (string base : GetBaseNames())
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-							}
-						}
-
-						if (insertBaseNameInTaskInfos)
-						{
-							foreach (string baseName : combinedBaseArray)
-							{
-								index = GetBaseNames().Find(baseName);
-								if (!index == -1)
-									continue;
-
-								UpdateTitles(taskName, index);
-							}
-						}
-					}
-
-					foreach (string baseName : combinedBaseArray)
-					{
-						combinedArray.Insert(baseName);
-					}
-
-					if (combinedArray.Count() == 0)
-						return;
-
-					int randomIndex = combinedArray.GetRandomIndex();
-					string whereToMove = combinedArray.Get(randomIndex);
-
-					TeleportObject(taskSectionToMove, whereToMove);
-					if (additionalObjectsToMove.Count() > 0)
-					{
-						IEntity object;
-						foreach (string objectName : additionalObjectsToMove)
-						{
-							object = GetGame().GetWorld().FindEntityByName(objectName);
-							if (object)
-								TeleportObject(objectName, whereToMove);
-						}
-					}
-				}
-			}
-		}
-
-		GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, delay, false, delay);
-*/
 		SpawnTaskInit();
+
 		Deactivate();
 	}
 
+	//------------------------------------------------------------------------------------------------
+	//!
 	protected void SpawnTaskInit()
 	{
 		m_sLogMode = "(OnActivate)";
@@ -355,7 +139,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		if (m_bUseRandomDelayTimer)
 			delay = Math.RandomInt(m_iDelayTimerMin * 1000, m_iDelayTimerMax * 1000);
 
-		Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
+		Print(string.Format("[PR_SpawnTaskTrigger] (SpawnTaskInit) %1 : Trigger: %2 : delay: %3", m_sLogMode, m_sTriggerName, delay), LogLevel.WARNING);
 
 		//--- Individual task details
 		if (m_aIndividualTasks.Count() > 0)
@@ -373,7 +157,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 		if (GetTaskArrayFiltered().Count() == 0)
 		{
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! Exiting trigger.  ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
+			Print(string.Format("[PR_SpawnTaskTrigger] (SpawnTaskInit) %1 : Trigger: %2 : ScenarioFramework: No valid tasks to spawn! Exiting trigger.  ", m_sLogMode, m_sTriggerName), LogLevel.ERROR);
 			PersistenceCleanup();
 			GetGame().GetCallqueue().CallLater(deleteEntity, 10000, false, m_Trigger, m_sTriggerName);
 			return;
@@ -392,7 +176,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			{
 				if (m_aTaskArrayGlobal.Find(task) > -1)
 				{
-					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : Task has been removed from the PR_TaskCollections global array: %3", m_sLogMode, m_sTriggerName, task), LogLevel.ERROR);
+					Print(string.Format("[PR_SpawnTaskTrigger] (SpawnTaskInit) %1 : Trigger: %2 : Task has been removed from the PR_TaskCollections global array: %3", m_sLogMode, m_sTriggerName, task), LogLevel.ERROR);
 					m_aTaskArrayGlobal.Remove(m_aTaskArrayGlobal.Find(task));
 				}
 			}
@@ -400,185 +184,207 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			PR_TaskCollections.SetTaskArrayGlobal(m_aTaskArrayGlobal);
 		}
 
-		//--- Get base info
 		GetBaseInfo();
 
-		bool taskProceed = true;
-		
-		foreach (string taskName : m_aTaskCollectionsArray)
+		GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, delay, false, delay);
+	}
+
+	protected void MoveTaskLocation(string taskName)
+	{
+		int index = m_aTaskMoveRecheckArray.Find(taskName);
+		if (index > -1)
+			m_aTaskMoveRecheckArray.Remove(index);
+
+		index = GetIndividualTasksToSpawnOnActivation().Find(taskName);
+		if (index == -1)
+			return;
+
+		bool useMoveTaskDestination = GetMoveTaskDestinationArray().Get(index);
+		if (useMoveTaskDestination)
 		{
-			int index = GetIndividualTasksToSpawnOnActivation().Find(taskName);
-			if (index == -1)
-				continue;
+			array<ref PR_MoveTask> taskMoveDetails = GetTaskMoveDetailsArray().Get(index);
+			if (taskMoveDetails.Count() == 0)
+				return;
 
-			bool useMoveTaskDestination = GetMoveTaskDestinationArray().Get(index);
-			if (useMoveTaskDestination)
+			string taskSectionToMove;
+			array<string> moveSectionTo = {};
+			array<int> moveSectionToRandomBases = {};
+			bool insertBaseNameInTaskInfos;
+			array<string> additionalObjectsToMove = {};
+
+			foreach (PR_MoveTask details : taskMoveDetails)
 			{
-				array<ref PR_MoveTask> taskMoveDetails = GetTaskMoveDetailsArray().Get(index);
-				if (taskMoveDetails.Count() == 0)
-					continue;
+				taskSectionToMove = details.m_sTaskSectionToMove;
+				moveSectionTo = details.m_sMoveSectionTo;
+				moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
+				insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
+				additionalObjectsToMove = details.m_sAdditionalObjectsToMove;
 
-				string taskSectionToMove;
-				array<string> moveSectionTo = {};
-				array<int> moveSectionToRandomBases = {};
-				bool insertBaseNameInTaskInfos;
-				array<string> additionalObjectsToMove = {};
+				if (!taskSectionToMove)
+					return;
 
-				foreach (PR_MoveTask details : taskMoveDetails)
+				array<string> combinedArray = {};
+				array<string> combinedBaseArray = {};
+				string callSign;
+
+				if (moveSectionTo.Count() > 0)
 				{
-					taskSectionToMove = details.m_sTaskSectionToMove;
-					moveSectionTo = details.m_sMoveSectionTo;
-					moveSectionToRandomBases = details.m_sMoveSectionToRandomBases;
-					insertBaseNameInTaskInfos = details.m_bInsertBaseNameInTaskInfos;
-					additionalObjectsToMove = details.m_sAdditionalObjectsToMove;
-
-					if (!taskSectionToMove)
-						continue;
-
-					array<string> combinedArray = {};
-					array<string> combinedBaseArray = {};
-					string callSign;
-
-					if (moveSectionTo.Count() > 0)
+					int moveSectionToCount = 0;
+					moveSectionToCount = moveSectionTo.Count();
+					IEntity holder;
+					array<string> moveSectionToCountArray = {};
+					int _i = 0;
+					while (moveSectionToCount > _i)
 					{
-						int moveSectionToCount = 0;
-						moveSectionToCount = moveSectionTo.Count();
-						IEntity holder;
-						array<string> moveSectionToCountArray = {};
-						int _i = 0;
-						while (moveSectionToCount > _i)
-						{
-							holder = GetGame().GetWorld().FindEntityByName(moveSectionTo.Get(_i));
-							if (holder)
-								GetAllChildrenNames(holder, moveSectionToCountArray, m_bDebugLogs);
+						holder = GetGame().GetWorld().FindEntityByName(moveSectionTo.Get(_i));
+						if (holder)
+							GetAllChildrenNames(holder, moveSectionToCountArray, m_bDebugLogs);
 
-							_i++;
-						}
-						combinedArray = moveSectionToCountArray;
+						_i++;
 					}
+					combinedArray = moveSectionToCountArray;
+				}
 
-					if (moveSectionToRandomBases.Count() > 0) //   GetBaseNames(), GetBaseVectors(), GetBaseIDs(), GetBaseCallsigns()
+				if (moveSectionToRandomBases.Count() > 0) //   GetBaseNames(), GetBaseVectors(), GetBaseIDs(), GetBaseCallsigns()
+				{
+					foreach (int baseType : moveSectionToRandomBases)
 					{
-						foreach (int baseType : moveSectionToRandomBases)
+						switch (baseType)
 						{
-							switch (baseType)
-							{
-								case 0: // "None"
-									break;
+							case 0: // "None"
+								break;
 
-								case 1: // "Main Base"
-								{
-									string hq = GetBaseNames().Get(0);
-									if (hq)
-										combinedBaseArray.Insert(hq);
-									break;
-								}
-								case 2: // "Random Base CP - Friendly"
-								{
-									if (m_aFriendlyPoints.Count() > 0)
-									{
-										foreach (string base : m_aFriendlyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 3: // "Random Base CP - Enemy"
-								{
-									if (m_aEnemyPoints.Count() > 0)
-									{
-										foreach (string base : m_aEnemyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 4: // "Random Base CP"
-								{
-									if (m_aFriendlyPoints.Count() > 0)
-									{
-										foreach (string base : m_aFriendlyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-										Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : m_aFriendlyPoints combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
-									}
-									if (m_aEnemyPoints.Count() > 0)
-									{
-										foreach (string base : m_aEnemyPoints)
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
-								case 5: // "Random All Base and Relays"
-								{
-									if (GetBaseNames().Count() > 0)
-									{
-										foreach (string base : GetBaseNames())
-										{
-											combinedBaseArray.Insert(base);
-										}
-									}
-									break;
-								}
+							case 1: // "Main Base"
+							{
+								string hq = GetBaseNames().Get(0);
+								if (hq)
+									combinedBaseArray.Insert(hq);
+								break;
 							}
-						}
-
-						if (insertBaseNameInTaskInfos)
-						{
-							foreach (string baseName : combinedBaseArray)
+							case 2: // "Random Base CP - Friendly"
 							{
-								index = GetBaseNames().Find(baseName);
-								if (!index == -1)
-									continue;
+								//if (m_aFriendlyPoints.Count() > 0)
+								if (GetFriendlyPoints().Count() > 0)
+								{
+									//foreach (string base : m_aFriendlyPoints)
+									foreach (string base : GetFriendlyPoints())
+									{
+										combinedBaseArray.Insert(base);
+										Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : GetFriendlyPoints() combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
+										Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : GetFriendlyPoints() base: %3", m_sLogMode, m_sTriggerName, base), LogLevel.WARNING);
+									}
+								}
+								break;
+							}
+							case 3: // "Random Base CP - Enemy"
+							{
+								//if (m_aEnemyPoints.Count() > 0)
+								if (GetEnemyPoints().Count() > 0)
+								{
+									//foreach (string base : m_aEnemyPoints)
+									foreach (string base : GetEnemyPoints())
+									{
+										combinedBaseArray.Insert(base);
+									}
+								}
+								break;
+							}
+							case 4: // "Random Base CP"
+							{
+								//if (m_aFriendlyPoints.Count() > 0)
+								if (GetFriendlyPoints().Count() > 0)
+								{
+									//foreach (string base : m_aFriendlyPoints)
+									foreach (string base : GetFriendlyPoints())
+									{
+										combinedBaseArray.Insert(base);
+									}
+									Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : GetFriendlyPoints() combinedBaseArray: %3", m_sLogMode, m_sTriggerName, combinedBaseArray), LogLevel.WARNING);
+								}
 
-								UpdateTitles(taskName, index);
+								//if (m_aEnemyPoints.Count() > 0)
+								if (GetEnemyPoints().Count() > 0)
+								{
+									//foreach (string base : m_aEnemyPoints)
+									foreach (string base : GetEnemyPoints())
+									{
+										combinedBaseArray.Insert(base);
+									}
+								}
+								break;
+							}
+							case 5: // "Random All Base and Relays"
+							{
+								if (GetBaseNames().Count() > 0)
+								{
+									foreach (string base : GetBaseNames())
+									{
+										combinedBaseArray.Insert(base);
+									}
+								}
+								break;
 							}
 						}
 					}
 
-					foreach (string baseName : combinedBaseArray)
+				/*	if (insertBaseNameInTaskInfos)
 					{
-						combinedArray.Insert(baseName);
-					}
-
-					if (combinedArray.Count() == 0) // maybe reaquire base info?
-					//{
-						//if (m_bRepeatIfInitialTaskNotFound)
-						//{
-						//	GetGame().GetCallqueue().CallLater(SpawnTaskInit, delay, false, delay);
-						//	return;
-						//} else
-							continue;
-					//} else
-						//isTaskCollection = true;
-
-					int randomIndex = combinedArray.GetRandomIndex();
-					string whereToMove = combinedArray.Get(randomIndex);
-
-					TeleportObject(taskSectionToMove, whereToMove);
-					if (additionalObjectsToMove.Count() > 0)
-					{
-						IEntity object;
-						foreach (string objectName : additionalObjectsToMove)
+						foreach (string baseName : combinedBaseArray)
 						{
-							object = GetGame().GetWorld().FindEntityByName(objectName);
-							if (object)
-								TeleportObject(objectName, whereToMove);
+							index = GetBaseNames().Find(baseName);
+							Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos / baseName: %3 : index: %4", m_sLogMode, m_sTriggerName, baseName, index), LogLevel.WARNING);
+							if (!index == -1)
+								return;
+
+							UpdateTitles(taskName, index);
+							Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos passed / taskName: %3 : index: %4", m_sLogMode, m_sTriggerName, taskName, index), LogLevel.WARNING);
 						}
+					}*/
+				}
+
+				foreach (string baseName : combinedBaseArray)
+				{
+					combinedArray.Insert(baseName);
+				}
+
+				if (combinedArray.Count() == 0)
+				{
+					m_aTaskMoveRecheckArray.Insert(taskName);
+					//Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : m_aTaskMoveRecheckArray: %3", m_sLogMode, m_sTriggerName, m_aTaskMoveRecheckArray), LogLevel.WARNING);
+					//	return;
+					continue;
+				}
+
+				int randomIndex = combinedArray.GetRandomIndex();
+				string whereToMove = combinedArray.Get(randomIndex);
+
+				if (insertBaseNameInTaskInfos)
+				{
+					index = GetBaseNames().Find(whereToMove);
+					Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos / taskName: %3 : index: %4 : whereToMove: %5", m_sLogMode, m_sTriggerName, taskName, index, whereToMove), LogLevel.WARNING);
+					if (index >= 0)
+					{
+						UpdateTitles(taskName, index);
+						Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos passed / taskName: %3 : index: %4", m_sLogMode, m_sTriggerName, taskName, index), LogLevel.WARNING);
 					}
 				}
+
+				TeleportObject(taskSectionToMove, whereToMove);
+				if (additionalObjectsToMove.Count() > 0)
+				{
+					IEntity object;
+					foreach (string objectName : additionalObjectsToMove)
+					{
+						object = GetGame().GetWorld().FindEntityByName(objectName);
+						if (object)
+							TeleportObject(objectName, whereToMove);
+					}
+				}
+				Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : m_aTaskMoveRecheckArray: %3", m_sLogMode, m_sTriggerName, m_aTaskMoveRecheckArray), LogLevel.WARNING);
 			}
 		}
-
-		if (taskProceed)
-			GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, delay, false, delay);
 	}
-	
+
 	//------------------------------------------------------------------------------------------------
 	protected void UpdateTitles(string taskName, int index)
 	{
@@ -627,7 +433,8 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				descriptionUpdate2 = string.Format(descriptionUpdate2, callSign, hqCallsign);
 
 				slotPick.SetTitleAndDescriptions(title, description, titleUpdate1, descriptionUpdate1, titleUpdate2, descriptionUpdate2);
-			} else
+			}
+			else
 			{
 				SCR_ScenarioFrameworkSlotTask slotBase = SCR_ScenarioFrameworkSlotTask.Cast(child.FindComponent(SCR_ScenarioFrameworkSlotTask));
 				if (slotBase)
@@ -649,6 +456,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 					if (slotExtraction)
 					{
 						slotExtraction.SetTitleAndDescription(title, description);
+						Print(string.Format("[PR_SpawnTaskTrigger] (UpdateTitles) %1 : Trigger: %2 : callSign: %3", m_sLogMode, m_sTriggerName, callSign), LogLevel.WARNING);
 						Print(string.Format("[PR_SpawnTaskTrigger] (UpdateTitles) %1 : Trigger: %2 : title: %3 : description: %4", m_sLogMode, m_sTriggerName, title, description), LogLevel.WARNING);
 					}
 
@@ -700,7 +508,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		}
 
 		SetIndividualTasksToSpawnOnActivation(taskName);
-		//Print(string.Format("[PR_SpawnTaskTrigger] %1 : (SetIndividualTasks) taskName: %2, GetIndividualTasksToSpawnOnActivation(): %3", m_sLogMode, taskName, GetIndividualTasksToSpawnOnActivation()), LogLevel.NORMAL);
 		SetUsePersistentTaskArray(usePersistentTask);
 		SetPersistentTaskObjectArray(persistentTaskObjectName);
 		SetNeutralizePersistentTaskObjectArray(neutralizePersistentTaskObject);
@@ -940,11 +747,18 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	//------------------------------------------------------------------------------------------------
 	//! sets m_aBaseNames;
 	protected ref array<string> m_aBaseNames = {};
-	protected void SetBaseNames(string name)
+/*
+	protected void ClearBaseNames()
 	{
-		if (!name)
-			name = "Unknown Base";
-		m_aBaseNames.Insert(name);
+		m_aBaseNames = {};
+	}*/
+
+	protected void SetBaseNames(string name, int index)
+	{
+		if (index > -1)
+			m_aBaseNames.InsertAt(name, index);
+		else
+			m_aBaseNames.Insert(name);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -957,11 +771,15 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	//------------------------------------------------------------------------------------------------
 	//! sets m_aBaseVectors
 	protected ref array<vector> m_aBaseVectors = {};
-	protected void SetBaseVectors(vector location)
+	protected void SetBaseVectors(vector location, int index)
 	{
 		if (!location)
 			location = "0 0 0";
-		m_aBaseVectors.Insert(location);
+
+		if (index > -1)
+			m_aBaseVectors.InsertAt(location, index);
+		else
+			m_aBaseVectors.Insert(location);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -974,11 +792,15 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	//------------------------------------------------------------------------------------------------
 	//! sets m_aBaseIDs
 	protected ref array<int> m_aBaseIDs = {};
-	protected void SetBaseIDs(int baseID)
+	protected void SetBaseIDs(int baseID, int index)
 	{
 		if (!baseID)
 			baseID = -1;
-		m_aBaseIDs.Insert(baseID);
+
+		if (index > -1)
+			m_aBaseIDs.InsertAt(baseID, index);
+		else
+			m_aBaseIDs.Insert(baseID);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -991,11 +813,15 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 	//------------------------------------------------------------------------------------------------
 	//! sets m_aBaseCallsigns
 	protected ref array<string> m_aBaseCallsigns = {};
-	protected void SetBaseCallsigns(string callsign)
+	protected void SetBaseCallsigns(string callsign, int index)
 	{
 		if (!callsign)
 			callsign = "Unknown Callsign";
-		m_aBaseCallsigns.Insert(callsign);
+
+		if (index > -1)
+			m_aBaseCallsigns.InsertAt(callsign, index);
+		else
+			m_aBaseCallsigns.Insert(callsign);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1005,15 +831,93 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 		return m_aBaseCallsigns;
 	}
 
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aControlPoints
 	protected ref array<string> m_aControlPoints = {};
+	protected void SetControlPoints(string controlPoints, int index)
+	{
+		if (index > -1)
+			m_aControlPoints.InsertAt(controlPoints, index);
+		else
+			m_aControlPoints.Insert(controlPoints);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aControlPoints;
+	protected array<string> GetControlPoints()
+	{
+		return m_aControlPoints;
+	}
+
 	protected ref array<string> m_aFriendlyPoints = {};
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aFriendlyPoints
+	protected void SetFriendlyPoints(string controlPoints, int index, bool add)
+	{
+		if (index > -1)
+		{
+			if (add)
+				m_aFriendlyPoints.InsertAt(controlPoints, index);
+			else
+				m_aFriendlyPoints.Remove(index);
+		}
+		else
+			m_aFriendlyPoints.Insert(controlPoints);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aFriendlyPoints;
+	protected array<string> GetFriendlyPoints()
+	{
+		return m_aFriendlyPoints;
+	}
+
 	protected ref array<string> m_aEnemyPoints = {};
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aEnemyPoints
+	protected void SetEnemyPoints(string enemyPoints, int index, bool add)
+	{
+		if (index > -1)
+		{
+			if (add)
+				m_aEnemyPoints.InsertAt(enemyPoints, index);
+			else
+				m_aEnemyPoints.Remove(index);
+		}
+		else
+			m_aEnemyPoints.Insert(enemyPoints);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aEnemyPoints
+	protected array<string> GetEnemyPoints()
+	{
+		return m_aEnemyPoints;
+	}
+
+	protected ref array<SCR_MilitaryBaseComponent> m_aMilitaryBaseBases = {};
+	//------------------------------------------------------------------------------------------------
+	//! sets m_aMilitaryBaseBases
+	protected void SetMilitaryBaseBases(SCR_MilitaryBaseComponent base/*, int index*/)
+	{
+		//if (index > -1)
+		//	m_aMilitaryBaseBases.InsertAt(base, index);
+		m_aMilitaryBaseBases.Insert(base);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! returns m_aMilitaryBaseBases
+	protected array<SCR_MilitaryBaseComponent> GetMilitaryBaseBases()
+	{
+		return m_aMilitaryBaseBases;
+	}
 
 	//------------------------------------------------------------------------------------------------
 	//! Get all base information
 	protected void GetBaseInfo()
 	{
-		//--- Get base info
+		//ClearBaseNames();
+
 		FactionManager factionManager = GetGame().GetFactionManager();
 		if (factionManager)
 		{
@@ -1032,6 +936,7 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 					string name;
 					string callsign;
 					int id;
+					int index;
 
 					if (hq)
 					{
@@ -1041,25 +946,29 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 						if (!name)
 							name = GetRandomName("HQ_");
 
-						SetBaseNames(name);
-						SetBaseVectors(owner.GetOrigin());
-						id = hq.GetCallsign();
-						SetBaseIDs(id);
-
-						if (faction == m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR))
-							callsignInfo = faction.GetBaseCallsignByIndex(id);
-						else
-							callsignInfo = faction.GetBaseCallsignByIndex(id, m_Campaign.GetCallsignOffset());
-
-						callsign = callsignInfo.GetCallsignShort();
-						if (!callsign)
+						index = GetBaseNames().Find(name);
+						if (index == -1)
 						{
-							callsign = callsignInfo.GetCallsign();
-							if (!callsign)
-								callsign = "Unknown Callsign";
-						}
+							SetBaseNames(name, 0);
+							SetBaseVectors(owner.GetOrigin(), 0);
+							id = hq.GetCallsign();
+							SetBaseIDs(id, 0);
 
-						SetBaseCallsigns(callsign);
+							if (faction == m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR))
+								callsignInfo = faction.GetBaseCallsignByIndex(id);
+							else
+								callsignInfo = faction.GetBaseCallsignByIndex(id, m_Campaign.GetCallsignOffset());
+
+							callsign = callsignInfo.GetCallsignShort();
+							if (!callsign)
+							{
+								callsign = callsignInfo.GetCallsign();
+								if (!callsign)
+									callsign = "Unknown Callsign";
+							}
+
+							SetBaseCallsigns(callsign, 0);
+						}
 
 						SCR_MilitaryBaseSystem baseManager = SCR_MilitaryBaseSystem.GetInstance();
 						if (!baseManager)
@@ -1068,77 +977,135 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 						array<SCR_MilitaryBaseComponent> bases = {};
 						baseManager.GetBases(bases);
 
-						foreach (SCR_MilitaryBaseComponent base : bases)
+						int _i = 0;
+						while (bases.Count() > _i)//foreach (SCR_MilitaryBaseComponent base : bases)
 						{
+							SCR_MilitaryBaseComponent base = bases.Get(_i);
 							SCR_CampaignMilitaryBaseComponent campaignBase = SCR_CampaignMilitaryBaseComponent.Cast(base);
 							if (!campaignBase)
+							{
+								_i++;
 								continue;
+							}
 
+							//SetMilitaryBaseBases(base, GetMilitaryBaseBases().Count());
+							//SetMilitaryBaseBases(base);
 							owner = base.GetOwner();
 							if (!owner)
-								continue;
-
-							name = owner.GetName();
-							if (!name)
-								name = GetRandomName("Base_");
-
-							if (GetBaseNames().Find(name) == -1)
 							{
-								id = base.GetCallsign();
-								if (id > -1)
-								{
-									SetBaseNames(name);
-									SetBaseVectors(owner.GetOrigin());
-									SetBaseIDs(id);
-
-									if (faction == m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR))
-										callsignInfo = faction.GetBaseCallsignByIndex(id);
-									else
-										callsignInfo = faction.GetBaseCallsignByIndex(id, m_Campaign.GetCallsignOffset());
-
-									callsign = callsignInfo.GetCallsignShort();
-
-									if (!callsign)
-									{
-										callsign = callsignInfo.GetCallsign();
-										if (!callsign)
-											callsign = "Unknown Callsign";
-									}
-
-									SetBaseCallsigns(callsign);
-								}
+								_i++;
+								continue;
 							}
 
-							//--- Gather all control points
 							if (campaignBase.IsControlPoint())
 							{
-								m_aControlPoints.Insert(name);
+								name = owner.GetName();
+								if (!name)
+									name = GetRandomName("Base_");
 
-								//--- Filter friendly vs enemy/open points
-								Faction baseFaction = base.GetFaction();
+								if (GetBaseNames().Find(name) == -1)
+								{
+									SetMilitaryBaseBases(base);
+									index = GetBaseNames().Count();
+									id = base.GetCallsign();
+									SetBaseNames(name, index);
+									SetBaseVectors(owner.GetOrigin(), index);
+									SetBaseIDs(id, index);
 
-								if (baseFaction == m_OwnerFaction)
-									m_aFriendlyPoints.Insert(name);
-								else
-									m_aEnemyPoints.Insert(name);
+									if (id > -1)
+									{
+										if (faction == m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR))
+											callsignInfo = faction.GetBaseCallsignByIndex(id);
+										else
+											callsignInfo = faction.GetBaseCallsignByIndex(id, m_Campaign.GetCallsignOffset());
+
+										callsign = callsignInfo.GetCallsignShort();
+
+										if (!callsign)
+										{
+											callsign = callsignInfo.GetCallsign();
+											if (!callsign)
+												callsign = "Unknown Callsign";
+										}
+									} else
+										callsign = "Unknown Callsign";
+
+									SetBaseCallsigns(callsign, index);
+								}
+								//--- Filter all control points
+								FilterControlPoints(name, base);
 							}
+
+							_i++;
 						}
 
 						if (m_bDebugLogs)
 						{
-							Print(string.Format("[PR_SpawnTaskTrigger] %1 : GetBaseNames(): %2", m_sLogMode, GetBaseNames()), LogLevel.NORMAL);
-							Print(string.Format("[PR_SpawnTaskTrigger] %1 : ControlPoints: %2", m_sLogMode, m_aControlPoints), LogLevel.NORMAL);
-							Print(string.Format("[PR_SpawnTaskTrigger] %1 : FriendlyPoints: %2", m_sLogMode, m_aFriendlyPoints), LogLevel.NORMAL);
-							Print(string.Format("[PR_SpawnTaskTrigger] %1 : EnemyPoints: %2", m_sLogMode, m_aEnemyPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : GetBaseNames(): %2", m_sLogMode, GetBaseNames()), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : ControlPoints: %2", m_sLogMode, m_aControlPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : FriendlyPoints: %2", m_sLogMode, m_aFriendlyPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : EnemyPoints: %2", m_sLogMode, m_aEnemyPoints), LogLevel.NORMAL);
+							Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : GetBaseCallsigns(): %2", m_sLogMode, GetBaseCallsigns()), LogLevel.NORMAL);
 						}
 					} else
-						Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No hq!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+						Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : Trigger: %2 : No hq!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 				} else
-					Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No mainBase!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+					Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : Trigger: %2 : No mainBase!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 			} else
-				Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No m_OwnerFaction!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+				Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : Trigger: %2 : No m_OwnerFaction!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
 		} else
-			Print(string.Format("[PR_SpawnTaskTrigger] %1 : Trigger: %2 : No factionManager!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+			Print(string.Format("[PR_SpawnTaskTrigger] (GetBaseInfo) %1 : Trigger: %2 : No factionManager!", m_sLogMode, m_sTriggerName), LogLevel.WARNING);
+	}
+
+	protected void FilterControlPoints(string name, SCR_MilitaryBaseComponent base)
+	{
+		int index;
+		int id;
+		SCR_Faction faction;
+		SCR_MilitaryBaseCallsign callsignInfo;
+		string callsign;
+
+		index = m_aControlPoints.Find(name);
+		if (index == -1)
+			m_aControlPoints.Insert(name);
+
+		//--- Filter friendly vs enemy/open points
+		Faction baseFaction = base.GetFaction();
+
+		if (baseFaction == m_OwnerFaction)
+		{
+			index = GetFriendlyPoints().Find(name);
+			if (index == -1)
+			{
+				index = GetFriendlyPoints().Count();
+				SetFriendlyPoints(name, index, true);
+				Print(string.Format("[PR_SpawnTaskTrigger] (FilterControlPoints) %1 : (Friendly) index: %2 : name: %3", m_sLogMode, index, name), LogLevel.NORMAL);
+			}
+
+			index = GetEnemyPoints().Find(name);
+			if (index >= 0)
+			{
+				SetEnemyPoints(name, index, false);
+				Print(string.Format("[PR_SpawnTaskTrigger] (FilterControlPoints) %1 : Enemy in friendly", m_sLogMode, index, name), LogLevel.NORMAL);
+			}
+		}
+		else
+		{
+			index = GetEnemyPoints().Find(name);
+			if (index == -1)
+			{
+				index = GetEnemyPoints().Count();
+				SetEnemyPoints(name, index, true);
+				Print(string.Format("[PR_SpawnTaskTrigger] (FilterControlPoints) %1 : (Enemy) index: %2 : name: %3", m_sLogMode, index, name), LogLevel.NORMAL);
+			}
+
+			index = GetFriendlyPoints().Find(name);
+			if (index >= 0)
+			{
+				SetFriendlyPoints(name, index, false);
+				Print(string.Format("[PR_SpawnTaskTrigger] (FilterControlPoints) %1 : Friendly in enemy", m_sLogMode, index, name), LogLevel.NORMAL);
+			}
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1204,6 +1171,13 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 			for (int i; i < nameCount; i++)
 			{
 				string sTaskName = aObjectsNames.Get(i);
+
+				//--- Random delay between tasks
+				delayBetween = m_iDelayTimerBetweenEachTaskMin * 1000;
+
+				if (m_bUseRandomDelayBetweenTasksTimer)
+					delayBetween = Math.RandomInt(m_iDelayTimerBetweenEachTaskMin * 1000, m_iDelayTimerBetweenEachTaskMax * 1000);
+
 				IEntity object = GetGame().GetWorld().FindEntityByName(sTaskName);
 
 				if (m_bDebugLogs)
@@ -1224,12 +1198,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 
 				if (firstRun)
 					GetGame().GetCallqueue().CallLater(FinalCheckForPlayersBeforeTask, sleep, false, layer, eActivationType, object, sTaskName);
-
-				//--- Random delay between tasks
-				delayBetween = m_iDelayTimerBetweenEachTaskMin * 1000;
-
-				if (m_bUseRandomDelayBetweenTasksTimer)
-					delayBetween = Math.RandomInt(m_iDelayTimerBetweenEachTaskMin * 1000, m_iDelayTimerBetweenEachTaskMax * 1000);
 
 				sleep = sleep + delayBetween;
 
@@ -1282,6 +1250,47 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				Print(string.Format("[PR_SpawnTaskTrigger] %1 : (FinalCheckForPlayersBeforeTask) stage 1 GetIndividualTasksToSpawnOnActivation(): %2", m_sLogMode, GetIndividualTasksToSpawnOnActivation()), LogLevel.WARNING);
 				if (index > -1)
 				{
+					bool useMoveTaskDestination = GetMoveTaskDestinationArray().Get(index);
+					if (useMoveTaskDestination)
+					{
+						int sleep = 0;
+						int delayBetween = 0;
+						//--- Random delay between tasks
+						delayBetween = m_iDelayTimerBetweenEachTaskMin * 1000;
+
+						if (m_bUseRandomDelayBetweenTasksTimer)
+							delayBetween = Math.RandomInt(m_iDelayTimerBetweenEachTaskMin * 1000, m_iDelayTimerBetweenEachTaskMax * 1000);
+
+						array<SCR_MilitaryBaseComponent> bases = GetMilitaryBaseBases();
+						Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : bases: %2", m_sTriggerName, bases), LogLevel.WARNING);
+						SCR_MilitaryBaseComponent base;
+						IEntity owner;
+						string name;
+						int _i = 0;
+						while (bases.Count() > _i)//foreach (SCR_MilitaryBaseComponent base : bases)
+						{
+							base = bases.Get(_i);
+							owner = base.GetOwner();
+							name = owner.GetName();
+							FilterControlPoints(name, base);
+							Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : name: %2", m_sTriggerName, name), LogLevel.WARNING);
+							_i++;
+						}
+
+						MoveTaskLocation(sTaskName);
+
+						int indexM = m_aTaskMoveRecheckArray.Find(sTaskName);
+						if (indexM >= 0)
+						{
+							sleep = sleep + delayBetween;
+							GetGame().GetCallqueue().CallLater(FirstCheckForPlayersBeforeTask, sleep, false, sleep);
+							GetGame().GetCallqueue().Remove(FinalCheckForPlayersBeforeTask);
+							GetGame().GetCallqueue().Remove(SpawnObjects);
+							Print(string.Format("[PR_SpawnTaskTrigger] (FinalCheckForPlayersBeforeTask): Trigger: %1 : Task Name: %2 is going back to pool for later evaluation.", m_sTriggerName, sTaskName), LogLevel.NORMAL);
+							return;
+						}
+					}
+
 					bool usePersistentTask = GetUsePersistentTaskArray().Get(index);
 					if (usePersistentTask && m_bNeutralizePersistentObject)
 					{
