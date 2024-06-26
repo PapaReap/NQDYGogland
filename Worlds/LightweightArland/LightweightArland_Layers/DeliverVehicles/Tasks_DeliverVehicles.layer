@@ -103,6 +103,7 @@ $grp PR_SpawnTaskTrigger {
  }
  TaskTrg_TaskDeliverVehicles_Friendly_Master2 {
   coords 369.439 1.473 2557.31
+  Flags 2097155
   TriggerShapeType Sphere
   SphereRadius 1
   ShapeColor 0.046 0 1 0.078
@@ -250,6 +251,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
    }
    PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_01 {
     coords 0.299 0 -0.654
+    Flags 2097155
     TriggerShapeType Sphere
     SphereRadius 35
     DrawShape 1
@@ -412,6 +414,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
    }
    PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_02 {
     coords 0.299 0 -0.654
+    Flags 2097155
     TriggerShapeType Sphere
     SphereRadius 35
     DrawShape 1
@@ -574,6 +577,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
    }
    PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_03 {
     coords 0.299 0 -0.654
+    Flags 2097155
     TriggerShapeType Sphere
     SphereRadius 35
     DrawShape 1
@@ -736,6 +740,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
    }
    PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Friendly_04 {
     coords 0.299 0 -0.654
+    Flags 2097155
     TriggerShapeType Sphere
     SphereRadius 35
     DrawShape 1
@@ -846,6 +851,201 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
        }
       }
       coords 0.122 0 -0.237
+     }
+    }
+   }
+  }
+ }
+ Area_TaskDeliverVehicles_Enemy_01 {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iDynamicDespawnRange 60
+   }
+  }
+  coords 639.769 39.01 2558.796
+  {
+   PR_SpawnTaskTrigger TaskTrg_TaskDeliverVehicles_Enemy_01 {
+    coords 0.247 0 -0.774
+    Flags 2097155
+    TriggerShapeType Sphere
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_TaskDeliverVehicles_Enemy_01"
+    m_ActivationPresence ANY_CHARACTER
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+      m_bOverrideActivationPresence 1
+     }
+    }
+    m_iDelayTimerMin 70
+    m_aIndividualTasks {
+     PR_TaskDetails "{61A44BD351F259F4}" {
+      m_sTaskName "TaskDeliverVehicles_Enemy_01"
+      m_sPersistentTaskObject "Pers_TaskDeliverVehicles_Enemy_01"
+      m_bUseMoveTaskDestination 1
+      m_aTaskMoveDetails {
+       PR_MoveTask "{61A44BD0853CAC1B}" {
+        m_sTaskSectionToMove "SlotMoveTo_TaskDeliverVehicles_Enemy_01"
+        m_sMoveSectionToRandomBases {
+         3
+        }
+        m_bInsertBaseNameInTaskInfos 1
+        m_sAdditionalObjectsToMove {
+         "OPT_TaskDeliverVehicles_Enemy_01"
+        }
+       }
+      }
+     }
+    }
+   }
+   PR_TaskOptimizerTrigger OPT_TaskDeliverVehicles_Enemy_01 {
+    coords 0.299 0 -0.654
+    Flags 2097155
+    TriggerShapeType Sphere
+    SphereRadius 35
+    DrawShape 1
+    ShapeColor 0 0.502 0.502 0.098
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 5
+    m_bDebugLogs 1
+    m_bUsePersistence 1
+    m_sPersistentObject "Pers_Opt_TaskDeliverVehicles_Enemy_01"
+    m_bNeutralizePersistentObject 1
+    m_aOverrideOptions {
+     PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+      m_bOverrideActivationPresence 1
+      m_bActivateIfObjectMissing 1
+      m_sMissingObjectName "Pers_TaskDeliverVehicles_Enemy_01"
+     }
+    }
+    m_iDelayTimerMin 5
+    m_sTaskName "OPT_TaskDeliverVehicles_Enemy_01"
+    m_PlayerXPTaskReward "Deliver Vehicles (45)"
+    m_sTaskFailObject "Pers_Fail_TaskDeliverVehicles_Enemy_01"
+    m_aRemovePrefabDetails {
+     PR_RemovePrefabFilter "{61A44BD039CC70FB}" {
+      m_aSpecificPrefabNames {
+       "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+      }
+      m_bIncludeChildrenVariants 1
+     }
+    }
+    {
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_Fail_TaskDeliverVehicles_Enemy_01 {
+       coords -0.083 0 0.062
+      }
+      Pers_Opt_TaskDeliverVehicles_Enemy_01 {
+       coords -0.106 0 -0.085
+      }
+     }
+    }
+   }
+   GenericEntity Pers_TaskDeliverVehicles_Enemy_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords 0.223 0 -0.738
+   }
+   GenericEntity TaskDeliverVehicles_Enemy_01 : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      Enabled 0
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_aActivationActions {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDE96553F80}" {
+        m_sSound "SOUND_HUD_TASK_CREATED"
+       }
+      }
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionPlaySound "{61A44BDF8C787DF1}" {
+        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDF9FEE1093}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFB259A7D1}" {
+         m_sEntityName "TaskDeliverVehicles_Enemy_01"
+        }
+       }
+       SCR_ScenarioFrameworkActionDeleteEntity "{61A44BDFA32261C7}" {
+        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61A44BDFCFFBFAC5}" {
+         m_sEntityName "Pers_TaskDeliverVehicles_Enemy_01"
+        }
+       }
+      }
+      m_bShowDebugShapesInWorkbench 1
+     }
+    }
+    coords 0.267 0 -0.3
+    Flags 2097155
+    {
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Enemy_01_XXX {
+      ID "5E74C90E3ED35D79"
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        Enabled 0
+        m_bExcludeFromDynamicDespawn 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_fAreaRadius 35
+          m_aCustomTriggerConditions {
+           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+              m_sSpecificPrefabName "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+              m_iPrefabCount 1
+             }
+             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+              m_iPrefabCount 0
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sTaskDescription "Deliver 1x M151A2 opentop and 1x M923A1 openback transport to base %1."\
+        "Important! Exit vehicle quickly after delivery complete."\
+        "They are hot items, and won't last long!"
+       }
+      }
+      coords 0.122 0 -0.237
+      Flags 2097155
+     }
+     GenericEntity SlotMoveTo_TaskDeliverVehicles_Enemy_01 : "{4C2EF5C1E53FE511}Prefabs/ScenarioFramework/Components/SlotDelivery.et" {
+      components {
+       SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+        Enabled 0
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
+          m_fAreaRadius 35
+         }
+        }
+        m_aAssociatedTaskLayers {
+         "TaskDeliverVehicles_Enemy_01"
+        }
+       }
+      }
+      coords 0 0 0
+      Flags 2097155
+     }
+     GenericEntity SlotPick_TaskDeliverVehicles_Enemy_01 : "{9F70B00322910AED}Prefabs/ScenarioFramework/Components/SlotPick.et" {
+      components {
+       SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+        Enabled 0
+        m_sObjectToSpawn "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+        m_sTaskTitle "Deliver Car"
+        m_sTaskDescription "Move to town to find car."
+        m_sTaskTitleUpdated1 "Deliver Car %1"
+        m_sTaskDescriptionUpdated1 "Deliver the car to base %1.<br />"\
+        "<br />"\
+        "Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them.<br />"\
+        "They are hot items, and won't last long!<br />"
+        m_sTaskTitleUpdated2 "Move back to car"
+        m_sTaskDescriptionUpdated2 "Move back to last know location you left car."
+       }
+      }
+      coords 63.942 -0.01 0
+      Flags 2097155
      }
     }
    }

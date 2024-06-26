@@ -1,0 +1,333 @@
+GenericEntity Area_TaskLocateCar_01 : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ coords 732.481 39 2581.945
+ {
+  $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+   Layer_TaskLocateCar_01 {
+    coords 0 0 0
+    {
+     PR_SpawnTaskTrigger TaskTrg_TaskLocateCar_01 {
+      coords 0.065 0 -0.586
+      TriggerShapeType Sphere
+      TriggerActivationType "First change"
+      PeriodicQueries 1
+      UpdatePeriod 5
+      m_bDebugLogs 1
+      m_bUsePersistence 1
+      m_sPersistentObject "Pers_TaskLocateCar_01"
+      m_ActivationPresence ANY_CHARACTER
+      m_aOverrideOptions {
+       PR_OverrideTriggerActivation "{61A44BD347B5CF6E}" {
+        m_bOverrideActivationPresence 1
+       }
+      }
+      m_iDelayTimerMin 30
+      m_aIndividualTasks {
+       PR_TaskDetails "{61A44BD351F259F4}" {
+        m_sTaskName "TaskLocateCar_01"
+        m_sPersistentTaskObject "Pers_TaskLocateCar_01"
+        m_bUseMoveTaskDestination 1
+        m_aTaskMoveDetails {
+         PR_MoveTask "{61A44BD0853CAC1B}" {
+          m_sTaskSectionToMove "SlotMoveTo_TaskLocateCar_01"
+          m_sMoveSectionTo {
+           "MoveCollection_TaskLocateCar_01"
+          }
+          m_sAdditionalObjectsToMove {
+           "OPT_TaskLocateCar_01" "Slot_TaskLocateCar_01"
+          }
+         }
+        }
+       }
+      }
+     }
+     PR_TaskOptimizerTrigger OPT_TaskLocateCar_01 {
+      coords -0.113 -0.01 -0.138
+      TriggerShapeType Sphere
+      SphereRadius 3
+      DrawShape 1
+      ShapeColor 0 0.502 0.502 0.098
+      TriggerActivationType "First change"
+      PeriodicQueries 1
+      UpdatePeriod 5
+      m_bDebugLogs 1
+      m_bUsePersistence 1
+      m_sPersistentObject "Pers_Opt_TaskLocateCar_01"
+      m_bNeutralizePersistentObject 1
+      m_aOverrideOptions {
+       PR_OverrideTriggerActivation "{61A44BDF52924396}" {
+        m_bOverrideActivationPresence 1
+        m_bActivateIfObjectMissing 1
+        m_sMissingObjectName "Pers_TaskLocateCar_01"
+       }
+      }
+      m_iDelayTimerMin 15
+      m_sTaskName "OPT_TaskLocateCar_01"
+      m_PlayerXPTaskReward "Move (40)"
+      m_sTaskFailObject "Pers_Fail_TaskLocateCar_01"
+      {
+       $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+        Pers_Fail_TaskLocateCar_01 {
+         coords -0.083 0 0.062
+        }
+        Pers_Opt_TaskLocateCar_01 {
+         coords -0.106 0 -0.085
+        }
+       }
+      }
+     }
+     GenericEntity TaskLocateCar_01 : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+      components {
+       SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+        m_eActivationType ON_TRIGGER_ACTIVATION
+        m_aActivationActions {
+         SCR_ScenarioFrameworkActionPlaySound "{61B25CC0F8CD765E}" {
+          m_sSound "SOUND_HUD_TASK_CREATED"
+         }
+        }
+        m_sTaskTitle "Find Car"
+        m_sTaskDescription "<color rgba ='0,255,0,255'>Move to area and locate car.</color>"\
+        "<image set='{AA6E3EF43EEDD986}Images/GoglandWorldResize.edds'/>"
+        m_bPlaceMarkerOnSubjectSlot 0
+        m_aTriggerActionsOnFinish {
+         SCR_ScenarioFrameworkActionPlaySound "{61B25CC00A543D59}" {
+          m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+         }
+         SCR_ScenarioFrameworkActionDeleteEntity "{61B25CC4ECFE58F9}" {
+          m_Getter SCR_ScenarioFrameworkGetEntityByName "{61B25CC4F6286089}" {
+           m_sEntityName "TaskLocateCar_01"
+          }
+         }
+         SCR_ScenarioFrameworkActionDeleteEntity "{61B25CC4F2CFF448}" {
+          m_Getter SCR_ScenarioFrameworkGetEntityByName "{61B25CC4FB7DD225}" {
+           m_sEntityName "Pers_TaskLocateCar_01"
+          }
+         }
+        }
+       }
+      }
+      coords -0.115 0 -0.17
+      {
+       GenericEntity SlotMoveTo_TaskLocateCar_01 : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+        components {
+         SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+            m_fAreaRadius 3
+           }
+          }
+         }
+        }
+        coords 0 0 0
+       }
+       GenericEntity Slot_TaskLocateCar_01 : "{AA01691FDC4E9167}Prefabs/ScenarioFramework/Components/Slot.et" {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+         }
+        }
+        coords 0 0 0
+       }
+      }
+     }
+     GenericEntity Pers_TaskLocateCar_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      coords -0.234 0.434 -0.922
+     }
+     GenericEntity MoveCollection_TaskLocateCar_01 : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+      coords -12.625 45.659 -78.978
+      {
+       $grp GenericEntity {
+        TaskLocateCar_01_move_02 {
+         components {
+          Hierarchy "{613802B54F5287D4}" {
+          }
+         }
+         coords 128.347 -45.669 90.853
+        }
+        TaskLocateCar_01_move_03 {
+         components {
+          Hierarchy "{613802B54F5287D4}" {
+          }
+         }
+         coords 58.153 -45.659 99.591
+        }
+        TaskLocateCar_01_move_01 {
+         components {
+          Hierarchy "{613802B54F5287D4}" {
+          }
+         }
+         coords 99.842 -45.669 138.017
+        }
+       }
+      }
+     }
+    }
+   }
+   Layer_TaskLocateCar_01_Deliver {
+    coords -40.965 0 0
+    {
+     PR_SpawnTaskTrigger TaskTrg_TaskLocateCar_01_Deliver {
+      components {
+       Hierarchy "{61A27039B18CFD04}" {
+       }
+      }
+      coords -0.101 0 -0.01
+      TriggerShapeType Sphere
+      SphereRadius 1
+      DrawShape 1
+      ShapeColor 0.046 0 1 0.078
+      TriggerActivationType "First change"
+      PeriodicQueries 1
+      UpdatePeriod 5
+      m_bDebugLogs 1
+      m_bUsePersistence 1
+      m_sPersistentObject "Pers_TaskLocateCar_01_Deliver"
+      m_bNeutralizePersistentObject 1
+      m_ActivationPresence ANY_CHARACTER
+      m_aOverrideOptions {
+       PR_OverrideTriggerActivation "{61A2703376DA904C}" {
+        m_bOverrideActivationPresence 1
+        m_bActivateIfObjectMissing 1
+        m_sMissingObjectName "Pers_Opt_TaskLocateCar_01"
+       }
+      }
+      m_iDelayTimerMin 10
+      m_aIndividualTasks {
+       PR_TaskDetails "{613802B2DA10B658}" {
+        m_sTaskName "TaskLocateCar_01_Deliver"
+        m_bUsePersistentTask 1
+        m_sPersistentTaskObject "Pers_TaskLocateCar_01_Deliver"
+        m_bNeutralizePersistentTaskObject 1
+        m_bUseMoveTaskDestination 1
+        m_aTaskMoveDetails {
+         PR_MoveTask "{61A27034685078F8}" {
+          m_sTaskSectionToMove "SlotMoveTo_TaskLocateCar_01_Deliver"
+          m_sMoveSectionToRandomBases {
+           1
+          }
+          m_bInsertBaseNameInTaskInfos 1
+          m_sAdditionalObjectsToMove {
+           "Opt_TaskLocateCar_01_Deliver"
+          }
+         }
+        }
+       }
+      }
+     }
+     PR_TaskOptimizerTrigger Opt_TaskLocateCar_01_Deliver {
+      coords -0.022 0.01 -0.005
+      TriggerShapeType Sphere
+      SphereRadius 30
+      DrawShape 1
+      ShapeColor 0 0.502 0.502 0.098
+      TriggerActivationType "First change"
+      PeriodicQueries 1
+      UpdatePeriod 5
+      m_bDebugLogs 1
+      m_bUsePersistence 1
+      m_sPersistentObject "Pers_Opt_TaskLocateCar_01_Deliver"
+      m_bNeutralizePersistentObject 1
+      m_aOverrideOptions {
+       PR_OverrideTriggerActivation "{61917DF60E955557}" {
+        m_bOverrideActivationPresence 1
+        m_bActivateIfObjectMissing 1
+        m_sMissingObjectName "Pers_TaskLocateCar_01_Deliver2"
+       }
+      }
+      m_iDelayTimerMin 20
+      m_sTaskName "Opt_TaskLocateCar_01_Deliver"
+      m_PlayerXPTaskReward "Deliver Vehicles (45)"
+      m_bUseTaskFailObject 1
+      m_sTaskFailObject "Pers_Fail_TaskLocateCar_01_Deliver"
+      m_aRemovePrefabDetails {
+       PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+        m_aSpecificPrefabNames {
+         "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+        }
+        m_bIncludeChildrenVariants 1
+       }
+      }
+      {
+       $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+        Pers_Opt_TaskLocateCar_01_Deliver {
+         coords -0.179 -0.01 -0.222
+        }
+        Pers_Fail_TaskLocateCar_01_Deliver {
+         coords -0.057 -0.01 -0.189
+        }
+       }
+      }
+     }
+     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+      Pers_TaskLocateCar_01_Deliver {
+       coords -0.317 0 0.354
+      }
+      Pers_TaskLocateCar_01_Deliver2 {
+       coords -0.33 0 0.269
+      }
+     }
+     GenericEntity TaskLocateCar_01_Deliver : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+      components {
+       SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+        m_eActivationType ON_TRIGGER_ACTIVATION
+        m_aActivationActions {
+         SCR_ScenarioFrameworkActionPlaySound "{61634CC387F1B9AC}" {
+          m_sSound "SOUND_HUD_TASK_CREATED"
+         }
+        }
+        m_aTriggerActionsOnFinish {
+         SCR_ScenarioFrameworkActionPlaySound "{61634CC39E19E8BB}" {
+          m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+         }
+         SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3AF84D298}" {
+          m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3B3FC882E}" {
+           m_sEntityName "TaskLocateCar_01_Deliver"
+          }
+         }
+         SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
+          m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
+           m_sEntityName "Pers_TaskLocateCar_01_Deliver2"
+          }
+         }
+        }
+       }
+      }
+      coords -0.028 0 0.168
+      {
+       GenericEntity SlotMoveTo_TaskLocateCar_01_Deliver {
+        ID "5E74C90E3ED35D79"
+        components {
+         SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+            m_fAreaRadius 30
+            m_aCustomTriggerConditions {
+             SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+              m_aPrefabFilter {
+               SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+                m_sSpecificPrefabName "{DA79E34823120087}Prefabs/Vehicles/Wheeled/S105/S105_base.et"
+                m_iPrefabCount 1
+               }
+               SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+                m_iPrefabCount 0
+               }
+              }
+             }
+            }
+            m_bSearchVehicleInventory 0
+           }
+          }
+          m_sTaskTitle "Deliver Car %1"
+          m_sTaskDescription "Deliver the car to base %1.<br />"\
+          "<font color='#F8C701'>Important! Exit vehicle quickly after delivery complete, vehicles will be removed with everything in them.</font><br />"\
+          "They are hot items, and won't last long!<br />"
+         }
+        }
+        coords -0.239 0 -0.011
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

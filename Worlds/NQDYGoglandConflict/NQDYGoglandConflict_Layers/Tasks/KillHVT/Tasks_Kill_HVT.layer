@@ -230,119 +230,6 @@ PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Master {
  m_iDelayTimerBetweenEachTaskMin 3600
  m_iDelayTimerBetweenEachTaskMax 10800
 }
-$grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
- Props_Alttarkallio {
-  coords 8329.215 5.675 2488.604
-  {
-   GenericEntity Tent_Alttarkallio_01 : "{1B48219F84D1D00B}Prefabs/Props/Recreation/Camp/TentBig_02/TentBig_02_green.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A36774AA73C51A}" {
-     }
-    }
-    coords -10.084 0.194 4.511
-    angleX 0.073
-    angleY 122.39
-    angleZ 3.224
-   }
-   StaticModelEntity : "{42417A541F82B0F9}Prefabs/Compositions/Misc/SubCompositions/ChairMilitary_Cluttered_USSR_01.et" {
-    coords -3.122 -0.09 -2.765
-    angleX 1.816
-    angleY 31.655
-    angleZ 2.169
-   }
-   GenericEntity : "{44B0452B22B51743}Prefabs/Props/Furniture/ChairRecreation_01/ChairRecreation_01_base.et" {
-    components {
-     Hierarchy "{61A36774C7988CC7}" {
-     }
-    }
-    coords -2.396 -0.077 -2.342
-    angleX -3.476
-    angleY 146.491
-    angleZ 1.228
-   }
-   GenericEntity Tent_Alttarkallio_02 : "{9E026C6D62171AF3}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_blue.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A36774AD371297}" {
-     }
-    }
-    coords 16.929 -0.226 -24.407
-    angleX -4.064
-    angleY -10.593
-    angleZ 2.575
-   }
-   GenericEntity Tent_Alttarkallio_03 : "{CC98E67AC15E257D}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_orange.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A36774A317FB0A}" {
-     }
-    }
-    coords 24.621 0.53 20.226
-    angleX 0.478
-    angleY -139.61
-    angleZ -1.943
-   }
-   GameEntity : "{D9842C11742C00CF}Prefabs/Props/Civilian/Fireplace_01.et" {
-    components {
-     Hierarchy "{61A36774B5C48A02}" {
-     }
-    }
-    coords -0.865 -0.199 -4.319
-    angleX 2.682
-    angleY 0.084
-    angleZ 0.898
-   }
-  }
- }
- Props_Pahalampi {
-  coords 7415.301 14.47 3517.359
-  {
-   GenericEntity Tent_Pahalampi_01 : "{1B48219F84D1D00B}Prefabs/Props/Recreation/Camp/TentBig_02/TentBig_02_green.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A367740455284D}" {
-     }
-    }
-    coords 38.38 -0.845 21.003
-   }
-   GenericEntity Tent_Pahalampi_02 : "{9E026C6D62171AF3}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_blue.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A367740DA05950}" {
-     }
-    }
-    coords 6.831 0.716 52.591
-    angleX 3.671
-    angleY -176.795
-    angleZ -1.584
-   }
-   GenericEntity Tent_Pahalampi_03 : "{CC98E67AC15E257D}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_orange.et" {
-    components {
-     RplComponent "{5624A88DC2D9928D}" {
-      Enabled 1
-     }
-     Hierarchy "{61A367741BDC8B28}" {
-     }
-    }
-    coords 8.811 0.698 -32.539
-    angleX -8.003
-    angleY 0.126
-    angleZ -0.904
-   }
-  }
- }
-}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
  Area_HVT_Kippariniemi {
   components {
@@ -4919,103 +4806,150 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
      }
     }
    }
-   GenericEntity TaskKill_HVT_MoveCollection_Pahalampi : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
-    coords -7.187 0.063 -7.429
-    {
-     $grp GenericEntity {
-      TaskKill_HVT_Pahalampi_move_02 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 45.8 3.733 -25.26
+   $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    Props_Pahalampi {
+     components {
+      Hierarchy "{61B4318A29DA8318}" {
       }
-      TaskKill_HVT_Pahalampi_move_03 {
+     }
+     coords 50.069 2.791 -41.659
+     {
+      GenericEntity Tent_Pahalampi_01 : "{1B48219F84D1D00B}Prefabs/Props/Recreation/Camp/TentBig_02/TentBig_02_green.et" {
        components {
-        Hierarchy "{613802B54F5287D4}" {
+        RplComponent "{5624A88DC2D9928D}" {
+         Enabled 1
+        }
+        Hierarchy "{61A367740455284D}" {
         }
        }
-       coords 65.167 3.477 -66.994
-       angleX -7.123
-       angleY -0.112
-       angleZ 0.902
+       coords 38.38 -0.845 21.003
       }
-      TaskKill_HVT_Pahalampi_move_04 {
+      GenericEntity Tent_Pahalampi_02 : "{9E026C6D62171AF3}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_blue.et" {
        components {
-        Hierarchy "{613802B54F5287D4}" {
+        RplComponent "{5624A88DC2D9928D}" {
+         Enabled 1
+        }
+        Hierarchy "{61A367740DA05950}" {
         }
        }
-       coords 67.01 3.486 -67.095
+       coords 6.831 0.716 52.591
+       angleX 3.671
+       angleY -176.795
+       angleZ -1.584
+      }
+      GenericEntity Tent_Pahalampi_03 : "{CC98E67AC15E257D}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_orange.et" {
+       components {
+        RplComponent "{5624A88DC2D9928D}" {
+         Enabled 1
+        }
+        Hierarchy "{61A367741BDC8B28}" {
+        }
+       }
+       coords 8.811 0.698 -32.539
        angleX -8.003
        angleY 0.126
        angleZ -0.904
       }
-      TaskKill_HVT_Pahalampi_move_05 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+     }
+    }
+    TaskKill_HVT_MoveCollection_Pahalampi {
+     coords -7.187 0.063 -7.429
+     {
+      $grp GenericEntity {
+       TaskKill_HVT_Pahalampi_move_02 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 45.8 3.733 -25.26
        }
-       coords 95.611 1.883 -14.292
-      }
-      TaskKill_HVT_Pahalampi_move_06 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_03 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 65.167 3.477 -66.994
+        angleX -7.123
+        angleY -0.112
+        angleZ 0.902
        }
-       coords 65.132 3.422 18.196
-       angleX -3.573
-       angleY -0.112
-       angleZ 1.793
-      }
-      TaskKill_HVT_Pahalampi_move_07 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_04 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 67.01 3.486 -67.095
+        angleX -8.003
+        angleY 0.126
+        angleZ -0.904
        }
-       coords 63.263 3.388 18.794
-       angleX -5.351
-       angleY 0.168
-       angleZ -1.798
-      }
-      TaskKill_HVT_Pahalampi_move_08 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_05 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 95.611 1.883 -14.292
        }
-       coords 57.376 2.722 -33.396
-       angleZ 2.684
-      }
-      TaskKill_HVT_Pahalampi_move_09 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_06 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 65.132 3.422 18.196
+        angleX -3.573
+        angleY -0.112
+        angleZ 1.793
        }
-       coords 65.327 2.187 -58.419
-       angleX -8.005
-      }
-      TaskKill_HVT_Pahalampi_move_11 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_07 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 63.263 3.388 18.794
+        angleX -5.351
+        angleY 0.168
+        angleZ -1.798
        }
-       coords 51.099 1.165 20.263
-      }
-      TaskKill_HVT_Pahalampi_move_10 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_08 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 57.376 2.722 -33.396
+        angleZ 2.684
        }
-       coords 93.072 1.93 3.811
-       angleX 1.788
-       angleY -0.056
-       angleZ -1.791
-      }
-      TaskKill_HVT_Pahalampi_move_01 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
+       TaskKill_HVT_Pahalampi_move_09 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
         }
+        coords 65.327 2.187 -58.419
+        angleX -8.005
        }
-       coords 47.042 3.753 -23.103
+       TaskKill_HVT_Pahalampi_move_11 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
+        }
+        coords 51.099 1.165 20.263
+       }
+       TaskKill_HVT_Pahalampi_move_10 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
+        }
+        coords 93.072 1.93 3.811
+        angleX 1.788
+        angleY -0.056
+        angleZ -1.791
+       }
+       TaskKill_HVT_Pahalampi_move_01 {
+        components {
+         Hierarchy "{613802B54F5287D4}" {
+         }
+        }
+        coords 47.042 3.753 -23.103
+       }
       }
      }
     }
@@ -5032,544 +4966,544 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 7507.673 22.257 3988.596
   {
-   PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Valikallio {
-    coords 2.736 0 1.7
-    Flags 2097155
-    TriggerShapeType Sphere
-    SphereRadius 500
-    DrawShape 1
-    ShapeColor 0.046 0 1 0.078
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_TaskKill_HVT_Valikallio"
-    m_ActivationPresence ANY_CHARACTER
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61675A2931C0BF95}" {
-      m_bOverrideActivationPresence 1
-     }
-    }
-    m_iDelayTimerMin 60
-    m_aIndividualTasks {
-     PR_TaskDetails "{613802B2DA10B658}" {
-      m_sTaskName "TaskKill_HVT_Valikallio"
-      m_bUseMoveTaskDestination 1
-      m_aTaskMoveDetails {
-       PR_MoveTask "{613802B56EC76EB7}" {
-        m_sTaskSectionToMove "SlotKill_TaskKill_HVT_Valikallio"
-        m_sMoveSectionTo {
-         "TaskKill_HVT_MoveCollection_Valikallio"
-        }
-        m_sAdditionalObjectsToMove {
-         "Opt_TaskKill_HVT_Valikallio"
+   $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    Layer_TaskKill_HVT_Valikallio {
+     coords 1.546 0 -2.734
+     {
+      PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Valikallio {
+       coords 1.19 0 4.434
+       Flags 2097155
+       TriggerShapeType Sphere
+       SphereRadius 500
+       DrawShape 1
+       ShapeColor 0.046 0 1 0.078
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_TaskKill_HVT_Valikallio"
+       m_ActivationPresence ANY_CHARACTER
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61675A2931C0BF95}" {
+         m_bOverrideActivationPresence 1
         }
        }
-      }
-     }
-    }
-    m_iPlayerDistanceToSpawnTask 300
-    m_iRandomTaskCount -1
-    m_bUseRandomDelayBetweenTasksTimer 1
-    m_iDelayTimerBetweenEachTaskMin 10
-    m_iDelayTimerBetweenEachTaskMax 20
-   }
-   PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Valikallio {
-    coords -3.456 0.029 -2.692
-    TriggerShapeType Sphere
-    SphereRadius 1
-    ShapeColor 0 0.502 0.502 0.098
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_Opt_TaskKill_HVT_Valikallio"
-    m_bNeutralizePersistentObject 1
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61917DF60E955557}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_TaskKill_HVT_Valikallio"
-     }
-    }
-    m_iDelayTimerMin 10
-    m_sTaskName "Opt_TaskKill_HVT_Valikallio"
-    m_PlayerXPTaskReward "Kill HVT (60)"
-    m_fXPMultiplier 1.25
-    m_bUseTaskFailObject 1
-    m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Valikallio"
-    {
-     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-      Pers_Opt_TaskKill_HVT_Valikallio {
-       coords 0.001 -0.019 0.136
-      }
-      Pers_Fail_TaskKill_HVT_Valikallio {
-       coords 0.146 -0.341 -0.415
-      }
-     }
-    }
-   }
-   GenericEntity TaskKill_HVT_Valikallio : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
-    components {
-     SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
-      m_eActivationType ON_TRIGGER_ACTIVATION
-      m_aActivationActions {
-       SCR_ScenarioFrameworkActionPlaySound "{61675A281BC5E92D}" {
-        m_sSound "SOUND_HUD_TASK_CREATED"
-       }
-      }
-      m_sTaskTitle ""
-      m_sTaskDescription ""
-      m_aTriggerActionsOnFinish {
-       SCR_ScenarioFrameworkActionPlaySound "{61675A283334ECA0}" {
-        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61675A284A1EBC39}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A284EE8D66C}" {
-         m_sEntityName "TaskKill_HVT_Valikallio"
-        }
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61675A2859D09BB6}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A285C9045D2}" {
-         m_sEntityName "Pers_TaskKill_HVT_Valikallio"
-        }
-       }
-      }
-     }
-    }
-    coords 1.546 0 -2.734
-    {
-     GenericEntity SlotKill_TaskKill_HVT_Valikallio : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
-      components {
-       SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
-        m_sFactionKey "USSR"
-        m_sObjectToSpawn "{612F43A4D5AE765F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_RTO.et"
-        m_sTaskTitle "Eliminate HVT Valikallio"
-        m_sTaskDescription "Recovered intel suggests we have found the location of a new HVT.<br />"\
-        "The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />"\
-        "He is hiding out in the area of Valikallio.<br />"\
-        "Your objective is to locate and neutralize this HVT.<br />"\
-        "Resistance Probability: Moderate.<br />"\
-        "Bringing him back alive is not a option."
-        m_aActionsOnCreated {
-         SCR_ScenarioFrameworkActionSpawnObjects "{61675A2B92CE427A}" {
-          m_aNameOfObjectsToSpawnOnActivation {
-           "Layer_TaskKill_HVT_AI_Valikallio"
+       m_iDelayTimerMin 60
+       m_aIndividualTasks {
+        PR_TaskDetails "{613802B2DA10B658}" {
+         m_sTaskName "TaskKill_HVT_Valikallio"
+         m_bUseMoveTaskDestination 1
+         m_aTaskMoveDetails {
+          PR_MoveTask "{613802B56EC76EB7}" {
+           m_sTaskSectionToMove "SlotKill_TaskKill_HVT_Valikallio"
+           m_sMoveSectionTo {
+            "TaskKill_HVT_MoveCollection_Valikallio"
+           }
+           m_sAdditionalObjectsToMove {
+            "Opt_TaskKill_HVT_Valikallio"
+           }
           }
          }
         }
-        m_bSpawnAIOnWPPos 0
-        m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
-        m_fPerceptionFactor 0.75
        }
+       m_iPlayerDistanceToSpawnTask 300
+       m_iRandomTaskCount -1
+       m_bUseRandomDelayBetweenTasksTimer 1
+       m_iDelayTimerBetweenEachTaskMin 10
+       m_iDelayTimerBetweenEachTaskMax 20
       }
-      coords -4.986 0 -0.003
-     }
-    }
-   }
-   GenericEntity Pers_TaskKill_HVT_Valikallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords 1.737 0 -2.33
-   }
-   GenericEntity Layer_TaskKill_HVT_AI_Valikallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
-    components {
-     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-      m_SpawnChildren RANDOM_ONE
-      m_eActivationType ON_TRIGGER_ACTIVATION
-     }
-    }
-    coords -7.693 0.062 -7.775
-    {
-     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
-      Layer_TaskKill_HVT_AI_Valikallio_01 {
-       components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_SpawnChildren RANDOM_MULTIPLE
-         m_iRandomPercent 80
+      PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Valikallio {
+       coords -5.002 0.029 0.042
+       TriggerShapeType Sphere
+       SphereRadius 1
+       ShapeColor 0 0.502 0.502 0.098
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_Opt_TaskKill_HVT_Valikallio"
+       m_bNeutralizePersistentObject 1
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61917DF60E955557}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_TaskKill_HVT_Valikallio"
         }
        }
-       coords 35.288 -1.656 -88.193
+       m_iDelayTimerMin 10
+       m_sTaskName "Opt_TaskKill_HVT_Valikallio"
+       m_PlayerXPTaskReward "Kill HVT (60)"
+       m_fXPMultiplier 1.25
+       m_bUseTaskFailObject 1
+       m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Valikallio"
        {
-        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
-         SlotAI_TaskKill_HVT_Valikallio_01_01_LFTS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 231.405 29.324 -163.274
+        $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+         Pers_Opt_TaskKill_HVT_Valikallio {
+          coords 0.001 -0.019 0.136
          }
-         SlotAI_TaskKill_HVT_Valikallio_01_02_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 150.216 36.625 -167.153
-         }
-         SlotAI_TaskKill_HVT_Valikallio_01_05_LRGS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 29.655 59.687 -85.853
-         }
-         SlotAI_TaskKill_HVT_Valikallio_01_03_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 183.333 7.929 22.963
-          angleY 178.77
-         }
-         SlotAI_TaskKill_HVT_Valikallio_01_04_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 42.894 -2.319 143.255
+         Pers_Fail_TaskKill_HVT_Valikallio {
+          coords 0.146 -0.341 -0.415
          }
         }
        }
       }
-      Layer_TaskKill_HVT_AI_Valikallio_02 {
+      GenericEntity TaskKill_HVT_Valikallio : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
        components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_SpawnChildren RANDOM_MULTIPLE
-         m_iRandomPercent 66
+        SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+         m_eActivationType ON_TRIGGER_ACTIVATION
+         m_aActivationActions {
+          SCR_ScenarioFrameworkActionPlaySound "{61675A281BC5E92D}" {
+           m_sSound "SOUND_HUD_TASK_CREATED"
+          }
+         }
+         m_sTaskTitle ""
+         m_sTaskDescription ""
+         m_aTriggerActionsOnFinish {
+          SCR_ScenarioFrameworkActionPlaySound "{61675A283334ECA0}" {
+           m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61675A284A1EBC39}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A284EE8D66C}" {
+            m_sEntityName "TaskKill_HVT_Valikallio"
+           }
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61675A2859D09BB6}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A285C9045D2}" {
+            m_sEntityName "Pers_TaskKill_HVT_Valikallio"
+           }
+          }
+         }
         }
        }
-       coords 49.227 -2.167 -101.079
+       coords 0 0 0
        {
-        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
-         SlotAI_TaskKill_HVT_Valikallio_02_01_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 78.479 1.747 216.993
-         }
-         SlotAI_TaskKill_HVT_Valikallio_02_02_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords -35.302 41.496 26.735
-         }
-         SlotAI_TaskKill_HVT_Valikallio_02_03_LRGS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords -33.429 22.034 223.761
-         }
-        }
-       }
-      }
-      Layer_TaskKill_HVT_AI_Valikallio_03 {
-       components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_iRandomPercent 0
-        }
-       }
-       coords 41.047 -2.867 -100.777
-       {
-        GenericEntity SlotAI_TaskKill_HVT_Valikallio_03_01_LRGS : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+        GenericEntity SlotKill_TaskKill_HVT_Valikallio : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
          components {
-          SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-           m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-           m_fPerceptionFactor 0.75
-          }
-         }
-         coords 138.587 -0.342 -25.422
-        }
-       }
-      }
-     }
-    }
-   }
-   GenericEntity TaskKill_HVT_MoveCollection_Valikallio : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
-    coords -7.187 0.063 -7.429
-    {
-     $grp GenericEntity {
-      TaskKill_HVT_Valikallio_move_02 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 133.017 -3.088 -60.521
-      }
-      TaskKill_HVT_Valikallio_move_03 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 146.696 -3.442 -62.063
-      }
-      TaskKill_HVT_Valikallio_move_04 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 145.037 -3.376 -60.445
-      }
-      TaskKill_HVT_Valikallio_move_05 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 152.198 -3.943 -69.01
-       angleY 165.509
-      }
-      TaskKill_HVT_Valikallio_move_06 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 153.001 -3.921 -70.218
-       angleY -137.405
-      }
-      TaskKill_HVT_Valikallio_move_07 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 141.646 -3.828 -84.743
-      }
-      TaskKill_HVT_Valikallio_move_08 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 143.851 -3.835 -82.803
-      }
-      TaskKill_HVT_Valikallio_move_09 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 188.135 -1.546 -130.403
-      }
-      TaskKill_HVT_Valikallio_move_11 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 71.858 57.799 -169.693
-      }
-      TaskKill_HVT_Valikallio_move_12 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 40.344 56.434 -137.393
-      }
-      TaskKill_HVT_Valikallio_move_10 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 139.853 41.243 -269.065
-      }
-      TaskKill_HVT_Valikallio_move_01 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 71.935 -2.802 82.562
-      }
-      TaskKill_HVT_Valikallio_move_13 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords -61.022 40.686 -39.087
-      }
-     }
-    }
-   }
-  }
- }
- Area_HVT_Valikallio_Deliver {
-  components {
-   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
-    m_bExcludeFromDynamicDespawn 1
-    m_iDynamicDespawnRange 100
-    m_bShowDebugShapesInWorkbench 1
-   }
-  }
-  coords 7656.996 21.778 3801.274
-  {
-   PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Valikallio_Deliver {
-    components {
-     Hierarchy "{61A27039B18CFD04}" {
-     }
-    }
-    coords -9.258 1.182 -15.252
-    TriggerShapeType Sphere
-    SphereRadius 1
-    DrawShape 1
-    ShapeColor 0.046 0 1 0.078
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_TaskKill_HVT_Valikallio_Deliver"
-    m_bNeutralizePersistentObject 1
-    m_ActivationPresence ANY_CHARACTER
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61A2703376DA904C}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_Opt_TaskKill_HVT_Valikallio"
-     }
-    }
-    m_iDelayTimerMin 5
-    m_aIndividualTasks {
-     PR_TaskDetails "{613802B2DA10B658}" {
-      m_sTaskName "TaskKill_HVT_Valikallio_Deliver"
-      m_bUsePersistentTask 1
-      m_sPersistentTaskObject "Pers_TaskKill_HVT_Valikallio_Deliver"
-      m_bNeutralizePersistentTaskObject 1
-      m_bUseMoveTaskDestination 1
-      m_aTaskMoveDetails {
-       PR_MoveTask "{61A27034685078F8}" {
-        m_sTaskSectionToMove "SlotMoveTo_TaskKill_HVT_Valikallio_Deliver"
-        m_sMoveSectionToRandomBases {
-         1
-        }
-        m_bInsertBaseNameInTaskInfos 1
-        m_sAdditionalObjectsToMove {
-         "Opt_TaskKill_HVT_Valikallio_Deliver"
-        }
-       }
-      }
-     }
-    }
-   }
-   PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Valikallio_Deliver {
-    coords 3.185 -0.304 3.087
-    TriggerShapeType Sphere
-    SphereRadius 10
-    DrawShape 1
-    ShapeColor 0 0.502 0.502 0.098
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_Opt_TaskKill_HVT_Valikallio_Deliver"
-    m_bNeutralizePersistentObject 1
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61917DF60E955557}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_TaskKill_HVT_Valikallio_Deliver2"
-     }
-    }
-    m_iDelayTimerMin 10
-    m_sTaskName "Opt_TaskKill_HVT_Valikallio_Deliver"
-    m_PlayerXPTaskReward "Deliver Supplies (40)"
-    m_fXPMultiplier 1.25
-    m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Valikallio_Deliver"
-    m_aRemovePrefabDetails {
-     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
-      m_aSpecificPrefabNames {
-       "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
-      }
-     }
-    }
-    {
-     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-      Pers_Opt_TaskKill_HVT_Valikallio_Deliver {
-       coords -12.062 -0.001 -7.016
-      }
-      Pers_Fail_TaskKill_HVT_Valikallio_Deliver {
-       coords -12.105 0 -7.254
-      }
-     }
-    }
-   }
-   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    Pers_TaskKill_HVT_Valikallio_Deliver {
-     coords -4.054 -0.39 -1.319
-    }
-    Pers_TaskKill_HVT_Valikallio_Deliver2 {
-     coords -1.707 0.45 -1.826
-    }
-   }
-   GenericEntity TaskKill_HVT_Valikallio_Deliver : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
-    components {
-     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
-      m_eActivationType ON_TRIGGER_ACTIVATION
-      m_aActivationActions {
-       SCR_ScenarioFrameworkActionPlaySound "{61634CC387F1B9AC}" {
-        m_sSound "SOUND_HUD_TASK_CREATED"
-       }
-      }
-      m_aTriggerActionsOnFinish {
-       SCR_ScenarioFrameworkActionPlaySound "{61634CC39E19E8BB}" {
-        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3AF84D298}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3B3FC882E}" {
-         m_sEntityName "TaskKill_HVT_Valikallio_Deliver"
-        }
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Pers_TaskKill_HVT_Valikallio_Deliver2"
-        }
-       }
-      }
-     }
-    }
-    coords -3.894 0.001 -1.966
-    {
-     GenericEntity SlotMoveTo_TaskKill_HVT_Valikallio_Deliver {
-      ID "5E74C90E3ED35D79"
-      components {
-       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
-        m_aPlugins {
-         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
-          m_fAreaRadius 3.5
-          m_aCustomTriggerConditions {
-           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
-            m_aPrefabFilter {
-             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
-              m_sSpecificPrefabName "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
-              m_iPrefabCount 1
-             }
-             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
-              m_iPrefabCount 0
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sFactionKey "USSR"
+           m_sObjectToSpawn "{612F43A4D5AE765F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_RTO.et"
+           m_sTaskTitle "Eliminate HVT Valikallio"
+           m_sTaskDescription "Recovered intel suggests we have found the location of a new HVT.<br />"\
+           "The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />"\
+           "He is hiding out in the area of Valikallio.<br />"\
+           "Your objective is to locate and neutralize this HVT.<br />"\
+           "Resistance Probability: Moderate.<br />"\
+           "Bringing him back alive is not a option."
+           m_aActionsOnCreated {
+            SCR_ScenarioFrameworkActionSpawnObjects "{61675A2B92CE427A}" {
+             m_aNameOfObjectsToSpawnOnActivation {
+              "Layer_TaskKill_HVT_AI_Valikallio"
              }
             }
            }
+           m_bSpawnAIOnWPPos 0
+           m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+           m_fPerceptionFactor 0.75
           }
-          m_bSearchVehicleInventory 0
          }
+         coords -4.986 0 -0.003
         }
-        m_sTaskTitle "Deliver RTO Radio Valikallio"
-        m_sTaskDescription "Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation."
        }
       }
-      coords 7.128 -0.304 5.033
+      GenericEntity Pers_TaskKill_HVT_Valikallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+       coords 0.191 0 0.404
+      }
+      GenericEntity Layer_TaskKill_HVT_AI_Valikallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_ONE
+         m_eActivationType ON_TRIGGER_ACTIVATION
+        }
+       }
+       coords -9.239 0.062 -5.041
+       {
+        $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+         Layer_TaskKill_HVT_AI_Valikallio_01 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_SpawnChildren RANDOM_MULTIPLE
+            m_iRandomPercent 80
+           }
+          }
+          coords 35.288 -1.656 -88.193
+          {
+           $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            SlotAI_TaskKill_HVT_Valikallio_01_01_LFTS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 231.405 29.324 -163.274
+            }
+            SlotAI_TaskKill_HVT_Valikallio_01_02_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 150.216 36.625 -167.153
+            }
+            SlotAI_TaskKill_HVT_Valikallio_01_05_LRGS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 29.655 59.687 -85.853
+            }
+            SlotAI_TaskKill_HVT_Valikallio_01_03_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 183.333 7.929 22.963
+             angleY 178.77
+            }
+            SlotAI_TaskKill_HVT_Valikallio_01_04_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 42.894 -2.319 143.255
+            }
+           }
+          }
+         }
+         Layer_TaskKill_HVT_AI_Valikallio_02 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_SpawnChildren RANDOM_MULTIPLE
+            m_iRandomPercent 66
+           }
+          }
+          coords 49.227 -2.167 -101.079
+          {
+           $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            SlotAI_TaskKill_HVT_Valikallio_02_01_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 78.479 1.747 216.993
+            }
+            SlotAI_TaskKill_HVT_Valikallio_02_02_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords -35.302 41.496 26.735
+            }
+            SlotAI_TaskKill_HVT_Valikallio_02_03_LRGS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords -33.429 22.034 223.761
+            }
+           }
+          }
+         }
+         Layer_TaskKill_HVT_AI_Valikallio_03 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_iRandomPercent 0
+           }
+          }
+          coords 41.047 -2.867 -100.777
+          {
+           GenericEntity SlotAI_TaskKill_HVT_Valikallio_03_01_LRGS : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            components {
+             SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+              m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+              m_fPerceptionFactor 0.75
+             }
+            }
+            coords 138.587 -0.342 -25.422
+           }
+          }
+         }
+        }
+       }
+      }
+      GenericEntity TaskKill_HVT_MoveCollection_Valikallio : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+       coords -8.733 0.063 -4.695
+       {
+        $grp GenericEntity {
+         TaskKill_HVT_Valikallio_move_02 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 133.017 -3.088 -60.521
+         }
+         TaskKill_HVT_Valikallio_move_03 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 146.696 -3.442 -62.063
+         }
+         TaskKill_HVT_Valikallio_move_04 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 145.037 -3.376 -60.445
+         }
+         TaskKill_HVT_Valikallio_move_05 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 152.198 -3.943 -69.01
+          angleY 165.509
+         }
+         TaskKill_HVT_Valikallio_move_06 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 153.001 -3.921 -70.218
+          angleY -137.405
+         }
+         TaskKill_HVT_Valikallio_move_07 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 141.646 -3.828 -84.743
+         }
+         TaskKill_HVT_Valikallio_move_08 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 143.851 -3.835 -82.803
+         }
+         TaskKill_HVT_Valikallio_move_09 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 188.135 -1.546 -130.403
+         }
+         TaskKill_HVT_Valikallio_move_11 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 71.858 57.799 -169.693
+         }
+         TaskKill_HVT_Valikallio_move_12 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 40.344 56.434 -137.393
+         }
+         TaskKill_HVT_Valikallio_move_10 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 139.853 41.243 -269.065
+         }
+         TaskKill_HVT_Valikallio_move_01 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 71.935 -2.802 82.562
+         }
+         TaskKill_HVT_Valikallio_move_13 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords -61.022 40.686 -39.087
+         }
+        }
+       }
+      }
+     }
+    }
+    Layer_TaskKill_HVT_Valikallio_Deliver {
+     coords 145.429 -0.478 -189.288
+     {
+      PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Valikallio_Deliver {
+       components {
+        Hierarchy "{61A27039B18CFD04}" {
+        }
+       }
+       coords -5.364 1.181 -13.286
+       TriggerShapeType Sphere
+       SphereRadius 1
+       DrawShape 1
+       ShapeColor 0.046 0 1 0.078
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_TaskKill_HVT_Valikallio_Deliver"
+       m_bNeutralizePersistentObject 1
+       m_ActivationPresence ANY_CHARACTER
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61A2703376DA904C}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_Opt_TaskKill_HVT_Valikallio"
+        }
+       }
+       m_iDelayTimerMin 5
+       m_aIndividualTasks {
+        PR_TaskDetails "{613802B2DA10B658}" {
+         m_sTaskName "TaskKill_HVT_Valikallio_Deliver"
+         m_bUsePersistentTask 1
+         m_sPersistentTaskObject "Pers_TaskKill_HVT_Valikallio_Deliver"
+         m_bNeutralizePersistentTaskObject 1
+         m_bUseMoveTaskDestination 1
+         m_aTaskMoveDetails {
+          PR_MoveTask "{61A27034685078F8}" {
+           m_sTaskSectionToMove "SlotMoveTo_TaskKill_HVT_Valikallio_Deliver"
+           m_sMoveSectionToRandomBases {
+            1
+           }
+           m_bInsertBaseNameInTaskInfos 1
+           m_sAdditionalObjectsToMove {
+            "Opt_TaskKill_HVT_Valikallio_Deliver"
+           }
+          }
+         }
+        }
+       }
+      }
+      PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Valikallio_Deliver {
+       coords 7.079 -0.305 5.053
+       TriggerShapeType Sphere
+       SphereRadius 10
+       DrawShape 1
+       ShapeColor 0 0.502 0.502 0.098
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_Opt_TaskKill_HVT_Valikallio_Deliver"
+       m_bNeutralizePersistentObject 1
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61917DF60E955557}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_TaskKill_HVT_Valikallio_Deliver2"
+        }
+       }
+       m_iDelayTimerMin 10
+       m_sTaskName "Opt_TaskKill_HVT_Valikallio_Deliver"
+       m_PlayerXPTaskReward "Deliver Supplies (40)"
+       m_fXPMultiplier 1.25
+       m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Valikallio_Deliver"
+       m_aRemovePrefabDetails {
+        PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+         m_aSpecificPrefabNames {
+          "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
+         }
+        }
+       }
+       {
+        $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+         Pers_Opt_TaskKill_HVT_Valikallio_Deliver {
+          coords -12.062 -0.001 -7.016
+         }
+         Pers_Fail_TaskKill_HVT_Valikallio_Deliver {
+          coords -12.105 0 -7.254
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+       Pers_TaskKill_HVT_Valikallio_Deliver {
+        coords -0.16 -0.391 0.647
+       }
+       Pers_TaskKill_HVT_Valikallio_Deliver2 {
+        coords 2.187 0.449 0.14
+       }
+      }
+      GenericEntity TaskKill_HVT_Valikallio_Deliver : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+       components {
+        SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+         m_eActivationType ON_TRIGGER_ACTIVATION
+         m_aActivationActions {
+          SCR_ScenarioFrameworkActionPlaySound "{61634CC387F1B9AC}" {
+           m_sSound "SOUND_HUD_TASK_CREATED"
+          }
+         }
+         m_aTriggerActionsOnFinish {
+          SCR_ScenarioFrameworkActionPlaySound "{61634CC39E19E8BB}" {
+           m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3AF84D298}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3B3FC882E}" {
+            m_sEntityName "TaskKill_HVT_Valikallio_Deliver"
+           }
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
+            m_sEntityName "Pers_TaskKill_HVT_Valikallio_Deliver2"
+           }
+          }
+         }
+        }
+       }
+       coords 0 0 0
+       {
+        GenericEntity SlotMoveTo_TaskKill_HVT_Valikallio_Deliver {
+         ID "5E74C90E3ED35D79"
+         components {
+          SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+           m_aPlugins {
+            SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+             m_fAreaRadius 3.5
+             m_aCustomTriggerConditions {
+              SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+               m_aPrefabFilter {
+                SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+                 m_sSpecificPrefabName "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
+                 m_iPrefabCount 1
+                }
+                SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+                 m_iPrefabCount 0
+                }
+               }
+              }
+             }
+             m_bSearchVehicleInventory 0
+            }
+           }
+           m_sTaskTitle "Deliver RTO Radio Valikallio"
+           m_sTaskDescription "Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation."
+          }
+         }
+         coords 7.128 -0.304 5.033
+        }
+       }
+      }
      }
     }
    }
@@ -5583,546 +5517,621 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 8220.251 6.239 2536.692
   {
-   PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Alttarkallio {
-    coords 2.736 0 1.7
-    Flags 2097155
-    TriggerShapeType Sphere
-    SphereRadius 500
-    DrawShape 1
-    ShapeColor 0.046 0 1 0.078
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_TaskKill_HVT_Alttarkallio"
-    m_ActivationPresence ANY_CHARACTER
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61675A2931C0BF95}" {
-      m_bOverrideActivationPresence 1
-     }
-    }
-    m_iDelayTimerMin 60
-    m_aIndividualTasks {
-     PR_TaskDetails "{613802B2DA10B658}" {
-      m_sTaskName "TaskKill_HVT_Alttarkallio"
-      m_bUseMoveTaskDestination 1
-      m_aTaskMoveDetails {
-       PR_MoveTask "{613802B56EC76EB7}" {
-        m_sTaskSectionToMove "SlotKill_TaskKill_HVT_Alttarkallio"
-        m_sMoveSectionTo {
-         "TaskKill_HVT_MoveCollection_Alttarkallio"
-        }
-        m_sAdditionalObjectsToMove {
-         "Opt_TaskKill_HVT_Alttarkallio"
+   $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+    Layer_TaskKill_HVT_Alttarkallio {
+     coords 0 0 0
+     {
+      PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Alttarkallio {
+       coords 2.736 0 1.7
+       Flags 2097155
+       TriggerShapeType Sphere
+       SphereRadius 500
+       DrawShape 1
+       ShapeColor 0.046 0 1 0.078
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_TaskKill_HVT_Alttarkallio"
+       m_ActivationPresence ANY_CHARACTER
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61675A2931C0BF95}" {
+         m_bOverrideActivationPresence 1
         }
        }
-      }
-     }
-    }
-    m_iPlayerDistanceToSpawnTask 300
-    m_iRandomTaskCount -1
-    m_bUseRandomDelayBetweenTasksTimer 1
-    m_iDelayTimerBetweenEachTaskMin 10
-    m_iDelayTimerBetweenEachTaskMax 20
-   }
-   PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Alttarkallio {
-    coords -3.456 0.029 -2.692
-    TriggerShapeType Sphere
-    SphereRadius 1
-    ShapeColor 0 0.502 0.502 0.098
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_Opt_TaskKill_HVT_Alttarkallio"
-    m_bNeutralizePersistentObject 1
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61917DF60E955557}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_TaskKill_HVT_Alttarkallio"
-     }
-    }
-    m_iDelayTimerMin 10
-    m_sTaskName "Opt_TaskKill_HVT_Alttarkallio"
-    m_PlayerXPTaskReward "Kill HVT (60)"
-    m_fXPMultiplier 1.25
-    m_bUseTaskFailObject 1
-    m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Alttarkallio"
-    {
-     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-      Pers_Opt_TaskKill_HVT_Alttarkallio {
-       coords 0.001 -0.019 0.136
-      }
-      Pers_Fail_TaskKill_HVT_Alttarkallio {
-       coords 0.146 -0.341 -0.415
-      }
-     }
-    }
-   }
-   GenericEntity TaskKill_HVT_Alttarkallio : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
-    components {
-     SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
-      m_eActivationType ON_TRIGGER_ACTIVATION
-      m_aActivationActions {
-       SCR_ScenarioFrameworkActionPlaySound "{61675A281BC5E92D}" {
-        m_sSound "SOUND_HUD_TASK_CREATED"
-       }
-      }
-      m_sTaskTitle ""
-      m_sTaskDescription ""
-      m_aTriggerActionsOnFinish {
-       SCR_ScenarioFrameworkActionPlaySound "{61675A283334ECA0}" {
-        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61675A284A1EBC39}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A284EE8D66C}" {
-         m_sEntityName "TaskKill_HVT_Alttarkallio"
-        }
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61675A2859D09BB6}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A285C9045D2}" {
-         m_sEntityName "Pers_TaskKill_HVT_Alttarkallio"
-        }
-       }
-      }
-     }
-    }
-    coords 1.546 0 -2.734
-    {
-     GenericEntity SlotKill_TaskKill_HVT_Alttarkallio : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
-      components {
-       SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
-        m_sFactionKey "USSR"
-        m_sObjectToSpawn "{612F43A4D5AE765F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_RTO.et"
-        m_sTaskTitle "Eliminate HVT Alttarkallio"
-        m_sTaskDescription "Recovered intel suggests we have found the location of a new HVT.<br />"\
-        "The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />"\
-        "He is hiding out in the woods east of Alttarkallio.<br />"\
-        "Your objective is to locate and neutralize this HVT.<br />"\
-        "Resistance Probability: Moderate.<br />"\
-        "Bringing him back alive is not a option."
-        m_aActionsOnCreated {
-         SCR_ScenarioFrameworkActionSpawnObjects "{61675A2B92CE427A}" {
-          m_aNameOfObjectsToSpawnOnActivation {
-           "Layer_TaskKill_HVT_AI_Alttarkallio"
+       m_iDelayTimerMin 60
+       m_aIndividualTasks {
+        PR_TaskDetails "{613802B2DA10B658}" {
+         m_sTaskName "TaskKill_HVT_Alttarkallio"
+         m_bUseMoveTaskDestination 1
+         m_aTaskMoveDetails {
+          PR_MoveTask "{613802B56EC76EB7}" {
+           m_sTaskSectionToMove "SlotKill_TaskKill_HVT_Alttarkallio"
+           m_sMoveSectionTo {
+            "TaskKill_HVT_MoveCollection_Alttarkallio"
+           }
+           m_sAdditionalObjectsToMove {
+            "Opt_TaskKill_HVT_Alttarkallio"
+           }
           }
          }
         }
-        m_bSpawnAIOnWPPos 0
-        m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
-        m_fPerceptionFactor 0.75
        }
+       m_iPlayerDistanceToSpawnTask 300
+       m_iRandomTaskCount -1
+       m_bUseRandomDelayBetweenTasksTimer 1
+       m_iDelayTimerBetweenEachTaskMin 10
+       m_iDelayTimerBetweenEachTaskMax 20
       }
-      coords -4.986 -0.937 -0.003
-     }
-    }
-   }
-   GenericEntity Pers_TaskKill_HVT_Alttarkallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords 1.737 0 -2.33
-   }
-   GenericEntity Layer_TaskKill_HVT_AI_Alttarkallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
-    components {
-     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-      m_SpawnChildren RANDOM_ONE
-      m_eActivationType ON_TRIGGER_ACTIVATION
-     }
-    }
-    coords -7.693 0.062 -7.775
-    {
-     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
-      Layer_TaskKill_HVT_AI_Alttarkallio_01 {
-       components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_SpawnChildren RANDOM_MULTIPLE
-         m_iRandomPercent 80
+      PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Alttarkallio {
+       coords -3.456 0.029 -2.692
+       TriggerShapeType Sphere
+       SphereRadius 1
+       ShapeColor 0 0.502 0.502 0.098
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_Opt_TaskKill_HVT_Alttarkallio"
+       m_bNeutralizePersistentObject 1
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61917DF60E955557}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_TaskKill_HVT_Alttarkallio"
         }
        }
-       coords 35.288 -1.656 -88.193
+       m_iDelayTimerMin 10
+       m_sTaskName "Opt_TaskKill_HVT_Alttarkallio"
+       m_PlayerXPTaskReward "Kill HVT (60)"
+       m_fXPMultiplier 1.25
+       m_bUseTaskFailObject 1
+       m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Alttarkallio"
        {
-        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
-         SlotAI_TaskKill_HVT_Alttarkallio_01_01_LFTS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 5.373 10.435 16.833
+        $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+         Pers_Opt_TaskKill_HVT_Alttarkallio {
+          coords 0.001 -0.019 0.136
          }
-         SlotAI_TaskKill_HVT_Alttarkallio_01_02_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 45.712 1.468 -9.09
-         }
-         SlotAI_TaskKill_HVT_Alttarkallio_01_05_LRGS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 131.815 1.862 51.705
-         }
-         SlotAI_TaskKill_HVT_Alttarkallio_01_03_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 102.748 -1.412 106.457
-          angleY 178.77
-         }
-         SlotAI_TaskKill_HVT_Alttarkallio_01_04_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 53.371 1.779 133.188
+         Pers_Fail_TaskKill_HVT_Alttarkallio {
+          coords 0.146 -0.341 -0.415
          }
         }
        }
       }
-      Layer_TaskKill_HVT_AI_Alttarkallio_02 {
+      GenericEntity TaskKill_HVT_Alttarkallio : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
        components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_SpawnChildren RANDOM_MULTIPLE
-         m_iRandomPercent 66
+        SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+         m_eActivationType ON_TRIGGER_ACTIVATION
+         m_aActivationActions {
+          SCR_ScenarioFrameworkActionPlaySound "{61675A281BC5E92D}" {
+           m_sSound "SOUND_HUD_TASK_CREATED"
+          }
+         }
+         m_sTaskTitle ""
+         m_sTaskDescription ""
+         m_aTriggerActionsOnFinish {
+          SCR_ScenarioFrameworkActionPlaySound "{61675A283334ECA0}" {
+           m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61675A284A1EBC39}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A284EE8D66C}" {
+            m_sEntityName "TaskKill_HVT_Alttarkallio"
+           }
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61675A2859D09BB6}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61675A285C9045D2}" {
+            m_sEntityName "Pers_TaskKill_HVT_Alttarkallio"
+           }
+          }
+         }
         }
        }
-       coords 49.227 -2.167 -101.079
+       coords 1.546 0 -2.734
        {
-        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
-         SlotAI_TaskKill_HVT_Alttarkallio_02_01_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 103.015 2.639 22.434
-         }
-         SlotAI_TaskKill_HVT_Alttarkallio_02_02_WR {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 30.949 6.337 129.521
-         }
-         SlotAI_TaskKill_HVT_Alttarkallio_02_03_LRGS {
-          components {
-           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-            m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-            m_fPerceptionFactor 0.75
-           }
-          }
-          coords 54.197 -0.142 19.793
-         }
-        }
-       }
-      }
-      Layer_TaskKill_HVT_AI_Alttarkallio_03 {
-       components {
-        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
-         m_iRandomPercent 0
-        }
-       }
-       coords 41.047 -2.867 -100.777
-       {
-        GenericEntity SlotAI_TaskKill_HVT_Alttarkallio_03_01_LRGS : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+        GenericEntity SlotKill_TaskKill_HVT_Alttarkallio : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
          components {
-          SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
-           m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
-           m_fPerceptionFactor 0.75
-          }
-         }
-         coords 54.484 1.146 49.542
-        }
-       }
-      }
-     }
-    }
-   }
-   GenericEntity TaskKill_HVT_MoveCollection_Alttarkallio : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
-    coords -7.187 0.063 -7.429
-    {
-     $grp GenericEntity {
-      TaskKill_HVT_Alttarkallio_move_02 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 107.541 -0.406 -36.56
-      }
-      TaskKill_HVT_Alttarkallio_move_03 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 139.831 -0.058 -19.881
-      }
-      TaskKill_HVT_Alttarkallio_move_04 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 141.183 -0.118 -21.473
-      }
-      TaskKill_HVT_Alttarkallio_move_05 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 132.116 -0.784 -65.374
-       angleY 165.509
-      }
-      TaskKill_HVT_Alttarkallio_move_06 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 134.187 -0.945 -65.134
-       angleY -137.405
-      }
-      TaskKill_HVT_Alttarkallio_move_07 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 114.435 -0.695 -42.646
-      }
-      TaskKill_HVT_Alttarkallio_move_08 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 162.391 0.001 -46.289
-      }
-      TaskKill_HVT_Alttarkallio_move_09 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 163.051 2.607 -97.81
-      }
-      TaskKill_HVT_Alttarkallio_move_10 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 149.707 -0.988 0.016
-      }
-      TaskKill_HVT_Alttarkallio_move_11 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 120.251 0.326 -19.047
-      }
-      TaskKill_HVT_Alttarkallio_move_12 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 100.431 -2.81 -95.725
-      }
-      TaskKill_HVT_Alttarkallio_move_13 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 100.248 -0.315 -19.489
-      }
-      TaskKill_HVT_Alttarkallio_move_01 {
-       components {
-        Hierarchy "{613802B54F5287D4}" {
-        }
-       }
-       coords 104.967 -0.433 -35.409
-       angleX 2.681
-       angleY -0.084
-       angleZ -1.792
-      }
-     }
-    }
-   }
-  }
- }
- Area_HVT_Alttarkallio_Deliver {
-  components {
-   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
-    m_bExcludeFromDynamicDespawn 1
-    m_iDynamicDespawnRange 100
-   }
-  }
-  coords 8317.124 4.411 2455.675
-  {
-   PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Alttarkallio_Deliver {
-    components {
-     Hierarchy "{61A27039B18CFD04}" {
-     }
-    }
-    coords -9.258 1.182 -15.252
-    TriggerShapeType Sphere
-    SphereRadius 1
-    DrawShape 1
-    ShapeColor 0.046 0 1 0.078
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_TaskKill_HVT_Alttarkallio_Deliver"
-    m_bNeutralizePersistentObject 1
-    m_ActivationPresence ANY_CHARACTER
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61A2703376DA904C}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_Opt_TaskKill_HVT_Alttarkallio"
-     }
-    }
-    m_iDelayTimerMin 5
-    m_aIndividualTasks {
-     PR_TaskDetails "{613802B2DA10B658}" {
-      m_sTaskName "TaskKill_HVT_Alttarkallio_Deliver"
-      m_bUsePersistentTask 1
-      m_sPersistentTaskObject "Pers_TaskKill_HVT_Alttarkallio_Deliver"
-      m_bNeutralizePersistentTaskObject 1
-      m_bUseMoveTaskDestination 1
-      m_aTaskMoveDetails {
-       PR_MoveTask "{61A27034685078F8}" {
-        m_sTaskSectionToMove "SlotMoveTo_TaskKill_HVT_Alttarkallio_Deliver"
-        m_sMoveSectionToRandomBases {
-         1
-        }
-        m_bInsertBaseNameInTaskInfos 1
-        m_sAdditionalObjectsToMove {
-         "Opt_TaskKill_HVT_Alttarkallio_Deliver"
-        }
-       }
-      }
-     }
-    }
-   }
-   PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Alttarkallio_Deliver {
-    coords 3.185 -0.304 3.087
-    TriggerShapeType Sphere
-    SphereRadius 10
-    DrawShape 1
-    ShapeColor 0 0.502 0.502 0.098
-    TriggerActivationType "First change"
-    PeriodicQueries 1
-    UpdatePeriod 5
-    m_bDebugLogs 1
-    m_bUsePersistence 1
-    m_sPersistentObject "Pers_Opt_TaskKill_HVT_Alttarkallio_Deliver"
-    m_bNeutralizePersistentObject 1
-    m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{61917DF60E955557}" {
-      m_bOverrideActivationPresence 1
-      m_bActivateIfObjectMissing 1
-      m_sMissingObjectName "Pers_TaskKill_HVT_Alttarkallio_Deliver2"
-     }
-    }
-    m_iDelayTimerMin 10
-    m_sTaskName "Opt_TaskKill_HVT_Alttarkallio_Deliver"
-    m_PlayerXPTaskReward "Deliver Supplies (40)"
-    m_fXPMultiplier 1.25
-    m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Alttarkallio_Deliver"
-    m_aRemovePrefabDetails {
-     PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
-      m_aSpecificPrefabNames {
-       "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
-      }
-     }
-    }
-    {
-     $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-      Pers_Opt_TaskKill_HVT_Alttarkallio_Deliver {
-       coords -12.062 -0.001 -7.016
-      }
-      Pers_Fail_TaskKill_HVT_Alttarkallio_Deliver {
-       coords -12.105 0 -7.254
-      }
-     }
-    }
-   }
-   $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    Pers_TaskKill_HVT_Alttarkallio_Deliver2 {
-     coords -4.054 -0.39 -1.319
-    }
-    Pers_TaskKill_HVT_Alttarkallio_Deliver {
-     coords -1.707 0.45 -1.826
-    }
-   }
-   GenericEntity TaskKill_HVT_Alttarkallio_Deliver : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
-    components {
-     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
-      m_eActivationType ON_TRIGGER_ACTIVATION
-      m_aActivationActions {
-       SCR_ScenarioFrameworkActionPlaySound "{61634CC387F1B9AC}" {
-        m_sSound "SOUND_HUD_TASK_CREATED"
-       }
-      }
-      m_aTriggerActionsOnFinish {
-       SCR_ScenarioFrameworkActionPlaySound "{61634CC39E19E8BB}" {
-        m_sSound "SOUND_HUD_TASK_SUCCEEDED"
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3AF84D298}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3B3FC882E}" {
-         m_sEntityName "TaskKill_HVT_Alttarkallio_Deliver"
-        }
-       }
-       SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
-        m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
-         m_sEntityName "Pers_TaskKill_HVT_Alttarkallio_Deliver2"
-        }
-       }
-      }
-     }
-    }
-    coords -3.894 0.001 -1.966
-    {
-     GenericEntity SlotMoveTo_TaskKill_HVT_Alttarkallio_Deliver {
-      ID "5E74C90E3ED35D79"
-      components {
-       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
-        m_aPlugins {
-         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
-          m_fAreaRadius 3.5
-          m_aCustomTriggerConditions {
-           SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
-            m_aPrefabFilter {
-             SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
-              m_sSpecificPrefabName "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
-              m_iPrefabCount 1
-             }
-             SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
-              m_iPrefabCount 0
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sFactionKey "USSR"
+           m_sObjectToSpawn "{612F43A4D5AE765F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_RTO.et"
+           m_sTaskTitle "Eliminate HVT Alttarkallio"
+           m_sTaskDescription "Recovered intel suggests we have found the location of a new HVT.<br />"\
+           "The HVT is an RTO Operator. He's responsible for relaying comms to help coordinated assaults on nearby forces, he must be stopped.<br />"\
+           "He is hiding out in the woods east of Alttarkallio.<br />"\
+           "Your objective is to locate and neutralize this HVT.<br />"\
+           "Resistance Probability: Moderate.<br />"\
+           "Bringing him back alive is not a option."
+           m_aActionsOnCreated {
+            SCR_ScenarioFrameworkActionSpawnObjects "{61675A2B92CE427A}" {
+             m_aNameOfObjectsToSpawnOnActivation {
+              "Layer_TaskKill_HVT_AI_Alttarkallio"
              }
             }
            }
+           m_bSpawnAIOnWPPos 0
+           m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+           m_fPerceptionFactor 0.75
           }
-          m_bSearchVehicleInventory 0
          }
+         coords -4.986 -0.937 -0.003
         }
-        m_sTaskTitle "Deliver RTO Radio Alttarkallio"
-        m_sTaskDescription "Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation."
        }
       }
-      coords 7.128 -0.304 5.033
+      GenericEntity Pers_TaskKill_HVT_Alttarkallio : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+       coords 1.737 0 -2.33
+      }
+      GenericEntity Layer_TaskKill_HVT_AI_Alttarkallio : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_ONE
+         m_eActivationType ON_TRIGGER_ACTIVATION
+        }
+       }
+       coords -7.693 0.062 -7.775
+       {
+        $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+         Layer_TaskKill_HVT_AI_Alttarkallio_01 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_SpawnChildren RANDOM_MULTIPLE
+            m_iRandomPercent 80
+           }
+          }
+          coords 35.288 -1.656 -88.193
+          {
+           $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            SlotAI_TaskKill_HVT_Alttarkallio_01_01_LFTS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{D376575DF0F74E0A}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_Fireteam_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 5.373 10.435 16.833
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_01_02_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 45.712 1.468 -9.09
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_01_05_LRGS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 131.815 1.862 51.705
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_01_03_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 102.748 -1.412 106.457
+             angleY 178.77
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_01_04_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 53.371 1.779 133.188
+            }
+           }
+          }
+         }
+         Layer_TaskKill_HVT_AI_Alttarkallio_02 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_SpawnChildren RANDOM_MULTIPLE
+            m_iRandomPercent 66
+           }
+          }
+          coords 49.227 -2.167 -101.079
+          {
+           $grp GenericEntity : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            SlotAI_TaskKill_HVT_Alttarkallio_02_01_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 103.015 2.639 22.434
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_02_02_WR {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{4138FD2E82F6E645}Prefabs/Systems/AmbientPatrol/Wait/PR_AmbientPatrolSpawnpoint_USSR_Wait_RandomOneUnit.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 30.949 6.337 129.521
+            }
+            SlotAI_TaskKill_HVT_Alttarkallio_02_03_LRGS {
+             components {
+              SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+               m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+               m_fPerceptionFactor 0.75
+              }
+             }
+             coords 54.197 -0.142 19.793
+            }
+           }
+          }
+         }
+         Layer_TaskKill_HVT_AI_Alttarkallio_03 {
+          components {
+           SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+            m_iRandomPercent 0
+           }
+          }
+          coords 41.047 -2.867 -100.777
+          {
+           GenericEntity SlotAI_TaskKill_HVT_Alttarkallio_03_01_LRGS : "{8D43830F02C3F114}Prefabs/ScenarioFramework/Components/SlotAI.et" {
+            components {
+             SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+              m_sObjectToSpawn "{FF11E1D5DF21702B}Prefabs/Systems/AmbientPatrol/Loiter_Large/PR_AmbientPatrolSpawnpoint_USSR_Loiter_RandomGroup_scaled.et"
+              m_fPerceptionFactor 0.75
+             }
+            }
+            coords 54.484 1.146 49.542
+           }
+          }
+         }
+        }
+       }
+      }
+      GenericEntity TaskKill_HVT_MoveCollection_Alttarkallio : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+       coords -7.187 0.063 -7.429
+       {
+        $grp GenericEntity {
+         TaskKill_HVT_Alttarkallio_move_02 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 107.541 -0.406 -36.56
+         }
+         TaskKill_HVT_Alttarkallio_move_03 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 139.831 -0.058 -19.881
+         }
+         TaskKill_HVT_Alttarkallio_move_04 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 141.183 -0.118 -21.473
+         }
+         TaskKill_HVT_Alttarkallio_move_05 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 132.116 -0.784 -65.374
+          angleY 165.509
+         }
+         TaskKill_HVT_Alttarkallio_move_06 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 134.187 -0.945 -65.134
+          angleY -137.405
+         }
+         TaskKill_HVT_Alttarkallio_move_07 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 114.435 -0.695 -42.646
+         }
+         TaskKill_HVT_Alttarkallio_move_08 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 162.391 0.001 -46.289
+         }
+         TaskKill_HVT_Alttarkallio_move_09 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 163.051 2.607 -97.81
+         }
+         TaskKill_HVT_Alttarkallio_move_10 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 149.707 -0.988 0.016
+         }
+         TaskKill_HVT_Alttarkallio_move_11 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 120.251 0.326 -19.047
+         }
+         TaskKill_HVT_Alttarkallio_move_12 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 100.431 -2.81 -95.725
+         }
+         TaskKill_HVT_Alttarkallio_move_13 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 100.248 -0.315 -19.489
+         }
+         TaskKill_HVT_Alttarkallio_move_01 {
+          components {
+           Hierarchy "{613802B54F5287D4}" {
+           }
+          }
+          coords 104.967 -0.433 -35.409
+          angleX 2.681
+          angleY -0.084
+          angleZ -1.792
+         }
+        }
+       }
+      }
+     }
+    }
+    Layer_TaskKill_HVT_Alttarkallio_Deliver {
+     coords 98.397 0 -76.338
+     {
+      PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Alttarkallio_Deliver {
+       components {
+        Hierarchy "{61A27039B18CFD04}" {
+        }
+       }
+       coords -10.783 -0.646 -19.931
+       TriggerShapeType Sphere
+       SphereRadius 1
+       DrawShape 1
+       ShapeColor 0.046 0 1 0.078
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_TaskKill_HVT_Alttarkallio_Deliver"
+       m_bNeutralizePersistentObject 1
+       m_ActivationPresence ANY_CHARACTER
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61A2703376DA904C}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_Opt_TaskKill_HVT_Alttarkallio"
+        }
+       }
+       m_iDelayTimerMin 5
+       m_aIndividualTasks {
+        PR_TaskDetails "{613802B2DA10B658}" {
+         m_sTaskName "TaskKill_HVT_Alttarkallio_Deliver"
+         m_bUsePersistentTask 1
+         m_sPersistentTaskObject "Pers_TaskKill_HVT_Alttarkallio_Deliver"
+         m_bNeutralizePersistentTaskObject 1
+         m_bUseMoveTaskDestination 1
+         m_aTaskMoveDetails {
+          PR_MoveTask "{61A27034685078F8}" {
+           m_sTaskSectionToMove "SlotMoveTo_TaskKill_HVT_Alttarkallio_Deliver"
+           m_sMoveSectionToRandomBases {
+            1
+           }
+           m_bInsertBaseNameInTaskInfos 1
+           m_sAdditionalObjectsToMove {
+            "Opt_TaskKill_HVT_Alttarkallio_Deliver"
+           }
+          }
+         }
+        }
+       }
+      }
+      PR_TaskOptimizerTrigger Opt_TaskKill_HVT_Alttarkallio_Deliver {
+       coords 1.66 -2.132 -1.592
+       TriggerShapeType Sphere
+       SphereRadius 10
+       DrawShape 1
+       ShapeColor 0 0.502 0.502 0.098
+       TriggerActivationType "First change"
+       PeriodicQueries 1
+       UpdatePeriod 5
+       m_bDebugLogs 1
+       m_bUsePersistence 1
+       m_sPersistentObject "Pers_Opt_TaskKill_HVT_Alttarkallio_Deliver"
+       m_bNeutralizePersistentObject 1
+       m_aOverrideOptions {
+        PR_OverrideTriggerActivation "{61917DF60E955557}" {
+         m_bOverrideActivationPresence 1
+         m_bActivateIfObjectMissing 1
+         m_sMissingObjectName "Pers_TaskKill_HVT_Alttarkallio_Deliver2"
+        }
+       }
+       m_iDelayTimerMin 10
+       m_sTaskName "Opt_TaskKill_HVT_Alttarkallio_Deliver"
+       m_PlayerXPTaskReward "Deliver Supplies (40)"
+       m_fXPMultiplier 1.25
+       m_sTaskFailObject "Pers_Fail_TaskKill_HVT_Alttarkallio_Deliver"
+       m_aRemovePrefabDetails {
+        PR_RemovePrefabFilter "{61917DF7D7EFE342}" {
+         m_aSpecificPrefabNames {
+          "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
+         }
+        }
+       }
+       {
+        $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+         Pers_Opt_TaskKill_HVT_Alttarkallio_Deliver {
+          coords -12.062 -0.001 -7.016
+         }
+         Pers_Fail_TaskKill_HVT_Alttarkallio_Deliver {
+          coords -12.105 0 -7.254
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+       Pers_TaskKill_HVT_Alttarkallio_Deliver2 {
+        coords -5.578 -2.218 -5.998
+       }
+       Pers_TaskKill_HVT_Alttarkallio_Deliver {
+        coords -3.231 -1.378 -6.505
+       }
+      }
+      GenericEntity TaskKill_HVT_Alttarkallio_Deliver : "{BBB4E7BB4416F6B3}Prefabs/ScenarioFramework/Compositions/LayerTasks/TaskDeliverVehicles.et" {
+       components {
+        SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+         m_eActivationType ON_TRIGGER_ACTIVATION
+         m_aActivationActions {
+          SCR_ScenarioFrameworkActionPlaySound "{61634CC387F1B9AC}" {
+           m_sSound "SOUND_HUD_TASK_CREATED"
+          }
+         }
+         m_aTriggerActionsOnFinish {
+          SCR_ScenarioFrameworkActionPlaySound "{61634CC39E19E8BB}" {
+           m_sSound "SOUND_HUD_TASK_SUCCEEDED"
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3AF84D298}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3B3FC882E}" {
+            m_sEntityName "TaskKill_HVT_Alttarkallio_Deliver"
+           }
+          }
+          SCR_ScenarioFrameworkActionDeleteEntity "{61634CC3ED53FF9D}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{61634CC3F1406655}" {
+            m_sEntityName "Pers_TaskKill_HVT_Alttarkallio_Deliver2"
+           }
+          }
+         }
+        }
+       }
+       coords -5.418 -1.827 -6.645
+       {
+        GenericEntity SlotMoveTo_TaskKill_HVT_Alttarkallio_Deliver {
+         ID "5E74C90E3ED35D79"
+         components {
+          SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+           m_aPlugins {
+            SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+             m_fAreaRadius 3.5
+             m_aCustomTriggerConditions {
+              SCR_CustomTriggerConditionsSpecificPrefabCount "{5E08A5E0E8C1E186}" {
+               m_aPrefabFilter {
+                SCR_ScenarioFrameworkPrefabFilterCount "{5E2C864E2C9ACE06}" {
+                 m_sSpecificPrefabName "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
+                 m_iPrefabCount 1
+                }
+                SCR_ScenarioFrameworkPrefabFilterCount "{5E2E66CF825C781C}" {
+                 m_iPrefabCount 0
+                }
+               }
+              }
+             }
+             m_bSearchVehicleInventory 0
+            }
+           }
+           m_sTaskTitle "Deliver RTO Radio Alttarkallio"
+           m_sTaskDescription "Now that you have elimated the RTO Operator, recover his radio backpack and deliver it to base %2 for further evaluation."
+          }
+         }
+         coords 7.128 -0.304 5.033
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity Props_Alttarkallio : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
+    components {
+     Hierarchy "{61B4318A233903BF}" {
+     }
+    }
+    coords 108.964 -0.564 -48.088
+    {
+     GenericEntity Tent_Alttarkallio_01 : "{1B48219F84D1D00B}Prefabs/Props/Recreation/Camp/TentBig_02/TentBig_02_green.et" {
+      components {
+       RplComponent "{5624A88DC2D9928D}" {
+        Enabled 1
+       }
+       Hierarchy "{61A36774AA73C51A}" {
+       }
+      }
+      coords -10.084 0.194 4.511
+      angleX 0.073
+      angleY 122.39
+      angleZ 3.224
+     }
+     StaticModelEntity : "{42417A541F82B0F9}Prefabs/Compositions/Misc/SubCompositions/ChairMilitary_Cluttered_USSR_01.et" {
+      coords -3.122 -0.09 -2.765
+      angleX 1.816
+      angleY 31.655
+      angleZ 2.169
+     }
+     GenericEntity : "{44B0452B22B51743}Prefabs/Props/Furniture/ChairRecreation_01/ChairRecreation_01_base.et" {
+      components {
+       Hierarchy "{61A36774C7988CC7}" {
+       }
+      }
+      coords -2.396 -0.077 -2.342
+      angleX -3.476
+      angleY 146.491
+      angleZ 1.228
+     }
+     GenericEntity Tent_Alttarkallio_02 : "{9E026C6D62171AF3}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_blue.et" {
+      components {
+       RplComponent "{5624A88DC2D9928D}" {
+        Enabled 1
+       }
+       Hierarchy "{61A36774AD371297}" {
+       }
+      }
+      coords 16.929 -0.226 -24.407
+      angleX -4.064
+      angleY -10.593
+      angleZ 2.575
+     }
+     GenericEntity Tent_Alttarkallio_03 : "{CC98E67AC15E257D}Prefabs/Props/Recreation/Camp/TentBig_01/TentBig_01_orange.et" {
+      components {
+       RplComponent "{5624A88DC2D9928D}" {
+        Enabled 1
+       }
+       Hierarchy "{61A36774A317FB0A}" {
+       }
+      }
+      coords 24.621 0.53 20.226
+      angleX 0.478
+      angleY -139.61
+      angleZ -1.943
+     }
+     GameEntity : "{D9842C11742C00CF}Prefabs/Props/Civilian/Fireplace_01.et" {
+      components {
+       Hierarchy "{61A36774B5C48A02}" {
+       }
+      }
+      coords -0.865 -0.199 -4.319
+      angleX 2.682
+      angleY 0.084
+      angleZ 0.898
      }
     }
    }

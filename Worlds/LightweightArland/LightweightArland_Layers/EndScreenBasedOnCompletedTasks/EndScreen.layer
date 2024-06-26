@@ -1,0 +1,325 @@
+$grp SCR_DestructibleEntity : "{419130031F0009C9}Prefabs/Structures/Walls/Brick/BrickWall_01/BrickWall_01_4m.et" {
+ {
+  coords 1133.536 0 2336.269
+  angleY -64.386
+ }
+ {
+  coords 1130.17 0 2336.413
+ }
+ {
+  coords 1131.771 0 2341.63
+  angleY 24.055
+ }
+ {
+  coords 1130.43 0 2337.044
+  angleY -64.386
+ }
+}
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Area.et" {
+ Kill {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iRandomPercent 100
+    m_bShowDebugShapesDuringRuntime 1
+    m_sTriggerResource "{9DB5EBFFEC1A54B4}Prefabs/ScenarioFramework/Triggers/TriggerAnyPlayerSlow.et"
+    m_fAreaRadius 80
+   }
+  }
+  coords 1138.17 39 2337.261
+  {
+   GenericEntity LayerTaskKill1 : "{2008B4EE6C4D528E}Prefabs/ScenarioFramework/Components/LayerTaskKill.et" {
+    coords -4.757 0.118 1.404
+    {
+     GenericEntity Layer4 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      coords 0.096 -0.004 -0.039
+      {
+       GenericEntity SlotKill1 : "{C70DC6CBD1AAEC9A}Prefabs/ScenarioFramework/Components/SlotKill.et" {
+        components {
+         SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+          m_sObjectToSpawn "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+         }
+        }
+        coords -0.07 -0.001 0.01
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ Move {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesDuringRuntime 1
+   }
+  }
+  coords 1109.54 39 2341.462
+  {
+   GenericEntity LayerTaskMove1 : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+    coords -1.076 0.167 -4.739
+    {
+     GenericEntity SlotMoveTo1 : "{A44004A770A5D8BE}Prefabs/ScenarioFramework/Components/SlotMoveTo.et" {
+      components {
+       SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+        m_bShowDebugShapesDuringRuntime 1
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+          m_eActivationPresence PLAYER
+         }
+        }
+       }
+      }
+      coords 0.122 0.012 -0.784
+     }
+    }
+   }
+  }
+ }
+ Extraction {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iRandomPercent 100
+    m_bShowDebugShapesDuringRuntime 1
+   }
+  }
+  coords 1117.773 39 2374.027
+  {
+   GenericEntity TaskExtraction_A : "{246BEC080F393398}Prefabs/ScenarioFramework/Components/LayerTaskMove.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_iRandomPercent 100
+      m_bShowDebugShapesDuringRuntime 1
+      m_sTaskTitle "#AR-CombatScenario_ExfilTask_Title"
+      m_sTaskDescription "#AR-CombatScenario_ExfilTask_Description_NoLimit"
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionEndMission "{5A6D34926E5735E2}" {
+       }
+      }
+     }
+    }
+    coords 81.093 0.232 64.021
+    {
+     GenericEntity ext_A : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+      components {
+       SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+        m_iRandomPercent 100
+       }
+      }
+      coords -78.459 -0.232 -65.154
+      {
+       GenericEntity SlotDelivery_1 : "{4C2EF5C1E53FE511}Prefabs/ScenarioFramework/Components/SlotDelivery.et" {
+        components {
+         SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+          m_iRandomPercent 100
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
+            m_fAreaRadius 15
+            m_bOnce 0
+           }
+          }
+          m_aAssociatedTaskLayers {
+           "D_Documents"
+          }
+         }
+        }
+        coords -0.89 0.039 -1.241
+       }
+       GenericEntity SlotExtraction_1 : "{9C47DECB98FDA4DA}Prefabs/ScenarioFramework/Components/SlotExtraction.et" {
+        components {
+         SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+          m_sFactionKey "US"
+          m_iRandomPercent 100
+          m_bShowDebugShapesDuringRuntime 1
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+            m_fAreaRadius 10
+            m_eActivationPresence PLAYER
+            m_fActivationCountdownTimer 10
+            m_bNotificationEnabled 1
+            m_sPlayerActivationNotificationTitle "#AR-CombatScenario_ExfilTrigger_Notification"
+           }
+          }
+          m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/ScenarioFramework/Triggers/TriggerCharacterSlow.et"
+          m_sTaskTitle "#AR-CombatScenario_ExfilTask_Title"
+          m_sTaskDescription "#AR-CombatScenario_ExfilTask_Description_NoLimit"
+          m_aActionsOnFinished {
+           SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+            m_sSound "SOUND_CPTEC"
+           }
+          }
+         }
+        }
+        coords -0.89 0 -1.241
+       }
+       GenericEntity Slot_1 : "{AA01691FDC4E9167}Prefabs/ScenarioFramework/Components/Slot.et" {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_iRandomPercent 100
+          m_sObjectToSpawn "{EFFA90623A05EB25}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V2_US.et"
+         }
+        }
+        coords -0.89 -0.151 -1.241
+       }
+      }
+     }
+    }
+   }
+   SCR_ScenarioFrameworkLogicCounter endScreenCounter : "{6C1792C71DCAFD55}Prefabs/ScenarioFramework/Components/LogicCounter.et" {
+    coords 3082.39 -39 2361.928
+    m_aInputs {
+     SCR_ScenarioFrameworkLogicInput "{5AFC76BAFF67026C}" {
+      m_InputAction SCR_ScenarioFrameworkActionInputOnTaskEventIncreaseCounter "{5C6E78B543A59AC5}" {
+      }
+     }
+    }
+    m_iCountTo 4
+    m_aOnIncreaseActions {
+     SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA791531CC}" {
+      m_eComparisonOperator EQUAL
+      m_iValue 1
+      m_sCounterName "endScreenCounter"
+      m_aActions {
+       SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA69848A2A}" {
+        m_eGameOverType COMBATPATROL_DRAW
+       }
+      }
+     }
+     SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA675DC4B2}" {
+      m_eComparisonOperator EQUAL
+      m_iValue 2
+      m_sCounterName "endScreenCounter"
+      m_aActions {
+       SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA9C1F5FF9}" {
+        m_eGameOverType COMBATPATROL_PARTIAL_SUCCESS
+       }
+      }
+     }
+     SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA940387A7}" {
+      m_eComparisonOperator GREATER_OR_EQUAL
+      m_iValue 3
+      m_sCounterName "endScreenCounter"
+      m_aActions {
+       SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA86B567FB}" {
+        m_eGameOverType COMBATPATROL_VICTORY
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ Documents {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_iRandomPercent 100
+    m_bShowDebugShapesDuringRuntime 1
+   }
+  }
+  coords 1113.817 39 2348.454
+  {
+   $grp GenericEntity : "{88821DCA414AF4C7}Prefabs/ScenarioFramework/Components/LayerTaskDeliver.et" {
+    D_Documents {
+     components {
+      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+       m_iRandomPercent 100
+       m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+       m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+       m_bPlaceMarkerOnSubjectSlot 1
+       m_sTaskTitleUpdated "Deliver Intel"
+       m_sTaskDescriptionUpdated "#AR-CombatScenario_Intel_Description_D"
+      }
+     }
+     coords -0.956 0 2.567
+     {
+      GenericEntity Layer2 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_iRandomPercent 100
+        }
+       }
+       coords -0.956 0 2.567
+       {
+        GenericEntity SlotPick1 : "{9F70B00322910AED}Prefabs/ScenarioFramework/Components/SlotPick.et" {
+         components {
+          SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+           m_iRandomPercent 100
+           m_sObjectToSpawn "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et"
+           m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+           m_aActionsOnProgress {
+            SCR_ScenarioFrameworkActionIncrementCounter "{5AE4A08121540F5E}" {
+             m_sCounterName "LogicCounter_DocumentSound4"
+            }
+           }
+           m_sTaskTitleUpdated1 "Deliver Intel"
+           m_sTaskDescriptionUpdated1 "#AR-CombatScenario_Intel_Description_E"
+           m_sTaskTitleUpdated2 "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescriptionUpdated2 "#AR-CombatScenario_Intel_Description_D"
+          }
+         }
+         coords 1.148 0 -2.523
+         angleY -22.479
+         angleZ 0.149
+        }
+       }
+      }
+     }
+    }
+    D_Documents2 {
+     components {
+      SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+       m_iRandomPercent 100
+       m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+       m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+       m_bPlaceMarkerOnSubjectSlot 1
+       m_sTaskTitleUpdated "Deliver Intel"
+       m_sTaskDescriptionUpdated "#AR-CombatScenario_Intel_Description_D"
+      }
+     }
+     coords -9.55 0 2.047
+     {
+      GenericEntity Layer3 : "{5F9FFF4BF027B3A3}Prefabs/ScenarioFramework/Components/Layer.et" {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_iRandomPercent 100
+        }
+       }
+       coords -0.956 0 2.567
+       {
+        GenericEntity SlotPick2 : "{9F70B00322910AED}Prefabs/ScenarioFramework/Components/SlotPick.et" {
+         components {
+          SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+           m_iRandomPercent 100
+           m_sObjectToSpawn "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et"
+           m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+           m_aActionsOnProgress {
+            SCR_ScenarioFrameworkActionEndMission "{5AF89DA3B6DA45B5}" {
+            }
+           }
+           m_sTaskTitleUpdated1 "Deliver Intel"
+           m_sTaskDescriptionUpdated1 "#AR-CombatScenario_Intel_Description_E"
+           m_sTaskTitleUpdated2 "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescriptionUpdated2 "#AR-CombatScenario_Intel_Description_D"
+          }
+         }
+         coords 1.691 0.129 -4.159
+         angleY -22.479
+        }
+        GenericEntity Slot2 : "{AA01691FDC4E9167}Prefabs/ScenarioFramework/Components/Slot.et" {
+         components {
+          SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+           m_iRandomPercent 100
+           m_sObjectToSpawn "{6B0010136E4CDFEE}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V2_USSR.et"
+          }
+         }
+         coords 0.873 0.032 -4.04
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

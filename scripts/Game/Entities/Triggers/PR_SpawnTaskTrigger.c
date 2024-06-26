@@ -326,20 +326,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 							}
 						}
 					}
-
-				/*	if (insertBaseNameInTaskInfos)
-					{
-						foreach (string baseName : combinedBaseArray)
-						{
-							index = GetBaseNames().Find(baseName);
-							Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos / baseName: %3 : index: %4", m_sLogMode, m_sTriggerName, baseName, index), LogLevel.WARNING);
-							if (!index == -1)
-								return;
-
-							UpdateTitles(taskName, index);
-							Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : insertBaseNameInTaskInfos passed / taskName: %3 : index: %4", m_sLogMode, m_sTriggerName, taskName, index), LogLevel.WARNING);
-						}
-					}*/
 				}
 
 				foreach (string baseName : combinedBaseArray)
@@ -350,8 +336,6 @@ class PR_SpawnTaskTrigger : PR_CoreTrigger
 				if (combinedArray.Count() == 0)
 				{
 					m_aTaskMoveRecheckArray.Insert(taskName);
-					//Print(string.Format("[PR_SpawnTaskTrigger] (MoveTaskLocation) %1 : Trigger: %2 : m_aTaskMoveRecheckArray: %3", m_sLogMode, m_sTriggerName, m_aTaskMoveRecheckArray), LogLevel.WARNING);
-					//	return;
 					continue;
 				}
 
