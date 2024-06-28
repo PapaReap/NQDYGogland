@@ -1,8 +1,17 @@
 SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Modes/Conflict/PR_GameMode_CampaignSF.et" {
  components {
-  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
-   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
-    m_sDatabaseName "LightweightArlandTesting"
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 1
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 1
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 1
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 1
+    }
    }
   }
   SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {

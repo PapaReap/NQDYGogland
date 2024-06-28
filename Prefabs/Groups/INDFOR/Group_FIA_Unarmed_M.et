@@ -4,7 +4,7 @@ SCR_AIGroup : "{242BC3C6BCE96EA5}Prefabs/Groups/INDFOR/Group_FIA_Base.et" {
   SCR_EditableGroupComponent "{50D291F6C83FA532}" {
    m_UIInfo SCR_EditableGroupUIInfo "{5298E609432D192D}" {
     Name "#AR-Group_Guerrilla_MGTeam"
-    m_Image "{06D2E53702B60C4B}UI/Textures/EditorPreviews/Groups/INDFOR/Group_FIA_MachineGunTeam.edds"
+    m_Image "{0F62C575785D87CD}UI/Textures/EditorPreviews/Characters/INDFOR/FIA/Character_FIA_Unarmed.edds"
     m_aAuthoredLabels + {
      34 27
     }
@@ -27,7 +27,7 @@ SCR_AIGroup : "{242BC3C6BCE96EA5}Prefabs/Groups/INDFOR/Group_FIA_Base.et" {
   }
   SCR_GroupIdentityComponent "{56366C5C50AD3CF2}" {
    m_MilitarySymbol SCR_MilitarySymbol "{56366C5C4E32A359}" {
-    m_Icons 8193
+    m_Icons 1073741825
     m_Amplifier TEAM
    }
   }

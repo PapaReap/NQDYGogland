@@ -14,6 +14,7 @@ enum PR_ESpawnSideList
 	"US" = 0,				// 0
 	"USSR" = 1,				// 1  default
 	"FIA" = 2,				// 2
+	"CIV" = 3,				// 3
 }
 
 enum PR_EGroupTypeList

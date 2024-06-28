@@ -1,27 +1,6 @@
 SCR_GameModeCampaign : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
  ID "56B2B479C6B96951"
  components {
-  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
-   components {
-    EPF_PersistentDoorStateManagerComponent "{60FD5A50E8047AA0}" {
-    }
-    SCR_RespawnSystemComponent "{60FD5A50034AF59C}" {
-     components {
-      SCR_FreeSpawnHandlerComponent "{60FD5A500ABA4A20}" {
-      }
-      SCR_PossessSpawnHandlerComponent "{60FD5A500D4BD920}" {
-      }
-      SCR_SpawnPointSpawnHandlerComponent "{60FD5A50146190C0}" {
-      }
-     }
-     m_SpawnLogic SCR_MenuSpawnLogic "{60FD5A501E280A9A}" {
-     }
-    }
-   }
-   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
-    m_sDatabaseName "Need_EPF_PersistenceManagerComponetName"
-   }
-  }
   SCR_ArsenalManagerComponent "{60FD5890E213773E}" {
    m_fLoadoutSpawnSupplyCostMultiplier 1
   }
@@ -77,7 +56,6 @@ SCR_GameModeCampaign : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
    m_bPermitUnconsciousVON 1
    m_fTourniquetStrengthMultiplier 0.4
    m_fCompartmentRegenerationRateMultiplier 5
-   m_fRegenerationMaxLoadoutWeight 60
   }
   SCR_GameModeSFManager "{60FD5A50534ED456}" {
    m_aTaskTypesAvailable {
@@ -172,18 +150,6 @@ SCR_GameModeCampaign : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
    }
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
-   Enabled 0
-   components {
-    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
-     Enabled 0
-    }
-    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
-     Enabled 0
-    }
-    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
-     Enabled 0
-    }
-   }
    m_SpawnLogic SCR_MenuSpawnLogic "{60FD5890E213776D}" {
    }
   }
@@ -272,8 +238,6 @@ SCR_GameModeCampaign : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
   SCR_XPHandlerComponent "{60FD5890E214D77E}" {
    m_sXPRewardsConfig "{8227B4636C73C5B5}Configs/Campaign/CampaignXPRewards.conf"
   }
-  SerializerInventoryStorageManagerComponent "{60FD5890E214D77F}" {
-  }
  }
  PlayerControllerPrefab "{D39FCAB93FC4FB02}Prefabs/Characters/Core/DefaultPlayerControllerMP_Campaign.et"
  m_eTestGameFlags 6
@@ -286,5 +250,4 @@ SCR_GameModeCampaign : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
  m_iRegularSuppliesIncomeExtra 1
  m_iMinStartingSupplies 75
  m_iMaxStartingSupplies 250
- m_iSpawnCost 20
 }

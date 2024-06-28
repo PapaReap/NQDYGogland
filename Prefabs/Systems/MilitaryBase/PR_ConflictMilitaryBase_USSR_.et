@@ -1,0 +1,53 @@
+GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ ID "5AFC9B0D8792F4E2"
+ components {
+  SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+   m_iRadius 1150
+   m_bIsControlPoint 1
+  }
+  SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+   m_bIgnoreNonPlayableAttackers 0
+   m_bShowNotifications 1
+   m_fExtraTimePerService 50
+  }
+  SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+   m_iSupplies 175
+  }
+  SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+   Transceivers {
+    RelayTransceiver "{5C669673E8C94083}" {
+     "Transmitting Range" 400
+    }
+   }
+  }
+  SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+   "faction affiliation" "USSR"
+  }
+  SCR_ResourceComponent "{5D587B89D3599C99}" {
+   m_aGenerators {
+    SCR_ResourceGenerator "{5D587B8946012988}" {
+     m_fStorageRange 2
+    }
+   }
+  }
+ }
+ coords 4737.814 7.844 10778.158
+ {
+  GenericEntity {
+   ID "5CCED514A5908822"
+   components {
+    SCR_FactionAffiliationComponent "{5CCEC6039525B984}" {
+     "faction affiliation" "USSR"
+    }
+   }
+  }
+  GenericEntity {
+   ID "606078EE23DE48AC"
+   components {
+    SCR_FactionAffiliationComponent "{5CCEC6039525B984}" {
+     "faction affiliation" "USSR"
+    }
+   }
+  }
+ }
+}

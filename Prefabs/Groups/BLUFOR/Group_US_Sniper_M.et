@@ -4,7 +4,7 @@ SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Base.et" {
   SCR_EditableGroupComponent "{50D291F6C83FA532}" {
    m_UIInfo SCR_EditableGroupUIInfo "{5298E609432D192D}" {
     Name "#AR-Group_SniperTeam"
-    m_Image "{BC3B6D475EFE3C31}UI/Textures/EditorPreviews/Groups/BLUFOR/Group_US_SniperTeam.edds"
+    m_Image "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
     m_aAuthoredLabels + {
      70 33 35 38
     }
@@ -22,6 +22,11 @@ SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Base.et" {
      m_Icons 0
      m_Amplifier NONE
     }
+   }
+  }
+  SCR_GroupIdentityComponent "{56366C5C50AD3CF2}" {
+   m_MilitarySymbol SCR_MilitarySymbol "{56366C5C4E32A359}" {
+    m_Icons 16385
    }
   }
   SCR_PreviewEntityComponent "{56FCFAC0D2308C87}" : "{6CADA7A88A6265FD}Prefabs/Editor/Components/PreviewEntityComponentClass.ct" {

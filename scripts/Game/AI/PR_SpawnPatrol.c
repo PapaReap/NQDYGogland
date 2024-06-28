@@ -107,7 +107,7 @@ class PR_SpawnPatrol
 		int groupFormation = intArray.Get(10);
 
 		string m_SpawnGroup = GetGroupToSpawn(spawnSide, groupType);
-
+		Print(string.Format("[PR_SpawnPatrolTrigger2] m_SpawnGroup: %1", m_SpawnGroup), LogLevel.WARNING);
 		SetPersistentObject(persistentObject);
 		
 		//--- Generate the resource
@@ -119,6 +119,7 @@ class PR_SpawnPatrol
 			return;
 		}
 
+		Print(string.Format("[PR_SpawnPatrolTrigger2] resource: %1", resource), LogLevel.WARNING);
 		//--- Generate spawn parameters and spawn the group
 		m_Group = SCR_AIGroup.Cast(GetGame().SpawnEntityPrefab(resource, null, GenerateSpawnParameters(spawnPosition)));
 
@@ -1179,61 +1180,161 @@ class PR_SpawnPatrol
 		{
 			switch (groupType)
 			{
-				case 0: // Machine Gun Man
+				case 0: // Man: AR (1)
 				{
-					return "{543E9CAF67ED912D}Prefabs/Groups/BLUFOR/Group_US_MG_M.et"; // modded
+					return "{C153572E4A1724B4}Prefabs/Groups/BLUFOR/Group_US_AR_M.et"; // modded
 				};
-				case 1: // Sniper Man
+				case 1: // Man: AT (1)
 				{
-					return "{DF2F568D5A2A8F13}Prefabs/Groups/BLUFOR/Group_US_Sniper_M.et"; // modded
+					return "{7C8305A9350C38AA}Prefabs/Groups/BLUFOR/Group_US_AT_M.et"; // modded
 				};
-				case 2: // GL Man
+				case 2: // Man: GL (1)
 				{
 					return "{1B692CF8F695C2FA}Prefabs/Groups/BLUFOR/Group_US_GL_M.et"; // modded
 				};
-				case 3: // Unarmed Man
+				case 3: // Man: MG (1)
+				{
+					return "{543E9CAF67ED912D}Prefabs/Groups/BLUFOR/Group_US_MG_M.et"; // modded
+				};
+				case 4: // Man: Medic (1)
+				{
+					return "{EB297CF916CF1277}Prefabs/Groups/BLUFOR/Group_US_Medic_M.et"; // modded
+				};
+				case 5: // Man: Officer (1)
+				{
+					return "{1671C06D39508596}Prefabs/Groups/BLUFOR/Group_US_Officer_M.et"; // modded
+				};
+				case 6: // Man: Randomized (1)
+				{
+					return "{5F0B6659A5594AB1}Prefabs/Groups/BLUFOR/Group_US_Randomized_M.et"; // modded
+				};
+				case 7: // Man: Rifleman (1)
+				{
+					return "{1C6439B48BCA6D77}Prefabs/Groups/BLUFOR/Group_US_Rifleman_M.et"; // modded
+				};
+				case 8: // Man: RTO (1)
+				{
+					return "{C246071DBF6AD7D9}Prefabs/Groups/BLUFOR/Group_US_RTO_M.et"; // modded
+				};
+				case 9: // Man: Sapper (1)
+				{
+					return "{ABE8F3539944B6BD}Prefabs/Groups/BLUFOR/Group_US_Sapper_M.et"; // modded
+				};
+				case 10: // Man: Sniper (1)
+				{
+					return "{DF2F568D5A2A8F13}Prefabs/Groups/BLUFOR/Group_US_Sniper_M.et"; // modded
+				};
+				case 11: // Man: Spotter (1)
+				{
+					return "{7A32D63CD61C9C60}Prefabs/Groups/BLUFOR/Group_US_Spotter_M.et"; // modded
+				};
+				case 12: // Man: SL (1)
+				{
+					return "{64D6EFA39E5190DE}Prefabs/Groups/BLUFOR/Group_US_SL_M.et"; // modded
+				};
+				case 13: // Man: Unarmed (1)
 				{
 					return "{71379F19E18ED274}Prefabs/Groups/BLUFOR/Group_US_Unarmed_M.et"; // modded
 				};
-				case 4: // Fire Team
+				case 14: // Man SF: Grenadier (1)
 				{
-					return "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et";
+					return "{4ACCB999D9E24889}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Grenadier_M.et"; // modded
 				};
-				case 5: // Light Fire Team
+				case 15: // Man SF: LMG (1)
 				{
-					return "{FCF7F5DC4F83955C}Prefabs/Groups/BLUFOR/Group_US_LightFireTeam.et";
+					return "{B9339A61F368AB3C}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_LMG_M.et"; // modded
 				};
-				case 6: // Machine Gun Team
+				case 16: // Man SF: Medic (1)
 				{
-					return "{958039B857396B7B}Prefabs/Groups/BLUFOR/Group_US_MachineGunTeam.et";
+					return "{3CF7506E3F5873B4}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Medic_M.et"; // modded
 				};
-				case 7: // Medical Section
+				case 17: // Man SF: Officer (1)
 				{
-					return "{EF62027CC75A7459}Prefabs/Groups/BLUFOR/Group_US_MedicalSection.et";
+					return "{AB87CDAB4444D3E1}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Officer_M.et"; // modded
 				};
-				case 8: // Rifle Squad
+				case 18: // Man SF: Rifleman (1)
 				{
-					return "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et";
+					return "{2F71D82DE8A1E379}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Rifleman_M.et"; // modded
 				};
-				case 9: // Sentry Team
+				case 19: // Man SF: RTO (1)
 				{
-					return "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et";
+					return "{BF9204E1603997ED}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_RTO_M.et"; // modded
 				};
-				case 10: // AT Team
+				case 20: // Man SF: Sapper (1)
+				{
+					return "{B124BF29FDE612DA}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Sapper_M.et"; // modded
+				};
+				case 21: // Man SF: Sharpshooter (1)
+				{
+					return "{7579F08D3CFFE330}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Sharpshooter_M.et"; // modded
+				};
+				case 22: // Man SF: SL (1)
+				{
+					return "{E29113E030AE676B}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_SL_M.et"; // modded
+				};
+				case 23: // Group: Ammo Team (4)
+				{
+					return "{F72EF3429D8C8DF5}Prefabs/Groups/BLUFOR/Group_US_AmmoTeam.et";
+				};
+				case 24: // Group: AT Team (4)
 				{
 					return "{FAEA8B9E1252F56E}Prefabs/Groups/BLUFOR/Group_US_Team_LAT.et";
 				};
-				case 11: // Sniper Team
+				case 25: // Group: Fire Team (4)
 				{
-					return "{D807C7047E818488}Prefabs/Groups/BLUFOR/Group_US_SniperTeam.et";
+					return "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et";
 				};
-				case 12: // GL Team
+				case 26: // Group: Light Fire Team (4)
+				{
+					return "{FCF7F5DC4F83955C}Prefabs/Groups/BLUFOR/Group_US_LightFireTeam.et";
+				};
+				case 27: // Group: GL Team (2)
 				{
 					return "{DE747BC9217D383C}Prefabs/Groups/BLUFOR/Group_US_Team_GL.et";
 				};
-				case 13: // Suppress Team
+				case 28: // Group: MG Team (2)
+				{
+					return "{958039B857396B7B}Prefabs/Groups/BLUFOR/Group_US_MachineGunTeam.et";
+				};
+				case 29: // Group: Medical Section (2)
+				{
+					return "{EF62027CC75A7459}Prefabs/Groups/BLUFOR/Group_US_MedicalSection.et";
+				};
+				case 30: // Group: Platoon HQ (4)
+				{
+					return "{B7AB5D3F8A7ADAE4}Prefabs/Groups/BLUFOR/Group_US_PlatoonHQ.et";
+				};
+				case 31: // Group: Recon Team (2)
+				{
+					return "{F65B7BB712F46FEE}Prefabs/Groups/BLUFOR/Group_US_ReconTeam.et";
+				};
+				case 32: // Group: Rifle Squad (9)
+				{
+					return "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et";
+				};
+				case 33: // Group: Sapper Team (2)
+				{
+					return "{9624D2B39397E148}Prefabs/Groups/BLUFOR/Group_US_SapperTeam.et";
+				};
+				case 34: // Group: Sentry Team (2)
+				{
+					return "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et";
+				};
+				case 35: // Group: Sniper Team (2)
+				{
+					return "{D807C7047E818488}Prefabs/Groups/BLUFOR/Group_US_SniperTeam.et";
+				};
+				case 36: // Group: Suppress Team (4)
 				{
 					return "{81B6DBF2B88545F5}Prefabs/Groups/BLUFOR/Group_US_Team_Suppress.et";
+				};
+				case 37: // Group SF: Sentry Team (2)
+				{
+					return "{35681BE27C302FF5}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_GreenBeret_SentryTeam.et";
+				};
+				case 38: // Group SF: Squad (6)
+				{
+					return "{D0886786634E55AE}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_GreenBeret_Squad.et";
 				};
 				default:
 				{
@@ -1247,62 +1348,163 @@ class PR_SpawnPatrol
 			{
 				switch (groupType)
 				{
-					case 0: // Machine Gun Man
+					case 0: // Man: AR (1)
 					{
-						return "{B50B7BF31273C2A6}Prefabs/Groups/OPFOR/Group_USSR_MG_M.et"; // modded
+						return "{C153572E4A1724B4}Prefabs/Groups/BLUFOR/Group_US_AR_M.et"; // modded
 					};
-					case 1: // Sniper Man
+					case 1: // Man: AT (1)
 					{
-						return "{429C8FCA9031B8D7}Prefabs/Groups/OPFOR/Group_USSR_Sniper_M.et"; // modded
+						return "{7C8305A9350C38AA}Prefabs/Groups/BLUFOR/Group_US_AT_M.et"; // modded
 					};
-					case 2: // GL Man
+					case 2: // Man: GL (1)
 					{
-						return "{24E78E5A255B17A0}Prefabs/Groups/OPFOR/Group_USSR_GL_M.et"; // modded
+						return "{1B692CF8F695C2FA}Prefabs/Groups/BLUFOR/Group_US_GL_M.et"; // modded
 					};
-					case 3: // Unarmed Man
+					case 3: // Man: MG (1)
 					{
-						return "{CB8C0EC8AC47E4A4}Prefabs/Groups/OPFOR/Group_USSR_Unarmed_M.et"; // modded
+						return "{543E9CAF67ED912D}Prefabs/Groups/BLUFOR/Group_US_MG_M.et"; // modded
 					};
-					case 4: // Fire Team
+					case 4: // Man: Medic (1)
 					{
-						return "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et";
+						return "{EB297CF916CF1277}Prefabs/Groups/BLUFOR/Group_US_Medic_M.et"; // modded
 					};
-					case 5: // Light Fire Team
+					case 5: // Man: Officer (1)
 					{
-						return "{657590C1EC9E27D3}Prefabs/Groups/OPFOR/Group_USSR_LightFireTeam.et";
+						return "{1671C06D39508596}Prefabs/Groups/BLUFOR/Group_US_Officer_M.et"; // modded
 					};
-					case 6: // Machine Gun Team
+					case 6: // Man: Randomized (1)
 					{
-						return "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et";
+						return "{5F0B6659A5594AB1}Prefabs/Groups/BLUFOR/Group_US_Randomized_M.et"; // modded
 					};
-					case 7: // Medical Section
+					case 7: // Man: Rifleman (1)
 					{
-						return "{D815658156080328}Prefabs/Groups/OPFOR/Group_USSR_MedicalSection.et";
+						return "{1C6439B48BCA6D77}Prefabs/Groups/BLUFOR/Group_US_Rifleman_M.et"; // modded
 					};
-					case 8: // Rifle Squad
+					case 8: // Man: RTO (1)
 					{
-						return "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et";
+						return "{C246071DBF6AD7D9}Prefabs/Groups/BLUFOR/Group_US_RTO_M.et"; // modded
 					};
-					case 9: // Sentry Team
+					case 9: // Man: Sapper (1)
 					{
-						return "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et";
+						return "{ABE8F3539944B6BD}Prefabs/Groups/BLUFOR/Group_US_Sapper_M.et"; // modded
 					};
-					case 10: // AT Team
+					case 10: // Man: Sniper (1)
 					{
-						return "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et";
+						return "{DF2F568D5A2A8F13}Prefabs/Groups/BLUFOR/Group_US_Sniper_M.et"; // modded
 					};
-					case 11: // Sniper Team
+					case 11: // Man: Spotter (1)
 					{
-						return "{28AC75D434F61AEC}Prefabs/Groups/OPFOR/Group_USSR_SniperTeam.et"; // modded
+						return "{7A32D63CD61C9C60}Prefabs/Groups/BLUFOR/Group_US_Spotter_M.et"; // modded
 					};
-					case 12: // GL Team
+					case 12: // Man: SL (1)
 					{
-						return "{43C7A28EEB660FF8}Prefabs/Groups/OPFOR/Group_USSR_Team_GL.et";
+						return "{64D6EFA39E5190DE}Prefabs/Groups/BLUFOR/Group_US_SL_M.et"; // modded
 					};
-					case 13: // Suppress Team
+					case 13: // Man: Unarmed (1)
 					{
-						return "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et";
+						return "{71379F19E18ED274}Prefabs/Groups/BLUFOR/Group_US_Unarmed_M.et"; // modded
 					};
+					case 14: // Man SF: Grenadier (1)
+					{
+						return "{4ACCB999D9E24889}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Grenadier_M.et"; // modded
+					};
+					case 15: // Man SF: LMG (1)
+					{
+						return "{B9339A61F368AB3C}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_LMG_M.et"; // modded
+					};
+					case 16: // Man SF: Medic (1)
+					{
+						return "{3CF7506E3F5873B4}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Medic_M.et"; // modded
+					};
+					case 17: // Man SF: Officer (1)
+					{
+						return "{AB87CDAB4444D3E1}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Officer_M.et"; // modded
+					};
+					case 18: // Man SF: Rifleman (1)
+					{
+						return "{2F71D82DE8A1E379}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Rifleman_M.et"; // modded
+					};
+					case 19: // Man SF: RTO (1)
+					{
+						return "{BF9204E1603997ED}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_RTO_M.et"; // modded
+					};
+					case 20: // Man SF: Sapper (1)
+					{
+						return "{B124BF29FDE612DA}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Sapper_M.et"; // modded
+					};
+					case 21: // Man SF: Sharpshooter (1)
+					{
+						return "{7579F08D3CFFE330}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_Sharpshooter_M.et"; // modded
+					};
+					case 22: // Man SF: SL (1)
+					{
+						return "{E29113E030AE676B}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_SF_SL_M.et"; // modded
+					};
+					case 23: // Group: Ammo Team (4)
+					{
+						return "{F72EF3429D8C8DF5}Prefabs/Groups/BLUFOR/Group_US_AmmoTeam.et";
+					};
+					case 24: // Group: AT Team (4)
+					{
+						return "{FAEA8B9E1252F56E}Prefabs/Groups/BLUFOR/Group_US_Team_LAT.et";
+					};
+					case 25: // Group: Fire Team (4)
+					{
+						return "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et";
+					};
+					case 26: // Group: Light Fire Team (4)
+					{
+						return "{FCF7F5DC4F83955C}Prefabs/Groups/BLUFOR/Group_US_LightFireTeam.et";
+					};
+					case 27: // Group: GL Team (2)
+					{
+						return "{DE747BC9217D383C}Prefabs/Groups/BLUFOR/Group_US_Team_GL.et";
+					};
+					case 28: // Group: MG Team (2)
+					{
+						return "{958039B857396B7B}Prefabs/Groups/BLUFOR/Group_US_MachineGunTeam.et";
+					};
+					case 29: // Group: Medical Section (2)
+					{
+						return "{EF62027CC75A7459}Prefabs/Groups/BLUFOR/Group_US_MedicalSection.et";
+					};
+					case 30: // Group: Platoon HQ (4)
+					{
+						return "{B7AB5D3F8A7ADAE4}Prefabs/Groups/BLUFOR/Group_US_PlatoonHQ.et";
+					};
+					case 31: // Group: Recon Team (2)
+					{
+						return "{F65B7BB712F46FEE}Prefabs/Groups/BLUFOR/Group_US_ReconTeam.et";
+					};
+					case 32: // Group: Rifle Squad (9)
+					{
+						return "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et";
+					};
+					case 33: // Group: Sapper Team (2)
+					{
+						return "{9624D2B39397E148}Prefabs/Groups/BLUFOR/Group_US_SapperTeam.et";
+					};
+					case 34: // Group: Sentry Team (2)
+					{
+						return "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et";
+					};
+					case 35: // Group: Sniper Team (2)
+					{
+						return "{D807C7047E818488}Prefabs/Groups/BLUFOR/Group_US_SniperTeam.et";
+					};
+					case 36: // Group: Suppress Team (4)
+					{
+						return "{81B6DBF2B88545F5}Prefabs/Groups/BLUFOR/Group_US_Team_Suppress.et";
+					};
+					case 37: // Group SF: Sentry Team (2)
+					{
+						return "{35681BE27C302FF5}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_GreenBeret_SentryTeam.et";
+					};
+					case 38: // Group SF: Squad (6)
+					{
+						return "{D0886786634E55AE}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_GreenBeret_Squad.et";
+					};
+					
 					default:
 					{
 						return "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et";
@@ -1315,67 +1517,134 @@ class PR_SpawnPatrol
 				{
 					switch (groupType)
 					{
-						case 0: // Machine Gun Man
+						case 0: // "Man: AT (1)" modded
 						{
-							return "{DFBABEA712394E79}Prefabs/Groups/INDFOR/Group_FIA_MG_M.et"; // modded
+							return "{F70727A140D8E7FE}Prefabs/Groups/INDFOR/Group_FIA_AT_M.et";
 						};
-						case 1: // Sniper Man
+						case 1: // "Man: Machine Gun (1)" modded
 						{
-							return "{0020E9B5E2D427EB}Prefabs/Groups/INDFOR/Group_FIA_Sniper_M.et"; // modded
+							return "{DFBABEA712394E79}Prefabs/Groups/INDFOR/Group_FIA_MG_M.et";
 						};
-					/*	case 2: // GL Man
+						case 2: //  "Man: Medic (1)" modded
 						{
-							return ""; // modded
-						};	*/
-						case 3: // Unarmed Man
-						{
-							return "{280EB078F06094AD}Prefabs/Groups/INDFOR/Group_FIA_Unarmed_M.et"; // modded
+							return "{C9BFE8740605FBB9}Prefabs/Groups/INDFOR/Group_FIA_Medic_M.et";
 						};
-						case 4: // Fire Team
+						case 3: // "Man: Randomized (1)" modded
 						{
-							return "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et";
+							return "{F4F92FB2FE7EC979}Prefabs/Groups/INDFOR/Group_FIA_Randomized_M.et";
 						};
-						case 5: // Light Fire Team
+						case 4: // "Man: Rifleman (1)" modded
 						{
-							return "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"; // modded
+							return "{49E50F2EAA6EFF9A}Prefabs/Groups/INDFOR/Group_FIA_Rifleman_M.et";
 						};
-						case 6: // Machine Gun Team
+						case 5: // "Man: RTO (1)" modded
 						{
-							return "{22F33D3EC8F281AB}Prefabs/Groups/INDFOR/Group_FIA_MachineGunTeam.et";
+							return "{E5E9041EF03C751F}Prefabs/Groups/INDFOR/Group_FIA_RTO_M.et";
 						};
-						case 7: // Medical Section
+						case 6: // "Man: Sapper (1)" modded
 						{
-							return "{581106FA58919E89}Prefabs/Groups/INDFOR/Group_FIA_MedicalSection.et";
+							return "{74E74C6B21BA1E45}Prefabs/Groups/INDFOR/Group_FIA_Sapper_M.et";
 						};
-						case 8: // Rifle Squad
+						case 7: // "Man: Sharpshooter (1)" modded
 						{
-							return "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et";
+							return "{0020E9B5E2D427EB}Prefabs/Groups/INDFOR/Group_FIA_Sharpshooter_M.et";
 						};
-						case 9: // Sentry Team
+						case 8: // "Man: Squad Leader (1)" modded
 						{
-							return "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et"; // modded
+							return "{EF52CDABEB854F8A}Prefabs/Groups/INDFOR/Group_FIA_SL_M.et";
 						};
-						case 10: // AT Team
+						case 9: // "Man: Unarmed (1)" modded
+						{
+							return "{280EB078F06094AD}Prefabs/Groups/INDFOR/Group_FIA_Unarmed_M.et";
+						};
+						case 10: // "Man SF: Grenadier (1)" modded
+						{
+							return "{0F481F85ADD2EDE9}Prefabs/Groups/INDFOR/Group_FIA_SF_Grenadier_M.et";
+						};
+						case 11: // "Man SF: Medic (1)" modded
+						{
+							return "{609E7953D2C74180}Prefabs/Groups/INDFOR/Group_FIA_SF_Medic_M.et";
+						};
+						case 12: // "Man SF: Rifleman (1)" modded
+						{
+							return "{076A40B681E8950E}Prefabs/Groups/INDFOR/Group_FIA_SF_Rifleman_M.et";
+						};
+						case 13: // "Man SF: Scout (1)" modded
+						{
+							return "{E09CED26F0BA6F8A}Prefabs/Groups/INDFOR/Group_FIA_SF_Scout_M.et";
+						};
+						case 14: // "Group: Ammo Team (4)"
+						{
+							return "{C1E39427E43B1E79}Prefabs/Groups/INDFOR/Group_FIA_AmmoTeam.et";
+						};
+						case 15: // "Group: AT Team (4)"
 						{
 							return "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et";
 						};
-						case 11: // Sniper Team
+						case 16: // "Group: Fire Team (5)"
+						{
+							return "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et";
+						};
+						case 17: // "Group: Light Fire Team (4)"
+						{
+							return "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et";
+						};
+						case 18: // "Group: Machine Gun Team (2)"
+						{
+							return "{22F33D3EC8F281AB}Prefabs/Groups/INDFOR/Group_FIA_MachineGunTeam.et";
+						};
+						case 19: // "Group: Medical Section (2)"
+						{
+							return "{581106FA58919E89}Prefabs/Groups/INDFOR/Group_FIA_MedicalSection.et";
+						};
+						case 20: // "Group: Platoon HQ (3)"
+						{
+							return "{EE92725E9B949C3D}Prefabs/Groups/INDFOR/Group_FIA_PlatoonHQ.et";
+						};
+						case 21: // "Group: Recon Team (2)"
+						{
+							return "{2E9C920C3ACA2C6F}Prefabs/Groups/INDFOR/Group_FIA_ReconTeam.et";
+						};
+						case 22: // "Group: Rifle Squad (7)"
+						{
+							return "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et";
+						};
+						case 23: // "Group: Sapper Team (2)"
+						{
+							return "{A0E9B5D6EA2072C4}Prefabs/Groups/INDFOR/Group_FIA_SapperTeam.et";
+						};
+						case 24: // "Group: Sentry Team (2)"
+						{
+							return "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et";
+						};
+						case 25: // "Group: Sharpshooter Team (2)"
 						{
 							return "{6307F42403E9B8A4}Prefabs/Groups/INDFOR/Group_FIA_SharpshooterTeam.et";
 						};
-						/* case 12: // GL Team
+						case 26: // "Group: Suppress Team (4)"
 						{
-							return ""; // modded
-						}; */
-						case 13: // Suppress Team
-						{
-							return "{89CE31B88A5FA745}Prefabs/Groups/INDFOR/Group_FIA_Team_Suppress.et"; // modded
+							return "{89CE31B88A5FA745}Prefabs/Groups/INDFOR/Group_FIA_Team_Suppress.et";
 						};
+
 						default:
 						{
 							return "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et";
 						};
 					};
+				}
+				else
+				{
+					if (spawnSide == 3) // CIV
+					{
+						switch (groupType)
+						{
+							case 8: // Rifle Squad
+							{
+								return "{8A251FDFB29D763D}Prefabs/Groups/CIV/Group_CIV_ConstructionWorkers.et"; // modded
+							};
+						}
+					}
+					return "<ERROR>";
 				}
 				return "<ERROR>";
 			}

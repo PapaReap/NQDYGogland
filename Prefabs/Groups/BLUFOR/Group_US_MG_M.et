@@ -4,7 +4,7 @@ SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Base.et" {
   SCR_EditableGroupComponent "{50D291F6C83FA532}" {
    m_UIInfo SCR_EditableGroupUIInfo "{5298E609432D192D}" {
     Name "#AR-Group_MGTeam"
-    m_Image "{91DAA28BA4D8DD5A}UI/Textures/EditorPreviews/Groups/BLUFOR/Group_US_MachineGunTeam.edds"
+    m_Image "{D68798DF09F5BE8E}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_MG.edds"
     m_aAuthoredLabels + {
      34 27
     }

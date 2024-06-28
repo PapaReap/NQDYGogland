@@ -1,14 +1,345 @@
-Vehicle RHIB_BaseMaahelli_US : "{A295678AF2AE1205}Prefabs/Vehicles/Naval/RHIB/RHIB_Base.et" {
- components {
-  EPF_PersistenceComponent "{5A0D2D215F2F2559}" {
-   m_bSelfSpawn 0
+$grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ SP01_Pohjoissivunkallio {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_fOperationalRadius 50
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 5290.831 11.125 10064.896
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
   }
  }
+ SP02_Korkiala_needRelay {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_fOperationalRadius 50
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 4179.347 37.729 9945.76
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ SP03_Kappeliniemi {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSupplies 115
+    m_fOperationalRadius 50
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 5795.822 5.094 8239.818
+  angleY -36.656
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ SP04_Notkonhelli {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 4698.448 12.862 7506.073
+  angleY -24.563
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "5EEEC471C30578EB"
+    coords 40.107 1.305 -9.645
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "5C6696731466AF36"
+    coords 16 1.154 49.724
+   }
+  }
+ }
+ SP05_Liivalahti {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSupplies 325
+    m_fOperationalRadius 50
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 6489.521 7.5 6861.593
+  angleY 36.072
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ SP06_Maahelli {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 130
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSupplies 125
+    m_fOperationalRadius 50
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      "Transmitting Range" 500
+     }
+    }
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 5692.083 5.6 3732.212
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ StartingPos01 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 5544.073 3.377 3804.496
+  angleY -57.402
+  Flags 2097155
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "5EEEC471C30578EB"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "5C6696731466AF36"
+    Flags 2097155
+   }
+  }
+ }
+}
+Vehicle RHIB_BaseMaahelli_US : "{A295678AF2AE1205}Prefabs/Vehicles/Naval/RHIB/RHIB_Base.et" {
  coords 5754.18 0 3611.236
  angleY -145.574
 }
 $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_US.et" {
- SP01_Pohjoissivunkallio {
+ SP01_PohjoissivunkallioXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -28,10 +359,12 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
   }
   coords 5290.831 11.125 10064.896
+  Flags 2097155
   {
    GenericEntity {
     ID "60E09758FCAF3A2B"
     coords 6.858 0.325 -3
+    Flags 2097155
    }
    $grp GenericEntity {
     {
@@ -41,9 +374,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
      Flags 2097155
     }
    }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    Flags 2097155
+   }
   }
  }
- SP02_Korkiala_needRelay {
+ SP02_Korkiala_needRelayXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -66,6 +403,7 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
   }
   coords 4179.347 37.729 9945.76
+  Flags 2097155
   {
    $grp GenericEntity {
     {
@@ -75,9 +413,17 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
      Flags 2097155
     }
    }
+   GenericEntity {
+    ID "60E09758FCAF3A2B"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "60E09758FCAF3A36"
+    Flags 2097155
+   }
   }
  }
- SP03_Kappeliniemi {
+ SP03_KappeliniemiXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -101,11 +447,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
   }
   coords 5795.822 5.094 8239.819
   angleY -36.656
+  Flags 2097155
   {
    GenericEntity {
     ID "60E09758FCAF3A2B"
     coords 5.593 0 29.498
     angleY -20.719
+    Flags 2097155
    }
    $grp GenericEntity {
     {
@@ -118,10 +466,11 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
     coords 16 0 36.515
+    Flags 2097155
    }
   }
  }
- SP05_Liivalahti {
+ SP05_LiivalahtiXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -145,10 +494,12 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
   }
   coords 6489.521 7.5 6861.593
   angleY 36.072
+  Flags 2097155
   {
    GenericEntity {
     ID "60E09758FCAF3A2B"
     coords -8.701 -0.306 53.041
+    Flags 2097155
    }
    $grp GenericEntity {
     {
@@ -161,10 +512,11 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
     coords -13.67 0 49.724
+    Flags 2097155
    }
   }
  }
- SP06_Maahelli {
+ SP06_MaahelliXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -187,10 +539,12 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    }
   }
   coords 5692.083 5.6 3732.212
+  Flags 2097155
   {
    GenericEntity {
     ID "60E09758FCAF3A2B"
     coords -87.615 -1.145 34.559
+    Flags 2097155
    }
    $grp GenericEntity {
     {
@@ -203,10 +557,11 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
     coords 16 0 49.724
+    Flags 2097155
    }
   }
  }
- SP04_Notkonhelli {
+ SP04_NotkonhelliXXX {
   components {
    BaseRadioComponent "{60E09758FCAF3A19}" {
     Transceivers {
@@ -230,11 +585,13 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
   }
   coords 4698.448 12.862 7506.073
   angleY -24.563
+  Flags 2097155
   {
    GenericEntity {
     ID "60E09758FCAF3A2B"
     coords 40.107 1.305 -9.645
     angleY 2.643
+    Flags 2097155
    }
    $grp GenericEntity {
     {
@@ -247,6 +604,7 @@ $grp GenericEntity : "{F52EFD9F79578F21}Prefabs/Systems/MilitaryBase/PR_Conflict
    SCR_CampaignSpawnPointGroup {
     ID "60E09758FCAF3A36"
     coords 16 1.154 49.724
+    Flags 2097155
    }
   }
  }

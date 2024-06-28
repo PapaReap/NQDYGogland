@@ -1,129 +1,41 @@
-$grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
- ConflictMilitaryBase3 {
-  components {
-   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
-    m_bIsControlPoint 1
-   }
-   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 2500.416 79.064 2710.673
-  {
-   CommentEntity {
-    coords 0 1 0
-    m_Comment "ConflictMilitaryBase: "\
-    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
-    m_Color 0 0 0
-    m_FaceCamera 1
-    m_TextBackground 1
-    m_BackgroundColor 1 0.6 0
-    m_BackgroundTransparency 0
-   }
-   GenericEntity {
-    ID "5CCED514A5908822"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "606078EE23DE48AC"
-    Flags 2097155
+PR_SpawnPatrolTrigger2 {
+ coords 1158.852 39 2714.472
+ TriggerShapeType Sphere
+ SphereRadius 200
+ DrawShape 1
+ ShapeColor 0 0.502 0.502 0.098
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ m_bRefreshToggle 1
+ m_bDebugLogs 1
+ m_iDelayTimerMin 10
+ m_aSideUS {
+  PR_Group_US "{61B8861EE77FC0E4}" {
+   m_GroupType "Group: Rifle Squad (9)"
+   m_aGroupDetails {
+    PR_GroupDetails "{61B88619B92620C9}" {
+    }
    }
   }
  }
- ConflictMilitaryBase4 {
-  components {
-   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
-    m_bIsControlPoint 1
-   }
-   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 2184.237 63.592 1374.433
-  {
-   CommentEntity {
-    coords 0 1 0
-    m_Comment "ConflictMilitaryBase: "\
-    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
-    m_Color 0 0 0
-    m_FaceCamera 1
-    m_TextBackground 1
-    m_BackgroundColor 1 0.6 0
-    m_BackgroundTransparency 0
-   }
-   GenericEntity {
-    ID "5CCED514A5908822"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "606078EE23DE48AC"
-    Flags 2097155
+ m_aSideFIA {
+  PR_Group_FIA "{61B721C1D736FEE9}" {
+   m_bEnableGroup 0
+   m_GroupType "Man: Unarmed (1)"
+   m_aGroupDetails {
+    PR_GroupDetails "{61B721C1D9ABE19E}" {
+     m_sSpawnPosition "Jolly"
+    }
    }
   }
  }
- ConflictMilitaryBase5 {
-  components {
-   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
-    m_bIsControlPoint 1
-   }
-   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 1850.244 27.116 1948.609
-  {
-   CommentEntity {
-    coords 0 1 0
-    m_Comment "ConflictMilitaryBase: "\
-    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
-    m_Color 0 0 0
-    m_FaceCamera 1
-    m_TextBackground 1
-    m_BackgroundColor 1 0.6 0
-    m_BackgroundTransparency 0
-   }
-   GenericEntity {
-    ID "5CCED514A5908822"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "606078EE23DE48AC"
-    Flags 2097155
-   }
-  }
- }
- ConflictMilitaryBase6 {
-  components {
-   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
-    m_bIsControlPoint 1
-   }
-   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 1748.542 53.05 3115.9
-  {
-   CommentEntity {
-    coords 0 1 0
-    m_Comment "ConflictMilitaryBase: "\
-    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
-    m_Color 0 0 0
-    m_FaceCamera 1
-    m_TextBackground 1
-    m_BackgroundColor 1 0.6 0
-    m_BackgroundTransparency 0
-   }
-   GenericEntity {
-    ID "5CCED514A5908822"
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "606078EE23DE48AC"
-    Flags 2097155
-   }
+ m_aSideCIV {
+  PR_Group_Civilian "{61B8355FA14F3B11}" {
+   m_bEnableGroup 0
+   m_GroupType "Group: Construction Workers (6)"
   }
  }
 }
-SCR_ChimeraCharacter Character_USSR_Officer_61AD315BC4AAFE9E : "{5117311FB822FD1F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer.et" {
- coords 1016.385 38.999 2494.515
+GenericEntity Jolly : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+ coords 1214.788 61.129 2853.476
 }

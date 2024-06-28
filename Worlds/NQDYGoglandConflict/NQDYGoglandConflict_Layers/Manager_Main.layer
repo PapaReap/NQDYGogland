@@ -7,8 +7,27 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
     "{CEA788D79A641BBF}Sounds/UI/UI.acp"
    }
   }
-  EPF_PersistenceManagerComponent "{60FD5A50E0E78DB0}" {
-   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{60FD5A520BDA5081}" {
+  EPF_PersistenceManagerComponent "{61B6112E37E59E49}" {
+   components {
+    EPF_PersistentDoorStateManagerComponent "{61B6112E417D9596}" {
+     m_pFilter EPF_PersistentDoorStateFilter "{61B6112E44AB06B2}" {
+     }
+    }
+    SCR_RespawnSystemComponent "{61B6112E5B466F6C}" {
+     components {
+      SCR_FreeSpawnHandlerComponent "{61B6112F8363B441}" {
+      }
+      SCR_PossessSpawnHandlerComponent "{61B6112F8CB88BAE}" {
+      }
+      SCR_SpawnPointSpawnHandlerComponent "{61B6112FA256F5D9}" {
+      }
+     }
+     m_SpawnLogic SCR_MenuSpawnLogic "{61B6112E6AFC8AC4}" {
+     }
+     m_fDeployMenuOpenDelay 4
+    }
+   }
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{61B6112FB73D7BA3}" {
     m_sDatabaseName "NQDYGoglandConflict"
    }
   }
@@ -20,6 +39,20 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
   }
   SCR_RepairSupportStationComponent "{60FD5A506839447C}" {
    m_iBaseSupplyCostOnUse 1
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   Enabled 0
+   components {
+    SCR_FreeSpawnHandlerComponent "{5CD2860C681CE021}" {
+     Enabled 0
+    }
+    SCR_PossessSpawnHandlerComponent "{5CD2D12697D089D4}" {
+     Enabled 0
+    }
+    SCR_SpawnPointSpawnHandlerComponent "{5CD2D126957998DF}" {
+     Enabled 0
+    }
+   }
   }
   SCR_TimeAndWeatherHandlerComponent "{60FD5890E2137752}" {
    m_bRandomStartingDaytime 0
@@ -34,7 +67,6 @@ SCR_GameModeCampaign PR_GameMode_CampaignSF1 : "{AB5079F60DAECFBF}Prefabs/MP/Mod
  m_iControlPointsThreshold 18
  m_iRegularSuppliesIncome 5
  m_iRegularSuppliesIncomeExtra 0
- m_iSpawnCost 100
  m_iSuicideRespawnDelay 60
 }
 SCR_CampaignFactionManager CampaignFactionManager1 : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {

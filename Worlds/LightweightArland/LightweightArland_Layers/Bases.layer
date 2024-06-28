@@ -2,6 +2,7 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
  ConflictMilitaryBase {
   components {
    BaseRadioComponent "{5C669673C2A82A2B}" {
+    Enabled 0
     Transceivers {
      RelayTransceiver "{5C669673E8C94083}" {
       "Transmitting Range" 2000
@@ -10,6 +11,9 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
    }
    SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
     m_bCanBeHQ 1
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
    }
    SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
     "faction affiliation" "US"
@@ -23,9 +27,11 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
    }
   }
   coords 1283.735 39 2192.436
+  Flags 2097155
   {
    CommentEntity {
     coords 0 1 0
+    Flags 2097155
     m_Comment "ConflictMilitaryBase: "\
     "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
     m_Color 0 0 0
@@ -42,11 +48,20 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
     ID "606078EE23DE48AC"
     Flags 2097155
    }
+   GenericEntity {
+    ID "5EEEC471C30578EB"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "5C6696731466AF36"
+    Flags 2097155
+   }
   }
  }
  ConflictMilitaryBase2 {
   components {
    BaseRadioComponent "{5C669673C2A82A2B}" {
+    Enabled 0
     Transceivers {
      RelayTransceiver "{5C669673E8C94083}" {
       "Transmitting Range" 2000
@@ -55,6 +70,9 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
    }
    SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
     m_bCanBeHQ 1
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
    }
    SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
     "faction affiliation" "USSR"
@@ -68,9 +86,11 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
    }
   }
   coords 853.439 39.01 2740.28
+  Flags 2097155
   {
    CommentEntity {
     coords 0 1 0
+    Flags 2097155
     m_Comment "ConflictMilitaryBase: "\
     "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
     m_Color 0 0 0
@@ -79,6 +99,90 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
     m_BackgroundColor 1 0.6 0
     m_BackgroundTransparency 0
    }
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "5EEEC471C30578EB"
+    Flags 2097155
+   }
+   SCR_CampaignSpawnPointGroup {
+    ID "5C6696731466AF36"
+    Flags 2097155
+   }
+  }
+ }
+ StartingPos01 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 1283.735 39 2192.436
+  angleY -57.402
+  {
+   GenericEntity {
+    ID "5CCED514A5908822"
+    Flags 2097155
+   }
+   GenericEntity {
+    ID "606078EE23DE48AC"
+    Flags 2097155
+   }
+  }
+ }
+ StartingPos2 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+    m_sBaseName "#AR-Campaign_MapLocation_MOB"
+    m_sBaseNameUpper "#AR-Campaign_MapLocation_MOB-UC"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    m_bIsSource 1
+   }
+   SCR_FactionAffiliationComponent "{5AFC974A2595F05D}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{5D587B89D3599C99}" {
+    m_aGenerators {
+     SCR_ResourceGenerator "{5D587B8946012988}" {
+      m_fResourceMultiplier 1
+      m_fStorageRange 2
+     }
+    }
+   }
+  }
+  coords 853.439 39.01 2740.28
+  angleY 143.272
+  {
    GenericEntity {
     ID "5CCED514A5908822"
     Flags 2097155
