@@ -1,3 +1,52 @@
+PR_AIPatrolTrigger SPT_CP_07_Island_E_Sm_01 {
+ coords 10160.992 7.922 6445.528
+ TriggerShapeType Sphere
+ SphereRadius 1
+ "Polyline Height" 10
+ ShapeColor 0.502 0 0.376 0.098
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 10
+ m_bDebugLogs 1
+ m_bUsePersistence 1
+ m_sPersistentObject "PR_PersistObject_SPT_CP_07_Island_E_Sm_01"
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+   m_bOverrideActivationPresence 1
+  }
+ }
+ m_bNeutralizePersistentObjectIfGroupIsDead 1
+ m_aSideUSSR {
+  PR_Group_USSR "{61B93EE454E5FEF7}" {
+   m_GroupType "Group: Sentry Team (2)"
+   m_aGroupWaypoints {
+    PR_GroupWaypoints "{61B93EF874A23F1F}" {
+     m_aWaypointCollection {
+      "WP_CP_07_Island_E_Sm_01"
+     }
+    }
+   }
+   m_aGroupBehaviours {
+    PR_GroupBehaviours "{61B93EE5BDD39817}" {
+     m_fPerceptionFactor 0.75
+    }
+   }
+  }
+ }
+ {
+  SCR_DefendWaypoint WP_CP_07_Island_E_Sm_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+   components {
+    Hierarchy "{617E024D9F66262B}" {
+    }
+   }
+   coords -0.004 0 -0.014
+   CompletionRadius 10
+  }
+  GenericEntity PR_PersistObject_SPT_CP_07_Island_E_Sm_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+   coords -0.005 0.004 -0.053
+  }
+ }
+}
 PR_RandomizerTrigger CP_07_Island_E_Sm_Random {
  coords 10161.015 7.924 6445.597
  TriggerShapeType Sphere
@@ -30,52 +79,6 @@ PR_RandomizerTrigger CP_07_Island_E_Sm_Random {
     }
    }
    coords 0.072 0.004 -0.019
-  }
- }
-}
-PR_SpawnPatrolTrigger SPT_CP_07_Island_E_Sm_01 {
- components {
-  RplComponent "{617B025E192B93FA}" {
-   Enabled 0
-   AutoHierarchy 1
-  }
-  Hierarchy "{617B025AF64C6E16}" {
-   Enabled 0
-  }
- }
- coords 10160.991 7.917 6445.513
- TriggerShapeType Sphere
- SphereRadius 1
- ShapeColor 0.502 0 0.376 0.098
- TriggerActivationType "First change"
- PeriodicQueries 1
- UpdatePeriod 10
- m_bDebugLogs 1
- m_bUsePersistence 1
- m_sPersistentObject "PR_PersistObject_SPT_CP_07_Island_E_Sm_01"
- m_aOverrideOptions {
-  PR_OverrideTriggerActivation "{618CE23B06F0EE85}" {
-   m_bOverrideActivationPresence 1
-  }
- }
- m_bNeutralizePersistentObjectIfGroupIsDead 1
- m_GroupType "Group: Sentry Team (2)"
- m_eAISkill ROOKIE
- m_fPerceptionFactor 0.25
- m_aWaypointCollection {
-  "WP_CP_07_Island_E_Sm_01"
- }
- {
-  SCR_DefendWaypoint WP_CP_07_Island_E_Sm_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-   components {
-    Hierarchy "{617E024D9F66262B}" {
-    }
-   }
-   coords -0.003 0.005 0.001
-   CompletionRadius 10
-  }
-  GenericEntity PR_PersistObject_SPT_CP_07_Island_E_Sm_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-   coords -0.004 0.009 -0.038
   }
  }
 }

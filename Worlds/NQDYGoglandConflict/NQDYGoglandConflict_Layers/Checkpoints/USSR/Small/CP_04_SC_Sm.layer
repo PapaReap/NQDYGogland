@@ -1,3 +1,348 @@
+$grp PR_AIPatrolTrigger {
+ SPT_CP_04_SC_Sm_01 {
+  coords 7035.766 64.56 3728.549
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_01"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.005 0.005 0.007
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.006 0.009 -0.032
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_02 {
+  coords 7035.696 64.536 3728.497
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_02"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.011 0.004 0.014
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.012 0.008 -0.025
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_03 {
+  coords 7035.708 64.548 3728.576
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_03"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_03"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_03 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.007 0.004 0
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_03 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.008 0.008 -0.039
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_04 {
+  coords 7035.813 64.568 3728.503
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_04"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_04"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_04 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.006 0.004 -0
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_04 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.007 0.008 -0.039
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_05 {
+  coords 7035.798 64.571 3728.489
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_05"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_05"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_05 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.009 -0.004 0.008
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_05 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.01 -0 -0.031
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_06 {
+  coords 7035.796 64.56 3728.471
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_06"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_06"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_06 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.008 0.003 0.002
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_06 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.009 0.007 -0.037
+   }
+  }
+ }
+ SPT_CP_04_SC_Sm_07 {
+  coords 7035.801 64.56 3728.459
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_07"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Sm_07"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Sm_07 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.016 0.011 -0.013
+    CompletionRadius 10
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_07 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.017 0.015 -0.052
+   }
+  }
+ }
+}
 PR_RandomizerTrigger CP_04_SC_Sm_Random {
  coords 7034.749 64.359 3729.149
  TriggerShapeType Sphere
@@ -72,330 +417,6 @@ PR_RandomizerTrigger CP_04_SC_Sm_Random {
     }
    }
    coords 91.013 0 -94.296
-  }
- }
-}
-$grp PR_SpawnPatrolTrigger {
- SPT_CP_04_SC_Sm_01 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.763 64.56 3728.555
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_01"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_01"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_02 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.688 64.535 3728.51
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_02"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_02"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_03 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.704 64.547 3728.575
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_03"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_03"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_03 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_03 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_04 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.81 64.567 3728.502
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_04"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_04"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_04 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_04 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_05 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.792 64.562 3728.496
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_05"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_05"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_05 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_05 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_06 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.791 64.558 3728.472
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_06"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_06"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_06 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_06 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Sm_07 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7035.788 64.566 3728.445
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Sm_07"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23BE305CF67}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Sentry Team (2)"
-  m_eAISkill ROOKIE
-  m_fPerceptionFactor 0.25
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Sm_07"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Sm_07 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Sm_07 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
   }
  }
 }

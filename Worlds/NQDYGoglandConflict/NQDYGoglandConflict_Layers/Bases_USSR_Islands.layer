@@ -58,32 +58,43 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
     }
     coords 83.431 2.266 43.607
    }
-   PR_SpawnPatrolTrigger SPT_BaseIsosommeri_sw_ussr {
-    components {
-     Hierarchy "{6190676004DC6A9F}" {
-     }
-    }
-    coords 610.698 -5.036 5.538
-    angleX 6.874
-    angleY -1.349
-    angleZ -10.704
+   PR_AIPatrolTrigger SPT_BaseIsosommeri_sw_ussr {
+    coords 608.916 -2.478 4.336
     TriggerShapeType Sphere
     SphereRadius 1
-    ShapeColor 1 0.008 0 0.078
+    "Polyline Height" 10
+    ShapeColor 0.016 0.906 0.035 0.098
     TriggerActivationType "First change"
     PeriodicQueries 1
+    UpdatePeriod 60
     m_bDebugLogs 1
     m_bUsePersistence 1
     m_sPersistentObject "PR_PersistObject_SPT_BaseIsosommeri_sw_ussr"
+    m_ActivationPresence ANY_CHARACTER
     m_aOverrideOptions {
-     PR_OverrideTriggerActivation "{619067601A720DB8}" {
+     PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
       m_bOverrideActivationPresence 1
      }
     }
+    m_bUseRandomDelayTimer 1
+    m_iDelayTimerMax 600
     m_bNeutralizePersistentObjectIfGroupIsDead 1
+    m_aSideUSSR {
+     PR_Group_USSR "{61B93EEBD2FDC368}" {
+      m_GroupType "Group: Fire Team (4)"
+      m_aGroupBehaviours {
+       PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+        m_fPerceptionFactor 0.75
+       }
+      }
+     }
+    }
     {
      GenericEntity PR_PersistObject_SPT_BaseIsosommeri_sw_ussr : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-      coords -0.86 0.424 1.113
+      coords -0.991 0.392 1.038
+      angleX 6.874
+      angleY -1.349
+      angleZ -10.704
      }
     }
    }
@@ -633,203 +644,5 @@ $grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMil
     }
    }
   }
- }
-}
-$grp GenericEntity : "{8DC9620F41200DB1}Prefabs/Systems/MilitaryBase/PR_ConflictMilitaryBase_USSR.et" {
- BaseSayvo_w_ussrXXX {
-  components {
-   BaseRadioComponent "{60E07149C1F7462F}" {
-    Transceivers {
-     RelayTransceiver "{60E07149C1F746D6}" {
-      "Transmitting Range" 1700
-     }
-    }
-   }
-   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
-    m_iRadius 150
-    m_bIsControlPoint 1
-   }
-   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
-    m_iSupplies 200
-   }
-   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 1306.425 2.75 5018.831
-  angleY -51.176
-  Flags 2097155
-  {
-   GenericEntity {
-    ID "60E07149C1F0CAD5"
-    coords -15.136 0 0.034
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714912226671"
-    coords -23.245 0.25 74.334
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714938383856"
-    coords 15.225 0 50.422
-    Flags 2097155
-   }
-   SCR_CampaignSpawnPointGroup {
-    ID "60E07149C1F0CAD3"
-    coords 0 0 0
-    Flags 2097155
-   }
-  }
- }
- BaseSakkiluoto_ne_ussr2XXX {
-  components {
-   BaseRadioComponent "{60E07149C1F7462F}" {
-    Transceivers {
-     RelayTransceiver "{60E07149C1F746D6}" {
-      "Transmitting Range" 1650
-     }
-    }
-   }
-   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
-    m_iRadius 150
-    m_bIsControlPoint 1
-   }
-   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
-    m_iSupplies 240
-   }
-   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 9760.94 5.645 10640.543
-  Flags 2097155
-  {
-   GenericEntity {
-    ID "60E07149C1F0CAD5"
-    coords -15.136 0.124 0.034
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714912226671"
-    coords 0 0.181 11.98
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714938383856"
-    coords 0 0.194 12.427
-    Flags 2097155
-   }
-   SCR_CampaignSpawnPointGroup {
-    ID "60E07149C1F0CAD3"
-    coords 0 -0.001 0
-    Flags 2097155
-   }
-  }
- }
- BaseIsosommeri_sw_ussrXXX {
-  components {
-   BaseRadioComponent "{60E07149C1F7462F}" {
-    Transceivers {
-     RelayTransceiver "{60E07149C1F746D6}" {
-      "Transmitting Range" 400
-     }
-    }
-   }
-   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
-    m_iRadius 150
-    m_bIsControlPoint 1
-   }
-   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 2423.082 5.673 1823.194
-  Flags 2097155
-  {
-   GenericEntity {
-    ID "60E07149C1F0CAD5"
-    coords -15.136 -0.779 0.034
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714912226671"
-    coords 26.349 0.952 186.41
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714938383856"
-    coords 83.431 2.266 43.607
-    Flags 2097155
-   }
-   SCR_CampaignSpawnPointGroup {
-    ID "60E07149C1F0CAD3"
-    coords 0 0.466 25.553
-    Flags 2097155
-   }
-  }
- }
- BaseRuuskeri_e_ussrXXX {
-  components {
-   BaseRadioComponent "{60E07149C1F7462F}" {
-    Transceivers {
-     RelayTransceiver "{60E07149C1F746D6}" {
-      "Transmitting Range" 1000
-     }
-    }
-   }
-   SCR_CampaignMilitaryBaseComponent "{60E07149C1F746D1}" {
-    m_iRadius 150
-    m_bIsControlPoint 1
-   }
-   SCR_CampaignSuppliesComponent "{60E07149C1F746DA}" {
-    m_iSupplies 260
-   }
-   SCR_FactionAffiliationComponent "{60E07149C1F746C2}" {
-    "faction affiliation" "USSR"
-   }
-  }
-  coords 10178.22 6.61 6450.926
-  Flags 2097155
-  {
-   GenericEntity {
-    ID "60E07149C1F0CAD5"
-    coords -15.136 0.565 0.034
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714912226671"
-    coords -81.029 1.234 11.98
-    Flags 2097155
-   }
-   GenericEntity {
-    ID "60E0714938383856"
-    coords -71.814 0.846 82.717
-    Flags 2097155
-   }
-   SCR_CampaignSpawnPointGroup {
-    ID "60E07149C1F0CAD3"
-    coords 0 -0.001 0
-    Flags 2097155
-   }
-  }
- }
-}
-$grp Vehicle : "{A295678AF2AE1205}Prefabs/Vehicles/Naval/RHIB/RHIB_Base.et" {
- RHIB_BaseIsosommeri_sw_ussr {
-  coords 2643.519 0 2048.715
-  angleY 102.132
- }
- RHIB_BaseRuuskeri_e_ussr {
-  coords 10274.099 0 6426.157
-  angleY 100.515
- }
- RHIB_BaseSakkiluoto_ne_ussr2 {
-  coords 9799.271 0 10553.533
-  angleY 36.137
- }
- RHIB_BaseSayvo_w_ussr {
-  coords 1139.766 0 4887.893
-  angleY -60.329
  }
 }

@@ -1,0 +1,25 @@
+PR_AIPatrolTrigger {
+ coords 5446.249 12.531 9138.654
+ m_aOverrideOptions {
+  PR_OverrideTriggerActivation "{61B93EC8EA29CCD6}" {
+   m_bOverrideActivationPresence 1
+  }
+ }
+ m_aSideCIV {
+  PR_Group_Civilian "{61B93EC8EE625881}" {
+   m_GroupType "Group: Construction Workers (6)"
+   m_aGroupWaypoints {
+    PR_GroupWaypoints "{61B93EC8511DE33D}" {
+     m_aWaypointCollection {
+      "SuurkylaCivWaypoint"
+     }
+    }
+   }
+  }
+ }
+}
+SCR_DefendWaypoint SuurkylaCivWaypoint : "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et" {
+ coords 5364.297 24.659 9153.983
+ CompletionRadius 250
+ m_bFastInit 0
+}

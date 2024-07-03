@@ -630,156 +630,264 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 5215.481 101.065 7990.496
   {
-   $grp PR_SpawnPatrolTrigger {
+   $grp PR_AIPatrolTrigger {
     SpawnTrg_TaskKill_HVT_Makiinpaallys_01 {
-     coords -3.483 -45.786 18.77
+     coords -3.528 -45.89 18.937
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_01"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_01"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_01"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_01"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Makiinpaallys_02 {
-     coords -16.302 -45.752 -30.77
+     coords -16.344 -45.847 -30.926
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Group: Medical Section (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_02"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_02"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Medical Section (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_02"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_02"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Makiinpaallys_03 {
-     coords -13.052 -33.783 9.441
+     coords -13.034 -33.89 9.636
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_03"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_03"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_03"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_03"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Makiinpaallys_04 {
-     coords 4.959 -33.785 -8.101
+     coords 5.064 -33.89 -8.202
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_04"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_04"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_04"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_04"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Makiinpaallys_05 {
-     coords 10.542 -33.793 -22.895
+     coords 10.592 -33.89 -23.033
      TriggerShapeType Sphere
      SphereRadius 30
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_05"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_05"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_05"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_05"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Makiinpaallys_06 {
-     coords -8.767 -33.844 -21.985
+     coords -8.859 -33.89 -21.977
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Makiinpaallys"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Makiinpaallys"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_06"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_06"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Makiinpaallys_06"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Makiinpaallys_06"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
    }
    PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Makiinpaallys {
@@ -1167,405 +1275,700 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 7384.142 8.289 5484.253
   {
-   $grp PR_SpawnPatrolTrigger {
+   $grp PR_AIPatrolTrigger {
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_01 {
-     coords -39.036 20.036 75.958
+     coords -38.904 19.932 75.882
      TriggerShapeType Sphere
      SphereRadius 25
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Medical Section (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_01"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_01"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Medical Section (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_01"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_01"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_02 {
-     coords -44.985 19.978 61.827
+     coords -45.015 19.935 61.75
      TriggerShapeType Sphere
      SphereRadius 30
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_02"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Makiinpaallys_02"
-     }
-     m_fPerceptionFactor 0.75
-    }
-    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04 {
-     coords -42.747 13.861 61.144
-     TriggerShapeType Sphere
-     SphereRadius 50
-     DrawShape 1
-     ShapeColor 0.046 0 1 0.078
-     TriggerActivationType "First change"
-     PeriodicQueries 1
-     m_bDebugLogs 1
-     m_bUsePersistence 1
-     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
-     m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
-       m_bActivateIfObjectMissing 1
-       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_02"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_02"
+         }
+        }
+       }
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04"
-     }
-     m_fPerceptionFactor 0.75
-    }
-    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05 {
-     coords -28.583 13.852 80.387
-     TriggerShapeType Sphere
-     SphereRadius 30
-     DrawShape 1
-     ShapeColor 0.046 0 1 0.078
-     TriggerActivationType "First change"
-     PeriodicQueries 1
-     m_bDebugLogs 1
-     m_bUsePersistence 1
-     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
-     m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
-       m_bActivateIfObjectMissing 1
-       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
-      }
-     }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05"
-     }
-     m_fPerceptionFactor 0.75
-    }
-    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06 {
-     coords -14.179 7.944 88.805
-     TriggerShapeType Sphere
-     SphereRadius 20
-     DrawShape 1
-     ShapeColor 0.046 0 1 0.078
-     TriggerActivationType "First change"
-     PeriodicQueries 1
-     m_bDebugLogs 1
-     m_bUsePersistence 1
-     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
-     m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
-       m_bActivateIfObjectMissing 1
-       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
-      }
-     }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06"
-     }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_03 {
-     coords -40.996 20.122 54.743
+     coords -40.867 19.911 54.456
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_03"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_03"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_03"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_03"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
+    }
+    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04 {
+     coords -42.769 13.792 61.267
+     TriggerShapeType Sphere
+     SphereRadius 50
+     "Polyline Height" 10
+     DrawShape 1
+     ShapeColor 0.046 0 1 0.078
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     UpdatePeriod 1
+     m_bDebugLogs 1
+     m_bUsePersistence 1
+     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
+     m_aOverrideOptions {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+       m_bActivateIfObjectMissing 1
+       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
+      }
+     }
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_04"
+         }
+        }
+       }
+      }
+     }
+    }
+    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05 {
+     coords -28.537 13.792 80.452
+     TriggerShapeType Sphere
+     SphereRadius 30
+     "Polyline Height" 10
+     DrawShape 1
+     ShapeColor 0.046 0 1 0.078
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     UpdatePeriod 1
+     m_bDebugLogs 1
+     m_bUsePersistence 1
+     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
+     m_aOverrideOptions {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+       m_bActivateIfObjectMissing 1
+       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
+      }
+     }
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_05"
+         }
+        }
+       }
+      }
+     }
+    }
+    SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06 {
+     coords -14.102 7.891 88.841
+     TriggerShapeType Sphere
+     SphereRadius 20
+     "Polyline Height" 10
+     DrawShape 1
+     ShapeColor 0.046 0 1 0.078
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     UpdatePeriod 1
+     m_bDebugLogs 1
+     m_bUsePersistence 1
+     m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
+     m_aOverrideOptions {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+       m_bActivateIfObjectMissing 1
+       m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
+      }
+     }
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_06"
+         }
+        }
+       }
+      }
+     }
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_07 {
-     coords -47.726 7.921 75.284
+     coords -47.775 7.891 75.262
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_07"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_07"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_07"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_07"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_08 {
-     coords -39.801 7.952 67.389
+     coords -39.752 7.891 67.327
      TriggerShapeType Sphere
      SphereRadius 50
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Sniper Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_08"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_08"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Suppress Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_08"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_08"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_09 {
-     coords -12.774 3.57 73.41
+     coords -12.635 3.488 73.435
      TriggerShapeType Sphere
      SphereRadius 50
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_09"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_09"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_09"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_09"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_10 {
-     coords -38.527 3.541 68.111
+     coords -38.581 3.504 68.1
      TriggerShapeType Sphere
      SphereRadius 60
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_10"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_10"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_10"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_10"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_11 {
-     coords -36.174 34.25 60.488
+     coords -36.119 34.039 60.127
      TriggerShapeType Sphere
      SphereRadius 600
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Sniper Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_11"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_11"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Suppress Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_11"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_11"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_12 {
-     coords 13.004 0.239 4.404
+     coords 13.218 0 4.146
      TriggerShapeType Sphere
      SphereRadius 200
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_12"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_12"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Fire Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_12"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_12"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_13 {
-     coords -54.768 0.206 111.849
+     coords -54.927 0 112.108
      TriggerShapeType Sphere
      SphereRadius 400
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_13"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_13"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_13"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_13"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_14 {
-     coords 72.065 0.045 -113.275
+     coords 72.1 -0.001 -113.346
      TriggerShapeType Sphere
      SphereRadius 300
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
+     NamesFilter {
+      ""
+     }
+     ClassesFilter {
+      ""
+     }
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_14"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_14"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_14"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_14"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_15 {
-     coords -31.998 0 114.526
+     coords -31.997 0 114.526
      TriggerShapeType Sphere
      SphereRadius 300
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Sniper Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_15"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_15"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Suppress Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_15"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_15"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_16 {
-     coords 94.302 0.383 -229.113
+     coords 94.505 0 -229.673
      TriggerShapeType Sphere
      SphereRadius 150
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Kiiskinkyla_ship"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Kiiskinkyla_ship"
       }
      }
-     m_GroupType "Group: Sniper Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_16"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_16"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Suppress Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_16"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Kiiskinkyla_ship_16"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
    }
    PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Kiiskinkyla_ship {
@@ -1817,177 +2220,307 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 5872.008 78.438 4260.537
   {
-   $grp PR_SpawnPatrolTrigger {
+   $grp PR_AIPatrolTrigger {
     SpawnTrg_TaskKill_HVT_Suurlinna_01 {
-     coords -27.665 32.491 44.913
+     coords -27.664 32.49 44.909
      TriggerShapeType Sphere
      SphereRadius 500
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_01"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_01"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_01"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_01"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_02 {
-     coords -27.405 27.041 47.44
+     coords -27.39 27.007 47.49
      TriggerShapeType Sphere
      SphereRadius 200
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_02"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_02"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_02"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_02"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_03 {
-     coords -25.787 22.206 44.659
+     coords -25.709 22.133 44.583
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_03"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_03"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_03"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_03"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_04 {
-     coords -26.73 17.311 47.33
+     coords -26.738 17.276 47.396
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_04"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_04"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_04"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_04"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_05 {
-     coords -25.834 12.498 45.928
+     coords -25.478 12.242 45.765
      TriggerShapeType Sphere
      SphereRadius 50
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_05"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_05"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_05"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_05"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_06 {
-     coords -23.791 12.339 35.531
+     coords -23.747 12.228 35.35
      TriggerShapeType Sphere
      SphereRadius 200
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_06"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Suurlinna_06"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_06"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_06"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Suurlinna_07 {
-     coords 2.316 0.176 -0.148
+     coords 2.304 0.174 -0.143
      TriggerShapeType Sphere
      SphereRadius 70
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Suurlinna"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Suurlinna"
       }
      }
-     m_GroupType "Group: Light Fire Team (4)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_07"
-     m_fPerceptionFactor 0.75
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Light Fire Team (4)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Suurlinna_07"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Suurlinna_07"
+         }
+        }
+       }
+      }
+     }
     }
    }
    PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Suurlinna {
@@ -2344,145 +2877,258 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 5546.803 124.987 6525.755
   {
-   $grp PR_SpawnPatrolTrigger {
-    SpawnTrg_TaskKill_HVT_Haukkavuori_02 {
-     coords 23.434 -40 -70.377
+   $grp PR_AIPatrolTrigger {
+    SpawnTrg_TaskKill_HVT_Haukkavuori_01 {
+     coords 52.333 -40.558 -77.792
      TriggerShapeType Sphere
-     SphereRadius 50
+     SphereRadius 60
+     "Polyline Height" 10
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_02"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_02"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_01"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_01"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
+    }
+    SpawnTrg_TaskKill_HVT_Haukkavuori_02 {
+     coords 23.388 -40.036 -70.362
+     TriggerShapeType Sphere
+     SphereRadius 50
+     "Polyline Height" 10
+     ShapeColor 0.046 0 1 0.078
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     UpdatePeriod 1
+     m_bDebugLogs 1
+     m_bUsePersistence 1
+     m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
+     m_aOverrideOptions {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+       m_bActivateIfObjectMissing 1
+       m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
+      }
+     }
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_02"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5CAF0B593}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_02"
+         }
+        }
+       }
+      }
+     }
     }
     SpawnTrg_TaskKill_HVT_Haukkavuori_03 {
-     coords -34.512 -38.12 -45.815
+     coords -34.375 -38.349 -46.131
      TriggerShapeType Sphere
      SphereRadius 50
+     "Polyline Height" 10
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_03"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_03"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_03"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_03"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Haukkavuori_04 {
-     coords -65.917 -39.152 24.313
+     coords -66.016 -40.08 24.29
      TriggerShapeType Sphere
      SphereRadius 60
+     "Polyline Height" 10
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
       }
      }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_04"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_04"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_04"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_04"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Haukkavuori_05 {
-     coords -100.808 -35.798 37.651
+     coords -100.854 -35.823 37.667
      TriggerShapeType Sphere
      SphereRadius 100
+     "Polyline Height" 10
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_05"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_05"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_05"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_05"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Haukkavuori_06 {
-     coords -47.248 -36.501 76.178
+     coords -47.246 -36.501 76.175
      TriggerShapeType Sphere
      SphereRadius 120
+     "Polyline Height" 10
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
       }
      }
-     m_GroupType "Group: Machine Gun Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_06"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_06"
-     }
-     m_fPerceptionFactor 0.75
-    }
-    SpawnTrg_TaskKill_HVT_Haukkavuori_01 {
-     coords 52.205 -40.376 -78.021
-     angleY 12.001
-     TriggerShapeType Sphere
-     SphereRadius 60
-     ShapeColor 0.046 0 1 0.078
-     TriggerActivationType "First change"
-     PeriodicQueries 1
-     m_bDebugLogs 1
-     m_bUsePersistence 1
-     m_sPersistentObject "Pers_TaskKill_HVT_Haukkavuori"
-     m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
-       m_bActivateIfObjectMissing 1
-       m_sMissingObjectName "Pers_TaskKill_TRG_Haukkavuori"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: MG Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_06"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Haukkavuori_06"
+         }
+        }
+       }
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Haukkavuori_01"
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Haukkavuori_01"
-     }
-     m_fPerceptionFactor 0.75
     }
    }
    PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Haukkavuori {
@@ -3980,156 +4626,264 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/ScenarioFramework/Components/Are
   }
   coords 6853.354 138.547 2485.03
   {
-   $grp PR_SpawnPatrolTrigger {
-    SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02 {
-     coords -11.292 -45.897 -22.572
+   $grp PR_AIPatrolTrigger {
+    SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01 {
+     coords 3.055 -45.955 1.989
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
       }
      }
-     m_GroupType "Man: Sniper (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
+    }
+    SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02 {
+     coords -11.327 -45.938 -22.631
+     TriggerShapeType Sphere
+     SphereRadius 20
+     "Polyline Height" 10
+     DrawShape 1
+     ShapeColor 0.046 0 1 0.078
+     TriggerActivationType "First change"
+     PeriodicQueries 1
+     UpdatePeriod 1
+     m_bDebugLogs 1
+     m_bUsePersistence 1
+     m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
+     m_aOverrideOptions {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+       m_bActivateIfObjectMissing 1
+       m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
+      }
+     }
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: Sharpshooter (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_02"
+         }
+        }
+       }
+      }
+     }
     }
     SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_03 {
-     coords 11.964 -33.859 -3.97
+     coords 12.074 -33.955 -3.884
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
       }
      }
-     m_GroupType "Group: Medical Section (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_03"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_03"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Medical Section (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_03"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_03"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_04 {
-     coords -12.523 -40.278 2.424
+     coords -12.631 -40.327 2.468
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_04"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_04"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: GL (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_04"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_04"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_05 {
-     coords 2.381 -33.881 16.24
+     coords 2.456 -33.955 16.31
      TriggerShapeType Sphere
      SphereRadius 20
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
       }
      }
-     m_GroupType "Man: Machine Gun (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_05"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_05"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Man: MG (1)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_05"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_05"
+         }
+        }
+       }
+      }
      }
-     m_fPerceptionFactor 0.75
     }
     SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_06 {
-     coords 17.329 -33.898 -15.401
+     coords 17.366 -33.955 -15.48
      TriggerShapeType Sphere
      SphereRadius 30
+     "Polyline Height" 10
      DrawShape 1
      ShapeColor 0.046 0 1 0.078
      TriggerActivationType "First change"
      PeriodicQueries 1
+     UpdatePeriod 1
      m_bDebugLogs 1
      m_bUsePersistence 1
      m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
      m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
+      PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
        m_bActivateIfObjectMissing 1
        m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
       }
      }
-     m_GroupType "Group: Sentry Team (2)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_06"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_06"
-     }
-     m_fPerceptionFactor 0.75
-    }
-    SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01 {
-     coords 3.083 -45.88 2.114
-     TriggerShapeType Sphere
-     SphereRadius 20
-     DrawShape 1
-     ShapeColor 0.046 0 1 0.078
-     TriggerActivationType "First change"
-     PeriodicQueries 1
-     m_bDebugLogs 1
-     m_bUsePersistence 1
-     m_sPersistentObject "Pers_TaskKill_HVT_Lounatkorkia_Silo"
-     m_aOverrideOptions {
-      PR_OverrideTriggerActivation "{61675A3F16EFC508}" {
-       m_bActivateIfObjectMissing 1
-       m_sMissingObjectName "Pers_TaskKill_TRG_Lounatkorkia_Silo"
+     m_aSideUSSR {
+      PR_Group_USSR "{61B93EE454E5FEF7}" {
+       m_GroupType "Group: Sentry Team (2)"
+       m_aGroupDetails {
+        PR_GroupDetails "{61B93EE45CE6F7D6}" {
+         m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_06"
+        }
+       }
+       m_aGroupBehaviours {
+        PR_GroupBehaviours "{61B93EE5BDD39817}" {
+         m_fPerceptionFactor 0.75
+        }
+       }
+       m_aTeleportGroup {
+        PR_TeleportGroup "{61B93EE472C451B0}" {
+         m_bTeleportAfterSpawn 1
+         m_aTeleportPosition {
+          "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_06"
+         }
+        }
+       }
       }
      }
-     m_GroupType "Man: GL (1)"
-     m_sSpawnPosition "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01"
-     m_bTeleportAfterSpawn 1
-     m_aTeleportPosition {
-      "SpawnTrg_TaskKill_HVT_Lounatkorkia_Silo_01"
-     }
-     m_fPerceptionFactor 0.75
     }
    }
    PR_SpawnTaskTrigger TaskTrg_TaskKill_HVT_Lounatkorkia_Silo {

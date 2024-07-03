@@ -1,3 +1,119 @@
+$grp PR_AIPatrolTrigger {
+ SPT_CP_04_SC_Lg_01 {
+  coords 7058.001 90.8 3810.249
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Lg_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Light Fire Team (4)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Lg_01"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Lg_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.011 0.005 -0.007
+    CompletionRadius 10
+    m_DefendPresets {
+     SCR_DefendWaypointPreset "{58D6884489389713}" {
+      m_bUseTurrets 1
+     }
+     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+      m_bUseTurrets 1
+     }
+    }
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Lg_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.012 0.009 -0.046
+   }
+  }
+ }
+ SPT_CP_04_SC_Lg_02 {
+  coords 7058.007 90.795 3810.229
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Lg_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Light Fire Team (4)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_04_SC_Lg_02"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_04_SC_Lg_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.01 0.006 -0.004
+    CompletionRadius 10
+    m_DefendPresets {
+     SCR_DefendWaypointPreset "{58D6884489389713}" {
+      m_bUseTurrets 1
+     }
+     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+      m_bUseTurrets 1
+     }
+    }
+   }
+   GenericEntity PR_PersistObject_SPT_CP_04_SC_Lg_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.011 0.01 -0.043
+   }
+  }
+ }
+}
 PR_RandomizerTrigger CP_04_SC_Lg_Random {
  coords 7059.532 90.001 3807.19
  TriggerShapeType Sphere
@@ -31,112 +147,6 @@ PR_RandomizerTrigger CP_04_SC_Lg_Random {
  {
   GenericEntity PR_PersistObject_CP_04_SC_Lg_Random : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
    coords 91.013 0 -94.296
-  }
- }
-}
-$grp PR_SpawnPatrolTrigger {
- SPT_CP_04_SC_Lg_01 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7057.993 90.8 3810.241
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Lg_01"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23B20FFC1FF}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Light Fire Team (4)"
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Lg_01"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Lg_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-    m_DefendPresets {
-     SCR_DefendWaypointPreset "{58D6884489389713}" {
-      m_bUseTurrets 1
-     }
-     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
-      m_bUseTurrets 1
-     }
-    }
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Lg_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_04_SC_Lg_02 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 7058 90.796 3810.224
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_04_SC_Lg_02"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23B20FFC1FF}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Light Fire Team (4)"
-  m_aWaypointCollection {
-   "WP_CP_04_SC_Lg_02"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_04_SC_Lg_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-    m_DefendPresets {
-     SCR_DefendWaypointPreset "{58D6884489389713}" {
-      m_bUseTurrets 1
-     }
-     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
-      m_bUseTurrets 1
-     }
-    }
-   }
-   GenericEntity PR_PersistObject_SPT_CP_04_SC_Lg_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
   }
  }
 }
@@ -2301,7 +2311,6 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
              ID "5CB0D991ADDD9E4F"
              coords -0.224 -0.001 0.362
              angleY 139.254
-             angleZ -0
             }
             GenericEntity {
              ID "5CB0D991ADDD9E44"
@@ -2352,7 +2361,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF008"
-           coords -4.032 -0 2.91
+           coords -4.032 0 2.91
            angleX 0.842
            angleY -9.778
            angleZ 5.372
@@ -2442,7 +2451,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             GameEntity {
              ID "5CB0D993388817DF"
-             coords 0.049 -0 0.022
+             coords 0.049 0 0.022
              angleY -146.511
             }
             GenericEntity {
@@ -2470,7 +2479,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             GenericEntity {
              ID "5CB0D990C2645A75"
-             coords -0.347 -0 0.165
+             coords -0.347 0 0.165
              angleY -2.36
             }
             GenericEntity {
@@ -2480,7 +2489,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
             }
             GenericEntity {
              ID "5CB0D990C265B655"
-             coords 0.279 -0 0.172
+             coords 0.279 0 0.172
              angleY -81.696
             }
             GenericEntity {
@@ -2497,14 +2506,14 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
               }
               GenericEntity {
                ID "5CB0D990B6C742CA"
-               coords 0.016 -0 -0.061
+               coords 0.016 0 -0.061
                angleX 0
                angleY 136.624
                angleZ 0
               }
               GenericEntity {
                ID "5CB0D990B6C742CB"
-               coords 0.139 -0 -0.075
+               coords 0.139 0 -0.075
                angleY -124.46
               }
               GenericEntity {
@@ -2534,7 +2543,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29E17039037"
-             coords -0.001 0 -0
+             coords -0.001 0 0
              angleX 0
              angleY 151.012
             }
@@ -2564,7 +2573,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             DecalEntity {
              ID "56E0B29E17039037"
-             coords 0 0 -0
+             coords 0 0 0
              angleX 0
              angleY -56.834
             }
@@ -2698,12 +2707,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            {
             GenericEntity {
              ID "5CB0F58178A8470C"
-             coords 0.032 -0 0.036
+             coords 0.032 0 0.036
              angleY -107.349
             }
             GenericEntity {
              ID "5CB0F58178A8470D"
-             coords 0.177 -0 -0.023
+             coords 0.177 0 -0.023
              angleY -13.693
             }
             GenericEntity {
@@ -3576,7 +3585,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.171 -0 0.643
+           coords -1.171 0 0.643
            angleX -0.945
            angleY -16.29
            angleZ 0.77
@@ -3764,7 +3773,6 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            coords -4.022 -0.089 3.139
            angleX -2.482
            angleY -0.03
-           angleZ -0
           }
           GenericEntity {
            ID "5CC72E06418CFE24"
@@ -4627,7 +4635,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF073"
-           coords 3.495 -0 -4.94
+           coords 3.495 0 -4.94
            angleY -21.659
           }
           GenericEntity {
@@ -4910,7 +4918,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF1C0"
-           coords -3.799 -0 -0.159
+           coords -3.799 0 -0.159
            angleX 0
            angleY 82.887
           }
@@ -5031,7 +5039,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0B7"
-           coords -2.985 -0 -0.07
+           coords -2.985 0 -0.07
            angleY -15.91
           }
           GenericEntity {
@@ -5185,7 +5193,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.171 -0 0.643
+           coords -1.171 0 0.643
            angleY -16.358
           }
           StaticModelEntity {
@@ -5554,7 +5562,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFE44"
-           coords -6.605 -0 5.872
+           coords -6.605 0 5.872
            angleX -2.75
            angleY 178.38
            angleZ 0.264

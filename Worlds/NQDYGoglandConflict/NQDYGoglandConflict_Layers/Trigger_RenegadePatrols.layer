@@ -1,40 +1,63 @@
-$grp PR_SpawnPatrolTrigger {
+$grp PR_AIPatrolTrigger {
  Set_01_N_WP_Trigger {
-  coords 4994.431 22.656 9340.765
+  coords 4994.42 18.404 9340.773
   TriggerShapeType Sphere
-  SphereRadius 900
+  SphereRadius 1
+  "Polyline Height" 10
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 60
-  m_bRefreshToggle 1
   m_bDebugLogs 1
+  m_ActivationPresence ANY_CHARACTER
   m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{61675A2F635083AF}" {
+   PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
     m_bOverrideActivationPresence 1
    }
   }
-  m_sSpawnPosition "WP_01_00_Spawn"
-  m_iRespawnCount -1
-  m_iRespawnTimerMin 900
-  m_bUseRandomRespawnTimer 1
-  m_iRespawnTimerMax 3600
-  m_bKeepGroupActive 1
-  m_eAIGroupFormation Column
-  m_bCycleWaypoints 1
-  m_aWaypointCollection {
-   "Set_01_N_WP"
-  }
-  m_WaypointSortOrder "RAMDOM DIRECTION"
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 600
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EEBD2FDC368}" {
+    m_GroupType "Group: Fire Team (4)"
+    m_aGroupDetails {
+     PR_GroupDetails "{61B93EEB542B99FA}" {
+      m_sSpawnPosition "WP_01_00_Spawn"
+      m_bKeepGroupActive 1
+     }
+    }
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EEBFF0B4ED2}" {
+      m_bCycleWaypoints 1
+      m_aWaypointCollection {
+       "Set_01_N_WP"
+      }
+      m_WaypointSortOrder "RAMDOM DIRECTION"
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+      m_eAIGroupFormation Column
+      m_fPerceptionFactor 0.75
+     }
+    }
+    m_aRespawnGroup {
+     PR_RespawnGroup "{61B93EEBD59578B5}" {
+      m_iRespawnCount -1
+      m_iRespawnTimerMin 900
+      m_bUseRandomRespawnTimer 1
+      m_iRespawnTimerMax 3600
+     }
+    }
+   }
+  }
   {
    GenericEntity Set_01_N_WP : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
      Hierarchy "{61077CF32C3C7F07}" {
      }
     }
-    coords 33.275 -5.625 293.778
+    coords 33.285 -5.627 293.77
     {
      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
       WP_01_01_Patrol {
@@ -147,7 +170,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 30
       }
       WP_01_11_SD_ArmeijanVarikko {
        components {
@@ -158,7 +180,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 450
       }
       WP_01_15_SD_Suurkyla {
        components {
@@ -169,7 +190,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 600
       }
      }
      SCR_SmartActionWaypoint WP_01_07_CaptureRelay_Kotokallio : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
@@ -189,42 +209,64 @@ $grp PR_SpawnPatrolTrigger {
   }
  }
  Set_02_NC_WP_Trigger {
-  coords 5400.249 95.947 7593.195
+  coords 5400.221 95.946 7593.189
   TriggerShapeType Sphere
-  SphereRadius 900
+  SphereRadius 1
+  "Polyline Height" 10
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
+  m_ActivationPresence ANY_CHARACTER
   m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{61675A2F64BB19BD}" {
+   PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
     m_bOverrideActivationPresence 1
    }
   }
-  m_GroupType "Group: AT Team (4)"
-  m_sSpawnPosition "WP_02_00_Spawn"
-  m_iRespawnCount -1
-  m_iRespawnTimerMin 900
-  m_bUseRandomRespawnTimer 1
-  m_iRespawnTimerMax 3600
-  m_bKeepGroupActive 1
-  m_eAIGroupFormation Column
-  m_bHoldFire 0
-  m_bCycleWaypoints 1
-  m_aWaypointCollection {
-   "Set_02_NC_WP"
-  }
-  m_WaypointSortOrder "RAMDOM DIRECTION"
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 600
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EEBD2FDC368}" {
+    m_GroupType "Group: AT Team (4)"
+    m_aGroupDetails {
+     PR_GroupDetails "{61B93EEB542B99FA}" {
+      m_sSpawnPosition "WP_02_00_Spawn"
+      m_bKeepGroupActive 1
+     }
+    }
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EEBFF0B4ED2}" {
+      m_bCycleWaypoints 1
+      m_aWaypointCollection {
+       "Set_02_NC_WP"
+      }
+      m_WaypointSortOrder "RAMDOM DIRECTION"
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+      m_eAIGroupFormation Column
+      m_fPerceptionFactor 0.75
+     }
+    }
+    m_aRespawnGroup {
+     PR_RespawnGroup "{61B93EEBD59578B5}" {
+      m_iRespawnCount -1
+      m_iRespawnTimerMin 900
+      m_bUseRandomRespawnTimer 1
+      m_iRespawnTimerMax 3600
+     }
+    }
+   }
+  }
   {
    GenericEntity Set_02_NC_WP : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
      Hierarchy "{61077CF331A32A28}" {
      }
     }
-    coords -182.161 5.178 338.418
+    coords -182.133 5.179 338.423
     {
      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
       WP_02_01_Patrol {
@@ -265,7 +307,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 120
       }
       WP_02_05_SD_Jokela {
        components {
@@ -276,7 +317,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 300
       }
      }
      SCR_SmartActionWaypoint WP_02_04_CaptureRelay_Makiinpaallys_tower : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
@@ -296,42 +336,64 @@ $grp PR_SpawnPatrolTrigger {
   }
  }
  Set_03_C_WP_Trigger {
-  coords 6095.221 61.23 5793.327
+  coords 6095.211 61.223 5793.365
   TriggerShapeType Sphere
-  SphereRadius 1000
+  SphereRadius 1
+  "Polyline Height" 10
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
+  m_ActivationPresence ANY_CHARACTER
   m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{61675A2F6811B37E}" {
+   PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
     m_bOverrideActivationPresence 1
    }
   }
-  m_GroupType "Group: AT Team (4)"
-  m_sSpawnPosition "WP_03_00_Spawn"
-  m_iRespawnCount -1
-  m_iRespawnTimerMin 900
-  m_bUseRandomRespawnTimer 1
-  m_iRespawnTimerMax 3600
-  m_bKeepGroupActive 1
-  m_eAIGroupFormation Column
-  m_bHoldFire 0
-  m_bCycleWaypoints 1
-  m_aWaypointCollection {
-   "Set_03_C_WP"
-  }
-  m_WaypointSortOrder "RAMDOM DIRECTION"
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 600
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EEBD2FDC368}" {
+    m_GroupType "Group: Fire Team (4)"
+    m_aGroupDetails {
+     PR_GroupDetails "{61B93EEB542B99FA}" {
+      m_sSpawnPosition "WP_03_00_Spawn"
+      m_bKeepGroupActive 1
+     }
+    }
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EEBFF0B4ED2}" {
+      m_bCycleWaypoints 1
+      m_aWaypointCollection {
+       "Set_03_C_WP"
+      }
+      m_WaypointSortOrder "RAMDOM DIRECTION"
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+      m_eAIGroupFormation Column
+      m_fPerceptionFactor 0.75
+     }
+    }
+    m_aRespawnGroup {
+     PR_RespawnGroup "{61B93EEBD59578B5}" {
+      m_iRespawnCount -1
+      m_iRespawnTimerMin 900
+      m_bUseRandomRespawnTimer 1
+      m_iRespawnTimerMax 3600
+     }
+    }
+   }
+  }
   {
    GenericEntity Set_03_C_WP : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
      Hierarchy "{61077CF335C72F01}" {
      }
     }
-    coords 703.169 -52.343 571.204
+    coords 703.179 -52.336 571.167
     {
      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
       WP_03_01_Patrol {
@@ -369,7 +431,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 120
       }
       WP_03_03_SD_Kiiskinkyla {
        components {
@@ -380,7 +441,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 300
       }
      }
     }
@@ -388,42 +448,64 @@ $grp PR_SpawnPatrolTrigger {
   }
  }
  Set_04_SC_WP_Trigger {
-  coords 6935.097 63.545 3708.178
+  coords 6935.038 57.672 3708.412
   TriggerShapeType Sphere
-  SphereRadius 1100
+  SphereRadius 1
+  "Polyline Height" 10
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
+  m_ActivationPresence ANY_CHARACTER
   m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{61675A2F6C0D4E46}" {
+   PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
     m_bOverrideActivationPresence 1
    }
   }
-  m_GroupType "Group: Sentry Team (2)"
-  m_sSpawnPosition "WP_04_00_Spawn"
-  m_iRespawnCount -1
-  m_iRespawnTimerMin 900
-  m_bUseRandomRespawnTimer 1
-  m_iRespawnTimerMax 3600
-  m_bKeepGroupActive 1
-  m_eAIGroupFormation Column
-  m_bHoldFire 0
-  m_bCycleWaypoints 1
-  m_aWaypointCollection {
-   "Set_04_SC_WP"
-  }
-  m_WaypointSortOrder "RAMDOM DIRECTION"
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 600
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EEBD2FDC368}" {
+    m_GroupType "Group: Sentry Team (2)"
+    m_aGroupDetails {
+     PR_GroupDetails "{61B93EEB542B99FA}" {
+      m_sSpawnPosition "WP_04_00_Spawn"
+      m_bKeepGroupActive 1
+     }
+    }
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EEBFF0B4ED2}" {
+      m_bCycleWaypoints 1
+      m_aWaypointCollection {
+       "Set_04_SC_WP"
+      }
+      m_WaypointSortOrder "RAMDOM DIRECTION"
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+      m_eAIGroupFormation Column
+      m_fPerceptionFactor 0.75
+     }
+    }
+    m_aRespawnGroup {
+     PR_RespawnGroup "{61B93EEBD59578B5}" {
+      m_iRespawnCount -1
+      m_iRespawnTimerMin 900
+      m_bUseRandomRespawnTimer 1
+      m_iRespawnTimerMax 3600
+     }
+    }
+   }
+  }
   {
    GenericEntity Set_04_SC_WP : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
      Hierarchy "{61077CF3384F5D64}" {
      }
     }
-    coords -97.132 7.799 57.082
+    coords -97.073 7.739 56.848
     {
      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
       WP_04_01_Patrol {
@@ -461,7 +543,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 60
       }
       WP_04_05_SD_Teollisuusalue {
        components {
@@ -472,7 +553,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 600
       }
      }
      SCR_SmartActionWaypoint WP_04_02_CaptureRelay_Ruokolahdenjarvi_tower : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
@@ -492,42 +572,64 @@ $grp PR_SpawnPatrolTrigger {
   }
  }
  Set_05_S_WP_Trigger {
-  coords 6967.508 97.316 1926.539
+  coords 6965.99 97.97 1936.738
   TriggerShapeType Sphere
-  SphereRadius 1100
+  SphereRadius 1
+  "Polyline Height" 10
   ShapeColor 0.016 0.906 0.035 0.098
   TriggerActivationType "First change"
   PeriodicQueries 1
   UpdatePeriod 60
   m_bDebugLogs 1
+  m_ActivationPresence ANY_CHARACTER
   m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{61675A2F76F08EEB}" {
+   PR_OverrideTriggerActivation "{61B93EEA70DE97A7}" {
     m_bOverrideActivationPresence 1
    }
   }
-  m_GroupType "Group: GL Team (4)"
-  m_sSpawnPosition "WP_05_00_Spawn"
-  m_iRespawnCount -1
-  m_iRespawnTimerMin 900
-  m_bUseRandomRespawnTimer 1
-  m_iRespawnTimerMax 3600
-  m_bKeepGroupActive 1
-  m_eAIGroupFormation Column
-  m_bHoldFire 0
-  m_bCycleWaypoints 1
-  m_aWaypointCollection {
-   "Set_05_S_WP"
-  }
-  m_WaypointSortOrder "RAMDOM DIRECTION"
   m_bUseRandomDelayTimer 1
   m_iDelayTimerMax 600
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EEBD2FDC368}" {
+    m_GroupType "Group: GL Team (2)"
+    m_aGroupDetails {
+     PR_GroupDetails "{61B93EEB542B99FA}" {
+      m_sSpawnPosition "WP_05_00_Spawn"
+      m_bKeepGroupActive 1
+     }
+    }
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EEBFF0B4ED2}" {
+      m_bCycleWaypoints 1
+      m_aWaypointCollection {
+       "Set_05_S_WP"
+      }
+      m_WaypointSortOrder "RAMDOM DIRECTION"
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EEBE5F3A4BA}" {
+      m_eAIGroupFormation Column
+      m_fPerceptionFactor 0.75
+     }
+    }
+    m_aRespawnGroup {
+     PR_RespawnGroup "{61B93EEBD59578B5}" {
+      m_iRespawnCount -1
+      m_iRespawnTimerMin 900
+      m_bUseRandomRespawnTimer 1
+      m_iRespawnTimerMax 3600
+     }
+    }
+   }
+  }
   {
    GenericEntity Set_05_S_WP : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
     components {
      Hierarchy "{61077CF33C9871EA}" {
      }
     }
-    coords -70.303 -5.941 141.504
+    coords -68.785 -6.595 131.305
     {
      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
       WP_05_03_Patrol {
@@ -577,7 +679,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 60
       }
       WP_05_05_SD_Lounatrivi {
        components {
@@ -588,7 +689,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 300
       }
       WP_05_02_SD_Reactor {
        components {
@@ -599,7 +699,6 @@ $grp PR_SpawnPatrolTrigger {
        AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
        Autocomplete 1
        CompletionType Any
-       m_holdingTime 60
       }
      }
      SCR_SmartActionWaypoint WP_05_07_CaptureRelay_Vahakorkia_tower : "{EAAE93F98ED5D218}Prefabs/AI/Waypoints/AIWaypoint_CaptureRelay.et" {
@@ -618,16 +717,4 @@ $grp PR_SpawnPatrolTrigger {
    }
   }
  }
-}
-PR_SpawnTaskTrigger {
- coords 4635.473 5.601 10983.458
- Flags 2097155
- m_aTaskTypesFilter {
-  PR_TaskType "{612E54540C050DC2}" {
-  }
- }
-}
-PR_TaskCollections : "{2800010EBA0A5BB9}Prefabs/ScenarioFramework/Components/PR_TaskCollection.et" {
- coords 4622.292 5.396 11023.047
- Flags 2097155
 }

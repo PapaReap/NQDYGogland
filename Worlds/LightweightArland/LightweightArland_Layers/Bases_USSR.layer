@@ -11,11 +11,17 @@ PR_SpawnPatrolTrigger2 {
  m_iDelayTimerMin 10
  m_aSideUS {
   PR_Group_US "{61B8861EE77FC0E4}" {
+   m_bEnableGroup 0
    m_GroupType "Group: Rifle Squad (9)"
    m_aGroupDetails {
     PR_GroupDetails "{61B88619B92620C9}" {
     }
    }
+  }
+ }
+ m_aSideUSSR {
+  PR_Group_USSR "{61B92D88C149FB7F}" {
+   m_GroupType "Group SF: Squad (6)"
   }
  }
  m_aSideFIA {

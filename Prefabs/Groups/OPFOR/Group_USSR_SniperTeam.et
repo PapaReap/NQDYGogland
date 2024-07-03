@@ -24,7 +24,7 @@ SCR_AIGroup : "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et" {
   }
   SCR_GroupIdentityComponent "{56366C5C50AD3CF2}" {
    m_MilitarySymbol SCR_MilitarySymbol "{56366C5C4E32A359}" {
-    m_Icons 32769
+    m_Icons 16385
     m_Amplifier TEAM
    }
   }

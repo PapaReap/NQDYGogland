@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DF03D3F9DA973834}Prefabs/Groups/OPFOR/Spetsnaz/Group_USSR_SF_Medic_M.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

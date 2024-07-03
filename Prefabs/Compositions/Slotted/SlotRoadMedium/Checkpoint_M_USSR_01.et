@@ -1,0 +1,21 @@
+GenericEntity : "{6E9190BC2713551D}Prefabs/Compositions/Slotted/BuildableComposition_Base.et" {
+ ID "5282DCB5DFC8538F"
+ {
+  GenericEntity {
+   ID "5CC6B4BB10619100"
+   Flags 2098179
+  }
+  GenericEntity {
+   ID "5CC6B4BB10619121"
+   Flags 2098179
+  }
+  GenericEntity {
+   ID "5CC6B4BB10619137"
+   Flags 2098179
+  }
+  GenericEntity {
+   ID "5CC6B4BB10619150"
+   Flags 2098179
+  }
+ }
+}

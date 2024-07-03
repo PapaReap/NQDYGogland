@@ -1,3 +1,176 @@
+$grp PR_AIPatrolTrigger {
+ SPT_CP_03_C_Lg_01 {
+  coords 6323.382 86.747 5839.373
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_01"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Light Fire Team (4)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_03_C_Lg_01"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_03_C_Lg_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.01 0.004 0.005
+    CompletionRadius 10
+    m_DefendPresets {
+     SCR_DefendWaypointPreset "{58D6884489389713}" {
+      m_bUseTurrets 1
+     }
+     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+      m_bUseTurrets 1
+     }
+    }
+   }
+   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.011 0.008 -0.034
+   }
+  }
+ }
+ SPT_CP_03_C_Lg_02 {
+  coords 6323.363 86.749 5839.372
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_02"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Light Fire Team (4)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_03_C_Lg_02"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_03_C_Lg_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.007 0.004 0.009
+    CompletionRadius 10
+    m_DefendPresets {
+     SCR_DefendWaypointPreset "{58D6884489389713}" {
+      m_bUseTurrets 1
+     }
+     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+      m_bUseTurrets 1
+     }
+    }
+   }
+   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.008 0.008 -0.03
+   }
+  }
+ }
+ SPT_CP_03_C_Lg_03 {
+  coords 6323.318 86.743 5839.492
+  TriggerShapeType Sphere
+  SphereRadius 1
+  "Polyline Height" 10
+  ShapeColor 0.502 0 0.376 0.098
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 10
+  m_bDebugLogs 1
+  m_bUsePersistence 1
+  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_03"
+  m_aOverrideOptions {
+   PR_OverrideTriggerActivation "{61B93EE4E552837A}" {
+    m_bOverrideActivationPresence 1
+   }
+  }
+  m_bNeutralizePersistentObjectIfGroupIsDead 1
+  m_aSideUSSR {
+   PR_Group_USSR "{61B93EE454E5FEF7}" {
+    m_GroupType "Group: Light Fire Team (4)"
+    m_aGroupWaypoints {
+     PR_GroupWaypoints "{61B93EF874A23F1F}" {
+      m_aWaypointCollection {
+       "WP_CP_03_C_Lg_03"
+      }
+     }
+    }
+    m_aGroupBehaviours {
+     PR_GroupBehaviours "{61B93EE5BDD39817}" {
+      m_fPerceptionFactor 0.75
+     }
+    }
+   }
+  }
+  {
+   SCR_DefendWaypoint WP_CP_03_C_Lg_03 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
+    components {
+     Hierarchy "{617E024D9F66262B}" {
+     }
+    }
+    coords -0.004 -0.001 0.001
+    CompletionRadius 10
+    m_DefendPresets {
+     SCR_DefendWaypointPreset "{58D6884489389713}" {
+      m_bUseTurrets 1
+     }
+     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+      m_bUseTurrets 1
+     }
+    }
+   }
+   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_03 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
+    coords -0.005 0.003 -0.038
+   }
+  }
+ }
+}
 PR_RandomizerTrigger CP_03_C_Lg_Random {
  coords 6320.9 86.294 5837.342
  TriggerShapeType Sphere
@@ -41,164 +214,6 @@ PR_RandomizerTrigger CP_03_C_Lg_Random {
   }
  }
 }
-$grp PR_SpawnPatrolTrigger {
- SPT_CP_03_C_Lg_01 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 6323.375 86.746 5839.377
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_01"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23B20FFC1FF}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Light Fire Team (4)"
-  m_aWaypointCollection {
-   "WP_CP_03_C_Lg_01"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_03_C_Lg_01 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-    m_DefendPresets {
-     SCR_DefendWaypointPreset "{58D6884489389713}" {
-      m_bUseTurrets 1
-     }
-     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
-      m_bUseTurrets 1
-     }
-    }
-   }
-   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_01 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_03_C_Lg_02 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 6323.359 86.748 5839.38
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_02"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23B20FFC1FF}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Light Fire Team (4)"
-  m_aWaypointCollection {
-   "WP_CP_03_C_Lg_02"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_03_C_Lg_02 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-    m_DefendPresets {
-     SCR_DefendWaypointPreset "{58D6884489389713}" {
-      m_bUseTurrets 1
-     }
-     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
-      m_bUseTurrets 1
-     }
-    }
-   }
-   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_02 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
- SPT_CP_03_C_Lg_03 {
-  components {
-   RplComponent "{617B025E192B93FA}" {
-    Enabled 0
-    AutoHierarchy 1
-   }
-   Hierarchy "{617B025AF64C6E16}" {
-    Enabled 0
-   }
-  }
-  coords 6323.317 86.737 5839.492
-  TriggerShapeType Sphere
-  SphereRadius 1
-  ShapeColor 0.502 0 0.376 0.098
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 10
-  m_bDebugLogs 1
-  m_bUsePersistence 1
-  m_sPersistentObject "PR_PersistObject_SPT_CP_03_C_Lg_03"
-  m_aOverrideOptions {
-   PR_OverrideTriggerActivation "{618CE23B20FFC1FF}" {
-    m_bOverrideActivationPresence 1
-   }
-  }
-  m_bNeutralizePersistentObjectIfGroupIsDead 1
-  m_GroupType "Group: Light Fire Team (4)"
-  m_aWaypointCollection {
-   "WP_CP_03_C_Lg_03"
-  }
-  {
-   SCR_DefendWaypoint WP_CP_03_C_Lg_03 : "{06B1B14B6DE3C983}Prefabs/AI/Waypoints/AIWaypoint_Defend_ConflictBaseTeamPatrol.et" {
-    components {
-     Hierarchy "{617E024D9F66262B}" {
-     }
-    }
-    coords -0.003 0.005 0.001
-    CompletionRadius 10
-    m_DefendPresets {
-     SCR_DefendWaypointPreset "{58D6884489389713}" {
-      m_bUseTurrets 1
-     }
-     SCR_DefendWaypointPreset "{58D688448899BCA0}" {
-      m_bUseTurrets 1
-     }
-    }
-   }
-   GenericEntity PR_PersistObject_SPT_CP_03_C_Lg_03 : "{55E5E3FD9F531935}Prefabs/ScenarioFramework/Components/PR_PersistObject.et" {
-    coords -0.004 0.009 -0.038
-   }
-  }
- }
-}
 $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_EmptyComposition.et" {
  Set_CP_03_C_Lg_01 {
   components {
@@ -228,12 +243,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
          {
           GenericEntity {
            ID "5CC72E06418CF129"
-           coords -2.882 -0 3.811
+           coords -2.882 0 3.811
            angleY -36.56
           }
           GenericEntity {
            ID "5CC72E06418CF13D"
-           coords -3.758 -0 3.647
+           coords -3.758 0 3.647
            angleY -98.441
           }
           GenericEntity {
@@ -266,7 +281,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF180"
-           coords -1.161 -0 5.304
+           coords -1.161 0 5.304
            angleY 55.541
           }
           GenericEntity {
@@ -291,23 +306,23 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF197"
-           coords -2.63 -0 5.905
+           coords -2.63 0 5.905
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1B1"
-           coords -2.278 -0 5.915
+           coords -2.278 0 5.915
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1C0"
-           coords -3.799 -0 -0.154
+           coords -3.799 0 -0.154
            angleX 0
            angleY 82.915
           }
           GenericEntity {
            ID "5CC72E06418CF008"
-           coords -4.032 -0 2.91
+           coords -4.032 0 2.91
            angleY -9.857
           }
           GenericEntity {
@@ -319,18 +334,18 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0C9"
-           coords 6.41 -0 3.394
+           coords 6.41 0 3.394
            angleY -75.628
           }
           GenericEntity {
            ID "5CC72E06418CF0DE"
-           coords 6.213 -0 5.218
+           coords 6.213 0 5.218
            angleX 0
            angleY 15.524
           }
           GenericEntity {
            ID "5CC72E06418CF166"
-           coords -3.139 -0 3.343
+           coords -3.139 0 3.343
            angleY 11.535
           }
           GenericEntity {
@@ -342,22 +357,22 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF1FD"
-           coords -4.032 -0 -0.257
+           coords -4.032 0 -0.257
            angleY -164.13
           }
           GenericEntity {
            ID "5CC72E06418CF22D"
-           coords 6.456 -0 4.456
+           coords 6.456 0 4.456
            angleX 0
            angleY 133.847
           }
           GenericEntity {
            ID "5CC72E06418CFE0F"
-           coords -3.908 -0 3.253
+           coords -3.908 0 3.253
           }
           GenericEntity {
            ID "5CC72E06418CFE24"
-           coords -3.817 -0 5.396
+           coords -3.817 0 5.396
            angleY 0
            {
             Turret Tripod_6T7_NSV_618F19C6E802F62 {
@@ -409,7 +424,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0B7"
-           coords -2.984 -0 -0.065
+           coords -2.984 0 -0.065
            angleY -15.852
           }
           GenericEntity {
@@ -435,45 +450,45 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF028"
-           coords -2.137 -0 6.311
+           coords -2.137 0 6.311
            angleY 7.663
            Flags 2098179
           }
           GenericEntity {
            ID "5CC72E06418CF1E8"
-           coords -1.743 -0 -0.012
+           coords -1.743 0 -0.012
            angleY 73.067
           }
           GenericEntity {
            ID "5CC72E06418CFF06"
-           coords -2.81 -0 0.563
+           coords -2.81 0 0.563
            angleY 65.12
            angleZ 0
           }
           GenericEntity {
            ID "5CC72E06418CF1A2"
-           coords -5.292 -0 6.153
+           coords -5.292 0 6.153
            angleX 0
            angleY 45.608
           }
           GenericEntity {
            ID "5CC72E06418CFF19"
-           coords -3.03 -0 -0.331
+           coords -3.03 0 -0.331
            angleY 74.086
           }
           GenericEntity {
            ID "5E5C73D2049F5625"
-           coords 6.04 -0 1.667
+           coords 6.04 0 1.667
            angleY 98.283
           }
           GenericEntity {
            ID "5CC72E06418CF08D"
-           coords -1.193 -0 5.658
+           coords -1.193 0 5.658
            angleY 32.809
           }
           GenericEntity {
            ID "5CC72E06418CF099"
-           coords -2.888 -0 5.981
+           coords -2.888 0 5.981
            angleY -11.166
            {
             DecalEntity {
@@ -484,12 +499,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0E8"
-           coords -4.718 -0 6.158
+           coords -4.718 0 6.158
            angleY 5.39
           }
           GenericEntity {
            ID "5E5C73D2049F561B"
-           coords -0.582 -0 3.139
+           coords -0.582 0 3.139
            angleY -15.922
           }
           GenericEntity {
@@ -522,12 +537,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFE55"
-           coords 5.999 -0 4.872
+           coords 5.999 0 4.872
            angleY 136.955
           }
           StaticModelEntity {
            ID "5CC72E06418CFE6B"
-           coords -0.879 -0 6.138
+           coords -0.879 0 6.138
            angleY 73.906
           }
           StaticModelEntity {
@@ -546,7 +561,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.169 -0 0.648
+           coords -1.169 0 0.648
            angleY -16.008
           }
           StaticModelEntity {
@@ -581,42 +596,42 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
          {
           GenericEntity {
            ID "5CC72E06418CF129"
-           coords -2.882 -0 3.811
+           coords -2.882 0 3.811
            angleY -36.56
           }
           GenericEntity {
            ID "5CC72E06418CF13D"
-           coords -3.758 -0 3.648
+           coords -3.758 0 3.648
            angleY -98.441
           }
           GenericEntity {
            ID "5CC72E06418CF145"
-           coords -4.6 -0 3.944
+           coords -4.6 0 3.944
            angleY -23.382
           }
           GenericEntity {
            ID "5CC72E06418CF14B"
-           coords -4.888 -0 3.876
+           coords -4.888 0 3.876
            angleY 59.045
           }
           GenericEntity {
            ID "5CC72E06418CF15C"
-           coords -5.049 -0 3.644
+           coords -5.049 0 3.644
            angleY 106.584
           }
           GenericEntity {
            ID "5CC72E06418CF174"
-           coords -4.477 -0 4.106
+           coords -4.477 0 4.106
            angleY -27.76
           }
           GenericEntity {
            ID "5CC72E06418CF180"
-           coords -1.161 -0 5.304
+           coords -1.161 0 5.304
            angleY 55.541
           }
           GenericEntity {
            ID "5CC72E06418CFE9F"
-           coords 3.175 -0 -6.179
+           coords 3.175 0 -6.179
            angleY 180
            {
             GenericEntity {
@@ -627,74 +642,74 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CFEDC"
-           coords 5.704 -0 -4.947
+           coords 5.704 0 -4.947
            angleY -180
           }
           GenericEntity {
            ID "5CC72E06418CF197"
-           coords -2.63 -0 5.906
+           coords -2.63 0 5.906
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1B1"
-           coords -2.279 -0 5.916
+           coords -2.279 0 5.916
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1C0"
-           coords -3.8 -0 -0.154
+           coords -3.8 0 -0.154
            angleX 0
            angleY 82.915
           }
           GenericEntity {
            ID "5CC72E06418CF008"
-           coords -4.032 -0 2.91
+           coords -4.032 0 2.91
            angleY -9.857
           }
           GenericEntity {
            ID "5CC72E06418CF067"
-           coords 5.412 -0 -3.466
+           coords 5.412 0 -3.466
            angleY -42.615
           }
           GenericEntity {
            ID "5CC72E06418CF0C9"
-           coords 6.409 -0 3.395
+           coords 6.409 0 3.395
            angleY -75.628
           }
           GenericEntity {
            ID "5CC72E06418CF0DE"
-           coords 6.213 -0 5.218
+           coords 6.213 0 5.218
            angleX 0
            angleY 15.524
           }
           GenericEntity {
            ID "5CC72E06418CF166"
-           coords -3.14 -0 3.343
+           coords -3.14 0 3.343
            angleY 11.535
           }
           GenericEntity {
            ID "5CC72E06418CF1D9"
-           coords -6.161 -0 -2.496
+           coords -6.161 0 -2.496
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1FD"
-           coords -4.032 -0 -0.256
+           coords -4.032 0 -0.256
            angleY -164.13
           }
           GenericEntity {
            ID "5CC72E06418CF22D"
-           coords 6.456 -0 4.456
+           coords 6.456 0 4.456
            angleX 0
            angleY 133.847
           }
           GenericEntity {
            ID "5CC72E06418CFE0F"
-           coords -3.908 -0 3.253
+           coords -3.908 0 3.253
           }
           GenericEntity {
            ID "5CC72E06418CFE24"
-           coords -3.817 -0 5.397
+           coords -3.817 0 5.397
            angleY 0
            {
             Turret Tripod_6T7_NSV_618F19C6E802F63 {
@@ -704,95 +719,95 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CFFB1"
-           coords 5.127 -0 -2.872
+           coords 5.127 0 -2.872
            angleY -90.07
           }
           GenericEntity {
            ID "5CC72E06418CF19A"
-           coords 6.333 -0 -3.281
+           coords 6.333 0 -3.281
           }
           GenericEntity {
            ID "5CC72E06418CFFEE"
-           coords 3.27 -0 -4.96
+           coords 3.27 0 -4.96
            angleY 99.18
           }
           GenericEntity {
            ID "5CC72E06418CF048"
-           coords 2.02 -0 -6.488
+           coords 2.02 0 -6.488
            angleY 13.341
           }
           GenericEntity {
            ID "5CC72E06418CF05A"
-           coords 5.047 -0 -6.523
+           coords 5.047 0 -6.523
            angleY -15.852
           }
           GenericEntity {
            ID "5CC72E06418CF073"
-           coords 3.585 -0 -4.745
+           coords 3.585 0 -4.745
            angleY -21.982
           }
           GenericEntity {
            ID "5CC72E06418CF0B7"
-           coords -2.984 -0 -0.065
+           coords -2.984 0 -0.065
            angleY -15.852
           }
           GenericEntity {
            ID "5CC72E06418CFF41"
-           coords -6.262 -0 -5.146
+           coords -6.262 0 -5.146
            angleY 90
           }
           GenericEntity {
            ID "5CC72E06418CFF57"
-           coords -6.262 -0 -3.504
+           coords -6.262 0 -3.504
            angleY -90
           }
           GenericEntity {
            ID "5CC72E06418CF1D4"
-           coords 6.46 -0 -6.006
+           coords 6.46 0 -6.006
            angleX 0
            angleY 150
           }
           GenericEntity {
            ID "5CC72E06418CF028"
-           coords -2.137 -0 6.31
+           coords -2.137 0 6.31
            angleY 7.663
            Flags 2098179
           }
           GenericEntity {
            ID "5CC72E06418CF1E8"
-           coords -1.743 -0 -0.012
+           coords -1.743 0 -0.012
            angleY 73.067
           }
           GenericEntity {
            ID "5CC72E06418CFF06"
-           coords -2.809 -0 0.563
+           coords -2.809 0 0.563
            angleY 65.12
            angleZ 0
           }
           GenericEntity {
            ID "5CC72E06418CF1A2"
-           coords -5.292 -0 6.153
+           coords -5.292 0 6.153
            angleX 0
            angleY 45.608
           }
           GenericEntity {
            ID "5CC72E06418CFF19"
-           coords -3.03 -0 -0.331
+           coords -3.03 0 -0.331
            angleY 74.086
           }
           GenericEntity {
            ID "5E5C73D2049F5625"
-           coords 6.039 -0 1.668
+           coords 6.039 0 1.668
            angleY 98.283
           }
           GenericEntity {
            ID "5CC72E06418CF08D"
-           coords -1.193 -0 5.658
+           coords -1.193 0 5.658
            angleY 32.809
           }
           GenericEntity {
            ID "5CC72E06418CF099"
-           coords -2.887 -0 5.981
+           coords -2.887 0 5.981
            angleY -11.166
            {
             DecalEntity {
@@ -803,62 +818,62 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0E8"
-           coords -4.718 -0 6.158
+           coords -4.718 0 6.158
            angleY 5.39
           }
           GenericEntity {
            ID "5E5C73D2049F561B"
-           coords -0.583 -0 3.14
+           coords -0.583 0 3.14
            angleY -15.922
           }
           GenericEntity {
            ID "5E5C73D2049F5637"
-           coords 1.719 -0 -4.665
+           coords 1.719 0 -4.665
            angleY -120.889
           }
           StaticModelEntity {
            ID "5CC72E06418CFFD8"
-           coords 4.895 -0 -4.364
+           coords 4.895 0 -4.364
            angleY -27.132
           }
           StaticModelEntity {
            ID "5CC72E06418CFFC8"
-           coords 4.958 -0 -4.453
+           coords 4.958 0 -4.453
            angleY -47.481
           }
           StaticModelEntity {
            ID "5CC72E06418CFE44"
-           coords -6.378 -0 6.091
+           coords -6.378 0 6.091
            angleY -179.54
           }
           StaticModelEntity {
            ID "5CC72E06418CFE55"
-           coords 5.999 -0 4.873
+           coords 5.999 0 4.873
            angleY 136.955
           }
           StaticModelEntity {
            ID "5CC72E06418CFE6B"
-           coords -0.88 -0 6.138
+           coords -0.88 0 6.138
            angleY 73.906
           }
           StaticModelEntity {
            ID "5CC72E06418CFEA6"
-           coords 0.291 -0 -5.978
+           coords 0.291 0 -5.978
            angleY 84.762
           }
           StaticModelEntity {
            ID "5CC72E06418CFEB0"
-           coords -6.148 -0 -6.317
+           coords -6.148 0 -6.317
            angleY 9.829
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.169 -0 0.648
+           coords -1.169 0 0.648
            angleY -16.008
           }
           StaticModelEntity {
            ID "5CC72E06418CFF6A"
-           coords 6.285 -0 -2.302
+           coords 6.285 0 -2.302
            angleY -9.476
           }
          }
@@ -2066,7 +2081,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.169 -0 0.648
+           coords -1.169 0 0.648
            angleY -16.008
           }
           StaticModelEntity {
@@ -3240,7 +3255,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFE44"
-           coords -6.378 -0 6.091
+           coords -6.378 0 6.091
            angleX 0.877
            angleY -179.542
            angleZ -0.153
@@ -5310,12 +5325,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
          {
           GenericEntity {
            ID "5CC72E06418CF129"
-           coords -2.882 -0 3.811
+           coords -2.882 0 3.811
            angleY -36.56
           }
           GenericEntity {
            ID "5CC72E06418CF13D"
-           coords -3.758 -0 3.647
+           coords -3.758 0 3.647
            angleY -98.441
           }
           GenericEntity {
@@ -5348,7 +5363,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF180"
-           coords -1.161 -0 5.304
+           coords -1.161 0 5.304
            angleY 55.541
           }
           GenericEntity {
@@ -5373,23 +5388,23 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF197"
-           coords -2.63 -0 5.905
+           coords -2.63 0 5.905
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1B1"
-           coords -2.278 -0 5.915
+           coords -2.278 0 5.915
            angleX 0
           }
           GenericEntity {
            ID "5CC72E06418CF1C0"
-           coords -3.799 -0 -0.154
+           coords -3.799 0 -0.154
            angleX 0
            angleY 82.915
           }
           GenericEntity {
            ID "5CC72E06418CF008"
-           coords -4.032 -0 2.91
+           coords -4.032 0 2.91
            angleY -9.857
           }
           GenericEntity {
@@ -5401,18 +5416,18 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0C9"
-           coords 6.41 -0 3.394
+           coords 6.41 0 3.394
            angleY -75.628
           }
           GenericEntity {
            ID "5CC72E06418CF0DE"
-           coords 6.213 -0 5.218
+           coords 6.213 0 5.218
            angleX 0
            angleY 15.524
           }
           GenericEntity {
            ID "5CC72E06418CF166"
-           coords -3.139 -0 3.343
+           coords -3.139 0 3.343
            angleY 11.535
           }
           GenericEntity {
@@ -5424,22 +5439,22 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF1FD"
-           coords -4.032 -0 -0.257
+           coords -4.032 0 -0.257
            angleY -164.13
           }
           GenericEntity {
            ID "5CC72E06418CF22D"
-           coords 6.456 -0 4.456
+           coords 6.456 0 4.456
            angleX 0
            angleY 133.847
           }
           GenericEntity {
            ID "5CC72E06418CFE0F"
-           coords -3.908 -0 3.253
+           coords -3.908 0 3.253
           }
           GenericEntity {
            ID "5CC72E06418CFE24"
-           coords -3.817 -0 5.396
+           coords -3.817 0 5.396
            angleY 0
            {
             Turret Tripod_6T7_NSV_618F19C6E802F75 {
@@ -5491,7 +5506,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0B7"
-           coords -2.984 -0 -0.065
+           coords -2.984 0 -0.065
            angleY -15.852
           }
           GenericEntity {
@@ -5517,45 +5532,45 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF028"
-           coords -2.137 -0 6.311
+           coords -2.137 0 6.311
            angleY 7.663
            Flags 2098179
           }
           GenericEntity {
            ID "5CC72E06418CF1E8"
-           coords -1.743 -0 -0.012
+           coords -1.743 0 -0.012
            angleY 73.067
           }
           GenericEntity {
            ID "5CC72E06418CFF06"
-           coords -2.81 -0 0.563
+           coords -2.81 0 0.563
            angleY 65.12
            angleZ 0
           }
           GenericEntity {
            ID "5CC72E06418CF1A2"
-           coords -5.292 -0 6.153
+           coords -5.292 0 6.153
            angleX 0
            angleY 45.608
           }
           GenericEntity {
            ID "5CC72E06418CFF19"
-           coords -3.03 -0 -0.331
+           coords -3.03 0 -0.331
            angleY 74.086
           }
           GenericEntity {
            ID "5E5C73D2049F5625"
-           coords 6.04 -0 1.667
+           coords 6.04 0 1.667
            angleY 98.283
           }
           GenericEntity {
            ID "5CC72E06418CF08D"
-           coords -1.193 -0 5.658
+           coords -1.193 0 5.658
            angleY 32.809
           }
           GenericEntity {
            ID "5CC72E06418CF099"
-           coords -2.888 -0 5.981
+           coords -2.888 0 5.981
            angleY -11.166
            {
             DecalEntity {
@@ -5566,12 +5581,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF0E8"
-           coords -4.718 -0 6.158
+           coords -4.718 0 6.158
            angleY 5.39
           }
           GenericEntity {
            ID "5E5C73D2049F561B"
-           coords -0.582 -0 3.139
+           coords -0.582 0 3.139
            angleY -15.922
           }
           GenericEntity {
@@ -5604,12 +5619,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFE55"
-           coords 5.999 -0 4.872
+           coords 5.999 0 4.872
            angleY 136.955
           }
           StaticModelEntity {
            ID "5CC72E06418CFE6B"
-           coords -0.879 -0 6.138
+           coords -0.879 0 6.138
            angleY 73.906
           }
           StaticModelEntity {
@@ -5628,7 +5643,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           StaticModelEntity {
            ID "5CC72E06418CFF2A"
-           coords -1.169 -0 0.648
+           coords -1.169 0 0.648
            angleY -16.008
           }
           StaticModelEntity {
@@ -8620,7 +8635,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5E5C73D2049F5625"
-           coords 6.039 -0 1.667
+           coords 6.039 0 1.667
            angleY 98.283
           }
           GenericEntity {
@@ -10200,7 +10215,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CF14B"
-           coords -4.887 -0 3.877
+           coords -4.887 0 3.877
            angleY 59.038
           }
           GenericEntity {
@@ -10309,7 +10324,7 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
           }
           GenericEntity {
            ID "5CC72E06418CFE0F"
-           coords -3.907 -0 3.253
+           coords -3.907 0 3.253
           }
           GenericEntity {
            ID "5CC72E06418CFE24"
@@ -10628,14 +10643,12 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            ID "5CC72E06418CF197"
            coords -2.627 0.04 5.903
            angleX 0.012
-           angleY 0
            angleZ 0.889
           }
           GenericEntity {
            ID "5CC72E06418CF1B1"
            coords -2.275 0.034 5.914
            angleX 0.012
-           angleY 0
            angleZ 0.889
           }
           GenericEntity {
@@ -10701,7 +10714,6 @@ $grp GenericEntity : "{8EC6DDE0FF5C1DD6}Prefabs/Compositions/Misc/CombatOps/CP_E
            ID "5CC72E06418CFE0F"
            coords -3.903 0.06 3.25
            angleX 0.012
-           angleY 0
            angleZ 0.889
           }
           GenericEntity {
